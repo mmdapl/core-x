@@ -1,0 +1,74 @@
+{
+  "$schema": "node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
+  "version": "0.1.6-alpha.5",
+  "npmClient": "pnpm",
+  "packages": [
+    "apps/*",
+    "packages/*",
+    "./"
+  ],
+  "command": {
+    "version": {
+      "allowBranch": [
+        "next"
+      ],
+      "message": "chore(release): publish v%v",
+      "changelog": true,
+      "changelogIncludeCommitsGitAuthor": " by . @%a",
+      "conventionalCommits": true,
+      "skipBumpOnlyReleases": false,
+      "dryRun": false
+    },
+    "publish": {
+      "canary": false,
+      "dryRun": false,
+      "message": "chore(release): publish v%v",
+      "registry": "https://registry.npmjs.org"
+    }
+  },
+  "forcePublish": true,
+  "changelogPreset": {
+    "name": "conventionalcommits",
+    "types": [
+      {
+        "type": "feat",
+        "section": "✨ Features"
+      },
+      {
+        "type": "fix",
+        "section": "🐛 Bug Fixes"
+      },
+      {
+        "type": "perf",
+        "section": "Performance Improvements"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "hidden": true
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "hidden": true
+      }
+    ],
+    "issuePrefixes": [
+      "#"
+    ],
+    "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}",
+    "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
+    "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}",
+    "userUrlFormat": "{{host}}/{{user}}"
+  }
+}

@@ -1,0 +1,5 @@
+packages:
+  # apps/ 直接子目录中的所有包
+  - 'apps/**'
+  - 'packages/**'
+  - '!**/.output/**'

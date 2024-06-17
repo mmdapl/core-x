@@ -1,0 +1,11 @@
+node_modules
+*/logs
+*/run
+*/typings
+.idea
+.github
+nginx
+docs
+eslint.config.js
+.gitignore
+

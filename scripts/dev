@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+/**
+ * Usage:
+ * - ./scripts/dev oauth-login
+ */
+const inquirer = require('inquirer');
+const {execShell} = require("./.exec");
+const apps=require("../package.json").apps
+
+const appList=Object.values(apps).flat()
+
+/**
+ * 本地运行服务
+ */
+;(async () => {
+    let appName = process.argv[2]
+    if (appName == null) {
+        appName = (
+            await inquirer.prompt([
+                {
+                    type: 'list',
+                    name: 'app',
+                    message: '选择repo模块在开发环境下运行',
+                    choices: appList,
+                },
+            ])
+        ).app
+    }
+    await execShell(`npx turbo run dev --filter=${appName} --color --only`)
+})()

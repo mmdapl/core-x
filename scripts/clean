@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+## 删除依赖
+find . -name "node_modules" -type d -exec rm -rf '{}' +

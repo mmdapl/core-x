@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Usage:
+ * - ./scripts/build oauth-client
+ */
+
+const inquirer = require('inquirer');
+const {execShell} = require("./.exec");
+const apps = require("../package.json").apps;
+
+// 获取所有项目
+const appList = Object.values(apps).flat();
+
+(async () => {
+  let appName = process.argv[2]
+  if (appName != null) {
+    if (!appList.includes(appName)) {
+      appName = (await inquirer.prompt([
+          {
+            type: 'list',
+            name: 'app',
+            message: '选择repo模块进行构建...',
+            choices: appList
+          },
+        ])
+      ).app
+    }
+  }
+  // 编译
+  await execShell(`npx turbo run build ${appName == null ? '' : `--filter=${appName}`} --color --only`)
+})()

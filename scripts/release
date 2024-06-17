@@ -1,0 +1,36 @@
+#!/bin/bash
+
+##
+## 版本发布脚本
+## 链接：https://github.com/lerna-lite/lerna-lite/blob/main/packages/version/README.md#--allow-peer-dependencies-update
+## 参数：[major | minor | patch | premajor | preminor | prepatch | prerelease]
+## 使用:
+##  - ./scripts/release patch
+##  - ./scripts/release 0.1.7
+##
+
+# 获取当前分支名称
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# 版本参数
+versionParams=${1-"prerelease"}
+
+# 判断分支名称
+if [ "$current_branch" = "next" ]; then
+  npx lerna version "$versionParams"
+else
+  echo "当前分支是：$current_branch ，版本迭代允许在next分支操作，并推送到远程！！！"
+fi
+
+
+# 只更新版本，不更新changelog，更新依赖版本
+#npx lerna version --conventional-commits=false && pnpm i --lockfile-only
+
+
+# 更新版本、更新changelog，触发CI部分Github版本
+#npx lerna version prerelease
+
+# 灰度发布，发布到npm
+#npx lerna publish --canary from-package
+# 正常发布到npm
+#npx lerna publish from-package

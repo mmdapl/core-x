@@ -1,7 +1,0 @@
-### Oauth-Sevice授权码校验
-GET {{talk-api}}//api/v1/user/accessToken?
-    authorizationCode={{authorizationCode}}&returnUri={{returnUri}}&state={{$random.integer()}}
-
-
-###
-

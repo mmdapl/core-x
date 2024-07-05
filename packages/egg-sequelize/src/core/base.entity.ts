@@ -1,7 +1,10 @@
 import { DataTypes } from 'sequelize'
 
-export const BaseEntity = {
 
+/**
+ * 基础实体
+ */
+export const BaseEntity = {
   /**
    * 主键
    */

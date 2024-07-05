@@ -1,15 +1,10 @@
 {
-  "name": "@142vip/redis",
+  "name": "@142vip/egg-mysql",
   "private": false,
   "description": "公众号搜：储凡",
-  "keywords": [
-    "公众号搜：储凡"
-  ],
+  "keywords": ["公众号搜：储凡"],
   "scripts": {
     "build": "npx tsc"
-  },
-  "dependencies": {
-    "ioredis": "^5.4.1"
   },
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT"

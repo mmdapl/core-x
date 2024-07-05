@@ -4,8 +4,6 @@ node_modules
 */typings
 .idea
 .github
-nginx
-docs
 eslint.config.js
 .gitignore
 

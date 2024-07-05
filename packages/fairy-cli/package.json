@@ -1,11 +1,24 @@
 {
   "name": "@142vip/fairy-cli",
+  "version": "0.0.1-alpha.1",
   "private": false,
   "main": "index.d.ts",
   "description": "公众号搜：储凡、fairy-cli",
-  "keywords": ["公众号搜：储凡"],
+  "keywords": [
+    "公众号搜：储凡"
+  ],
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "fairy-cli": "bin/fairy-cli.js"
+  },
   "scripts": {
     "build": "npx tsc"
+  },
+  "dependencies": {
+    "@142vip/common": "^0.0.1-alpha.3",
+    "commander": "^12.1.0"
   },
   "devDependencies": {
     "shelljs": "^0.8.5"

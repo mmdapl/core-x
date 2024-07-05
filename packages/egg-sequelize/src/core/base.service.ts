@@ -8,7 +8,7 @@ export class BaseService{
   }
 
   public async  insertData(){
-    this.entity.
+    // this.entity.
   }
 
 }

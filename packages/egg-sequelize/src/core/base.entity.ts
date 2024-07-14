@@ -1,6 +1,5 @@
 import { DataTypes } from 'sequelize'
 
-
 /**
  * 基础实体
  */

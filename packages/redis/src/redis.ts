@@ -1,10 +1,10 @@
-import RedisClient from "ioredis"
+import RedisClient from 'ioredis'
 
-export class Redis{
-  private redisClient: RedisClient;
+export class Redis {
+  private redisClient: RedisClient
 
   constructor(redisClient: RedisClient) {
-    this.redisClient = redisClient;
+    this.redisClient = redisClient
   }
 
   /**
@@ -12,7 +12,6 @@ export class Redis{
    * @param key
    */
   public async delete(key: string) {
-     await this.redisClient.del(key);
+    await this.redisClient.del(key)
   }
-
 }

@@ -11,13 +11,23 @@
     "dist"
   ],
   "bin": {
-    "fairy-cli": "bin/fairy-cli.js"
+    "fairy-cli": "./fairy-cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
   },
   "scripts": {
     "build": "npx tsc"
   },
   "dependencies": {
-    "@142vip/common": "^0.0.1-alpha.3",
+    "@142vip/common": "^0.0.1-alpha.4",
     "commander": "^12.1.0"
   },
   "devDependencies": {

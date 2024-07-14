@@ -1,14 +1,12 @@
-import {Sequelize} from 'sequelize'
+import { Sequelize } from 'sequelize'
 
-export class BaseService{
-
-  private readonly entity:Sequelize
-  constructor(entity:Sequelize) {
-    this.entity=entity
+export class BaseService {
+  private readonly entity: Sequelize
+  constructor(entity: Sequelize) {
+    this.entity = entity
   }
 
-  public async  insertData(){
+  public async insertData() {
     // this.entity.
   }
-
 }

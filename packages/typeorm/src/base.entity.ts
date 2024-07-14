@@ -1,5 +1,4 @@
-import {Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm'
-
+import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 
 /**
  * 基础实体
@@ -26,7 +25,6 @@ export class BaseEntity {
   })
   updateTime!: Date
 }
-
 
 /**
  * 带删除状态的实体

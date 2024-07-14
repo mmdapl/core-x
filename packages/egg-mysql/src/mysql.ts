@@ -1,5 +1,3 @@
-
-
-export class Mysql{
+export class Mysql {
 
 }

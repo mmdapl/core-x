@@ -113,12 +113,12 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
   }
 
   if (!lines.length) {
-    lines.push('\n**无重要变更**')
+    lines.push('\n**No significant changes**')
   }
   else {
     const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.to}`
     // 添加版本
-    lines.push(`\n**Release New Version v${options.to} [👉 see more](${url})**`)
+    lines.push(`\n**Release New Version v${options.to} [👉 View changes on GitHub](${url})**`)
   }
 
   return convert(lines.join('\n').trim(), true)

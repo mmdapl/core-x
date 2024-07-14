@@ -1,6 +1,6 @@
 {
   "name": "@142vip/fairy-cli",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.0",
   "private": false,
   "main": "index.d.ts",
   "description": "公众号搜：储凡、fairy-cli",

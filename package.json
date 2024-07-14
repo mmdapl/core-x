@@ -1,6 +1,6 @@
 {
   "name": "@142vip/core-x",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.0",
   "type": "module",
   "engines": {
     "node": "18.18.0",
@@ -14,7 +14,7 @@
     "homePage": "https://142vip.cn"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm && chmod +x ./scripts/*",
+    "preinstall": "npx only-allow pnpm && chmod +x ./scripts/* && npx turbo run build --filter=@142vip/changelog --color --only",
     "dev": "npx turbo run dev",
     "build": "npx turbo run build",
     "start": "npx turbo run start",

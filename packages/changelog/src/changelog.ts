@@ -19,6 +19,7 @@ cli
   .option('--name <name>', 'Name of the release')
   .option('--prerelease', 'Mark release as prerelease')
   .option('--output <path>', 'Output to file instead of sending to GitHub')
+  .option('--scopeName <scopeName>', 'Output to file instead of sending to GitHub')
   .option('--dry', 'Dry run')
   .help()
 
@@ -35,6 +36,7 @@ cli
       console.log(dim(`${bold('@142vip/changelog')} `) + dim(`v${version}`))
 
       const { config, markdown, commits } = await generate(args)
+      console.log(111, args, config)
       webUrl = `https://${config.baseUrl}/${config.repo}/releases/new?title=${encodeURIComponent(String(config.name || config.to))}&body=${encodeURIComponent(String(markdown))}&tag=${encodeURIComponent(String(config.to))}&prerelease=${config.prerelease}`
 
       console.log(cyan(config.from) + dim(' -> ') + blue(config.to) + dim(` (${commits.length} commits)`))

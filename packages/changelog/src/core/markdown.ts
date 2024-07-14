@@ -49,6 +49,7 @@ function formatLine(commit: Commit, options: ResolvedChangelogOptions) {
 
 // 标题
 function formatTitle(name: string, options: ResolvedChangelogOptions) {
+  // 加表情包
   if (!options.emoji)
     name = name.replace(emojisRE, '')
 
@@ -73,17 +74,27 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
     useScopeGroup = false
 
   Object.keys(scopes).sort().forEach((scope) => {
+    console.log(options.scopeName, scope)
     let padding = ''
     let prefix = ''
-    const scopeText = `**${options.scopeMap[scope] || scope}**`
-    if (scope && (useScopeGroup === true || (useScopeGroup === 'multiple' && scopes[scope].length > 1))) {
-      lines.push(`- ${scopeText}:`)
-      padding = '  '
-    }
-    else if (scope) {
-      prefix = `${scopeText}: `
-    }
 
+    // 生成monorepo中的md
+    if (options.scopeName != null && options.scopeName === scope) {
+      // package dir in monorepo
+
+    }
+    else {
+      // root dir
+
+      const scopeText = `**${options.scopeMap[scope] || scope}**`
+      if (scope && (useScopeGroup === true || (useScopeGroup === 'multiple' && scopes[scope].length > 1))) {
+        lines.push(`- ${scopeText}:`)
+        padding = '  '
+      }
+      else if (scope) {
+        prefix = `${scopeText}: `
+      }
+    }
     lines.push(...scopes[scope]
       .reverse()
       .map(commit => `${padding}- ${prefix}${formatLine(commit, options)}`),

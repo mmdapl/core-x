@@ -74,6 +74,8 @@ export interface ChangelogOptions extends Partial<ChangelogEnOptions> {
    * @default api.github.com
    */
   baseUrlApi?: string
+
+  scopeName?: string
 }
 
 export type ResolvedChangelogOptions = Required<ChangelogOptions>

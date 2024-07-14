@@ -50,6 +50,9 @@ export async function resolveConfig(options: ChangelogOptions) {
   config.repo = config.repo || config.github || await getGitHubRepo(config.baseUrl)
   config.prerelease = config.prerelease ?? isPrerelease(config.to)
 
+  // todo 支持多个scope生成
+  config.scopeName = options.scopeName
+
   if (typeof config.repo !== 'string')
     throw new Error(`Invalid GitHub repository, expected a string but got ${JSON.stringify(config.repo)}`)
 

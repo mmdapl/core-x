@@ -1,7 +1,7 @@
 {
-  "name": "142vip-oauth",
-  "version": "0.1.6-alpha.5",
-  "private": true,
+  "name": "@142vip/core-x",
+  "version": "0.0.1-alpha.1",
+  "type": "module",
   "engines": {
     "node": "18.18.0",
     "pnpm": "7"
@@ -27,6 +27,7 @@
     "turbo": "^2.0.1"
   },
   "devDependencies": {
+    "@142vip/changelog": "workspace:*",
     "@antfu/eslint-config": "^2.20.0",
     "@lerna-lite/cli": "^3.5.1",
     "@lerna-lite/list": "^3.5.1",

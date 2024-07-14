@@ -43,6 +43,10 @@
         "section": "Performance Improvements"
       },
       {
+        "type": "release",
+        "section": "Release Module"
+      },
+      {
         "type": "chore",
         "hidden": true
       },

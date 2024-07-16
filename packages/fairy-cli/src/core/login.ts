@@ -1,6 +1,4 @@
-import { execShell } from '@142vip/common'
-
-enum CliLoginOption {
+export enum CliLoginOption {
   DOCKER = 'docker',
   NPM = 'npm',
 }
@@ -19,5 +17,7 @@ function loginDocker(): void {
 // npm 登录
 function loginNpm(): void {
   // npm login --registry  https://registry.npmjs.org
-  execShell()
 }
+
+loginNpm()
+loginDocker()

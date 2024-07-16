@@ -1,4 +1,4 @@
-import { EntityManager } from 'typeorm'
+import type { EntityManager } from 'typeorm'
 import { InjectEntityManager } from '@nestjs/typeorm'
 
 export class BaseDBService {

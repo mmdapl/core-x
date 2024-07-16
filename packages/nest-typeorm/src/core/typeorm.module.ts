@@ -1,7 +1,9 @@
 import type { DynamicModule, Provider } from '@nestjs/common'
+import type {
+  TypeOrmModuleOptions,
+} from '@nestjs/typeorm'
 import {
   TypeOrmModule,
-  TypeOrmModuleOptions,
   getDataSourceToken,
   getRepositoryToken,
 } from '@nestjs/typeorm'

@@ -1,0 +1,78 @@
+{
+  "name": "@142vip/release-version",
+  "version": "0.0.1",
+  "description": "Bump version, commit changes, tag, and push to Git",
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/antfu/bumpp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/bumpp.git"
+  },
+  "keywords": [
+    "version",
+    "bump",
+    "npm",
+    "node",
+    "bower",
+    "package",
+    "git",
+    "tag",
+    "push",
+    "prompt"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "*.mjs",
+    "dist"
+  ],
+  "bin": {
+    "bumpx": "./cli.mjs"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@jsdevtools/ez-spawn": "^3.0.4",
+    "c12": "^1.10.0",
+    "cac": "^6.7.14",
+    "escalade": "^3.1.2",
+    "fast-glob": "^3.3.2",
+    "js-yaml": "^4.1.0",
+    "prompts": "^2.4.2",
+    "semver": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.12.7",
+    "@types/prompts": "^2.4.9",
+    "@types/semver": "^7.5.8",
+    "detect-indent": "^7.0.1",
+    "detect-newline": "^4.0.1",
+    "log-symbols": "^6.0.0",
+    "npm-check": "^6.0.1",
+    "kolorist": "^1.8.0",
+    "rimraf": "^5.0.5",
+    "unbuild": "^2.0.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.2"
+  }
+}

@@ -20,7 +20,7 @@ export async function loadBumpConfig(
   overrides?: Partial<VersionBumpOptions>,
   cwd = process.cwd(),
 ) {
-  const name = 'bump'
+  const name = 'bumpx'
   const configFile = findConfigFile(name, cwd)
   const { config } = await loadConfig<VersionBumpOptions>({
     name,
@@ -65,6 +65,10 @@ function findConfigFile(name: string, cwd: string) {
   }
 }
 
-export function defineConfig(config: Partial<VersionBumpOptions>) {
+/**
+ * 自定义配置入口
+ * @param config
+ */
+export function defineBumpXConfig(config: Partial<VersionBumpOptions>) {
   return config
 }

@@ -147,12 +147,12 @@ program
   .option('-n,--nuxt', '删除nuxt构建目录', false)
   .option('-d,--dist', '删除dist目录', false)
   .option('-m,--midway', '删除midway构建目录', false)
-  .option('-c --clean', 'registry address', 'CHANGELOG.md')
-  .option('--deep', '深度删除', false)
+  .option('-f,--force', '强制删除，默认值：false', false)
+  .option('--all', '深度删除所有', false)
   .option('--ignore-tips', '忽略提示，直接删除', false)
-  .action((args: CleanUpOptions) => {
-    console.log(CliCommandEnum.CLEAN, args)
-    execCleanUp(args)
+  .option('--dry-run', '试运行，不做实际删除操作', false)
+  .action(async (args: CleanUpOptions) => {
+    await execCleanUp(args)
   })
 
 program.parse(process.argv)

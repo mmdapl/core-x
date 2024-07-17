@@ -5,7 +5,8 @@
   "type": "module",
   "description": "公众号搜：储凡、fairy-cli",
   "keywords": [
-    "公众号搜：储凡"
+    "公众号搜：储凡",
+    "clean"
   ],
   "sideEffects": false,
   "exports": {
@@ -34,11 +35,15 @@
   "dependencies": {
     "@142vip/release-version": "workspace:*",
     "commander": "^12.1.0",
+    "del": "^7.1.0",
     "execa": "^8.0.1",
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "@inquirer/confirm": "^3.1.15",
+    "@types/inquirer": "^9.0.7",
     "@types/js-yaml": "^4.0.9",
+    "inquirer": "7",
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0",
     "vitest": "^2.0.2"

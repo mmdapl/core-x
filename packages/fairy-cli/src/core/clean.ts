@@ -1,64 +1,88 @@
-export interface CleanUpOptions {
+import * as process from 'node:process'
+import confirm from '@inquirer/confirm'
+import { deleteAsync } from 'del'
+
+/**
+ * 删除配置
+ */
+export interface DelOptions {
+  dryRun?: boolean
+  force?: boolean
+  all?: boolean
+}
+
+export interface CleanUpOptions extends DelOptions {
   dist?: boolean
   nuxt?: boolean
   midway?: boolean
-  deep?: boolean
+  ignoreTips?: boolean
 }
 
 /**
- * 清除
+ * 删除文件或文件夹
+ * - 恢复项目初始状态
  */
-export function execCleanUp(args: CleanUpOptions) {
-  // 删除node_modules
+export async function execCleanUp(args: CleanUpOptions) {
+  // 默认删除node_modules
+  const dirPatterns = generateDirPatterns('node_modules', args.all)
 
-  // 删除各层级dist目录
+  // 删除各层级dist目录，dist
   if (args.dist) {
-    cleanDist()
+    dirPatterns.push(...generateDirPatterns('dist', args.all))
   }
 
-  // 删除nuxt构建目录
+  // 删除nuxt构建目录，.nuxt output
   if (args.nuxt) {
-    cleanNuxt()
+    dirPatterns.push(...generateDirPatterns(['.nuxt', 'output'], args.all))
   }
 
+  // 删除midway构建目录，run logs
   if (args.midway) {
-    cleanMidway()
+    dirPatterns.push(...generateDirPatterns(['run', 'logs'], args.all))
   }
+
+  // 删除前，对话框确认
+  if (!args.ignoreTips) {
+    const deleted = await confirm({
+      message: '是否需要删除?',
+      default: true,
+    })
+
+    if (!deleted) {
+      // 不删除，非0退出
+      process.exit(1)
+    }
+  }
+
+  // 需要删除的目录
+  console.log('删除规则：', dirPatterns)
+
+  // 删除
+  const deletedDirs = await deleteAsync(dirPatterns, {
+    dryRun: args.dryRun,
+    force: args.force,
+  })
+  console.log(deletedDirs)
 }
 
-/**
- * 删除所有node_modules目录
- * - 默认删除
- */
-export function cleanNodeModules() {
-  // 删除所有node_modules目录
-  //  find . -name "node_modules" -type d -exec rm -rf '{}' +
-}
+function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
+  let delDirs: string[] = []
 
-/**
- * 删除构建的dist目录
- */
-export function cleanDist() {
-  // 删除dist目录
-}
+  if (typeof dirName === 'string') {
+    delDirs.push(dirName)
+  }
+  else {
+    delDirs.push(...dirName)
+  }
 
-/**
- * 删除nuxt构建目录
- * - .nuxt
- * - output
- */
-export function cleanNuxt() {
-  // .nuxt output
-}
+  if (delAll) {
+    // 删除程序上下文中所有的该目录
+    delDirs = delDirs.map(dir => `**/${dir}/*`)
+  }
+  else {
+    // 只删除该目录
+    delDirs = delDirs.map(dir => `${dir}/*`)
+  }
 
-/**
- * 根据配置删除所有
- */
-export function cleanByConfig() {
-
-}
-
-// 删除midway的构建、运行、日志目录
-export function cleanMidway() {
-  // run logs
+  return delDirs
 }

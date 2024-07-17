@@ -3,7 +3,7 @@ import fs from 'node:fs/promises'
 import fsSync from 'node:fs'
 import fg from 'fast-glob'
 import yaml from 'js-yaml'
-import type { VersionBumpOptions } from '../types/version-bump-options'
+import type { VersionBumpOptions } from '../types'
 import type { ReleaseType } from './release-type'
 import { isReleaseType } from './release-type'
 

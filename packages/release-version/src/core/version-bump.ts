@@ -13,33 +13,12 @@ import { runNpmScript } from './run-npm-script'
 import { updateFiles } from './update-files'
 
 /**
- * Prompts the user for a version number and updates package.json and package-lock.json.
- *
- * @returns - The new version number
- */
-export async function versionBump(): Promise<VersionBumpResults>
-
-/**
- * Bumps the version number in package.json, package-lock.json.
- *
- * @param release
- * The release version or type. Can be one of the following:
- *
- * - The new version number (e.g. "1.23.456")
- * - A release type (e.g. "major", "minor", "patch", "prerelease", etc.)
- * - "prompt" to prompt the user for the version number
- */
-export async function versionBump(release: string): Promise<VersionBumpResults>
-
-/**
  * Bumps the version number in one or more files, prompting the user if necessary.
- * Optionally also commits, tags, and pushes to git.
- */
-export async function versionBump(options: VersionBumpOptions): Promise<VersionBumpResults>
-
-/**
- * Bumps the version number in one or more files, prompting the user if necessary.
- * Optionally also commits, tags, and pushes to git.
+ *
+ * use:
+ * - versionBump()：default to new version number
+ * - versionBump(release: string): explicit the new version number ,e.g: 0.1.10
+ * - versionBump(options: VersionBumpOptions)：Optionally also commits, tags, and pushes to git
  */
 export async function versionBump(arg: (VersionBumpOptions) | string = {}): Promise<VersionBumpResults | undefined> {
   if (typeof arg === 'string')
@@ -86,7 +65,7 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   // Run npm postversion script, if any
   await runNpmScript(NpmScript.PostVersion, operation)
 
-  // Push the git commit and tag, if enabled
+  // 推送git信息和标记到远程
   await gitPush(operation)
 
   return operation.results

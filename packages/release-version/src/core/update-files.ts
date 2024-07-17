@@ -1,5 +1,5 @@
 import * as path from 'node:path'
-import { ProgressEvent } from '../types/version-bump-progress'
+import { ProgressEvent } from '../types'
 import { readJsonFile, readTextFile, writeJsonFile, writeTextFile } from './fs'
 import { isManifest, isPackageLockManifest } from './manifest'
 import type { Operation } from './operation'

@@ -4,4 +4,4 @@
  * cli 工具入口
  */
 
-import './dist/index.mjs'
+import './dist/bumpx-cli.mjs'

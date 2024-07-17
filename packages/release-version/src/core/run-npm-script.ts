@@ -1,6 +1,6 @@
 import * as ezSpawn from '@jsdevtools/ez-spawn'
-import type { NpmScript } from '../types/version-bump-progress'
-import { ProgressEvent } from '../types/version-bump-progress'
+import type { NpmScript } from '../types'
+import { ProgressEvent } from '../types'
 import { readJsonFile } from './fs'
 import type { Manifest } from './manifest'
 import { isManifest } from './manifest'

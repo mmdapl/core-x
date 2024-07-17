@@ -1,5 +1,5 @@
 import * as ezSpawn from '@jsdevtools/ez-spawn'
-import { ProgressEvent } from '../types/version-bump-progress'
+import { ProgressEvent } from '../types'
 import type { Operation } from './operation'
 
 /**

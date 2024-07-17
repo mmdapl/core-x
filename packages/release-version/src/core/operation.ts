@@ -1,6 +1,4 @@
-import type { VersionBumpOptions } from '../types/version-bump-options'
-import type { NpmScript, ProgressEvent, VersionBumpProgress } from '../types/version-bump-progress'
-import type { VersionBumpResults } from '../types/version-bump-results'
+import type { NpmScript, ProgressEvent, VersionBumpOptions, VersionBumpProgress, VersionBumpResults } from '../types'
 import type { NormalizedOptions } from './normalize-options'
 import { normalizeOptions } from './normalize-options'
 import type { ReleaseType } from './release-type'
@@ -24,7 +22,7 @@ interface UpdateOperationState extends Partial<OperationState> {
 }
 
 /**
- * All of the inputs, outputs, and state of a single `versionBump()` call.
+ * All  the inputs, outputs, and state of a single `versionBump()` call.
  */
 export class Operation {
   /**

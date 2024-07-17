@@ -14,9 +14,9 @@
     "homePage": "https://142vip.cn"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm && chmod +x ./scripts/* && npx turbo run build --filter=@142vip/changelog --color --only",
+    "preinstall": "npx only-allow pnpm && chmod +x ./scripts/* && pnpm build",
     "dev": "npx turbo run dev",
-    "build": "npx turbo run build",
+    "build": "npx turbo run build --color --only",
     "clean": "npx fairy-cli clean --ignore-tips --all",
     "start": "npx turbo run start",
     "test": "npx turbo run test",

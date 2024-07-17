@@ -16,6 +16,7 @@ export interface CleanUpOptions extends DelOptions {
   nuxt?: boolean
   midway?: boolean
   ignoreTips?: boolean
+  turbo?: boolean
 }
 
 /**
@@ -41,6 +42,11 @@ export async function execCleanUp(args: CleanUpOptions) {
     dirPatterns.push(...generateDirPatterns(['run', 'logs'], args.all))
   }
 
+  // 删除turbo缓存目录
+  if (args.turbo) {
+    dirPatterns.push(...generateDirPatterns('.turbo', args.all))
+  }
+
   // 删除前，对话框确认
   if (!args.ignoreTips) {
     const deleted = await confirm({
@@ -61,6 +67,7 @@ export async function execCleanUp(args: CleanUpOptions) {
   const deletedDirs = await deleteAsync(dirPatterns, {
     dryRun: args.dryRun,
     force: args.force,
+    dot: true,
   })
   console.log(deletedDirs)
 }
@@ -77,11 +84,11 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
 
   if (delAll) {
     // 删除程序上下文中所有的该目录
-    delDirs = delDirs.map(dir => `**/${dir}/*`)
+    delDirs = delDirs.map(dir => `**/${dir}`)
   }
   else {
     // 只删除该目录
-    delDirs = delDirs.map(dir => `${dir}/*`)
+    delDirs = delDirs.map(dir => `${dir}`)
   }
 
   return delDirs

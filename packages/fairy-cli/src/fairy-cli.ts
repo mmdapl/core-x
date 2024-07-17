@@ -151,6 +151,7 @@ program
   .option('--all', '深度删除所有', false)
   .option('--ignore-tips', '忽略提示，直接删除', false)
   .option('--dry-run', '试运行，不做实际删除操作', false)
+  .option('--turbo', '删除turbo缓存目录', true)
   .action(async (args: CleanUpOptions) => {
     await execCleanUp(args)
   })

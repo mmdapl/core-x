@@ -67,7 +67,6 @@ function findConfigFile(name: string, cwd: string) {
 
 /**
  * 自定义配置入口
- * @param config
  */
 export function defineBumpXConfig(config: Partial<VersionBumpOptions>) {
   return config

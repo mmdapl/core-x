@@ -108,22 +108,40 @@ importers:
       vitest: 2.0.2
 
   packages/egg:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-axios:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-grpc-client:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-grpc-server:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-mysql:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-redis:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/egg-sequelize:
     specifiers:
@@ -132,10 +150,16 @@ importers:
       egg-sequelize: 6.0.0
 
   packages/egg-swagger:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/eslint-config:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/fairy-cli:
     specifiers:
@@ -190,7 +214,10 @@ importers:
       '@types/express': 4.17.21
 
   packages/nest-redis:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/nest-typeorm:
     specifiers:
@@ -205,7 +232,10 @@ importers:
       typeorm: 0.3.20_mysql2@3.10.1
 
   packages/oauth:
-    specifiers: {}
+    specifiers:
+      dayjs: ^1.11.11
+    dependencies:
+      dayjs: 1.11.11
 
   packages/redis:
     specifiers:

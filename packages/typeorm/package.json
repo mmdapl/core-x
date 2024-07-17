@@ -3,11 +3,13 @@
   "version": "0.0.1-alpha.0",
   "private": false,
   "description": "公众号搜：储凡",
+  "type": "module",
   "keywords": [
     "公众号搜：储凡"
   ],
   "scripts": {
-    "build": "npx tsc"
+    "build-test": "unbuild",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "typeorm": "^0.3.20"

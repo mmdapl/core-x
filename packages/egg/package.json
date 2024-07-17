@@ -7,7 +7,12 @@
     "公众号搜：储凡"
   ],
   "scripts": {
-    "build": "npx tsc"
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.11"
   },
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT"

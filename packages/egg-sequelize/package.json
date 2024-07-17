@@ -7,7 +7,8 @@
     "公众号搜：储凡"
   ],
   "scripts": {
-    "build": "npx tsc"
+    "build-test": "unbuild",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "egg-sequelize": "^6.0.0"

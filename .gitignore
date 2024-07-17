@@ -17,4 +17,5 @@ dist/
 **/.turbo/
 **/.output/
 **/node_modules
+**/.vitepress/cache
 

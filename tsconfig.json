@@ -19,7 +19,13 @@
       "./node_modules/@types"
     ],
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": [
+        ".vitepress/theme/*"
+      ]
+    }
   },
   "exclude": [
     "dist",

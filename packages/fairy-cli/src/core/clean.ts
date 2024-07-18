@@ -17,6 +17,7 @@ export interface CleanUpOptions extends DelOptions {
   midway?: boolean
   ignoreTips?: boolean
   turbo?: boolean
+  vite?: boolean
 }
 
 /**
@@ -45,6 +46,11 @@ export async function execCleanUp(args: CleanUpOptions) {
   // 删除turbo缓存目录
   if (args.turbo) {
     dirPatterns.push(...generateDirPatterns('.turbo', args.all))
+  }
+
+  // 删除vite缓存目录
+  if (args.vite) {
+    dirPatterns.push(...generateDirPatterns('.vite', args.all))
   }
 
   // 删除前，对话框确认

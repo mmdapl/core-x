@@ -1,4 +1,4 @@
-import {execShell} from "@142vip/common";
+import { execShell } from '@142vip/common'
 
 export enum LoginPlatformEnum {
   DOCKER = 'docker',
@@ -27,7 +27,6 @@ export interface NpmOptions extends Omit<LoginOptions, 'userName' | 'password'> 
 }
 
 export async function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
-
   if (LoginPlatformEnum.DOCKER === platform) {
     await loginDocker(args)
   }
@@ -35,9 +34,7 @@ export async function execLogin(platform: LoginPlatformEnum, args: LoginOptions)
   if (LoginPlatformEnum.NPM === platform) {
     await loginNpm(args)
   }
-
 }
-
 
 // docker 登录
 async function loginDocker(args: DockerOptions) {
@@ -51,7 +48,7 @@ async function loginDocker(args: DockerOptions) {
   }
 
   //   docker login --username=142vip --password="$password"  registry.cn-hangzhou.aliyuncs.com
-  const command = `docker login ${args.userName != null ? `--username=${args.userName}` : ""} ${args.password != null ? `--password=${args.password}` : ""} ${registryUrl}`
+  const command = `docker login ${args.userName != null ? `--username=${args.userName}` : ''} ${args.password != null ? `--password=${args.password}` : ''} ${registryUrl}`
   // npm login --registry  https://registry.npmjs.org
   await execShell(command)
 }
@@ -70,4 +67,3 @@ async function loginNpm(args: NpmOptions) {
   // npm login --registry  https://registry.npmjs.org
   await execShell(`npx npm login --registry ${registryUrl}`)
 }
-

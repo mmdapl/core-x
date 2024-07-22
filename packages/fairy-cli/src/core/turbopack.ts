@@ -1,6 +1,6 @@
-import {execShell} from "@142vip/common";
 import fsSync from 'node:fs'
-import * as process from "process";
+import * as process from 'node:process'
+import { execShell } from '@142vip/common'
 
 export interface TurboPackOptions {
   dev?: boolean
@@ -8,7 +8,6 @@ export interface TurboPackOptions {
 }
 
 export async function execTurboPack(repoNames: string[], args: TurboPackOptions) {
-
   // 判断当前目录下是否有turbo.json配置文件
   if (!fsSync.existsSync('turbo.json')) {
     console.log('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>')
@@ -25,7 +24,6 @@ export async function execTurboPack(repoNames: string[], args: TurboPackOptions)
     await execShell(`npx turbo run build ${getFilterRepo(repoNames)} --color --only`)
   }
 }
-
 
 /**
  * 获取需要执行命令的repo

@@ -1,5 +1,5 @@
 import * as childProcess from 'node:child_process'
-import {Buffer} from 'node:buffer'
+import { Buffer } from 'node:buffer'
 import * as process from 'node:process'
 
 type Command = string | string[]
@@ -31,7 +31,7 @@ export async function execCommand(
     cwd: process.cwd(),
   }
 
-  const {platform} = process
+  const { platform } = process
 
   try {
     const cmd = platform === 'win32' ? 'cmd' : 'sh'
@@ -61,13 +61,14 @@ export async function execCommand(
       const getDefaultResult = () => {
         const stderr = stderrList.join('\n')
         const stdout = stdoutList.join('\n')
-        return {stdout, stderr, cmd: executable}
+        return { stdout, stderr, cmd: executable }
       }
 
-      child.on('error', error => resolve({...getDefaultResult(), error}))
-      child.on('close', code => resolve({...getDefaultResult(), code}))
+      child.on('error', error => resolve({ ...getDefaultResult(), error }))
+      child.on('close', code => resolve({ ...getDefaultResult(), code }))
     })
-  } catch (error) {
+  }
+  catch (error) {
     return Promise.reject(error)
   }
 }

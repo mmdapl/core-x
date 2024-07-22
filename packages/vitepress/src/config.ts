@@ -54,8 +54,8 @@ export const defaultThemeConfig = {
     },
     // 一些链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-      { icon: 'npm', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/142vip/core-x' },
+      { icon: 'npm', link: 'https://www.npmjs.com/search?q=%40142vip' },
     ],
     search: {
       provider: 'local',

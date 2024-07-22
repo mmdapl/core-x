@@ -1,4 +1,4 @@
-import {execCommand} from '../utils'
+import { execCommand } from '../utils'
 
 export interface LintOptions {
   markdown: boolean

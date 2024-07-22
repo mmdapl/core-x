@@ -15,16 +15,19 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/* && pnpm build",
-    "dev": "npx fairy-cli turbo --build",
+    "dev": "vitepress dev --port 8080 --host",
     "build": "npx fairy-cli turbo --build",
+    "build:docs": "vitepress build",
     "clean": "npx fairy-cli clean --ignore-tips --all",
     "lint": "npx eslint . --fix",
-    "publish": "npx lerna publish --canary from-git"
+    "publish": "npx lerna publish --canary from-git",
+    "preview": "vitepress preview"
   },
   "dependencies": {
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",
+    "@142vip/vitepress": "workspace:*",
     "@antfu/eslint-config": "^2.20.0",
     "@lerna-lite/cli": "^3.5.1",
     "@lerna-lite/list": "^3.5.1",

@@ -12,4 +12,3 @@
 
 - [rimraf](https://www.npmjs.com/package/rimraf)
 - [del](https://www.npmjs.com/package/del)
-

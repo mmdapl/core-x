@@ -1,17 +1,18 @@
 import * as process from 'node:process'
-import {Command} from 'commander'
-import {version, name} from '../package.json'
-import type {LoginOptions} from './core/login'
-import type {ReleaseOptions} from './core/release'
-import type {ChangelogOptions} from './core/changelog'
-import type {DeployOptions} from './core/deploy'
-import {execDeploy} from './core/deploy'
-import type {LintOptions} from './core/lint'
-import {execLink} from './core/lint'
-import type {CleanUpOptions} from './core/clean'
-import {execCleanUp} from './core/clean'
-import {execTurboPack, TurboPackOptions} from "./core/turbopack";
-import {execLogin, LoginPlatformEnum} from "./core/login";
+import { Command } from 'commander'
+import { name, version } from '../package.json'
+import type { LoginOptions } from './core/login'
+import type { ReleaseOptions } from './core/release'
+import type { ChangelogOptions } from './core/changelog'
+import type { DeployOptions } from './core/deploy'
+import { execDeploy } from './core/deploy'
+import type { LintOptions } from './core/lint'
+import { execLink } from './core/lint'
+import type { CleanUpOptions } from './core/clean'
+import { execCleanUp } from './core/clean'
+import type { TurboPackOptions } from './core/turbopack'
+import { execTurboPack } from './core/turbopack'
+import { LoginPlatformEnum, execLogin } from './core/login'
 
 enum CliCommandEnum {
   LOGIN = 'login',
@@ -21,14 +22,13 @@ enum CliCommandEnum {
   CLEAN = 'clean',
   LINT = 'lint',
   DEPLOY = 'deploy',
-  TURBO = 'turbo'
+  TURBO = 'turbo',
 }
 
 const program = new Command(name)
 
 // 查看版本
 program.version(version, '-v --version')
-
 
 // fairy-cli create 创建
 program
@@ -153,7 +153,7 @@ program
 program
   .command(CliCommandEnum.TURBO)
   .description('exec turbo pack command')
-  .argument('[repoName...]', '需要使用Turbo管理的项目名，支持多个',)
+  .argument('[repoName...]', '需要使用Turbo管理的项目名，支持多个')
   .option('--dev', '执行dev命令', false)
   .option('--build', '执行build命令', false)
   .action(async (repoNames: string[], args: TurboPackOptions) => {

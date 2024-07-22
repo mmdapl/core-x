@@ -1,16 +1,17 @@
-import { execCommand } from '../utils'
+import {execCommand} from '../utils'
 
 export interface LintOptions {
   markdown: boolean
   fix: boolean
 }
 
-export function execLink(args: LintOptions) {
+export async function execLink(args: LintOptions) {
   // auto fix
   if (args.fix) {
     console.log('自动修复')
   }
-  doCodeLint()
+  await doCodeLint()
+
   if (args.markdown) {
     doMdLink()
   }

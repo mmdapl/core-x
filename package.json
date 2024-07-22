@@ -15,16 +15,13 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/* && pnpm build",
-    "dev": "npx turbo run dev",
+    "dev": "npx fairy-cli turbo --build",
     "build": "npx fairy-cli turbo --build",
     "clean": "npx fairy-cli clean --ignore-tips --all",
-    "start": "npx turbo run start",
-    "test": "npx turbo run test",
     "lint": "npx eslint . --fix",
     "publish": "npx lerna publish --canary from-git"
   },
   "dependencies": {
-    "turbo": "^2.0.1"
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",

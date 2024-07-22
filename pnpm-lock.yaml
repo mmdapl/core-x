@@ -24,12 +24,9 @@ importers:
       install: ^0.13.0
       jest: ^29.2.2
       markdownlint-cli: ^0.37.0
-      turbo: ^2.0.1
       typescript: ^5.3.3
       unbuild: ^2.0.0
       webpack: ^4.36
-    dependencies:
-      turbo: 2.0.7
     devDependencies:
       '@142vip/changelog': link:packages/changelog
       '@antfu/eslint-config': 2.23.0_pbxknroda33jdyycoywnewh6qu
@@ -179,6 +176,7 @@ importers:
       del: ^7.1.0
       inquirer: '7'
       js-yaml: ^4.1.0
+      turbo: ^2.0.1
       typescript: ^5.5.3
       unbuild: ^2.0.0
       vitest: ^2.0.2
@@ -189,6 +187,7 @@ importers:
       commander: 12.1.0
       del: 7.1.0
       js-yaml: 4.1.0
+      turbo: 2.0.7
     devDependencies:
       '@inquirer/confirm': 3.1.15
       '@types/inquirer': 9.0.7

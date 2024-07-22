@@ -1,6 +1,6 @@
 {
   "name": "@142vip/fairy-cli",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "private": false,
   "type": "module",
   "description": "公众号搜：储凡、fairy-cli",
@@ -19,7 +19,10 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "bin": "./cli.mjs",
+  "bin": {
+    "fa": "./cli.mjs",
+    "vae": "./cli.mjs"
+  },
   "files": [
     "*.mjs",
     "dist"
@@ -33,11 +36,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/release-version": "workspace:*",
+    "@esm2cjs/execa": "6.1.1-cjs.1",
     "commander": "^12.1.0",
     "del": "^7.1.0",
-    "execa": "^8.0.1",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "turbo": "^2.0.1"
   },
   "devDependencies": {
     "@inquirer/confirm": "^3.1.15",

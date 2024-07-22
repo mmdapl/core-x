@@ -1,10 +1,10 @@
-import { version } from '../../package.json'
+import {version} from '../../package.json'
 
 /**
  * 导航栏
  */
 export const navbar = [
-  { text: '首页', link: '/' },
+  {text: '首页', link: 'docs/manuscripts/'},
   {
     text: '文档',
     items: [
@@ -22,7 +22,7 @@ export const navbar = [
       },
     ],
   },
-  { text: 'RoadMap', link: '/markdown-examples' },
+  {text: 'RoadMap', link: '/markdown-examples'},
   {
     text: version,
     items: [
@@ -40,5 +40,5 @@ export const navbar = [
       },
     ],
   },
-  { text: '自媒体', link: '/markdown-examples' },
+  {text: '自媒体', link: '/markdown-examples'},
 ]

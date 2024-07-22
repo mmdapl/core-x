@@ -7,6 +7,7 @@ import {name} from '../package.json'
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
+  base: '/core-x',
   lang: 'zh-CN',
   title: '@142vip/core-x',
   titleTemplate: ':title - @142vip/core-x',
@@ -59,5 +60,6 @@ export default defineConfig({
   rewrites: {
     ':packages/:pkg/README.md': ':packages/:pkg/index.md',
     ':packages/:pkg/CHANGELOG.md': ':packages/:pkg/changelog.md',
+    'README.md': 'index.md',
   }
 })

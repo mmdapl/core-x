@@ -1,46 +1,42 @@
 import * as process from 'node:process'
-import { Command } from 'commander'
-import { version } from '../package.json'
-import type { LoginOptions } from './core/login'
-import type { ReleaseOptions } from './core/release'
-import type { ChangelogOptions } from './core/changelog'
-import type { DeployOptions } from './core/deploy'
-import { execDeploy } from './core/deploy'
-import type { LintOptions } from './core/lint'
-import { execLink } from './core/lint'
-import type { CleanUpOptions } from './core/clean'
-import { execCleanUp } from './core/clean'
+import {Command} from 'commander'
+import {version, name} from '../package.json'
+import type {LoginOptions} from './core/login'
+import type {ReleaseOptions} from './core/release'
+import type {ChangelogOptions} from './core/changelog'
+import type {DeployOptions} from './core/deploy'
+import {execDeploy} from './core/deploy'
+import type {LintOptions} from './core/lint'
+import {execLink} from './core/lint'
+import type {CleanUpOptions} from './core/clean'
+import {execCleanUp} from './core/clean'
+import {execTurboPack, TurboPackOptions} from "./core/turbopack";
+import {execLogin, LoginPlatformEnum} from "./core/login";
 
 enum CliCommandEnum {
+  LOGIN = 'login',
   RELEASE = 'release',
   CHANGELOG = 'changelog',
   PUBLISH = 'publish',
   CLEAN = 'clean',
   LINT = 'lint',
   DEPLOY = 'deploy',
+  TURBO = 'turbo'
 }
 
-const program = new Command('fairy-cli')
+const program = new Command(name)
 
 // 查看版本
 program.version(version, '-v --version')
 
-// fairy-cli exec 命令执行器
-program
-  .command('exec <command>')
-  .description('exec shell command')
-  .option('-r, --react', 'react template')
-  .action((projectName, options) => {
-    console.log(projectName, options)
-  })
 
 // fairy-cli create 创建
 program
   .command('create <projectName>')
   .description('create a new template project')
-  .alias('c')
-  .option('-r, --react', 'react template')
-  .option('-v, --vue', 'vue template')
+  .aliases(['c', 'cr'])
+  .option('--egg', 'react template')
+  .option('--vue', 'vue template')
   .option('-v2, --vue2', 'vue2 template')
   .option('-v3, --vue3', 'vue3 template')
   .action((projectName, options) => {
@@ -49,19 +45,18 @@ program
 
 // 登录 docker  npm
 program
-  .command('login <platform>')
-  .description('login remote platform')
-  .option('--docker', 'login docker')
-  .option('--npm', 'npm login')
-  .option('--registry-url', 'registry address')
-  .action((args: LoginOptions) => {
-    if (args.docker) {
-      console.log('登录docker')
+  .command(`${CliCommandEnum.LOGIN} <platform>`)
+  .description('登录远程平台，支持Docker和Npm')
+  .option('-u,--username', '登录账号，docker登录时有效')
+  .option('-p,--password', '登录密码，docker登录时有效')
+  .option('--registry-url', 'registry address', false)
+  .option('--vip', '142vip专用业务账号', false)
+  .action(async (platform: LoginPlatformEnum, args: LoginOptions) => {
+    if (![LoginPlatformEnum.NPM, LoginPlatformEnum.DOCKER].includes(platform)) {
+      console.error('login命令只支持Docker和Npm平台，使用格式 login docker|npm')
+      process.exit(1)
     }
-
-    if (args.npm) {
-      console.log('登录npm')
-    }
+    await execLogin(platform, args)
   })
 
 // pnpm ci
@@ -94,10 +89,10 @@ program
 // fairy-cli changelog
 program
   .command(CliCommandEnum.CHANGELOG)
-  .description('pnpm ci dependencies')
+  .description('生成CHANGELOG日志文档')
   .option('--package', 'registry address')
-  .option('--package-dir', 'registry address', 'packages')
-  .option('--output', 'registry address', 'CHANGELOG.md')
+  .option('--package-dir', 'Monorepo包存在的相对路径，默认：packages', 'packages')
+  .option('--output', '日志文档保存的文件名，默认：CHANGELOG.md', 'CHANGELOG.md')
   // .option('--execute', 'registry address')
   .action((args: ChangelogOptions) => {
     // 参考 @142vip/changelog模块
@@ -107,7 +102,7 @@ program
 // fairy-cli publish  推送
 program
   .command(CliCommandEnum.PUBLISH)
-  .description('pnpm ci dependencies')
+  .description('推送到远程平台，支持Docker镜像更新和NPM发包')
   .option('-d,--docker', 'registry address')
   .option('-n,--npm', 'registry address', 'packages')
   .option('-c --clean', 'registry address', 'CHANGELOG.md')
@@ -118,8 +113,8 @@ program
 // fairy-cli deploy 部署
 program
   .command(CliCommandEnum.DEPLOY)
-  .description('lint code')
-  .option('-gh,--github-page', 'registry address', false)
+  .description('项目部署')
+  .option('-gh,--github-page', '部署到Github Pages', false)
   .action((args: DeployOptions) => {
     // 参考 @142vip/changelog模块
     console.log(CliCommandEnum.DEPLOY, args)
@@ -130,8 +125,8 @@ program
 program
   .command(CliCommandEnum.LINT)
   .description('根据Eslint检查代码风格，支持代码格式化')
-  .option('-m,--markdown', 'lint markdown')
-  .option('-c,--config', 'Eslint配置文件路径')
+  .option('-m,--markdown', '格式化markdown文件')
+  .option('-c,--config', 'Eslint配置文件路径', false)
   .option('-f --fix', '支持自动修复', false)
   .action((args: LintOptions) => {
     execLink(args)
@@ -140,7 +135,7 @@ program
 // fairy-cli clean 项目清理
 program
   .command(CliCommandEnum.CLEAN)
-  .description('pnpm ci dependencies')
+  .description('清除开发、构建等环境下的无用目录')
   .option('-n,--nuxt', '删除nuxt构建目录', false)
   .option('-d,--dist', '删除dist目录', false)
   .option('-m,--midway', '删除midway构建目录', false)
@@ -152,6 +147,17 @@ program
   .option('--vite', '删除vite缓存目录', true)
   .action(async (args: CleanUpOptions) => {
     await execCleanUp(args)
+  })
+
+// fairy-cli turbo 基于turborepo项目管理
+program
+  .command(CliCommandEnum.TURBO)
+  .description('exec turbo pack command')
+  .argument('[repoName...]', '需要使用Turbo管理的项目名，支持多个',)
+  .option('--dev', '执行dev命令', false)
+  .option('--build', '执行build命令', false)
+  .action(async (repoNames: string[], args: TurboPackOptions) => {
+    await execTurboPack(repoNames, args)
   })
 
 program.parse(process.argv)

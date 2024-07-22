@@ -19,7 +19,10 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "bin": "./cli.mjs",
+  "bin": {
+    "fa": "./cli.mjs",
+    "vae": "./cli.mjs"
+  },
   "files": [
     "*.mjs",
     "dist"
@@ -34,6 +37,7 @@
   },
   "dependencies": {
     "@142vip/release-version": "workspace:*",
+    "@142vip/common": "^0.0.1-alpha.5",
     "commander": "^12.1.0",
     "del": "^7.1.0",
     "@esm2cjs/execa": "6.1.1-cjs.1",

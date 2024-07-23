@@ -46,7 +46,6 @@
     "node": ">=16"
   },
   "scripts": {
-    "dev": "unbuild --stub",
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },

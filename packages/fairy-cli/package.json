@@ -1,6 +1,6 @@
 {
   "name": "@142vip/fairy-cli",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.3-alpha.0",
   "private": false,
   "type": "module",
   "description": "公众号搜：储凡、fairy-cli",
@@ -31,7 +31,6 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "dev": "unbuild --stub",
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },
@@ -53,7 +52,18 @@
     "unbuild": "^2.0.0",
     "vitest": "^2.0.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x",
+    "directory": "packages/fairy-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/142vip/core-x/issues"
+  },
   "homepage": "https://github.com/142vip/core-x/packages/fairy-cli",
-  "author": "mmdapl <mmdapl@163.com>",
+  "author": {
+    "name": "mmdapl",
+    "email": "mmdapl@163.com"
+  },
   "license": "MIT"
 }

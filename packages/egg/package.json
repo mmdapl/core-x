@@ -7,7 +7,6 @@
     "公众号搜：储凡"
   ],
   "scripts": {
-    "dev": "unbuild --stub",
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },

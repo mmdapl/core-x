@@ -1,7 +1,7 @@
 /**
  * 团队成员
  */
-export const members = [
+export const teamMembers = [
   {
     avatar: 'https://www.github.com/yyx990803.png',
     name: 'Evan You',

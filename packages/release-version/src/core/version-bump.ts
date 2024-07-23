@@ -52,7 +52,13 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
 
   if (operation.options.changelog) {
     console.log(symbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
-    await ezSpawn.async(`npx changelog --output CHANGELOG.md --name v${operation.state.newVersion}`, { stdio: 'inherit' })
+    try {
+      await ezSpawn.async(`npx changelog --output CHANGELOG.md --name v${operation.state.newVersion}`, { stdio: 'inherit' })
+    }
+    catch (e) {
+      console.log(333, e)
+    }
+
     console.log(symbols.success, 'Generate CHANGELOG.md Finished')
   }
 

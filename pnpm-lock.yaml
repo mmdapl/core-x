@@ -254,6 +254,7 @@ importers:
 
   packages/release-version:
     specifiers:
+      '@142vip/changelog': workspace:*
       '@jsdevtools/ez-spawn': ^3.0.4
       '@types/js-yaml': ^4.0.9
       '@types/node': ^20.12.7
@@ -273,6 +274,7 @@ importers:
       rimraf: ^5.0.5
       semver: ^7.6.0
     dependencies:
+      '@142vip/changelog': link:../changelog
       '@jsdevtools/ez-spawn': 3.0.4
       c12: 1.11.1
       cac: 6.7.14

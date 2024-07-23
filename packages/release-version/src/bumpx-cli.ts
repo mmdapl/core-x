@@ -71,7 +71,9 @@ export async function main() {
       options.progress = options.progress ? options.progress : progress
 
     // 执行版本升级
-    await versionBump(options)
+    const result = await versionBump(options)
+
+    console.log('result:', result)
   }
   catch (error) {
     errorHandler(error as Error)

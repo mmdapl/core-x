@@ -255,6 +255,7 @@ importers:
   packages/release-version:
     specifiers:
       '@142vip/changelog': workspace:*
+      '@142vip/common': latest
       '@jsdevtools/ez-spawn': ^3.0.4
       '@types/js-yaml': ^4.0.9
       '@types/node': ^20.12.7
@@ -275,6 +276,7 @@ importers:
       semver: ^7.6.0
     dependencies:
       '@142vip/changelog': link:../changelog
+      '@142vip/common': 0.0.1-alpha.5
       '@jsdevtools/ez-spawn': 3.0.4
       c12: 1.11.1
       cac: 6.7.14

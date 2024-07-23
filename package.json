@@ -16,7 +16,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/*",
     "dev": "vitepress dev --port 8080 --host",
-    "build": "npx fa turbo --build",
+    "build": "npx turbo run build --color --only",
     "build:fairy-cli": "npx turbo run build --filter=@142vip/fairy-cli --color --only",
     "build:docs": "vitepress build",
     "clean": "npx fa clean --ignore-tips --all",

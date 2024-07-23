@@ -61,7 +61,7 @@ cli
 
       // 更新changelog文档
       if (typeof config.output === 'string') {
-        await updateChangelog(config.output, markdown, config.to)
+        await updateChangelog(config.output, markdown, config.name)
         return
       }
 

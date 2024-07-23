@@ -19,6 +19,8 @@ function formatReferences(references: Reference[], baseUrl: string, github: stri
         return ref.value
       if (ref.type === 'pull-request' || ref.type === 'issue')
         return `https://${baseUrl}/${github}/issues/${ref.value.slice(1)}`
+
+      // 截取前面5个字符
       return `[<samp>(${ref.value.slice(0, 5)})</samp>](https://${baseUrl}/${github}/commit/${ref.value})`
     })
 
@@ -34,10 +36,15 @@ function formatLine(commit: Commit, options: ResolvedChangelogOptions) {
   const hashRefs = formatReferences(commit.references, options.baseUrl, options.repo as string, 'hash')
 
   let authors = join([...new Set(commit.resolvedAuthors?.map(i => i.login ? `@${i.login}` : `**${i.name}**`))])?.trim()
+
   if (authors)
     authors = `by ${authors}`
 
-  let refs = [authors, prRefs, hashRefs].filter(i => i?.trim()).join(' ')
+  let refs = [
+    authors,
+    prRefs,
+    hashRefs,
+  ].filter(i => i?.trim()).join(' ')
 
   if (refs)
     refs = `&nbsp;-&nbsp; ${refs}`
@@ -127,9 +134,9 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
     lines.push('\n**No significant changes**')
   }
   else {
-    const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.to}`
+    const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.name}`
     // 添加版本
-    lines.push(`\n**Release New Version v${options.to} [👉 View changes on GitHub](${url})**`)
+    lines.push(`\n**Release New Version ${options.name} [👉 View Changes On GitHub](${url})**`)
   }
 
   return convert(lines.join('\n').trim(), true)
@@ -139,9 +146,9 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
  * 更新changelog
  * @param outputPath
  * @param markdown
- * @param to
+ * @param releaseVersionName
  */
-export async function updateChangelog(outputPath: string, markdown: string, to: string) {
+export async function updateChangelog(outputPath: string, markdown: string, releaseVersionName: string) {
   let changelogMD: string
   if (existsSync(outputPath)) {
     console.info(`Updating ${outputPath}`)
@@ -153,7 +160,7 @@ export async function updateChangelog(outputPath: string, markdown: string, to: 
   }
 
   // 添加版本头部
-  const newMd = `## ${to} (${dayjs().format('YYYY-MM-DD')})\n\n${markdown}`
+  const newMd = `## ${releaseVersionName} (${dayjs().format('YYYY-MM-DD')})\n\n${markdown}`
 
   const lastEntry = changelogMD.match(/^##\s+(?:\S.*)?$/m)
 

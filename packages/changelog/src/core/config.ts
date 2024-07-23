@@ -44,10 +44,15 @@ export async function resolveConfig(options: ChangelogOptions) {
 
   config.baseUrl = config.baseUrl ?? 'github.com'
   config.baseUrlApi = config.baseUrlApi ?? 'api.github.com'
+  // 发布的版本
   config.to = config.to || await getCurrentGitBranch()
+  // release name
+  config.name = config.name ?? config.to
   config.from = config.from || await getLastMatchingTag(config.to) || await getFirstGitCommit()
   // @ts-expect-error backward compatibility
   config.repo = config.repo || config.github || await getGitHubRepo(config.baseUrl)
+
+  // 是否是预览版本
   config.prerelease = config.prerelease ?? isPrerelease(config.to)
 
   // todo 支持多个scope生成

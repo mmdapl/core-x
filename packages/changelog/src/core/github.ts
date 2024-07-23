@@ -81,7 +81,6 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
     catch {
     }
   }
-
   return info
 }
 

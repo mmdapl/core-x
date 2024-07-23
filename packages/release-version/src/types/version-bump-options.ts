@@ -17,6 +17,11 @@ export interface VersionBumpOptions {
   release?: string
 
   /**
+   * 是否生成CHANGELOG.md文档
+   */
+  changelog?: boolean
+
+  /**
    * The current version number to be bumpped.
    * If not provide, it will be read from the first file in the `files` array.
    */

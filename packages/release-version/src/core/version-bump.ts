@@ -9,7 +9,7 @@ import { getNewVersion } from './get-new-version'
 import { getCurrentVersion } from './get-current-version'
 import { formatVersionString, gitCommit, gitPush, gitTag } from './git'
 import { Operation } from './operation'
-import { runNpmScript } from './run-npm-script'
+import { runScript } from './npm-script'
 import { updateFiles } from './update-files'
 
 /**
@@ -30,62 +30,54 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   await getCurrentVersion(operation)
   await getNewVersion(operation)
 
+  // 弹出框，手动确认
   if (arg.confirm) {
     printSummary(operation)
 
     if (!await prompts({
       name: 'yes',
       type: 'confirm',
-      message: 'Bump?',
+      message: '是否执行Bumpx命令，升级版本？',
       initial: true,
     }).then(r => r.yes)) {
       process.exit(1)
     }
   }
 
-  // Run npm preversion script, if any
-  await runNpmScript(NpmScript.PreVersion, operation)
+  // 运行preversion钩子函数
+  await runScript(NpmScript.PreVersion, operation)
 
-  // Update the version number in all files
+  // 更新所有文件的版本号
   await updateFiles(operation)
 
-  if (operation.options.execute) {
-    console.log(symbols.info, 'Executing script', operation.options.execute)
-    await ezSpawn.async(operation.options.execute, { stdio: 'inherit' })
-    console.log(symbols.success, 'Script finished')
+  if (operation.options.changelog) {
+    console.log(symbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
+    await ezSpawn.async(`npx changelog --output CHANGELOG.md --name v${operation.state.newVersion}`, { stdio: 'inherit' })
+    console.log(symbols.success, 'Generate CHANGELOG.md Finished')
   }
 
-  // Run npm version script, if any
-  await runNpmScript(NpmScript.Version, operation)
+  if (operation.options.execute) {
+    console.log(symbols.info, 'Executing Script', operation.options.execute)
+    await ezSpawn.async(operation.options.execute, { stdio: 'inherit' })
+    console.log(symbols.success, 'Script Finished')
+  }
 
-  // Git commit and tag, if enabled
+  // 运行version钩子函数
+  await runScript(NpmScript.Version, operation)
+
+  // 提交变更
   await gitCommit(operation)
+
+  // 打标记
   await gitTag(operation)
 
-  // Run npm postversion script, if any
-  await runNpmScript(NpmScript.PostVersion, operation)
+  // 运行钩子函数
+  await runScript(NpmScript.PostVersion, operation)
 
   // 推送git信息和标记到远程
   await gitPush(operation)
 
   return operation.results
-}
-
-function printSummary(operation: Operation) {
-  console.log()
-  console.log(`   files ${operation.options.files.map(i => bold(i)).join('\n         ')}`)
-  if (operation.options.commit)
-    console.log(`  commit ${bold(formatVersionString(operation.options.commit.message, operation.state.newVersion))}`)
-  if (operation.options.tag)
-    console.log(`     tag ${bold(formatVersionString(operation.options.tag.name, operation.state.newVersion))}`)
-  if (operation.options.execute)
-    console.log(` execute ${bold(operation.options.execute)}`)
-  if (operation.options.push)
-    console.log(`    push ${cyan(bold('yes'))}`)
-  console.log()
-  console.log(`    from ${bold(operation.state.currentVersion)}`)
-  console.log(`      to ${green(bold(operation.state.newVersion))}`)
-  console.log()
 }
 
 /**
@@ -101,4 +93,30 @@ export async function versionBumpInfo(arg: VersionBumpOptions | string = {}): Pr
   await getCurrentVersion(operation)
   await getNewVersion(operation)
   return operation
+}
+
+/**
+ * 打印参数
+ */
+function printSummary(operation: Operation) {
+  console.log(333, operation)
+  console.log()
+  console.log(`   files ${operation.options.files.map(i => bold(i)).join('\n         ')}`)
+
+  // 生成CHANGELOG.md文档
+  if (operation.options.changelog) {
+    console.log(`  generate CHANGELOG.md`)
+  }
+  if (operation.options.commit)
+    console.log(`  commit ${bold(formatVersionString(operation.options.commit.message, operation.state.newVersion))}`)
+  if (operation.options.tag)
+    console.log(`     tag ${bold(formatVersionString(operation.options.tag.name, operation.state.newVersion))}`)
+  if (operation.options.execute)
+    console.log(` execute ${bold(operation.options.execute)}`)
+  if (operation.options.push)
+    console.log(`    push ${cyan(bold('yes'))}`)
+  console.log()
+  console.log(`    from ${bold(operation.state.currentVersion)}`)
+  console.log(`      to ${green(bold(operation.state.newVersion))}`)
+  console.log()
 }

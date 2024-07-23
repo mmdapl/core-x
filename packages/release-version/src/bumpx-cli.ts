@@ -49,27 +49,29 @@ function errorHandler(error: Error): void {
  */
 export async function main() {
   try {
-    // Setup global error handlers
     process.on('uncaughtException', errorHandler)
     process.on('unhandledRejection', errorHandler)
 
     // Parse the command-line arguments
     const { help, version, quiet, options } = await parseArgs()
 
+    // 显示帮助信息
     if (help) {
       process.exit(ExitCodeEnum.Success)
     }
-    else if (version) {
-      // Show the version number and exit
+
+    // 查看版本
+    if (version) {
       console.log(packageVersion)
       process.exit(ExitCodeEnum.Success)
     }
-    else {
-      if (!quiet)
-        options.progress = options.progress ? options.progress : progress
 
-      await versionBump(options)
-    }
+    // 是否显示进度
+    if (!quiet)
+      options.progress = options.progress ? options.progress : progress
+
+    // 执行版本升级
+    await versionBump(options)
   }
   catch (error) {
     errorHandler(error as Error)

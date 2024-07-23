@@ -64,6 +64,7 @@ export interface NormalizedOptions {
   execute?: string
   customVersion?: VersionBumpOptions['customVersion']
   currentVersion?: string
+  changelog?: boolean
 }
 
 /**
@@ -79,6 +80,7 @@ export async function normalizeOptions(raw: VersionBumpOptions): Promise<Normali
   const ignoreScripts = Boolean(raw.ignoreScripts)
   const execute = raw.execute
   const recursive = Boolean(raw.recursive)
+  const changelog = Boolean(raw.changelog)
 
   let release: Release
   if (!raw.release || raw.release === 'prompt')
@@ -179,5 +181,6 @@ export async function normalizeOptions(raw: VersionBumpOptions): Promise<Normali
     execute,
     customVersion: raw.customVersion,
     currentVersion: raw.currentVersion,
+    changelog,
   }
 }

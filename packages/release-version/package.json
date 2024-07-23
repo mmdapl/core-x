@@ -1,28 +1,16 @@
 {
   "name": "@142vip/release-version",
-  "version": "0.0.1",
-  "description": "Bump version, commit changes, tag, and push to Git",
-  "author": {
-    "name": "James Messinger",
-    "url": "https://jamesmessinger.com"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/antfu/bumpp",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/antfu/bumpp.git"
-  },
+  "version": "0.0.1-alpha.1",
+  "description": "版本迭代更新，Git提交信息、打标记并推送到远程",
   "keywords": [
+    "@142vip/release-version",
     "version",
     "bump",
-    "npm",
-    "node",
-    "bower",
+    "bumpx",
     "package",
     "git",
     "tag",
-    "push",
-    "prompt"
+    "push"
   ],
   "sideEffects": false,
   "exports": {
@@ -69,9 +57,16 @@
     "log-symbols": "^6.0.0",
     "npm-check": "^6.0.1",
     "kolorist": "^1.8.0",
-    "rimraf": "^5.0.5",
-    "unbuild": "^2.0.0",
-    "typescript": "^5.4.5",
-    "vitest": "^1.5.2"
-  }
+    "rimraf": "^5.0.5"
+  },
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "homepage": "https://github.com/antfu/bumpp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/release-version.git"
+  },
+  "license": "MIT"
 }

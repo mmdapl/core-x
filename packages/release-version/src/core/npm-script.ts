@@ -7,9 +7,11 @@ import { isManifest } from './manifest'
 import type { Operation } from './operation'
 
 /**
- * Runs the specified NPM script in the package.json file.
+ * 执行package.json文件中的scripts中配置的钩子函数
+ * @param script
+ * @param operation
  */
-export async function runNpmScript(script: NpmScript, operation: Operation): Promise<Operation> {
+export async function runScript(script: NpmScript, operation: Operation): Promise<Operation> {
   const { cwd, ignoreScripts } = operation.options
 
   if (!ignoreScripts) {
@@ -25,7 +27,7 @@ export async function runNpmScript(script: NpmScript, operation: Operation): Pro
 }
 
 /**
- * Determines whether the specified NPM script exists in the given manifest.
+ * 判断package.json文件中是否配置scripts钩子函数
  */
 function hasScript(manifest: Manifest, script: NpmScript): boolean {
   const scripts = manifest.scripts as Record<NpmScript, string> | undefined

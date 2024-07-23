@@ -16,7 +16,7 @@ export const bumpConfigDefaults: VersionBumpOptions = {
   files: [],
 }
 
-export async function loadBumpConfig(
+export async function loadBumpXConfig(
   overrides?: Partial<VersionBumpOptions>,
   cwd = process.cwd(),
 ) {
@@ -31,6 +31,13 @@ export async function loadBumpConfig(
     cwd: configFile ? dirname(configFile) : cwd,
   })
   return config!
+}
+
+/**
+ * 自定义配置入口
+ */
+export function defineBumpXConfig(config: Partial<VersionBumpOptions>): Partial<VersionBumpOptions> {
+  return config
 }
 
 function findConfigFile(name: string, cwd: string) {
@@ -63,11 +70,4 @@ function findConfigFile(name: string, cwd: string) {
       return null
     throw error
   }
-}
-
-/**
- * 自定义配置入口
- */
-export function defineBumpXConfig(config: Partial<VersionBumpOptions>) {
-  return config
 }

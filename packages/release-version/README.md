@@ -1,5 +1,13 @@
-# @142vip/release-versrion
+# @142vip/release-version
 
-bumpx 发版助手
+## 使用
+
+```shell
+# 安装
+pnpm i @142vip/release-version -D
+
+# 查看使用
+npx bumpx -h
+```
 
 ## 感谢

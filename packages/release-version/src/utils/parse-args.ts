@@ -5,8 +5,8 @@ import { yellow } from 'kolorist'
 import { isReleaseType } from '../core/release-type'
 import type { VersionBumpOptions } from '../types'
 import { name, version } from '../../package.json'
-import { bumpConfigDefaults, loadBumpConfig } from '../core/config'
 import { ExitCodeEnum } from '../types'
+import { bumpConfigDefaults, loadBumpXConfig } from './config'
 
 /**
  * The parsed command-line arguments
@@ -19,7 +19,7 @@ export interface ParsedArgs {
 }
 
 /**
- * Parses the command-line arguments
+ * 解析脚手架的参数
  */
 export async function parseArgs(): Promise<ParsedArgs> {
   try {
@@ -29,7 +29,7 @@ export async function parseArgs(): Promise<ParsedArgs> {
       help: args.help as boolean,
       version: args.version as boolean,
       quiet: args.quiet as boolean,
-      options: await loadBumpConfig({
+      options: await loadBumpXConfig({
         preid: args.preid,
         commit: args.commit,
         tag: args.tag,
@@ -42,6 +42,7 @@ export async function parseArgs(): Promise<ParsedArgs> {
         currentVersion: args.currentVersion,
         execute: args.execute,
         recursive: !!args.recursive,
+        changelog: !!args.changelog,
       }),
     }
 
@@ -69,8 +70,7 @@ export async function parseArgs(): Promise<ParsedArgs> {
 export function loadCliArgs(argv = process.argv) {
   const cli = cac(name)
 
-  cli
-    .version(version)
+  cli.version(version)
     .usage('[...files]')
     .option('--preid <preid>', 'ID for prerelease')
     .option('--all', `Include all files (default: ${bumpConfigDefaults.all})`)
@@ -84,6 +84,7 @@ export function loadCliArgs(argv = process.argv) {
     .option('--no-verify', 'Skip git verification')
     .option('--ignore-scripts', `Ignore scripts (default: ${bumpConfigDefaults.ignoreScripts})`)
     .option('-q, --quiet', 'Quiet mode')
+    .option('--changelog', 'generate CHANGELOG.md', { default: false })
     .option('-v, --version <version>', 'Target version')
     .option('--current-version <version>', 'Current version')
     .option('-x, --execute <command>', 'Commands to execute after version bumps')

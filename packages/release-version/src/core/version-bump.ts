@@ -3,6 +3,7 @@ import * as ezSpawn from '@jsdevtools/ez-spawn'
 import symbols from 'log-symbols'
 import prompts from 'prompts'
 import { bold, cyan, green } from 'kolorist'
+import { execShell } from '@142vip/common'
 import type { VersionBumpOptions, VersionBumpResults } from '../types'
 import { NpmScript } from '../types'
 import { getNewVersion } from './get-new-version'
@@ -53,10 +54,12 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   if (operation.options.changelog) {
     console.log(symbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
     try {
-      await ezSpawn.async(`npx changelog --output CHANGELOG.md --name v${operation.state.newVersion}`, { stdio: 'inherit' })
+      await execShell(`changelog --output CHANGELOG.md --name v${operation.state.newVersion}`)
     }
     catch (e) {
-      console.log(333, e)
+      console.log(symbols.error, 'Happen Error In Generate CHANGELOG!!!')
+      console.log(e)
+      process.exit(1)
     }
 
     console.log(symbols.success, 'Generate CHANGELOG.md Finished')

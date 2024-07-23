@@ -38,6 +38,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@142vip/common": "latest",
     "@142vip/changelog": "workspace:*",
     "@jsdevtools/ez-spawn": "^3.0.4",
     "c12": "^1.10.0",

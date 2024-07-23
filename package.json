@@ -24,12 +24,12 @@
     "publish": "npx lerna publish --canary from-git",
     "preview": "vitepress preview"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@142vip/fairy-cli": "workspace:*",
     "@142vip/changelog": "workspace:*",
     "@142vip/vitepress": "workspace:*",
+    "@142vip/release-version": "workspace:*",
     "@antfu/eslint-config": "^2.20.0",
     "@lerna-lite/cli": "^3.5.1",
     "@lerna-lite/list": "^3.5.1",

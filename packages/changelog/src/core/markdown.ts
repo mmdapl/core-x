@@ -67,21 +67,17 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
   if (!commits.length)
     return []
 
-  const lines: string[] = [
-    '',
-    formatTitle(sectionName, options),
-    '',
-  ]
+  // 注意空行
+  const lines: string[] = ['', formatTitle(sectionName, options), '']
 
   const scopes = groupBy(commits, 'scope')
-  let useScopeGroup = options.group
+  const useScopeGroup = options.group
 
   // group scopes only when one of the scope have multiple commits
-  if (!Object.entries(scopes).some(([k, v]) => k && v.length > 1))
-    useScopeGroup = false
+  // if (!Object.entries(scopes).some(([k, v]) => k && v.length > 1))
+  //   useScopeGroup = false
 
   Object.keys(scopes).sort().forEach((scope) => {
-    console.log(options.scopeName, scope)
     let padding = ''
     let prefix = ''
 
@@ -92,8 +88,9 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
     }
     else {
       // root dir
-
       const scopeText = `**${options.scopeMap[scope] || scope}**`
+
+      // 按照scope分类
       if (scope && (useScopeGroup === true || (useScopeGroup === 'multiple' && scopes[scope].length > 1))) {
         lines.push(`- ${scopeText}:`)
         padding = '  '
@@ -102,10 +99,11 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
         prefix = `${scopeText}: `
       }
     }
+
+    // lines里每条记录就是一次commit提交
     lines.push(...scopes[scope]
       .reverse()
-      .map(commit => `${padding}- ${prefix}${formatLine(commit, options)}`),
-    )
+      .map(commit => `${padding}- ${prefix}${formatLine(commit, options)}`))
   })
 
   return lines
@@ -131,7 +129,7 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
   }
 
   if (!lines.length) {
-    lines.push('\n**No significant changes**')
+    lines.push('\n**No Significant Changes**')
   }
   else {
     const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.name}`

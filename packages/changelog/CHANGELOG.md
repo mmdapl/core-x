@@ -3,8 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.1 (2024-07-24)
+
+### 🐛 Bug Fixes
+
+- 修复scope信息存在时，单条commit信息分类打印异常 &nbsp;-&nbsp; by **chufan** [<samp>(1c8c5)</samp>](https://github.com/142vip/core-x/commit/1c8c544)
+- 新增defineChangelogDefaultConfig函数，支持changelog关键字配置文件 &nbsp;-&nbsp; by **chufan** [<samp>(1f25d)</samp>](https://github.com/142vip/core-x/commit/1f25da0)
+- 新增scopeName参数，支持monorepo的模块生成CHANGELOG文档 &nbsp;-&nbsp; by **chufan** [<samp>(14ca6)</samp>](https://github.com/142vip/core-x/commit/14ca631)
+
+**Release New Version v0.0.1-alpha.1 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## 0.0.1-alpha.0 (2024-07-14)
 
 ### ✨ Features
 
-* **changelog:** 新增脚手架支持自动记录变更日志 ([d5a1a04](https://github.com/142vip/core-x/commit/d5a1a04521c5fb02a1d0e6929293982aa5c45fff)) by . @chufan
+- 新增脚手架支持自动记录变更日志 &nbsp;-&nbsp; by **chufan** [<samp>(14ca6)</samp>](https://github.com/142vip/core-x/commit/d5a1a04521c5fb02a1d0e6929293982aa5c45fff)

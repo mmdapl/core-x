@@ -4,15 +4,14 @@ layout: home
 hero:
   name: "@142vip/core-x"
   text: "x代表一切都有可能"
-  tagline: "易学易用，性能出色，适用场景丰富的 Web 前端框架。"
+  tagline: "易学易用、性能出色，适用工程化的通用工具包"
   actions:
     - theme: brand
       text: 快速上手 →
-      link: /markdown-examples
+      link: /packages/fairy-cli
     - theme: alt
-      text: 联系作者
-      link: /api-examples
-
+      text: 408CSFamily
+      link: https://github.com/142vip/408CSFamily
 # 功能页
 features:
   - title: 易学易用
@@ -34,27 +33,7 @@ import {
 } from 'vitepress/theme';
 
 import ContactAuthor from '@theme/components/ContactAuthor.vue';
-
-const members = [
-  {
-    avatar: 'https://www.github.com/142vip.png',
-    name: '142vip',
-    title: '组织',
-    links: [
-      { icon: 'github', link: 'https://github.com/mmdapl' },
-    ]
-  },
-  {
-    avatar: 'https://www.github.com/mmdapl.png',
-    name: '储凡',
-    title: 'Creator',
-    org:'142vip',
-    orgLink:'https://github.com/142vip',
-    links: [
-      { icon: 'github', link: 'https://github.com/mmdapl' },
-    ]
-  },
-];
+import {teamMembers} from "@theme/components";
 
 const coreMembers = [];
 const partners = [];
@@ -64,7 +43,7 @@ const partners = [];
 
 ### 贡献
 
-<VPTeamMembers size="small" :members="members" />
+<VPTeamMembers size="small" :members="teamMembers" />
 
 ## 赞赏列表
 

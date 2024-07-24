@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { name, version } from '../package.json'
+import type { DefaultTheme } from 'vitepress/types/default-theme'
+import { version as currentPackageVersion, name as packageName } from '../package.json'
 
 // https://vitepress.dev/reference/site-config
 
@@ -13,56 +14,44 @@ const GihubLinks = {
 
 export const footer = {
   message: `Released Under The <a href="${GihubLinks.CoreXLicense}">MIT License</a>.`,
-  copyright: `Copyright © 2019-present <a href="${GihubLinks.VipOrg}">142VIP</a> &nabla; <a href="${GihubLinks.MmdaplRepo}">储凡</a>`,
+  copyright: `Copyright © 2019-present <a href="${GihubLinks.VipOrg}">142VIP</a>  <a href="${GihubLinks.MmdaplRepo}">👉储凡</a>`,
 }
 
 /**
  * 导航栏
  */
-export const navbar = [
-  { text: '首页', link: '/docs/manuscripts/' },
+export const navbarConfig: DefaultTheme.NavItem[] = [
   {
-    text: '文档',
+    text: '首页',
+    link: '/docs/manuscripts/',
+  },
+  {
+    text: '开发计划',
+    link: '/docs/manuscripts/road-map',
+  },
+  {
+    text: currentPackageVersion,
     items: [
       {
-        text: '动态',
-        link: 'https://github.com/142vip/core-x/blob/main/CHANGELOG.md',
+        text: '历史版本',
+        link: 'https://github.com/142vip/core-x/releases',
       },
       {
         text: '更新日志',
         link: 'https://github.com/142vip/core-x/blob/main/CHANGELOG.md',
       },
-      {
-        text: '参与贡献',
-        link: 'https://github.com/142vip/core-x/blob/main/.github/contributing.md',
-      },
     ],
   },
-  { text: 'RoadMap', link: '/markdown-examples' },
   {
-    text: version,
-    items: [
-      {
-        text: '动态',
-        link: 'https://github.com/142vip/core-x/blob/main/CHANGELOG.md',
-      },
-      {
-        text: '更新日志',
-        link: 'https://github.com/142vip/core-x/blob/main/CHANGELOG.md',
-      },
-      {
-        text: '参与贡献',
-        link: 'https://github.com/142vip/core-x/blob/main/.github/contributing.md',
-      },
-    ],
+    text: '自媒体',
+    link: '/docs/manuscripts/media',
   },
-  { text: '自媒体', link: '/markdown-examples' },
 ]
 
 /**
  * 侧边栏
  */
-const sidebar = [
+const sidebarConfig: DefaultTheme.Sidebar = [
   {
     text: '工程化',
     items: [
@@ -130,25 +119,22 @@ export default defineConfig({
     ['meta', { property: 'og:url', content: 'https://github.com/142vip/core-x' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '@142vip/core-x' }],
-    [
-      'meta',
-      {
-        property: 'og:description',
-        content: `${name} - 系列封装`,
-      },
-    ],
+    ['meta', { property: 'og:description', content: `${packageName} - 一切都有可能` }],
   ],
   themeConfig: {
     // 导航栏
-    nav: navbar,
-    sidebar,
+    nav: navbarConfig,
+    sidebar: sidebarConfig,
     footer,
-    lastUpdated: {
-      text: '最近更新',
+    lastUpdated: { text: '最近更新' },
+    notFound: {
+      title: '页面找不到啦',
+      quote: '但是，如果你不改变你的方向，如果你继续寻找，你最终可能会到达你要去的地方。',
+      linkText: '返回首页',
     },
     editLink: {
       pattern: 'https://github.com/142vip/core-x/edit/main/docs/:path',
-      text: '在Github上编辑',
+      text: '在 Github 上编辑',
     },
     // 一些链接
     socialLinks: [

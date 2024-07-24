@@ -17,7 +17,6 @@ export default antFu({
   ],
   typescript: true,
   vue: true,
-  // Disable jsonc and yaml support
   jsonc: false,
   yaml: true,
   formatters: {

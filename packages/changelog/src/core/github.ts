@@ -22,8 +22,8 @@ export async function sendRelease(
       method = 'PATCH'
     }
   }
-  catch (e) {
-    console.log(3, e)
+  catch {
+    // 预发布存在异常，fix CI err
   }
 
   const body = {

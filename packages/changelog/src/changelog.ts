@@ -4,10 +4,10 @@
 import process from 'node:process'
 import { blue, bold, cyan, dim, red, yellow } from 'kolorist'
 import cac from 'cac'
-import { version } from '../package.json'
+import { name as packageName, version } from '../package.json'
 import { generate, isRepoShallow, sendRelease, updateChangelog } from './index'
 
-const cli = cac('changelog')
+const cli = cac(packageName)
 
 // 参数
 cli
@@ -36,7 +36,6 @@ cli
       console.log(dim(`${bold('@142vip/changelog')} `) + dim(`v${version}`))
 
       const { config, markdown, commits } = await generate(args)
-      console.log(111, args, config)
       webUrl = `https://${config.baseUrl}/${config.repo}/releases/new?title=${encodeURIComponent(String(config.name || config.to))}&body=${encodeURIComponent(String(markdown))}&tag=${encodeURIComponent(String(config.to))}&prerelease=${config.prerelease}`
 
       console.log(cyan(config.from) + dim(' -> ') + blue(config.to) + dim(` (${commits.length} commits)`))

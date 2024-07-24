@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.3 (2024-07-24)
+
+### ✨ Features
+
+- Markdown文件校验忽略CHANGELOG &nbsp;-&nbsp; by **chufan** [<samp>(3cbce)</samp>](https://github.com/142vip/core-x/commit/3cbce8b)
+
+### 🐛 Bug Fixes
+
+- **@142vip/changelog**:
+  - 修复scope信息存在时，单条commit信息分类打印异常 &nbsp;-&nbsp; by **chufan** [<samp>(1c8c5)</samp>](https://github.com/142vip/core-x/commit/1c8c544)
+  - 新增defineChangelogDefaultConfig函数，支持changelog关键字配置文件 &nbsp;-&nbsp; by **chufan** [<samp>(1f25d)</samp>](https://github.com/142vip/core-x/commit/1f25da0)
+  - 新增scopeName参数，支持monorepo的模块生成CHANGELOG文档 &nbsp;-&nbsp; by **chufan** [<samp>(14ca6)</samp>](https://github.com/142vip/core-x/commit/14ca631)
+
+**Release New Version v0.0.1-alpha.3 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.2...v0.0.1-alpha.3)**
+
 ## v0.0.1-alpha.2 (2024-07-24)
 
 ### ✨ Features

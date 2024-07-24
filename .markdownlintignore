@@ -3,3 +3,4 @@ LICENSE
 .idea
 .husky
 .github
+**/*/CHANGELOG.md

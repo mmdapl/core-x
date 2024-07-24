@@ -13,6 +13,7 @@ export default antFu({
     '**/typings/**/',
     '.output',
     '**/.output/**',
+    '**/*/CHANGELOG.md',
   ],
   typescript: true,
   vue: true,

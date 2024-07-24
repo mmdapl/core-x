@@ -1,8 +1,9 @@
+#
 # CD持续交付
 #  - 部署到Github Pages
-#  - 部署到Vercel托管平台
 #  - 发布新的Github Release
-# 参考：https://v2.vuepress.vuejs.org/zh/guide/deployment.html#github-pages
+# 参考
+#  - https://vitepress.dev/zh/guide/deploy#github-pages
 #
 
 name: CD
@@ -12,6 +13,12 @@ on:
     branches:
       - next
   workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   # 版本发布
@@ -59,3 +66,53 @@ jobs:
         run: npx changelog
         env:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
+
+  # 构建并部署Dist
+  deploy-dist:
+    name: 部署到Github Pages
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: github.repository == '142vip/core-x'
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+
+      # 安装pnpm
+      - name: PNPM Install
+        uses: pnpm/action-setup@v4
+        with:
+          version: 7.33.2
+
+      # 安装Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.2
+          cache: pnpm
+          registry-url: https://registry.npmmirror.com
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: |
+          ./scripts/ci
+
+      # 编译 打包成dist
+      - name: Build with VitePress
+        run: pnpm build:docs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      # 部署
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

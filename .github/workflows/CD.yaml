@@ -59,5 +59,3 @@ jobs:
         run: npx changelog
         env:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
-
-

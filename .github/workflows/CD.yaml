@@ -50,8 +50,13 @@ jobs:
         run: |
           ./scripts/ci
 
+      - name: Build All Packages
+        run: |
+          pnpm build
+
       # Github发布版本，并更新Release信息
-      - run: pnpm build && npx changelog
+      - name: Release New Version
+        run: npx changelog
         env:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
 

@@ -12,6 +12,7 @@ export async function sendRelease(
   let url = `https://${options.baseUrlApi}/repos/${options.repo}/releases`
   let method = 'POST'
 
+  // 存在tag则更新
   try {
     const exists = await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/releases/tags/${options.to}`, {
       headers,

@@ -1,4 +1,5 @@
 import process from 'node:process'
+import { name as packageName } from '../../package.json'
 import {
   getCurrentGitBranch,
   getFirstGitCommit,
@@ -8,7 +9,6 @@ import {
 } from './git'
 import type { ChangelogOptions, ResolvedChangelogOptions } from './types'
 
-// const defaultOutput = 'CHANGELOG.md'
 const defaultConfig: ChangelogOptions = {
   scopeMap: {},
   types: {
@@ -30,16 +30,25 @@ const defaultConfig: ChangelogOptions = {
   capitalize: true,
   group: true,
   emoji: true,
-  // output: defaultOutput,
+}
+
+/**
+ * 定义@142vip/changelog模块的默认配置文件
+ * @param config
+ */
+export function defineChangelogDefaultConfig(config: ChangelogOptions) {
+  return config
 }
 
 export async function resolveConfig(options: ChangelogOptions) {
   const { loadConfig } = await import('c12')
   const config = await loadConfig<ChangelogOptions>({
-    name: '@142vip/changelog',
+    // 配置文件名，eg: changelog.config.ts
+    name: 'changelog',
     defaults: defaultConfig,
     overrides: options,
-    packageJson: '@142vip/changelog',
+    // 在package.json中的配置关键字
+    packageJson: packageName,
   }).then(r => r.config || defaultConfig)
 
   config.baseUrl = config.baseUrl ?? 'github.com'
@@ -59,7 +68,7 @@ export async function resolveConfig(options: ChangelogOptions) {
   config.scopeName = options.scopeName
 
   if (typeof config.repo !== 'string')
-    throw new Error(`Invalid GitHub repository, expected a string but got ${JSON.stringify(config.repo)}`)
+    throw new Error(`无效的 GitHub 存储库，需要一个字符串，但实际repo参数传的是： ${JSON.stringify(config.repo)}`)
 
   return config as ResolvedChangelogOptions
 }

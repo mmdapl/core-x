@@ -77,16 +77,18 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
   // if (!Object.entries(scopes).some(([k, v]) => k && v.length > 1))
   //   useScopeGroup = false
 
-  Object.keys(scopes).sort().forEach((scope) => {
-    let padding = ''
-    let prefix = ''
-
-    // 生成monorepo中的md
-    if (options.scopeName != null && options.scopeName === scope) {
-      // package dir in monorepo
-
-    }
-    else {
+  // 生成monorepo中的md，只显示该模块的
+  if (options.scopeName != null && scopes[options.scopeName] != null) {
+    // lines里每条记录就是一次commit提交
+    lines.push(...scopes[options.scopeName]
+      .reverse()
+      .map(commit => `- ${formatLine(commit, options)}`))
+  }
+  else {
+    // root dir
+    Object.keys(scopes).sort().forEach((scope) => {
+      let padding = ''
+      let prefix = ''
       // root dir
       const scopeText = `**${options.scopeMap[scope] || scope}**`
 
@@ -98,13 +100,13 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
       else if (scope) {
         prefix = `${scopeText}: `
       }
-    }
 
-    // lines里每条记录就是一次commit提交
-    lines.push(...scopes[scope]
-      .reverse()
-      .map(commit => `${padding}- ${prefix}${formatLine(commit, options)}`))
-  })
+      // lines里每条记录就是一次commit提交
+      lines.push(...scopes[scope]
+        .reverse()
+        .map(commit => `${padding}- ${prefix}${formatLine(commit, options)}`))
+    })
+  }
 
   return lines
 }
@@ -132,9 +134,18 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
     lines.push('\n**No Significant Changes**')
   }
   else {
-    const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.name}`
-    // 添加版本
-    lines.push(`\n**Release New Version ${options.name} [👉 View Changes On GitHub](${url})**`)
+    if (options.scopeName != null) {
+      // 发布模块包
+      const url = `https://www.npmjs.com/package/${options.scopeName}`
+      // 添加版本
+      lines.push(`\n**Release New Version ${options.name} [👉 View New Package On NPM](${url})**`)
+    }
+    else {
+      // 发布根目录
+      const url = `https://${options.baseUrl}/${options.repo}/compare/${options.from}...${options.name}`
+      // 添加版本
+      lines.push(`\n**Release New Version ${options.name} [👉 View Changes On GitHub](${url})**`)
+    }
   }
 
   return convert(lines.join('\n').trim(), true)

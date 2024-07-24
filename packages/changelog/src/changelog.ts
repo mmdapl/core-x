@@ -19,7 +19,7 @@ cli
   .option('--name <name>', 'Name of the release')
   .option('--prerelease', 'Mark release as prerelease')
   .option('--output <path>', 'Output to file instead of sending to GitHub')
-  .option('--scopeName <scopeName>', 'Output to file instead of sending to GitHub')
+  .option('--scopeName <scopeName>', 'Package name in Monorepo，Match the scope in the git commit information')
   .option('--dry', 'Dry run')
   .help()
 

@@ -68,12 +68,14 @@ cli
       if (!config.tokens) {
         console.error(red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
         printWebUrl()
+        process.exitCode = 1
         return
       }
 
       if (!commits.length && await isRepoShallow()) {
         console.error(yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
         printWebUrl()
+        process.exitCode = 1
         return
       }
 
@@ -92,8 +94,6 @@ cli
         console.error(yellow(webUrl))
         console.log()
       }
-    }
-    finally {
       process.exitCode = 1
     }
   })

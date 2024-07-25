@@ -22,7 +22,7 @@ if [ "$current_branch" = "main" ]; then
   for repoName in "${remoteList[@]}"
   do
       echo "-->Pushing to $repoName in master branch..."
-      git push "$repoName" master
+      git push "$repoName" main
   done
 # next分支同步
 elif [ "$current_branch" = "next" ]; then

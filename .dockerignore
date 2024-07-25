@@ -1,9 +1,0 @@
-node_modules
-*/logs
-*/run
-*/typings
-.idea
-.github
-eslint.config.js
-.gitignore
-

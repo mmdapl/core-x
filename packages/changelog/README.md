@@ -166,11 +166,6 @@ Options:
 
 您可以将配置文件放在项目根目录中，名为 `changelog.config.{json，ts，js，mjs，cjs}`或使用 `@142vip/changelog` 字段在`package.json`中。
 
-## 感谢
-
-- changelogen: <https://github.com/unjs/changelogen>
-- changelogithub: <https://github.com/antfu/changelogithub>
-
 ## 证书
 
 [MIT](https://opensource.org/license/MIT)

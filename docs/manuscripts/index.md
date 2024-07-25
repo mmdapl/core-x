@@ -25,12 +25,7 @@ features:
 ---
 
 <script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers,
-  VPTeamPageSection
-} from 'vitepress/theme';
+import {  VPTeamPage,  VPTeamPageTitle,  VPTeamMembers,  VPTeamPageSection} from 'vitepress/theme';
 
 import ContactAuthor from '@theme/components/ContactAuthor.vue';
 import {teamMembers} from "@theme/components";

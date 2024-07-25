@@ -68,7 +68,7 @@ export async function resolveConfig(options: ChangelogOptions) {
   config.scopeName = options.scopeName
 
   if (typeof config.repo !== 'string')
-    throw new Error(`无效的 GitHub 存储库，需要一个字符串，但实际repo参数传的是： ${JSON.stringify(config.repo)}`)
+    throw new Error(`无效的 GitHub 存储库，需要一个字符串，但实际repo参数是： ${JSON.stringify(config.repo)}`)
 
   return config as ResolvedChangelogOptions
 }

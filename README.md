@@ -52,7 +52,7 @@ pnpm clean
 
 ## 贡献者
 
-**感谢所有像仓库贡献代码的开发者**
+**感谢所有向仓库贡献代码的开发者**
 
 <a href="https://github.com/142vip/core-x/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=142vip/core-x" />

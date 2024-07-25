@@ -1,4 +1,4 @@
-import { execShell } from '@142vip/common'
+import { execChildProcess } from '../utils'
 
 export enum LoginPlatformEnum {
   DOCKER = 'docker',
@@ -26,18 +26,18 @@ export interface DockerOptions extends LoginOptions {
 export interface NpmOptions extends Omit<LoginOptions, 'userName' | 'password'> {
 }
 
-export async function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
+export function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
   if (LoginPlatformEnum.DOCKER === platform) {
-    await loginDocker(args)
+    loginDocker(args)
   }
 
   if (LoginPlatformEnum.NPM === platform) {
-    await loginNpm(args)
+    loginNpm(args)
   }
 }
 
 // docker 登录
-async function loginDocker(args: DockerOptions) {
+function loginDocker(args: DockerOptions) {
   let registryUrl = RegistryURLEnum.DOCKER as string
   if (args.registryUrl != null) {
     registryUrl = args.registryUrl
@@ -45,16 +45,16 @@ async function loginDocker(args: DockerOptions) {
 
   if (args.vip) {
     registryUrl = RegistryURLEnum.VIP_DOCKER
+    args.userName = '142vip'
   }
 
   //   docker login --username=142vip --password="$password"  registry.cn-hangzhou.aliyuncs.com
-  const command = `docker login ${args.userName != null ? `--username=${args.userName}` : ''} ${args.password != null ? `--password=${args.password}` : ''} ${registryUrl}`
-  // npm login --registry  https://registry.npmjs.org
-  await execShell(command)
+  const command = `docker login ${args.userName != null ? `--username=${args.userName}` : ''} ${args.password != null ? `--password=${args.password}` : ''}${registryUrl}`
+  execChildProcess(command)
 }
 
 // npm 登录
-async function loginNpm(args: NpmOptions) {
+function loginNpm(args: NpmOptions) {
   let registryUrl = RegistryURLEnum.NPM as string
   if (args.registryUrl != null) {
     registryUrl = args.registryUrl
@@ -65,5 +65,5 @@ async function loginNpm(args: NpmOptions) {
   }
 
   // npm login --registry  https://registry.npmjs.org
-  await execShell(`npx npm login --registry ${registryUrl}`)
+  execChildProcess(`npm login --registry ${registryUrl}`)
 }

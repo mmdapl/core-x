@@ -7,6 +7,7 @@ import type {
   DeployOptions,
   LintOptions,
   LoginOptions,
+  PublishOptions,
   ReleaseOptions,
   TurboPackOptions,
 } from './commands'
@@ -16,8 +17,11 @@ import {
   execDeploy,
   execLink,
   execLogin,
+  execPublish,
   execTurboPack,
 } from './commands'
+import type { InstallOptions } from './commands/install'
+import { execInstall } from './commands/install'
 
 enum CliCommandEnum {
   LOGIN = 'login',
@@ -28,6 +32,7 @@ enum CliCommandEnum {
   LINT = 'lint',
   DEPLOY = 'deploy',
   TURBO = 'turbo',
+  INSTALL = 'install',
 }
 
 const program = new Command(name)
@@ -48,30 +53,33 @@ program
     console.log(projectName, options)
   })
 
-// 登录 docker  npm
+// 登录 docker npm
 program
   .command(`${CliCommandEnum.LOGIN} <platform>`)
   .description('登录远程平台，支持Docker和Npm')
   .option('-u,--username', '登录账号，docker登录时有效')
   .option('-p,--password', '登录密码，docker登录时有效')
-  .option('--registry-url', 'registry address', false)
+  .option('--registry-url', 'registry address')
   .option('--vip', '142vip专用业务账号', false)
-  .action(async (platform: LoginPlatformEnum, args: LoginOptions) => {
+  .action((platform: LoginPlatformEnum, args: LoginOptions) => {
     if (![LoginPlatformEnum.NPM, LoginPlatformEnum.DOCKER].includes(platform)) {
       console.error('login命令只支持Docker和Npm平台，使用格式 login docker|npm')
       process.exit(1)
     }
-    await execLogin(platform, args)
+    execLogin(platform, args)
   })
 
-// pnpm ci
+// install 安装依赖
 program
-  .command('pnpm <platform>')
+  .command(CliCommandEnum.INSTALL)
+  .aliases(['i', 'add'])
   .description('pnpm ci dependencies')
-  .option('--registry', 'registry address')
-  .action((projectName, options: LoginOptions) => {
-    // pnpm i --frozen-lockfile --registry https://registry.npmmirror.com
-    console.log('pnpm', projectName, options)
+  .option('--pnpm', 'use pnpm ', true)
+  .option('--npm', 'use npm', false)
+  .option('--update', 'update lockfile，not use --frozen-lockfile', false)
+  .option('--registry', 'pnpm registry address，default ali cdn', 'https://registry.npmmirror.com')
+  .action((args: InstallOptions) => {
+    execInstall(args)
   })
 
 // fairy-cli release
@@ -104,15 +112,16 @@ program
     console.log(CliCommandEnum.CHANGELOG, args)
   })
 
-// fairy-cli publish  推送
+// fairy-cli publish 推送
 program
   .command(CliCommandEnum.PUBLISH)
-  .description('推送到远程平台，支持Docker镜像更新和NPM发包')
-  .option('-d,--docker', 'registry address')
-  .option('-n,--npm', 'registry address', 'packages')
-  .option('-c --clean', 'registry address', 'CHANGELOG.md')
-  .action((args: ChangelogOptions) => {
-    console.log(CliCommandEnum.PUBLISH, args)
+  .description('publish to remote platform，eg. Docker Image & Npm Package')
+  .option('-d,--docker', 'publish to Docker', false)
+  .option('-n,--npm', 'publish to Npm', false)
+  .option('-c --clean', 'clean after publishing', false)
+  .option('--registry', 'npm registry address', 'https://registry.npmjs.org')
+  .action(async (args: PublishOptions) => {
+    await execPublish(args)
   })
 
 // fairy-cli deploy 部署
@@ -121,8 +130,6 @@ program
   .description('项目部署')
   .option('-gh,--github-page', '部署到Github Pages', false)
   .action((args: DeployOptions) => {
-    // 参考 @142vip/changelog模块
-    console.log(CliCommandEnum.DEPLOY, args)
     execDeploy(args)
   })
 
@@ -133,8 +140,8 @@ program
   .option('-m,--markdown', '格式化markdown文件')
   .option('-c,--config', 'Eslint配置文件路径', false)
   .option('-f --fix', '支持自动修复', false)
-  .action((args: LintOptions) => {
-    execLink(args)
+  .action(async (args: LintOptions) => {
+    await execLink(args)
   })
 
 // fairy-cli clean 项目清理

@@ -1,20 +1,24 @@
 # @142vip/changelog
 
-根据git提交记录，自动生成changelog文档
-
 [![NPM version](https://img.shields.io/npm/v/@142vip/changelog?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/changelog)
 
-Generate changelog for GitHub releases from [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/),
-powered by [changelogen](https://github.com/unjs/changelogen).
+根据`git`提交记录，自动生成`CHANGELOG`文档
 
-[👉 使用示例](https://github.com/unocss/unocss/releases/tag/v0.39.0)
+从 `GitHub` 提交信息[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)中生成更改日志。 这个模块实现参考了`changelogen`和`changelogithub`两个模块的实现。
+
+非常感谢两位作者的实现思路
+
+- [changelogen](https://github.com/unjs/changelogen)
+- [changelogithub](https://github.com/antfu/changelogithub)
 
 ## 新功能
 
-- Support exclamation mark as breaking change, e.g. `chore!: drop node v10`
-- Grouped scope in changelog
-- Create the release note, or update the existing one
-- List contributors
+- 支持在`CHANGELOG`文档中标记破坏性改动
+- `CHANGELOG`文档中支持按照`scope`进行分组展示
+- 配合`CI`流水线，生成的`CHANGELOG`记录支持展示代码贡献者
+- 支持`Monorepo`模式，通过`scopeName`配置，匹配`git`提交信息中的`scope`，过滤出组件包的提交记录
+
+[👉 使用示例](https://github.com/142vip/core-x/releases)
 
 ## 使用
 
@@ -25,11 +29,17 @@ powered by [changelogen](https://github.com/unjs/changelogen).
 npx changelog --output CHANGELOG.md
 ```
 
+### 本地预览
+
+```bash
+# 只本地生成创建版本的URL
+npx changelog --dry
+```
+
 ### 配合Github Actions使用
 
 ```yml
 # .github/workflows/release.yml
-
 name: Release
 
 permissions:
@@ -44,19 +54,21 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       # 安装node版本，大于16
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.x
 
       # Github发布版本，并更新Release信息
-      - run: npx changelog
+      - name: Release New Version
+        run: |
+          npx changelog
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.TOKEN}}
 ```
 
 向 GitHub 推送以“v”开头的标签时，`github actions`会被触发。
@@ -64,21 +76,16 @@ jobs:
 在142vip所有的开源仓库中，都可以通过`@142vip/changelog`模块来实现发布，例如：
 
 ```yaml
+#
 # CD持续交付
-#  - 部署到Github Pages
-#  - 部署到Vercel托管平台
-#  - 发布新的Github Release
-# 参考：https://v2.vuepress.vuejs.org/zh/guide/deployment.html#github-pages
 #
 
 name: CD
-
 on:
   push:
     branches:
       - next
   workflow_dispatch:
-
 jobs:
   # 版本发布
   release:
@@ -91,51 +98,73 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.TOKEN }}
           persist-credentials: false
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      # 安装node版本，大于16
-      - uses: actions/setup-node@v3
+      # 安装PNPM
+      - name: PNPM Install
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 16.x
+          version: 7.33.2
+
+      # 安装Node环境
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.12.2
+          # 淘宝镜像加速
+          registry-url: 'https://registry.npmmirror.com'
+          # 缓存
+          cache: pnpm
+
+      # 下载依赖，并执行初始化脚本：钩子函数、思维导图构建
+      - name: Install Dependencies
+        run: |
+          ./scripts/ci
+
+      - name: Build All Packages
+        run: |
+          pnpm build
 
       # Github发布版本，并更新Release信息
-      - run: npx changelog
+      - name: Release New Version
+        run: |
+          npx changelog
         env:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
+```
 
-      # 提取版本号
-      - name: Get New Version Number
-        id: releaseVersion
-        run: |
-          echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+### 更多功能
 
-      # 更新资源 区分压缩包上传
-      - name: Upload Resource Assets
-        uses: actions/upload-release-asset@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          upload_url: ${{ steps.createRelease.outputs.upload_url }}
-          asset_path: ./142vip-oauth.zip
-          asset_name: 142vip-oauth.zip
-          asset_content_type: application/zip
+```shell
+@142vip/changelog/0.0.1-alpha.1
+
+Usage:
+  $ @142vip/changelog
+
+Commands:
+
+For more info, run any command with the `--help` flag:
+  $ @142vip/changelog --help
+
+Options:
+  -v, --version            Display version number
+  -t, --tokens <path>      GitHub Token
+  --from <ref>             From tag
+  --to <ref>               To tag
+  --github <path>          GitHub Repository, e.g. @142vip/core-x
+  --name <name>            Name of the release
+  --prerelease             Mark release as prerelease
+  --output <path>          Output to file instead of sending to GitHub
+  --scopeName <scopeName>  Package name in Monorepo，Match the scope in the git commit information
+  --dry                    Dry run
+  -h, --help               Display this message
 ```
 
 ## 配置
 
-You can put a configuration file in the project root, named
-as `changelogithub.config.{json,ts,js,mjs,cjs}`, `.changelogithubrc` or use the `changelogithub` field
-in `package.json`.
-
-## 本地预览y
-
-```bash
-# 只本地生成创建版本的URL
-npx changelogithub --dry
-```
+您可以将配置文件放在项目根目录中，名为 `changelog.config.{json，ts，js，mjs，cjs}`或使用 `@142vip/changelog` 字段在`package.json`中。
 
 ## 感谢
 
@@ -143,3 +172,7 @@ npx changelogithub --dry
 - changelogithub: <https://github.com/antfu/changelogithub>
 
 ## 证书
+
+[MIT](https://opensource.org/license/MIT)
+
+Copyright (c) 2019-present, 142vip 储凡

@@ -75,3 +75,35 @@ export async function execCommand(
     return Promise.reject(error)
   }
 }
+
+/**
+ * 执行子进程命令
+ * @param command
+ */
+export function execChildProcess(command: string) {
+  console.log()
+  console.log(`执行的命令：${command}`)
+  console.log()
+  const child = childProcess.exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`)
+      return
+    }
+    console.log(`stdout: ${stdout}`)
+    console.log(`stderr: ${stderr}`)
+  })
+
+  // 监听子进程的数据输出
+  child.stdout?.on('data', (data) => {
+    console.log(`stdout: ${data}`)
+  })
+
+  child.stderr?.on('data', (data) => {
+    console.error(`stderr: ${data}`)
+  })
+
+  // 当子进程退出时触发
+  child.on('close', (code) => {
+    process.exit(code ?? 1)
+  })
+}

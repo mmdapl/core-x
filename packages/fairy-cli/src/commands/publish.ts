@@ -1,26 +1,42 @@
 import { execCommand } from '../utils'
 
+export type PublishOptions = NpmOptions & DockerOptions
+
 interface NpmOptions {
   registry: string
   public: boolean
+  npm: boolean
 }
 
 interface DockerOptions {
   // docker push xx
   image: string
-  cleanUp: boolean
+  docker: boolean
+  clean: boolean
+}
+
+export async function execPublish(args: PublishOptions) {
+  // npm发包
+  if (args.npm) {
+    await publishNpm(args)
+  }
+
+  // docker 推送镜像
+  if (args.docker) {
+    await publishDocker(args)
+  }
 }
 
 /**
  * 发布到docker
  * - 清理本地
  */
-export async function publishDocker(args: DockerOptions) {
+async function publishDocker(args: DockerOptions) {
   // docker push xxx
   await execCommand(`docker push ${args.image}`)
 
-  // 清理本地
-  if (args.cleanUp) {
+  // 清理本地镜像，默认不清理
+  if (args.clean) {
     await execCommand(`docker rmi ${args.image}`)
   }
 }
@@ -28,11 +44,12 @@ export async function publishDocker(args: DockerOptions) {
 /**
  * 发布到npm
  */
-export async function publishNpm(args: NpmOptions) {
+async function publishNpm(args: NpmOptions) {
   // npm publish --access public --registry  https://registry.npmjs.org
-  await execCommand('npm publish')
 
-  if (args.registry != null) {
-    console.log('发布到指定地址')
+  if (args.registry == null) {
+    args.registry = 'https://registry.npmjs.org'
   }
+
+  await execCommand(`npm publish --access public --registry=${args.registry}`)
 }

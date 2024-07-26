@@ -47,10 +47,7 @@
     "@inquirer/confirm": "^3.1.15",
     "@types/inquirer": "^9.0.7",
     "@types/js-yaml": "^4.0.9",
-    "inquirer": "7",
-    "typescript": "^5.5.3",
-    "unbuild": "^2.0.0",
-    "vitest": "^2.0.2"
+    "inquirer": "7"
   },
   "repository": {
     "type": "git",

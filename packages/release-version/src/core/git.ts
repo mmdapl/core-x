@@ -1,4 +1,4 @@
-import * as ezSpawn from '@jsdevtools/ez-spawn'
+import { execShell } from '@142vip/common'
 import { ProgressEvent } from '../types'
 import type { Operation } from './operation'
 
@@ -31,7 +31,7 @@ export async function gitCommit(operation: Operation): Promise<Operation> {
   if (!all)
     args = args.concat(updatedFiles)
 
-  await ezSpawn.async('git', ['commit', ...args])
+  await execShell({ command: `git commit ${args.join(' ')}`, description: '提交git commit信息' })
 
   return operation.update({ event: ProgressEvent.GitCommit, commitMessage })
 }
@@ -60,7 +60,7 @@ export async function gitTag(operation: Operation): Promise<Operation> {
   const tagName = formatVersionString(tag.name, newVersion)
   args.push(tagName)
 
-  await ezSpawn.async('git', ['tag', ...args])
+  await execShell({ command: `git tag ${args.join(' ')}`, description: '创建Tag标签' })
 
   return operation.update({ event: ProgressEvent.GitTag, tagName })
 }
@@ -73,11 +73,11 @@ export async function gitPush(operation: Operation): Promise<Operation> {
     return operation
 
   // Push the commit
-  await ezSpawn.async('git', 'push')
+  await execShell({ command: 'git push', description: '推送变更' })
 
   if (operation.options.tag) {
     // Push the tag
-    await ezSpawn.async('git', ['push', '--tags'])
+    await execShell({ command: 'git push --tags', description: '推送所有标签' })
   }
 
   return operation.update({ event: ProgressEvent.GitPush })

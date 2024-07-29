@@ -1,4 +1,4 @@
-import * as ezSpawn from '@jsdevtools/ez-spawn'
+import { execShell } from '@142vip/common'
 import type { NpmScript } from '../types'
 import { ProgressEvent } from '../types'
 import { readJsonFile } from './fs'
@@ -18,7 +18,7 @@ export async function runScript(script: NpmScript, operation: Operation): Promis
     const { data: manifest } = await readJsonFile('package.json', cwd)
 
     if (isManifest(manifest) && hasScript(manifest, script)) {
-      await ezSpawn.async('npm', ['run', script, '--silent'], { stdio: 'inherit' })
+      await execShell({ command: `npm run ${script} --silent`, description: '运行脚本命令' })
       operation.update({ event: ProgressEvent.NpmScript, script })
     }
   }

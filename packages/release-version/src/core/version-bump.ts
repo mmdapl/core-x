@@ -1,5 +1,4 @@
 import process from 'node:process'
-import * as ezSpawn from '@jsdevtools/ez-spawn'
 import symbols from 'log-symbols'
 import prompts from 'prompts'
 import { bold, cyan, green } from 'kolorist'
@@ -54,7 +53,7 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   if (operation.options.changelog) {
     console.log(symbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
     try {
-      await execShell(`changelog --output CHANGELOG.md --name v${operation.state.newVersion}`)
+      await execShell({ command: `changelog --output CHANGELOG.md --name v${operation.state.newVersion}`, description: '生成CHANGELOG文档' })
     }
     catch (e) {
       console.log(symbols.error, 'Happen Error In Generate CHANGELOG!!!')
@@ -67,7 +66,7 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
 
   if (operation.options.execute) {
     console.log(symbols.info, 'Executing Script', operation.options.execute)
-    await ezSpawn.async(operation.options.execute, { stdio: 'inherit' })
+    await execShell({ command: operation.options.execute, description: '执行execute提供的命令' })
     console.log(symbols.success, 'Script Finished')
   }
 

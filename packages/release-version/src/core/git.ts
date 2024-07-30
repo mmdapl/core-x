@@ -25,7 +25,7 @@ export async function gitCommit(operation: Operation): Promise<Operation> {
 
   // Create the commit message
   const commitMessage = formatVersionString(message, newVersion)
-  args.push('--message', commitMessage)
+  args.push('--message', `'${commitMessage}'`)
 
   // Append the file names last, as variadic arguments
   if (!all)
@@ -53,7 +53,8 @@ export async function gitTag(operation: Operation): Promise<Operation> {
 
     // Use the same commit message for the tag
     '--message',
-    formatVersionString(commit!.message, newVersion),
+    // 注意格式
+    `'${formatVersionString(commit!.message, newVersion)}'`,
   ]
 
   // Create the Tag name

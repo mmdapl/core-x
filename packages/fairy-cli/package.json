@@ -62,5 +62,9 @@
     "name": "mmdapl",
     "email": "mmdapl@163.com"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "license": "MIT"
 }

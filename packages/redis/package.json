@@ -13,6 +13,10 @@
   "dependencies": {
     "ioredis": "^5.4.1"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT"
 }

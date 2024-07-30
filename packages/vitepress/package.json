@@ -28,6 +28,10 @@
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT"
 }

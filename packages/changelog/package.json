@@ -60,5 +60,9 @@
     "bumpp": "^9.4.1",
     "esno": "^4.7.0",
     "fs-extra": "^11.2.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

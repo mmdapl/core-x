@@ -1,6 +1,7 @@
 {
   "name": "@142vip/core-x",
   "version": "0.0.1-alpha.5",
+  "private": true,
   "type": "module",
   "engines": {
     "node": "18.18.0",

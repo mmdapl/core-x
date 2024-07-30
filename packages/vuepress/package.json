@@ -21,6 +21,10 @@
     "vuepress-plugin-search-pro": "2.0.0-beta.238",
     "vuepress-theme-hope": "2.0.0-beta.238"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT"
 }

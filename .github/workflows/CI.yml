@@ -39,7 +39,7 @@ jobs:
       - name: PNPM Install
         uses: pnpm/action-setup@v4
         with:
-          version: 7.33.2
+          version: 9.6.0
 
       # 安装Node环境
       - name: Install Node.js

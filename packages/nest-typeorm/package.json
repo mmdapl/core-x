@@ -6,6 +6,10 @@
   "keywords": [
     "公众号搜：储凡"
   ],
+  "files": [
+    "*.mjs",
+    "dist"
+  ],
   "scripts": {
     "build-test": "unbuild",
     "typecheck": "tsc --noEmit"

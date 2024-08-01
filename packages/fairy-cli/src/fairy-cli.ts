@@ -5,6 +5,7 @@ import type {
   ChangelogOptions,
   CleanUpOptions,
   DeployOptions,
+  InstallOptions,
   LintOptions,
   LoginOptions,
   PublishOptions,
@@ -15,13 +16,12 @@ import {
   LoginPlatformEnum,
   execCleanUp,
   execDeploy,
+  execInstall,
   execLink,
   execLogin,
   execPublish,
   execTurboPack,
 } from './commands'
-import type { InstallOptions } from './commands/install'
-import { execInstall } from './commands/install'
 
 enum CliCommandEnum {
   LOGIN = 'login',

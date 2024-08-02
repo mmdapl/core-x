@@ -1,12 +1,14 @@
 #!/bin/bash
 
-##
-## 版本发布脚本
-## 链接：https://jstools.dev/version-bump-prompt/
-## 使用:
-##    - ./scripts/release
-##    - ./scripts/release @142vip/fairy-cli
-##
+#
+# 版本发布脚本
+# 参考：
+#   - bumpp https://jstools.dev/version-bump-prompt/
+#   - pnpm exec https://pnpm.io/cli/exec
+# 使用:
+#   - ./scripts/release
+#   - ./scripts/release @142vip/fairy-cli
+#
 
 # 获取当前分支名称
 readonly currentBranch=$(git rev-parse --abbrev-ref HEAD)
@@ -14,17 +16,18 @@ readonly currentBranch=$(git rev-parse --abbrev-ref HEAD)
 # 版本参数
 appName=${1}
 
+
 # 判断分支名称
 if [ "$currentBranch" = "next" ]; then
     # monorepo 子模块
     if [ "$appName" != "" ];then
       ## 生成changelog文档，更新package version
-      readonly packageReleaseCommand="npx bumpx --preid alpha --commit 'release($appName): publish v%s' --changelog --execute 'git add CHANGELOG.md'  --scopeName $appName --no-tag --all"
+      readonly packageReleaseCommand="npx bumpx --preid alpha --commit 'release($appName): publish v%s' --changelog --execute 'git add CHANGELOG.md' --scopeName $appName --no-tag --all"
       # 模块版本更新，不推送
-      npx lerna exec --scope "$appName" -- "$packageReleaseCommand"
+      pnpm --filter "$appName" --shell-mode exec "$packageReleaseCommand"
     else
       # git提交记录，仓库版本更新
-      npx bumpx --preid alpha  --execute="git add CHANGELOG.md" --changelog --commit "chore(release): publish v%s"  --all
+      npx bumpx --preid alpha --changelog --commit "chore(release): publish v%s" --execute="git add CHANGELOG.md" --all
     fi
 else
   echo "当前分支是：$currentBranch ，版本迭代允许在next分支操作，并推送到远程！！！"

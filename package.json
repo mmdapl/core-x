@@ -32,6 +32,7 @@
     "@142vip/vitepress": "workspace:*",
     "@antfu/eslint-config": "^2.20.0",
     "@lerna-lite/cli": "^3.5.1",
+    "@lerna-lite/exec": "^3.7.1",
     "@lerna-lite/list": "^3.5.1",
     "@lerna-lite/publish": "^3.5.2",
     "@types/jest": "^29.2.0",

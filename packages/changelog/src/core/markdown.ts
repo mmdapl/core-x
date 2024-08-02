@@ -78,14 +78,18 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
   //   useScopeGroup = false
 
   // 生成monorepo中的md，只显示该模块的
-  if (options.scopeName != null && scopes[options.scopeName] != null) {
+  if (options.scopeName != null) {
+    // 对于没有匹配到子模块的记录，直接返回
+    if (scopes[options.scopeName] == null) {
+      return []
+    }
     // lines里每条记录就是一次commit提交
     lines.push(...scopes[options.scopeName]
       .reverse()
       .map(commit => `- ${formatLine(commit, options)}`))
   }
   else {
-    // root dir
+    // root dir 普通模式
     Object.keys(scopes).sort().forEach((scope) => {
       let padding = ''
       let prefix = ''

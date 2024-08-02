@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.7 (2024-08-03)
+
+### ✨ Features
+
+- 优化release脚本，支持子模块版本发布 &nbsp;-&nbsp; by **chufan** [<samp>(3d721)</samp>](https://github.com/142vip/core-x/commit/3d721c5)
+- 移除lerna-lite模块，修改对应的version和publish配置 &nbsp;-&nbsp; by **chufan** [<samp>(5db2a)</samp>](https://github.com/142vip/core-x/commit/5db2a78)
+- 删除lerna配置和依赖，使用pnpm exec替代模块命令执行 &nbsp;-&nbsp; by **chufan** [<samp>(47329)</samp>](https://github.com/142vip/core-x/commit/473294a)
+- **@142vip/changelog**:
+  - 支持monorepo模式下，基于scopeName参数生成子模块的changelog文档 &nbsp;-&nbsp; by **chufan** [<samp>(cd7af)</samp>](https://github.com/142vip/core-x/commit/cd7afb1)
+- **@142vip/release-version**:
+  - 新增scopeName可选参数，支持在Monorepo模式下发布子模块版本、更新CHANGELOG文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/39 [<samp>(9f183)</samp>](https://github.com/142vip/core-x/commit/9f18339)
+
+**Release New Version v0.0.1-alpha.7 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.6...v0.0.1-alpha.7)**
+
 ## v0.0.1-alpha.6 (2024-08-02)
 
 ### ✨ Features

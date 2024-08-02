@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
-  "version": "0.0.1-alpha.0",
+  "version": "independent",
   "npmClient": "pnpm",
   "packages": [
     "apps/*",
@@ -8,23 +8,6 @@
     "./"
   ],
   "command": {
-    "version": {
-      "allowBranch": [
-        "next"
-      ],
-      "message": "chore(release): publish v%v",
-      "changelog": true,
-      "changelogIncludeCommitsGitAuthor": " by . @%a",
-      "conventionalCommits": true,
-      "skipBumpOnlyReleases": false,
-      "dryRun": false
-    },
-    "publish": {
-      "canary": false,
-      "dryRun": false,
-      "message": "chore(release): publish v%v",
-      "registry": "https://registry.npmjs.org"
-    }
   },
   "forcePublish": true
 }

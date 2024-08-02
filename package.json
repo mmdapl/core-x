@@ -18,12 +18,10 @@
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/*",
     "dev": "vitepress dev --port 8080 --host",
     "build": "npx turbo run build --color --only",
-    "build:fairy-cli": "npx turbo run build --filter=@142vip/fairy-cli --color --only",
     "build:docs": "vitepress build",
+    "preview": "vitepress preview",
     "clean": "npx fa clean --ignore-tips --all",
-    "lint": "npx eslint . --fix",
-    "publish": "npx lerna publish --canary from-git",
-    "preview": "vitepress preview"
+    "lint": "npx eslint . --fix"
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",
@@ -31,10 +29,7 @@
     "@142vip/release-version": "workspace:*",
     "@142vip/vitepress": "workspace:*",
     "@antfu/eslint-config": "^2.20.0",
-    "@lerna-lite/cli": "^3.5.1",
     "@lerna-lite/exec": "^3.7.1",
-    "@lerna-lite/list": "^3.5.1",
-    "@lerna-lite/publish": "^3.5.2",
     "@types/jest": "^29.2.0",
     "@types/lodash": "^4.14.202",
     "@types/node": "^14.18.63",

@@ -19,6 +19,7 @@ const defaultConfig: ChangelogOptions = {
     docs: { title: '📖 Documentation', semver: 'patch' },
     build: { title: '📦 Build', semver: 'patch' },
     types: { title: '🌊 Types', semver: 'patch' },
+    release: { title: '😏 Release Packages', semver: 'patch' },
   },
   titles: {
     breakingChanges: '🚨 Breaking Changes',

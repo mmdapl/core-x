@@ -17,6 +17,11 @@
   "dependencies": {
     "egg-sequelize": "^6.0.0"
   },
+  "homepage": "https://github.com/142vip/core-x/tree/main/packages/egg-sequelize",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x.git"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

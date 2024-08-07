@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "@142vip/core-x"
-  text: "x代表一切都有可能"
+  text: "X代表一切都有可能"
   tagline: "易学易用、性能出色，适用工程化的通用工具包"
   actions:
     - theme: brand

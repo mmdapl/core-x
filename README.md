@@ -1,6 +1,6 @@
 # @142vip/core-x
 
-X代表一切都有可能，`core-x` 仓库是基于自身技术栈封装的工程化包、模块
+`X`代表一切都有可能，`core-x` 仓库是基于自身技术栈在进行工程化实践中封装的工具包、通用模块
 
 ## 介绍
 
@@ -38,6 +38,12 @@ pnpm build
 
 # 删除开发、编译缓存目录，例如：node_modules、dist、.vite、.vitepress
 pnpm clean
+
+# 运行文档站点
+pnpm dev
+
+# 编译打包文档
+pnpm build:docs
 ```
 
 ## 趋势

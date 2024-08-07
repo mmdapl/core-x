@@ -28,6 +28,11 @@
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },
+  "homepage": "https://github.com/142vip/core-x/tree/main/packages/vitepress",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x.git"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

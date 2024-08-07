@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.4 (2024-08-07)
+
+### ✨ Features
+
+- 修改默认配置，CHANGELOG文档支持release类型提交 &nbsp;-&nbsp; by **chufan** [<samp>(29f00)</samp>](https://github.com/142vip/core-x/commit/29f00d1)
+
+### 💅 Refactors
+
+- 结构调整，移除cac等模块，替换为commander模块 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/47 [<samp>(a828b)</samp>](https://github.com/142vip/core-x/commit/a828b4c)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.3 (2024-08-02)
 
 ### ✨ Features

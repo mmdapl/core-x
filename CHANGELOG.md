@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.8 (2024-08-07)
+
+### ✨ Features
+
+- Packages中的各模块增加homepage等信息 &nbsp;-&nbsp; by **chufan** [<samp>(b0df1)</samp>](https://github.com/142vip/core-x/commit/b0df105)
+- **@142vip/changelog**:
+  - 修改默认配置，CHANGELOG文档支持release类型提交 &nbsp;-&nbsp; by **chufan** [<samp>(29f00)</samp>](https://github.com/142vip/core-x/commit/29f00d1)
+- **Github Actions**:
+  - 新增release流水线，自动发布到npm平台 &nbsp;-&nbsp; by **chufan** [<samp>(7a75c)</samp>](https://github.com/142vip/core-x/commit/7a75cf9)
+
+### 🔥 Performance
+
+- **@142vip/release-version**:
+  - 修复一些语法问题，使用更好的代码风格 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/44 [<samp>(fc7de)</samp>](https://github.com/142vip/core-x/commit/fc7defc)
+
+### 🐛 Bug Fixes
+
+- **Github Actions**:
+  - 修复release发布异常，支持自动发布npm包 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/45 [<samp>(d4263)</samp>](https://github.com/142vip/core-x/commit/d426349)
+
+### 💅 Refactors
+
+- **@142vip/changelog**:
+  - 结构调整，移除cac等模块，替换为commander模块 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/47 [<samp>(a828b)</samp>](https://github.com/142vip/core-x/commit/a828b4c)
+
+### 📖 Documentation
+
+- 优化目录结构，搜索功能接入algolia平台 &nbsp;-&nbsp; by **chufan** [<samp>(234a2)</samp>](https://github.com/142vip/core-x/commit/234a2da)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish v0.0.1-alpha.4 &nbsp;-&nbsp; by **chufan** [<samp>(4fc81)</samp>](https://github.com/142vip/core-x/commit/4fc81e2)
+- **@142vip/release-version**:
+  - Publish v0.0.1-alpha.6 &nbsp;-&nbsp; by **chufan** [<samp>(70953)</samp>](https://github.com/142vip/core-x/commit/7095387)
+
+**Release New Version v0.0.1-alpha.8 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.7...v0.0.1-alpha.8)**
+
 ## v0.0.1-alpha.7 (2024-08-03)
 
 ### ✨ Features

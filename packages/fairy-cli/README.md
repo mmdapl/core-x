@@ -19,7 +19,7 @@ npx vae -v
 
 ## 功能
 
-```shell
+```text
 Usage: @142vip/fairy-cli [options] [command]
 
 Options:
@@ -29,10 +29,11 @@ Options:
 Commands:
   create|c [options] <projectName>  create a new template project
   login [options] <platform>        登录远程平台，支持Docker和Npm
-  pnpm [options] <platform>         pnpm ci dependencies
+  install|i [options]               pnpm ci dependencies
   release [options]                 release npm version
   changelog [options]               生成CHANGELOG日志文档
-  publish [options]                 推送到远程平台，支持Docker镜像更新和NPM发包
+  publish [options]                 publish to remote platform，eg. Docker Image & Npm Package
+  sync [packageNames...]            同步npm仓库的模块包到cnpm仓库
   deploy [options]                  项目部署
   lint [options]                    根据Eslint检查代码风格，支持代码格式化
   clean [options]                   清除开发、构建等环境下的无用目录

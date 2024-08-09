@@ -36,12 +36,12 @@
   "dependencies": {
     "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/release-version": "workspace:*",
-    "cnpm": "^9.4.0",
     "commander": "^12.1.0",
     "del": "^7.1.0",
     "js-yaml": "^4.1.0",
     "turbo": "^2.0.1",
-    "inquirer": "7"
+    "inquirer": "7",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@inquirer/confirm": "^3.1.15",

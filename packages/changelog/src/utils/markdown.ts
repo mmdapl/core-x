@@ -1,7 +1,6 @@
 import { existsSync, promises as fsp } from 'node:fs'
 import type { Reference } from 'changelogen'
 import { convert } from 'convert-gitmoji'
-import dayjs from 'dayjs'
 import type { Commit, ResolvedChangelogOptions } from '../types'
 
 const emojisRE = /([\u2700-\u27BF\uE000-\uF8FF\u2011-\u26FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|\uD83E[\uDD10-\uDDFF])/g
@@ -39,11 +38,8 @@ function formatLine(commit: Commit, options: ResolvedChangelogOptions) {
   if (authors)
     authors = `by ${authors}`
 
-  let refs = [
-    authors,
-    prRefs,
-    hashRefs,
-  ].filter(i => i?.trim()).join(' ')
+  // 拼接ref
+  let refs = [authors, prRefs, hashRefs].filter(i => i?.trim()).join(' ')
 
   if (refs)
     refs = `&nbsp;-&nbsp; ${refs}`
@@ -156,6 +152,19 @@ export async function generateMarkdown(commits: Commit[], options: ResolvedChang
 }
 
 /**
+ * 年月日格式化当前时间
+ * - 格式： 2024-08-09
+ * @param date
+ */
+function formatDateToYMD(date: Date = new Date()): string {
+  const year = date.getFullYear()
+  // 月份是从0开始的，所以要+1
+  const month = (date.getMonth() + 1).toString().padStart(2, '0')
+  const day = date.getDate().toString().padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
+/**
  * 更新changelog
  * @param outputPath
  * @param markdown
@@ -173,7 +182,7 @@ export async function updateChangelog(outputPath: string, markdown: string, rele
   }
 
   // 添加版本头部
-  const newMd = `## ${releaseVersionName} (${dayjs().format('YYYY-MM-DD')})\n\n${markdown}`
+  const newMd = `## ${releaseVersionName} (${formatDateToYMD()})\n\n${markdown}`
 
   const lastEntry = changelogMD.match(/^##\s+(?:\S.*)?$/m)
 

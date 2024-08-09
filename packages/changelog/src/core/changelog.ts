@@ -2,7 +2,6 @@
 import process from 'node:process'
 import { blue, bold, cyan, dim, red, yellow } from 'kolorist'
 import { Command } from 'commander'
-import type { GitCommit, RawGitCommit } from 'changelogen'
 import { getGitDiff, parseGitCommit } from 'changelogen'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
@@ -20,7 +19,6 @@ import {
   updateChangelog,
 } from '../utils'
 import type {
-  ChangelogEnOptions,
   ChangelogOptions,
   ResolvedChangelogOptions,
 } from '../types'
@@ -65,17 +63,6 @@ async function resolveConfig(options: ChangelogOptions) {
 }
 
 /**
- * 解析git commit信息
- * @param commits
- * @param config
- */
-function parseCommits(commits: RawGitCommit[], config: ChangelogEnOptions): GitCommit[] {
-  return commits
-    .map(commit => parseGitCommit(commit, config))
-    .filter(v => v != null)
-}
-
-/**
  * 生成markdown文档信息
  * @param options
  */
@@ -83,7 +70,11 @@ async function generate(options: ChangelogOptions) {
   const config = await resolveConfig(options)
 
   const rawCommits = await getGitDiff(config.from, config.to)
-  const commits = parseCommits(rawCommits, config)
+
+  // 解析commit信息
+  const commits = rawCommits
+    .map(commit => parseGitCommit(commit, config))
+    .filter(v => v != null)
 
   // 添加贡献者
   if (config.contributors) {

@@ -91,9 +91,6 @@ importers:
       convert-gitmoji:
         specifier: ^0.1.5
         version: 0.1.5
-      dayjs:
-        specifier: ^1.11.11
-        version: 1.11.12
       kolorist:
         specifier: ^1.8.0
         version: 1.8.0

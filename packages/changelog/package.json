@@ -42,7 +42,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@antfu/utils": "^0.7.10",
     "@esm2cjs/execa": "6.1.1-cjs.1",
     "c12": "^1.11.1",
     "changelogen": "0.5.5",

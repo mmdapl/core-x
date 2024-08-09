@@ -1,12 +1,11 @@
 import { $fetch } from 'ofetch'
 import { cyan, green, red, yellow } from 'kolorist'
-import { notNullish } from '@antfu/utils'
 import qs from 'qs'
 import type {
   AuthorInfo,
   ChangelogOptions,
   Commit,
-} from '../types/changelog.interface'
+} from '../types'
 
 export async function sendRelease(
   options: ChangelogOptions,
@@ -92,30 +91,30 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
 export async function resolveAuthors(commits: Commit[], options: ChangelogOptions) {
   const map = new Map<string, AuthorInfo>()
   commits.forEach((commit) => {
-    commit.resolvedAuthors = commit.authors.map((a, idx) => {
-      if (!a.email || !a.name)
-        return null
-      if (!map.has(a.email)) {
-        map.set(a.email, {
-          commits: [],
-          name: a.name,
-          email: a.email,
-        })
-      }
-      const info = map.get(a.email)!
+    commit.resolvedAuthors = commit.authors
+      .map((a, idx) => {
+        if (!a.email || !a.name)
+          return null
+        if (!map.has(a.email)) {
+          map.set(a.email, { commits: [], name: a.name, email: a.email })
+        }
+        const info = map.get(a.email)!
 
-      // record commits only for the first author
-      if (idx === 0)
-        info.commits.push(commit.shortHash)
+        // record commits only for the first author
+        if (idx === 0)
+          info.commits.push(commit.shortHash)
 
-      return info
-    }).filter(notNullish)
+        return info
+      })
+      .filter(v => v != null)
   })
+
   const authors = Array.from(map.values())
   const resolved = await Promise.all(authors.map(info => resolveAuthorInfo(options, info)))
 
   const loginSet = new Set<string>()
   const nameSet = new Set<string>()
+
   return resolved
     .sort((a, b) => (a.login || a.name).localeCompare(b.login || b.name))
     .filter((i) => {

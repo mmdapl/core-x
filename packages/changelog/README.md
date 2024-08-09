@@ -138,18 +138,16 @@ jobs:
 ### 更多功能
 
 ```shell
+
+# cli 参数帮助
+npx changelog -h
+
 @142vip/changelog/0.0.1-alpha.1
 
-Usage:
-  $ @142vip/changelog
-
-Commands:
-
-For more info, run any command with the `--help` flag:
-  $ @142vip/changelog --help
+Usage: @142vip/changelog [options]
 
 Options:
-  -v, --version            Display version number
+  -v --version             Package Version
   -t, --tokens <path>      GitHub Token
   --from <ref>             From tag
   --to <ref>               To tag
@@ -158,8 +156,8 @@ Options:
   --prerelease             Mark release as prerelease
   --output <path>          Output to file instead of sending to GitHub
   --scopeName <scopeName>  Package name in Monorepo，Match the scope in the git commit information
-  --dry                    Dry run
-  -h, --help               Display this message
+  --dry                    Dry run (default: false)
+  -h, --help               display help for command
 ```
 
 ## 配置

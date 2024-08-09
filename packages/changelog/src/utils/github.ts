@@ -1,7 +1,12 @@
 import { $fetch } from 'ofetch'
-import { cyan, green } from 'kolorist'
+import { cyan, green, red, yellow } from 'kolorist'
 import { notNullish } from '@antfu/utils'
-import type { AuthorInfo, ChangelogOptions, Commit } from './types'
+import qs from 'qs'
+import type {
+  AuthorInfo,
+  ChangelogOptions,
+  Commit,
+} from '../types/changelog.interface'
 
 export async function sendRelease(
   options: ChangelogOptions,
@@ -128,6 +133,11 @@ export async function resolveAuthors(commits: Commit[], options: ChangelogOption
     })
 }
 
+/**
+ * 判断是否有tag
+ * @param tag
+ * @param options
+ */
 export async function hasTagOnGitHub(tag: string, options: ChangelogOptions) {
   try {
     await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/git/ref/tags/${tag}`, {
@@ -137,5 +147,35 @@ export async function hasTagOnGitHub(tag: string, options: ChangelogOptions) {
   }
   catch {
     return false
+  }
+}
+
+/**
+ * 生成webUrl链接
+ */
+export function generateWebUrl(config: any, markdown: string) {
+  const baseUrl = `https://${config.baseUrl}/${config.repo}/releases/new`
+  const queryParams = qs.stringify({
+    title: config.name || config.to,
+    body: markdown,
+    tag: config.to,
+    prerelease: config.prerelease,
+  })
+  // `https://${config.baseUrl}/${config.repo}/releases/new?title=${encodeURIComponent(String(config.name || config.to))}&body=${encodeURIComponent(String(markdown))}&tag=${encodeURIComponent(String(config.to))}&prerelease=${config.prerelease}`
+  return `${baseUrl}?${queryParams}`
+}
+
+/**
+ * 打印手动发布地址
+ * - 默认成功输出
+ * @param webUrl
+ * @param success
+ */
+export function printUrl(webUrl: string, success: boolean = true) {
+  if (success) {
+    console.error(`\n${yellow('使用以下链接手动发布新的版本：')}\n${yellow(webUrl)}\n`)
+  }
+  else {
+    console.error(`\n${red('无法创建发布。使用以下链接手动创建：')}\n${yellow(webUrl)}\n`)
   }
 }

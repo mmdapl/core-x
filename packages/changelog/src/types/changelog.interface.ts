@@ -75,6 +75,9 @@ export interface ChangelogOptions extends Partial<ChangelogEnOptions> {
    */
   baseUrlApi?: string
 
+  /**
+   * git commit scope name
+   */
   scopeName?: string
 }
 

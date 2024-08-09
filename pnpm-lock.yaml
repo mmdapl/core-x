@@ -194,9 +194,6 @@ importers:
       '@142vip/release-version':
         specifier: workspace:*
         version: link:../release-version
-      '@esm2cjs/execa':
-        specifier: 6.1.1-cjs.1
-        version: 6.1.1-cjs.1
       cnpm:
         specifier: ^9.4.0
         version: 9.4.0
@@ -206,6 +203,9 @@ importers:
       del:
         specifier: ^7.1.0
         version: 7.1.0
+      inquirer:
+        specifier: '7'
+        version: 7.3.3
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -222,9 +222,6 @@ importers:
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
-      inquirer:
-        specifier: '7'
-        version: 7.3.3
 
   packages/nest:
     dependencies:

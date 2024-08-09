@@ -4,7 +4,6 @@ import { blue, bold, cyan, dim, red, yellow } from 'kolorist'
 import { Command } from 'commander'
 import type { GitCommit, RawGitCommit } from 'changelogen'
 import { getGitDiff, parseGitCommit } from 'changelogen'
-import { notNullish } from '@antfu/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -71,7 +70,9 @@ async function resolveConfig(options: ChangelogOptions) {
  * @param config
  */
 function parseCommits(commits: RawGitCommit[], config: ChangelogEnOptions): GitCommit[] {
-  return commits.map(commit => parseGitCommit(commit, config)).filter(notNullish)
+  return commits
+    .map(commit => parseGitCommit(commit, config))
+    .filter(v => v != null)
 }
 
 /**

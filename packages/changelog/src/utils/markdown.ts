@@ -1,9 +1,8 @@
 import { existsSync, promises as fsp } from 'node:fs'
-import { partition } from '@antfu/utils'
 import type { Reference } from 'changelogen'
 import { convert } from 'convert-gitmoji'
 import dayjs from 'dayjs'
-import type { Commit, ResolvedChangelogOptions } from '../types/changelog.interface'
+import type { Commit, ResolvedChangelogOptions } from '../types'
 
 const emojisRE = /([\u2700-\u27BF\uE000-\uF8FF\u2011-\u26FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|\uD83E[\uDD10-\uDDFF])/g
 
@@ -118,7 +117,8 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
 export async function generateMarkdown(commits: Commit[], options: ResolvedChangelogOptions) {
   const lines: string[] = []
 
-  const [breaking, changes] = partition(commits, c => c.isBreaking)
+  const breaking = commits.filter(c => c.isBreaking)
+  const changes = commits.filter(c => !c.isBreaking)
 
   const group = groupBy(changes, 'type')
 
@@ -187,6 +187,9 @@ export async function updateChangelog(outputPath: string, markdown: string, rele
   await fsp.writeFile(outputPath, changelogMD, 'utf-8')
 }
 
+/**
+ * 分组
+ */
 function groupBy<T>(items: T[], key: string, groups: Record<string, T[]> = {}) {
   for (const item of items) {
     const v = (item as any)[key] as string

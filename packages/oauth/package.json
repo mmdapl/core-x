@@ -3,6 +3,13 @@
   "version": "0.0.1-alpha.0",
   "private": false,
   "description": "公众号搜：储凡",
+  "author": "mmdapl <mmdapl@163.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/142vip/core-x/tree/main/packages/oauth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x.git"
+  },
   "keywords": [
     "公众号搜：储凡"
   ],
@@ -17,15 +24,8 @@
   "dependencies": {
     "dayjs": "^1.11.11"
   },
-  "homepage": "https://github.com/142vip/core-x/tree/main/packages/oauth",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/142vip/core-x.git"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "author": "mmdapl <mmdapl@163.com>",
-  "license": "MIT"
+  }
 }

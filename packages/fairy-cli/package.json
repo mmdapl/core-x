@@ -1,9 +1,23 @@
 {
   "name": "@142vip/fairy-cli",
+  "type": "module",
   "version": "0.0.3-alpha.3",
   "private": false,
-  "type": "module",
   "description": "公众号搜：储凡、fairy-cli",
+  "author": {
+    "name": "mmdapl",
+    "email": "mmdapl@163.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/142vip/core-x/packages/fairy-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x",
+    "directory": "packages/fairy-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/142vip/core-x/issues"
+  },
   "keywords": [
     "公众号搜：储凡",
     "clean"
@@ -38,32 +52,18 @@
     "@142vip/release-version": "workspace:*",
     "commander": "^12.1.0",
     "del": "^7.1.0",
-    "js-yaml": "^4.1.0",
-    "turbo": "^2.0.1",
     "inquirer": "7",
-    "node-fetch": "^3.3.2"
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^3.3.2",
+    "turbo": "^2.0.1"
   },
   "devDependencies": {
     "@inquirer/confirm": "^3.1.15",
     "@types/inquirer": "^9.0.7",
     "@types/js-yaml": "^4.0.9"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/142vip/core-x",
-    "directory": "packages/fairy-cli"
-  },
-  "bugs": {
-    "url": "https://github.com/142vip/core-x/issues"
-  },
-  "homepage": "https://github.com/142vip/core-x/packages/fairy-cli",
-  "author": {
-    "name": "mmdapl",
-    "email": "mmdapl@163.com"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "license": "MIT"
+  }
 }

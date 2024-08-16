@@ -42,7 +42,7 @@ const partners = [];
 
 ## 赞赏列表
 
-以下排名不分先后，  **赞赏过的一定要微信跟我说呀！！！！！！**
+以下排名不分先后， **赞赏过的一定要微信跟我说呀！！！！！！**
 
 <div>
   <a href="https://github.com/ChiefPing" target="_blank" style="margin: 5px">

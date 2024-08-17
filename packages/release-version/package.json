@@ -2,6 +2,16 @@
   "name": "@142vip/release-version",
   "version": "0.0.1-alpha.6",
   "description": "版本迭代更新，Git提交信息、打标记并推送到远程",
+  "author": {
+    "name": "James Messinger",
+    "url": "https://jamesmessinger.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/142vip/core-x/tree/main/packages/release-version",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/142vip/core-x.git"
+  },
   "keywords": [
     "@142vip/release-version",
     "version",
@@ -23,13 +33,13 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "bumpx": "./cli.mjs"
+  },
   "files": [
     "*.mjs",
     "dist"
   ],
-  "bin": {
-    "bumpx": "./cli.mjs"
-  },
   "engines": {
     "node": ">=16"
   },
@@ -38,8 +48,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/changelog": "workspace:*",
+    "@142vip/common": "^0.0.1-alpha.5",
     "c12": "^1.10.0",
     "cac": "^6.7.14",
     "escalade": "^3.1.2",
@@ -54,22 +64,12 @@
     "@types/semver": "^7.5.8",
     "detect-indent": "^7.0.1",
     "detect-newline": "^4.0.1",
+    "kolorist": "^1.8.0",
     "log-symbols": "^6.0.0",
-    "npm-check": "^6.0.1",
-    "kolorist": "^1.8.0"
-  },
-  "author": {
-    "name": "James Messinger",
-    "url": "https://jamesmessinger.com"
-  },
-  "homepage": "https://github.com/142vip/core-x/tree/main/packages/release-version",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/142vip/core-x.git"
+    "npm-check": "^6.0.1"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "license": "MIT"
+  }
 }

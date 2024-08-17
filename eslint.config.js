@@ -5,24 +5,21 @@ import antFu from '@antfu/eslint-config'
 export default antFu({
   ignores: [
     '**/node_modules/**',
-    'dist',
     '**/dist/**',
-    '.nuxt',
     '**/.nuxt/**',
-    'typings/',
     '**/typings/**/',
-    '.output',
     '**/.output/**',
-    '**/*/CHANGELOG.md',
+    // 基于release脚本生成
+    '**/CHANGELOG.md',
   ],
   typescript: true,
   vue: true,
-  jsonc: false,
+  jsonc: true,
   yaml: true,
   formatters: {
     css: true,
     html: true,
-    // markdown: 'prettier',
+    markdown: 'prettier',
   },
   rules: {
     'no-console': 'warn',

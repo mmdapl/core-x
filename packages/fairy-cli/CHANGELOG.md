@@ -17,8 +17,8 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### 😏 Release Packages
 
-- Publish v0.0.3-alpha.2 &nbsp;-&nbsp; by **chufan** [<samp>(b5b20)</samp>](https://github.com/142vip/core-x/commit/b5b20e1)
-- Publish v0.0.3-alpha.3 &nbsp;-&nbsp; by **chufan** [<samp>(d8d59)</samp>](https://github.com/142vip/core-x/commit/d8d59fb)
+- Publish `v0.0.3-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(b5b20)</samp>](https://github.com/142vip/core-x/commit/b5b20e1)
+- Publish `v0.0.3-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(d8d59)</samp>](https://github.com/142vip/core-x/commit/d8d59fb)
 
 **Release New Version v0.0.3-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
 
@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file. See [commit
 
 ### 😏 Release Packages
 
-- Publish v0.0.3-alpha.2 &nbsp;-&nbsp; by **chufan** [<samp>(b5b20)</samp>](https://github.com/142vip/core-x/commit/b5b20e1)
+- Publish `v0.0.3-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(b5b20)</samp>](https://github.com/142vip/core-x/commit/b5b20e1)
 
 **Release New Version v0.0.3-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
 

@@ -26,10 +26,13 @@
     "build:docs": "vitepress build",
     "preview": "vitepress preview",
     "clean": "npx fa clean --ignore-tips --all",
-    "lint": "npx eslint . --fix"
+    "lint": "npx fa lint --fix",
+    "release:check": "npx fa release --check-release --vip",
+    "release": "npx fa release --vip"
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",
+    "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/fairy-cli": "workspace:*",
     "@142vip/release-version": "workspace:*",
     "@142vip/vitepress": "workspace:*",
@@ -43,7 +46,6 @@
     "eslint": "8.55.0",
     "eslint-plugin-format": "^0.1.1",
     "husky": "^8.0.3",
-    "inquirer": "7",
     "install": "^0.13.0",
     "jest": "^29.2.2",
     "typescript": "^5.3.3",

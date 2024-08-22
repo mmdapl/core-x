@@ -50,15 +50,16 @@
   "dependencies": {
     "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/release-version": "workspace:*",
+    "@inquirer/prompts": "^5.3.8",
     "commander": "^12.1.0",
     "del": "^7.1.0",
     "inquirer": "7",
     "js-yaml": "^4.1.0",
+    "log-symbols": "^6.0.0",
     "node-fetch": "^3.3.2",
     "turbo": "^2.0.1"
   },
   "devDependencies": {
-    "@inquirer/confirm": "^3.1.15",
     "@types/inquirer": "^9.0.7",
     "@types/js-yaml": "^4.0.9"
   },

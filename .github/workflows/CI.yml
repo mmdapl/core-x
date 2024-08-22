@@ -55,7 +55,7 @@ jobs:
           ./scripts/ci
 
       # Eslint 检测
-      - name: Code LintFix
+      - name: Code LintFix By ESLint
         run: |
           npx eslint .
 

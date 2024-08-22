@@ -51,7 +51,7 @@ function validatePackage(packageName: string, template?: string) {
  * 生成changelog文档，更新version
  */
 export async function releaseMonorepoPackage(pkg: PackageJSON) {
-  const commitInfo = `release(${pkg.name}): publish v%s`
+  const commitInfo = `release(${pkg.name}): publish \`v%s\``
   const execute = 'git add CHANGELOG.md'
   const rpCommand = `bumpx --preid alpha --changelog --commit '${commitInfo}'  --execute '${execute}' --scopeName '${pkg.name}' --no-tag --all`
   const command = `pnpm --filter "${pkg.name}" --shell-mode exec "${rpCommand}"`
@@ -72,7 +72,6 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
     tag: false,
     commit: commitInfo,
     push: true,
-
     all: true,
   })
 }

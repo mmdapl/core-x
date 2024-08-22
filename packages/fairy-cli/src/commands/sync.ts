@@ -24,11 +24,6 @@ interface RequestSync {
   logId: string
 }
 
-console.log(`Usage: $ fa sync [moduleName1 moduleName2 ...]
-Options:
-  --sync-publish        sync as publish
-  --no-deps        do not sync dependencies and devDependencies`)
-
 async function requestSync(packageName: string) {
   const syncUrl = `https://registry.npmmirror.com/${packageName}/sync`
 

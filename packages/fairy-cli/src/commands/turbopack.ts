@@ -44,7 +44,7 @@ function getFilterRepo(repoNames: string[]) {
 export async function turboPackMain(program: Command) {
   program
     .command(CliCommandEnum.TURBO)
-    .description('exec turbo pack command')
+    .description('TurboPack工具命令')
     .argument('[repoName...]', '需要使用Turbo管理的项目名，支持多个')
     .option('--dev', '执行dev命令', false)
     .option('--build', '执行build命令', false)

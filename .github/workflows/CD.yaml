@@ -104,10 +104,21 @@ jobs:
         run: |
           pnpm build
 
+      - name: Get Package Name By Commit Scope
+        id: getPkgName
+        # 这里使用正则截取scope，获取包名
+        run: |
+          SCOPE=$(echo "${{ github.event.head_commit.message }}" | grep -o '@[^):]*')
+          echo "name=$SCOPE" >> $GITHUB_OUTPUT
+
+      - name: Use Package Name
+        run: |
+          echo "The pkgName is: ${{ steps.getPkgName.outputs.name }}"
+
       # Npm 版本发布 注意：只发布packages中的模块
       - name: Publish New Npm Version
         run: |
-          pnpm publish -r --filter "./packages/**"
+          pnpm publish --filter "${{ steps.getPkgName.outputs.name }}"
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 

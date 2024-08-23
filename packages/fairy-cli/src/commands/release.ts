@@ -2,8 +2,7 @@ import process from 'node:process'
 import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { Command } from 'commander'
-import inquirer from 'inquirer'
-import { confirm } from '@inquirer/prompts'
+import { confirm, select } from '@inquirer/prompts'
 import logSymbols from 'log-symbols'
 import {
   CliCommandEnum,
@@ -85,12 +84,11 @@ function printPreCheckRelease() {
 
   console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
   for (const pkg of packages) {
-    console.log(pkg.name, pkg.release ? logSymbols.error : logSymbols.success)
+    console.log(`${pkg.release ? logSymbols.error : logSymbols.success} ${pkg.name}`)
   }
 
   if (!release) {
-    console.log('\n存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！')
-    process.exit(0)
+    console.log(`\n${logSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)
   }
 }
 
@@ -98,22 +96,28 @@ function printPreCheckRelease() {
  * 执行142vip开源仓库迭代
  */
 function execVipRelease(args: { checkRelease?: boolean }) {
+  // 预先检查子模块
+  if (args.checkRelease) {
+    printPreCheckRelease()
+    process.exit(0)
+  }
+
   const pkgJSON = getReleasePkgJSON('./packages/*')
 
   // 对话框
-  inquirer
-    .prompt({
-      type: 'list',
-      name: 'packageName',
-      message: '选择需要Release的Package名称：',
-      choices: [
-        defaultRepoName,
-        ...pkgJSON.map(pkg => pkg.name),
-      ],
-      // 不循环滚动
-      loop: false,
-    })
-    .then(async ({ packageName }) => {
+  select({
+    message: '选择需要Release的Package名称：',
+    choices: [
+      defaultRepoName,
+      ...pkgJSON.map(pkg => pkg.name),
+    ].map(name => ({
+      name,
+      value: name,
+    })),
+    // 不循环滚动
+    loop: false,
+  })
+    .then(async (packageName) => {
       // 确认框
       const isRelease = await confirm({
         message: `将对模块${packageName}进行版本迭代，是否继续操作？`,
@@ -130,14 +134,8 @@ function execVipRelease(args: { checkRelease?: boolean }) {
         process.exit(0)
       }
 
-      // 预先检查子模块
-      if (args.checkRelease) {
-        printPreCheckRelease()
-      }
-      else {
-        // 发布
-        await releaseRoot()
-      }
+      // 发布根模块
+      await releaseRoot()
     })
 }
 

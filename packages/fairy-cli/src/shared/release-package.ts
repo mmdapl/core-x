@@ -1,13 +1,22 @@
 import { execSync } from 'node:child_process'
 import process from 'node:process'
 import { versionBump } from '@142vip/release-version'
-import { getLatestTagName } from './git'
+import { getCommitLogs, getLatestTagName } from './git'
 
 interface PackageJSON {
   name: string
   version: string
   private: boolean
   path: string
+}
+
+interface ValidatePkgJSON {
+  name: string
+  release: boolean
+}
+interface ValidateResponse {
+  release: boolean
+  packages: ValidatePkgJSON[]
 }
 
 /**
@@ -33,17 +42,15 @@ export function getReleasePkgJSON(filter?: string) {
  * 提交git当前节点到上个tag的所有提交记录
  * 分析、判断是否有公共模块，提醒及时对公共模块发布新的版本号
  */
-function validatePackage(packageName: string, template?: string) {
+function validatePackage(packageNameInCommitScope: string, template?: string) {
   const latestTag = getLatestTagName()
-  const command = `git log --pretty=format:"%s" --date=short "${latestTag}"..HEAD`
-  const commitLogs = execSync(command).toString().trim()
+  const commitLogs = getCommitLogs(latestTag)
 
   // 整理出git提交日志
-  const logsByPackage = commitLogs.split('\n')
-    .filter(commit => commit.includes(`${packageName}`))
+  const logsByPackage = commitLogs.filter(commit => commit.includes(`(${packageNameInCommitScope})`))
 
   // 判断是否需要发布新的版本
-  return logsByPackage.length > 0 && !logsByPackage[0].includes(template ?? `release(${packageName})`)
+  return logsByPackage.length > 0 && !logsByPackage[0].includes(template ?? `release(${packageNameInCommitScope})`)
 }
 
 /**
@@ -57,8 +64,6 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
   const command = `pnpm --filter "${pkg.name}" --shell-mode exec "${rpCommand}"`
 
   console.log('等价命令-->', command)
-  console.log(pkg)
-  console.log('aaaa dir-->', pkg.path)
 
   await versionBump({
     preid: 'alpha',
@@ -76,11 +81,14 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
   })
 }
 
-export function validateBeforeReleaseRoot() {
+/**
+ * 在发布根模块前线上进行校验
+ */
+export function validateBeforeReleaseRoot(): ValidateResponse {
   const pkgJSON = getReleasePkgJSON()
   const packageNames = pkgJSON.map(pkg => pkg.name)
   let isRootRelease = true
-  const packages = []
+  const packages: ValidatePkgJSON[] = []
   for (const packageName of packageNames) {
     const isRelease = validatePackage(packageName)
     if (!isRelease) {

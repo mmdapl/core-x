@@ -1,4 +1,5 @@
 import { execSync } from 'node:child_process'
+import process from 'node:process'
 
 /**
  * 获取当前分支名
@@ -13,7 +14,7 @@ export function getBranchName(): string {
  * - 优先从package.json中获取version
  * - version对应的tag不存在时，再从git记录中获取最新tag
  */
-export function getLatestTagName(): string | null {
+export function getLatestTagName(): string {
   try {
     // 读取 package.json 文件中的 version 值
     const packageJSON = execSync('cat package.json').toString()
@@ -30,7 +31,18 @@ export function getLatestTagName(): string | null {
     return execSync('git describe --tags --abbrev=0').toString().trim()
   }
   catch (error) {
-    console.error('Failed to get the latest tag name:', error)
-    return null
+    console.log(error)
+    process.exit(0)
   }
+}
+
+/**
+ * 获取某个分支上的commit日志
+ */
+export function getCommitLogs(latestTag: string, branch?: string): string[] {
+  const command = `git log ${branch ?? ''} --pretty=format:"%s" --date=short "${latestTag}"..HEAD`
+  const commitLogs = execSync(command).toString().trim()
+
+  // 整理出git提交日志
+  return commitLogs.split('\n')
 }

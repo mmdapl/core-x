@@ -137,6 +137,9 @@ function execVipRelease(args: { checkRelease?: boolean }) {
       // 发布根模块
       await releaseRoot()
     })
+    .catch(() => {
+      // 避免错误过分暴露
+    })
 }
 
 /**

@@ -71,8 +71,24 @@ async function generate(options: ChangelogOptions) {
 
   const rawCommits = await getGitDiff(config.from, config.to)
 
+  // 发布子模块时，需要考虑根模块迭代一个版本，子模块迭代多个版本但只需要记录一个版本
+  let newRawCommits = []
+  if (options.scopeName != null) {
+    console.log(`chore(${options.scopeName})`, rawCommits)
+    for (const rawCommit of rawCommits) {
+      if (rawCommit.message.includes(`release(${options.scopeName})`)) {
+        break
+      }
+      newRawCommits.push(rawCommit)
+    }
+  }
+  else {
+    // 根模块
+    newRawCommits = rawCommits
+  }
+
   // 解析commit信息
-  const commits = rawCommits
+  const commits = newRawCommits
     .map(commit => parseGitCommit(commit, config))
     .filter(v => v != null)
 

@@ -21,15 +21,17 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/*",
+    "clean": "npx fa clean --ignore-tips --all",
     "dev": "vitepress dev --port 8080 --host",
     "build": "npx turbo run build --color --only",
     "build:docs": "vitepress build",
     "preview": "vitepress preview",
-    "clean": "npx fa clean --ignore-tips --all",
     "lint": "npx fa lint",
     "lint:fix": "npx fa lint --fix",
     "release:check": "npx fa release --check-release --vip",
-    "release": "npx fa release --vip"
+    "release": "npx fa release --vip",
+    "publish:check": "pnpm publish -r --filter './packages/**' --dry-run --json --no-git-checks",
+    "check": "pnpm release:check && pnpm publish:check"
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",

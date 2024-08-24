@@ -67,6 +67,7 @@ const sidebarConfig: DefaultTheme.Sidebar = [
   {
     text: '通用',
     items: [
+      { text: '@142vip/axios', link: '/packages/axios' },
       { text: '@142vip/oauth', link: '/packages/oauth' },
       { text: '@142vip/redis', link: '/packages/redis' },
       { text: '@142vip/typeorm', link: '/packages/redis' },

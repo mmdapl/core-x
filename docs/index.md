@@ -15,11 +15,11 @@ hero:
 # 功能页
 features:
   - title: 易学易用
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 文档丰富、提供完整、丰富的入门方案
   - title: 性能出色
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: 灵活多变
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: 类型安全、基于TS编码的工具包
+  - title: 通用工具包
+    details: 适用工程化，可服用在各类项目中，支持Monorepo架构
     link: /api-examples
     rel: 'external'
 ---

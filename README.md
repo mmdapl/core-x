@@ -6,6 +6,7 @@
 
 ## 公共包
 
+- `@142vip/axios`
 - `@142vip/changelog`
 - `@142vip/egg`
 - `@142vip/egg-axios`
@@ -44,6 +45,9 @@ pnpm dev
 
 # 编译打包文档
 pnpm build:docs
+
+# 代码风格检查
+pnpm lint
 ```
 
 ## 趋势

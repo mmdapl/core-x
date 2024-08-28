@@ -35,9 +35,9 @@ async function execCleanUp(args: CleanUpOptions) {
     dirPatterns.push(...generateDirPatterns('dist', args.all))
   }
 
-  // 删除nuxt构建目录，.nuxt output
+  // 删除nuxt构建目录，.nuxt .output
   if (args.nuxt) {
-    dirPatterns.push(...generateDirPatterns(['.nuxt', 'output'], args.all))
+    dirPatterns.push(...generateDirPatterns(['.nuxt', '.output'], args.all))
   }
 
   // 删除midway构建目录，run logs
@@ -104,13 +104,12 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
 
 /**
  * fairy-cli clean 项目清理
- * @param program
  */
 export async function cleanUpMain(program: Command) {
   program
     .command(CliCommandEnum.CLEAN)
     .description('清除开发、构建等环境下的无用目录')
-    .option('-n,--nuxt', '删除nuxt构建目录', false)
+    .option('-n,--nuxt', '删除nuxt构建目录，包括.nuxt、.output目录', false)
     .option('-d,--dist', '删除dist目录', false)
     .option('-m,--midway', '删除midway构建目录', false)
     .option('-f,--force', '强制删除，默认值：false', false)

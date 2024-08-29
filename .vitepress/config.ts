@@ -16,8 +16,8 @@ const GithubLinks = {
  * 页脚
  */
 export const footer = {
-  message: `Released Under The License <a href="${GithubLinks.CoreXLicense}">MIT </a>`,
-  copyright: `Copyright © 2019-present <a href="${GithubLinks.VipOrg}" style="margin-right:5px;">142vip</a> <a href=${GithubLinks.MainAccount}>👉储凡</a>`,
+  message: `The License <a href="${GithubLinks.CoreXLicense}">📖 MIT </a>`,
+  copyright: `Release ${packageName}@${currentPackageVersion} 😏<br> Copyright © 2019-present. Repo <a href="${GithubLinks.VipOrg}" style="margin-right:5px;">@142vip</a> Author. <a href=${GithubLinks.MainAccount}>👉储凡</a>`,
 }
 
 /**
@@ -29,8 +29,8 @@ export const navbarConfig: DefaultTheme.NavItem[] = [
     link: '/docs/index.md',
   },
   {
-    text: '开发计划',
-    link: '/docs/road-map.md',
+    text: '自媒体',
+    link: '/docs/media.md',
   },
   {
     text: currentPackageVersion,
@@ -46,8 +46,8 @@ export const navbarConfig: DefaultTheme.NavItem[] = [
     ],
   },
   {
-    text: '自媒体',
-    link: '/docs/media.md',
+    text: '开发计划',
+    link: 'https://142vip-cn.feishu.cn/share/base/view/shrcnpwFKWmMu5zXE9WaxjuCYAg',
   },
 ]
 
@@ -70,7 +70,7 @@ const sidebarConfig: DefaultTheme.Sidebar = [
       { text: '@142vip/axios', link: '/packages/axios' },
       { text: '@142vip/oauth', link: '/packages/oauth' },
       { text: '@142vip/redis', link: '/packages/redis' },
-      { text: '@142vip/typeorm', link: '/packages/redis' },
+      { text: '@142vip/typeorm', link: '/packages/typeorm' },
     ],
   },
   {

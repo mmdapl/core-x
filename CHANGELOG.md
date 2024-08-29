@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.10 (2024-08-30)
+
+### ✨ Features
+
+- 静态站点增加`@142vip/axios`模块文档入口配置 &nbsp;-&nbsp; by **chufan** [<samp>(771cd)</samp>](https://github.com/142vip/core-x/commit/771cdb0)
+- 优化`simple-git-hooks`流程，支持`commit`和`push`操作前进行功能预检 &nbsp;-&nbsp; by **chufan** [<samp>(9f359)</samp>](https://github.com/142vip/core-x/commit/9f35903)
+- 增加`build`命令，优化CI/CD流水线处理步骤，简化`verify-commit`校验 &nbsp;-&nbsp; by **微信公众号：储凡** and **chufan** in https://github.com/142vip/core-x/issues/81 [<samp>(60ba3)</samp>](https://github.com/142vip/core-x/commit/60ba395)
+- **@142vip/fairy-cli**:
+  - 新增`verifyCommit`函数，支持`git commit`信息校验 &nbsp;-&nbsp; by **chufan** [<samp>(aa29a)</samp>](https://github.com/142vip/core-x/commit/aa29ab2)
+- **@142vip/vitepress**:
+  - 增加`142vip`组织成员介绍，导出变量 &nbsp;-&nbsp; by **chufan** [<samp>(8f5e9)</samp>](https://github.com/142vip/core-x/commit/8f5e984)
+
+### 🐛 Bug Fixes
+
+- 修复`release`命令执行时触发`simple-git-hooks`钩子检验问题，拓展`scope`范围 &nbsp;-&nbsp; by **chufan** [<samp>(7b5e0)</samp>](https://github.com/142vip/core-x/commit/7b5e0ca)
+- **@142vip/fairy-cli**:
+  - 修复`clean`命令配置`--nuxt`参数，`.output`目录删除异常 &nbsp;-&nbsp; by **chufan** [<samp>(2e441)</samp>](https://github.com/142vip/core-x/commit/2e441e0)
+- **Github Actions**:
+  - 修复流水线build异常，先编译公共模块 &nbsp;-&nbsp; by **chufan** [<samp>(b9173)</samp>](https://github.com/142vip/core-x/commit/b91733a)
+  - 修复流水线build异常，无法部署静态网站 &nbsp;-&nbsp; by **chufan** [<samp>(0d3a1)</samp>](https://github.com/142vip/core-x/commit/0d3a1ac)
+
+### 📖 Documentation
+
+- 更新各模块的`CHANGELOG`文档，优化版本更新内容 &nbsp;-&nbsp; by **chufan** [<samp>(1d7e9)</samp>](https://github.com/142vip/core-x/commit/1d7e981)
+- 各模块`README`文档增加版本标记，优化静态站点内容显示 &nbsp;-&nbsp; by **chufan** [<samp>(279ce)</samp>](https://github.com/142vip/core-x/commit/279ce30)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.7` &nbsp;-&nbsp; by **chufan** [<samp>(3e538)</samp>](https://github.com/142vip/core-x/commit/3e538d4)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(c4fc5)</samp>](https://github.com/142vip/core-x/commit/c4fc586)
+
+**Release New Version v0.0.1-alpha.10 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.9...v0.0.1-alpha.10)**
+
 ## v0.0.1-alpha.9 (2024-08-24)
 
 ### ✨ Features

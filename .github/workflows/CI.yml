@@ -62,7 +62,7 @@ jobs:
       # 编辑模块代码
       - name: Build Package Code
         run: |
-          pnpm build
+          pnpm build:packages
 
       # 编译静态网站
       - name: Build Core-X Docs

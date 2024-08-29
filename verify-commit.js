@@ -53,6 +53,7 @@ const pkgJSON = getReleasePkgJSON('./packages/*')
 const scopeList = [
   ...pkgJSON.map(pkg => pkg.name),
   'Github Actions',
+  'release', // 支持主仓库发布版本，临时解决，可以考虑忽略hooks
 ]
 
 // scope范围不支持

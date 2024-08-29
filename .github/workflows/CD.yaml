@@ -160,7 +160,8 @@ jobs:
 
       # 编译 打包成dist
       - name: Build with VitePress
-        run: pnpm build:docs
+        run: |
+          pnpm build && pnpm build:docs
 
       # 上传dist文件
       - name: Upload artifact

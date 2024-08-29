@@ -1,5 +1,7 @@
 # @142vip/release-version
 
+[![NPM version](https://img.shields.io/npm/v/@142vip/release-version?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/release-version)
+
 ## 使用
 
 ```shell

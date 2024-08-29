@@ -161,7 +161,7 @@ jobs:
       # 编译 打包成dist
       - name: Build with VitePress
         run: |
-          pnpm build:docs
+          pnpm build
 
       # 上传dist文件
       - name: Upload artifact

@@ -1,4 +1,4 @@
-import { execShell } from '@142vip/common'
+import { execShell } from '@142vip/utils'
 import type { NpmScript } from '../types'
 import { ProgressEvent } from '../types'
 import { readJsonFile } from './fs'

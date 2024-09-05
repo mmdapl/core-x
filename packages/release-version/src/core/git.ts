@@ -1,4 +1,4 @@
-import { execShell } from '@142vip/common'
+import { execShell } from '@142vip/utils'
 import { ProgressEvent } from '../types'
 import type { Operation } from './operation'
 

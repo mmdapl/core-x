@@ -14,6 +14,9 @@ pnpm i vitepress -D
 
 ## 参考
 
+- [支持Vue组件](https://github.com/unjs/unbuild/issues/80)
+- [组件结构](https://github.com/wobsoriano/vue-sfc-unbuild/blob/main/build.config.ts)
+
 ## 感谢
 
 ## 证书

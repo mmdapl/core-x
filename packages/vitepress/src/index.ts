@@ -1,13 +1,17 @@
-import type { Plugin } from 'vue'
-import * as components from './components'
+export * from './core'
 
-export * from './config'
+// const install: Plugin = {
+//   install(app) {
+//     for (const key of Object.keys(components))
+//       app.component(key, components[key as keyof typeof components])
+//   },
+// }
+//
+// export default install
 
-const install: Plugin = {
-  install(app) {
-    for (const key of Object.keys(components))
-      app.component(key, components[key as keyof typeof components])
-  },
-}
-
-export default install
+// export const componentInstall: Plugin = {
+//   install(app) {
+//     for (const key of Object.keys(components))
+//       app.component(key, components[key as keyof typeof components])
+//   },
+// }

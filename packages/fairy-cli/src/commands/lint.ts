@@ -1,5 +1,5 @@
-import { execShell } from '@142vip/common'
 import type { Command } from 'commander'
+import { execShell } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface LintOptions {

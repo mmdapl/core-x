@@ -1,6 +1,6 @@
 import fsSync from 'node:fs'
 import * as process from 'node:process'
-import { execShell } from '@142vip/common'
+import { execShell } from '@142vip/utils'
 import type { Command } from 'commander'
 import { CliCommandEnum } from '../shared'
 

@@ -48,15 +48,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@142vip/common": "^0.0.1-alpha.5",
     "@142vip/release-version": "workspace:*",
+    "@142vip/utils": "workspace:*",
     "@inquirer/prompts": "^5.3.8",
     "commander": "^12.1.0",
     "del": "^7.1.0",
     "js-yaml": "^4.1.0",
     "log-symbols": "^6.0.0",
     "node-fetch": "^3.3.2",
-    "turbo": "^2.0.1"
+    "turbo": "^2.1.1"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",

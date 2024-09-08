@@ -10,6 +10,9 @@
     "paths": {
       "@theme/*": [
         ".vitepress/theme/*"
+      ],
+      "@packages/*": [
+        "packages/*"
       ]
     },
     "typeRoots": [

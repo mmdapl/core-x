@@ -1,10 +1,27 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { VPTeamMembers } from 'vitepress/theme'
-import { vipTeamMembers } from '@142vip/vitepress'
-import ContactAuthor from './ContactAuthor.vue'
+import {
+  ProjectIntroduce,
+  VipContactAuthor,
+} from '@142vip/vitepress/components'
+import { VipTableName, vipTeamMembers } from '@142vip/vitepress'
+import { getCoreProjectData } from '../../sidebar'
+
+const tableData = ref<any[]>([])
+
+// 异步加载表格数据
+;(async () => {
+  tableData.value = await getCoreProjectData()
+})()
 </script>
 
+<!-- 首页 -->
 <template>
+  <section id="version-table">
+    <ProjectIntroduce :data="tableData" :table-name="VipTableName.CoreX" title="开源" />
+  </section>
+
   <section id="team">
     <h2>团队</h2>
     <VPTeamMembers :members="vipTeamMembers" size="small" />
@@ -71,7 +88,7 @@ import ContactAuthor from './ContactAuthor.vue'
   </section>
 
   <section id="contact-author">
-    <ContactAuthor />
+    <VipContactAuthor />
   </section>
 </template>
 

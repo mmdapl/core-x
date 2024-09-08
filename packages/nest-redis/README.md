@@ -1,6 +1,6 @@
 # @142vip/nest-redis
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/nest-redis?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/nest-redis)
+[![NPM version](https://img.shields.io/npm/v/@142vip/nest-redis?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/nest-redis)
 
 ## 证书
 

@@ -1,6 +1,6 @@
 # @142vip/egg-axios
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/egg-axios?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/egg-axios)
+[![NPM version](https://img.shields.io/npm/v/@142vip/egg-axios?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/egg-axios)
 
 ## 证书
 

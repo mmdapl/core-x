@@ -1,6 +1,6 @@
 # @142vip/vuepress
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/vuepress?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/vuepress)
+[![NPM version](https://img.shields.io/npm/v/@142vip/vuepress?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/vuepress)
 
 ## 使用
 

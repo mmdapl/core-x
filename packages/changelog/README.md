@@ -1,6 +1,6 @@
 # @142vip/changelog
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/changelog?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/changelog)
+[![NPM version](https://img.shields.io/npm/v/@142vip/changelog?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/changelog)
 
 根据`git`提交记录，自动生成`CHANGELOG`文档
 

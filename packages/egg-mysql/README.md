@@ -1,6 +1,6 @@
 # @142vip/egg-mysql
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/egg-mysql?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/egg-mysql)
+[![NPM version](https://img.shields.io/npm/v/@142vip/egg-mysql?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/egg-mysql)
 
 ## 证书
 

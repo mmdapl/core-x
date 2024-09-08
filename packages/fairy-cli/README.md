@@ -1,6 +1,6 @@
 # @142vip/fairy-cli
 
-[![NPM version](https://img.shields.io/npm/v/@142vip/fairy-cli?color=a1b858&label=version)](https://www.npmjs.com/package/@142vip/fairy-cli)
+[![NPM version](https://img.shields.io/npm/v/@142vip/fairy-cli?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/fairy-cli)
 
 `@142vip/fairy-cli`是一个工程化项目CLI工具，在终端中可以使用别名`fa`执行命令。
 

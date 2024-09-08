@@ -1,7 +1,6 @@
 import antFu from '@antfu/eslint-config'
 
 // 参考：https://github.com/antfu/eslint-config
-
 export default antFu({
   ignores: [
     '**/node_modules/**',

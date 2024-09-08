@@ -5,17 +5,17 @@ run/
 .DS_Store
 typings/
 .vscode
-/**/.DS_Store
+**/.DS_Store
 /.vscode
 dist/
 */jsconfig.json
-*/.turbo/
 .husky
 /**/jsconfig.json
 /**/.nuxt/
-/.turbo/
+.turbo
 **/.turbo/
 **/.output/
 **/node_modules
 **/.vite
+**/.temp
 

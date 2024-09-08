@@ -19,12 +19,11 @@ hero:
 features:
   - title: 易学易用
     details: 文档丰富、提供完整、丰富的入门方案
+    icon: 🛡️
   - title: 性能出色
     details: 类型安全、基于TS编码的工具包
   - title: 通用工具包
     details: 适用工程化，可服用在各类项目中，支持Monorepo架构
-    link: /api-examples
-    rel: 'external'
 ---
 
 <script setup>

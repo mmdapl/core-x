@@ -1,29 +1,14 @@
+import path from 'node:path'
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types/default-theme'
-import { version as currentPackageVersion, name as packageName } from '../package.json'
-
-// https://vitepress.dev/reference/site-config
-
-const GithubLinks = {
-  VipOrg: 'https://github.com/142vip',
-  MainAccount: 'https://github.com/mmdapl',
-  CoreXRepo: 'https://github.com/mmdapl/core-x',
-  HOMEPAGE: 'https://github.com/142vip/core-x',
-  CoreXLicense: 'https://github.com/142vip/core-x/blob/main/LICENSE',
-}
-
-/**
- * 页脚
- */
-export const footer = {
-  message: `The License <a href="${GithubLinks.CoreXLicense}">📖 MIT </a>`,
-  copyright: `Release ${packageName}@${currentPackageVersion} 😏<br> Copyright © 2019-present. Repo <a href="${GithubLinks.VipOrg}" style="margin-right:5px;">@142vip</a> Author. <a href=${GithubLinks.MainAccount}>👉储凡</a>`,
-}
+import { VipLinks, getVipFooter, zhSearch } from '@142vip/vitepress'
+import { name as pkgName, version as pkgVersion } from '../package.json'
+import { getChangelogsSidebar, sidebarConfig } from './sidebar'
 
 /**
  * 导航栏
  */
-export const navbarConfig: DefaultTheme.NavItem[] = [
+const navbarConfig: DefaultTheme.NavItem[] = [
   {
     text: '首页',
     link: '/docs/index.md',
@@ -33,122 +18,32 @@ export const navbarConfig: DefaultTheme.NavItem[] = [
     link: '/docs/media.md',
   },
   {
-    text: currentPackageVersion,
+    text: '变更日志',
+    link: '/changelogs/core-x/changelog.md',
+  },
+  {
+    text: pkgVersion,
     items: [
       {
         text: '历史版本',
-        link: 'https://github.com/142vip/core-x/releases',
+        link: `${VipLinks.CoreXRepo}/releases`,
       },
       {
         text: '更新日志',
-        link: 'https://github.com/142vip/core-x/blob/main/CHANGELOG.md',
+        link: `${VipLinks.CoreXRepo}/blob/main/CHANGELOG.md`,
+      },
+      {
+        text: '开发计划',
+        link: 'https://142vip-cn.feishu.cn/share/base/view/shrcnpwFKWmMu5zXE9WaxjuCYAg',
       },
     ],
   },
-  {
-    text: '开发计划',
-    link: 'https://142vip-cn.feishu.cn/share/base/view/shrcnpwFKWmMu5zXE9WaxjuCYAg',
-  },
+
 ]
 
 /**
- * 侧边栏
+ * 所有配置
  */
-const sidebarConfig: DefaultTheme.Sidebar = [
-  {
-    text: '工程化',
-    items: [
-      { text: '@142vip/fairy-cli', link: '/packages/fairy-cli/index.md' },
-      { text: '@142vip/changelog', link: '/packages/changelog/index.md' },
-      { text: '@142vip/release-version', link: '/packages/release-version/index.md' },
-      { text: '@142vip/eslint-config', link: '/packages/eslint-config/index.md' },
-    ],
-  },
-  {
-    text: '通用',
-    items: [
-      { text: '@142vip/utils', link: '/packages/utils/index.md' },
-      { text: '@142vip/axios', link: '/packages/axios/index.md' },
-      { text: '@142vip/oauth', link: '/packages/oauth/index.md' },
-      { text: '@142vip/redis', link: '/packages/redis/index.md' },
-      { text: '@142vip/typeorm', link: '/packages/typeorm/index.md' },
-    ],
-  },
-  {
-    text: 'Egg.js框架',
-    items: [
-      { text: '@142vip/egg', link: '/packages/egg/index.md' },
-      { text: '@142vip/egg-axios', link: '/packages/egg-axios/index.md' },
-      { text: '@142vip/egg-grpc-client', link: '/packages/egg-grpc-client/index.md' },
-      { text: '@142vip/egg-grpc-server', link: '/packages/egg-grpc-server/index.md' },
-      { text: '@142vip/egg-mysql', link: '/packages/egg-mysql/index.md' },
-      { text: '@142vip/egg-redis', link: '/packages/egg-redis/index.md' },
-      { text: '@142vip/egg-sequelize', link: '/packages/egg-sequelize/index.md' },
-      { text: '@142vip/egg-swagger', link: '/packages/egg-swagger/index.md' },
-    ],
-  },
-  {
-    text: 'Nest.js框架',
-    items: [
-      { text: '@142vip/nest', link: '/packages/nest/index.md' },
-      { text: '@142vip/nest-redis', link: '/packages/nest-redis/index.md' },
-      { text: '@142vip/nest-typeorm', link: '/packages/nest-typeorm/index.md' },
-    ],
-  },
-  {
-    text: '博客工具',
-    items: [
-      { text: '@142vip/vitepress', link: '/packages/vitepress/index.md' },
-      { text: '@142vip/vuepress', link: '/packages/vuepress/index.md' },
-    ],
-  },
-]
-
-const zhSearch: DefaultTheme.AlgoliaSearchOptions['locales'] = {
-  root: {
-    placeholder: '搜索文档',
-    translations: {
-      button: {
-        buttonText: '搜索文档',
-        buttonAriaLabel: '搜索文档',
-      },
-      modal: {
-        searchBox: {
-          resetButtonTitle: '清除查询条件',
-          resetButtonAriaLabel: '清除查询条件',
-          cancelButtonText: '取消',
-          cancelButtonAriaLabel: '取消',
-        },
-        startScreen: {
-          recentSearchesTitle: '搜索历史',
-          noRecentSearchesText: '没有搜索历史',
-          saveRecentSearchButtonTitle: '保存至搜索历史',
-          removeRecentSearchButtonTitle: '从搜索历史中移除',
-          favoriteSearchesTitle: '收藏',
-          removeFavoriteSearchButtonTitle: '从收藏中移除',
-        },
-        errorScreen: {
-          titleText: '无法获取结果',
-          helpText: '你可能需要检查你的网络连接',
-        },
-        footer: {
-          selectText: '选择',
-          navigateText: '切换',
-          closeText: '关闭',
-          searchByText: '搜索供应商',
-        },
-        noResultsScreen: {
-          noResultsText: '无法找到相关结果',
-          suggestedQueryText: '你可以尝试查询',
-          reportMissingResultsText: '你认为该查询应该有结果？',
-          reportMissingResultsLinkText: '点击反馈',
-        },
-      },
-    },
-  },
-}
-
-// 配置
 export default defineConfig({
   base: '/core-x',
   lang: 'zh-CN',
@@ -169,7 +64,7 @@ export default defineConfig({
     ['meta', { property: 'og:url', content: 'https://github.com/142vip/core-x' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '@142vip/core-x' }],
-    ['meta', { property: 'og:description', content: `${packageName} - 一切都有可能` }],
+    ['meta', { property: 'og:description', content: `${pkgName} - 一切都有可能` }],
   ],
   markdown: {
     theme: {
@@ -194,8 +89,37 @@ export default defineConfig({
   themeConfig: {
     // 导航栏
     nav: navbarConfig,
-    sidebar: sidebarConfig,
-    footer,
+    sidebar: {
+      '/': sidebarConfig,
+      '/changelogs/': {
+        base: '',
+        items: [
+          {
+            text: '@142vip/core-x',
+            link: '/changelogs/core-x/changelog.html',
+          },
+          // {
+          //   text: '历史版本',
+          //   link: '/changelogs/core-x/changelog.html',
+          // },
+          {
+            text: '变更日志',
+            items: getChangelogsSidebar(),
+          },
+        ],
+      },
+    },
+    // 单页右侧目录
+    aside: true,
+
+    // 页脚
+    footer: getVipFooter({
+      license: VipLinks.CoreXLicense,
+      pkgName,
+      pkgVersion,
+      orgLink: VipLinks.VipOrg,
+      ownerLink: VipLinks.MainAccount,
+    }),
     lastUpdated: {
       text: '最近更新',
     },
@@ -239,7 +163,20 @@ export default defineConfig({
   // 路径重写
   rewrites: {
     ':packages/:pkg/README.md': ':packages/:pkg/index.md',
-    ':packages/:pkg/CHANGELOG.md': ':packages/:pkg/changelog.md',
+    ':packages/:pkg/CHANGELOG.md': 'changelogs/:pkg/changelog.md',
+    'CHANGELOG.md': 'changelogs/core-x/changelog.md',
     'README.md': 'index.md',
+  },
+  // 编译时路径别名
+  vite: {
+    resolve: {
+      alias: {
+        '@packages': path.resolve(__dirname, '../packages'),
+      },
+    },
+    plugins: [
+      // element-plus 自动导入，参考：https://element-plus.org/zh-CN/guide/quickstart.html
+      // ElementPlus(),
+    ],
   },
 })

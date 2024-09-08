@@ -1,7 +1,13 @@
 <script lang="ts" setup>
 import { defineComponent } from 'vue'
-import { ElImage, ElTable, ElTableColumn, ElTag } from 'element-plus'
+import {
+  ElImage,
+  ElTable,
+  ElTableColumn,
+  ElTag,
+} from 'element-plus'
 import { VipTableName } from '../core'
+import 'element-plus/dist/index.css'
 
 interface PackageJSON {
   name: string
@@ -39,20 +45,23 @@ defineComponent({
   <ElTable
     v-show="props.tableName === VipTableName.CoreX"
     :data="data" border
-    class="core-table" flexible stripe table-layout="auto"
+    class="core-table"
+    fit
+    flexible
+    stripe
   >
     <!-- @142vip/core-x 表格 -->
-    <ElTableColumn header-align="center" label="项目名称" min-width="200" prop="name" width="auto" />
-    <ElTableColumn align="center" header-align="center" label="项目代号" min-width="120" prop="id" width="auto" />
-    <ElTableColumn header-align="center" label="功能描述" prop="description" width="auto" />
-    <ElTableColumn align="center" header-align="center" label="当前版本" width="180">
+    <ElTableColumn header-align="center" label="项目名称" min-width="180" prop="name" />
+    <ElTableColumn align="center" header-align="center" label="项目代号" min-width="50" prop="id" />
+    <ElTableColumn header-align="center" label="功能描述" min-width="300" prop="description" width="auto" />
+    <ElTableColumn align="center" header-align="center" label="当前版本" width="120">
       <template #default="{ row }">
         <ElTag class="version" type="primary" @click="() => console.log(333)">
           {{ row.version }}
         </ElTag>
       </template>
     </ElTableColumn>
-    <ElTableColumn header-align="center" label="NPM版本" width="auto">
+    <ElTableColumn header-align="center" label="NPM版本" min-width="120">
       <template #default="{ row }">
         <a :href="`https://www.npmjs.com/package/${row.name}`" :title="row.name" target="_blank">
           <ElImage :src="`https://img.shields.io/npm/v/${row.name}?labelColor=0b3d52&color=1da469`" :title="row.name" />
@@ -78,7 +87,9 @@ defineComponent({
     v-show="props.tableName === VipTableName.Oauth"
     :data="data" border
     class="core-table"
-    flexible stripe table-layout="auto"
+    fit
+    flexible
+    stripe
   >
     <!-- @142vip/142vip-oauth 表格 -->
     <ElTableColumn header-align="center" label="项目名称" min-width="180" prop="name" width="auto" />

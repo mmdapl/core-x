@@ -1,9 +1,9 @@
 import VipContactAuthor from './VipContactAuthor.vue'
-import VipBackUp from './VipBackUp.vue'
-import ProjectIntroduce from './ProjectIntroduce.vue'
+import VipBackTop from './VipBackTop.vue'
+import VipProjectTable from './VipProjectTable.vue'
 
 export {
   VipContactAuthor,
-  VipBackUp,
-  ProjectIntroduce,
+  VipBackTop,
+  VipProjectTable,
 }

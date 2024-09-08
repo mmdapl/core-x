@@ -62,9 +62,18 @@ All notable changes to this project will be documented in this file. See [commit
 **No Significant Changes**
 
 
-## 0.0.1-alpha.0 (2024-07-14)
+## v0.0.3-alpha.1 (2024-07-21)
 
 ### ✨ Features
 
-- 新增`tsconfig`配置，统一模块编译 by . @chufan
-- 基本结构初始化  by . @chufan
+- 完成基础`cli`流程，添加参数校验 by . @chufan
+- 优化`shell`执行逻辑 配置`eslint`  by . @mmdapl
+
+
+
+## v0.0.3-alpha.0 (2024-07-14)
+
+### ✨ Features
+
+- 新增终端交互方式 by . @chufan
+- 新增`shell`执行，优化文档  by . @chufan

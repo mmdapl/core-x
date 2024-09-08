@@ -1,25 +1,35 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { VPTeamMembers } from 'vitepress/theme'
 import {
-  ProjectIntroduce,
+  VipBackTop,
   VipContactAuthor,
+  VipProjectTable,
 } from '@142vip/vitepress/components'
 import { VipTableName, vipTeamMembers } from '@142vip/vitepress'
+import { useData } from 'vitepress'
+import { ElImage } from 'element-plus'
 import { getCoreProjectData } from '../../sidebar'
 
+const { isDark } = useData()
 const tableData = ref<any[]>([])
 
 // 异步加载表格数据
 ;(async () => {
   tableData.value = await getCoreProjectData()
 })()
+
+defineComponent({
+  components: {
+    ElImage,
+  },
+})
 </script>
 
 <!-- 首页 -->
 <template>
   <section id="version-table">
-    <ProjectIntroduce :data="tableData" :table-name="VipTableName.CoreX" title="开源" />
+    <VipProjectTable :data="tableData" :table-name="VipTableName.CoreX" title="开源" />
   </section>
 
   <section id="team">
@@ -27,7 +37,7 @@ const tableData = ref<any[]>([])
     <VPTeamMembers :members="vipTeamMembers" size="small" />
   </section>
 
-  <section id="team">
+  <section id="sponsors">
     <h2>赞赏列表</h2>
     <blockquote>
       排名不分先后， <strong>赞赏过的一定要微信跟我说呀！！！！！！</strong>
@@ -50,9 +60,6 @@ const tableData = ref<any[]>([])
         >
       </a>
     </div>
-  </section>
-
-  <section id="Sponsors">
     <h2>赞助商</h2>
     <blockquote>
       以下排名不分先后! 还木有收到赞助，哈哈哈，先留坑
@@ -77,19 +84,23 @@ const tableData = ref<any[]>([])
 
   <section id="trending">
     <h2>趋势</h2>
-    <div align="center" style="text-align: center">
-      <img
-        alt="Github Star History"
+    <!-- 支持黑色主题 -->
+    <div class="star-history">
+      <ElImage
+        :src="`https://api.star-history.com/svg?repos=142vip/core-x,142vip/408CSFamily,142vip/JavaScriptCollection&type=Date${
+          isDark ? '&theme=dark' : ''
+        }`"
         class="img-border"
-        src="https://api.star-history.com/svg?repos=142vip/core-x&type=Date"
+        alt="Github Star History"
         title="Github Star History"
-      >
+      />
     </div>
   </section>
 
   <section id="contact-author">
     <VipContactAuthor />
   </section>
+  <VipBackTop />
 </template>
 
 <style scoped>
@@ -99,7 +110,11 @@ const tableData = ref<any[]>([])
   }
 }
 
-#team {
+#sponsors {
+  div {
+    display: flex;
+    justify-content: left;
+  }
   .image-border {
     border-radius: 5px;
     width: 50px;
@@ -107,5 +122,11 @@ const tableData = ref<any[]>([])
   a {
     margin: 5px;
   }
+}
+
+.star-history {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 </style>

@@ -4,7 +4,7 @@
 
 ## 介绍
 
-## 公共包
+## 开源
 
 - `@142vip/axios`
 - `@142vip/changelog`
@@ -27,6 +27,9 @@
 - `@142vip/typeorm`
 - `@142vip/release-version`
 - `@142vip/typeorm`
+- `@142vip/utils`
+- `@141vip/vitepress`
+- `@142vip/vuepress`
 
 ## 使用
 
@@ -48,6 +51,9 @@ pnpm build:docs
 
 # 代码风格检查
 pnpm lint
+
+# 基于Eslint修复代码风格异常
+pnpm lint:fix
 ```
 
 ## 趋势
@@ -65,7 +71,7 @@ pnpm lint
 **感谢所有向仓库贡献代码的开发者**
 
 <a href="https://github.com/142vip/core-x/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=142vip/core-x" />
+  <img src="https://contrib.rocks/image?repo=142vip/core-x" alt="@142vip/core-x" title="@142vip/core-x" />
 </a>
 
 ## 证书

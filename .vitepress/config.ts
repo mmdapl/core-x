@@ -49,7 +49,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '@142vip/core-x',
   titleTemplate: ':title - @142vip/core-x',
-  description: 'X代表一切都有可能',
+  description: 'X一切都有可能',
   srcDir: './',
   // 排除部分
   srcExclude: ['tutorial/**/description.md'],

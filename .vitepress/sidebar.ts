@@ -74,7 +74,8 @@ async function getBasePkgJSON(pkgDirName: string) {
 }
 
 /**
- * 基于侧边栏遍历，动态获取模块信息
+ * 动态获取模块信息
+ * - 注意：遍历侧边栏
  */
 export async function getCoreProjectData(): Promise<VipCoreProject[]> {
   const coreProjects: VipCoreProject[] = []

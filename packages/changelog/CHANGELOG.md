@@ -54,7 +54,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Release New Version v0.0.1-alpha.1 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
 
-## 0.0.1-alpha.0 (2024-07-14)
+## v0.0.1-alpha.0 (2024-07-14)
 
 ### ✨ Features
 

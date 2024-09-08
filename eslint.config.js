@@ -9,7 +9,7 @@ export default antFu({
     '**/typings/**/',
     '**/.output/**',
     // 基于release脚本生成
-    // '**/CHANGELOG.md',
+    '**/CHANGELOG.md',
   ],
   typescript: true,
   vue: true,

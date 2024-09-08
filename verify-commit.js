@@ -1,6 +1,9 @@
 import process from 'node:process'
 import chalk from 'chalk'
-import { getReleasePkgJSON, verifyCommit } from '@142vip/fairy-cli'
+import {
+  getReleasePkgJSON,
+  verifyCommit,
+} from '@142vip/fairy-cli'
 
 const verifyRes = verifyCommit()
 

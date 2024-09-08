@@ -21,7 +21,7 @@ export const getVipFooter = function (params: FooterParams): VipFooter {
     message: `The License <a href="${params.license}">📖 MIT </a>`,
     copyright: `Release ${params.pkgName}@${params.pkgVersion} 😏<br> Copyright © 2019-present.&nbsp;
 Repo <a href="${params.orgLink}" style="margin-right:5px;">${params.orgName ?? '@142vip'}</a>&nbsp;
-Author. <a href=${params.ownerLink}>👉${params.owner ?? '储凡'}</a>`,
+Author <a href=${params.ownerLink}>👉${params.owner ?? '储凡'}</a>`,
   }
 }
 
@@ -68,3 +68,47 @@ export const vipTeamMembers = [
     ],
   },
 ]
+
+export enum VipTableName {
+  CoreX = '@142vip/core-x',
+  Oauth = '@142vip/142vip-oauth',
+}
+
+export function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+  const result: any = {}
+  for (const key of keys) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      result[key] = obj[key]
+    }
+  }
+  return result as Pick<T, K>
+}
+
+/**
+ * 基本包结构
+ */
+export interface VipPackageJSON {
+  name: string
+  description: string
+  version: string
+  private?: boolean
+}
+
+export interface VipCoreProject extends VipPackageJSON {
+  id: string
+  changelog: string
+  readme: string
+  sourceCode: string
+}
+
+/**
+ * @142vip组织下的一些通用链接
+ */
+export const VipLinks = {
+  VipOrg: 'https://github.com/142vip',
+  MainAccount: 'https://github.com/mmdapl',
+  CoreXRepo: 'https://github.com/142vip/core-x',
+  OauthRepo: 'https://github.com/142vip/142vip-oauth',
+  License: 'https://github.com/142vip/core-x/blob/main/LICENSE',
+  CoreXLicense: 'https://github.com/142vip/core-x/blob/main/LICENSE',
+}

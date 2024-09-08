@@ -10,30 +10,30 @@ import { getChangelogsSidebar, sidebarConfig } from './sidebar'
  */
 const navbarConfig: DefaultTheme.NavItem[] = [
   {
-    text: '首页',
+    text: '🔥 首页',
     link: '/docs/index.md',
   },
   {
-    text: '自媒体',
+    text: '🎬 自媒体',
     link: '/docs/media.md',
   },
   {
-    text: '变更日志',
+    text: '📌󠁦 󠁬󠁯󠁧󠁿变更日志',
     link: '/changelogs/core-x/changelog.md',
   },
   {
-    text: pkgVersion,
+    text: `🌕 ${pkgVersion}`,
     items: [
       {
-        text: '历史版本',
+        text: '🎉 历史版本',
         link: `${VipLinks.CoreXRepo}/releases`,
       },
       {
-        text: '更新日志',
+        text: '📄 更新日志',
         link: `${VipLinks.CoreXRepo}/blob/main/CHANGELOG.md`,
       },
       {
-        text: '开发计划',
+        text: '🎯 开发计划',
         link: 'https://142vip-cn.feishu.cn/share/base/view/shrcnpwFKWmMu5zXE9WaxjuCYAg',
       },
     ],
@@ -103,7 +103,7 @@ export default defineConfig({
           //   link: '/changelogs/core-x/changelog.html',
           // },
           {
-            text: '变更日志',
+            text: '󠁡变更日志🏴󠁡 ',
             items: getChangelogsSidebar(),
           },
         ],

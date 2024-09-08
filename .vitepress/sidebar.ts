@@ -15,7 +15,7 @@ enum ProjectId {
  */
 export const sidebarConfig: DefaultTheme.Sidebar = [
   {
-    text: ProjectId.Infra,
+    text: `🏆 ${ProjectId.Infra}`,
     items: [
       { text: '@142vip/fairy-cli', link: '/packages/fairy-cli/index.md' },
       { text: '@142vip/changelog', link: '/packages/changelog/index.md' },
@@ -24,7 +24,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: ProjectId.Tools,
+    text: `🛠 ${ProjectId.Tools}`,
     items: [
       { text: '@142vip/utils', link: '/packages/utils/index.md' },
       { text: '@142vip/axios', link: '/packages/axios/index.md' },
@@ -34,7 +34,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: ProjectId.Egg,
+    text: `🐣 ${ProjectId.Egg}`,
     items: [
       { text: '@142vip/egg', link: '/packages/egg/index.md' },
       { text: '@142vip/egg-axios', link: '/packages/egg-axios/index.md' },
@@ -47,7 +47,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: ProjectId.Nest,
+    text: `🦅 ${ProjectId.Nest}`,
     items: [
       { text: '@142vip/nest', link: '/packages/nest/index.md' },
       { text: '@142vip/nest-redis', link: '/packages/nest-redis/index.md' },
@@ -55,7 +55,7 @@ export const sidebarConfig: DefaultTheme.Sidebar = [
     ],
   },
   {
-    text: ProjectId.Blog,
+    text: `💻 ${ProjectId.Blog}`,
     items: [
       { text: '@142vip/vitepress', link: '/packages/vitepress/index.md' },
       { text: '@142vip/vuepress', link: '/packages/vuepress/index.md' },
@@ -84,9 +84,10 @@ export async function getCoreProjectData(): Promise<VipCoreProject[]> {
       const basePkg = await getBasePkgJSON(`${pkgDirName}`)
       coreProjects.push({
         ...basePkg,
-        id: text,
+        // 约定：图标+文字
+        id: text.split(' ')[0],
         changelog: `../packages/${pkgDirName}/changelog.html`,
-        readme: `../packages/${pkgDirName}/index.html`,
+        readme: `../changelogs/${pkgDirName}/index.html`,
         sourceCode: `${VipLinks.CoreXRepo}/tree/main/packages/${pkgDirName}/`,
       })
     }

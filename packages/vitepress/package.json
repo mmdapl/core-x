@@ -46,6 +46,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
-    "mkdist": "^1.5.5"
+    "element-plus": "^2.8.1",
+    "mkdist": "^1.5.5",
+    "vue": "^3.4.23"
   }
 }

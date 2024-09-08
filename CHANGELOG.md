@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.11 (2024-09-08)
+
+### ✨ Features
+
+- 删除`husky`模块，使用`simple-git-hooks`模块管理`git`提交校验 &nbsp;-&nbsp; by **chufan** [<samp>(7294b)</samp>](https://github.com/142vip/core-x/commit/7294bc8)
+- 移除`@142vip/common`依赖，使用`@142vip/common`依赖，全面升级各基础模块 &nbsp;-&nbsp; by **chufan** [<samp>(202d0)</samp>](https://github.com/142vip/core-x/commit/202d0a3)
+- 修复开源表格日志链接异常，菜单栏支持`emoji`表情 &nbsp;-&nbsp; by **chufan** [<samp>(33bae)</samp>](https://github.com/142vip/core-x/commit/33baef3)
+- 删除`scripts`中无用脚本，简化工程文件结构，补充技术文档 &nbsp;-&nbsp; by **chufan** [<samp>(9c8df)</samp>](https://github.com/142vip/core-x/commit/9c8df5e)
+- 拓展`clean`命令，支持对`dist`、`vite`、`turbo`缓存目录进行删除 &nbsp;-&nbsp; by **chufan** [<samp>(5f7c7)</samp>](https://github.com/142vip/core-x/commit/5f7c71e)
+- **@142vip/fairy-cli**:
+  - 将`@142vip/common`替换成`@142vip/utils`，使用`execShell`执行函数 &nbsp;-&nbsp; by **chufan** [<samp>(72a2d)</samp>](https://github.com/142vip/core-x/commit/72a2dc5)
+  - 修改`lint`命令，使用异步执行器执行`eslint`校验命令 &nbsp;-&nbsp; by **chufan** [<samp>(bd87c)</samp>](https://github.com/142vip/core-x/commit/bd87c0b)
+- **@142vip/release-version**:
+  - 删除`@142vip/common`模块，替换成`@142vip/utils`模块 &nbsp;-&nbsp; by **chufan** [<samp>(e803c)</samp>](https://github.com/142vip/core-x/commit/e803c9b)
+- **@142vip/utils**:
+  - 模块新增，支持`shell`、`logger`基础功能封装，支持`@142vip/common`模块部分功能 &nbsp;-&nbsp; by **chufan** [<samp>(bd760)</samp>](https://github.com/142vip/core-x/commit/bd7606c)
+  - 修复`execShell`函数执行异常，支持同步执行命令 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/94 [<samp>(b00c9)</samp>](https://github.com/142vip/core-x/commit/b00c950)
+- **@142vip/vitepress**:
+  - 修改模块构建配置，支持`Vue`组件编译，新增`VipContactAuthor`组件封装 &nbsp;-&nbsp; by **chufan** [<samp>(38ec9)</samp>](https://github.com/142vip/core-x/commit/38ec955)
+  - 增加`@142vip`业务封装，修改编译配置，支持`getVipFooter`构建 &nbsp;-&nbsp; by **chufan** [<samp>(2d159)</samp>](https://github.com/142vip/core-x/commit/2d1595f)
+  - 引入`element-plus`、`vue`等模块，封装`ProjectIntroduce`、`VipBackUp`等组件，支持表格展示页面 &nbsp;-&nbsp; by **chufan** [<samp>(f57ac)</samp>](https://github.com/142vip/core-x/commit/f57aca7)
+
+### 🔥 Performance
+
+- 升级`eslint-config`到`2.27.3`版本 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/93 [<samp>(87ac1)</samp>](https://github.com/142vip/core-x/commit/87ac1e2)
+
+### 🐛 Bug Fixes
+
+- 修复静态站点`上\下一篇`链接异常，支持切换 &nbsp;-&nbsp; by **chufan** [<samp>(ed1cc)</samp>](https://github.com/142vip/core-x/commit/ed1cc93)
+- 修复`CHANGELOG`文档中版本信息显示异常 &nbsp;-&nbsp; by **chufan** [<samp>(840d8)</samp>](https://github.com/142vip/core-x/commit/840d831)
+
+### 💅 Refactors
+
+- 优化`CI`脚本，使用`corepack`管理`pnpm`版本 &nbsp;-&nbsp; by **chufan** [<samp>(486e1)</samp>](https://github.com/142vip/core-x/commit/486e1ad)
+
+### 📖 Documentation
+
+- 静态网站改造升级，基于`HomePage`组件修改首页显示 &nbsp;-&nbsp; by **chufan** [<samp>(44587)</samp>](https://github.com/142vip/core-x/commit/44587c0)
+- 统一修改`npm version`标签样式，更新`README`文档 &nbsp;-&nbsp; by **chufan** [<samp>(e9749)</samp>](https://github.com/142vip/core-x/commit/e9749ee)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(7dda8)</samp>](https://github.com/142vip/core-x/commit/7dda83c)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(e8d6f)</samp>](https://github.com/142vip/core-x/commit/e8d6ffe)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(dd456)</samp>](https://github.com/142vip/core-x/commit/dd4563d)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(1b0d5)</samp>](https://github.com/142vip/core-x/commit/1b0d513)
+
+**Release New Version v0.0.1-alpha.11 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.10...v0.0.1-alpha.11)**
+
 ## v0.0.1-alpha.10 (2024-08-30)
 
 ### ✨ Features

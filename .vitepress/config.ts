@@ -22,7 +22,7 @@ const navbarConfig: DefaultTheme.NavItem[] = [
     link: '/changelogs/core-x/changelog.md',
   },
   {
-    text: `🌕 ${pkgVersion}`,
+    text: `⚡ ${pkgVersion}`,
     items: [
       {
         text: '🎉 历史版本',
@@ -103,7 +103,7 @@ export default defineConfig({
           //   link: '/changelogs/core-x/changelog.html',
           // },
           {
-            text: '󠁡变更日志🏴󠁡 ',
+            text: '🏴 󠁡󠁡变更日志',
             items: getChangelogsSidebar(),
           },
         ],

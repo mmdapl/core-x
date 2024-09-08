@@ -2,6 +2,8 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import type { Theme } from 'vitepress'
+// 导入 element-plus样式
+// import 'element-plus/dist/index.css'
 
 /**
  * 自定义主题

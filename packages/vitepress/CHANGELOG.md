@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2024-09-10)
+
+### ✨ Features
+
+- 封装`VipBackTop`组件，优化`VipProjectTable`组件显示样式 &nbsp;-&nbsp; by **chufan** [<samp>(0392e)</samp>](https://github.com/142vip/core-x/commit/0392e18)
+- 拓展项目表格和团队介绍组件封装，优化使用 &nbsp;-&nbsp; by **chufan** [<samp>(854ab)</samp>](https://github.com/142vip/core-x/commit/854ab43)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.2 (2024-09-08)
 
 ### ✨ Features

@@ -6,7 +6,6 @@ import {
   ElTableColumn,
   ElTag,
 } from 'element-plus'
-import { VipTableName } from '../core'
 import 'element-plus/dist/index.css'
 
 interface PackageJSON {
@@ -23,10 +22,11 @@ interface Project extends PackageJSON {
   readme: string
   sourceCode: string
 }
-const props = defineProps<{
+
+// 组件属性
+defineProps<{
   data: Project[]
   title?: string
-  tableName?: VipTableName
 }>()
 
 defineComponent({
@@ -43,8 +43,8 @@ defineComponent({
 <template>
   <h2>{{ title ?? '核心业务' }}</h2>
   <ElTable
-    v-show="props.tableName === VipTableName.CoreX"
-    :data="data" border
+    :data="data"
+    border
     class="core-table"
     fit
     flexible
@@ -61,58 +61,17 @@ defineComponent({
         </ElTag>
       </template>
     </ElTableColumn>
-    <ElTableColumn header-align="center" label="NPM版本" min-width="120">
+    <ElTableColumn align="center" header-align="center" label="NPM版本" min-width="120">
       <template #default="{ row }">
-        <a :href="`https://www.npmjs.com/package/${row.name}`" :title="row.name" target="_blank">
-          <ElImage :src="`https://img.shields.io/npm/v/${row.name}?labelColor=0b3d52&color=1da469`" :title="row.name" />
-        </a>
-      </template>
-    </ElTableColumn>
-    <ElTableColumn align="center" header-align="center" label="文档" width="150">
-      <template #default="{ row }">
-        <a :href="row.sourceCode" target="_blank" title="源码">
-          源码
-        </a> &nbsp;
-        <a :href="row.changelog" target="_blank" title="日志">
-          日志
-        </a> &nbsp;
-        <a :href="row.readme" target="_blank" title="文档">
-          文档
-        </a>
-      </template>
-    </ElTableColumn>
-  </ElTable>
-
-  <ElTable
-    v-show="props.tableName === VipTableName.Oauth"
-    :data="data" border
-    class="core-table"
-    fit
-    flexible
-    stripe
-  >
-    <!-- @142vip/142vip-oauth 表格 -->
-    <ElTableColumn header-align="center" label="项目名称" min-width="180" prop="name" width="auto" />
-    <ElTableColumn align="center" header-align="center" label="项目代号" prop="id" width="140" />
-    <ElTableColumn header-align="center" label="功能描述" prop="description" width="auto" />
-    <ElTableColumn align="center" header-align="center" label="当前版本" width="200">
-      <template #default="{ row }">
-        <ElTag class="version" type="primary" @click="() => console.log(333)">
-          {{ row.version }}
-        </ElTag>
-      </template>
-    </ElTableColumn>
-    <ElTableColumn header-align="center" label="NPM版本" width="auto">
-      <template #default="{ row }">
-        <div v-if="row.private">
-          私有包，暂未发布
-        </div>
         <a
-          v-else
-          :href="`https://www.npmjs.com/package/${row.name}`" :title="row.name" target="_blank"
+          v-if="!row.private"
+          :href="`https://www.npmjs.com/package/${row.name}`"
+          :title="row.name"
+          target="_blank"
         >
           <ElImage :src="`https://img.shields.io/npm/v/${row.name}?labelColor=0b3d52&color=1da469`" :title="row.name" />
         </a>
+        <span v-if="row.private">私有</span>
       </template>
     </ElTableColumn>
     <ElTableColumn align="center" header-align="center" label="文档" width="150">

@@ -69,11 +69,6 @@ export const vipTeamMembers = [
   },
 ]
 
-export enum VipTableName {
-  CoreX = '@142vip/core-x',
-  Oauth = '@142vip/142vip-oauth',
-}
-
 export function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
   const result: any = {}
   for (const key of keys) {
@@ -94,7 +89,7 @@ export interface VipPackageJSON {
   private?: boolean
 }
 
-export interface VipCoreProject extends VipPackageJSON {
+export interface VipProject extends VipPackageJSON {
   id: string
   changelog: string
   readme: string

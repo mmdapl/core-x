@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { defineComponent, ref } from 'vue'
-import { VPTeamMembers } from 'vitepress/theme'
 import {
   VipBackTop,
   VipContactAuthor,
   VipProjectTable,
+  VipTeam,
 } from '@142vip/vitepress/components'
-import { VipTableName, vipTeamMembers } from '@142vip/vitepress'
 import { useData } from 'vitepress'
 import { ElImage } from 'element-plus'
 import { getCoreProjectData } from '../../sidebar'
@@ -29,13 +28,10 @@ defineComponent({
 <!-- 首页 -->
 <template>
   <section id="version-table">
-    <VipProjectTable :data="tableData" :table-name="VipTableName.CoreX" title="开源" />
+    <VipProjectTable :data="tableData" title="开源" />
   </section>
 
-  <section id="team">
-    <h2>团队</h2>
-    <VPTeamMembers :members="vipTeamMembers" size="small" />
-  </section>
+  <VipTeam />
 
   <section id="sponsors">
     <h2>赞赏列表</h2>

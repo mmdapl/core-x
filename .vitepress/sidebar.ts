@@ -1,5 +1,5 @@
 import type DefaultTheme from 'vitepress/theme'
-import type { VipCoreProject } from '@142vip/vitepress'
+import type { VipProject } from '@142vip/vitepress'
 import { VipLinks, pick } from '@142vip/vitepress'
 
 enum ProjectId {
@@ -77,8 +77,8 @@ async function getBasePkgJSON(pkgDirName: string) {
  * 动态获取模块信息
  * - 注意：遍历侧边栏
  */
-export async function getCoreProjectData(): Promise<VipCoreProject[]> {
-  const coreProjects: VipCoreProject[] = []
+export async function getCoreProjectData(): Promise<VipProject[]> {
+  const coreProjects: VipProject[] = []
   for (const { items, text } of sidebarConfig) {
     for (const { text: pkgName } of items) {
       const pkgDirName = pkgName.split('@142vip/')[1]

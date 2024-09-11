@@ -1,3 +1,4 @@
+export * from './color'
 export * from './logger'
 export * from './exec'
 export * from './shell'

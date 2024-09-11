@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import { vipColor } from './color'
 
 export interface LoggerOptions {
   startLabel?: string
@@ -32,17 +32,17 @@ export class VipLogger {
   }
 
   public info(msg: string, opts?: LoggerOptions) {
-    const infoText = `${chalk.green(opts?.startLabel)} ${chalk.magenta(msg)} ${chalk.yellow(opts?.endLabel)}`
+    const infoText = `${vipColor.green(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
     console.info(infoText)
   }
 
   public log(msg: string, opts?: LoggerOptions) {
-    const logText = `${chalk.blue(opts?.startLabel)} ${chalk.magenta(msg)} ${chalk.yellow(opts?.endLabel)}`
+    const logText = `${vipColor.blue(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
     console.log(logText)
   }
 
   public error(msg: string, opts?: LoggerOptions) {
-    const text = `${chalk.red(opts?.startLabel)} ${chalk.magenta(msg)} ${chalk.yellow(opts?.endLabel)}`
+    const text = `${vipColor.red(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
     console.error(text)
   }
 }

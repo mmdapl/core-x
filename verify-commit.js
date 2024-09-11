@@ -1,5 +1,5 @@
 import process from 'node:process'
-import chalk from 'chalk'
+import { vipColor } from '@142vip/utils'
 import {
   getReleasePkgJSON,
   verifyCommit,
@@ -11,17 +11,17 @@ const { isSuccess, message, type, scope } = verifyRes
 
 if (!isSuccess) {
   console.error(
-    `\n${chalk.white(chalk.bgRed(' Git Commit Message ERROR '))} ${chalk.red(
+    `\n${vipColor.white(vipColor.bgRed(' Git Commit Message ERROR '))} ${vipColor.red(
       `invalid commit message format.`,
     )}\n\n${
-      chalk.red(
+      vipColor.red(
         `  Proper commit message format is required for automated changelog generation. Examples:\n\n`,
       )
-    }    ${chalk.green(`feat(Github Actions): add CI/CD option`)}\n`
-    + `    ${chalk.green(
+    }    ${vipColor.green(`feat(Github Actions): add CI/CD option`)}\n`
+    + `    ${vipColor.green(
       `docs: update wbe site (close #28)`,
     )}\n\n${
-      chalk.red(`  See .github/commit-convention.md for more details.\n`)}`,
+      vipColor.red(`  See .github/commit-convention.md for more details.\n`)}`,
   )
   process.exit(1)
 }
@@ -43,7 +43,7 @@ const typeList = [
 // 校验类型
 if (type == null || !typeList.includes(type)) {
   console.error(
-    `${chalk.white(chalk.bgRed('Git Commit Message ERROR '))} ${chalk.red(
+    `${vipColor.white(vipColor.bgRed('Git Commit Message ERROR '))} ${vipColor.red(
       `invalid commit type , support ${typeList.join('|')}`,
     )}`,
   )
@@ -62,7 +62,7 @@ const scopeList = [
 // scope范围不支持
 if (scope != null && !scopeList.includes(scope)) {
   console.error(
-    `${chalk.white(chalk.bgRed('Git Commit Message ERROR '))} ${chalk.red(
+    `${vipColor.white(vipColor.bgRed('Git Commit Message ERROR '))} ${vipColor.red(
       `invalid commit scope name , Examples:\n${scopeList.join('\n')}`,
     )}`,
   )
@@ -72,7 +72,7 @@ if (scope != null && !scopeList.includes(scope)) {
 // 判断message长度
 if (message == null || message.length > 80) {
   console.error(
-    `  ${chalk.white(chalk.bgRed('Git Commit Message ERROR '))} ${chalk.red(
+    `  ${vipColor.white(vipColor.bgRed('Git Commit Message ERROR '))} ${vipColor.red(
       `invalid commit message length , max length is 80`,
     )}`,
   )

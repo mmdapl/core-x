@@ -3,10 +3,6 @@ import type { Command } from 'commander'
 import fetch from 'node-fetch'
 import { CliCommandEnum } from '../shared'
 
-export interface SyncOptions {
-
-}
-
 /**
  * cnpm 同步状态
  */
@@ -21,11 +17,22 @@ enum CNPMPackageState {
  */
 interface RequestSync {
   ok: boolean
-  logId: string
+  // logId: string
+  id: string
 }
 
+// https://registry-direct.npmmirror.com/-/package/@142vip/vitepress/syncs
+// {
+//   "ok": true,
+//   "id": "66e10e1be561c46e1becf19a",
+//   "type": "sync_package",
+//   "state": "waiting"
+// }
+
 async function requestSync(packageName: string) {
-  const syncUrl = `https://registry.npmmirror.com/${packageName}/sync`
+  // https://registry-direct.npmmirror.com/-/package/@142vip/vitepress/syncs
+  // `https://registry.npmmirror.com/${packageName}/sync`
+  const syncUrl = `https://registry-direct.npmmirror.com/-/package/${packageName}/syncs`
 
   const response = await fetch(syncUrl, { method: 'PUT' })
 
@@ -33,7 +40,7 @@ async function requestSync(packageName: string) {
   //
   // }
 
-  const { ok, logId } = await response.json() as RequestSync
+  const { ok, id: logId } = await response.json() as RequestSync
 
   if (!ok) {
     console.log('requestSync--json', await response.json())
@@ -58,8 +65,8 @@ async function getPackageSyncState(packageName: string, logId: string) {
   const response = await fetch(stateUrl)
   const stateRes = await response.json() as SyncState
 
-  // 正常的请求
-  if (stateRes.ok && stateRes.state === CNPMPackageState.Success) {
+  // 正常的请求 && stateRes.state === CNPMPackageState.Success
+  if (stateRes.ok) {
     return stateRes.logUrl
   }
   console.log('getPackageSyncState-->err', stateRes)

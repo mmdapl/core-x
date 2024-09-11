@@ -1,7 +1,7 @@
-import chalk from 'chalk'
 import { name, version } from '../package.json'
 import { execCommand } from './exec'
 import { VipLogger } from './logger'
+import { vipColor } from './color'
 
 export interface ShellCommand {
   command: string
@@ -10,7 +10,7 @@ export interface ShellCommand {
 // 全局日志
 const vipLog = VipLogger.getInstance()
 
-const projectName = chalk.greenBright(`[${name}@${version}]`)
+const projectName = vipColor.greenBright(`[${name}@${version}]`)
 
 /**
  * 脚本执行器，执行shell命令

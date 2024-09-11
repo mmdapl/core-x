@@ -54,7 +54,6 @@
     "commander": "^12.1.0",
     "del": "^7.1.0",
     "js-yaml": "^4.1.0",
-    "log-symbols": "^6.0.0",
     "node-fetch": "^3.3.2",
     "turbo": "^2.1.1"
   },

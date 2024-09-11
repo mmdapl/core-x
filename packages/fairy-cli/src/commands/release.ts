@@ -3,7 +3,7 @@ import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { Command } from 'commander'
 import { confirm, select } from '@inquirer/prompts'
-import logSymbols from 'log-symbols'
+import { vipColor, vipSymbols } from '@142vip/utils'
 import {
   CliCommandEnum,
   getBranchName,
@@ -84,11 +84,17 @@ function printPreCheckRelease() {
 
   console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
   for (const pkg of packages) {
-    console.log(`${pkg.release ? logSymbols.error : logSymbols.success} ${pkg.name}`)
+    if (pkg.release) {
+      console.log(vipColor.red(`${vipSymbols.error} ${pkg.name}`))
+    }
+    else {
+      console.log(vipColor.green(`${vipSymbols.success} ${pkg.name}`))
+    }
   }
 
   if (!release) {
-    console.log(`\n${logSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)
+    console.log()
+    console.log(`${vipColor.yellow(`${vipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }
 
@@ -106,7 +112,7 @@ function execVipRelease(args: { checkRelease?: boolean }) {
 
   // 对话框
   select({
-    message: '选择需要Release的Package名称：',
+    message: `选择需要使用${vipColor.red('Release')}命令发布的模块名称：`,
     choices: [
       defaultRepoName,
       ...pkgJSON.map(pkg => pkg.name),
@@ -120,11 +126,11 @@ function execVipRelease(args: { checkRelease?: boolean }) {
     .then(async (packageName) => {
       // 确认框
       const isRelease = await confirm({
-        message: `将对模块${packageName}进行版本迭代，是否继续操作？`,
+        message: `将对模块${vipColor.green(packageName)}进行版本迭代，是否继续操作？`,
       })
 
       if (!isRelease) {
-        console.log('用户取消发布操作！！')
+        console.log(vipColor.yellow('用户取消发布操作！！'))
         process.exit(0)
       }
 

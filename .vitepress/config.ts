@@ -38,7 +38,6 @@ const navbarConfig: DefaultTheme.NavItem[] = [
       },
     ],
   },
-
 ]
 
 /**
@@ -52,7 +51,8 @@ export default defineConfig({
   description: 'X一切都有可能',
   srcDir: './',
   // 排除部分
-  srcExclude: ['tutorial/**/description.md'],
+  srcExclude: [
+  ],
   // 编译输出目录
   outDir: './dist',
   // dev 模式下的缓存目录，默认cache
@@ -129,7 +129,7 @@ export default defineConfig({
       linkText: '返回首页',
     },
     editLink: {
-      pattern: 'https://github.com/142vip/core-x/edit/next/docs/:path',
+      pattern: `${VipLinks.CoreXRepo}/edit/next/:path`,
       text: '在 Github 上对本页提出修改建议',
     },
     docFooter: {
@@ -142,8 +142,8 @@ export default defineConfig({
     },
     // 一些链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/142vip/core-x' },
-      { icon: 'npm', link: 'https://www.npmjs.com/search?q=%40142vip' },
+      { icon: 'github', link: VipLinks.CoreXRepo },
+      { icon: 'npm', link: 'https://www.npmjs.com/~mmdapl' },
     ],
     search: {
       provider: 'algolia',

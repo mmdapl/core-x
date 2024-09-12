@@ -106,4 +106,5 @@ export const VipLinks = {
   OauthRepo: 'https://github.com/142vip/142vip-oauth',
   License: 'https://github.com/142vip/core-x/blob/main/LICENSE',
   CoreXLicense: 'https://github.com/142vip/core-x/blob/main/LICENSE',
+  OAUTHLicense: 'https://github.com/142vip/142vip-oauth/blob/main/LICENSE',
 }

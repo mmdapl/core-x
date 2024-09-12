@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.9 (2024-09-12)
+
+### ✨ Features
+
+- 移除`log-symbols`模块，优化`check`命令的日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(47635)</samp>](https://github.com/142vip/core-x/commit/4763593)
+- `release`发布命令增加`--filter`可选参数，支持多次调用，用于指定模块路径 &nbsp;-&nbsp; by **chufan** [<samp>(d0cc1)</samp>](https://github.com/142vip/core-x/commit/d0cc1e7)
+
+### 🐛 Bug Fixes
+
+- 修复`sync`命令同步模块异常，更改同步源域名为：`https://registry-direct.npmmirror.com` &nbsp;-&nbsp; by **chufan** [<samp>(4c971)</samp>](https://github.com/142vip/core-x/commit/4c971a4)
+
+**Release New Version v0.0.3-alpha.9 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.8 (2024-09-08)
 
 ### ✨ Features

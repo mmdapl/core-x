@@ -30,6 +30,7 @@ interface ReleaseOptions extends Pick<VersionBumpOptions, 'preid' | 'tag' | 'com
 interface VipReleaseExtraOptions {
   branch?: string
   checkRelease?: boolean
+  filter?: string[]
   vip?: boolean
 }
 
@@ -101,14 +102,14 @@ function printPreCheckRelease() {
 /**
  * 执行142vip开源仓库迭代
  */
-function execVipRelease(args: { checkRelease?: boolean }) {
+function execVipRelease(args: VipReleaseExtraOptions) {
   // 预先检查子模块
   if (args.checkRelease) {
     printPreCheckRelease()
     process.exit(0)
   }
 
-  const pkgJSON = getReleasePkgJSON('./packages/*')
+  const pkgJSON = getReleasePkgJSON(args.filter)
 
   // 对话框
   select({
@@ -166,6 +167,11 @@ export async function releaseMain(program: Command) {
     .option('--package <package>', '指定需要发布的包')
     .option('--branch <branch>', '指定分支进行发布')
     .option('--check-release', '发布仓库主版本时，校验monorepo中子模块版本', false)
+    .option('-F, --filter <filter>', '模块的路径，例如："./package/*"', (value: string, previous: string[]) => {
+      if (!value)
+        return [value]
+      return previous.concat(value)
+    }, [])
     .option('--vip', '是否为@142vip组织专用功能', false)
     .action(async (args: ReleaseOptions & VipReleaseExtraOptions) => {
       // console.log(CliCommandEnum.RELEASE, args)
@@ -183,6 +189,7 @@ export async function releaseMain(program: Command) {
       if (args.vip) {
         execVipRelease({
           checkRelease: args.checkRelease,
+          filter: args.filter,
         })
       }
       else {

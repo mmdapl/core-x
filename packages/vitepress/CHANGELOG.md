@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.5 (2024-09-12)
+
+### ✨ Features
+
+- 支持`oauthRepo`常量 &nbsp;-&nbsp; by **chufan** [<samp>(efe9b)</samp>](https://github.com/142vip/core-x/commit/efe9b0a)
+
+**Release New Version v0.0.1-alpha.5 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.4 (2024-09-11)
 
 ### ✨ Features

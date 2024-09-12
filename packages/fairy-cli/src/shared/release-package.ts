@@ -26,9 +26,24 @@ interface ValidateResponse {
  * - filter参数： https://pnpm.io/filtering
  *
  */
-export function getReleasePkgJSON(filter?: string) {
+export function getReleasePkgJSON(filter?: string | string[]) {
   try {
-    const command = `pnpm ls --json --only-projects --filter "${filter ?? './packages/*'}" --depth -1`
+    // 格式： --filter ./packages/*
+    let filterRgx = ''
+    if (filter == null || filter.length === 0) {
+      filterRgx = '--filter "./packages/*"'
+    }
+    else {
+      if (Array.isArray(filter)) {
+        for (const f of filter) {
+          filterRgx += `--filter "${f}" `
+        }
+      }
+      else {
+        filterRgx = `--filter "${filter}"`
+      }
+    }
+    const command = `pnpm ls --json --only-projects ${filterRgx} --depth -1`
     const packageStr = execSync(command).toString().trim()
     return JSON.parse(packageStr) as Array<PackageJSON>
   }

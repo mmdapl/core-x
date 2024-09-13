@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.12 (2024-09-13)
+
+### ✨ Features
+
+- 使用`VipProjectTable`组件，优化首页显示效果，`首页-趋势`支持暗夜模式 &nbsp;-&nbsp; by **chufan** [<samp>(4e1b0)</samp>](https://github.com/142vip/core-x/commit/4e1b0d6)
+- 使用`VipTeam`组件，优化首页展示 &nbsp;-&nbsp; by **chufan** [<samp>(f2e9f)</samp>](https://github.com/142vip/core-x/commit/f2e9f7a)
+- 移除全局`chalk`模块，使用`vipColor`变量处理日志格式 &nbsp;-&nbsp; by **chufan** [<samp>(51156)</samp>](https://github.com/142vip/core-x/commit/5115623)
+- **@142vip/fairy-cli**:
+  - 移除`log-symbols`模块，优化`check`命令的日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(47635)</samp>](https://github.com/142vip/core-x/commit/4763593)
+  - `release`发布命令增加`--filter`可选参数，支持多次调用，用于指定模块路径 &nbsp;-&nbsp; by **chufan** [<samp>(d0cc1)</samp>](https://github.com/142vip/core-x/commit/d0cc1e7)
+- **@142vip/release-version**:
+  - 移除`log-symbols`模块，替换为`vipSymbols`变量 &nbsp;-&nbsp; by **chufan** [<samp>(6347b)</samp>](https://github.com/142vip/core-x/commit/6347bc5)
+- **@142vip/utils**:
+  - 移除`chalk`，使用`ansi-colors`模块，新增`vipColor`和`vipSymbols`常用终端日志输出变量 &nbsp;-&nbsp; by **chufan** [<samp>(55ae6)</samp>](https://github.com/142vip/core-x/commit/55ae636)
+- **@142vip/vitepress**:
+  - 封装`VipBackTop`组件，优化`VipProjectTable`组件显示样式 &nbsp;-&nbsp; by **chufan** [<samp>(0392e)</samp>](https://github.com/142vip/core-x/commit/0392e18)
+  - 拓展项目表格和团队介绍组件封装，优化使用 &nbsp;-&nbsp; by **chufan** [<samp>(854ab)</samp>](https://github.com/142vip/core-x/commit/854ab43)
+  - 修改`VipProjectTable`组件展示效果，支持`Tag`标签 &nbsp;-&nbsp; by **chufan** [<samp>(bdf7f)</samp>](https://github.com/142vip/core-x/commit/bdf7fd4)
+  - 支持`oauthRepo`常量 &nbsp;-&nbsp; by **chufan** [<samp>(efe9b)</samp>](https://github.com/142vip/core-x/commit/efe9b0a)
+
+### 🔥 Performance
+
+- 升级全局基础依赖 &nbsp;-&nbsp; by **chufan** [<samp>(48474)</samp>](https://github.com/142vip/core-x/commit/484743e)
+
+### 🐛 Bug Fixes
+
+- 修复编辑路径跳转异常，支持平台超链接复用 &nbsp;-&nbsp; by **chufan** [<samp>(90830)</samp>](https://github.com/142vip/core-x/commit/908301f)
+- 修复`release`命令检验模块包异常，打印错误提示信息 &nbsp;-&nbsp; by **chufan** [<samp>(b518e)</samp>](https://github.com/142vip/core-x/commit/b518e97)
+- **@142vip/fairy-cli**:
+  - 修复`sync`命令同步模块异常，更改同步源域名为：`https://registry-direct.npmmirror.com` &nbsp;-&nbsp; by **chufan** [<samp>(4c971)</samp>](https://github.com/142vip/core-x/commit/4c971a4)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(e52f7)</samp>](https://github.com/142vip/core-x/commit/e52f7c2)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(3a41c)</samp>](https://github.com/142vip/core-x/commit/3a41cde)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(208d3)</samp>](https://github.com/142vip/core-x/commit/208d3ad)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(a7e4b)</samp>](https://github.com/142vip/core-x/commit/a7e4b54)
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(e6d93)</samp>](https://github.com/142vip/core-x/commit/e6d93c8)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(7aeef)</samp>](https://github.com/142vip/core-x/commit/7aeef77)
+
+**Release New Version v0.0.1-alpha.12 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.11...v0.0.1-alpha.12)**
+
 ## v0.0.1-alpha.11 (2024-09-08)
 
 ### ✨ Features

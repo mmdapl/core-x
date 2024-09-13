@@ -34,11 +34,8 @@
 ## 使用
 
 ```shell
-# 安装依赖
-pnpm i
-
-# 编译所有
-pnpm build
+# 根据lock文件安装依赖
+./scripts/ci
 
 # 删除开发、编译缓存目录，例如：node_modules、dist、.vite、.vitepress
 pnpm clean
@@ -49,6 +46,12 @@ pnpm dev
 # 编译打包文档
 pnpm build:docs
 
+# 编译所有的模块
+pnpm build:packages
+
+# 编译所有
+pnpm build
+
 # 代码风格检查
 pnpm lint
 
@@ -58,11 +61,9 @@ pnpm lint:fix
 
 ## 趋势
 
-<a href="https://star-history.com/#142vip/core-x&Date">
+<a href="https://github.com/142vip/core-x" title="@142vip/core-x">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=142vip/core-x&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=142vip/core-x&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=142vip/core-x&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=142vip/core-x,142vip/408CSFamily,142vip/JavaScriptCollection&type=Date" />
   </picture>
 </a>
 

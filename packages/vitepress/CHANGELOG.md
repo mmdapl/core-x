@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.6 (2024-09-14)
+
+### ✨ Features
+
+- 修改`VipBackTop`组件的边距，适配移动端 &nbsp;-&nbsp; by **chufan** [<samp>(882b1)</samp>](https://github.com/142vip/core-x/commit/882b18e)
+- 增加`unplugin-element-plus`依赖，支持组件的手动导入 &nbsp;-&nbsp; by **chufan** [<samp>(56a43)</samp>](https://github.com/142vip/core-x/commit/56a431d)
+
+**Release New Version v0.0.1-alpha.6 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.5 (2024-09-12)
 
 ### ✨ Features

@@ -12,7 +12,7 @@ defineComponent({
 
 <template>
   <!-- 回到底部 -->
-  <ElBacktop :bottom="150" :right="80">
+  <ElBacktop :bottom="180" :right="30">
     <template #default>
       ↑
     </template>

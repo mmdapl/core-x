@@ -365,6 +365,9 @@ importers:
       mkdist:
         specifier: ^1.5.5
         version: 1.5.5(sass@1.77.8)(typescript@5.6.2)
+      unplugin-element-plus:
+        specifier: ^0.8.0
+        version: 0.8.0(rollup@4.21.3)(webpack-sources@3.2.3)
       vue:
         specifier: ^3.4.23
         version: 3.4.38(typescript@5.6.2)
@@ -11499,6 +11502,14 @@ snapshots:
     optionalDependencies:
       rollup: 3.29.4
 
+  '@rollup/pluginutils@5.1.0(rollup@4.21.3)':
+    dependencies:
+      '@types/estree': 1.0.5
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 4.21.3
+
   '@rollup/rollup-android-arm-eabi@4.21.3':
     optional: true
 
@@ -19349,6 +19360,16 @@ snapshots:
   unplugin-element-plus@0.8.0(rollup@3.29.4)(webpack-sources@3.2.3):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
+      es-module-lexer: 1.5.4
+      magic-string: 0.30.11
+      unplugin: 1.14.1(webpack-sources@3.2.3)
+    transitivePeerDependencies:
+      - rollup
+      - webpack-sources
+
+  unplugin-element-plus@0.8.0(rollup@4.21.3)(webpack-sources@3.2.3):
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.21.3)
       es-module-lexer: 1.5.4
       magic-string: 0.30.11
       unplugin: 1.14.1(webpack-sources@3.2.3)

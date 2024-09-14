@@ -96,7 +96,7 @@ function printPreCheckRelease() {
   // 输出空行
   console.log()
 
-  if (release) {
+  if (!release) {
     console.log(`${vipColor.yellow(`${vipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }

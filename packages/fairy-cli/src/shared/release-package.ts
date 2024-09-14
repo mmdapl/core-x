@@ -102,14 +102,17 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
 export function validateBeforeReleaseRoot(): ValidateResponse {
   const pkgJSON = getReleasePkgJSON()
   const packageNames = pkgJSON.map(pkg => pkg.name)
+
+  // 标记是否能够发布主仓库，前提是所有子模块都进行版本更新
   let isRootRelease = true
   const packages: ValidatePkgJSON[] = []
   for (const packageName of packageNames) {
-    const isRelease = validatePackage(packageName)
-    if (!isRelease) {
+    const isNeedRelease = validatePackage(packageName)
+    // 子模块没有进行版本更新
+    if (isNeedRelease) {
       isRootRelease = false
     }
-    packages.push({ name: packageName, release: isRelease })
+    packages.push({ name: packageName, release: isNeedRelease })
   }
 
   return { release: isRootRelease, packages }

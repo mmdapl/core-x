@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.13 (2024-09-17)
+
+### ✨ Features
+
+- 移除`element-plus`相关插件依赖，由模块管理 &nbsp;-&nbsp; by **chufan** [<samp>(ba2a0)</samp>](https://github.com/142vip/core-x/commit/ba2a06e)
+- `dev`命令增加`--force --strictPort`参数，开启严格端口模式 &nbsp;-&nbsp; by **微信公众号：储凡** and **chufan** in https://github.com/142vip/core-x/issues/115 [<samp>(1447b)</samp>](https://github.com/142vip/core-x/commit/1447b75)
+- 网站各子页面增加`VipBackTop`组件，支持一键返回顶部 &nbsp;-&nbsp; by **chufan** [<samp>(d52b3)</samp>](https://github.com/142vip/core-x/commit/d52b3d6)
+- **@142vip/vitepress**:
+  - 修改`VipBackTop`组件的边距，适配移动端 &nbsp;-&nbsp; by **chufan** [<samp>(882b1)</samp>](https://github.com/142vip/core-x/commit/882b18e)
+  - 增加`unplugin-element-plus`依赖，支持组件的手动导入 &nbsp;-&nbsp; by **chufan** [<samp>(56a43)</samp>](https://github.com/142vip/core-x/commit/56a431d)
+
+### 🔥 Performance
+
+- 优化`scripts`脚本，`ci`命令统一`npm`配置 &nbsp;-&nbsp; by **chufan** [<samp>(fd936)</samp>](https://github.com/142vip/core-x/commit/fd93630)
+
+### 🐛 Bug Fixes
+
+- **@142vip/fairy-cli**:
+  - 修复`release`命令提醒日志打印异常 &nbsp;-&nbsp; by **chufan** [<samp>(106be)</samp>](https://github.com/142vip/core-x/commit/106bee3)
+
+### 📖 Documentation
+
+- Update README &nbsp;-&nbsp; by **chufan** [<samp>(dbfbc)</samp>](https://github.com/142vip/core-x/commit/dbfbc9c)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(dee83)</samp>](https://github.com/142vip/core-x/commit/dee8326)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(acb9c)</samp>](https://github.com/142vip/core-x/commit/acb9c4a)
+
+**Release New Version v0.0.1-alpha.13 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.12...v0.0.1-alpha.13)**
+
 ## v0.0.1-alpha.12 (2024-09-13)
 
 ### ✨ Features

@@ -51,7 +51,7 @@ if (type == null || !typeList.includes(type)) {
 }
 
 // 获取packages目录下所有的模块名
-const pkgJSON = getReleasePkgJSON('./packages/*')
+const pkgJSON = getReleasePkgJSON(['./apps/*', './packages/*'])
 
 const scopeList = [
   ...pkgJSON.map(pkg => pkg.name),

@@ -30,8 +30,8 @@
     "preview": "vitepress preview",
     "lint": "npx fa lint",
     "lint:fix": "npx fa lint --fix",
-    "release:check": "npx fa release --check-release --vip",
-    "release": "npx fa release --vip",
+    "release:check": "npx fa release --check-release --vip -F './apps/*' -F './packages/*' ",
+    "release": "npx fa release --vip -F './apps/*' -F './packages/*' ",
     "publish:check": "pnpm publish -r --filter './packages/**' --dry-run --json --no-git-checks",
     "check": "pnpm release:check && pnpm publish:check"
   },

@@ -7,4 +7,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ✨ Features
 
-* `egg`演示模块初始化 by . @chufan
+* `nest`演示模块初始化 by . @chufan

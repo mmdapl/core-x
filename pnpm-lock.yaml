@@ -74,6 +74,8 @@ importers:
 
   apps/egg-demo: {}
 
+  apps/nest-demo: {}
+
   packages/axios:
     dependencies:
       axios:

@@ -12,7 +12,7 @@ export interface GitInfo {
  * - 短哈希值
  * - 提交信息
  */
-export async function getLogInfo(): Promise<GitInfo> {
+export async function getRecentGitCommit(): Promise<GitInfo> {
   // 执行 git log 命令获取最新一次提交的哈希值和消息
   const gitLog = (await execCommand('git log --no-merges -1 --pretty=format:"%h %s"')).stdout
 

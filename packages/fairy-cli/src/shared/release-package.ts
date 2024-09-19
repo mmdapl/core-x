@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process'
 import process from 'node:process'
 import { versionBump } from '@142vip/release-version'
+import { vipColor, vipSymbols } from '@142vip/utils'
 import { getCommitLogs, getLatestTagName } from './git'
 
 interface PackageJSON {
@@ -13,10 +14,6 @@ interface PackageJSON {
 interface ValidatePkgJSON {
   name: string
   release: boolean
-}
-interface ValidateResponse {
-  release: boolean
-  packages: ValidatePkgJSON[]
 }
 
 /**
@@ -31,7 +28,7 @@ export function getReleasePkgJSON(filter?: string | string[]) {
     // 格式： --filter ./packages/*
     let filterRgx = ''
     if (filter == null || filter.length === 0) {
-      filterRgx = '--filter "./packages/*"'
+      return []
     }
     else {
       if (Array.isArray(filter)) {
@@ -50,6 +47,40 @@ export function getReleasePkgJSON(filter?: string | string[]) {
   catch (error) {
     console.error('Failed to get the release package name:', error)
     process.exit(1)
+  }
+}
+
+/**
+ * 打印模块预检信息
+ */
+export function printPreCheckRelease(packageNames: string[]) {
+  // 标记是否能够发布主仓库，前提是所有子模块都进行版本更新
+  let isRootRelease = true
+  const packages: ValidatePkgJSON[] = []
+  for (const packageName of packageNames) {
+    const isNeedRelease = validatePackage(packageName)
+    // 子模块没有进行版本更新
+    if (isNeedRelease) {
+      isRootRelease = false
+    }
+    packages.push({ name: packageName, release: isNeedRelease })
+  }
+
+  console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
+  for (const pkg of packages) {
+    if (pkg.release) {
+      console.log(vipColor.red(`${vipSymbols.error} ${pkg.name}`))
+    }
+    else {
+      console.log(vipColor.green(`${vipSymbols.success} ${pkg.name}`))
+    }
+  }
+
+  // 输出空行
+  console.log()
+
+  if (!isRootRelease) {
+    console.log(`${vipColor.yellow(`${vipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }
 
@@ -95,29 +126,6 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
     all: true,
   })
 }
-
-/**
- * 在发布根模块前线上进行校验
- */
-export function validateBeforeReleaseRoot(): ValidateResponse {
-  const pkgJSON = getReleasePkgJSON()
-  const packageNames = pkgJSON.map(pkg => pkg.name)
-
-  // 标记是否能够发布主仓库，前提是所有子模块都进行版本更新
-  let isRootRelease = true
-  const packages: ValidatePkgJSON[] = []
-  for (const packageName of packageNames) {
-    const isNeedRelease = validatePackage(packageName)
-    // 子模块没有进行版本更新
-    if (isNeedRelease) {
-      isRootRelease = false
-    }
-    packages.push({ name: packageName, release: isNeedRelease })
-  }
-
-  return { release: isRootRelease, packages }
-}
-
 /**
  * 发布项目
  * - 更新根目录下的version版本

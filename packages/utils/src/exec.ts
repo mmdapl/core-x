@@ -4,7 +4,7 @@ import * as process from 'node:process'
 
 type Command = string | string[]
 
-interface CmdResult {
+export interface CmdResult {
   code?: number | null
   stdout: string
   stderr: string

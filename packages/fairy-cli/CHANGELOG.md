@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.11 (2024-09-19)
+
+### ✨ Features
+
+- `release`命令改造，支持非`monorepo`仓库，`--filter`参数支持默认`[]`空数组返回 &nbsp;-&nbsp; by **chufan** [<samp>(184a8)</samp>](https://github.com/142vip/core-x/commit/184a813)
+
+**Release New Version v0.0.3-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.10 (2024-09-17)
 
 ### 🐛 Bug Fixes

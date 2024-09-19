@@ -3,15 +3,15 @@ import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { Command } from 'commander'
 import { confirm, select } from '@inquirer/prompts'
-import { vipColor, vipSymbols } from '@142vip/utils'
+import { vipColor } from '@142vip/utils'
 import {
   CliCommandEnum,
   getBranchName,
   getPackageListInMonorepo,
   getReleasePkgJSON,
+  printPreCheckRelease,
   releaseMonorepoPackage,
   releaseRoot,
-  validateBeforeReleaseRoot,
 } from '../shared'
 
 // export interface ReleaseOptions {
@@ -80,45 +80,26 @@ async function execNormalRelease(args: ReleaseOptions) {
   })
 }
 
-function printPreCheckRelease() {
-  const { release, packages } = validateBeforeReleaseRoot()
-
-  console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
-  for (const pkg of packages) {
-    if (pkg.release) {
-      console.log(vipColor.red(`${vipSymbols.error} ${pkg.name}`))
-    }
-    else {
-      console.log(vipColor.green(`${vipSymbols.success} ${pkg.name}`))
-    }
-  }
-
-  // 输出空行
-  console.log()
-
-  if (!release) {
-    console.log(`${vipColor.yellow(`${vipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
-  }
-}
-
 /**
  * 执行142vip开源仓库迭代
  */
 function execVipRelease(args: VipReleaseExtraOptions) {
+  // 获取pkg信息
+  const pkgJSON = getReleasePkgJSON(args.filter)
+  const packageNames = pkgJSON.map(pkg => pkg.name)
+
   // 预先检查子模块
   if (args.checkRelease) {
-    printPreCheckRelease()
+    printPreCheckRelease(packageNames)
     process.exit(0)
   }
-
-  const pkgJSON = getReleasePkgJSON(args.filter)
 
   // 对话框
   select({
     message: `选择需要使用${vipColor.red('Release')}命令发布的模块名称：`,
     choices: [
       defaultRepoName,
-      ...pkgJSON.map(pkg => pkg.name),
+      ...packageNames,
     ].map(name => ({
       name,
       value: name,

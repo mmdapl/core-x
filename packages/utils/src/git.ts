@@ -8,7 +8,7 @@ export interface GitInfo {
   message: string
 }
 /**
- * 获取最近一次Git提交信息
+ * 获取最近一次Git提交信息【包含merge信息】
  * - 短哈希值
  * - 提交信息
  */

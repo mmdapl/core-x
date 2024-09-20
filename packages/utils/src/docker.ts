@@ -2,13 +2,22 @@ import { execCommand } from './exec'
 import { VipLogger } from './logger'
 import { vipSymbols } from './color'
 
+const vipLog = new VipLogger()
+
+/**
+ * 142vip 仓库地址
+ * - 格式：`${VipDockerAddress}/项目代号:${pkg.name}-${pkg.version}`
+ * - 例如：registry.cn-hangzhou.aliyuncs.com/142vip/docs:JavaScriptCollection-0.0.1
+ */
+export const VipDockerAddress: string = 'registry.cn-hangzhou.aliyuncs.com/142vip'
+
 interface DockerOptions {
   logger?: boolean
 }
 
-interface BuildImageDockerOptions {
+interface BuildImageDockerOptions extends DockerOptions {
   imageName: string
-  buildArgs?: [string, string][]
+  buildArgs?: [string, number | boolean | string][]
 }
 
 /**
@@ -85,7 +94,6 @@ export async function isInstallDockerCompose(args?: DockerOptions) {
 
   // 打印日志
   if (args?.logger) {
-    const vipLog = new VipLogger()
     if (code === 0) {
       vipLog.log(`检测到docker-compose，版本信息：\n`, { startLabel: vipSymbols.success })
       vipLog.log(stdout)
@@ -115,9 +123,12 @@ export async function buildImage(args: BuildImageDockerOptions) {
   // 构建参数
   let buildArg = ''
   if (args.buildArgs != null) {
-    buildArg = args.buildArgs.map(arg => `--build-arg ${arg[0]}=${arg[1]}`).join(' ')
+    buildArg = args.buildArgs.map(arg => `--build-arg ${arg[0]}='${arg[1]}'`).join(' ')
   }
   const command = `docker build ${buildArg} -t ${args.imageName} .`
-  console.log(111, command)
+  if (args.logger) {
+    vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })
+    vipLog.log(command)
+  }
   return await execCommand(command)
 }

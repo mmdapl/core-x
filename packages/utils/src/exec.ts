@@ -85,17 +85,15 @@ export async function execCommand(
  * @param cmd
  */
 export function commandStandardExecutor(cmd: Command) {
-  const executable = Array.isArray(cmd) ? cmd.join(';') : cmd
+  const executable = Array.isArray(cmd) ? cmd.join('&&') : cmd
   const options: childProcess.SpawnOptionsWithoutStdio = {
     stdio: 'pipe',
     cwd: process.cwd(),
   }
 
-  const { platform } = process
-
-  try {
-    const cmd = platform === 'win32' ? 'cmd' : 'sh'
-    const arg = platform === 'win32' ? '/C' : '-c'
+  return new Promise((resolve, reject) => {
+    const cmd = process.platform === 'win32' ? 'cmd' : 'sh'
+    const arg = process.platform === 'win32' ? '/C' : '-c'
     const child = childProcess.spawn(cmd, [arg, executable], options)
 
     child.stdout.on('data', (data: string) => {
@@ -104,20 +102,20 @@ export function commandStandardExecutor(cmd: Command) {
       }
     })
 
-    child.stderr.on('data', (_data) => {
-      // if (Buffer.isBuffer(data)) {
-      //   console.log(data.toString())
-      // }
-    })
-
-    // 出现错误
-    child.on('error', (_error) => {
+    child.stderr.on('data', (data) => {
+      if (Buffer.isBuffer(data)) {
+        console.log(data.toString())
+      }
     })
 
     // 进程退出
-    child.on('close', (_code) => {
+    child.on('close', (code) => {
+      resolve(code)
     })
-  }
-  catch {
-  }
+
+    // 出现错误
+    child.on('error', (error) => {
+      reject(error)
+    })
+  })
 }

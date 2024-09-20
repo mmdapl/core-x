@@ -1,4 +1,4 @@
-import { execCommand } from './exec'
+import { commandStandardExecutor, execCommand } from './exec'
 import { VipLogger } from './logger'
 import { vipSymbols } from './color'
 
@@ -112,7 +112,7 @@ export async function isInstallDockerCompose(args?: DockerOptions) {
  */
 export async function pushImage(imageName: string) {
   const command = `docker push ${imageName}`
-  return await execCommand(command)
+  await commandStandardExecutor(command)
 }
 
 /**
@@ -123,12 +123,13 @@ export async function buildImage(args: BuildImageDockerOptions) {
   // 构建参数
   let buildArg = ''
   if (args.buildArgs != null) {
-    buildArg = args.buildArgs.map(arg => `--build-arg ${arg[0]}='${arg[1]}'`).join(' ')
+    buildArg = args.buildArgs.map(arg => `--build-arg ${arg[0]}='${arg[1]}'`).join(' \ ')
   }
-  const command = `docker build ${buildArg} -t ${args.imageName} .`
+  const command = `docker build ${buildArg} -t '${args.imageName}' .`
+
   if (args.logger) {
     vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })
-    vipLog.log(command)
+    vipLog.log(command, { startLabel: vipSymbols.success })
   }
-  return await execCommand(command)
+  await commandStandardExecutor(command)
 }

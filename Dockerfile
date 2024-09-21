@@ -6,7 +6,7 @@
 #   APP_VERSION: 版本
 #
 
-FROM registry.cn-hangzhou.aliyuncs.com/142vip/node:20.17.0-alpine AS build_base
+FROM registry.cn-hangzhou.aliyuncs.com/142vip/node:18.18.0-alpine AS build_base
 
 
 # 是否
@@ -15,14 +15,21 @@ ARG NEED_PROXY=false
 ## 设置环境变量，支持容器构建时使用layer缓存，参考：https://pnpm.io/zh/docker
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+## corepack 环境变量
+ENV COREPACK_NPM_REGISTRY=https://mirrors.tencent.com/npm/
 
-WORKDIR /core-x
+#WORKDIR /core-x
 COPY . .
 
+RUN ls
+
 ## 基于容器自动构建
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store if [ "$CONTAINER_BUILD" = "true" ]; then  \
-    sh ./scripts/ci && pnpm build:docs; \
-  fi;
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store sh ./scripts/ci && pnpm build:packages && if [ "$NEED_PROXY" = "false" ];  \
+   then \
+    ls &&  pnpm build:docs; \
+   else \
+      pnpm build:docs-proxy; \
+   fi;
 
 FROM registry.cn-hangzhou.aliyuncs.com/142vip/nginx:1.23.0-alpine
 
@@ -42,5 +49,5 @@ LABEL "repo.name"=$APP_NAME "repo.version"=$APP_VERSION  \
 LABEL "git.hash"="$GIT_HASH"
 
 # 将dist文件中的内容复制到 /usr/share/nginx/html/ 这个目录下面 注意：--from参数
-COPY  --from=build_base /core-x/dist/  /usr/share/nginx/html/
+COPY  --from=build_base /dist/  /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/

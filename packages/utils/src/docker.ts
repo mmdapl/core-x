@@ -20,6 +20,7 @@ interface BuildImageDockerOptions extends DockerOptions {
   buildArgs?: [string, number | boolean | string][]
   delete?: boolean
   push?: boolean
+  target?: string
 }
 
 /**
@@ -135,7 +136,11 @@ export async function buildImage(args: BuildImageDockerOptions) {
       return `--build-arg ${key}=${newValue}`
     }).join(' \ ')
   }
-  const command = `docker build ${buildArg} -t '${args.imageName}' .`
+
+  // 支持--target参数
+  const targetParams = args.target != null ? `--target ${args.target}` : ''
+
+  const command = `docker build ${buildArg} ${targetParams} -t '${args.imageName}' .`
 
   if (args.logger) {
     vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })

@@ -144,7 +144,7 @@ export async function buildImage(args: BuildImageDockerOptions) {
 
   if (args.logger) {
     vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })
-    vipLog.log(command, { startLabel: vipSymbols.success })
+    vipLog.log(`${command}\n`, { startLabel: vipSymbols.success })
   }
   vipLog.log(args.imageName, { startLabel: '构建镜像' })
   await commandStandardExecutor(command)

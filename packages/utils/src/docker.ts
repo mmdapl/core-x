@@ -18,11 +18,12 @@ interface DockerOptions {
 interface BuildImageDockerOptions extends DockerOptions {
   imageName: string
   buildArgs?: [string, number | boolean | string][]
+  delete?: boolean
+  push?: boolean
 }
 
 /**
  * 判断是否存在镜像
- * @param imageName
  */
 export async function isExistImage(imageName: string) {
   const command = `docker images -q ${imageName}`
@@ -32,7 +33,6 @@ export async function isExistImage(imageName: string) {
 
 /**
  * 删除Docker镜像
- * @param imageName
  */
 export async function deleteImage(imageName: string) {
   const command = `docker rmi -f ${imageName}`
@@ -47,6 +47,9 @@ export async function deletePruneImages() {
   return await execCommand(command)
 }
 
+/**
+ * 判断容器是否存在
+ */
 export async function isExistContainer(containerName: string) {
   const command = `docker ps -aq -f name=${containerName}`
   const { code, stdout } = await execCommand(command)
@@ -56,7 +59,6 @@ export async function isExistContainer(containerName: string) {
 
 /**
  * 删除容器
- * @param containerName
  */
 export async function deleteContainer(containerName: string) {
   const command = `docker rm -f ${containerName}`
@@ -117,13 +119,21 @@ export async function pushImage(imageName: string) {
 
 /**
  * 构建Docker镜像
- * @param args
+ * - 根据tag标记，推送到远程仓库
+ * - 推送完成后，删除本地镜像
  */
 export async function buildImage(args: BuildImageDockerOptions) {
   // 构建参数
   let buildArg = ''
   if (args.buildArgs != null) {
-    buildArg = args.buildArgs.map(arg => `--build-arg ${arg[0]}='${arg[1]}'`).join(' \ ')
+    buildArg = args.buildArgs.map(([key, value]) => {
+      // 对于字符串，额外加''
+      const newValue = typeof value === 'string'
+        ? `'${value}'`
+        : value
+
+      return `--build-arg ${key}=${newValue}`
+    }).join(' \ ')
   }
   const command = `docker build ${buildArg} -t '${args.imageName}' .`
 
@@ -131,5 +141,21 @@ export async function buildImage(args: BuildImageDockerOptions) {
     vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })
     vipLog.log(command, { startLabel: vipSymbols.success })
   }
+  vipLog.log(args.imageName, { startLabel: '构建镜像' })
   await commandStandardExecutor(command)
+
+  if (args.push) {
+    const exist = await isExistImage(args.imageName)
+
+    if (exist) {
+      vipLog.log(args.imageName, { startLabel: '推送镜像' })
+      await pushImage(args.imageName)
+    }
+  }
+
+  // 推送完删除
+  if (args.push && args.delete) {
+    vipLog.log(args.imageName, { startLabel: '删除镜像' })
+    await deleteImage(args.imageName)
+  }
 }

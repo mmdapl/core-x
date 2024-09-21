@@ -158,10 +158,15 @@ jobs:
         run: |
           ./scripts/ci
 
-      # 编译 打包成dist
+      # 编译公共模块
+      - name: Build All Packages
+        run: |
+          pnpm build:packages
+
+      # 编译 打包成dist，支持代理
       - name: Build with VitePress
         run: |
-          pnpm build
+          pnpm build:docs-proxy
 
       # 上传dist文件
       - name: Upload artifact

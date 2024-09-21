@@ -1,4 +1,5 @@
 import path from 'node:path'
+import process from 'node:process'
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types/default-theme'
 import { VipLinks, getVipFooter, zhSearch } from '@142vip/vitepress'
@@ -41,10 +42,18 @@ const navbarConfig: DefaultTheme.NavItem[] = [
 ]
 
 /**
+ * 用于区分base路径，是否nginx代理
+ */
+function getSiteBase(): string {
+  const needProxy = process.env.NEED_PROXY || false
+  return needProxy ? `/core-x/` : '/'
+}
+
+/**
  * 所有配置
  */
 export default defineConfig({
-  base: '/core-x',
+  base: getSiteBase(),
   lang: 'zh-CN',
   title: '@142vip/core-x',
   titleTemplate: ':title - @142vip/core-x',

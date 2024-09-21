@@ -68,3 +68,8 @@ jobs:
       - name: Build Core-X Docs
         run: |
           pnpm build:docs
+
+      # 构建镜像 ，支持base拓展代理
+      - name: Build Core-X Docs
+        run: |
+          pnpm build:docs-proxy

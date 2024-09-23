@@ -21,6 +21,8 @@ interface BuildImageDockerOptions extends DockerOptions {
   delete?: boolean
   push?: boolean
   target?: string
+  // build命令时，GC限制内存大小
+  memory?: number
 }
 
 /**
@@ -139,8 +141,9 @@ export async function buildImage(args: BuildImageDockerOptions) {
 
   // 支持--target参数
   const targetParams = args.target != null ? `--target ${args.target}` : ''
+  const memoryParams = args.memory != null ? `--memory=${args.memory}mb` : ''
 
-  const command = `docker build ${buildArg} ${targetParams} -t '${args.imageName}' .`
+  const command = `docker build ${buildArg} ${targetParams} ${memoryParams} -t '${args.imageName}' .`
 
   if (args.logger) {
     vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })

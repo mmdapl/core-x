@@ -4,20 +4,20 @@
       "dependsOn": [
         "^build"
       ],
-      "cache": false,
+      "cache": true,
       "outputs": []
     },
     "lint": {
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "cache": true
     },
     "test": {
-      "cache": false
+      "cache": true
     },
     "start": {
-      "cache": false
+      "cache": true
     }
   }
 }

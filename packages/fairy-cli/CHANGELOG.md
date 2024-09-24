@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.12 (2024-09-24)
+
+### ✨ Features
+
+- 移除`exec-command`命令执行器，替换为`@142vip/utils`模块 &nbsp;-&nbsp; by **chufan** [<samp>(2f29c)</samp>](https://github.com/142vip/core-x/commit/2f29c4a)
+
+**Release New Version v0.0.3-alpha.12 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.11 (2024-09-19)
 
 ### ✨ Features

@@ -1,3 +1,4 @@
+import * as process from 'node:process'
 import { commandStandardExecutor, execCommand } from './exec'
 import { VipLogger } from './logger'
 import { vipSymbols } from './color'
@@ -166,4 +167,30 @@ export async function buildImage(args: BuildImageDockerOptions) {
     vipLog.log(args.imageName, { startLabel: '删除镜像' })
     await deleteImage(args.imageName)
   }
+}
+
+interface CreateContainerOptions extends DockerOptions {
+  containerName: string
+  imageName: string
+  // 映射端口
+  port: Array<[number, number]>
+  // 自定义网络
+  networkName?: string
+  // 容器ip
+  ip?: string
+}
+
+/**
+ * 创建容器
+ */
+export async function createContainer(args: CreateContainerOptions) {
+  if (args.networkName && !args.ip) {
+    console.log('只指定ip，没有指定容器局域网')
+    process.exit(1)
+  }
+  // 支持自定义网络
+  const networkParams = args.networkName && args.ip ? `--network ${args.networkName} --ip` : ''
+
+  const command = `docker run -d --name ${args.containerName} --restart=unless-stopped ${networkParams} ${args.imageName}`
+  await commandStandardExecutor(command)
 }

@@ -7,17 +7,18 @@ import { antfu } from '@antfu/eslint-config'
 /**
  * 默认的Eslint配置
  */
-export const defaultEslintConfig = {
+export const defaultEslintConfig: EslintConfigOptions = {
   gitignore: true,
   typescript: true,
   vue: true,
   jsonc: true,
   yaml: true,
-  formatters: {
-    css: true,
-    html: true,
-    markdown: 'prettier',
-  },
+  // formatters: {
+  //   css: true,
+  //   html: true,
+  //   markdown: 'prettier',
+  // },
+  markdown: true,
 }
 
 /**
@@ -38,18 +39,14 @@ type EslintConfigOptions = OptionsConfig & TypedFlatConfigItem
  * 参考：https://github.com/antfu/eslint-config
  * @param options
  */
-export function defineVipEslintConfig(
+export async function defineVipEslintConfig(
   options: EslintConfigOptions = {},
-): any {
-  return antfu({
+): Promise<any> {
+  return antfu(defaultEslintConfig, {
     ...options,
-    ...defaultEslintConfig,
-    ignores: [
-      ...options.ignores ?? [],
-    ],
     rules: {
       ...baseEslintRules,
-      ...options.rules ?? {},
-    },
-  } as EslintConfigOptions)
+      ...(options.rules ?? {}),
+    } as any,
+  })
 }

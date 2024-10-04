@@ -4,7 +4,7 @@
   "version": "0.0.1-alpha.1",
   "private": true,
   "packageManager": "pnpm@9.6.0",
-  "description": "研究生考试408考点、工作面试计算机基础知识合集",
+  "description": "@142vip/vuepress包的使用Demo演示",
   "authorInfo": {
     "name": "微信公众号：储凡",
     "email": "fairy_vip@2925.com",

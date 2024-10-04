@@ -4,9 +4,15 @@
 
 ## 介绍
 
-## 开源
+## 我的开源
 
-### 模块
+### 示例项目
+
+- `egg-demo`
+- `nest-demo`
+- `vuepress-demo`
+
+### 开源模块
 
 - `@142vip/axios`
 - `@142vip/changelog`
@@ -32,11 +38,6 @@
 - `@142vip/utils`
 - `@141vip/vitepress`
 - `@142vip/vuepress`
-
-### 模板
-
-- `egg-demo`
-- `nest-demo`
 
 ## 使用
 

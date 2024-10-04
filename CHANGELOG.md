@@ -2,6 +2,93 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.14 (2024-10-05)
+
+### ✨ Features
+
+- 增加`nest-demo`模板应用，修改相关文档和校验配置 &nbsp;-&nbsp; by **chufan** [<samp>(92e0a)</samp>](https://github.com/142vip/core-x/commit/92e0a2f)
+- 增加`bundle`脚本和`Nginx`配置，支持`Docker`构建镜像操作 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/125 [<samp>(d2ceb)</samp>](https://github.com/142vip/core-x/commit/d2ceb64)
+- 增加`bundle`脚本，支持编译站点，构建`Docker`镜像 &nbsp;-&nbsp; by **chufan** [<samp>(e5ae5)</samp>](https://github.com/142vip/core-x/commit/e5ae5ad)
+- 博客站点支持`base`字段拓展，优化`build`命令和流水线 &nbsp;-&nbsp; by **chufan** [<samp>(89be9)</samp>](https://github.com/142vip/core-x/commit/89be98f)
+- 增加`Dockerfile`忽略文件，优化`bundle`构建流程 &nbsp;-&nbsp; by **chufan** [<samp>(d8c84)</samp>](https://github.com/142vip/core-x/commit/d8c8448)
+- `pnpm`包下载源改为：`https://mirrors.tencent.com/npm/` &nbsp;-&nbsp; by **chufan** [<samp>(e4ee7)</samp>](https://github.com/142vip/core-x/commit/e4ee7ff)
+- 移除Eslint相关冗余依赖，配置使用`@142vip/eslint-config`模块 &nbsp;-&nbsp; by **chufan** [<samp>(d3f83)</samp>](https://github.com/142vip/core-x/commit/d3f83d7)
+- 增加`@142vip/vuepress`模块的演示示例，降低配置难度 &nbsp;-&nbsp; by **chufan** [<samp>(b8b6d)</samp>](https://github.com/142vip/core-x/commit/b8b6d52)
+- 增加`git`忽略，处理`vuepress`相关依赖 &nbsp;-&nbsp; by **chufan** [<samp>(d4c40)</samp>](https://github.com/142vip/core-x/commit/d4c40ea)
+- 删除`build`命令中的`--mpa`参数，关闭`MPA`模式 &nbsp;-&nbsp; by **chufan** [<samp>(bd659)</samp>](https://github.com/142vip/core-x/commit/bd659ad)
+- 统一为各模块增加`exports`配置 &nbsp;-&nbsp; by **chufan** [<samp>(278e5)</samp>](https://github.com/142vip/core-x/commit/278e5a8)
+- 增加`git`忽略，处理`vuepress`相关依赖 &nbsp;-&nbsp; by **chufan** [<samp>(f1bd1)</samp>](https://github.com/142vip/core-x/commit/f1bd144)
+- 删除`build`命令中的`--mpa`参数，关闭`MPA`模式 &nbsp;-&nbsp; by **chufan** [<samp>(c5c9a)</samp>](https://github.com/142vip/core-x/commit/c5c9a2a)
+- **@142vip/eslint-config**:
+  - 基于`@antfu/eslint-config`模块，封装Eslint校验规则，支持`defineVipEslintConfig`函数配置校验。 &nbsp;-&nbsp; by **chufan** [<samp>(12f5e)</samp>](https://github.com/142vip/core-x/commit/12f5eef)
+- **@142vip/fairy-cli**:
+  - `release`命令改造，支持非`monorepo`仓库，`--filter`参数支持默认`[]`空数组返回 &nbsp;-&nbsp; by **chufan** [<samp>(184a8)</samp>](https://github.com/142vip/core-x/commit/184a813)
+  - 移除`exec-command`命令执行器，替换为`@142vip/utils`模块 &nbsp;-&nbsp; by **chufan** [<samp>(2f29c)</samp>](https://github.com/142vip/core-x/commit/2f29c4a)
+  - 拓展`changelog`命令，支持`cli`工具快速执行`npx changelog`相关命令 &nbsp;-&nbsp; by **chufan** [<samp>(81f3e)</samp>](https://github.com/142vip/core-x/commit/81f3e3e)
+- **@142vip/utils**:
+  - 修改`getLogInfo`函数为`getRecentGitCommit` &nbsp;-&nbsp; by **chufan** [<samp>(f7923)</samp>](https://github.com/142vip/core-x/commit/f79237b)
+  - 增加`docker`相关`api`方法 &nbsp;-&nbsp; by **chufan** [<samp>(461bb)</samp>](https://github.com/142vip/core-x/commit/461bb18)
+  - 优化`buildImage`方法，支持`Docker`地址导出 &nbsp;-&nbsp; by **chufan** [<samp>(8ecd1)</samp>](https://github.com/142vip/core-x/commit/8ecd17b)
+  - 优化`commandStandardExecutor`执行器逻辑，增加日志 &nbsp;-&nbsp; by **chufan** [<samp>(a0bcd)</samp>](https://github.com/142vip/core-x/commit/a0bcdf3)
+  - 修改docker命令执行逻辑，`push`、`delete`镜像等操作直接执行 &nbsp;-&nbsp; by **chufan** [<samp>(4fc01)</samp>](https://github.com/142vip/core-x/commit/4fc0177)
+  - 修改`getRecentGitCommit`函数逻辑，只获取最近的`push`信息，包含`merge`操作 &nbsp;-&nbsp; by **chufan** [<samp>(a47e5)</samp>](https://github.com/142vip/core-x/commit/a47e559)
+  - 修改buildImage核心逻辑，支持`push`、`delete`等可选参数 &nbsp;-&nbsp; by **chufan** [<samp>(d9347)</samp>](https://github.com/142vip/core-x/commit/d934732)
+  - 拓展`buildImage`函数，支持`Dockerfile`中的`--target`参数，分步骤构建 &nbsp;-&nbsp; by **chufan** [<samp>(b558a)</samp>](https://github.com/142vip/core-x/commit/b558a7c)
+  - 修改命令输出日志格式 &nbsp;-&nbsp; by **chufan** [<samp>(92036)</samp>](https://github.com/142vip/core-x/commit/92036b7)
+  - 拓展`docker`命令，支持`createContainer`函数快速创建容器 &nbsp;-&nbsp; by **chufan** [<samp>(f67dd)</samp>](https://github.com/142vip/core-x/commit/f67dd44)
+- **@142vip/vuepress**:
+  - 增加`getSiteBase`函数，支持静态站点的`base`字段选取 &nbsp;-&nbsp; by **chufan** [<samp>(c3c2a)</samp>](https://github.com/142vip/core-x/commit/c3c2a77)
+  - 增加一些基于`vuepress-theme-hope`主题的封装 &nbsp;-&nbsp; by **chufan** [<samp>(eb034)</samp>](https://github.com/142vip/core-x/commit/eb0341b)
+- **vuepress-demo**:
+  - 增加`@142vip/vuepress`模块的演示示例，降低配置难度 &nbsp;-&nbsp; by **chufan** [<samp>(748b7)</samp>](https://github.com/142vip/core-x/commit/748b7d0)
+
+### 🔥 Performance
+
+- 移除`sync`同步脚本 &nbsp;-&nbsp; by **chufan** [<samp>(b33ce)</samp>](https://github.com/142vip/core-x/commit/b33ce18)
+- 依赖升级，格式化`CI`配置 &nbsp;-&nbsp; by **chufan** [<samp>(ee9d3)</samp>](https://github.com/142vip/core-x/commit/ee9d336)
+
+### 🐛 Bug Fixes
+
+- 修复`corepack`下载源在`Dockerfile`中使用异常，统一为:`https://mirrors.tencent.com/npm/` &nbsp;-&nbsp; by **chufan** [<samp>(7cdd5)</samp>](https://github.com/142vip/core-x/commit/7cdd597)
+- 修复`Dockerfile`中编译`OOM`内存溢出、镜像构建超时的问题 &nbsp;-&nbsp; by **chufan** [<samp>(4f089)</samp>](https://github.com/142vip/core-x/commit/4f089e7)
+- 修复`CI`流水线异常，关闭`Eslint`校验 &nbsp;-&nbsp; by **chufan** [<samp>(6c075)</samp>](https://github.com/142vip/core-x/commit/6c075ac)
+- 修复首页链接异常 &nbsp;-&nbsp; by **chufan** [<samp>(3b871)</samp>](https://github.com/142vip/core-x/commit/3b8711d)
+- 修复首页链接异常 &nbsp;-&nbsp; by **chufan** [<samp>(52295)</samp>](https://github.com/142vip/core-x/commit/5229540)
+- **@142vip/eslint-config**:
+  - 修复`lint`命令执行过慢问题，删除`eslint-plugin-format`插件格式化配置 &nbsp;-&nbsp; by **chufan** [<samp>(7c05f)</samp>](https://github.com/142vip/core-x/commit/7c05fe2)
+- **@142vip/redis**:
+  - 修复模块编译异常，正确引入`redis` &nbsp;-&nbsp; by **chufan** [<samp>(23cd6)</samp>](https://github.com/142vip/core-x/commit/23cd6c2)
+- **@142vip/utils**:
+  - 拓展`buildImage`函数功能，增加`memory`参数，支持`Docker`内存限制 &nbsp;-&nbsp; by **chufan** [<samp>(694f0)</samp>](https://github.com/142vip/core-x/commit/694f054)
+
+### 📖 Documentation
+
+- 文档增加`vuepress-demo`相关介绍 &nbsp;-&nbsp; by **chufan** [<samp>(dcba9)</samp>](https://github.com/142vip/core-x/commit/dcba9ae)
+
+### 😏 Release Packages
+
+- **@142vip/eslint-config**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(4fe9d)</samp>](https://github.com/142vip/core-x/commit/4fe9d9e)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(5d218)</samp>](https://github.com/142vip/core-x/commit/5d21822)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.11` &nbsp;-&nbsp; by **chufan** [<samp>(22c3d)</samp>](https://github.com/142vip/core-x/commit/22c3d57)
+  - Publish `v0.0.3-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(a1acc)</samp>](https://github.com/142vip/core-x/commit/a1acc43)
+  - Publish `v0.0.3-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(26c6b)</samp>](https://github.com/142vip/core-x/commit/26c6bf6)
+- **@142vip/redis**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(960b5)</samp>](https://github.com/142vip/core-x/commit/960b5b3)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(5ae56)</samp>](https://github.com/142vip/core-x/commit/5ae56f6)
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(a294e)</samp>](https://github.com/142vip/core-x/commit/a294eb6)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(46ceb)</samp>](https://github.com/142vip/core-x/commit/46cebcc)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(a5ed3)</samp>](https://github.com/142vip/core-x/commit/a5ed363)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(679b5)</samp>](https://github.com/142vip/core-x/commit/679b51d)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(119f1)</samp>](https://github.com/142vip/core-x/commit/119f1ae)
+- **vuepress-demo**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(5c908)</samp>](https://github.com/142vip/core-x/commit/5c908ea)
+
+**Release New Version v0.0.1-alpha.14 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.13...v0.0.1-alpha.14)**
+
 ## v0.0.1-alpha.13 (2024-09-17)
 
 ### ✨ Features

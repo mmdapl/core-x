@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-demo",
+  "type": "module",
+  "version": "0.0.1-alpha.0",
+  "private": true,
+  "packageManager": "pnpm@9.6.0",
+  "description": "研究生考试408考点、工作面试计算机基础知识合集",
+  "authorInfo": {
+    "name": "微信公众号：储凡",
+    "email": "fairy_vip@2925.com",
+    "url": "https://github.com/142vip",
+    "homePage": "https://142vip.cn"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs --clean-cache",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@142vip/vuepress": "workspace:*",
+    "@vuepress/bundler-vite": "2.0.0-rc.15",
+    "vuepress": "2.0.0-rc.15"
+  }
+}

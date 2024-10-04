@@ -6,7 +6,10 @@ import process from 'node:process'
  * - 环境变量 NEED_PROXY
  * @param baseName
  */
-export function getSiteBase(baseName?: string) {
-  const isNeedProxy = baseName != null ? true : (process.env.NEED_PROXY ?? false)
-  return isNeedProxy ? `/${baseName}/` : '/'
+export function getSiteBase(baseName?: string): '/' | `/${string}/` {
+  const needProxy = baseName != null
+    ? true
+    : (process.env.NEED_PROXY ?? false)
+
+  return needProxy ? `/${baseName}/` : '/'
 }

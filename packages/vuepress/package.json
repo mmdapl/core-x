@@ -13,8 +13,18 @@
   "keywords": [
     "公众号搜：储凡"
   ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "*.mjs",
     "dist"
   ],
   "scripts": {
@@ -22,15 +32,21 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-beta.67",
-    "@vuepress/plugin-register-components": "2.0.0-beta.67",
-    "@vuepress/utils": "2.0.0-beta.67",
-    "vue": "^3.4.23",
-    "vuepress": "2.0.0-beta.67",
-    "vuepress-plugin-components": "2.0.0-beta.238",
-    "vuepress-plugin-md-enhance": "2.0.0-beta.238",
-    "vuepress-plugin-search-pro": "2.0.0-beta.238",
-    "vuepress-theme-hope": "2.0.0-beta.238"
+    "@vue/repl": "^4.3.1",
+    "@vuepress/bundler-vite": "2.0.0-rc.15",
+    "@vuepress/plugin-markdown-image": "2.0.0-rc.30",
+    "dashjs": "^4.7.4",
+    "hls.js": "^1.5.13",
+    "mermaid": "^10.9.1",
+    "reveal.js": "^5.1.0",
+    "sass-embedded": "^1.79.4",
+    "typescript": "^5.5.4",
+    "unicorn-magic": "^0.3.0",
+    "vidstack": "^1.11.30",
+    "vue": "^3.5.8",
+    "vuepress": "2.0.0-rc.15",
+    "vuepress-plugin-search-pro": "2.0.0-rc.53",
+    "vuepress-theme-hope": "2.0.0-rc.53"
   },
   "publishConfig": {
     "access": "public",

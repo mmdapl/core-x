@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import {
   VipBackTop,
   VipContactAuthor,
@@ -13,15 +13,17 @@ import { getCoreProjectData } from '../../sidebar'
 const { isDark } = useData()
 const tableData = ref<any[]>([])
 
-// 异步加载表格数据
-;(async () => {
-  tableData.value = await getCoreProjectData()
-})()
-
 defineComponent({
   components: {
     ElImage,
   },
+})
+
+/**
+ * 异步加载表格数据
+ */
+onMounted(async () => {
+  tableData.value = await getCoreProjectData()
 })
 </script>
 

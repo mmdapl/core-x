@@ -355,6 +355,9 @@ importers:
       inquirer:
         specifier: '7'
         version: 7.3.3
+      qs:
+        specifier: ^6.13.0
+        version: 6.13.0
 
   packages/vitepress:
     devDependencies:

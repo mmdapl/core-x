@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import process from 'node:process'
-import { blue, bold, cyan, dim, red, yellow } from 'kolorist'
 import { Command } from 'commander'
 import { getGitDiff, parseGitCommit } from 'changelogen'
+import { vipColor } from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -111,20 +111,20 @@ async function dealChangelog(args: ChangelogOptions) {
 
   try {
     console.log()
-    console.log(dim(`${bold('@142vip/changelog')} `) + dim(`v${packageVersion}`))
+    console.log(vipColor.dim(`${vipColor.bold('@142vip/changelog')} `) + vipColor.dim(`v${packageVersion}`))
 
     const { config, markdown, commits } = await generate(args)
     webUrl = generateWebUrl(config, markdown)
 
-    console.log(cyan(config.from) + dim(' -> ') + blue(config.to) + dim(` (${commits.length} commits)`))
-    console.log(dim('--------------'))
+    console.log(vipColor.cyan(config.from) + vipColor.dim(' -> ') + vipColor.blue(config.to) + vipColor.dim(` (${commits.length} commits)`))
+    console.log(vipColor.dim('--------------'))
     console.log()
     console.log(markdown.replace(/&nbsp;/g, ''))
     console.log()
-    console.log(dim('--------------'))
+    console.log(vipColor.dim('--------------'))
 
     if (config.dry) {
-      console.log(yellow('试运行。已跳过版本发布。'))
+      console.log(vipColor.yellow('试运行。已跳过版本发布。'))
       printUrl(webUrl)
       return
     }
@@ -137,14 +137,14 @@ async function dealChangelog(args: ChangelogOptions) {
 
     // 带token上传
     if (!config.tokens) {
-      console.error(red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
+      console.error(vipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
     }
 
     if (!commits.length && await isRepoShallow()) {
-      console.error(yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
+      console.error(vipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
@@ -154,9 +154,9 @@ async function dealChangelog(args: ChangelogOptions) {
     await sendRelease(config, markdown)
   }
   catch (e: any) {
-    console.error(red(String(e)))
+    console.error(vipColor.red(String(e)))
     if (e?.stack)
-      console.error(dim(e.stack?.split('\n').slice(1).join('\n')))
+      console.error(vipColor.dim(e.stack?.split('\n').slice(1).join('\n')))
 
     // 手动执行，创建release
     if (webUrl) {

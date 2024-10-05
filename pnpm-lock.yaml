@@ -84,6 +84,9 @@ importers:
 
   packages/changelog:
     dependencies:
+      '@142vip/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@esm2cjs/execa':
         specifier: 6.1.1-cjs.1
         version: 6.1.1-cjs.1
@@ -99,15 +102,9 @@ importers:
       convert-gitmoji:
         specifier: ^0.1.5
         version: 0.1.5
-      kolorist:
-        specifier: ^1.8.0
-        version: 1.8.0
       ofetch:
         specifier: ^1.3.4
         version: 1.4.0
-      qs:
-        specifier: ^6.13.0
-        version: 6.13.0
       semver:
         specifier: ^7.6.2
         version: 7.6.3

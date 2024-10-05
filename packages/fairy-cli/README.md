@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/fairy-cli?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/fairy-cli)
 
-`@142vip/fairy-cli`是一个工程化项目CLI工具，在终端中可以使用别名`fa`执行命令。
+`@142vip/fairy-cli`是一个工程化项目`CLI`工具，在终端中可以使用别名`fa`执行命令。
 
 ## 快速使用
 
@@ -23,22 +23,21 @@ npx fa -v
 Usage: @142vip/fairy-cli [options] [command]
 
 Options:
-  -v --version                      output the version number
-  -h, --help                        display help for command
+  -v --version                   output the version number
+  -h, --help                     display help for command
 
 Commands:
-  create|c [options] <projectName>  create a new template project
-  login [options] <platform>        登录远程平台，支持Docker和Npm
-  install|i [options]               pnpm ci dependencies
-  release [options]                 release npm version
-  changelog [options]               生成CHANGELOG日志文档
-  publish [options]                 publish to remote platform，eg. Docker Image & Npm Package
-  sync [packageNames...]            同步npm仓库的模块包到cnpm仓库
-  deploy [options]                  项目部署
-  lint [options]                    根据Eslint检查代码风格，支持代码格式化
-  clean [options]                   清除开发、构建等环境下的无用目录
-  turbo [options] [repoName...]     exec turbo pack command
-  help [command]                    display help for command
+  login [options] <platform>     登录远程平台，支持Docker和Npm
+  install|i [options]            pnpm ci dependencies
+  release [options]              release npm version
+  changelog [options]            快速使用@142vip/changelog模块
+  publish [options]              publish to remote platform，eg. Docker Image & Npm Package
+  sync [packageNames...]         同步npm仓库的模块包到cnpm仓库
+  deploy [options]               项目部署
+  lint [options]                 根据Eslint检查代码风格，支持代码格式化
+  turbo [options] [repoName...]  TurboPack工具命令
+  clean [options]                清除开发、构建等环境下的无用目录
+  help [command]                 display help for command
 ```
 
 ### sync

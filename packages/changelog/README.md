@@ -142,7 +142,7 @@ jobs:
 # cli 参数帮助
 npx changelog -h
 
-@142vip/changelog/0.0.1-alpha.1
+@142vip/changelog/0.0.1-alpha.6
 
 Usage: @142vip/changelog [options]
 

@@ -42,12 +42,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@142vip/utils": "workspace:*",
     "@esm2cjs/execa": "6.1.1-cjs.1",
     "c12": "^1.11.1",
     "changelogen": "0.5.5",
     "commander": "^12.1.0",
     "convert-gitmoji": "^0.1.5",
-    "@142vip/utils": "workspace:*",
     "ofetch": "^1.3.4",
     "semver": "^7.6.2"
   },

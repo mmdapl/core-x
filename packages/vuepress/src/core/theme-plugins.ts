@@ -57,14 +57,18 @@ export const baseThemePluginOptions = {
   // }),
   // 代码块
   mdEnhance: {
-    // card:true,
-    codetabs: true,
     // 支持任务列表
     tasklist: true,
     playground: {
       presets: ['ts', 'vue'],
     },
-    // revealjs: ["highlight", "math", "search", "notes", "zoom"],
+    // revealjs: [
+    //   'highlight',
+    //   'math',
+    //   'search',
+    //   'notes',
+    //   'zoom',
+    // ],
     // stylize: [
     //   {
     //     matcher: 'Recommended',
@@ -81,7 +85,6 @@ export const baseThemePluginOptions = {
     // ],
     sub: true,
     sup: true,
-    tabs: true,
     vPre: true,
     vuePlayground: true,
     // 文件导入配置别名
@@ -115,6 +118,9 @@ export const baseThemePluginOptions = {
       '/': searchProCNLocals,
     },
   },
+  // 参考：https://theme-hope.vuejs.press/zh/config/plugins/others.html#markdowntab
+  markdownTab: true,
+  nprogress: true,
   // 代码高亮：https://theme-hope.vuejs.press/zh/guide/feature/code-block.html
   shiki: {
     langs: [

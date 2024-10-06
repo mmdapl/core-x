@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2024-10-06)
+
+### ✨ Features
+
+- 升级`vuepress`主题依赖，修复配置错误和`build`命令异常 &nbsp;-&nbsp; by **chufan** [<samp>(29328)</samp>](https://github.com/142vip/core-x/commit/293280a)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.2 (2024-10-04)
 
 ### ✨ Features

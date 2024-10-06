@@ -5,13 +5,6 @@ import { vipSymbols } from './color'
 
 const vipLog = new VipLogger()
 
-/**
- * 142vip 仓库地址
- * - 格式：`${VipDockerAddress}/项目代号:${pkg.name}-${pkg.version}`
- * - 例如：registry.cn-hangzhou.aliyuncs.com/142vip/docs:JavaScriptCollection-0.0.1
- */
-export const VipDockerAddress: string = 'registry.cn-hangzhou.aliyuncs.com/142vip'
-
 interface DockerOptions {
   logger?: boolean
 }

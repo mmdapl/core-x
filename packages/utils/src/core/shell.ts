@@ -1,4 +1,4 @@
-import { name, version } from '../package.json'
+import { name, version } from '../../package.json'
 import { execCommand } from './exec'
 import { VipLogger } from './logger'
 import { vipColor } from './color'

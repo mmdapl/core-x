@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.7 (2024-10-09)
+
+### ✨ Features
+
+- 新增`getDocSiteBase`方法 &nbsp;-&nbsp; by **chufan** [<samp>(171f3)</samp>](https://github.com/142vip/core-x/commit/171f32a)
+
+**Release New Version v0.0.1-alpha.7 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.6 (2024-10-06)
 
 ### ✨ Features

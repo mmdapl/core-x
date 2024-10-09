@@ -1,8 +1,8 @@
 import path from 'node:path'
-import process from 'node:process'
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types/default-theme'
 import { VipLinks, getVipFooter, zhSearch } from '@142vip/vitepress'
+import { getDocSiteBase } from '@142vip/utils'
 import { name as pkgName, version as pkgVersion } from '../package.json'
 import { getChangelogsSidebar, sidebarConfig } from './sidebar'
 
@@ -14,9 +14,13 @@ const navbarConfig: DefaultTheme.NavItem[] = [
     text: '🔥 首页',
     link: '/docs/index.md',
   },
+  // {
+  //   text: '🎬 自媒体',
+  //   link: '/docs/media.md',
+  // },
   {
-    text: '🎬 自媒体',
-    link: '/docs/media.md',
+    text: '💡 开源',
+    link: '/packages/fairy-cli/',
   },
   {
     text: '📌󠁦 󠁬󠁯󠁧󠁿变更日志',
@@ -42,18 +46,10 @@ const navbarConfig: DefaultTheme.NavItem[] = [
 ]
 
 /**
- * 用于区分base路径，是否nginx代理
- */
-function getSiteBase(): string {
-  const needProxy = process.env.NEED_PROXY || false
-  return needProxy ? `/core-x/` : '/'
-}
-
-/**
  * 所有配置
  */
 export default defineConfig({
-  base: getSiteBase(),
+  base: getDocSiteBase('/core-x/'),
   lang: 'zh-CN',
   title: '@142vip/core-x',
   titleTemplate: ':title - @142vip/core-x',

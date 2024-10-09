@@ -1,3 +1,4 @@
+import process from 'node:process'
 /**
  * 一些地址信息
  */
@@ -28,4 +29,16 @@ export const OPEN_SOURCE_AUTHOR = {
   github: 'https://github.com/mmdapl',
   githubVip: 'https://github.com/142vip',
   gitee: 'https://gitee.com/chufan443',
+}
+
+/**
+ * 用于区分base路径，是否nginx代理
+ * - 路径名称
+ * - 环境变量 NEED_PROXY
+ * @param baseName
+ */
+export function getDocSiteBase(baseName: string): '/' | `/${string}/` {
+  const needProxy = process.env.NEED_PROXY ?? false
+
+  return needProxy ? `/${baseName}/` : '/'
 }

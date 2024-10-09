@@ -49,7 +49,7 @@ const navbarConfig: DefaultTheme.NavItem[] = [
  * 所有配置
  */
 export default defineConfig({
-  base: getDocSiteBase('/core-x/'),
+  base: getDocSiteBase('core-x'),
   lang: 'zh-CN',
   title: '@142vip/core-x',
   titleTemplate: ':title - @142vip/core-x',

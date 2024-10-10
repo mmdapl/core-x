@@ -3,9 +3,11 @@ import process from 'node:process'
  * 一些地址信息
  */
 export enum OPEN_SOURCE_ADDRESS {
+  // 仓库
   GITHUB_REPO_408 = 'https://github.com/142vip/408CSFamily',
-  GITHUB_REPO_CORE_X = 'https://github.com/142vip/core-x',
   GITHUB_REPO_JSC = 'https://github.com/142vip/JavaScriptCollection',
+  GITHUB_REPO_CORE_X = 'https://github.com/142vip/core-x',
+  GITHUB_REPO_OAUTH = 'https://github.com/142vip/142vip-oauth',
 
   /**
    * 142vip 仓库地址
@@ -15,7 +17,18 @@ export enum OPEN_SOURCE_ADDRESS {
   DOCKER_ALIYUNCS_VIP = 'registry.cn-hangzhou.aliyuncs.com/142vip',
 
   // Github 组织名称
-  GITHUB_ORGANIZATION = '142vip',
+  GITHUB_ORGANIZATION_NAME = '142vip',
+
+  // 账号主页
+  HOME_PAGE_VIP = 'https://github.com/142vip',
+  HOME_PAGE_MMDAPL = 'https://github.com/mmdapl',
+  HOME_PAGE_CHU_FAN = 'https://github.com/chufan443',
+  HOME_PAGE_LIR0015 = 'https://github.com/lir0015',
+
+  // 证书
+  LICENCE_GITHUB = 'https://github.com/142vip/LICENSE',
+  LICENCE_CORE_X = 'https://github.com/142vip/core-x/blob/main/LICENSE',
+  LICENCE_OAUTH = 'https://github.com/142vip/142vip-oauth/blob/main/LICENSE',
 }
 
 /**

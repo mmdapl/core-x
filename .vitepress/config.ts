@@ -84,7 +84,7 @@ export default defineConfig({
 
   },
   // 配置主题
-  themeConfig: getThemeConfig({
+  ...getThemeConfig({
     // 导航栏
     nav: navbarConfig,
     sidebar: {

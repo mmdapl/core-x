@@ -66,7 +66,6 @@ export const sidebarConfig: DefaultTheme.SidebarItem[] = [
 /**
  * 获取基本包信息
  * - 注意目录格式，例如：@packages/utils
- * @param pkgDirName
  */
 async function getBasePkgJSON(pkgDirName: string) {
   const pkgJSON = await import(`@packages/${pkgDirName}/package.json`)

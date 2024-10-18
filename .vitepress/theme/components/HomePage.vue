@@ -8,10 +8,11 @@ import {
 } from '@142vip/vitepress/components'
 import { useData } from 'vitepress'
 import { ElImage } from 'element-plus'
-import { getCoreProjectData } from '../../sidebar'
+import { getCoreProjectData, getExampleDemoTableData } from '../../sidebar'
 
 const { isDark } = useData()
-const tableData = ref<any[]>([])
+const coreProjectTableData = ref<any[]>([])
+const exampleDemoTableData = ref()
 
 defineComponent({
   components: {
@@ -23,14 +24,16 @@ defineComponent({
  * 异步加载表格数据
  */
 onMounted(async () => {
-  tableData.value = await getCoreProjectData()
+  coreProjectTableData.value = await getCoreProjectData()
+  exampleDemoTableData.value = await getExampleDemoTableData()
 })
 </script>
 
 <!-- 首页 -->
 <template>
   <section id="version-table">
-    <VipProjectTable :data="tableData" title="开源" />
+    <VipProjectTable :data="exampleDemoTableData" title="演示Demo" />
+    <VipProjectTable :data="coreProjectTableData" title="开源模块" />
   </section>
 
   <VipTeam />

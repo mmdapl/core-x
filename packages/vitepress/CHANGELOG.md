@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.10 (2024-10-21)
+
+### ✨ Features
+
+- 依赖调整，`vitepress`在生产依赖中引入 &nbsp;-&nbsp; by **chufan** [<samp>(dfa44)</samp>](https://github.com/142vip/core-x/commit/dfa4435)
+
+**Release New Version v0.0.1-alpha.10 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.9 (2024-10-17)
 
 ### ✨ Features

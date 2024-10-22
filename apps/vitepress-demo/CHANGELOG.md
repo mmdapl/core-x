@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [commit
 
 <!-- #region recent-alpha -->
 
+## v0.0.1-alpha.2 (2024-10-22)
+
+### ✨ Features
+
+- 简化Demo配置，移除`element-plus`组件的手动导入 &nbsp;-&nbsp; by **chufan** [<samp>(d0770)</samp>](https://github.com/142vip/core-x/commit/d07700c)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/vitepress-demo)**
+
 ## v0.0.1-alpha.1 (2024-10-17)
 
 ### ✨ Features

@@ -1,4 +1,4 @@
-import type { VipProject } from '@142vip/vitepress'
+import type { SidebarConfig, VipProject } from '@142vip/vitepress'
 import type { DefaultTheme } from 'vitepress/types/default-theme'
 import { pick } from '@142vip/vitepress'
 
@@ -14,7 +14,7 @@ enum ProjectId {
 /**
  * 侧边栏
  */
-export const sidebarConfig: DefaultTheme.SidebarItem[] = [
+export const sidebarConfig: SidebarConfig = [
   {
     text: `🏆 ${ProjectId.Infra}`,
     items: [

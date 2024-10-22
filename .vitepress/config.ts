@@ -1,15 +1,15 @@
 import path from 'node:path'
 import { defineConfig } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/types/default-theme'
 import { getThemeConfig, getVipFooter, zhSearch } from '@142vip/vitepress'
 import { OPEN_SOURCE_ADDRESS, getDocSiteBase } from '@142vip/utils'
+import type { NavbarConfig } from '@142vip/vitepress'
 import { name as pkgName, version as pkgVersion } from '../package.json'
 import { getChangelogsSidebar, sidebarConfig } from './sidebar'
 
 /**
  * 导航栏
  */
-const navbarConfig: DefaultTheme.NavItem[] = [
+const navbarConfig: NavbarConfig = [
   {
     text: '🔥 首页',
     link: '/docs/index.md',

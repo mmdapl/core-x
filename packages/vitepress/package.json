@@ -25,6 +25,11 @@
       "types": "./dist/components/index.d.ts",
       "import": "./dist/components/index.mjs",
       "require": "./dist/components/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.mjs",
+      "require": "./dist/theme/index.js"
     }
   },
   "main": "./dist/index.mjs",
@@ -32,7 +37,8 @@
   "types": "./dist/index.d.ts",
   "files": [
     "components.d.ts",
-    "dist"
+    "dist",
+    "theme.d.ts"
   ],
   "engines": {
     "node": ">=16.0.0"

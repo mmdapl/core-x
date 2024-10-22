@@ -2,13 +2,13 @@ import path from 'node:path'
 import { defineConfig } from 'vitepress'
 import { getThemeConfig, getVipFooter, zhSearch } from '@142vip/vitepress'
 import { OPEN_SOURCE_ADDRESS, getDocSiteBase } from '@142vip/utils'
-import type { DefaultTheme } from 'vitepress/types/default-theme'
+import type { NavbarConfig, SidebarConfig } from '@142vip/vitepress'
 import { name as pkgName, version as pkgVersion } from '../package.json'
 
 /**
  * 导航栏
  */
-const navbarConfig: DefaultTheme.NavItem[] = [
+const navbarConfig: NavbarConfig = [
   { text: '🔥 首页', link: '/docs/index.md' },
   {
     text: '💻 示例文档',
@@ -37,7 +37,7 @@ const navbarConfig: DefaultTheme.NavItem[] = [
 /**
  * 侧边栏
  */
-const sidebarConfig: DefaultTheme.SidebarItem[] = [
+const sidebarConfig: SidebarConfig = [
   {
     text: '示例文档',
     collapsed: false,

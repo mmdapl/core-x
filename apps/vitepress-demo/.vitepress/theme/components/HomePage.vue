@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineComponent, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import {
   VipBackTop,
   VipContactAuthor,
@@ -7,16 +7,9 @@ import {
   VipTeam,
 } from '@142vip/vitepress/components'
 import { useData } from 'vitepress'
-import { ElImage } from 'element-plus'
 
 const { isDark } = useData()
 const tableData = ref<any[]>([])
-
-defineComponent({
-  components: {
-    ElImage,
-  },
-})
 
 /**
  * 异步加载表格数据
@@ -83,14 +76,14 @@ onMounted(async () => {
     <h2>趋势</h2>
     <!-- 支持黑色主题 -->
     <div class="star-history">
-      <ElImage
+      <img
         :src="`https://api.star-history.com/svg?repos=142vip/core-x,142vip/408CSFamily,142vip/JavaScriptCollection&type=Date${
           isDark ? '&theme=dark' : ''
         }`"
         alt="Github Star History"
         class="img-border"
         title="Github Star History"
-      />
+      >
     </div>
   </section>
 

@@ -1,4 +1,4 @@
-import type { DefaultTheme } from 'vitepress/types/default-theme'
+import type { ZhSearchConfig } from './types'
 
 /**
  * 中文语言包配置
@@ -40,7 +40,7 @@ export const i18n = {
 /**
  * 搜索-中文
  */
-export const zhSearch: DefaultTheme.AlgoliaSearchOptions['locales'] = {
+export const zhSearch: ZhSearchConfig = {
   root: {
     placeholder: '搜索文档',
     translations: {
@@ -98,7 +98,7 @@ export const defaultThemeConfig = {
   metaChunk: true,
   themeConfig: {
     // 导航栏
-    // i18n,
+    i18n,
     lastUpdated: {
       text: '最近更新时间',
     },

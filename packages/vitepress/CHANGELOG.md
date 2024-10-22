@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.11 (2024-10-22)
+
+### ✨ Features
+
+- 增加自定义主题，加载`element-plus`模块，提供`getVipExtendsTheme`配置函数 &nbsp;-&nbsp; by **chufan** [<samp>(89f00)</samp>](https://github.com/142vip/core-x/commit/89f00d0)
+- 增加`types`类型导出，支持自定义主题配置优化 &nbsp;-&nbsp; by **chufan** [<samp>(1e42e)</samp>](https://github.com/142vip/core-x/commit/1e42eab)
+- 优化`defineVipExtendsTheme`参数类型，继承默认的`Theme`类型 &nbsp;-&nbsp; by **chufan** [<samp>(6dcb9)</samp>](https://github.com/142vip/core-x/commit/6dcb9a5)
+
+**Release New Version v0.0.1-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.10 (2024-10-21)
 
 ### ✨ Features

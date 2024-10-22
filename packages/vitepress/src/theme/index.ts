@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import type { EnhanceAppContext } from 'vitepress/dist/client'
-import ElementPlus from 'element-plus'
+import { ElBacktop, ElImage, ElTable, ElTableColumn, ElTag } from 'element-plus'
 import type { Component } from 'vue'
 import { h } from 'vue'
 import type { Awaitable } from 'vitepress/types/shared'
@@ -38,7 +38,12 @@ export default function defineVipExtendsTheme(theme?: Theme) {
       })
     },
     enhanceApp: ({ app }: EnhanceAppContext) => {
-      app.use(ElementPlus)
+      // 按需引入
+      app.component(ElBacktop)
+      app.component(ElImage)
+      app.component(ElTable)
+      app.component(ElTableColumn)
+      app.component(ElTag)
     },
     // 自定义拓展，配置覆盖
     ...theme != null ? theme : {},

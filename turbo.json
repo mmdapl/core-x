@@ -4,18 +4,18 @@
       "dependsOn": [
         "^build"
       ],
-      "cache": true
+      "cache": false
     },
     "lint": {
     },
     "dev": {
-      "cache": true
+      "cache": false
     },
     "test": {
-      "cache": true
+      "cache": false
     },
     "start": {
-      "cache": true
+      "cache": false
     }
   }
 }

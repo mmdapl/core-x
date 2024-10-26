@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.17 (2024-10-26)
+
+### ✨ Features
+
+- 修改站点主题和侧边栏配置配置 &nbsp;-&nbsp; by **chufan** [<samp>(815b9)</samp>](https://github.com/142vip/core-x/commit/815b908)
+- 引入`only-allow`模块，限定使用`pnpm`命令 &nbsp;-&nbsp; by **chufan** [<samp>(8d8ac)</samp>](https://github.com/142vip/core-x/commit/8d8acac)
+- 增加演示Demo展示入口，优化配置文件 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/173 [<samp>(36b56)</samp>](https://github.com/142vip/core-x/commit/36b56e3)
+- 修改`turbo`缓存配置，移除`outputs`选项 &nbsp;-&nbsp; by **chufan** [<samp>(231ec)</samp>](https://github.com/142vip/core-x/commit/231ec89)
+- 简化`vitepress`博客配置和类型，移除`element-plus`组件的手动导入， &nbsp;-&nbsp; by **chufan** [<samp>(767a8)</samp>](https://github.com/142vip/core-x/commit/767a8f1)
+- 关闭`turbo`缓存构建 &nbsp;-&nbsp; by **chufan** [<samp>(1f25b)</samp>](https://github.com/142vip/core-x/commit/1f25b79)
+- **@142vip/utils**:
+  - 拓展`OPEN_SOURCE_ADDRESS`变量 &nbsp;-&nbsp; by **chufan** [<samp>(e3802)</samp>](https://github.com/142vip/core-x/commit/e380231)
+  - Update deps，remove `dayjs` &nbsp;-&nbsp; by **chufan** [<samp>(84bf9)</samp>](https://github.com/142vip/core-x/commit/84bf9da)
+- **@142vip/vitepress**:
+  - 增加`getThemeConfig`函数导出基本配置 &nbsp;-&nbsp; by **chufan** [<samp>(d3011)</samp>](https://github.com/142vip/core-x/commit/d301148)
+  - 锁定`vitepress`版本，支持模块调用 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/165 [<samp>(05feb)</samp>](https://github.com/142vip/core-x/commit/05feb26)
+  - 依赖调整，`vitepress`在生产依赖中引入 &nbsp;-&nbsp; by **chufan** [<samp>(dfa44)</samp>](https://github.com/142vip/core-x/commit/dfa4435)
+  - 增加自定义主题，加载`element-plus`模块，提供`getVipExtendsTheme`配置函数 &nbsp;-&nbsp; by **chufan** [<samp>(89f00)</samp>](https://github.com/142vip/core-x/commit/89f00d0)
+  - 增加`types`类型导出，支持自定义主题配置优化 &nbsp;-&nbsp; by **chufan** [<samp>(1e42e)</samp>](https://github.com/142vip/core-x/commit/1e42eab)
+  - 优化`defineVipExtendsTheme`参数类型，继承默认的`Theme`类型 &nbsp;-&nbsp; by **chufan** [<samp>(6dcb9)</samp>](https://github.com/142vip/core-x/commit/6dcb9a5)
+  - 按需引入`element-plus`中的组件，减少打包体积 &nbsp;-&nbsp; by **chufan** [<samp>(09bef)</samp>](https://github.com/142vip/core-x/commit/09bef5e)
+- **vitepress-demo**:
+  - 增加`vitepress-demo`演示模块，简化`@142vip/vitepress`模块使用配置 &nbsp;-&nbsp; by **chufan** [<samp>(f6797)</samp>](https://github.com/142vip/core-x/commit/f679759)
+  - 简化Demo配置，移除`element-plus`组件的手动导入 &nbsp;-&nbsp; by **chufan** [<samp>(d0770)</samp>](https://github.com/142vip/core-x/commit/d07700c)
+
+### 🐛 Bug Fixes
+
+- 修复`build`命令构建后`base`路径配置导致的显示异常 &nbsp;-&nbsp; by **chufan** [<samp>(ba3c7)</samp>](https://github.com/142vip/core-x/commit/ba3c73a)
+- 修复导航栏配置异常 &nbsp;-&nbsp; by **chufan** [<samp>(a6be6)</samp>](https://github.com/142vip/core-x/commit/a6be6d2)
+
+### 😏 Release Packages
+
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(261ff)</samp>](https://github.com/142vip/core-x/commit/261ff35)
+  - Publish `v0.0.1-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(72f37)</samp>](https://github.com/142vip/core-x/commit/72f3747)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(5d5b2)</samp>](https://github.com/142vip/core-x/commit/5d5b27b)
+  - Publish `v0.0.1-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(ef96b)</samp>](https://github.com/142vip/core-x/commit/ef96ba7)
+  - Publish `v0.0.1-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(7536f)</samp>](https://github.com/142vip/core-x/commit/7536f3b)
+  - Publish `v0.0.1-alpha.11` &nbsp;-&nbsp; by **chufan** [<samp>(546f8)</samp>](https://github.com/142vip/core-x/commit/546f81f)
+  - Publish `v0.0.1-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(f4873)</samp>](https://github.com/142vip/core-x/commit/f4873c3)
+- **vitepress-demo**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(0b2ac)</samp>](https://github.com/142vip/core-x/commit/0b2ac8e)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(cd3f3)</samp>](https://github.com/142vip/core-x/commit/cd3f34e)
+
+**Release New Version v0.0.1-alpha.17 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.16...v0.0.1-alpha.17)**
+
 ## v0.0.1-alpha.16 (2024-10-09)
 
 ### ✨ Features

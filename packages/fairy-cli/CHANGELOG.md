@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.14 (2024-10-28)
+
+### ✨ Features
+
+- 代码清理，模块结构优化 &nbsp;-&nbsp; by **chufan** [<samp>(08df8)</samp>](https://github.com/142vip/core-x/commit/08df8bd)
+
+**Release New Version v0.0.3-alpha.14 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.13 (2024-09-25)
 
 ### ✨ Features

@@ -58,7 +58,6 @@ async function publishNpm(args: NpmOptions) {
 
 /**
  * publish 命令入口
- * @param program
  */
 export async function publishMain(program: Command) {
   program

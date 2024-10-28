@@ -31,7 +31,6 @@ async function execTurboPack(repoNames: string[], args: TurboPackOptions) {
  * 获取需要执行命令的repo
  * - 支持多个--filter
  * - 支持所有repo
- * @param repoNames
  */
 function getFilterRepo(repoNames: string[]) {
   return repoNames.map(name => `--filter=${name}`).join(' ')
@@ -39,7 +38,6 @@ function getFilterRepo(repoNames: string[]) {
 
 /**
  * turbo命令入口
- * @param program
  */
 export async function turboPackMain(program: Command) {
   program

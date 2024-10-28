@@ -21,7 +21,6 @@ interface ValidatePkgJSON {
  * 参考：
  * - pnpm 命令： https://pnpm.io/cli/list
  * - filter参数： https://pnpm.io/filtering
- *
  */
 export function getReleasePkgJSON(filter?: string | string[]) {
   try {

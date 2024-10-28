@@ -39,7 +39,9 @@ async function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
   }
 }
 
-// docker 登录
+/**
+ * docker 登录
+ */
 async function loginDocker(args: DockerOptions) {
   let registryUrl = RegistryURLEnum.DOCKER as string
   if (args.registryUrl != null) {
@@ -56,7 +58,9 @@ async function loginDocker(args: DockerOptions) {
   await commandStandardExecutor(command)
 }
 
-// npm 登录
+/**
+ * npm 登录
+ */
 async function loginNpm(args: NpmOptions) {
   let registryUrl = RegistryURLEnum.NPM as string
   if (args.registryUrl != null) {

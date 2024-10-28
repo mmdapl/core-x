@@ -12,8 +12,8 @@
     "homePage": "https://142vip.cn"
   },
   "scripts": {
-    "dev": "vuepress dev docs --clean-cache",
-    "build": "vuepress build docs"
+    "dev": "npx vuepress dev docs --clean-cache",
+    "build": "npx vuepress build docs"
   },
   "devDependencies": {
     "@142vip/utils": "workspace:*",

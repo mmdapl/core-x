@@ -9,10 +9,10 @@
     "email": "mmdapl@163.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/142vip/core-x/tree/main/packages/fairy-cli",
+  "homepage": "https://142vip.github.io/core-x/packages/fairy-cli/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/142vip/core-x",
+    "url": "git+https://github.com/142vip/core-x.git",
     "directory": "packages/fairy-cli"
   },
   "bugs": {

@@ -23,6 +23,7 @@ import {
 //   execute?: string
 //   package?: string
 // }
+
 interface ReleaseOptions extends Pick<VersionBumpOptions, 'preid' | 'tag' | 'commit' | 'push' | 'all' | 'execute'> {
   package?: string
 }

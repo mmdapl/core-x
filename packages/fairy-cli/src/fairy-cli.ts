@@ -49,8 +49,8 @@ export async function fairyCliMain() {
   // fairy-cli turbo 基于turborepo项目管理
   await turboPackMain(program)
 
+  // fairy-cli clean
   await cleanUpMain(program)
 
-  // 参数解析
   program.parse(process.argv)
 }

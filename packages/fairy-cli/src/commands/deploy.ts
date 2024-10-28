@@ -13,9 +13,7 @@ function execDeploy(args: DeployOptions) {
  * github page 静态页面部署
  * @constructor
  */
-function DeployGithubPage() {
-
-}
+function DeployGithubPage() {}
 
 /**
  *

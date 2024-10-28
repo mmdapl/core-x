@@ -10,6 +10,7 @@
 
 - `egg-demo`
 - `nest-demo`
+- `vitepress-demo`
 - `vuepress-demo`
 
 ### 开源模块
@@ -31,8 +32,6 @@
 - `@142vip/nest-typeorm`
 - `@142vip/oauth`
 - `@142vip/redis`
-- `@142vip/release-version`
-- `@142vip/typeorm`
 - `@142vip/release-version`
 - `@142vip/typeorm`
 - `@142vip/utils`

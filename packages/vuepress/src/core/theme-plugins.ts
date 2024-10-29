@@ -123,13 +123,17 @@ export const baseThemePluginOptions = {
   nprogress: true,
   // 代码高亮：https://theme-hope.vuejs.press/zh/guide/feature/code-block.html
   shiki: {
+    // 参考：https://shiki.tmrs.site/languages
     langs: [
       'ts',
       'js',
-      'json',
       'vue',
+      'json',
       'json5',
-      'bash',
+      'jsonc',
+      'jsx',
+      'lua',
+      'shellscript',
       'diff',
       'c',
       'c++',
@@ -140,6 +144,11 @@ export const baseThemePluginOptions = {
       'javascript',
       'typescript',
       'yaml',
+      'text',
+      'graphql',
+      'http',
+      'python',
+      'xml',
     ],
     // 你想要使用的主题
     themes: {

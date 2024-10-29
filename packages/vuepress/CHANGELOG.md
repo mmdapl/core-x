@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.8 (2024-10-29)
+
+### ✨ Features
+
+- 拓展`shiki`的`langs`配置，支持多种编码语言，移除`RepoAddress`变量和默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(2f680)</samp>](https://github.com/142vip/core-x/commit/2f68013)
+- 修改`homepage`和`repository`字段链接 &nbsp;-&nbsp; by **chufan** [<samp>(f134b)</samp>](https://github.com/142vip/core-x/commit/f134bf6)
+
+**Release New Version v0.0.1-alpha.8 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.7 (2024-10-28)
 
 ### 🔥 Performance

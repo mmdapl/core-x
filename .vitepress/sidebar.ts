@@ -110,8 +110,8 @@ export async function getCoreProjectData(): Promise<VipProject[]> {
         ...basePkg,
         // 约定：图标+文字
         id: text.split(' ')[0],
-        changelog: `../packages/${pkgDirName}/changelog.html`,
-        readme: `../changelogs/${pkgDirName}/index.html`,
+        changelog: `../changelogs/${pkgDirName}/changelog.html`,
+        readme: `../packages/${pkgDirName}/index.html`,
         sourceCode: `https://github.com/142vip/core-x/tree/main/packages/${pkgDirName}/`,
       })
     }
@@ -132,7 +132,7 @@ export async function getExampleDemoTableData() {
       ...pkg,
       private: true,
       id: '🤡',
-      changelog: `../apps/${pkgDirName}/changelog.html`,
+      changelog: `../changelogs/${pkgDirName}/changelog.html`,
       readme: `../apps/${pkgDirName}/index.html`,
       sourceCode: `https://github.com/142vip/core-x/tree/main/apps/${pkgDirName}/`,
     })

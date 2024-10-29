@@ -1,4 +1,3 @@
-import { RepoAddress } from './constant'
 import { i18n } from './i18n'
 import { baseThemePluginOptions } from './theme-plugins'
 
@@ -27,11 +26,11 @@ const baseThemeConfig = {
   // 打印按钮
   print: false,
   hostname: 'https://142vip.cn',
-  author: {
-    name: '',
-    email: '',
-    url: '',
-  },
+  // author: {
+  //   name: '',
+  //   email: '',
+  //   url: '',
+  // },
   favicon: '/favicon.ico',
   logo: '/favicon.icon',
 
@@ -52,7 +51,7 @@ const baseThemeConfig = {
   docsDir: 'docs',
   docsBranch: 'next',
   // 主题布局选项
-  docsRepo: RepoAddress,
+  // docsRepo: RepoAddress,
   // repo: '142vip/JavaScriptCollection',
   // repoLabel: 'GitHub',
   // 是否在导航栏内显示仓库链接，默认为 `true`

@@ -56,12 +56,12 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "element-plus": "^2.8.1",
-    "vitepress": "^1.4.1",
-    "vue": "^3.4.23"
+    "element-plus": "^2.8.8",
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "mkdist": "^1.5.5",
+    "mkdist": "^1.6.0",
     "unplugin-element-plus": "^0.8.0"
   }
 }

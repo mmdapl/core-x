@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.13 (2024-12-04)
+
+### ✨ Features
+
+- Update vitepress deps to `1.5.0` version &nbsp;-&nbsp; by **chufan** [<samp>(34108)</samp>](https://github.com/142vip/core-x/commit/3410852)
+
+**Release New Version v0.0.1-alpha.13 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.12 (2024-10-26)
 
 ### ✨ Features

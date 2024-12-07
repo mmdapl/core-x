@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.15 (2024-12-07)
+
+### ✨ Features
+
+- `clean`命令增加`deps`可选参数，`vite`、`turbo`、`deps`参数默认值为`false` &nbsp;-&nbsp; by **chufan** [<samp>(0b633)</samp>](https://github.com/142vip/core-x/commit/0b6339b)
+
+**Release New Version v0.0.3-alpha.15 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.14 (2024-10-28)
 
 ### ✨ Features

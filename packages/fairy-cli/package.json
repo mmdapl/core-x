@@ -1,7 +1,7 @@
 {
   "name": "@142vip/fairy-cli",
   "type": "module",
-  "version": "0.0.3-alpha.14",
+  "version": "0.0.3-alpha.15",
   "private": false,
   "description": "公众号搜：储凡、fairy-cli",
   "author": {

@@ -20,6 +20,7 @@ interface CleanUpOptions extends DelOptions {
   ignoreTips?: boolean
   turbo?: boolean
   vite?: boolean
+  deps?: boolean
 }
 
 /**
@@ -27,8 +28,12 @@ interface CleanUpOptions extends DelOptions {
  * - 恢复项目初始状态
  */
 async function execCleanUp(args: CleanUpOptions) {
-  // 默认删除node_modules
-  const dirPatterns = generateDirPatterns('node_modules', args.all)
+  const dirPatterns = []
+
+  // 删除node_modules
+  if (args.deps) {
+    dirPatterns.push(...generateDirPatterns('node_modules', args.all))
+  }
 
   // 删除各层级dist目录，dist
   if (args.dist) {
@@ -53,6 +58,11 @@ async function execCleanUp(args: CleanUpOptions) {
   // 删除vite缓存目录
   if (args.vite) {
     dirPatterns.push(...generateDirPatterns('.vite', args.all))
+  }
+
+  if (dirPatterns.length === 0) {
+    console.log('删除规则为空，不做删除操作处理，请传入有效参数！！')
+    process.exit(1)
   }
 
   // 删除前，对话框确认
@@ -116,8 +126,9 @@ export async function cleanUpMain(program: Command) {
     .option('--all', '深度删除所有', false)
     .option('--ignore-tips', '忽略提示，直接删除', false)
     .option('--dry-run', '试运行，不做实际删除操作', false)
-    .option('--turbo', '删除turbo缓存目录', true)
-    .option('--vite', '删除vite缓存目录', true)
+    .option('--turbo', '删除turbo缓存目录', false)
+    .option('--vite', '删除vite缓存目录', false)
+    .option('--deps', '删除node_modules目录', false)
     .action(async (args: CleanUpOptions) => {
       await execCleanUp(args)
     })

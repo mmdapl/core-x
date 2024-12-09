@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.16 (2024-12-09)
+
+### 🐛 Bug Fixes
+
+- 修复`clean`命令删除`dist`目录异常，避免删除`node_modules`中的`dist`目录，增加`--deps`参数 &nbsp;-&nbsp; by **chufan** [<samp>(65bb3)</samp>](https://github.com/142vip/core-x/commit/65bb3cf)
+
+### 📖 Documentation
+
+- 更新文档，支持`clean`、`sync`命令说明 &nbsp;-&nbsp; by **chufan** [<samp>(ffb96)</samp>](https://github.com/142vip/core-x/commit/ffb96bd)
+
+**Release New Version v0.0.3-alpha.16 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.15 (2024-12-07)
 
 ### ✨ Features

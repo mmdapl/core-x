@@ -35,9 +35,9 @@ async function execCleanUp(args: CleanUpOptions) {
     dirPatterns.push(...generateDirPatterns('node_modules', args.all))
   }
 
-  // 删除各层级dist目录，dist
+  // 删除各层级dist目录，注意忽略node_modules下的dist目录
   if (args.dist) {
-    dirPatterns.push(...generateDirPatterns('dist', args.all))
+    dirPatterns.push(...generateDirPatterns(['dist', '!node_modules/**/dist'], args.all))
   }
 
   // 删除nuxt构建目录，.nuxt .output
@@ -101,8 +101,8 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
   }
 
   if (delAll) {
-    // 删除程序上下文中所有的该目录
-    delDirs = delDirs.map(dir => `**/${dir}`)
+    // 删除程序上下文中所有的该目录，注意路径取反规则
+    delDirs = delDirs.map(dir => dir.startsWith('!') ? `!**/${dir.substring(1)}` : `**/${dir}`)
   }
   else {
     // 只删除该目录

@@ -45,9 +45,9 @@ async function execCleanUp(args: CleanUpOptions) {
     dirPatterns.push(...generateDirPatterns(['.nuxt', '.output'], args.all))
   }
 
-  // 删除midway构建目录，run logs
+  // 删除midway构建目录，run logs typings
   if (args.midway) {
-    dirPatterns.push(...generateDirPatterns(['run', 'logs'], args.all))
+    dirPatterns.push(...generateDirPatterns(['run', 'logs', 'typings'], args.all))
   }
 
   // 删除turbo缓存目录

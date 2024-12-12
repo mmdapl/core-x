@@ -111,7 +111,7 @@ export async function isInstallDockerCompose(args?: DockerOptions) {
  */
 export async function pushImage(imageName: string) {
   const command = `docker push ${imageName}`
-  await commandStandardExecutor(command)
+  await dockerScriptExecutor(command)
 }
 
 /**
@@ -144,7 +144,8 @@ export async function buildImage(args: BuildImageDockerOptions) {
     vipLog.log(`${command}\n`, { startLabel: vipSymbols.success })
   }
   vipLog.log(args.imageName, { startLabel: '构建镜像' })
-  await commandStandardExecutor(command)
+
+  await dockerScriptExecutor(command)
 
   if (args.push) {
     const exist = await isExistImage(args.imageName)
@@ -186,4 +187,21 @@ export async function createContainer(args: CreateContainerOptions) {
 
   const command = `docker run -d --name ${args.containerName} --restart=unless-stopped ${networkParams} ${args.imageName}`
   await commandStandardExecutor(command)
+}
+
+/**
+ * docker命令的通用执行器
+ */
+async function dockerScriptExecutor(command: string) {
+  try {
+    const errorCode = await commandStandardExecutor(command)
+    if (errorCode !== 0) {
+      vipLog.error(`Error Code: ${errorCode}`, { startLabel: 'commandStandardExecutor' })
+      process.exit(1)
+    }
+  }
+  catch {
+    // 构建镜像出错时，直接退出
+    process.exit(1)
+  }
 }

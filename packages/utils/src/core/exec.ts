@@ -108,7 +108,7 @@ export function commandStandardExecutor(cmd: Command) {
       }
     })
 
-    // 进程退出
+    // 考虑进程非0退出
     child.on('close', (code) => {
       resolve(code)
     })

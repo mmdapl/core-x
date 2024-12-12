@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.17 (2024-12-12)
+
+### ✨ Features
+
+- `clean`命令支持`--midway`参数删除`typings`目录 &nbsp;-&nbsp; by **chufan** [<samp>(375e7)</samp>](https://github.com/142vip/core-x/commit/375e784)
+- 移除`commander`模块，使用`VipCommander`进行终端`cli`定义 &nbsp;-&nbsp; by **chufan** [<samp>(22f00)</samp>](https://github.com/142vip/core-x/commit/22f00ea)
+
+**Release New Version v0.0.3-alpha.17 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.16 (2024-12-09)
 
 ### 🐛 Bug Fixes

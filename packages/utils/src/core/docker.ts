@@ -107,7 +107,6 @@ export async function isInstallDockerCompose(args?: DockerOptions) {
 
 /**
  * 推送Docker镜像到指定仓库
- * @param imageName
  */
 export async function pushImage(imageName: string) {
   const command = `docker push ${imageName}`

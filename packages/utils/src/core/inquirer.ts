@@ -23,7 +23,7 @@ export async function promptList(choiceList: string[], message?: string): Promis
 /**
  * 终端交互选择，多选
  */
-export async function promptCheckBox(choiceList: string[], message?: string) {
+export async function promptCheckBox(choiceList: string[], message?: string): Promise<string[]> {
   return (await inquirer.prompt([
     {
       type: 'checkbox',
@@ -39,7 +39,7 @@ export async function promptCheckBox(choiceList: string[], message?: string) {
 /**
  * 终端交互确认，确认框，可配置默认值
  */
-export async function promptConfirm(message: string, defaultValue?: boolean) {
+export async function promptConfirm(message: string, defaultValue?: boolean): Promise<boolean> {
   return (await inquirer.prompt({
     type: 'confirm',
     name: 'app',

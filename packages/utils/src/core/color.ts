@@ -1,6 +1,8 @@
 import { create } from 'ansi-colors'
 
-// 参考：https://www.npmjs.com/package/ansi-colors
+/**
+ * 参考：https://www.npmjs.com/package/ansi-colors
+ */
 
 /**
  * 终端修改颜色

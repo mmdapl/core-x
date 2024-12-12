@@ -57,7 +57,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '@142vip/vitepress-demo',
   titleTemplate: ':title - @142vip/core-x',
-  description: '@142vip/vitepress包的使用Demo演示',
+  description: '@142vip/vitepress模块包的使用Demo演示',
   srcDir: './',
   // 排除部分
   srcExclude: [
@@ -85,7 +85,6 @@ export default defineConfig({
       leftDelimiter: '%{',
       rightDelimiter: '}%',
     },
-
   },
   // 配置主题
   ...getThemeConfig({
@@ -139,7 +138,6 @@ export default defineConfig({
         '@packages': path.resolve(__dirname, '../packages'),
       },
     },
-    plugins: [
-    ],
+    plugins: [],
   },
 })

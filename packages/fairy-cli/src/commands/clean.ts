@@ -1,7 +1,7 @@
 import * as process from 'node:process'
-import confirm from '@inquirer/confirm'
 import { deleteAsync } from 'del'
 import type { Command } from 'commander'
+import { promptConfirm } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -67,10 +67,7 @@ async function execCleanUp(args: CleanUpOptions) {
 
   // 删除前，对话框确认
   if (!args.ignoreTips) {
-    const deleted = await confirm({
-      message: '是否需要删除?',
-      default: true,
-    })
+    const deleted = await promptConfirm('是否需要删除?', true)
 
     if (!deleted) {
       // 不删除，非0退出
@@ -122,13 +119,13 @@ export async function cleanUpMain(program: Command) {
     .option('-n,--nuxt', '删除nuxt构建目录，包括.nuxt、.output目录', false)
     .option('-d,--dist', '删除dist目录', false)
     .option('-m,--midway', '删除midway构建目录', false)
+    .option('--turbo', '删除turbo缓存目录', false)
+    .option('--vite', '删除vite缓存目录', false)
+    .option('--deps', '删除node_modules目录', false)
     .option('-f,--force', '强制删除，默认值：false', false)
     .option('--all', '深度删除所有', false)
     .option('--ignore-tips', '忽略提示，直接删除', false)
     .option('--dry-run', '试运行，不做实际删除操作', false)
-    .option('--turbo', '删除turbo缓存目录', false)
-    .option('--vite', '删除vite缓存目录', false)
-    .option('--deps', '删除node_modules目录', false)
     .action(async (args: CleanUpOptions) => {
       await execCleanUp(args)
     })

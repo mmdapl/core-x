@@ -48,5 +48,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
   }
 }

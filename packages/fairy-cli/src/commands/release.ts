@@ -2,8 +2,7 @@ import process from 'node:process'
 import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { Command } from 'commander'
-import { confirm, select } from '@inquirer/prompts'
-import { vipColor } from '@142vip/utils'
+import { promptConfirm, promptList, vipColor } from '@142vip/utils'
 import {
   CliCommandEnum,
   getBranchName,
@@ -13,16 +12,6 @@ import {
   releaseMonorepoPackage,
   releaseRoot,
 } from '../shared'
-
-// export interface ReleaseOptions {
-//   preid: string
-//   commit?: boolean | string
-//   tag?: boolean | string
-//   push?: boolean
-//   all?: boolean
-//   execute?: string
-//   package?: string
-// }
 
 interface ReleaseOptions extends Pick<VersionBumpOptions, 'preid' | 'tag' | 'commit' | 'push' | 'all' | 'execute'> {
   package?: string
@@ -49,7 +38,6 @@ const defaultRepoName = 'main'
 
 /**
  * 版本发布
- * @param args
  */
 async function execNormalRelease(args: ReleaseOptions) {
   // 指定包
@@ -95,24 +83,14 @@ function execVipRelease(args: VipReleaseExtraOptions) {
     process.exit(0)
   }
 
-  // 对话框
-  select({
-    message: `选择需要使用${vipColor.red('Release')}命令发布的模块名称：`,
-    choices: [
-      defaultRepoName,
-      ...packageNames,
-    ].map(name => ({
-      name,
-      value: name,
-    })),
-    // 不循环滚动
-    loop: false,
-  })
+  const choices = [
+    defaultRepoName,
+    ...packageNames,
+  ]
+  promptList(choices, `选择需要使用${vipColor.red('Release')}命令发布的模块名称：`)
     .then(async (packageName) => {
       // 确认框
-      const isRelease = await confirm({
-        message: `将对模块${vipColor.green(packageName)}进行版本迭代，是否继续操作？`,
-      })
+      const isRelease = await promptConfirm(`将对模块${vipColor.green(packageName)}进行版本迭代，是否继续操作？`)
 
       if (!isRelease) {
         console.log(vipColor.yellow('用户取消发布操作！！'))
@@ -135,7 +113,6 @@ function execVipRelease(args: VipReleaseExtraOptions) {
 
 /**
  * 功能迭代主功能
- * @param program
  */
 export async function releaseMain(program: Command) {
   program
@@ -158,8 +135,6 @@ export async function releaseMain(program: Command) {
     }, [])
     .option('--vip', '是否为@142vip组织专用功能', false)
     .action(async (args: ReleaseOptions & VipReleaseExtraOptions) => {
-      // console.log(CliCommandEnum.RELEASE, args)
-
       // 发布时校验分支
       if (args.branch != null) {
         const branchName = getBranchName()

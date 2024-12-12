@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.11 (2024-12-12)
+
+### ✨ Features
+
+- `docker`命令执行增加异常捕获机制 &nbsp;-&nbsp; by **chufan** [<samp>(38a46)</samp>](https://github.com/142vip/core-x/commit/38a46f3)
+- 增加类型约束 &nbsp;-&nbsp; by **chufan** [<samp>(bf796)</samp>](https://github.com/142vip/core-x/commit/bf7963c)
+- 移除`prompt`相关依赖，使用`@142vip/utils`模块，修改`release`、`clean`命令交互 &nbsp;-&nbsp; by **chufan** [<samp>(6b635)</samp>](https://github.com/142vip/core-x/commit/6b6356f)
+- 增加VipCommander封装，支持终端cli定义 &nbsp;-&nbsp; by **chufan** [<samp>(fed17)</samp>](https://github.com/142vip/core-x/commit/fed1732)
+
+**Release New Version v0.0.1-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.10 (2024-12-12)
 
 ### ✨ Features

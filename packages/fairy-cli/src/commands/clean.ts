@@ -1,6 +1,6 @@
 import * as process from 'node:process'
 import { deleteAsync } from 'del'
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { promptConfirm } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -112,7 +112,7 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
 /**
  * fairy-cli clean 项目清理
  */
-export async function cleanUpMain(program: Command) {
+export async function cleanUpMain(program: VipCommander) {
   program
     .command(CliCommandEnum.CLEAN)
     .description('清除开发、构建等环境下的无用目录')

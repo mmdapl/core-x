@@ -1,4 +1,4 @@
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { commandStandardExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -24,7 +24,7 @@ function doCodeLint(args: { fix: boolean }) {
  * 基于Eslint校验
  * - 参考：eslint-config模块
  */
-export async function lintMain(program: Command) {
+export async function lintMain(program: VipCommander) {
   program
     .command(CliCommandEnum.LINT)
     .description('根据Eslint检查代码风格，支持代码格式化')

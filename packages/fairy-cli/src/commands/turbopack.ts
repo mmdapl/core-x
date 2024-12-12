@@ -1,7 +1,7 @@
 import fsSync from 'node:fs'
 import * as process from 'node:process'
+import type { VipCommander } from '@142vip/utils'
 import { execShell } from '@142vip/utils'
-import type { Command } from 'commander'
 import { CliCommandEnum } from '../shared'
 
 interface TurboPackOptions {
@@ -39,7 +39,7 @@ function getFilterRepo(repoNames: string[]) {
 /**
  * turbo命令入口
  */
-export async function turboPackMain(program: Command) {
+export async function turboPackMain(program: VipCommander) {
   program
     .command(CliCommandEnum.TURBO)
     .description('TurboPack工具命令')

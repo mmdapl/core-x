@@ -1,4 +1,4 @@
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { commandStandardExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -10,7 +10,7 @@ async function generateChangelog(args: ChangelogOptions) {
   await commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
 }
 
-export async function changelogMain(program: Command) {
+export async function changelogMain(program: VipCommander) {
   program
     .command(CliCommandEnum.CHANGELOG)
     .description('快速使用@142vip/changelog模块')

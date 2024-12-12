@@ -1,4 +1,4 @@
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { commandStandardExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -32,7 +32,7 @@ async function execInstall(args: InstallOptions) {
  * install 命令入口
  * @param program
  */
-export async function installMain(program: Command) {
+export async function installMain(program: VipCommander) {
   program
     .command(CliCommandEnum.INSTALL)
     .aliases(['i', 'add'])

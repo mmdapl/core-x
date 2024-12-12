@@ -87,13 +87,13 @@ Options:
   -n,--nuxt      删除nuxt构建目录，包括.nuxt、.output目录 (default: false)
   -d,--dist      删除dist目录 (default: false)
   -m,--midway    删除midway构建目录 (default: false)
+  --turbo        删除turbo缓存目录 (default: false)
+  --vite         删除vite缓存目录 (default: false)
+  --deps         删除node_modules目录 (default: false)
   -f,--force     强制删除，默认值：false (default: false)
   --all          深度删除所有 (default: false)
   --ignore-tips  忽略提示，直接删除 (default: false)
   --dry-run      试运行，不做实际删除操作 (default: false)
-  --turbo        删除turbo缓存目录 (default: false)
-  --vite         删除vite缓存目录 (default: false)
-  --deps         删除node_modules目录 (default: false)
   -h, --help     display help for command
 ```
 

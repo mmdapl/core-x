@@ -6,15 +6,31 @@ import inquirer from 'inquirer'
  */
 
 /**
- * 终端选择交互
+ * 终端选择交互，单选
  */
 export async function promptList(choiceList: string[], message?: string): Promise<string> {
   return (await inquirer.prompt([
     {
       type: 'list',
       name: 'app',
-      message: message ?? '选择repo模块...',
+      message: message ?? '请选择模块...',
       choices: choiceList,
+    },
+  ])
+  ).app
+}
+
+/**
+ * 终端交互选择，多选
+ */
+export async function promptCheckBox(choiceList: string[], message?: string) {
+  return (await inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'app',
+      message: message ?? '请选择模块...',
+      choices: choiceList,
+      loop: false,
     },
   ])
   ).app

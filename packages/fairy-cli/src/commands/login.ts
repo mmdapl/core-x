@@ -1,5 +1,5 @@
 import process from 'node:process'
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { commandStandardExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -78,7 +78,7 @@ async function loginNpm(args: NpmOptions) {
 /**
  * login命令入口
  */
-export async function loginMain(program: Command) {
+export async function loginMain(program: VipCommander) {
   program
     .command(`${CliCommandEnum.LOGIN} <platform>`)
     .description('登录远程平台，支持Docker和Npm')

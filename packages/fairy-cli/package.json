@@ -55,7 +55,6 @@
   "dependencies": {
     "@142vip/release-version": "workspace:*",
     "@142vip/utils": "workspace:*",
-    "commander": "^12.1.0",
     "del": "^7.1.0",
     "js-yaml": "^4.1.0",
     "node-fetch": "^3.3.2",

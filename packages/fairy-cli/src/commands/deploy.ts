@@ -1,4 +1,4 @@
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface DeployOptions {
@@ -19,7 +19,7 @@ function DeployGithubPage() {}
  *
  * @param program
  */
-export async function deployMain(program: Command) {
+export async function deployMain(program: VipCommander) {
   program
     .command(CliCommandEnum.DEPLOY)
     .description('项目部署')

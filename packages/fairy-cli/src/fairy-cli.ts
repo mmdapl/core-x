@@ -1,5 +1,5 @@
 import * as process from 'node:process'
-import { Command } from 'commander'
+import { VipCommander } from '@142vip/utils'
 import { name, version } from '../package.json'
 
 import {
@@ -16,9 +16,7 @@ import {
 } from './commands'
 
 export async function fairyCliMain() {
-  const program = new Command(name)
-  // 查看版本
-  program.version(version, '-v --version')
+  const program = new VipCommander(name, version)
 
   // fairy-cli create 创建 todo
 

@@ -1,4 +1,4 @@
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { execCommand } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
@@ -59,7 +59,7 @@ async function publishNpm(args: NpmOptions) {
 /**
  * publish 命令入口
  */
-export async function publishMain(program: Command) {
+export async function publishMain(program: VipCommander) {
   program
     .command(CliCommandEnum.PUBLISH)
     .description('publish to remote platform，eg. Docker Image & Npm Package')

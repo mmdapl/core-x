@@ -1,7 +1,7 @@
 import process from 'node:process'
 import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
-import type { Command } from 'commander'
+import type { VipCommander } from '@142vip/utils'
 import { promptConfirm, promptList, vipColor } from '@142vip/utils'
 import {
   CliCommandEnum,
@@ -114,7 +114,7 @@ function execVipRelease(args: VipReleaseExtraOptions) {
 /**
  * 功能迭代主功能
  */
-export async function releaseMain(program: Command) {
+export async function releaseMain(program: VipCommander) {
   program
     .command(CliCommandEnum.RELEASE)
     .description('release npm version')

@@ -1,6 +1,6 @@
 import process from 'node:process'
-import type { Command } from 'commander'
 import fetch from 'node-fetch'
+import type { VipCommander } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -97,7 +97,7 @@ async function execSync(packageNames: string[]) {
 /**
  * sync命令入口
  */
-export async function syncMain(program: Command): Promise<void> {
+export async function syncMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.SYNC)
     .description('同步npm仓库的模块包到cnpm仓库')

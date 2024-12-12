@@ -15,28 +15,28 @@
 
 ### 开源模块
 
-- `@142vip/axios`
-- `@142vip/changelog`
-- `@142vip/egg`
-- `@142vip/egg-axios`
-- `@142vip/egg-grpc-client`
-- `@142vip/egg-grpc-server`
-- `@142vip/egg-mysql`
-- `@142vip/egg-redis`
-- `@142vip/egg-sequelize`
-- `@142vip/egg-swagger`
-- `@142vip/eslint-config`
-- `@142vip/fairy-cli`
-- `@142vip/nest`
-- `@142vip/nest-redis`
-- `@142vip/nest-typeorm`
-- `@142vip/oauth`
-- `@142vip/redis`
-- `@142vip/release-version`
-- `@142vip/typeorm`
-- `@142vip/utils`
-- `@141vip/vitepress`
-- `@142vip/vuepress`
+- [`@142vip/axios`](https://www.npmjs.com/package/@142vip/axios)
+- [`@142vip/changelog`](https://www.npmjs.com/package/@142vip/changelog)
+- [`@142vip/egg`](https://www.npmjs.com/package/@142vip/egg)
+- [`@142vip/egg-axios`](https://www.npmjs.com/package/@142vip/egg-axios)
+- [`@142vip/egg-grpc-client`](https://www.npmjs.com/package/@142vip/egg-grpc-client)
+- [`@142vip/egg-grpc-server`](https://www.npmjs.com/package/@142vip/egg-grpc-server)
+- [`@142vip/egg-mysql`](https://www.npmjs.com/package/@142vip/egg-mysql)
+- [`@142vip/egg-redis`](https://www.npmjs.com/package/@142vip/egg-redis)
+- [`@142vip/egg-sequelize`](https://www.npmjs.com/package/@142vip/egg-sequelize)
+- [`@142vip/egg-swagger`](https://www.npmjs.com/package/@142vip/egg-swagger)
+- [`@142vip/eslint-config`](https://www.npmjs.com/package/@142vip/eslint-config)
+- [`@142vip/fairy-cli`](https://www.npmjs.com/package/@142vip/fairy-cli)
+- [`@142vip/nest`](https://www.npmjs.com/package/@142vip/nest)
+- [`@142vip/nest-redis`](https://www.npmjs.com/package/@142vip/nest-redis)
+- [`@142vip/nest-typeorm`](https://www.npmjs.com/package/@142vip/nest-typeorm)
+- [`@142vip/oauth`](https://www.npmjs.com/package/@142vip/oauth)
+- [`@142vip/redis`](https://www.npmjs.com/package/@142vip/redis)
+- [`@142vip/release-version`](https://www.npmjs.com/package/@142vip/release-version)
+- [`@142vip/typeorm`](https://www.npmjs.com/package/@142vip/typeorm)
+- [`@142vip/utils`](https://www.npmjs.com/package/@142vip/utils)
+- [`@141vip/vitepress`](https://www.npmjs.com/package/@141vip/vitepress)
+- [`@141vip/vuepress`](https://www.npmjs.com/package/@141vip/vuepress)
 
 ## 使用
 

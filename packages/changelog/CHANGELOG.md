@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.8 (2024-12-12)
+
+### ✨ Features
+
+- 移除`commander`模块，修改`changelog`命令定义 &nbsp;-&nbsp; by **chufan** [<samp>(7e025)</samp>](https://github.com/142vip/core-x/commit/7e025d2)
+
+**Release New Version v0.0.1-alpha.8 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.7 (2024-10-07)
 
 ### ✨ Features

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.10 (2024-12-12)
+
+### ✨ Features
+
+- 增加`promptCheckBox`终端交互选择，支持多选、单选 &nbsp;-&nbsp; by **chufan** [<samp>(cb1ec)</samp>](https://github.com/142vip/core-x/commit/cb1ec74)
+- 移除`@inquirer/confirm`依赖，增加`promptConfirm`终端交互确认 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/197 [<samp>(8b797)</samp>](https://github.com/142vip/core-x/commit/8b7979e)
+
+**Release New Version v0.0.1-alpha.10 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.9 (2024-10-15)
 
 ### ✨ Features

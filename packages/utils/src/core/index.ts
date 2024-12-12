@@ -1,6 +1,7 @@
 export * from './color'
 export * from './logger'
 export * from './exec'
+export * from './commander'
 export * from './shell'
 export * from './inquirer'
 export * from './git'

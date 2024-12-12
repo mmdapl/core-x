@@ -2,6 +2,74 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.18 (2024-12-12)
+
+### ✨ Features
+
+- Add homepage description for `changelog`、`fairy-cli`、`utils` package &nbsp;-&nbsp; by **chufan** [<samp>(00ef2)</samp>](https://github.com/142vip/core-x/commit/00ef225)
+- 更新模块的基础`NPM`相关信息，拓展`keywords`字段内容 &nbsp;-&nbsp; by **chufan** [<samp>(b6870)</samp>](https://github.com/142vip/core-x/commit/b68706b)
+- **@142vip/changelog**:
+  - 移除`commander`模块，修改`changelog`命令定义 &nbsp;-&nbsp; by **chufan** [<samp>(7e025)</samp>](https://github.com/142vip/core-x/commit/7e025d2)
+- **@142vip/fairy-cli**:
+  - 代码清理，模块结构优化 &nbsp;-&nbsp; by **chufan** [<samp>(08df8)</samp>](https://github.com/142vip/core-x/commit/08df8bd)
+  - `clean`命令增加`deps`可选参数，`vite`、`turbo`、`deps`参数默认值为`false` &nbsp;-&nbsp; by **chufan** [<samp>(0b633)</samp>](https://github.com/142vip/core-x/commit/0b6339b)
+  - `clean`命令支持`--midway`参数删除`typings`目录 &nbsp;-&nbsp; by **chufan** [<samp>(375e7)</samp>](https://github.com/142vip/core-x/commit/375e784)
+  - 移除`commander`模块，使用`VipCommander`进行终端`cli`定义 &nbsp;-&nbsp; by **chufan** [<samp>(22f00)</samp>](https://github.com/142vip/core-x/commit/22f00ea)
+- **@142vip/utils**:
+  - 增加`promptCheckBox`终端交互选择，支持多选、单选 &nbsp;-&nbsp; by **chufan** [<samp>(cb1ec)</samp>](https://github.com/142vip/core-x/commit/cb1ec74)
+  - 移除`@inquirer/confirm`依赖，增加`promptConfirm`终端交互确认 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/197 [<samp>(8b797)</samp>](https://github.com/142vip/core-x/commit/8b7979e)
+  - `docker`命令执行增加异常捕获机制 &nbsp;-&nbsp; by **chufan** [<samp>(38a46)</samp>](https://github.com/142vip/core-x/commit/38a46f3)
+  - 增加类型约束 &nbsp;-&nbsp; by **chufan** [<samp>(bf796)</samp>](https://github.com/142vip/core-x/commit/bf7963c)
+  - 移除`prompt`相关依赖，使用`@142vip/utils`模块，修改`release`、`clean`命令交互 &nbsp;-&nbsp; by **chufan** [<samp>(6b635)</samp>](https://github.com/142vip/core-x/commit/6b6356f)
+  - 增加VipCommander封装，支持终端cli定义 &nbsp;-&nbsp; by **chufan** [<samp>(fed17)</samp>](https://github.com/142vip/core-x/commit/fed1732)
+- **@142vip/vitepress**:
+  - Update vitepress deps to `1.5.0` version &nbsp;-&nbsp; by **chufan** [<samp>(34108)</samp>](https://github.com/142vip/core-x/commit/3410852)
+- **@142vip/vuepress**:
+  - 拓展`shiki`的`langs`配置，支持多种编码语言，移除`RepoAddress`变量和默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(2f680)</samp>](https://github.com/142vip/core-x/commit/2f68013)
+  - 修改`homepage`和`repository`字段链接 &nbsp;-&nbsp; by **chufan** [<samp>(f134b)</samp>](https://github.com/142vip/core-x/commit/f134bf6)
+- **vitepress-demo**:
+  - `dev`命令增加`--open`参数，修改配置 &nbsp;-&nbsp; by **chufan** [<samp>(2cbd1)</samp>](https://github.com/142vip/core-x/commit/2cbd141)
+
+### 🔥 Performance
+
+- **@142vip/vuepress**:
+  - `vuepress-theme-hope` deps update &nbsp;-&nbsp; by **chufan** [<samp>(827ed)</samp>](https://github.com/142vip/core-x/commit/827ed55)
+  - Use peerDependencies &nbsp;-&nbsp; by **chufan** [<samp>(7835c)</samp>](https://github.com/142vip/core-x/commit/7835cba)
+
+### 🐛 Bug Fixes
+
+- 修复首页模块链接跳转异常 &nbsp;-&nbsp; by **chufan** [<samp>(43116)</samp>](https://github.com/142vip/core-x/commit/4311662)
+- **@142vip/fairy-cli**:
+  - 修复`clean`命令删除`dist`目录异常，避免删除`node_modules`中的`dist`目录，增加`--deps`参数 &nbsp;-&nbsp; by **chufan** [<samp>(65bb3)</samp>](https://github.com/142vip/core-x/commit/65bb3cf)
+
+### 📖 Documentation
+
+- Remove duplicate package introduction &nbsp;-&nbsp; by **chufan** [<samp>(18ac2)</samp>](https://github.com/142vip/core-x/commit/18ac2a7)
+- Update README &nbsp;-&nbsp; by **chufan** [<samp>(f9f7f)</samp>](https://github.com/142vip/core-x/commit/f9f7f14)
+- **@142vip/fairy-cli**:
+  - 更新文档，支持`clean`、`sync`命令说明 &nbsp;-&nbsp; by **chufan** [<samp>(ffb96)</samp>](https://github.com/142vip/core-x/commit/ffb96bd)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(61672)</samp>](https://github.com/142vip/core-x/commit/6167271)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(648fd)</samp>](https://github.com/142vip/core-x/commit/648fd0a)
+  - Publish `v0.0.3-alpha.15` &nbsp;-&nbsp; by **chufan** [<samp>(77b37)</samp>](https://github.com/142vip/core-x/commit/77b37a2)
+  - Publish `v0.0.3-alpha.16` &nbsp;-&nbsp; by **chufan** [<samp>(8958b)</samp>](https://github.com/142vip/core-x/commit/8958bc6)
+  - Publish `v0.0.3-alpha.17` &nbsp;-&nbsp; by **chufan** [<samp>(e8c00)</samp>](https://github.com/142vip/core-x/commit/e8c0033)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(8f7bf)</samp>](https://github.com/142vip/core-x/commit/8f7bfc7)
+  - Publish `v0.0.1-alpha.11` &nbsp;-&nbsp; by **chufan** [<samp>(1662c)</samp>](https://github.com/142vip/core-x/commit/1662cfe)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(80372)</samp>](https://github.com/142vip/core-x/commit/803728f)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(61710)</samp>](https://github.com/142vip/core-x/commit/6171094)
+  - Publish `v0.0.1-alpha.7` &nbsp;-&nbsp; by **chufan** [<samp>(80f31)</samp>](https://github.com/142vip/core-x/commit/80f31cf)
+  - Publish `v0.0.1-alpha.8` &nbsp;-&nbsp; by **chufan** [<samp>(f2fb0)</samp>](https://github.com/142vip/core-x/commit/f2fb044)
+
+**Release New Version v0.0.1-alpha.18 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.17...v0.0.1-alpha.18)**
+
 ## v0.0.1-alpha.17 (2024-10-26)
 
 ### ✨ Features

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.9 (2024-12-21)
+
+### 🐛 Bug Fixes
+
+- 修复`vuepress-theme-hope`升级后配置失效异常，更新配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/255 [<samp>(7230d)</samp>](https://github.com/142vip/core-x/commit/7230dd9)
+
+**Release New Version v0.0.1-alpha.9 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.8 (2024-10-29)
 
 ### ✨ Features

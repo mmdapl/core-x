@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.19 (2024-12-22)
+
+### ✨ Features
+
+- 支持`renovate`自动升级依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(014ee)</samp>](https://github.com/142vip/core-x/commit/014ee5f)
+
+### 🐛 Bug Fixes
+
+- **@142vip/vuepress**:
+  - 修复`vuepress-theme-hope`升级后配置失效异常，更新配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/255 [<samp>(7230d)</samp>](https://github.com/142vip/core-x/commit/7230dd9)
+- **deps**:
+  - Update dependency ioredis to v5.4.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/229 [<samp>(70f53)</samp>](https://github.com/142vip/core-x/commit/70f53b8)
+  - Update dependency axios to v1.7.9 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/227 [<samp>(0076e)</samp>](https://github.com/142vip/core-x/commit/0076e70)
+  - Update dependency rimraf to v6 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/252 [<samp>(e61b8)</samp>](https://github.com/142vip/core-x/commit/e61b80e)
+  - Update dependency qs to v6.13.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/231 [<samp>(21aa7)</samp>](https://github.com/142vip/core-x/commit/21aa72f)
+  - Update dependency turbo to v2.3.3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/238 [<samp>(239f5)</samp>](https://github.com/142vip/core-x/commit/239f5ec)
+  - Update dependency del to v8 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/249 [<samp>(76488)</samp>](https://github.com/142vip/core-x/commit/76488e1)
+  - Update dependency mysql2 to v3.11.5 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/230 [<samp>(34f18)</samp>](https://github.com/142vip/core-x/commit/34f18a2)
+  - Update dependency element-plus to v2.9.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/235 [<samp>(dfa58)</samp>](https://github.com/142vip/core-x/commit/dfa585f)
+  - Update dependency c12 to v2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/247 [<samp>(89f62)</samp>](https://github.com/142vip/core-x/commit/89f6215)
+  - Update dependency @antfu/eslint-config to v3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/246 [<samp>(7b3f0)</samp>](https://github.com/142vip/core-x/commit/7b3f00f)
+  - Update dependency reflect-metadata to ^0.2.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/237 [<samp>(dce2f)</samp>](https://github.com/142vip/core-x/commit/dce2fef)
+  - Update dependency c12 to v2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/248 [<samp>(64eb2)</samp>](https://github.com/142vip/core-x/commit/64eb240)
+  - Update nest monorepo to v10 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/253 [<samp>(23227)</samp>](https://github.com/142vip/core-x/commit/23227e0)
+  - Update dependency @antfu/eslint-config to v3 " &nbsp;-&nbsp; by **chufan** in https://github.com/142vip/core-x/issues/246 [<samp>(5bbd6)</samp>](https://github.com/142vip/core-x/commit/5bbd68e)
+
+### 😏 Release Packages
+
+- **@142vip/nest**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(515b8)</samp>](https://github.com/142vip/core-x/commit/515b836)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(f986b)</samp>](https://github.com/142vip/core-x/commit/f986b47)
+
+**Release New Version v0.0.1-alpha.19 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.18...v0.0.1-alpha.19)**
+
 ## v0.0.1-alpha.18 (2024-12-12)
 
 ### ✨ Features

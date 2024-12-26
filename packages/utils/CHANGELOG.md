@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.12 (2024-12-26)
+
+### 🐛 Bug Fixes
+
+- 增加`dayjs`模块的封装，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(b05ac)</samp>](https://github.com/142vip/core-x/commit/b05ac77)
+- 增加`nanoid`模块的封装，支持随机字符串生成 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/257 [<samp>(fb10d)</samp>](https://github.com/142vip/core-x/commit/fb10df8)
+- 增加`JSON`模块的封装，支持克隆、序列化、解析 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/259 [<samp>(1f1ef)</samp>](https://github.com/142vip/core-x/commit/1f1ef10)
+
+**Release New Version v0.0.1-alpha.12 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.11 (2024-12-12)
 
 ### ✨ Features

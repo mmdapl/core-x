@@ -11,35 +11,32 @@
     "url": "git+https://github.com/142vip/core-x.git",
     "directory": "packages/egg-mysql"
   },
+  "eggPlugin": {
+    "name": "mysql"
+  },
   "keywords": [
     "公众号搜：储凡",
     "142vip",
     "@142vip",
     "@142vip/egg-mysql",
-    "egg-mysql",
+    "egg",
+    "egg-plugin",
+    "eggPlugin",
     "mysql",
     "egg"
   ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
+    "agent.js",
+    "app.js",
+    "core",
     "dist"
   ],
-  "scripts": {
-    "build": "unbuild",
-    "typecheck": "tsc --noEmit"
-  },
   "dependencies": {
-    "dayjs": "^1.11.11"
+    "@142vip/egg": "workspace:*",
+    "mysql2": "3.10.1"
+  },
+  "devDependencies": {
+    "egg": "^3.29.0"
   },
   "publishConfig": {
     "access": "public",

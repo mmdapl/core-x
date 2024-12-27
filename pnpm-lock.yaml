@@ -162,9 +162,16 @@ importers:
 
   packages/egg-axios:
     dependencies:
-      dayjs:
-        specifier: ^1.11.11
-        version: 1.11.13
+      '@142vip/egg':
+        specifier: workspace:*
+        version: link:../egg
+      axios:
+        specifier: 1.7.9
+        version: 1.7.9
+    devDependencies:
+      egg:
+        specifier: ^3.29.0
+        version: 3.29.0
 
   packages/egg-grpc-client:
     dependencies:

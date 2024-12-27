@@ -1,5 +1,23 @@
 {
   "name": "egg-demo",
   "version": "0.0.1-alpha.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "egg-bin dev",
+    "start": "egg-scripts start --daemon --title=egg-demo",
+    "stop": "egg-scripts stop --title=egg-server-go",
+    "test": "npm run lint -- --fix && npm run test:local",
+    "test:local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && npm run cov"
+  },
+  "dependencies": {
+    "@142vip/egg-mysql": "workspace:*",
+    "egg": "^3.17.5",
+    "egg-scripts": "2"
+  },
+  "devDependencies": {
+    "egg-bin": "6",
+    "egg-mock": "5"
+  }
 }

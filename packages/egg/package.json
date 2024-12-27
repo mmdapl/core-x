@@ -1,5 +1,10 @@
 {
   "name": "@142vip/egg",
+  "egg": {
+    "typescript": true,
+    "declarations": true,
+    "tscompiler": "esbuild"
+  },
   "version": "0.0.1-alpha.0",
   "private": false,
   "description": "公众号搜：储凡",
@@ -37,7 +42,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "^1.11.11"
+    "egg": "3.17.5",
+    "egg-scripts": "2"
   },
   "publishConfig": {
     "access": "public",

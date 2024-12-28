@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "@142vip/egg": "workspace:*",
+    "@142vip/utils": "workspace:*",
     "axios": "1.7.9"
   },
   "devDependencies": {

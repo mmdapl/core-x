@@ -10,7 +10,8 @@ class EggRedisAgentBoot {
   // 所有文件已加载，此时可以启动插件。
   async didLoad() {
     // 所有文件已加载，此时可以启动插件。
-    if (this.agent.config[RegisterEggPluginName.EGG_REDIS]) {
+    const config = this.agent.config[RegisterEggPluginName.EGG_REDIS]
+    if (config.agent) {
       registerPlugin(RegisterEggPluginName.EGG_REDIS, this.agent, createRedisInstance)
     }
   }

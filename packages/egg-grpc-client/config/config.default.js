@@ -1,5 +1,5 @@
 module.exports = {
-  redis: {
+  default: {
 
   },
   app: true,

@@ -9,13 +9,7 @@ function requestInterceptorsHandler(config) {
  * 响应拦截器
  */
 function responseInterceptorsHandler(response) {
-  if (response.config
-    && (response.config.method.toUpperCase() === 'HEAD'
-      || response.config.method.toUpperCase() === 'options')
-  ) {
-    return response
-  }
-  return response.data
+  return response
 }
 
 module.exports = {

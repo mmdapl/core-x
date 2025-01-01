@@ -11,6 +11,9 @@
     "url": "git+https://github.com/142vip/core-x.git",
     "directory": "packages/egg-sequelize"
   },
+  "eggPlugin": {
+    "name": "sequelize"
+  },
   "keywords": [
     "公众号搜：储凡",
     "142vip",
@@ -18,28 +21,20 @@
     "@142vip/egg-sequelize",
     "egg-sequelize",
     "sequelize",
+    "egg-plugin",
+    "eggPlugin",
     "egg"
   ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "files": [
+    "agent.js",
+    "app.js",
+    "core",
     "dist"
   ],
-  "scripts": {
-    "build-test": "unbuild",
-    "typecheck": "tsc --noEmit"
-  },
   "dependencies": {
-    "egg-sequelize": "^6.0.0"
+    "@142vip/egg": "workspace:*",
+    "@142vip/utils": "workspace:*",
+    "sequelize": "6.37.5"
   },
   "publishConfig": {
     "access": "public",

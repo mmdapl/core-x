@@ -1,26 +1,26 @@
 {
-  "name": "@142vip/egg-grpc-client",
+  "name": "@142vip/egg-validate",
   "version": "0.0.1-alpha.0",
   "private": false,
   "description": "公众号搜：储凡",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
-  "homepage": "https://142vip.github.io/core-x/packages/egg-grpc-client/",
+  "homepage": "https://142vip.github.io/core-x/packages/egg-swagger/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/142vip/core-x.git",
-    "directory": "packages/egg-grpc-client"
+    "directory": "packages/egg-validate"
   },
   "eggPlugin": {
-    "name": "grpcClient"
+    "name": "validate"
   },
   "keywords": [
     "公众号搜：储凡",
     "142vip",
     "@142vip",
-    "@142vip/egg-grpc-client",
-    "grpc",
-    "egg-grpc",
+    "@142vip/egg-validate",
+    "validate",
+    "egg-validate",
     "egg-plugin",
     "eggPlugin",
     "egg"
@@ -33,7 +33,8 @@
   ],
   "dependencies": {
     "@142vip/egg": "workspace:*",
-    "@142vip/utils": "workspace:*"
+    "@142vip/utils": "workspace:*",
+    "joi": "17.13.3"
   },
   "publishConfig": {
     "access": "public",

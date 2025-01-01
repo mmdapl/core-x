@@ -1,4 +1,5 @@
 const { registerPlugin } = require('@142vip/egg')
+const { RegisterEggPluginName } = require('@142vip/egg')
 const { createMysqlInstance } = require('./core/mysql')
 
 class EggMysqlAppBoot {
@@ -19,9 +20,9 @@ class EggMysqlAppBoot {
 
   async didLoad() {
     // 所有文件已加载，此时可以启动插件。
-    if (this.app.config.mysql) {
+    if (this.app.config[RegisterEggPluginName.EGG_MYSQL]) {
       console.log(111, this.app.config.mysql)
-      registerPlugin('mysql', this.app, createMysqlInstance)
+      registerPlugin(RegisterEggPluginName.EGG_MYSQL, this.app, createMysqlInstance)
     }
   }
 

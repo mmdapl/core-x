@@ -42,8 +42,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "egg": "3.17.5",
-    "egg-scripts": "2"
+    "egg": "3.29.0",
+    "egg-scripts": "2",
+    "sequelize": "6.37.5"
   },
   "publishConfig": {
     "access": "public",

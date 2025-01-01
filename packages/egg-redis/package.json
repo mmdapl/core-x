@@ -12,7 +12,7 @@
     "directory": "packages/egg-redis"
   },
   "eggPlugin": {
-    "name": "mysql"
+    "name": "redis"
   },
   "keywords": [
     "公众号搜：储凡",
@@ -21,9 +21,9 @@
     "@142vip/egg-redis",
     "egg-redis",
     "redis",
-    "egg",
     "egg-plugin",
-    "eggPlugin"
+    "eggPlugin",
+    "egg"
   ],
   "files": [
     "agent.js",
@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "@142vip/egg": "workspace:*",
+    "@142vip/utils": "workspace:*",
     "ioredis": "5.4.1"
   },
   "publishConfig": {

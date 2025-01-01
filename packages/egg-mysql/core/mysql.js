@@ -36,7 +36,7 @@ function createMysqlInstance(config, app) {
     return client
   }
   catch (e) {
-    pluginLogger.error(`[egg-sequelize-plus] DataBase create failed ，check egg-sequelize-plus config carefully ${e.message}`)
+    pluginLogger.error(`DataBase create failed ，check egg-sequelize-plus config carefully ${e.message}`)
   }
 }
 

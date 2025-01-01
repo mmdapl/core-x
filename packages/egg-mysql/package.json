@@ -20,9 +20,9 @@
     "@142vip",
     "@142vip/egg-mysql",
     "egg",
+    "mysql",
     "egg-plugin",
     "eggPlugin",
-    "mysql",
     "egg"
   ],
   "files": [
@@ -33,10 +33,8 @@
   ],
   "dependencies": {
     "@142vip/egg": "workspace:*",
+    "@142vip/utils": "workspace:*",
     "mysql2": "3.10.1"
-  },
-  "devDependencies": {
-    "egg": "^3.29.0"
   },
   "publishConfig": {
     "access": "public",

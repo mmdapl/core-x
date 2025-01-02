@@ -41,8 +41,21 @@ export function registerPlugin(name: RegisterEggPluginName, app: EggApp, createI
 export enum PluginLoader {
   APP = 'app',
   AGENT = 'agent',
-  // 都加载
-  ALL = 'app&&agent',
-  // 都不加载
-  NONE = 'none',
+}
+
+/**
+ * 默认的插件配置
+ * @param pluginName
+ * @param userConfig
+ */
+export function defaultPluginConfig(pluginName: RegisterEggPluginName, userConfig: any) {
+  const defaultConfig = {
+    default: {
+      pluginName,
+    },
+    // 默认app.js加载
+    loaders: [PluginLoader.APP],
+  }
+
+  return Object.assign({}, defaultConfig, userConfig)
 }

@@ -1,16 +1,20 @@
-const { registerPlugin, RegisterEggPluginName } = require('@142vip/egg')
-const { PluginLoader } = require('@142vip/egg')
+const {
+  registerPlugin,
+  RegisterEggPluginName,
+  EggAppBoot,
+  PluginLoader,
+} = require('@142vip/egg')
 const { createRedisInstance } = require('./core/redis')
 
-class EggRedisAppBoot {
+class EggRedisAppBoot extends EggAppBoot {
   constructor(app) {
+    super(app, RegisterEggPluginName.EGG_REDIS)
     this.app = app
   }
 
   // 所有文件已加载，此时可以启动插件。
   async didLoad() {
-    const { loader } = this.app.config[RegisterEggPluginName.EGG_REDIS]
-    if (loader.includes(PluginLoader.APP)) {
+    if (this.loaderPlugin(PluginLoader.APP)) {
       registerPlugin(RegisterEggPluginName.EGG_REDIS, this.app, createRedisInstance)
     }
   }

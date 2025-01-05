@@ -1,10 +1,9 @@
 const { VipEggPluginLogger } = require('@142vip/egg')
-const { name: pkgName } = require('../package.json')
 
-function createEggGrpcServerInstance(config, app) {
-  const pluginLogger = VipEggPluginLogger.getInstance(pkgName, app)
+function createEggGrpcServerInstance(pluginConfig, app) {
+  const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
   try {
-    pluginLogger.info(`GrpcServer create success , the name is ${config.name}`)
+    pluginLogger.info(`GrpcServer create success , the name is ${pluginConfig.name}`)
     return {}
   }
   catch (e) {

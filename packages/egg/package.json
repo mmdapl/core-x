@@ -42,9 +42,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@142vip/utils": "workspace:*",
     "egg": "3.29.0",
     "egg-scripts": "2",
-    "ioredis": "^5.4.2",
+    "ioredis": "5.4.2",
     "sequelize": "6.37.5"
   },
   "publishConfig": {

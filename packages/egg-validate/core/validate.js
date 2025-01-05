@@ -1,9 +1,11 @@
 const { VipEggPluginLogger } = require('@142vip/egg')
 const Joi = require('joi')
-const { name: pkgName } = require('../package.json')
 
-function createEggValidateInstance(config, app) {
-  const pluginLogger = VipEggPluginLogger.getInstance(pkgName, app)
+/**
+ * 参数校验
+ */
+function createEggValidateInstance(pluginConfig, app) {
+  const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
 
   const validateSchema = Joi.object({ })
 

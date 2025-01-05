@@ -1,17 +1,14 @@
-const { registerPlugin, RegisterEggPluginName } = require('@142vip/egg')
+const { RegisterEggPluginName, EggPluginBoot } = require('@142vip/egg')
 const { createEggAxiosInstance } = require('./core/axios')
 
-class EggAgentAppBoot {
+class EggAxiosAgentBoot extends EggPluginBoot {
   constructor(app) {
-    this.app = app
-  }
-
-  // 所有文件已加载，此时可以启动插件。
-  async didLoad() {
-    if (this.app.config[RegisterEggPluginName.EGG_AXIOS]) {
-      registerPlugin(RegisterEggPluginName.EGG_AXIOS, this.app, createEggAxiosInstance)
-    }
+    super({
+      pluginName: RegisterEggPluginName.EGG_AXIOS,
+      appOrAgent: app,
+      createEggPluginInstance: createEggAxiosInstance,
+    })
   }
 }
 
-module.exports = EggAgentAppBoot
+module.exports = EggAxiosAgentBoot

@@ -12,9 +12,9 @@ class EggRedis {
     this.RedisClass = config.Redis ?? require('ioredis')
   }
 
-  static getInstance(config, app) {
+  static getInstance(pluginConfig, app) {
     if (!EggRedis.instance) {
-      EggRedis.instance = new EggRedis(config, app)._createClient()
+      EggRedis.instance = new EggRedis(pluginConfig, app)._createClient()
     }
     return EggRedis.instance
   }
@@ -103,11 +103,21 @@ class EggRedis {
 
 /**
  * 创建redis实例
- * @param config
+ * @param pluginConfig
  * @param app
  */
-function createRedisInstance(config, app) {
-  return EggRedis.getInstance(config, app)
+function createRedisInstance(pluginConfig, app) {
+  const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
+  try {
+    const client = EggRedis.getInstance(pluginConfig, app)
+    pluginLogger.info(``)
+    return client
+  }
+
+  catch (e) {
+    pluginLogger.error(`dataBase create failed,check config carefully!!!!`)
+    pluginLogger.error(e.message)
+  }
 }
 
 module.exports = {

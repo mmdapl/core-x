@@ -1,12 +1,9 @@
 const { VipEggPluginLogger } = require('@142vip/egg')
-const { name: pkgName } = require('../package.json')
 /**
  * 初始化Sequelize
- * @param config
- * @param app
  */
-function createEggSequelizeInstance(config, app) {
-  const pluginLogger = VipEggPluginLogger.getInstance(pkgName, app)
+function createEggSequelizeInstance(pluginConfig, app) {
+  const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
 
   pluginLogger.info('plugin init')
 }

@@ -1,6 +1,5 @@
 const { VipEggPluginLogger } = require('@142vip/egg')
 const mysql = require('mysql2/promise')
-const { name: pkgName } = require('../package.json')
 const { createDataBase } = require('./database')
 
 async function creatPool(config) {
@@ -27,19 +26,20 @@ async function creatPool(config) {
 /**
  * 创建MySQL实例
  */
-function createMysqlInstance(config, app) {
-  const pluginLogger = VipEggPluginLogger.getInstance(pkgName, app)
-
+async function createEggMysqlInstance(pluginConfig, app) {
+  const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
   try {
-    const client = creatPool(config)
-    pluginLogger.info(`DataBase create success , the name is ${config.database}`)
+    const client = await creatPool(pluginConfig)
+    pluginLogger.info(`dataBase create success , the name is ${pluginConfig.database}`)
     return client
   }
+
   catch (e) {
-    pluginLogger.error(`DataBase create failed ，check egg-sequelize-plus config carefully ${e.message}`)
+    pluginLogger.error(`dataBase create failed,check config carefully!!!!`)
+    pluginLogger.error(e.message)
   }
 }
 
 module.exports = {
-  createMysqlInstance,
+  createEggMysqlInstance,
 }

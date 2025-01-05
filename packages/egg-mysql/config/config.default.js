@@ -1,11 +1,15 @@
+const { defaultPluginConfig } = require('@142vip/egg')
+const { name: pluginName } = require('../package.json')
+
 module.exports = {
-  mysql: {
+  mysql: defaultPluginConfig(pluginName, {
     default: {
       database: null,
       connectionLimit: 5,
     },
-    app: true,
-    agent: false,
+    client: {
+      username: 'root',
+    },
 
     // Single Database
     // client: {
@@ -33,5 +37,5 @@ module.exports = {
     //     database: 'database',
     //   },
     // },
-  },
+  }),
 }

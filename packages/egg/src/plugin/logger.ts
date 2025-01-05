@@ -1,9 +1,4 @@
-interface EggCoreLogger {
-  info: (msg: any, ...args: any[]) => void
-  warn: (msg: any, ...args: any[]) => void
-  error: (msg: any, ...args: any[]) => void
-  debug: (msg: any, ...args: any[]) => void
-}
+import type { EggApp, EggCoreLogger, PluginConfig } from '../egg.interface'
 
 /**
  * egg插件日志
@@ -13,17 +8,17 @@ export class VipEggPluginLogger {
   private readonly logger: EggCoreLogger
   private readonly pluginName: string
 
-  constructor(pluginName: string, logger: EggCoreLogger) {
-    this.logger = logger
-    this.pluginName = pluginName
+  constructor(pluginConfig: PluginConfig, app: EggApp) {
+    this.logger = app.coreLogger
+    this.pluginName = pluginConfig.pluginName
   }
 
   /**
    * 单例对象
    */
-  public static getInstance(pluginName: string, logger: EggCoreLogger) {
+  public static getInstance(pluginConfig: PluginConfig, app: EggApp): VipEggPluginLogger {
     if (this.instance == null) {
-      this.instance = new VipEggPluginLogger(pluginName, logger)
+      this.instance = new VipEggPluginLogger(pluginConfig, app)
     }
     return this.instance
   }

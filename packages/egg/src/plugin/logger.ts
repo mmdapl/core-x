@@ -6,11 +6,11 @@ import type { EggApp, EggCoreLogger, PluginConfig } from '../egg.interface'
 export class VipEggPluginLogger {
   public static instance: VipEggPluginLogger
   private readonly logger: EggCoreLogger
-  private readonly pluginName: string
+  private readonly pkgName: string
 
   constructor(pluginConfig: PluginConfig, app: EggApp) {
     this.logger = app.coreLogger
-    this.pluginName = pluginConfig.pluginName
+    this.pkgName = pluginConfig.pkgName
   }
 
   /**
@@ -24,18 +24,18 @@ export class VipEggPluginLogger {
   }
 
   public info(message: string) {
-    this.logger.info(`[${this.pluginName}] ${message}`)
+    this.logger.info(`[${this.pkgName}] ${message}`)
   }
 
   public warn(message: string) {
-    this.logger.warn(`[${this.pluginName}] ${message}`)
+    this.logger.warn(`[${this.pkgName}] ${message}`)
   }
 
   public error(message: string) {
-    this.logger.error(`[${this.pluginName}] ${message}`)
+    this.logger.error(`[${this.pkgName}] ${message}`)
   }
 
   public debug(message: string) {
-    this.logger.debug(`[${this.pluginName}] ${message}`)
+    this.logger.debug(`[${this.pkgName}] ${message}`)
   }
 }

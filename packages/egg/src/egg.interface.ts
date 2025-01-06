@@ -32,8 +32,9 @@ export interface EggConfig extends Record<string, any> {
  * 插件配置
  */
 export interface PluginConfig {
-  // 默认配置插件名
-  pluginName: string
+  // 默认配置插件名 例如：@142vip/egg-mysql
+  pkgName: string
 
+  // 其他属性
   [propName: string]: unknown
 }

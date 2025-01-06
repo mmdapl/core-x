@@ -41,13 +41,13 @@ export enum PluginLoader {
 
 /**
  * 默认的插件配置
- * @param pluginName
+ * @param pkgName  模块包名
  * @param userConfig
  */
-export function defaultPluginConfig(pluginName: RegisterEggPluginName, userConfig: any) {
+export function defaultPluginConfig(pkgName: string, userConfig: any) {
   const defaultConfig = {
     default: {
-      pluginName,
+      pkgName,
     },
     // 默认app.js加载
     loaders: [PluginLoader.APP],
@@ -61,8 +61,8 @@ export function defaultPluginConfig(pluginName: RegisterEggPluginName, userConfi
  * - 参考：https://www.eggjs.org/zh-CN/basics/app-start
  */
 export class EggPluginBoot {
-  private readonly appOrAgent: EggApp
   private readonly pluginName: RegisterEggPluginName
+  private readonly appOrAgent: EggApp
   private readonly createEggPluginInstance: CreatePluginInstance
   constructor(eggPlugin: {
     pluginName: RegisterEggPluginName

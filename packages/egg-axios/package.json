@@ -27,6 +27,7 @@
   "files": [
     "agent.js",
     "app.js",
+    "config",
     "core",
     "dist"
   ],

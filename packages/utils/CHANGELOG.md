@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.13 (2025-01-06)
+
+### ✨ Features
+
+- 支持`lodash`工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(52609)</samp>](https://github.com/142vip/core-x/commit/52609eb)
+
+**Release New Version v0.0.1-alpha.13 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.12 (2024-12-26)
 
 ### 🐛 Bug Fixes

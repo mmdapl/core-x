@@ -2,6 +2,99 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.20 (2025-01-06)
+
+### ✨ Features
+
+- `egg`相关插件模块初始化，约定插件基础结构 &nbsp;-&nbsp; by **chufan** [<samp>(daa72)</samp>](https://github.com/142vip/core-x/commit/daa72a5)
+- 锁定开发依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(77804)</samp>](https://github.com/142vip/core-x/commit/77804f2)
+- 基于defaultPluginConfig函数约定插件默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(92804)</samp>](https://github.com/142vip/core-x/commit/928049c)
+- **@142vip/axios**:
+  - Axios支持实例化和拦截器自定义 &nbsp;-&nbsp; by **chufan** [<samp>(944e1)</samp>](https://github.com/142vip/core-x/commit/944e154)
+- **@142vip/egg**:
+  - `registerPlugin`支持egg插件快速注册 &nbsp;-&nbsp; by **chufan** [<samp>(4d734)</samp>](https://github.com/142vip/core-x/commit/4d73484)
+  - 增加`ioredis`枚举，拆分插件的日志和注册机制 &nbsp;-&nbsp; by **chufan** [<samp>(c31a6)</samp>](https://github.com/142vip/core-x/commit/c31a644)
+  - 增加`defaultPluginConfig`默认配置集成 &nbsp;-&nbsp; by **chufan** [<samp>(3bda0)</samp>](https://github.com/142vip/core-x/commit/3bda0b6)
+  - 优化插件注册机制和类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(d55fe)</samp>](https://github.com/142vip/core-x/commit/d55fe83)
+  - 支持插件EggAppBoot父类的生命周期 &nbsp;-&nbsp; by **chufan** [<samp>(1c260)</samp>](https://github.com/142vip/core-x/commit/1c260ae)
+  - 修改类型定义，支持pkgName参数 &nbsp;-&nbsp; by **chufan** [<samp>(1e744)</samp>](https://github.com/142vip/core-x/commit/1e744dc)
+- **@142vip/egg-axios**:
+  - 插件模块初始化 &nbsp;-&nbsp; by **chufan** [<samp>(4fea1)</samp>](https://github.com/142vip/core-x/commit/4fea167)
+  - 调整插件加载模式，拦截器优化 &nbsp;-&nbsp; by **chufan** [<samp>(f0109)</samp>](https://github.com/142vip/core-x/commit/f010944)
+- **@142vip/egg-grpc-client**:
+  - 调整插件加载模式，`grpc-client`结构初始化 &nbsp;-&nbsp; by **chufan** [<samp>(c0db5)</samp>](https://github.com/142vip/core-x/commit/c0db535)
+- **@142vip/egg-grpc-server**:
+  - `grpc-server`结构初始化，调整插件加载模式 &nbsp;-&nbsp; by **chufan** [<samp>(6aaf5)</samp>](https://github.com/142vip/core-x/commit/6aaf579)
+- **@142vip/egg-mysql**:
+  - 基于`mysql2`模块初始化`egg-mysql`插件 &nbsp;-&nbsp; by **chufan** [<samp>(0d3e1)</samp>](https://github.com/142vip/core-x/commit/0d3e19b)
+  - 配置插件默认参数 &nbsp;-&nbsp; by **chufan** [<samp>(a49c8)</samp>](https://github.com/142vip/core-x/commit/a49c812)
+  - `mysql`实例自动加载 &nbsp;-&nbsp; by **chufan** [<samp>(1d76c)</samp>](https://github.com/142vip/core-x/commit/1d76cce)
+- **@142vip/egg-redis**:
+  - 支持`redis`使用，初始化基础结构 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/265 [<samp>(668f3)</samp>](https://github.com/142vip/core-x/commit/668f3c6)
+  - 优化插件启动，增加默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(4a783)</samp>](https://github.com/142vip/core-x/commit/4a78389)
+  - 配置加载模式 &nbsp;-&nbsp; by **chufan** [<samp>(f8d02)</samp>](https://github.com/142vip/core-x/commit/f8d0214)
+- **@142vip/egg-sequelize**:
+  - 基础结构初始化 &nbsp;-&nbsp; by **chufan** [<samp>(f7438)</samp>](https://github.com/142vip/core-x/commit/f743817)
+  - `sequelize`自定义创建，配置加载模式， &nbsp;-&nbsp; by **chufan** [<samp>(95144)</samp>](https://github.com/142vip/core-x/commit/9514406)
+- **@142vip/egg-swagger**:
+  - 配置加载模式，支持自定义加载 &nbsp;-&nbsp; by **chufan** [<samp>(228b4)</samp>](https://github.com/142vip/core-x/commit/228b486)
+- **@142vip/egg-validate**:
+  - 调整插件加载模式 &nbsp;-&nbsp; by **chufan** [<samp>(ffc45)</samp>](https://github.com/142vip/core-x/commit/ffc45f1)
+- **@142vip/redis**:
+  - 支持集群和哨兵连接模式，优化`Redis`连接逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(95a71)</samp>](https://github.com/142vip/core-x/commit/95a7150)
+- **@142vip/utils**:
+  - 支持`lodash`工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(52609)</samp>](https://github.com/142vip/core-x/commit/52609eb)
+- **deps**:
+  - 移除`cross-env`模块依赖 &nbsp;-&nbsp; by **chufan** [<samp>(591e4)</samp>](https://github.com/142vip/core-x/commit/591e446)
+- **egg-demo**:
+  - Demo演示，支持插件验证 &nbsp;-&nbsp; by **chufan** [<samp>(de3f2)</samp>](https://github.com/142vip/core-x/commit/de3f236)
+
+### 🐛 Bug Fixes
+
+- 修复`deps`依赖异常 &nbsp;-&nbsp; by **chufan** [<samp>(65ad5)</samp>](https://github.com/142vip/core-x/commit/65ad546)
+- 修复插件依赖版本异常 &nbsp;-&nbsp; by **chufan** [<samp>(27aef)</samp>](https://github.com/142vip/core-x/commit/27aef37)
+- **@142vip/utils**:
+  - 增加`dayjs`模块的封装，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(b05ac)</samp>](https://github.com/142vip/core-x/commit/b05ac77)
+  - 增加`nanoid`模块的封装，支持随机字符串生成 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/257 [<samp>(fb10d)</samp>](https://github.com/142vip/core-x/commit/fb10df8)
+  - 增加`JSON`模块的封装，支持克隆、序列化、解析 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/259 [<samp>(1f1ef)</samp>](https://github.com/142vip/core-x/commit/1f1ef10)
+- **deps**:
+  - Update dependency nanoid to v3.3.8 [security] &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/258 [<samp>(e6750)</samp>](https://github.com/142vip/core-x/commit/e6750bc)
+  - Update dependency qs to v6.13.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/261 [<samp>(2db4c)</samp>](https://github.com/142vip/core-x/commit/2db4c91)
+  - Update dependency dayjs to v1.11.13 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/260 [<samp>(3d52f)</samp>](https://github.com/142vip/core-x/commit/3d52ff5)
+  - Update dependency ioredis to v5.4.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/274 [<samp>(d52fb)</samp>](https://github.com/142vip/core-x/commit/d52fb5f)
+
+### 😏 Release Packages
+
+- **@142vip/axios**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(9b92a)</samp>](https://github.com/142vip/core-x/commit/9b92ae3)
+- **@142vip/egg**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(adee8)</samp>](https://github.com/142vip/core-x/commit/adee881)
+- **@142vip/egg-axios**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(121ef)</samp>](https://github.com/142vip/core-x/commit/121ef46)
+- **@142vip/egg-grpc-client**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(f4d79)</samp>](https://github.com/142vip/core-x/commit/f4d7944)
+- **@142vip/egg-grpc-server**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(f2607)</samp>](https://github.com/142vip/core-x/commit/f2607a2)
+- **@142vip/egg-mysql**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(91c22)</samp>](https://github.com/142vip/core-x/commit/91c223b)
+- **@142vip/egg-redis**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(1db59)</samp>](https://github.com/142vip/core-x/commit/1db59d0)
+- **@142vip/egg-sequelize**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(7664d)</samp>](https://github.com/142vip/core-x/commit/7664d87)
+- **@142vip/egg-swagger**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(b90cc)</samp>](https://github.com/142vip/core-x/commit/b90ccb0)
+- **@142vip/egg-validate**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(c00a7)</samp>](https://github.com/142vip/core-x/commit/c00a718)
+- **@142vip/redis**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(291a0)</samp>](https://github.com/142vip/core-x/commit/291a042)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(4e778)</samp>](https://github.com/142vip/core-x/commit/4e7782d)
+  - Publish `v0.0.1-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(2ef18)</samp>](https://github.com/142vip/core-x/commit/2ef185b)
+- **egg-demo**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(9f244)</samp>](https://github.com/142vip/core-x/commit/9f24428)
+
+**Release New Version v0.0.1-alpha.20 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.19...v0.0.1-alpha.20)**
+
 ## v0.0.1-alpha.19 (2024-12-22)
 
 ### ✨ Features

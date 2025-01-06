@@ -1,8 +1,8 @@
 const { defaultPluginConfig } = require('@142vip/egg')
-const { name: pluginName } = require('../package.json')
+const { name: pkgName } = require('../package.json')
 
 module.exports = {
-  mysql: defaultPluginConfig(pluginName, {
+  mysql: defaultPluginConfig(pkgName, {
     default: {
       database: null,
       connectionLimit: 5,

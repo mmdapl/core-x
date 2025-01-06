@@ -1,8 +1,8 @@
 const { defaultPluginConfig } = require('@142vip/egg')
-const { name: pluginName } = require('../package.json')
+const { name: pkgName } = require('../package.json')
 
 module.exports = {
-  redis: defaultPluginConfig(pluginName, {
+  redis: defaultPluginConfig(pkgName, {
     default: {
       // 默认已经支持
       // pluginName,
@@ -10,7 +10,10 @@ module.exports = {
       mode: 'default',
     },
     // 可选，支持自定义Redis模块
-    Redis: require('ioredis'),
+    // Redis: require('ioredis'),
+    client: {
+
+    },
   }),
 }
 

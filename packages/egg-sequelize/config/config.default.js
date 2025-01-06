@@ -1,11 +1,15 @@
+const { defaultPluginConfig } = require('@142vip/egg')
+const { name: pkgName } = require('../package.json')
+
 module.exports = {
-  sequelize: {
+  sequelize: defaultPluginConfig(pkgName, {
     default: {
       database: null,
       connectionLimit: 5,
     },
-    app: true,
-    agent: false,
+    client: {
+
+    },
 
     // Single Database
     // client: {
@@ -33,5 +37,5 @@ module.exports = {
     //     database: 'database',
     //   },
     // },
-  },
+  }),
 }

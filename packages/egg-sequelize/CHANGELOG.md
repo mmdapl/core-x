@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.1-alpha.2 (2025-01-06)
+
+### ✨ Features
+
+- 基础结构初始化 &nbsp;-&nbsp; by **chufan** [<samp>(f7438)</samp>](https://github.com/142vip/core-x/commit/f743817)
+- `sequelize`自定义创建，配置加载模式， &nbsp;-&nbsp; by **chufan** [<samp>(95144)</samp>](https://github.com/142vip/core-x/commit/9514406)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg-sequelize)**
+
 ## v0.0.1-alpha.1 (2024-08-23)
 
 ### ✨ Features

@@ -24,6 +24,7 @@
     "preinstall": "npx only-allow pnpm && chmod +x ./scripts/*",
     "postinstall": "simple-git-hooks && pnpm build:packages",
     "clean": "npx fa clean --dist --vite --turbo --deps --all --ignore-tips",
+    "clean:hooks": "rm -rf .git/hooks",
     "dev": "vitepress dev --port 8080 --host --force --strictPort --open",
     "build:apps": "npx turbo run build --filter '*-demo' --color --only",
     "build:packages": "npx turbo run build --filter @142vip/* --color --only",
@@ -37,7 +38,7 @@
     "publish:check": "pnpm publish -r --filter './packages/**' --dry-run --json --no-git-checks",
     "release:check": "npx fa release --check-release --vip -F './apps/*' -F './packages/*' ",
     "check": "pnpm release:check && pnpm publish:check",
-    "release": "npx fa release --vip -F './apps/*' -F './packages/*' "
+    "release": "pnpm clean:hooks && npx fa release --vip -F './apps/*' -F './packages/*' "
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",

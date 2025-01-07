@@ -1,8 +1,14 @@
 const { VipEggPluginLogger } = require('@142vip/egg')
-const axios = require('axios')
 const { VipLodash } = require('@142vip/utils')
-const { responseInterceptorsHandler, requestInterceptorsHandler } = require('./interceptors')
+const {
+  createAxiosInstance,
+  defaultRequestInterceptor,
+  defaultResponseInterceptor,
+} = require('@142vip/axios')
 
+/**
+ * 创建egg-axios实例
+ */
 function createEggAxiosInstance(pluginConfig, app) {
   const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
 
@@ -16,16 +22,16 @@ function createEggAxiosInstance(pluginConfig, app) {
     // default 5 seconds timeout
     timeout: 5000,
   }
-  // 获取插件用户自定义配置
-  // const userAxiosConfig = app.config.axios
+  // 合并插件用户自定义配置、axios默认配置
+  const config = VipLodash.merge(defaultConfig, pluginConfig)
 
-  // axios对象初始化配置合并
-  axios.defaults = VipLodash.merge(axios.defaults, defaultConfig, pluginConfig)
-  pluginLogger.debug(`default configs: ${JSON.stringify(axios.defaults)}`)
+  pluginLogger.debug(`default configs: ${JSON.stringify(config)}`)
+
+  const axios = createAxiosInstance(config)
 
   //  添加请求拦截器
   axios.interceptors.request.use(
-    pluginConfig.requestInterceptorsHandler ?? requestInterceptorsHandler,
+    pluginConfig.requestInterceptorsHandler ?? defaultRequestInterceptor,
     (error) => {
       pluginLogger.error(`send request error in interceptors, ${error.message}`)
       return Promise.reject(error)
@@ -34,7 +40,7 @@ function createEggAxiosInstance(pluginConfig, app) {
 
   // 响应拦截器
   axios.interceptors.response.use(
-    pluginConfig.responseInterceptorsHandler ?? responseInterceptorsHandler,
+    pluginConfig.responseInterceptorsHandler ?? defaultResponseInterceptor,
     (error) => {
       pluginLogger.error(`receive response error in interceptors, ${error.message}`)
       return Promise.reject(error)

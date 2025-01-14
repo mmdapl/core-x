@@ -9,9 +9,11 @@ export class Redis {
 
   /**
    * 延迟双删
-   * @param key
    */
   public async delete(key: string) {
     await this.redisClient.del(key)
+    setTimeout(async () => {
+      await this.redisClient.del(key)
+    }, 1000)
   }
 }

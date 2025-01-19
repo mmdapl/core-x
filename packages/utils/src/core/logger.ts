@@ -1,4 +1,4 @@
-import { vipColor } from './color'
+import { VipColor } from './color'
 
 export interface LoggerOptions {
   startLabel?: string
@@ -32,17 +32,17 @@ export class VipLogger {
   }
 
   public info(msg: string, opts?: LoggerOptions) {
-    const infoText = `${vipColor.green(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
+    const infoText = `${VipColor.green(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
     console.info(infoText)
   }
 
   public log(msg: string, opts?: LoggerOptions) {
-    const logText = `${vipColor.blue(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
+    const logText = `${VipColor.blue(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
     console.log(logText)
   }
 
   public error(msg: string, opts?: LoggerOptions) {
-    const text = `${vipColor.red(opts?.startLabel ?? '')} ${vipColor.magenta(msg)} ${vipColor.yellow(opts?.endLabel ?? '')}`
+    const text = `${VipColor.red(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
     console.error(text)
   }
 }

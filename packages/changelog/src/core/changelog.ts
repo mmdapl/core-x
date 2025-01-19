@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { getGitDiff, parseGitCommit } from 'changelogen'
-import { VipCommander, VipJSON, vipColor } from '@142vip/utils'
+import { VipColor, VipCommander, VipJSON } from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -105,20 +105,20 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
 
   try {
     console.log()
-    console.log(vipColor.dim(`${vipColor.bold(packageName)} `) + vipColor.dim(`v${packageVersion}`))
+    console.log(VipColor.dim(`${VipColor.bold(packageName)} `) + VipColor.dim(`v${packageVersion}`))
 
     const { config, markdown, commits } = await generate(args)
     webUrl = generateWebUrl(config, markdown)
 
-    console.log(vipColor.cyan(config.from) + vipColor.dim(' -> ') + vipColor.blue(config.to) + vipColor.dim(` (${commits.length} commits)`))
-    console.log(vipColor.dim('--------------'))
+    console.log(VipColor.cyan(config.from) + VipColor.dim(' -> ') + VipColor.blue(config.to) + VipColor.dim(` (${commits.length} commits)`))
+    console.log(VipColor.dim('--------------'))
     console.log()
     console.log(markdown.replace(/&nbsp;/g, ''))
     console.log()
-    console.log(vipColor.dim('--------------'))
+    console.log(VipColor.dim('--------------'))
 
     if (config.dry) {
-      console.log(vipColor.yellow('试运行。已跳过版本发布。'))
+      console.log(VipColor.yellow('试运行。已跳过版本发布。'))
       printUrl(webUrl)
       return
     }
@@ -131,14 +131,14 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
 
     // 带token上传
     if (!config.tokens) {
-      console.error(vipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
+      console.error(VipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
     }
 
     if (!commits.length && await isRepoShallow()) {
-      console.error(vipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
+      console.error(VipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
@@ -148,9 +148,9 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
     await sendRelease(config, markdown)
   }
   catch (e: any) {
-    console.error(vipColor.red(String(e)))
+    console.error(VipColor.red(String(e)))
     if (e?.stack)
-      console.error(vipColor.dim(e.stack?.split('\n').slice(1).join('\n')))
+      console.error(VipColor.dim(e.stack?.split('\n').slice(1).join('\n')))
 
     // 手动执行，创建release
     if (webUrl) {

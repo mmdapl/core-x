@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch'
-import { vipColor, vipQs } from '@142vip/utils'
+import { VipColor, vipQs } from '@142vip/utils'
 import type {
   AuthorInfo,
   ChangelogOptions,
@@ -32,7 +32,7 @@ export async function sendRelease(options: ChangelogOptions, content: string): P
     prerelease: options.prerelease,
     tag_name: options.to,
   }
-  console.log(vipColor.cyan(method === 'POST'
+  console.log(VipColor.cyan(method === 'POST'
     ? 'Creating release notes...'
     : 'Updating release notes...'),
   )
@@ -41,7 +41,7 @@ export async function sendRelease(options: ChangelogOptions, content: string): P
     body: JSON.stringify(body),
     headers,
   })
-  console.log(vipColor.green(`Released on ${res.html_url}`))
+  console.log(VipColor.green(`Released on ${res.html_url}`))
 }
 
 function getHeaders(options: ChangelogOptions) {
@@ -162,8 +162,8 @@ export function generateWebUrl(config: any, markdown: string): string {
  */
 export function printUrl(webUrl: string, success: boolean = true): void {
   const errMsg = success
-    ? `\n${vipColor.yellow('使用以下链接手动发布新的版本：')}\n`
-    : `\n${vipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
+    ? `\n${VipColor.yellow('使用以下链接手动发布新的版本：')}\n`
+    : `\n${VipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
 
-  console.error(`${errMsg}${vipColor.yellow(webUrl)}\n`)
+  console.error(`${errMsg}${VipColor.yellow(webUrl)}\n`)
 }

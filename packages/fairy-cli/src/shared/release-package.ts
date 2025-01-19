@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process'
 import process from 'node:process'
 import { versionBump } from '@142vip/release-version'
-import { vipColor, vipSymbols } from '@142vip/utils'
+import { VipColor, VipSymbols } from '@142vip/utils'
 import { getCommitLogs, getLatestTagName } from './git'
 
 interface PackageJSON {
@@ -68,10 +68,10 @@ export function printPreCheckRelease(packageNames: string[]) {
   console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
   for (const pkg of packages) {
     if (pkg.release) {
-      console.log(vipColor.red(`${vipSymbols.error} ${pkg.name}`))
+      console.log(VipColor.red(`${VipSymbols.error} ${pkg.name}`))
     }
     else {
-      console.log(vipColor.green(`${vipSymbols.success} ${pkg.name}`))
+      console.log(VipColor.green(`${VipSymbols.success} ${pkg.name}`))
     }
   }
 
@@ -79,7 +79,7 @@ export function printPreCheckRelease(packageNames: string[]) {
   console.log()
 
   if (!isRootRelease) {
-    console.log(`${vipColor.yellow(`${vipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
+    console.log(`${VipColor.yellow(`${VipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }
 

@@ -438,14 +438,14 @@ All notable changes to this project will be documented in this file. See [commit
 
 - 使用`VipProjectTable`组件，优化首页显示效果，`首页-趋势`支持暗夜模式 &nbsp;-&nbsp; by **chufan** [<samp>(4e1b0)</samp>](https://github.com/142vip/core-x/commit/4e1b0d6)
 - 使用`VipTeam`组件，优化首页展示 &nbsp;-&nbsp; by **chufan** [<samp>(f2e9f)</samp>](https://github.com/142vip/core-x/commit/f2e9f7a)
-- 移除全局`chalk`模块，使用`vipColor`变量处理日志格式 &nbsp;-&nbsp; by **chufan** [<samp>(51156)</samp>](https://github.com/142vip/core-x/commit/5115623)
+- 移除全局`chalk`模块，使用`VipColor`变量处理日志格式 &nbsp;-&nbsp; by **chufan** [<samp>(51156)</samp>](https://github.com/142vip/core-x/commit/5115623)
 - **@142vip/fairy-cli**:
   - 移除`log-symbols`模块，优化`check`命令的日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(47635)</samp>](https://github.com/142vip/core-x/commit/4763593)
   - `release`发布命令增加`--filter`可选参数，支持多次调用，用于指定模块路径 &nbsp;-&nbsp; by **chufan** [<samp>(d0cc1)</samp>](https://github.com/142vip/core-x/commit/d0cc1e7)
 - **@142vip/release-version**:
-  - 移除`log-symbols`模块，替换为`vipSymbols`变量 &nbsp;-&nbsp; by **chufan** [<samp>(6347b)</samp>](https://github.com/142vip/core-x/commit/6347bc5)
+  - 移除`log-symbols`模块，替换为`VipSymbols`变量 &nbsp;-&nbsp; by **chufan** [<samp>(6347b)</samp>](https://github.com/142vip/core-x/commit/6347bc5)
 - **@142vip/utils**:
-  - 移除`chalk`，使用`ansi-colors`模块，新增`vipColor`和`vipSymbols`常用终端日志输出变量 &nbsp;-&nbsp; by **chufan** [<samp>(55ae6)</samp>](https://github.com/142vip/core-x/commit/55ae636)
+  - 移除`chalk`，使用`ansi-colors`模块，新增`VipColor`和`VipSymbols`常用终端日志输出变量 &nbsp;-&nbsp; by **chufan** [<samp>(55ae6)</samp>](https://github.com/142vip/core-x/commit/55ae636)
 - **@142vip/vitepress**:
   - 封装`VipBackTop`组件，优化`VipProjectTable`组件显示样式 &nbsp;-&nbsp; by **chufan** [<samp>(0392e)</samp>](https://github.com/142vip/core-x/commit/0392e18)
   - 拓展项目表格和团队介绍组件封装，优化使用 &nbsp;-&nbsp; by **chufan** [<samp>(854ab)</samp>](https://github.com/142vip/core-x/commit/854ab43)

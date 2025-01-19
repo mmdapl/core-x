@@ -1,4 +1,4 @@
-import { vipSymbols } from '@142vip/utils'
+import { VipSymbols } from '@142vip/utils'
 import type { VersionBumpProgress } from '../types'
 import { ProgressEvent } from '../types'
 
@@ -9,27 +9,27 @@ import { ProgressEvent } from '../types'
 export function showProgress(progress: VersionBumpProgress) {
   switch (progress.event) {
     case ProgressEvent.FileUpdated:
-      console.log(vipSymbols.success, `Updated ${progress.updatedFiles.pop()} to ${progress.newVersion}`)
+      console.log(VipSymbols.success, `Updated ${progress.updatedFiles.pop()} to ${progress.newVersion}`)
       break
 
     case ProgressEvent.FileSkipped:
-      console.log(vipSymbols.info, `${progress.skippedFiles.pop()} did not need to be updated`)
+      console.log(VipSymbols.info, `${progress.skippedFiles.pop()} did not need to be updated`)
       break
 
     case ProgressEvent.GitCommit:
-      console.log(vipSymbols.success, 'Git commit')
+      console.log(VipSymbols.success, 'Git commit')
       break
 
     case ProgressEvent.GitTag:
-      console.log(vipSymbols.success, 'Git tag')
+      console.log(VipSymbols.success, 'Git tag')
       break
 
     case ProgressEvent.GitPush:
-      console.log(vipSymbols.success, 'Git push')
+      console.log(VipSymbols.success, 'Git push')
       break
 
     case ProgressEvent.NpmScript:
-      console.log(vipSymbols.success, `Npm run ${progress.script}`)
+      console.log(VipSymbols.success, `Npm run ${progress.script}`)
       break
   }
 }

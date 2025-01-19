@@ -2,7 +2,7 @@ import process from 'node:process'
 import path from 'node:path'
 import prompts from 'prompts'
 import { bold, cyan, green } from 'kolorist'
-import { execShell, vipSymbols } from '@142vip/utils'
+import { VipSymbols, execShell } from '@142vip/utils'
 import type { VersionBumpOptions, VersionBumpResults } from '../types'
 import { NpmScript } from '../types'
 import { getNewVersion } from './get-new-version'
@@ -46,7 +46,7 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   await updateFiles(operation)
 
   if (operation.options.changelog) {
-    console.log(vipSymbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
+    console.log(VipSymbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
     try {
       const filePath = path.join(operation.options.cwd, 'CHANGELOG.md')
       const baseCommand = `changelog --output "${filePath}" --name v${operation.state.newVersion}`
@@ -56,18 +56,18 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
         : { command: baseCommand, description: '普通模式，生成CHANGELOG文档' })
     }
     catch (e) {
-      console.log(vipSymbols.error, 'Happen Error In Generate CHANGELOG!!!')
+      console.log(VipSymbols.error, 'Happen Error In Generate CHANGELOG!!!')
       console.log(e)
       process.exit(1)
     }
-    console.log(vipSymbols.success, 'Generate CHANGELOG.md Finished')
+    console.log(VipSymbols.success, 'Generate CHANGELOG.md Finished')
   }
 
   // 执行命令
   if (operation.options.execute) {
-    console.log(vipSymbols.info, 'Executing Script', operation.options.execute)
+    console.log(VipSymbols.info, 'Executing Script', operation.options.execute)
     await execShell({ command: operation.options.execute, description: '执行execute提供的命令' })
-    console.log(vipSymbols.success, 'Script Finished')
+    console.log(VipSymbols.success, 'Script Finished')
   }
 
   // 运行version钩子函数

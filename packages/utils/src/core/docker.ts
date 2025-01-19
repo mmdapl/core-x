@@ -1,7 +1,7 @@
 import * as process from 'node:process'
 import { commandStandardExecutor, execCommand } from './exec'
 import { VipLogger } from './logger'
-import { vipSymbols } from './color'
+import { VipSymbols } from './color'
 
 const vipLog = new VipLogger()
 
@@ -73,11 +73,11 @@ export async function isInstallDocker(args?: DockerOptions) {
   if (args?.logger) {
     const vipLog = new VipLogger()
     if (code === 0) {
-      vipLog.log(`检测到docker，版本信息：\n`, { startLabel: vipSymbols.success })
+      vipLog.log(`检测到docker，版本信息：\n`, { startLabel: VipSymbols.success })
       vipLog.log(stdout)
     }
     else {
-      vipLog.log(`未检测到docker，请先安装!!\n`, { startLabel: vipSymbols.error })
+      vipLog.log(`未检测到docker，请先安装!!\n`, { startLabel: VipSymbols.error })
       vipLog.error(stderr)
     }
   }
@@ -94,11 +94,11 @@ export async function isInstallDockerCompose(args?: DockerOptions) {
   // 打印日志
   if (args?.logger) {
     if (code === 0) {
-      vipLog.log(`检测到docker-compose，版本信息：\n`, { startLabel: vipSymbols.success })
+      vipLog.log(`检测到docker-compose，版本信息：\n`, { startLabel: VipSymbols.success })
       vipLog.log(stdout)
     }
     else {
-      vipLog.log(`未检测到docker-compose，请先安装!!\n`, { startLabel: vipSymbols.error })
+      vipLog.log(`未检测到docker-compose，请先安装!!\n`, { startLabel: VipSymbols.error })
       vipLog.error(stderr)
     }
   }
@@ -139,8 +139,8 @@ export async function buildImage(args: BuildImageDockerOptions) {
   const command = `docker build ${buildArg} ${targetParams} ${memoryParams} -t '${args.imageName}' .`
 
   if (args.logger) {
-    vipLog.log(`执行的命令：\n`, { startLabel: vipSymbols.success })
-    vipLog.log(`${command}\n`, { startLabel: vipSymbols.success })
+    vipLog.log(`执行的命令：\n`, { startLabel: VipSymbols.success })
+    vipLog.log(`${command}\n`, { startLabel: VipSymbols.success })
   }
   vipLog.log(args.imageName, { startLabel: '构建镜像' })
 

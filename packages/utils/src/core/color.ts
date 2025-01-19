@@ -7,17 +7,17 @@ import { create } from 'ansi-colors'
 /**
  * 终端修改颜色
  */
-export const vipColor = create()
+export const VipColor = create()
 
 /**
  * 终端标记
  */
-export const vipSymbols = {
-  success: vipColor.symbols.check,
-  error: vipColor.symbols.cross,
-  warning: vipColor.symbols.warning,
-  info: vipColor.symbols.info,
-  question: vipColor.symbols.question,
-  heart: vipColor.symbols.heart,
-  mark: vipColor.symbols.mark,
+export const VipSymbols = {
+  success: VipColor.symbols.check,
+  error: VipColor.symbols.cross,
+  warning: VipColor.symbols.warning,
+  info: VipColor.symbols.info,
+  question: VipColor.symbols.question,
+  heart: VipColor.symbols.heart,
+  mark: VipColor.symbols.mark,
 }

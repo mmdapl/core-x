@@ -21,6 +21,7 @@ interface CleanUpOptions extends DelOptions {
   turbo?: boolean
   vite?: boolean
   deps?: boolean
+  coverage?: boolean
 }
 
 /**
@@ -58,6 +59,11 @@ async function execCleanUp(args: CleanUpOptions) {
   // 删除vite缓存目录
   if (args.vite) {
     dirPatterns.push(...generateDirPatterns('.vite', args.all))
+  }
+
+  // 删除单元测试目录
+  if (args.coverage) {
+    dirPatterns.push(...generateDirPatterns('coverage', args.all))
   }
 
   if (dirPatterns.length === 0) {
@@ -122,6 +128,7 @@ export async function cleanUpMain(program: VipCommander) {
     .option('--turbo', '删除turbo缓存目录', false)
     .option('--vite', '删除vite缓存目录', false)
     .option('--deps', '删除node_modules目录', false)
+    .option('--coverage', '删除coverage目录', false)
     .option('-f,--force', '强制删除，默认值：false', false)
     .option('--all', '深度删除所有', false)
     .option('--ignore-tips', '忽略提示，直接删除', false)

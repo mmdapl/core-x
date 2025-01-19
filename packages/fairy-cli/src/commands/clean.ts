@@ -1,7 +1,6 @@
 import * as process from 'node:process'
 import { deleteAsync } from 'del'
 import type { VipCommander } from '@142vip/utils'
-import { promptConfirm } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -73,7 +72,7 @@ async function execCleanUp(args: CleanUpOptions) {
 
   // 删除前，对话框确认
   if (!args.ignoreTips) {
-    const deleted = await promptConfirm('是否需要删除?', true)
+    const deleted = await VipInquirer.promptConfirm('是否需要删除?', true)
 
     if (!deleted) {
       // 不删除，非0退出

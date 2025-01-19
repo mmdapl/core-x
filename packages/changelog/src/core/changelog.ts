@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
 import process from 'node:process'
 import { getGitDiff, parseGitCommit } from 'changelogen'
-import { VipCommander, vipColor } from '@142vip/utils'
+import { VipCommander, VipJSON, vipColor } from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -23,9 +22,8 @@ import { ChangelogDefaultConfig } from './config'
 /**
  * 加载配置
  * 将用户自定义配置和默认配置合并
- * @param options
  */
-async function resolveConfig(options: ChangelogOptions) {
+async function resolveConfig(options: ChangelogOptions): Promise<ResolvedChangelogOptions> {
   const { loadConfig } = await import('c12')
   const config = await loadConfig<ChangelogOptions>({
     // 配置文件名，eg: changelog.config.ts
@@ -53,7 +51,7 @@ async function resolveConfig(options: ChangelogOptions) {
   config.scopeName = options.scopeName
 
   if (typeof config.repo !== 'string')
-    throw new Error(`无效的 GitHub 存储库，需要一个字符串，但实际repo参数是： ${JSON.stringify(config.repo)}`)
+    throw new Error(`无效的 GitHub 存储库，需要一个字符串，但实际repo参数是： ${VipJSON.stringify(config.repo)}`)
 
   return config as ResolvedChangelogOptions
 }
@@ -100,14 +98,14 @@ async function generate(options: ChangelogOptions) {
 /**
  * 处理changelog业务
  */
-async function dealChangelog(args: ChangelogOptions) {
+async function dealChangelog(args: ChangelogOptions): Promise<void> {
   args.token = args.token || process.env.GITHUB_TOKEN
 
   let webUrl = ''
 
   try {
     console.log()
-    console.log(vipColor.dim(`${vipColor.bold('@142vip/changelog')} `) + vipColor.dim(`v${packageVersion}`))
+    console.log(vipColor.dim(`${vipColor.bold(packageName)} `) + vipColor.dim(`v${packageVersion}`))
 
     const { config, markdown, commits } = await generate(args)
     webUrl = generateWebUrl(config, markdown)

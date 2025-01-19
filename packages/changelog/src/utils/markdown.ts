@@ -29,11 +29,13 @@ function formatReferences(references: Reference[], baseUrl: string, github: stri
   return referencesString
 }
 
-function formatLine(commit: Commit, options: ResolvedChangelogOptions) {
+function formatLine(commit: Commit, options: ResolvedChangelogOptions): string {
   const prRefs = formatReferences(commit.references, options.baseUrl, options.repo as string, 'issues')
   const hashRefs = formatReferences(commit.references, options.baseUrl, options.repo as string, 'hash')
 
-  let authors = join([...new Set(commit.resolvedAuthors?.map(i => i.login ? `@${i.login}` : `**${i.name}**`))])?.trim()
+  let authors = join([
+    ...new Set(commit.resolvedAuthors?.map(i => i.login ? `@${i.login}` : `**${i.name}**`)),
+  ])?.trim()
 
   if (authors)
     authors = `by ${authors}`
@@ -52,7 +54,7 @@ function formatLine(commit: Commit, options: ResolvedChangelogOptions) {
 /**
  * 格式化标题
  */
-function formatTitle(name: string, options: ResolvedChangelogOptions) {
+function formatTitle(name: string, options: ResolvedChangelogOptions): string {
   // 加表情包
   if (!options.emoji)
     name = name.replace(emojisRE, '')
@@ -63,7 +65,7 @@ function formatTitle(name: string, options: ResolvedChangelogOptions) {
 /**
  * 格式化Section
  */
-function formatSection(commits: Commit[], sectionName: string, options: ResolvedChangelogOptions) {
+function formatSection(commits: Commit[], sectionName: string, options: ResolvedChangelogOptions): string[] {
   if (!commits.length)
     return []
 
@@ -117,7 +119,7 @@ function formatSection(commits: Commit[], sectionName: string, options: Resolved
 /**
  * 生成Markdown文档
  */
-export async function generateMarkdown(commits: Commit[], options: ResolvedChangelogOptions) {
+export async function generateMarkdown(commits: Commit[], options: ResolvedChangelogOptions): Promise<string> {
   const lines: string[] = []
 
   const breaking = commits.filter(c => c.isBreaking)
@@ -173,7 +175,7 @@ function formatDateToYMD(date: Date = new Date()): string {
 /**
  * 更新changelog
  */
-export async function updateChangelog(outputPath: string, markdown: string, releaseVersionName: string) {
+export async function updateChangelog(outputPath: string, markdown: string, releaseVersionName: string): Promise<void> {
   let changelogMD: string
   if (existsSync(outputPath)) {
     console.info(`Updating ${outputPath}`)
@@ -202,7 +204,7 @@ export async function updateChangelog(outputPath: string, markdown: string, rele
 /**
  * 分组
  */
-function groupBy<T>(items: T[], key: string, groups: Record<string, T[]> = {}) {
+function groupBy<T>(items: T[], key: string, groups: Record<string, T[]> = {}): Record<string, T[]> {
   for (const item of items) {
     const v = (item as any)[key] as string
     groups[v] = groups[v] || []
@@ -211,7 +213,7 @@ function groupBy<T>(items: T[], key: string, groups: Record<string, T[]> = {}) {
   return groups
 }
 
-function capitalize(str: string) {
+function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 

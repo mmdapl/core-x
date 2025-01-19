@@ -6,10 +6,7 @@ import type {
   Commit,
 } from '../types'
 
-export async function sendRelease(
-  options: ChangelogOptions,
-  content: string,
-) {
+export async function sendRelease(options: ChangelogOptions, content: string): Promise<void> {
   const headers = getHeaders(options)
   let url = `https://${options.baseUrlApi}/repos/${options.repo}/releases`
   let method = 'POST'
@@ -68,8 +65,7 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
     })
     info.login = data.items[0].login
   }
-  catch {
-  }
+  catch { }
 
   if (info.login)
     return info
@@ -81,8 +77,7 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
       })
       info.login = data.author.login
     }
-    catch {
-    }
+    catch { }
   }
   return info
 }
@@ -133,10 +128,8 @@ export async function resolveAuthors(commits: Commit[], options: ChangelogOption
 
 /**
  * 判断是否有tag
- * @param tag
- * @param options
  */
-export async function hasTagOnGitHub(tag: string, options: ChangelogOptions) {
+export async function hasTagOnGitHub(tag: string, options: ChangelogOptions): Promise<boolean> {
   try {
     await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/git/ref/tags/${tag}`, {
       headers: getHeaders(options),
@@ -151,7 +144,7 @@ export async function hasTagOnGitHub(tag: string, options: ChangelogOptions) {
 /**
  * 生成webUrl链接
  */
-export function generateWebUrl(config: any, markdown: string) {
+export function generateWebUrl(config: any, markdown: string): string {
   const baseUrl = `https://${config.baseUrl}/${config.repo}/releases/new`
   const queryParams = vipQs.stringify({
     title: config.name || config.to,
@@ -166,14 +159,11 @@ export function generateWebUrl(config: any, markdown: string) {
 /**
  * 打印手动发布地址
  * - 默认成功输出
- * @param webUrl
- * @param success
  */
-export function printUrl(webUrl: string, success: boolean = true) {
-  if (success) {
-    console.error(`\n${vipColor.yellow('使用以下链接手动发布新的版本：')}\n${vipColor.yellow(webUrl)}\n`)
-  }
-  else {
-    console.error(`\n${vipColor.red('无法创建发布。使用以下链接手动创建：')}\n${vipColor.yellow(webUrl)}\n`)
-  }
+export function printUrl(webUrl: string, success: boolean = true): void {
+  const errMsg = success
+    ? `\n${vipColor.yellow('使用以下链接手动发布新的版本：')}\n`
+    : `\n${vipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
+
+  console.error(`${errMsg}${vipColor.yellow(webUrl)}\n`)
 }

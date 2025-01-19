@@ -19,6 +19,7 @@ export const ChangelogDefaultConfig: ChangelogOptions = {
   titles: {
     breakingChanges: '🚨 Breaking Changes',
   },
+  // token令牌信息
   tokens: {
     github: process.env.GITHUB_TOKEN || process.env.TOKEN,
   },
@@ -31,6 +32,6 @@ export const ChangelogDefaultConfig: ChangelogOptions = {
 /**
  * 定义配置文件
  */
-export function defineChangelogDefaultConfig(config: ChangelogOptions) {
+export function defineChangelogDefaultConfig(config: ChangelogOptions): ChangelogOptions {
   return config
 }

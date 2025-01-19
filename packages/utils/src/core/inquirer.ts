@@ -8,7 +8,7 @@ import inquirer from 'inquirer'
 /**
  * 终端交互选择，单选
  */
-export async function promptList(choiceList: string[], message?: string): Promise<string> {
+async function promptList(choiceList: string[], message?: string): Promise<string> {
   return (await inquirer.prompt([
     {
       type: 'list',
@@ -23,7 +23,7 @@ export async function promptList(choiceList: string[], message?: string): Promis
 /**
  * 终端交互选择，多选
  */
-export async function promptCheckBox(choiceList: string[], message?: string): Promise<string[]> {
+async function promptCheckBox(choiceList: string[], message?: string): Promise<string[]> {
   return (await inquirer.prompt([
     {
       type: 'checkbox',
@@ -39,7 +39,7 @@ export async function promptCheckBox(choiceList: string[], message?: string): Pr
 /**
  * 终端交互确认，确认框，可配置默认值
  */
-export async function promptConfirm(message: string, defaultValue?: boolean): Promise<boolean> {
+async function promptConfirm(message: string, defaultValue?: boolean): Promise<boolean> {
   return (await inquirer.prompt({
     type: 'confirm',
     name: 'app',
@@ -47,4 +47,10 @@ export async function promptConfirm(message: string, defaultValue?: boolean): Pr
     // 默认值
     ...defaultValue != null ? { default: defaultValue } : {},
   })).app
+}
+
+export const VipInquirer = {
+  promptList,
+  promptCheckBox,
+  promptConfirm,
 }

@@ -1,10 +1,10 @@
-import { promptCheckBox, promptConfirm } from '@142vip/utils'
+import { VipInquirer } from '@142vip/utils'
 
 (async () => {
-  const app = await promptCheckBox([1, 2, 3, 4, 5, 6, 7, 8, 9])
-  console.log('promptCheckBox', app)
+  const app = await VipInquirer.promptCheckBox([1, 2, 3, 4, 5, 6, 7, 8, 9])
+  console.log('VipInquirer.promptCheckBox', app)
 
-  const isClean = await promptConfirm('是否删除?')
-  const isCleanByDefault = await promptConfirm('是否删除?', true)
-  console.log('promptConfirm:', isClean, isCleanByDefault)
+  const isClean = await VipInquirer.promptConfirm('是否删除?')
+  const isCleanByDefault = await VipInquirer.promptConfirm('是否删除?', true)
+  console.log('VipInquirer.promptConfirm:', isClean, isCleanByDefault)
 })()

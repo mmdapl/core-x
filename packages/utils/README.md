@@ -12,10 +12,10 @@ pnpm i @142vip/utils
 ## 使用
 
 ```ts
-import { promptCheckBox } from '@142vip/utils';
+import { VipInquirer } from '@142vip/utils';
 
 (async () => {
-  const result = await promptCheckBox([1, 2, 3, 4, 5, 6, 7, 8, 9])
+  const result = await VipInquirer.promptCheckBox([1, 2, 3, 4, 5, 6, 7, 8, 9])
   console.log('promptCheckBox:', result)
 })()
 ```

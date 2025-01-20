@@ -1,25 +1,21 @@
-function trace(message?: any, ...optionalParams: any[]): void {
-  console.trace(message, optionalParams)
+function trace(message: string = ''): void {
+  console.trace(message)
 }
 
-function info(message?: any, ...optionalParams: any[]): void {
-  console.info(message, optionalParams)
-}
-function log(message?: any, ...optionalParams: any[]): void {
-  console.log(message, optionalParams)
+function log(message: string = ''): void {
+  console.log(message)
 }
 
-function warn(message?: any, ...optionalParams: any[]): void {
-  console.warn(message, optionalParams)
+function warn(message: string = ''): void {
+  console.warn(message)
 }
 
-function error(message?: any, ...optionalParams: any[]): void {
-  console.error(message, optionalParams)
+function error(message: string = ''): void {
+  console.error(message)
 }
 
-export interface VipConsoleI {
+export interface IVipConsole {
   log: typeof log
-  info: typeof info
   warn: typeof warn
   trace: typeof trace
   error: typeof error
@@ -28,9 +24,8 @@ export interface VipConsoleI {
 /**
  * 日志
  */
-export const VipConsole: VipConsoleI = {
+export const VipConsole: IVipConsole = {
   log,
-  info,
   warn,
   trace,
   error,

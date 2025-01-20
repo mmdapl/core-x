@@ -2,6 +2,103 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.21 (2025-01-20)
+
+### ✨ Features
+
+- 增加clean:hooks命令，移除hooks，快速提交远程 &nbsp;-&nbsp; by **chufan** [<samp>(72a8e)</samp>](https://github.com/142vip/core-x/commit/72a8ec2)
+- `egg`插件的`npm`文件清单中增加`config`配置 &nbsp;-&nbsp; by **chufan** [<samp>(9abf8)</samp>](https://github.com/142vip/core-x/commit/9abf8f4)
+- 增加`test`命令支持单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/310 [<samp>(bc3ed)</samp>](https://github.com/142vip/core-x/commit/bc3ed95)
+- `clean`命令增加`coverage`参数，删除单元测试报告 &nbsp;-&nbsp; by **chufan** [<samp>(38871)</samp>](https://github.com/142vip/core-x/commit/38871d4)
+- **@142vip/axios**:
+  - 移除`HttpStatus`枚举，支持`VipAxios`父类封装 &nbsp;-&nbsp; by **chufan** [<samp>(4d717)</samp>](https://github.com/142vip/core-x/commit/4d7172c)
+- **@142vip/changelog**:
+  - 补充类型，移除无用函数，简化逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(faa6d)</samp>](https://github.com/142vip/core-x/commit/faa6dad)
+  - 移除无用开发依赖，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(311a0)</samp>](https://github.com/142vip/core-x/commit/311a0f2)
+  - 使用`VipConsole`改造日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(3cfea)</samp>](https://github.com/142vip/core-x/commit/3cfeacc)
+- **@142vip/egg**:
+  - 完善`SequelizeORM`基础类 &nbsp;-&nbsp; by **chufan** [<samp>(56b37)</samp>](https://github.com/142vip/core-x/commit/56b3795)
+- **@142vip/egg-axios**:
+  - 引入`@142vip/axios`模块，优化拦截器和`axios`对象创建 &nbsp;-&nbsp; by **chufan** [<samp>(34c92)</samp>](https://github.com/142vip/core-x/commit/34c92b0)
+- **@142vip/egg-grpc-client**:
+  - 支持客户端grpc建立连接 &nbsp;-&nbsp; by **chufan** [<samp>(9f96d)</samp>](https://github.com/142vip/core-x/commit/9f96de5)
+- **@142vip/egg-grpc-server**:
+  - 插件模式支持grpc服务端 &nbsp;-&nbsp; by **chufan** [<samp>(364e4)</samp>](https://github.com/142vip/core-x/commit/364e451)
+- **@142vip/egg-sequelize**:
+  - 完善`createEggSequelizeInstance`创建连接 &nbsp;-&nbsp; by **chufan** [<samp>(2792f)</samp>](https://github.com/142vip/core-x/commit/2792fef)
+- **@142vip/fairy-cli**:
+  - `clean`命令增加`--coverage`参数，支持单元测试目录清理 &nbsp;-&nbsp; by **chufan** [<samp>(81a46)</samp>](https://github.com/142vip/core-x/commit/81a46ff)
+  - `cli`入口逻辑优化，使用`VipConsole`增加日志逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(c9cc3)</samp>](https://github.com/142vip/core-x/commit/c9cc355)
+  - 强化`TS`类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(351b5)</samp>](https://github.com/142vip/core-x/commit/351b539)
+- **@142vip/grpc**:
+  - 支持单例模式，grpc客户端、服务端通用方法 &nbsp;-&nbsp; by **chufan** [<samp>(70a42)</samp>](https://github.com/142vip/core-x/commit/70a428d)
+- **@142vip/oauth2.0**:
+  - 增加`Oauth2.0`协议的`StandardOauthV2`类 &nbsp;-&nbsp; by **chufan** [<samp>(43fda)</samp>](https://github.com/142vip/core-x/commit/43fdad4)
+- **@142vip/redis**:
+  - 集成ioredis类 &nbsp;-&nbsp; by **chufan** [<samp>(612ad)</samp>](https://github.com/142vip/core-x/commit/612ad7e)
+- **@142vip/release-version**:
+  - 使用`VipConsole`输出日志 &nbsp;-&nbsp; by **chufan** [<samp>(0cc93)</samp>](https://github.com/142vip/core-x/commit/0cc9304)
+- **@142vip/utils**:
+  - 支持`HttpStatus`、`HttpMethod`枚举 &nbsp;-&nbsp; by **chufan** [<samp>(7c6ec)</samp>](https://github.com/142vip/core-x/commit/7c6ec19)
+  - `vipColor`、`vipSymbols`重命名，大驼峰格式 &nbsp;-&nbsp; by **chufan** [<samp>(a0d22)</samp>](https://github.com/142vip/core-x/commit/a0d22ea)
+  - 封装`VipInquirer`对象，支持`inquirer`功能 &nbsp;-&nbsp; by **chufan** [<samp>(de8c2)</samp>](https://github.com/142vip/core-x/commit/de8c2a0)
+  - 封装`VipDocker`工具，修复引用错误 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/314 [<samp>(4a9bf)</samp>](https://github.com/142vip/core-x/commit/4a9bfed)
+  - `vipQs`重命名`VipQs` &nbsp;-&nbsp; by **chufan** [<samp>(e3500)</samp>](https://github.com/142vip/core-x/commit/e3500d0)
+  - 新增`VipGit`工具，支持`git`相关操作 &nbsp;-&nbsp; by **chufan** [<samp>(f60de)</samp>](https://github.com/142vip/core-x/commit/f60de1a)
+  - 新增`VipConsole`日志工具 &nbsp;-&nbsp; by **chufan** [<samp>(d165e)</samp>](https://github.com/142vip/core-x/commit/d165eff)
+  - 增加`TS`类型支持,`I`开头 &nbsp;-&nbsp; by **chufan** [<samp>(1b2a3)</samp>](https://github.com/142vip/core-x/commit/1b2a3dd)
+  - 结构调整，增加`pkgs`目录统一管理工具包 &nbsp;-&nbsp; by **chufan** [<samp>(3c39b)</samp>](https://github.com/142vip/core-x/commit/3c39bae)
+  - `VipColor`强化类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(729e3)</samp>](https://github.com/142vip/core-x/commit/729e3ca)
+  - 增加`VipNodeJS`，封装`Node.js`基础工具函数 &nbsp;-&nbsp; by **chufan** [<samp>(061cb)</samp>](https://github.com/142vip/core-x/commit/061cbaa)
+  - 优化`VipConsole`日志，支持分级`log`输出 &nbsp;-&nbsp; by **chufan** [<samp>(e696e)</samp>](https://github.com/142vip/core-x/commit/e696e63)
+
+### 🐛 Bug Fixes
+
+- 修复`log`日志异常，替换`info`日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(d82bb)</samp>](https://github.com/142vip/core-x/commit/d82bba0)
+- **@142vip/changelog**:
+  - 修复`vipQs`使用异常 &nbsp;-&nbsp; by **chufan** [<samp>(704eb)</samp>](https://github.com/142vip/core-x/commit/704ebb5)
+- **@142vip/fairy-cli**:
+  - 修复`VipInquirer`模块使用异常 &nbsp;-&nbsp; by **chufan** [<samp>(58912)</samp>](https://github.com/142vip/core-x/commit/589122b)
+- **@142vip/utils**:
+  - 修复log日志工具函数异常 &nbsp;-&nbsp; by **chufan** [<samp>(38261)</samp>](https://github.com/142vip/core-x/commit/38261fa)
+- **deps**:
+  - Update dependency element-plus to v2.9.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/289 [<samp>(cc76f)</samp>](https://github.com/142vip/core-x/commit/cc76f91)
+  - Update dependency egg-scripts to v3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/298 [<samp>(2da43)</samp>](https://github.com/142vip/core-x/commit/2da4345)
+  - Update dependency egg-scripts to v3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/299 [<samp>(aad84)</samp>](https://github.com/142vip/core-x/commit/aad8459)
+  - Update dependency mysql2 to v3.12.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/295 [<samp>(8ae3e)</samp>](https://github.com/142vip/core-x/commit/8ae3ebc)
+  - Update dependency element-plus to v2.9.3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/309 [<samp>(aa6a1)</samp>](https://github.com/142vip/core-x/commit/aa6a1ca)
+
+### 😏 Release Packages
+
+- **@142vip/axios**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(7f95a)</samp>](https://github.com/142vip/core-x/commit/7f95a14)
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(04b2c)</samp>](https://github.com/142vip/core-x/commit/04b2c7f)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(0da45)</samp>](https://github.com/142vip/core-x/commit/0da4597)
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.9` &nbsp;-&nbsp; by **chufan** [<samp>(2444e)</samp>](https://github.com/142vip/core-x/commit/2444ec7)
+- **@142vip/egg**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(ac196)</samp>](https://github.com/142vip/core-x/commit/ac196e3)
+- **@142vip/egg-grpc-client**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(eb216)</samp>](https://github.com/142vip/core-x/commit/eb21606)
+- **@142vip/egg-grpc-server**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(f9945)</samp>](https://github.com/142vip/core-x/commit/f9945b1)
+- **@142vip/egg-sequelize**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(41b1e)</samp>](https://github.com/142vip/core-x/commit/41b1ea0)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.18` &nbsp;-&nbsp; by **chufan** [<samp>(6f9ec)</samp>](https://github.com/142vip/core-x/commit/6f9ec0d)
+- **@142vip/grpc**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(2d17e)</samp>](https://github.com/142vip/core-x/commit/2d17e5d)
+- **@142vip/oauth2.0**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(7e933)</samp>](https://github.com/142vip/core-x/commit/7e93364)
+- **@142vip/redis**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(2e0d4)</samp>](https://github.com/142vip/core-x/commit/2e0d46b)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(b95c9)</samp>](https://github.com/142vip/core-x/commit/b95c986)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(77833)</samp>](https://github.com/142vip/core-x/commit/778334f)
+
+**Release New Version v0.0.1-alpha.21 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.20...v0.0.1-alpha.21)**
+
 ## v0.0.1-alpha.20 (2025-01-06)
 
 ### ✨ Features

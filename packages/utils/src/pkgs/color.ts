@@ -1,4 +1,4 @@
-import { create } from 'ansi-colors'
+import ansiColors from 'ansi-colors'
 
 /**
  * 参考：https://www.npmjs.com/package/ansi-colors
@@ -7,12 +7,22 @@ import { create } from 'ansi-colors'
 /**
  * 终端修改颜色
  */
-export const VipColor = create()
+export const VipColor: typeof ansiColors = ansiColors.create()
+
+export interface IVipSymbols {
+  success: string
+  error: string
+  warning: string
+  info: string
+  question: string
+  heart: string
+  mark: string
+}
 
 /**
  * 终端标记
  */
-export const VipSymbols = {
+export const VipSymbols: IVipSymbols = {
   success: VipColor.symbols.check,
   error: VipColor.symbols.cross,
   warning: VipColor.symbols.warning,

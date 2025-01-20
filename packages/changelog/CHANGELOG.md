@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.9 (2025-01-20)
+
+### ✨ Features
+
+- 补充类型，移除无用函数，简化逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(faa6d)</samp>](https://github.com/142vip/core-x/commit/faa6dad)
+- 移除无用开发依赖，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(311a0)</samp>](https://github.com/142vip/core-x/commit/311a0f2)
+- 使用`VipConsole`改造日志输出 &nbsp;-&nbsp; by **chufan** [<samp>(3cfea)</samp>](https://github.com/142vip/core-x/commit/3cfeacc)
+
+### 🐛 Bug Fixes
+
+- 修复`vipQs`使用异常 &nbsp;-&nbsp; by **chufan** [<samp>(704eb)</samp>](https://github.com/142vip/core-x/commit/704ebb5)
+
+**Release New Version v0.0.1-alpha.9 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.8 (2024-12-12)
 
 ### ✨ Features

@@ -31,13 +31,8 @@ export class VipLogger {
     return this.logger
   }
 
-  public info(msg: string, opts?: LoggerOptions) {
-    const infoText = `${VipColor.green(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
-    console.info(infoText)
-  }
-
   public log(msg: string, opts?: LoggerOptions) {
-    const logText = `${VipColor.blue(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
+    const logText = `${VipColor.green(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
     console.log(logText)
   }
 

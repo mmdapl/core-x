@@ -19,7 +19,7 @@ function parse(str: string, options?: IParseOptions<BooleanOptional> & { decoder
   return qs.parse(str, options)
 }
 
-export const vipQs = {
+export const VipQs = {
   stringify,
   parse,
 }

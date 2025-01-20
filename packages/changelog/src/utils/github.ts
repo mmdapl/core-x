@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch'
-import { VipColor, vipQs } from '@142vip/utils'
+import { VipColor, VipQs } from '@142vip/utils'
 import type {
   AuthorInfo,
   ChangelogOptions,
@@ -146,7 +146,7 @@ export async function hasTagOnGitHub(tag: string, options: ChangelogOptions): Pr
  */
 export function generateWebUrl(config: any, markdown: string): string {
   const baseUrl = `https://${config.baseUrl}/${config.repo}/releases/new`
-  const queryParams = vipQs.stringify({
+  const queryParams = VipQs.stringify({
     title: config.name || config.to,
     body: markdown,
     tag: config.to,

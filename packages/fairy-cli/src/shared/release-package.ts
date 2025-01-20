@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process'
 import process from 'node:process'
 import { versionBump } from '@142vip/release-version'
-import { VipColor, VipSymbols } from '@142vip/utils'
+import { VipColor, VipConsole, VipSymbols } from '@142vip/utils'
 import { getCommitLogs, getLatestTagName } from './git'
 
 interface PackageJSON {
@@ -44,7 +44,7 @@ export function getReleasePkgJSON(filter?: string | string[]) {
     return JSON.parse(packageStr) as Array<PackageJSON>
   }
   catch (error) {
-    console.error('Failed to get the release package name:', error)
+    VipConsole.error('Failed to get the release package name:', error)
     process.exit(1)
   }
 }
@@ -65,21 +65,21 @@ export function printPreCheckRelease(packageNames: string[]) {
     packages.push({ name: packageName, release: isNeedRelease })
   }
 
-  console.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
+  VipConsole.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
   for (const pkg of packages) {
     if (pkg.release) {
-      console.log(VipColor.red(`${VipSymbols.error} ${pkg.name}`))
+      VipConsole.log(VipColor.red(`${VipSymbols.error} ${pkg.name}`))
     }
     else {
-      console.log(VipColor.green(`${VipSymbols.success} ${pkg.name}`))
+      VipConsole.log(VipColor.green(`${VipSymbols.success} ${pkg.name}`))
     }
   }
 
   // 输出空行
-  console.log()
+  VipConsole.log()
 
   if (!isRootRelease) {
-    console.log(`${VipColor.yellow(`${VipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
+    VipConsole.log(`${VipColor.yellow(`${VipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }
 
@@ -108,7 +108,7 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
   const rpCommand = `bumpx --preid alpha --changelog --commit '${commitInfo}'  --execute '${execute}' --scopeName '${pkg.name}' --no-tag --all`
   const command = `pnpm --filter "${pkg.name}" --shell-mode exec "${rpCommand}"`
 
-  console.log('等价命令-->', command)
+  VipConsole.log('等价命令-->', command)
 
   await versionBump({
     preid: 'alpha',
@@ -135,7 +135,7 @@ export async function releaseRoot() {
   const commitInfo = 'chore(release): publish v%s'
   const execute = 'git add CHANGELOG.md'
   const releaseCommand = `npx bumpx --preid alpha --changelog --commit "${commitInfo}" --execute "${execute}" --all`
-  console.log('等价命令-->', releaseCommand)
+  VipConsole.log('等价命令-->', releaseCommand)
   // 执行命令，需要交互 shell执行
   await versionBump({
     preid: 'alpha',

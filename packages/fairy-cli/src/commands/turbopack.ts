@@ -1,7 +1,7 @@
 import fsSync from 'node:fs'
 import * as process from 'node:process'
 import type { VipCommander } from '@142vip/utils'
-import { execShell } from '@142vip/utils'
+import { VipConsole, execShell } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface TurboPackOptions {
@@ -12,7 +12,7 @@ interface TurboPackOptions {
 async function execTurboPack(repoNames: string[], args: TurboPackOptions) {
   // 判断当前目录下是否有turbo.json配置文件
   if (!fsSync.existsSync('turbo.json')) {
-    console.log('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>')
+    VipConsole.log('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>')
     process.exit(1)
   }
 

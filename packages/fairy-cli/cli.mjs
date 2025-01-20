@@ -1,4 +1,3 @@
-// eslint-disable-next-line antfu/no-import-dist
-import { fairyCliMain } from './dist/index.mjs'
+#!/usr/bin/env node
 
-fairyCliMain()
+import './dist/fairy-cli.mjs'

@@ -15,7 +15,7 @@ import {
   turboPackMain,
 } from './commands'
 
-export async function fairyCliMain() {
+async function fairyCliMain(): Promise<void> {
   const program = new VipCommander(name, version)
 
   // fairy-cli create 创建 todo
@@ -52,3 +52,6 @@ export async function fairyCliMain() {
 
   program.parse(process.argv)
 }
+
+// cli程序入口
+void fairyCliMain()

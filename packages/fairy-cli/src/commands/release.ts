@@ -2,7 +2,7 @@ import process from 'node:process'
 import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { VipCommander } from '@142vip/utils'
-import { VipColor, VipInquirer } from '@142vip/utils'
+import { VipColor, VipConsole, VipInquirer } from '@142vip/utils'
 import {
   CliCommandEnum,
   getBranchName,
@@ -46,12 +46,12 @@ async function execNormalRelease(args: ReleaseOptions) {
     // const packageJSONList: string[] = []
     if (!packageJSONList.includes(`${args.package}/package.json`)) {
       // 抛错，提醒用户包在monorepo下找不到
-      console.log('正确')
+      VipConsole.log('正确')
     }
   }
   else {
     // 对话框，用户自行选择
-    console.log('错误')
+    VipConsole.log('错误')
   }
 
   // 指定文件更新版本
@@ -88,12 +88,12 @@ function execVipRelease(args: VipReleaseExtraOptions) {
     ...packageNames,
   ]
   VipInquirer.promptList(choices, `选择需要使用${VipColor.red('Release')}命令发布的模块名称：`)
-    .then(async (packageName) => {
+    .then(async (packageName: string) => {
       // 确认框
       const isRelease = await VipInquirer.promptConfirm(`将对模块${VipColor.green(packageName)}进行版本迭代，是否继续操作？`)
 
       if (!isRelease) {
-        console.log(VipColor.yellow('用户取消发布操作！！'))
+        VipConsole.log(VipColor.yellow('用户取消发布操作！！'))
         process.exit(0)
       }
 
@@ -139,7 +139,7 @@ export async function releaseMain(program: VipCommander) {
       if (args.branch != null) {
         const branchName = getBranchName()
         if (branchName !== args.branch) {
-          console.log(`当前分支是：${branchName} ，版本迭代允许在next分支操作，并推送到远程！！！`)
+          VipConsole.log(`当前分支是：${branchName} ，版本迭代允许在next分支操作，并推送到远程！！！`)
           process.exit(0)
         }
       }

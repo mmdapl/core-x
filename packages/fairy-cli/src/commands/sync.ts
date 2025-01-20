@@ -1,6 +1,7 @@
 import process from 'node:process'
 import fetch from 'node-fetch'
 import type { VipCommander } from '@142vip/utils'
+import { VipConsole } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -43,7 +44,7 @@ async function requestSync(packageName: string) {
   const { ok, id: logId } = await response.json() as RequestSync
 
   if (!ok) {
-    console.log('requestSync--json', await response.json())
+    VipConsole.log('requestSync--json', await response.json())
     process.exit(1)
   }
   setTimeout(async () => {
@@ -69,7 +70,7 @@ async function getPackageSyncState(packageName: string, logId: string) {
   if (stateRes.ok) {
     return stateRes.logUrl
   }
-  console.log('getPackageSyncState-->err', stateRes)
+  VipConsole.log('getPackageSyncState-->err', stateRes)
   process.exit(1)
 }
 
@@ -78,7 +79,7 @@ async function getPackageSyncLog(logUrl: string) {
 
   const syncLog = await response.text()
   // console.log('getPackageSyncLog', syncLog)
-  console.log(syncLog.toString())
+  VipConsole.log(syncLog.toString())
 }
 
 /**
@@ -88,7 +89,7 @@ async function getPackageSyncLog(logUrl: string) {
 async function execSync(packageNames: string[]) {
   for (const packageName of packageNames) {
     setTimeout(async () => {
-      console.log(`---------模块：${packageName} 开始同步 ------- \n`)
+      VipConsole.log(`---------模块：${packageName} 开始同步 ------- \n`)
       await requestSync(packageName)
     }, 1000)
   }

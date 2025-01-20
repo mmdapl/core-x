@@ -1,4 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
+import { VipConsole } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface DeployOptions {
@@ -6,7 +7,7 @@ interface DeployOptions {
 }
 
 function execDeploy(args: DeployOptions) {
-  console.log(args)
+  VipConsole.log(args)
 }
 
 /**
@@ -16,8 +17,7 @@ function execDeploy(args: DeployOptions) {
 function DeployGithubPage() {}
 
 /**
- *
- * @param program
+ * deploy命令
  */
 export async function deployMain(program: VipCommander) {
   program

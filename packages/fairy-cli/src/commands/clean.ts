@@ -1,6 +1,7 @@
 import * as process from 'node:process'
 import { deleteAsync } from 'del'
 import type { VipCommander } from '@142vip/utils'
+import { VipConsole } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -81,7 +82,7 @@ async function execCleanUp(args: CleanUpOptions) {
   }
 
   // 需要删除的目录
-  console.log('删除规则：', dirPatterns)
+  VipConsole.log('删除规则：', dirPatterns)
 
   // 删除
   const deletedDirs = await deleteAsync(dirPatterns, {
@@ -89,7 +90,7 @@ async function execCleanUp(args: CleanUpOptions) {
     force: args.force,
     dot: true,
   })
-  console.log(deletedDirs)
+  VipConsole.log(deletedDirs)
 }
 
 function generateDirPatterns(dirName: string | string[], delAll?: boolean) {

@@ -2,7 +2,7 @@ import process from 'node:process'
 import path from 'node:path'
 import prompts from 'prompts'
 import { bold, cyan, green } from 'kolorist'
-import { VipSymbols, execShell } from '@142vip/utils'
+import { VipConsole, VipSymbols, execShell } from '@142vip/utils'
 import type { VersionBumpOptions, VersionBumpResults } from '../types'
 import { NpmScript } from '../types'
 import { getNewVersion } from './get-new-version'
@@ -46,7 +46,7 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   await updateFiles(operation)
 
   if (operation.options.changelog) {
-    console.log(VipSymbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
+    VipConsole.log(VipSymbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
     try {
       const filePath = path.join(operation.options.cwd, 'CHANGELOG.md')
       const baseCommand = `changelog --output "${filePath}" --name v${operation.state.newVersion}`
@@ -56,18 +56,18 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
         : { command: baseCommand, description: '普通模式，生成CHANGELOG文档' })
     }
     catch (e) {
-      console.log(VipSymbols.error, 'Happen Error In Generate CHANGELOG!!!')
-      console.log(e)
+      VipConsole.log(VipSymbols.error, 'Happen Error In Generate CHANGELOG!!!')
+      VipConsole.log(e)
       process.exit(1)
     }
-    console.log(VipSymbols.success, 'Generate CHANGELOG.md Finished')
+    VipConsole.log(VipSymbols.success, 'Generate CHANGELOG.md Finished')
   }
 
   // 执行命令
   if (operation.options.execute) {
-    console.log(VipSymbols.info, 'Executing Script', operation.options.execute)
+    VipConsole.log(VipSymbols.info, 'Executing Script', operation.options.execute)
     await execShell({ command: operation.options.execute, description: '执行execute提供的命令' })
-    console.log(VipSymbols.success, 'Script Finished')
+    VipConsole.log(VipSymbols.success, 'Script Finished')
   }
 
   // 运行version钩子函数
@@ -107,23 +107,23 @@ export async function versionBumpInfo(arg: VersionBumpOptions | string = {}): Pr
  * 打印参数
  */
 function printSummary(operation: Operation) {
-  console.log()
-  console.log(`   files ${operation.options.files.map(i => bold(i)).join('\n         ')}`)
+  VipConsole.log()
+  VipConsole.log(`   files ${operation.options.files.map(i => bold(i)).join('\n         ')}`)
 
   // 生成CHANGELOG.md文档
   if (operation.options.changelog) {
-    console.log(`  generate CHANGELOG.md`)
+    VipConsole.log(`  generate CHANGELOG.md`)
   }
   if (operation.options.commit)
-    console.log(`  commit ${bold(formatVersionString(operation.options.commit.message, operation.state.newVersion))}`)
+    VipConsole.log(`  commit ${bold(formatVersionString(operation.options.commit.message, operation.state.newVersion))}`)
   if (operation.options.tag)
-    console.log(`     tag ${bold(formatVersionString(operation.options.tag.name, operation.state.newVersion))}`)
+    VipConsole.log(`     tag ${bold(formatVersionString(operation.options.tag.name, operation.state.newVersion))}`)
   if (operation.options.execute)
-    console.log(` execute ${bold(operation.options.execute)}`)
+    VipConsole.log(` execute ${bold(operation.options.execute)}`)
   if (operation.options.push)
-    console.log(`    push ${cyan(bold('yes'))}`)
-  console.log()
-  console.log(`    from ${bold(operation.state.currentVersion)}`)
-  console.log(`      to ${green(bold(operation.state.newVersion))}`)
-  console.log()
+    VipConsole.log(`    push ${cyan(bold('yes'))}`)
+  VipConsole.log()
+  VipConsole.log(`    from ${bold(operation.state.currentVersion)}`)
+  VipConsole.log(`      to ${green(bold(operation.state.newVersion))}`)
+  VipConsole.log()
 }

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.2 (2025-01-20)
+
+### ✨ Features
+
+- 完善`SequelizeORM`基础类 &nbsp;-&nbsp; by **chufan** [<samp>(56b37)</samp>](https://github.com/142vip/core-x/commit/56b3795)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg)**
+
 ## v0.0.1-alpha.1 (2025-01-06)
 
 ### ✨ Features

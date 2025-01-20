@@ -1,4 +1,4 @@
-import type { BooleanOptional, IParseOptions, IStringifyOptions } from 'qs'
+import type { BooleanOptional, IParseOptions, IStringifyOptions, ParsedQs } from 'qs'
 import qs from 'qs'
 
 /**
@@ -6,7 +6,7 @@ import qs from 'qs'
  * @param obj
  * @param options
  */
-function stringify(obj: any, options?: IStringifyOptions<BooleanOptional>) {
+function stringify(obj: any, options?: IStringifyOptions<BooleanOptional>): string {
   return qs.stringify(obj, options)
 }
 
@@ -15,11 +15,16 @@ function stringify(obj: any, options?: IStringifyOptions<BooleanOptional>) {
  * @param str
  * @param options
  */
-function parse(str: string, options?: IParseOptions<BooleanOptional> & { decoder?: never | undefined }) {
+function parse(str: string, options?: IParseOptions<BooleanOptional> & { decoder?: never | undefined }): ParsedQs {
   return qs.parse(str, options)
 }
 
-export const VipQs = {
+export interface IVipQS {
+  stringify: typeof stringify
+  parse: typeof parse
+}
+
+export const VipQs: IVipQS = {
   stringify,
   parse,
 }

@@ -18,7 +18,13 @@ function formatDateToStr(date: Date, template?: string) {
   return dayjs(date).format(template ?? FormatTemplateStr)
 }
 
-export const VipDayjs = {
+export interface IVipDayjs {
+  getCurrentTimestamp: typeof getCurrentTimestamp
+  FormatTemplateStr: typeof FormatTemplateStr
+  formatDateToStr: typeof formatDateToStr
+}
+
+export const VipDayjs: IVipDayjs = {
   getCurrentTimestamp,
   FormatTemplateStr,
   formatDateToStr,

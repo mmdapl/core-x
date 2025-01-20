@@ -30,10 +30,16 @@ function parse<T>(originData: string | undefined | null, defaultData: T): T {
   return JSON.parse(originData)
 }
 
+export interface IVipJSON {
+  clone: typeof clone
+  stringify: typeof stringify
+  parse: typeof parse
+}
+
 /**
  * 处理JSON
  */
-export const VipJSON = {
+export const VipJSON: IVipJSON = {
   clone,
   stringify,
   parse,

@@ -29,7 +29,12 @@ function getRandomId(size?: number): string {
   return nanoid(size)
 }
 
-export const VipNanoId = {
+export interface IVipNanoId {
+  getRandomId: typeof getRandomId
+  getNanoId: typeof getNanoId
+}
+
+export const VipNanoId: IVipNanoId = {
   getRandomId,
   getNanoId,
 }

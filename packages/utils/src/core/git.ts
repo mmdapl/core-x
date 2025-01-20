@@ -26,6 +26,10 @@ async function getRecentGitCommit(): Promise<GitInfo> {
   }
 }
 
-export const VipGit = {
+export interface IVipGit {
+  getRecentGitCommit: typeof getRecentGitCommit
+}
+
+export const VipGit: IVipGit = {
   getRecentGitCommit,
 }

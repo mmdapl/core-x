@@ -205,10 +205,24 @@ async function createContainer(args: CreateContainerOptions) {
   await commandStandardExecutor(command)
 }
 
+export interface IVipDocker {
+  isExistDocker: typeof isExistDocker
+  isExistDockerCompose: typeof isExistDockerCompose
+  isExistImage: typeof isExistImage
+  isExistContainer: typeof isExistContainer
+  deleteImage: typeof deleteImage
+  deletePruneImages: typeof deletePruneImages
+  deleteContainer: typeof deleteContainer
+  pushImage: typeof pushImage
+  buildImage: typeof buildImage
+  createContainer: typeof createContainer
+  scriptExecutor: typeof scriptExecutor
+}
+
 /**
  * docker工具
  */
-export const VipDocker = {
+export const VipDocker: IVipDocker = {
   isExistDocker,
   isExistDockerCompose,
   isExistImage,

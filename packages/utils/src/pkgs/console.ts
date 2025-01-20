@@ -17,10 +17,18 @@ function error(message?: any, ...optionalParams: any[]): void {
   console.error(message, optionalParams)
 }
 
+export interface VipConsoleI {
+  log: typeof log
+  info: typeof info
+  warn: typeof warn
+  trace: typeof trace
+  error: typeof error
+}
+
 /**
  * 日志
  */
-export const VipConsole = {
+export const VipConsole: VipConsoleI = {
   log,
   info,
   warn,

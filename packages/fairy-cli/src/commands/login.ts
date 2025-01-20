@@ -29,7 +29,7 @@ interface DockerOptions extends LoginOptions {
 interface NpmOptions extends Omit<LoginOptions, 'userName' | 'password'> {
 }
 
-async function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
+async function execLogin(platform: LoginPlatformEnum, args: LoginOptions): Promise<void> {
   if (LoginPlatformEnum.DOCKER === platform) {
     await loginDocker(args)
   }
@@ -42,7 +42,7 @@ async function execLogin(platform: LoginPlatformEnum, args: LoginOptions) {
 /**
  * docker 登录
  */
-async function loginDocker(args: DockerOptions) {
+async function loginDocker(args: DockerOptions): Promise<void> {
   let registryUrl = RegistryURLEnum.DOCKER as string
   if (args.registryUrl != null) {
     registryUrl = args.registryUrl
@@ -54,14 +54,17 @@ async function loginDocker(args: DockerOptions) {
   }
 
   //   docker login --username=142vip --password="$password"  registry.cn-hangzhou.aliyuncs.com
-  const command = `docker login ${args.userName != null ? `--username=${args.userName}` : ''} ${args.password != null ? `--password=${args.password}` : ''}${registryUrl}`
+  const command = `docker login ${args.userName != null
+    ? `--username=${args.userName}`
+    : ''} ${args.password != null ? `--password=${args.password}` : ''}${registryUrl}`
+
   await commandStandardExecutor(command)
 }
 
 /**
  * npm 登录
  */
-async function loginNpm(args: NpmOptions) {
+async function loginNpm(args: NpmOptions): Promise<void> {
   let registryUrl = RegistryURLEnum.NPM as string
   if (args.registryUrl != null) {
     registryUrl = args.registryUrl
@@ -78,7 +81,7 @@ async function loginNpm(args: NpmOptions) {
 /**
  * login命令入口
  */
-export async function loginMain(program: VipCommander) {
+export async function loginMain(program: VipCommander): Promise<void> {
   program
     .command(`${CliCommandEnum.LOGIN} <platform>`)
     .description('登录远程平台，支持Docker和Npm')

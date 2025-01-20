@@ -14,7 +14,7 @@ interface InstallOptions {
  * - npm
  * - pnpm
  */
-async function execInstall(args: InstallOptions) {
+async function execInstall(args: InstallOptions): Promise<void> {
   // pnpm i --frozen-lockfile --registry https://registry.npmmirror.com
   // npm ci
   if (args.npm) {
@@ -31,7 +31,7 @@ async function execInstall(args: InstallOptions) {
  * install 命令入口
  * @param program
  */
-export async function installMain(program: VipCommander) {
+export async function installMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.INSTALL)
     .aliases(['i', 'add'])

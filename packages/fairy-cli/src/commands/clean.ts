@@ -28,7 +28,7 @@ interface CleanUpOptions extends DelOptions {
  * 删除文件或文件夹
  * - 恢复项目初始状态
  */
-async function execCleanUp(args: CleanUpOptions) {
+async function execCleanUp(args: CleanUpOptions): Promise<void> {
   const dirPatterns = []
 
   // 删除node_modules
@@ -118,7 +118,7 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
 /**
  * fairy-cli clean 项目清理
  */
-export async function cleanUpMain(program: VipCommander) {
+export async function cleanUpMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CLEAN)
     .description('清除开发、构建等环境下的无用目录')

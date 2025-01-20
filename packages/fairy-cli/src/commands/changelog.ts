@@ -6,11 +6,11 @@ interface ChangelogOptions {
   dry?: boolean
 }
 
-async function generateChangelog(args: ChangelogOptions) {
+async function generateChangelog(args: ChangelogOptions): Promise<void> {
   await commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
 }
 
-export async function changelogMain(program: VipCommander) {
+export async function changelogMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CHANGELOG)
     .description('快速使用@142vip/changelog模块')

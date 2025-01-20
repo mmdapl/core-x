@@ -1,7 +1,6 @@
 import * as process from 'node:process'
 import { VipCommander } from '@142vip/utils'
 import { name, version } from '../package.json'
-
 import {
   changelogMain,
   cleanUpMain,
@@ -50,6 +49,7 @@ async function fairyCliMain(): Promise<void> {
   // fairy-cli clean
   await cleanUpMain(program)
 
+  // 参数解析
   program.parse(process.argv)
 }
 

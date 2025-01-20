@@ -30,7 +30,7 @@ interface RequestSync {
 //   "state": "waiting"
 // }
 
-async function requestSync(packageName: string) {
+async function requestSync(packageName: string): Promise<void> {
   // https://registry-direct.npmmirror.com/-/package/@142vip/vitepress/syncs
   // `https://registry.npmmirror.com/${packageName}/sync`
   const syncUrl = `https://registry-direct.npmmirror.com/-/package/${packageName}/syncs`
@@ -61,7 +61,7 @@ interface SyncState {
   logUrl: string
 }
 
-async function getPackageSyncState(packageName: string, logId: string) {
+async function getPackageSyncState(packageName: string, logId: string): Promise<string> {
   const stateUrl = `https://registry.npmmirror.com/-/package/${packageName}/syncs/${logId}`
   const response = await fetch(stateUrl)
   const stateRes = await response.json() as SyncState
@@ -74,7 +74,7 @@ async function getPackageSyncState(packageName: string, logId: string) {
   process.exit(1)
 }
 
-async function getPackageSyncLog(logUrl: string) {
+async function getPackageSyncLog(logUrl: string): Promise<void> {
   const response = await fetch(logUrl)
 
   const syncLog = await response.text()
@@ -86,7 +86,7 @@ async function getPackageSyncLog(logUrl: string) {
  * 同步到cnpm仓库
  * @param packageNames
  */
-async function execSync(packageNames: string[]) {
+async function execSync(packageNames: string[]): Promise<void> {
   for (const packageName of packageNames) {
     setTimeout(async () => {
       VipConsole.log(`---------模块：${packageName} 开始同步 ------- \n`)

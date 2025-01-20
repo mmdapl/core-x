@@ -17,7 +17,7 @@ interface DockerOptions {
   clean: boolean
 }
 
-async function execPublish(args: PublishOptions) {
+async function execPublish(args: PublishOptions): Promise<void> {
   // npm发包
   if (args.npm) {
     await publishNpm(args)
@@ -33,7 +33,7 @@ async function execPublish(args: PublishOptions) {
  * 发布到docker
  * - 清理本地
  */
-async function publishDocker(args: DockerOptions) {
+async function publishDocker(args: DockerOptions): Promise<void> {
   // docker push xxx
   await execCommand(`docker push ${args.image}`)
 
@@ -46,7 +46,7 @@ async function publishDocker(args: DockerOptions) {
 /**
  * 发布到npm
  */
-async function publishNpm(args: NpmOptions) {
+async function publishNpm(args: NpmOptions): Promise<void> {
   // npm publish --access public --registry  https://registry.npmjs.org
 
   if (args.registry == null) {
@@ -59,7 +59,7 @@ async function publishNpm(args: NpmOptions) {
 /**
  * publish 命令入口
  */
-export async function publishMain(program: VipCommander) {
+export async function publishMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.PUBLISH)
     .description('publish to remote platform，eg. Docker Image & Npm Package')

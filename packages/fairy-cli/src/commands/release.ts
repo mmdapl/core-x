@@ -39,7 +39,7 @@ const defaultRepoName = 'main'
 /**
  * 版本发布
  */
-async function execNormalRelease(args: ReleaseOptions) {
+async function execNormalRelease(args: ReleaseOptions): Promise<void> {
   // 指定包
   if (args.package != null) {
     const packageJSONList = await getPackageListInMonorepo()
@@ -72,7 +72,7 @@ async function execNormalRelease(args: ReleaseOptions) {
 /**
  * 执行142vip开源仓库迭代
  */
-function execVipRelease(args: VipReleaseExtraOptions) {
+function execVipRelease(args: VipReleaseExtraOptions): void {
   // 获取pkg信息
   const pkgJSON = getReleasePkgJSON(args.filter)
   const packageNames = pkgJSON.map(pkg => pkg.name)
@@ -114,7 +114,7 @@ function execVipRelease(args: VipReleaseExtraOptions) {
 /**
  * 功能迭代主功能
  */
-export async function releaseMain(program: VipCommander) {
+export async function releaseMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.RELEASE)
     .description('release npm version')

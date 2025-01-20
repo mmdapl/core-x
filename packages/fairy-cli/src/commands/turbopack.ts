@@ -9,7 +9,7 @@ interface TurboPackOptions {
   build?: boolean
 }
 
-async function execTurboPack(repoNames: string[], args: TurboPackOptions) {
+async function execTurboPack(repoNames: string[], args: TurboPackOptions): Promise<void> {
   // 判断当前目录下是否有turbo.json配置文件
   if (!fsSync.existsSync('turbo.json')) {
     VipConsole.log('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>')
@@ -32,14 +32,14 @@ async function execTurboPack(repoNames: string[], args: TurboPackOptions) {
  * - 支持多个--filter
  * - 支持所有repo
  */
-function getFilterRepo(repoNames: string[]) {
+function getFilterRepo(repoNames: string[]): string {
   return repoNames.map(name => `--filter=${name}`).join(' ')
 }
 
 /**
  * turbo命令入口
  */
-export async function turboPackMain(program: VipCommander) {
+export async function turboPackMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.TURBO)
     .description('TurboPack工具命令')

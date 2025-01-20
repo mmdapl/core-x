@@ -6,7 +6,7 @@ interface DeployOptions {
 
 }
 
-function execDeploy(args: DeployOptions) {
+function execDeploy(args: DeployOptions): void {
   VipConsole.log(args)
 }
 
@@ -19,7 +19,7 @@ function DeployGithubPage() {}
 /**
  * deploy命令
  */
-export async function deployMain(program: VipCommander) {
+export async function deployMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.DEPLOY)
     .description('项目部署')

@@ -22,7 +22,7 @@ interface ValidatePkgJSON {
  * - pnpm 命令： https://pnpm.io/cli/list
  * - filter参数： https://pnpm.io/filtering
  */
-export function getReleasePkgJSON(filter?: string | string[]) {
+export function getReleasePkgJSON(filter?: string | string[]): PackageJSON[] {
   try {
     // 格式： --filter ./packages/*
     let filterRgx = ''
@@ -52,7 +52,7 @@ export function getReleasePkgJSON(filter?: string | string[]) {
 /**
  * 打印模块预检信息
  */
-export function printPreCheckRelease(packageNames: string[]) {
+export function printPreCheckRelease(packageNames: string[]): void {
   // 标记是否能够发布主仓库，前提是所有子模块都进行版本更新
   let isRootRelease = true
   const packages: ValidatePkgJSON[] = []
@@ -87,7 +87,7 @@ export function printPreCheckRelease(packageNames: string[]) {
  * 提交git当前节点到上个tag的所有提交记录
  * 分析、判断是否有公共模块，提醒及时对公共模块发布新的版本号
  */
-function validatePackage(packageNameInCommitScope: string, template?: string) {
+function validatePackage(packageNameInCommitScope: string, template?: string): boolean {
   const latestTag = getLatestTagName()
   const commitLogs = getCommitLogs(latestTag)
 
@@ -102,7 +102,7 @@ function validatePackage(packageNameInCommitScope: string, template?: string) {
  * 更新公共包
  * 生成changelog文档，更新version
  */
-export async function releaseMonorepoPackage(pkg: PackageJSON) {
+export async function releaseMonorepoPackage(pkg: PackageJSON): Promise<void> {
   const commitInfo = `release(${pkg.name}): publish \`v%s\``
   const execute = 'git add CHANGELOG.md'
   const rpCommand = `bumpx --preid alpha --changelog --commit '${commitInfo}'  --execute '${execute}' --scopeName '${pkg.name}' --no-tag --all`
@@ -131,7 +131,7 @@ export async function releaseMonorepoPackage(pkg: PackageJSON) {
  * - 提交commit信息
  * - 标记tag信息
  */
-export async function releaseRoot() {
+export async function releaseRoot(): Promise<void> {
   const commitInfo = 'chore(release): publish v%s'
   const execute = 'git add CHANGELOG.md'
   const releaseCommand = `npx bumpx --preid alpha --changelog --commit "${commitInfo}" --execute "${execute}" --all`

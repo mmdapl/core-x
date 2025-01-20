@@ -6,7 +6,7 @@ interface LintOptions {
   fix: boolean
 }
 
-function execLink(args: LintOptions) {
+function execLink(args: LintOptions): void {
   // 执行eslint校验
   doCodeLint({
     fix: args.fix,
@@ -16,7 +16,7 @@ function execLink(args: LintOptions) {
 /**
  * 代码格式化
  */
-function doCodeLint(args: { fix: boolean }) {
+function doCodeLint(args: { fix: boolean }): void {
   commandStandardExecutor(`npx eslint . ${args.fix ? '--fix' : ''}`)
 }
 
@@ -24,7 +24,7 @@ function doCodeLint(args: { fix: boolean }) {
  * 基于Eslint校验
  * - 参考：eslint-config模块
  */
-export async function lintMain(program: VipCommander) {
+export async function lintMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.LINT)
     .description('根据Eslint检查代码风格，支持代码格式化')

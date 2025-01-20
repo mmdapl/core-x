@@ -165,5 +165,5 @@ export function printUrl(webUrl: string, success: boolean = true): void {
     ? `\n${VipColor.yellow('使用以下链接手动发布新的版本：')}\n`
     : `\n${VipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
 
-  console.error(`${errMsg}${VipColor.yellow(webUrl)}\n`)
+  VipConsole.error(`${errMsg}${VipColor.yellow(webUrl)}\n`)
 }

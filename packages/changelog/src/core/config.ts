@@ -1,4 +1,4 @@
-import process from 'node:process'
+import { VipNodeJS } from '@142vip/utils'
 import type { ChangelogOptions } from '../types'
 
 /**
@@ -21,7 +21,7 @@ export const ChangelogDefaultConfig: ChangelogOptions = {
   },
   // token令牌信息
   tokens: {
-    github: process.env.GITHUB_TOKEN || process.env.TOKEN,
+    github: VipNodeJS.getProcessEnv('GITHUB_TOKEN') || VipNodeJS.getProcessEnv('TOKEN'),
   },
   contributors: true,
   capitalize: true,

@@ -1,6 +1,11 @@
-import process from 'node:process'
 import { getGitDiff, parseGitCommit } from 'changelogen'
-import { VipColor, VipCommander, VipConsole, VipJSON } from '@142vip/utils'
+import {
+  VipColor,
+  VipCommander,
+  VipConsole,
+  VipJSON,
+  VipNodeJS,
+} from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -99,7 +104,7 @@ async function generate(options: ChangelogOptions) {
  * 处理changelog业务
  */
 async function dealChangelog(args: ChangelogOptions): Promise<void> {
-  args.token = args.token || process.env.GITHUB_TOKEN
+  args.token = args.token || VipNodeJS.getProcessEnv('GITHUB_TOKEN')
 
   let webUrl = ''
 
@@ -133,14 +138,14 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
     if (!config.tokens) {
       VipConsole.error(VipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
       printUrl(webUrl)
-      process.exitCode = 1
+      VipNodeJS.exitProcess(1)
       return
     }
 
     if (!commits.length && await isRepoShallow()) {
       VipConsole.error(VipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
       printUrl(webUrl)
-      process.exitCode = 1
+      VipNodeJS.exitProcess(1)
       return
     }
 
@@ -156,7 +161,7 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
     if (webUrl) {
       printUrl(webUrl, false)
     }
-    process.exitCode = 1
+    VipNodeJS.exitProcess(1)
   }
 }
 
@@ -182,5 +187,5 @@ export function changelogMain() {
     })
 
   // 解析参数
-  program.parse(process.argv)
+  program.parse(VipNodeJS.getProcessArgv())
 }

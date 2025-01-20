@@ -1,10 +1,10 @@
-import { existsSync, promises as fsp } from 'node:fs'
 import type { Reference } from 'changelogen'
 import { convert } from 'convert-gitmoji'
-import { VipConsole } from '@142vip/utils'
+import { VipConsole, VipNodeJS } from '@142vip/utils'
 import type { Commit, ResolvedChangelogOptions } from '../types'
 
 const emojisRE = /([\u2700-\u27BF\uE000-\uF8FF\u2011-\u26FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|\uD83E[\uDD10-\uDDFF])/g
+const HeaderContent: string = '# Changelog\n\nAll notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.\n'
 
 function formatReferences(references: Reference[], baseUrl: string, github: string, type: 'issues' | 'hash'): string {
   const refs = references
@@ -178,13 +178,15 @@ function formatDateToYMD(date: Date = new Date()): string {
  */
 export async function updateChangelog(outputPath: string, markdown: string, releaseVersionName: string): Promise<void> {
   let changelogMD: string
-  if (existsSync(outputPath)) {
+  const exit = await VipNodeJS.exitPath(outputPath)
+
+  if (exit) {
     VipConsole.info(`Updating ${outputPath}`)
-    changelogMD = await fsp.readFile(outputPath, 'utf8')
+    changelogMD = await VipNodeJS.readFileToStrByUTF8(outputPath)
   }
   else {
     VipConsole.info(`Creating  ${outputPath}`)
-    changelogMD = '# Changelog\n\nAll notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.\n'
+    changelogMD = HeaderContent
   }
 
   // 添加版本头部
@@ -199,7 +201,8 @@ export async function updateChangelog(outputPath: string, markdown: string, rele
     changelogMD += `\n${newMd}`
   }
 
-  await fsp.writeFile(outputPath, changelogMD, 'utf-8')
+  // 写入文件
+  await VipNodeJS.writeFileByUTF8(outputPath, changelogMD)
 }
 
 /**

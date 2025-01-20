@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.14 (2025-01-20)
+
+### ✨ Features
+
+- 支持`HttpStatus`、`HttpMethod`枚举 &nbsp;-&nbsp; by **chufan** [<samp>(7c6ec)</samp>](https://github.com/142vip/core-x/commit/7c6ec19)
+- `vipColor`、`vipSymbols`重命名，大驼峰格式 &nbsp;-&nbsp; by **chufan** [<samp>(a0d22)</samp>](https://github.com/142vip/core-x/commit/a0d22ea)
+- 封装`VipInquirer`对象，支持`inquirer`功能 &nbsp;-&nbsp; by **chufan** [<samp>(de8c2)</samp>](https://github.com/142vip/core-x/commit/de8c2a0)
+- 封装`VipDocker`工具，修复引用错误 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/314 [<samp>(4a9bf)</samp>](https://github.com/142vip/core-x/commit/4a9bfed)
+- `vipQs`重命名`VipQs` &nbsp;-&nbsp; by **chufan** [<samp>(e3500)</samp>](https://github.com/142vip/core-x/commit/e3500d0)
+- 新增`VipGit`工具，支持`git`相关操作 &nbsp;-&nbsp; by **chufan** [<samp>(f60de)</samp>](https://github.com/142vip/core-x/commit/f60de1a)
+- 新增`VipConsole`日志工具 &nbsp;-&nbsp; by **chufan** [<samp>(d165e)</samp>](https://github.com/142vip/core-x/commit/d165eff)
+- 增加`TS`类型支持,`I`开头 &nbsp;-&nbsp; by **chufan** [<samp>(1b2a3)</samp>](https://github.com/142vip/core-x/commit/1b2a3dd)
+- 结构调整，增加`pkgs`目录统一管理工具包 &nbsp;-&nbsp; by **chufan** [<samp>(3c39b)</samp>](https://github.com/142vip/core-x/commit/3c39bae)
+- `VipColor`强化类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(729e3)</samp>](https://github.com/142vip/core-x/commit/729e3ca)
+- 增加`VipNodeJS`，封装`Node.js`基础工具函数 &nbsp;-&nbsp; by **chufan** [<samp>(061cb)</samp>](https://github.com/142vip/core-x/commit/061cbaa)
+- 优化`VipConsole`日志，支持分级`log`输出 &nbsp;-&nbsp; by **chufan** [<samp>(e696e)</samp>](https://github.com/142vip/core-x/commit/e696e63)
+
+### 🐛 Bug Fixes
+
+- 修复log日志工具函数异常 &nbsp;-&nbsp; by **chufan** [<samp>(38261)</samp>](https://github.com/142vip/core-x/commit/38261fa)
+
+**Release New Version v0.0.1-alpha.14 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.13 (2025-01-06)
 
 ### ✨ Features

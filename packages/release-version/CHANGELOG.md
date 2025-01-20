@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.10 (2025-01-20)
+
+### ✨ Features
+
+- 使用`VipConsole`输出日志 &nbsp;-&nbsp; by **chufan** [<samp>(0cc93)</samp>](https://github.com/142vip/core-x/commit/0cc9304)
+
+**Release New Version v0.0.1-alpha.10 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/release-version)**
+
 ## v0.0.1-alpha.9 (2024-09-12)
 
 ### ✨ Features

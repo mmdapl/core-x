@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch'
-import { VipColor, VipConsole, VipQs } from '@142vip/utils'
+import { HttpMethod, VipColor, VipConsole, VipQs } from '@142vip/utils'
 import type {
   AuthorInfo,
   ChangelogOptions,
@@ -32,10 +32,13 @@ export async function sendRelease(options: ChangelogOptions, content: string): P
     prerelease: options.prerelease,
     tag_name: options.to,
   }
-  VipConsole.log(VipColor.cyan(method === 'POST'
-    ? 'Creating release notes...'
-    : 'Updating release notes...'),
-  )
+  if (method === HttpMethod.POST) {
+    VipConsole.log(VipColor.cyan('Creating release notes...'))
+  }
+  else {
+    VipConsole.log(VipColor.cyan('Updating release notes...'))
+  }
+
   const res = await $fetch(url, {
     method,
     body: JSON.stringify(body),

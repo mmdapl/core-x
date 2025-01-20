@@ -28,7 +28,7 @@ function createEggGrpcClientInstance(pluginConfig, app) {
   }
 
   const clientService = grpcClient.getService()
-  pluginLogger.info('plugin init')
+  pluginLogger.log('plugin init')
 
   return clientService
 }

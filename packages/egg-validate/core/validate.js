@@ -17,7 +17,7 @@ function createEggValidateInstance(pluginConfig, app) {
     pluginLogger.error(e.message)
   }
 
-  pluginLogger.info('plugin init')
+  pluginLogger.log('plugin init')
 }
 
 module.exports = {

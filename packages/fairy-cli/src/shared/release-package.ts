@@ -44,7 +44,7 @@ export function getReleasePkgJSON(filter?: string | string[]): PackageJSON[] {
     return JSON.parse(packageStr) as Array<PackageJSON>
   }
   catch (error) {
-    VipConsole.error('Failed to get the release package name:', error)
+    console.error('Failed to get the release package name:', error)
     process.exit(1)
   }
 }
@@ -108,7 +108,7 @@ export async function releaseMonorepoPackage(pkg: PackageJSON): Promise<void> {
   const rpCommand = `bumpx --preid alpha --changelog --commit '${commitInfo}'  --execute '${execute}' --scopeName '${pkg.name}' --no-tag --all`
   const command = `pnpm --filter "${pkg.name}" --shell-mode exec "${rpCommand}"`
 
-  VipConsole.log('等价命令-->', command)
+  VipConsole.log(`等价命令-->${command}`)
 
   await versionBump({
     preid: 'alpha',
@@ -135,7 +135,7 @@ export async function releaseRoot(): Promise<void> {
   const commitInfo = 'chore(release): publish v%s'
   const execute = 'git add CHANGELOG.md'
   const releaseCommand = `npx bumpx --preid alpha --changelog --commit "${commitInfo}" --execute "${execute}" --all`
-  VipConsole.log('等价命令-->', releaseCommand)
+  VipConsole.log(`等价命令-->${releaseCommand}`)
   // 执行命令，需要交互 shell执行
   await versionBump({
     preid: 'alpha',

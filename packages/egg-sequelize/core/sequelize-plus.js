@@ -10,7 +10,7 @@ module.exports = (app) => {
     logging(...args) {
       // if benchmark enabled, log used
       const used = typeof args[1] === 'number' ? `(${args[1]}ms)` : ''
-      app.logger.info('[egg-sequelize-plus]%s %s', used, args[0])
+      app.logger.log('[egg-sequelize-plus]%s %s', used, args[0])
     },
     // host: 'localhost',
     // port: 3306,

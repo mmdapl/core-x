@@ -30,7 +30,7 @@ function getTagWithoutPrefix(tag: string): string {
   return tag.replace(/^v/, '')
 }
 
-export async function getLastMatchingTag(inputTag: string) {
+export async function getLastMatchingTag(inputTag: string): Promise<string | undefined> {
   const inputTagWithoutPrefix = getTagWithoutPrefix(inputTag)
   const isVersion = semver.valid(inputTagWithoutPrefix) !== null
   const isPrerelease = semver.prerelease(inputTag) !== null

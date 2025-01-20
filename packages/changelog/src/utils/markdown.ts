@@ -181,11 +181,11 @@ export async function updateChangelog(outputPath: string, markdown: string, rele
   const exit = await VipNodeJS.exitPath(outputPath)
 
   if (exit) {
-    VipConsole.info(`Updating ${outputPath}`)
+    VipConsole.log(`Updating ${outputPath}`)
     changelogMD = await VipNodeJS.readFileToStrByUTF8(outputPath)
   }
   else {
-    VipConsole.info(`Creating  ${outputPath}`)
+    VipConsole.log(`Creating  ${outputPath}`)
     changelogMD = HeaderContent
   }
 

@@ -23,7 +23,7 @@ export class VipEggPluginLogger {
     return this.instance
   }
 
-  public info(message: string) {
+  public log(message: string) {
     this.logger.info(`[${this.pkgName}] ${message}`)
   }
 

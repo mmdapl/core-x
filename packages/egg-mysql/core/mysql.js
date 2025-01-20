@@ -30,7 +30,7 @@ async function createEggMysqlInstance(pluginConfig, app) {
   const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
   try {
     const client = await creatPool(pluginConfig)
-    pluginLogger.info(`dataBase create success , the name is ${pluginConfig.database}`)
+    pluginLogger.log(`dataBase create success , the name is ${pluginConfig.database}`)
     return client
   }
 

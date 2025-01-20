@@ -7,7 +7,7 @@ async function createEggGrpcServerInstance(pluginConfig, app) {
   const grpcServer = GrpcServer.getInstance()
   const { connectUri, protoPaths, loaderOptions } = pluginConfig
   try {
-    pluginLogger.info(`GrpcServer create success , the name is ${pluginConfig.name}`)
+    pluginLogger.log(`GrpcServer create success , the name is ${pluginConfig.name}`)
 
     for (const protoPath of protoPaths) {
       const protoLoader = ProtoLoader.getInstance(protoPath, loaderOptions)

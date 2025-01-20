@@ -1,5 +1,5 @@
 import { VipNodeJS } from '@142vip/utils'
-import type { ChangelogOptions } from '../types'
+import type { ChangelogOptions } from './types'
 
 /**
  * 默认配置

@@ -20,7 +20,7 @@ class EggRedis {
   }
 
   _createClient() {
-    this.pluginLogger.info('plugin init successful!')
+    this.pluginLogger.log('plugin init successful!')
 
     let redisClient
     // 集群模式
@@ -39,7 +39,7 @@ class EggRedis {
      */
 
     redisClient.on('connect', () => {
-      this.pluginLogger.info('client connect success')
+      this.pluginLogger.log('client connect success')
     })
     redisClient.on('error', (err) => {
       this.pluginLogger.error('client error: %s', err)
@@ -54,10 +54,10 @@ class EggRedis {
     const config = this.config
     assert((config.host && config.port && config.password !== undefined && config.db !== undefined) || config.path, `'host: ${config.host}', 'port: ${config.port}', 'password: ${config.password}', 'db: ${config.db}' or 'path:${config.path}' are required on config`)
     if (config.host) {
-      this.pluginLogger.info('server connecting redis://:***@%s:%s/%s', config.host, config.port, config.db)
+      this.pluginLogger.log('server connecting redis://:***@%s:%s/%s', config.host, config.port, config.db)
     }
     else {
-      this.pluginLogger.info('server connecting %s start', config.path || config)
+      this.pluginLogger.log('server connecting %s start', config.path || config)
     }
 
     return new this.RedisClass(config)
@@ -77,7 +77,7 @@ class EggRedis {
 
     // assert(config.name && config.password !== undefined && config.db !== undefined, `'name of master: ${config.name}', 'password: ${config.password}', 'db: ${config.db}' are required on config`)
 
-    this.pluginLogger.info('sentinel connecting start')
+    this.pluginLogger.log('sentinel connecting start')
 
     return new this.RedisClass({
       sentinels: sentinelsOptions,
@@ -95,7 +95,7 @@ class EggRedis {
     clusterNodes.forEach((client) => {
       assert(client.host && client.port, `'host: ${client.host}', 'port: ${client.port}' are required on config`)
     })
-    this.pluginLogger.info('cluster connecting start')
+    this.pluginLogger.log('cluster connecting start')
 
     return new this.RedisClass.Cluster(clusterNodes, clusterOptions)
   }
@@ -110,7 +110,7 @@ function createRedisInstance(pluginConfig, app) {
   const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
   try {
     const client = EggRedis.getInstance(pluginConfig, app)
-    pluginLogger.info(``)
+    pluginLogger.log(``)
     return client
   }
 

@@ -6,7 +6,7 @@ import {
   VipJSON,
   VipNodeJS,
 } from '@142vip/utils'
-import { name as packageName, version as packageVersion } from '../../package.json'
+import { name as packageName, version as packageVersion } from '../package.json'
 import {
   generateMarkdown,
   generateWebUrl,
@@ -20,8 +20,8 @@ import {
   resolveAuthors,
   sendRelease,
   updateChangelog,
-} from '../utils'
-import type { ChangelogOptions, ResolvedChangelogOptions } from '../types'
+} from './utils'
+import type { ChangelogOptions, ResolvedChangelogOptions } from './types'
 import { ChangelogDefaultConfig } from './config'
 
 /**
@@ -72,7 +72,6 @@ async function generate(options: ChangelogOptions) {
   // 发布子模块时，需要考虑根模块迭代一个版本，子模块迭代多个版本但只需要记录一个版本
   let newRawCommits = []
   if (options.scopeName != null) {
-    VipConsole.log(`chore(${options.scopeName})`, rawCommits)
     for (const rawCommit of rawCommits) {
       if (rawCommit.message.includes(`release(${options.scopeName})`)) {
         break
@@ -116,6 +115,7 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
     webUrl = generateWebUrl(config, markdown)
 
     VipConsole.log(VipColor.cyan(config.from) + VipColor.dim(' -> ') + VipColor.blue(config.to) + VipColor.dim(` (${commits.length} commits)`))
+    VipConsole.log()
     VipConsole.log(VipColor.dim('--------------'))
     VipConsole.log()
     VipConsole.log(markdown.replace(/&nbsp;/g, ''))
@@ -168,7 +168,7 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
 /**
  * cli 入口
  */
-export function changelogMain() {
+export function changelogMain(): void {
   const program = new VipCommander(packageName, packageVersion)
 
   // cli参数
@@ -176,7 +176,7 @@ export function changelogMain() {
     .option('-t, --tokens <path>', 'GitHub Token')
     .option('--from <ref>', 'From tag')
     .option('--to <ref>', 'To tag')
-    .option('--github <path>', 'GitHub Repository, e.g. @142vip/core-x')
+    .option('--github <path>', 'GitHub Repository, eg. @142vip/core-x')
     .option('--name <name>', 'Name of the release')
     .option('--prerelease', 'Mark release as prerelease')
     .option('--output <path>', 'Output to file instead of sending to GitHub')
@@ -189,3 +189,5 @@ export function changelogMain() {
   // 解析参数
   program.parse(VipNodeJS.getProcessArgv())
 }
+
+changelogMain()

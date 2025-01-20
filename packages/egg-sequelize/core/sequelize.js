@@ -14,7 +14,7 @@ async function createEggSequelizeInstance(pluginConfig, app) {
   // 判断是否连接
   try {
     await authenticateRetry(sequelize, Max_Retry_Count)
-    pluginLogger.info('连接成功！！！')
+    pluginLogger.log('连接成功！！！')
   }
   catch (error) {
     pluginLogger.error(error)
@@ -26,7 +26,7 @@ async function createEggSequelizeInstance(pluginConfig, app) {
   async function authenticateRetry(sequelizeConnect, Max_Retry_Count) {
     try {
       await sequelizeConnect.authenticate()
-      pluginLogger.info('plugin init')
+      pluginLogger.log('plugin init')
     }
     catch (e) {
       // 过滤掉sequelize报错
@@ -39,7 +39,7 @@ async function createEggSequelizeInstance(pluginConfig, app) {
       }
 
       pluginLogger.warn(`Sequelize Error: ${e.message}, sleep 2 seconds to retry...`)
-      pluginLogger.info('plugin init')
+      pluginLogger.log('plugin init')
       await authenticateRetry(sequelizeConnect, --Max_Retry_Count)
     }
   }

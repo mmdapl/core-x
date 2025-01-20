@@ -46,28 +46,28 @@ export async function versionBump(arg: (VersionBumpOptions) | string = {}): Prom
   await updateFiles(operation)
 
   if (operation.options.changelog) {
-    VipConsole.log(VipSymbols.info, 'Generate CHANGELOG.md By @142vip/changelog', operation.options.execute)
+    VipConsole.log(`${VipSymbols.info} Generate CHANGELOG.md By @142vip/changelog ${operation.options.execute}`)
     try {
       const filePath = path.join(operation.options.cwd, 'CHANGELOG.md')
-      const baseCommand = `changelog --output "${filePath}" --name v${operation.state.newVersion}`
+      const baseCommand = `npx changelog --output "${filePath}" --name v${operation.state.newVersion}`
       // 支持monorepo子模块
       await execShell(operation.options.scopeName != null
         ? { command: `${baseCommand} --scopeName ${operation.options.scopeName}`, description: `MonoRepo模式，生成${operation.options.scopeName}模块的CHANGELOG文档` }
         : { command: baseCommand, description: '普通模式，生成CHANGELOG文档' })
     }
     catch (e) {
-      VipConsole.log(VipSymbols.error, 'Happen Error In Generate CHANGELOG!!!')
-      VipConsole.log(e)
+      VipConsole.log(`${VipSymbols.error} Happen Error In Generate CHANGELOG!!!`)
+      console.log(e)
       process.exit(1)
     }
-    VipConsole.log(VipSymbols.success, 'Generate CHANGELOG.md Finished')
+    VipConsole.log(`${VipSymbols.success} Generate CHANGELOG.md Finished`)
   }
 
   // 执行命令
   if (operation.options.execute) {
-    VipConsole.log(VipSymbols.info, 'Executing Script', operation.options.execute)
+    VipConsole.log(`${VipSymbols.info} Executing Script ${operation.options.execute}`)
     await execShell({ command: operation.options.execute, description: '执行execute提供的命令' })
-    VipConsole.log(VipSymbols.success, 'Script Finished')
+    VipConsole.log(`${VipSymbols.success} Script Finished`)
   }
 
   // 运行version钩子函数

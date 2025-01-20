@@ -1,4 +1,4 @@
-import { VipColor } from './color'
+import { VipColor } from '../pkgs/color'
 
 export interface LoggerOptions {
   startLabel?: string

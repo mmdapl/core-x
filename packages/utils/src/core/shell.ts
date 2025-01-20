@@ -1,7 +1,7 @@
 import { name, version } from '../../package.json'
+import { VipColor } from '../pkgs/color'
 import { execCommand } from './exec'
 import { VipLogger } from './logger'
-import { VipColor } from './color'
 
 export interface ShellCommand {
   command: string

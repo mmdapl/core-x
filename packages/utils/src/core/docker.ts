@@ -1,7 +1,7 @@
 import * as process from 'node:process'
+import { VipSymbols } from '../pkgs/color'
 import { commandStandardExecutor, execCommand } from './exec'
 import { VipLogger } from './logger'
-import { VipSymbols } from './color'
 
 const vipLog = new VipLogger()
 

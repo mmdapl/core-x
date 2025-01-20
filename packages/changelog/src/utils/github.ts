@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch'
-import { VipColor, VipQs } from '@142vip/utils'
+import { VipColor, VipConsole, VipQs } from '@142vip/utils'
 import type {
   AuthorInfo,
   ChangelogOptions,
@@ -32,7 +32,7 @@ export async function sendRelease(options: ChangelogOptions, content: string): P
     prerelease: options.prerelease,
     tag_name: options.to,
   }
-  console.log(VipColor.cyan(method === 'POST'
+  VipConsole.log(VipColor.cyan(method === 'POST'
     ? 'Creating release notes...'
     : 'Updating release notes...'),
   )
@@ -41,7 +41,7 @@ export async function sendRelease(options: ChangelogOptions, content: string): P
     body: JSON.stringify(body),
     headers,
   })
-  console.log(VipColor.green(`Released on ${res.html_url}`))
+  VipConsole.log(VipColor.green(`Released on ${res.html_url}`))
 }
 
 function getHeaders(options: ChangelogOptions) {

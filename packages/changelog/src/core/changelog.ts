@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { getGitDiff, parseGitCommit } from 'changelogen'
-import { VipColor, VipCommander, VipJSON } from '@142vip/utils'
+import { VipColor, VipCommander, VipConsole, VipJSON } from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../../package.json'
 import {
   generateMarkdown,
@@ -67,7 +67,7 @@ async function generate(options: ChangelogOptions) {
   // 发布子模块时，需要考虑根模块迭代一个版本，子模块迭代多个版本但只需要记录一个版本
   let newRawCommits = []
   if (options.scopeName != null) {
-    console.log(`chore(${options.scopeName})`, rawCommits)
+    VipConsole.log(`chore(${options.scopeName})`, rawCommits)
     for (const rawCommit of rawCommits) {
       if (rawCommit.message.includes(`release(${options.scopeName})`)) {
         break
@@ -104,21 +104,21 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
   let webUrl = ''
 
   try {
-    console.log()
-    console.log(VipColor.dim(`${VipColor.bold(packageName)} `) + VipColor.dim(`v${packageVersion}`))
+    VipConsole.log()
+    VipConsole.log(VipColor.dim(`${VipColor.bold(packageName)} `) + VipColor.dim(`v${packageVersion}`))
 
     const { config, markdown, commits } = await generate(args)
     webUrl = generateWebUrl(config, markdown)
 
-    console.log(VipColor.cyan(config.from) + VipColor.dim(' -> ') + VipColor.blue(config.to) + VipColor.dim(` (${commits.length} commits)`))
-    console.log(VipColor.dim('--------------'))
-    console.log()
-    console.log(markdown.replace(/&nbsp;/g, ''))
-    console.log()
-    console.log(VipColor.dim('--------------'))
+    VipConsole.log(VipColor.cyan(config.from) + VipColor.dim(' -> ') + VipColor.blue(config.to) + VipColor.dim(` (${commits.length} commits)`))
+    VipConsole.log(VipColor.dim('--------------'))
+    VipConsole.log()
+    VipConsole.log(markdown.replace(/&nbsp;/g, ''))
+    VipConsole.log()
+    VipConsole.log(VipColor.dim('--------------'))
 
     if (config.dry) {
-      console.log(VipColor.yellow('试运行。已跳过版本发布。'))
+      VipConsole.log(VipColor.yellow('试运行。已跳过版本发布。'))
       printUrl(webUrl)
       return
     }
@@ -131,14 +131,14 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
 
     // 带token上传
     if (!config.tokens) {
-      console.error(VipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
+      VipConsole.error(VipColor.red('未找到 GitHub 令牌，请通过 GITHUB_TOKEN 环境变量指定。已跳过版本发布。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
     }
 
     if (!commits.length && await isRepoShallow()) {
-      console.error(VipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
+      VipConsole.error(VipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
       printUrl(webUrl)
       process.exitCode = 1
       return
@@ -148,9 +148,9 @@ async function dealChangelog(args: ChangelogOptions): Promise<void> {
     await sendRelease(config, markdown)
   }
   catch (e: any) {
-    console.error(VipColor.red(String(e)))
+    VipConsole.error(VipColor.red(String(e)))
     if (e?.stack)
-      console.error(VipColor.dim(e.stack?.split('\n').slice(1).join('\n')))
+      VipConsole.error(VipColor.dim(e.stack?.split('\n').slice(1).join('\n')))
 
     // 手动执行，创建release
     if (webUrl) {

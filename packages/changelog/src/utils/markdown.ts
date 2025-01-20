@@ -1,6 +1,7 @@
 import { existsSync, promises as fsp } from 'node:fs'
 import type { Reference } from 'changelogen'
 import { convert } from 'convert-gitmoji'
+import { VipConsole } from '@142vip/utils'
 import type { Commit, ResolvedChangelogOptions } from '../types'
 
 const emojisRE = /([\u2700-\u27BF\uE000-\uF8FF\u2011-\u26FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|\uD83E[\uDD10-\uDDFF])/g
@@ -178,11 +179,11 @@ function formatDateToYMD(date: Date = new Date()): string {
 export async function updateChangelog(outputPath: string, markdown: string, releaseVersionName: string): Promise<void> {
   let changelogMD: string
   if (existsSync(outputPath)) {
-    console.info(`Updating ${outputPath}`)
+    VipConsole.info(`Updating ${outputPath}`)
     changelogMD = await fsp.readFile(outputPath, 'utf8')
   }
   else {
-    console.info(`Creating  ${outputPath}`)
+    VipConsole.info(`Creating  ${outputPath}`)
     changelogMD = '# Changelog\n\nAll notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.\n'
   }
 

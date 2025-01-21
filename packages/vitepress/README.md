@@ -12,6 +12,14 @@ pnpm i @142vip/vitepress -D
 pnpm i vitepress -D
 ```
 
+## 功能
+
+- [x] 搜索配置
+- [x] i18n中文配置
+- [x] 主题配置
+- [x] 自定义主题配置
+- [x] 封装element-ui组件
+
 ## 参考
 
 - [支持Vue组件](https://github.com/unjs/unbuild/issues/80)

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1-alpha.13",
   "private": false,
-  "description": "公众号搜：储凡",
+  "description": "基于vitepress框架搭建静态站点的常用工具包，提供ElementPlus相关组件和主题",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
   "homepage": "https://github.com/142vip/core-x/tree/main/packages/vitepress",
@@ -16,7 +16,9 @@
     "142vip",
     "@142vip",
     "@142vip/vitepress",
-    "@142vip/vuepress"
+    "vitepress",
+    "@142vip/vuepress",
+    "vuepress"
   ],
   "sideEffects": false,
   "exports": {
@@ -44,9 +46,6 @@
     "dist",
     "theme.d.ts"
   ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
   "scripts": {
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
@@ -56,12 +55,12 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "element-plus": "^2.8.8",
-    "vitepress": "^1.5.0",
-    "vue": "^3.5.13"
+    "element-plus": "2.8.8",
+    "vitepress": "1.5.0",
+    "vue": "3.5.13"
   },
   "devDependencies": {
-    "mkdist": "^2.0.0",
-    "unplugin-element-plus": "^0.9.0"
+    "mkdist": "2.0.0",
+    "unplugin-element-plus": "0.9.0"
   }
 }

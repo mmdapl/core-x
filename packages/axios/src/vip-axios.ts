@@ -33,14 +33,17 @@ export class VipAxios {
     return this.axiosInstance
   }
 
-  public getAxiosConfig() {
+  /**
+   * 获取配置
+   */
+  public getAxiosConfig(): CreateAxiosDefaults {
     return this.config
   }
 
   /**
    * 清除拦截器
    */
-  public clearInterceptor(type: InterceptorType) {
+  public clearInterceptor(type: InterceptorType): void {
     // 移除请求拦截器
     if (type === InterceptorType.REQUEST) {
       this.axiosInstance.interceptors.request.clear()

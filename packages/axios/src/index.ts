@@ -6,7 +6,6 @@ export * from './vip-axios'
 
 /**
  * 创建axios实例
- * @param config
  */
 export function createAxiosInstance(config: CreateAxiosDefaults): AxiosInstance {
   const vipAxios = VipAxios.getInstance(config)

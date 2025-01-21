@@ -13,7 +13,7 @@ pnpm i @142vip/axios
 
 - [x] 封装`VipAxios`父类
 - [x] `createAxiosInstance`函数
-- [x] 拦截器
+- [x] 提供默认拦截器函数，支持自定义拦截器
 
 ```ts
 const axiosConfig = {}

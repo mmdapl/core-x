@@ -18,14 +18,24 @@ function formatDateToStr(date: Date, template?: string) {
   return dayjs(date).format(template ?? FormatTemplateStr)
 }
 
+/**
+ * 年月日格式化当前时间
+ * - 格式： 2024-08-09
+ */
+function formatDateToYMD(): string {
+  return formatDateToStr(new Date(), 'YYYY-MM-DD')
+}
+
 export interface IVipDayjs {
   getCurrentTimestamp: typeof getCurrentTimestamp
   FormatTemplateStr: typeof FormatTemplateStr
   formatDateToStr: typeof formatDateToStr
+  formatDateToYMD: typeof formatDateToYMD
 }
 
 export const VipDayjs: IVipDayjs = {
   getCurrentTimestamp,
   FormatTemplateStr,
   formatDateToStr,
+  formatDateToYMD,
 }

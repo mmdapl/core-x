@@ -1,60 +1,19 @@
 import { $fetch } from 'ofetch'
-import { HttpMethod, VipColor, VipConsole, VipQs } from '@142vip/utils'
-import type {
-  AuthorInfo,
-  ChangelogOptions,
-  Commit,
-} from '../types'
+import { VipColor, VipConsole, VipQs } from '@142vip/utils'
+import type { Commit, GitAuthorInfo } from '../changelog.interface'
 
-export async function sendRelease(options: ChangelogOptions, content: string): Promise<void> {
-  const headers = getHeaders(options)
-  let url = `https://${options.baseUrlApi}/repos/${options.repo}/releases`
-  let method = 'POST'
-
-  // 存在tag则更新
-  try {
-    const exists = await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/releases/tags/${options.to}`, {
-      headers,
-    })
-    if (exists.url) {
-      url = exists.url
-      method = 'PATCH'
-    }
-  }
-  catch {
-    // 预发布存在异常，fix CI err
-  }
-
-  const body = {
-    body: content,
-    draft: options.draft || false,
-    name: options.name || options.to,
-    prerelease: options.prerelease,
-    tag_name: options.to,
-  }
-  if (method === HttpMethod.POST) {
-    VipConsole.log(VipColor.cyan('Creating release notes...'))
-  }
-  else {
-    VipConsole.log(VipColor.cyan('Updating release notes...'))
-  }
-
-  const res = await $fetch(url, {
-    method,
-    body: JSON.stringify(body),
-    headers,
-  })
-  VipConsole.log(VipColor.green(`Released on ${res.html_url}`))
-}
-
-function getHeaders(options: ChangelogOptions) {
+function getHeaders(token: string) {
   return {
     accept: 'application/vnd.github.v3+json',
-    authorization: `token ${options.token}`,
+    authorization: `token ${token}`,
   }
 }
 
-export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorInfo) {
+async function getAuthorInfo(options: {
+  token: string
+  baseUrlApi: string
+  repo: string
+}, info: GitAuthorInfo): Promise<GitAuthorInfo> {
   if (info.login)
     return info
 
@@ -64,7 +23,7 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
 
   try {
     const data = await $fetch(`https://${options.baseUrlApi}/search/users?q=${encodeURIComponent(info.email)}`, {
-      headers: getHeaders(options),
+      headers: getHeaders(options.token),
     })
     info.login = data.items[0].login
   }
@@ -76,7 +35,7 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
   if (info.commits.length) {
     try {
       const data = await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/commits/${info.commits[0]}`, {
-        headers: getHeaders(options),
+        headers: getHeaders(options.token),
       })
       info.login = data.author.login
     }
@@ -85,17 +44,22 @@ export async function resolveAuthorInfo(options: ChangelogOptions, info: AuthorI
   return info
 }
 
-export async function resolveAuthors(commits: Commit[], options: ChangelogOptions) {
-  const map = new Map<string, AuthorInfo>()
+async function resolveAuthors(commits: Commit[], options: {
+  token?: string
+  baseUrlApi: string
+  repo: string
+}) {
+  const authorInfoMap = new Map<string, GitAuthorInfo>()
+
   commits.forEach((commit) => {
     commit.resolvedAuthors = commit.authors
       .map((a, idx) => {
         if (!a.email || !a.name)
           return null
-        if (!map.has(a.email)) {
-          map.set(a.email, { commits: [], name: a.name, email: a.email })
+        if (!authorInfoMap.has(a.email)) {
+          authorInfoMap.set(a.email, { commits: [], name: a.name, email: a.email })
         }
-        const info = map.get(a.email)!
+        const info = authorInfoMap.get(a.email)!
 
         // record commits only for the first author
         if (idx === 0)
@@ -106,8 +70,12 @@ export async function resolveAuthors(commits: Commit[], options: ChangelogOption
       .filter(v => v != null)
   })
 
-  const authors = Array.from(map.values())
-  const resolved = await Promise.all(authors.map(info => resolveAuthorInfo(options, info)))
+  const authors = Array.from(authorInfoMap.values())
+  const resolved = await Promise.all(authors.map(info => getAuthorInfo({
+    token: options.token,
+    baseUrlApi: options.baseUrlApi,
+    repo: options.repo,
+  }, info)))
 
   const loginSet = new Set<string>()
   const nameSet = new Set<string>()
@@ -132,10 +100,14 @@ export async function resolveAuthors(commits: Commit[], options: ChangelogOption
 /**
  * 判断是否有tag
  */
-export async function hasTagOnGitHub(tag: string, options: ChangelogOptions): Promise<boolean> {
+async function isExistTag(tag: string, options: {
+  baseUrlApi: string
+  repo: string
+  token: string
+}): Promise<boolean> {
   try {
     await $fetch(`https://${options.baseUrlApi}/repos/${options.repo}/git/ref/tags/${tag}`, {
-      headers: getHeaders(options),
+      headers: getHeaders(options.token),
     })
     return true
   }
@@ -145,9 +117,15 @@ export async function hasTagOnGitHub(tag: string, options: ChangelogOptions): Pr
 }
 
 /**
- * 生成webUrl链接
+ * 生成手动release发布的地址链接
  */
-export function generateWebUrl(config: any, markdown: string): string {
+function generateReleaseUrl(markdown: string, config: {
+  baseUrl: string
+  repo: string
+  name: string
+  to: string
+  prerelease: boolean
+}): string {
   const baseUrl = `https://${config.baseUrl}/${config.repo}/releases/new`
   const queryParams = VipQs.stringify({
     title: config.name || config.to,
@@ -163,10 +141,19 @@ export function generateWebUrl(config: any, markdown: string): string {
  * 打印手动发布地址
  * - 默认成功输出
  */
-export function printUrl(webUrl: string, success: boolean = true): void {
+function printReleaseUrl(webUrl: string, success: boolean = true): void {
   const errMsg = success
     ? `\n${VipColor.yellow('使用以下链接手动发布新的版本：')}\n`
     : `\n${VipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
 
   VipConsole.error(`${errMsg}${VipColor.yellow(webUrl)}\n`)
+}
+
+export const GithubAPI = {
+  getAuthorInfo,
+  isExistTag,
+  generateReleaseUrl,
+  printReleaseUrl,
+  getHeaders,
+  resolveAuthors,
 }

@@ -2,7 +2,7 @@
   "name": "@142vip/nest-redis",
   "version": "0.0.1-alpha.0",
   "private": false,
-  "description": "公众号搜：储凡",
+  "description": "Nest.js框架下，Redis使用最佳实践、封装",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
   "homepage": "https://142vip.github.io/core-x/packages/nest-redis/",
@@ -15,7 +15,7 @@
     "公众号搜：储凡",
     "142vip",
     "@142vip",
-    "@142vip/changelog",
+    "@142vip/nest-redis",
     "nest",
     "redis"
   ],
@@ -38,7 +38,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "^1.11.11"
+    "@142vip/utils": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

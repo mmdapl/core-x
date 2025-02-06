@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@142vip/nest": "workspace:*",
-    "@nestjs/typeorm": "^11.0.0",
-    "mysql2": "^3.10.1",
-    "typeorm": "^0.3.20"
+    "@nestjs/typeorm": "11.0.0",
+    "mysql2": "3.10.1",
+    "typeorm": "0.3.20"
   },
   "publishConfig": {
     "access": "public",

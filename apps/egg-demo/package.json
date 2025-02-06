@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@142vip/egg-mysql": "workspace:*",
-    "egg": "^3.17.5",
+    "egg": "3.17.5",
     "egg-scripts": "3"
   },
   "devDependencies": {

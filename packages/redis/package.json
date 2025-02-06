@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "ioredis": "^5.4.1"
+    "ioredis": "5.4.1"
   },
   "publishConfig": {
     "access": "public",

@@ -91,9 +91,9 @@ function changelogMain(): void {
     .option('--to <to>', 'To tag')
     .option('--github <github>', 'GitHub Repository, eg. @142vip/core-x')
     .option('--name <name>', 'Name of the release')
-    .option('--prerelease', 'Mark release as prerelease', true)
     .option('--output <output>', 'Output to file instead of sending to GitHub')
     .option('--scopeName <scopeName>', 'Package name in Monorepo，Match the scope in the git commit information')
+    .option('--prerelease', 'Mark release as prerelease', true)
     .option('--dry-run', 'Dry run', false)
     .action(async (options: ChangelogCliOptions) => {
       console.log('cli-->', options)

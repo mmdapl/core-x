@@ -1,5 +1,9 @@
 import { execSync } from 'node:child_process'
 
+/**
+ * todo 迁移到@142vip/utils模块中
+ */
+
 export function execCommand(cmd: string, cwd?: string): string {
   return execSync(cmd, { encoding: 'utf8', cwd }).trim()
 }

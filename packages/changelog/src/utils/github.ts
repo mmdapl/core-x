@@ -39,7 +39,7 @@ async function getAuthorInfo(options: {
       })
       info.login = data.author.login
     }
-    catch { }
+    catch {}
   }
   return info
 }
@@ -71,8 +71,13 @@ async function resolveAuthors(commits: Commit[], options: {
   })
 
   const authors = Array.from(authorInfoMap.values())
+  if (options.token == null) {
+    return authors
+  }
+
+  // 基于login或者name字段排序
   const resolved = await Promise.all(authors.map(info => getAuthorInfo({
-    token: options.token,
+    token: options.token!,
     baseUrlApi: options.baseUrlApi,
     repo: options.repo,
   }, info)))
@@ -146,7 +151,7 @@ function printReleaseUrl(webUrl: string, success: boolean = true): void {
     ? `\n${VipColor.yellow('使用以下链接手动发布新的版本：')}\n`
     : `\n${VipColor.red('无法创建发布。使用以下链接手动创建：')}\n`
 
-  VipConsole.error(`${errMsg}${VipColor.yellow(webUrl)}\n`)
+  VipConsole.error(`${errMsg}\n${VipColor.yellow(webUrl)}\n`)
 }
 
 export const GithubAPI = {

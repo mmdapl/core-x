@@ -1,7 +1,7 @@
 import process from 'node:process'
 import fetch from 'node-fetch'
 import type { VipCommander } from '@142vip/utils'
-import { VipConsole } from '@142vip/utils'
+import { HttpMethod, VipConsole } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -30,12 +30,17 @@ interface RequestSync {
 //   "state": "waiting"
 // }
 
+/**
+ * 发起同步请求，同步模块
+ */
 async function requestSync(packageName: string): Promise<void> {
   // https://registry-direct.npmmirror.com/-/package/@142vip/vitepress/syncs
   // `https://registry.npmmirror.com/${packageName}/sync`
   const syncUrl = `https://registry-direct.npmmirror.com/-/package/${packageName}/syncs`
 
-  const response = await fetch(syncUrl, { method: 'PUT' })
+  const response = await fetch(syncUrl, {
+    method: HttpMethod.PUT,
+  })
 
   // if (response.status === 404 || !response.ok) {
   //
@@ -61,6 +66,9 @@ interface SyncState {
   logUrl: string
 }
 
+/**
+ * 获取包的同步状态
+ */
 async function getPackageSyncState(packageName: string, logId: string): Promise<string> {
   const stateUrl = `https://registry.npmmirror.com/-/package/${packageName}/syncs/${logId}`
   const response = await fetch(stateUrl)
@@ -70,7 +78,7 @@ async function getPackageSyncState(packageName: string, logId: string): Promise<
   if (stateRes.ok) {
     return stateRes.logUrl
   }
-  VipConsole.log('getPackageSyncState-->err', stateRes)
+  console.log('getPackageSyncState-->err', stateRes)
   process.exit(1)
 }
 
@@ -78,8 +86,7 @@ async function getPackageSyncLog(logUrl: string): Promise<void> {
   const response = await fetch(logUrl)
 
   const syncLog = await response.text()
-  // console.log('getPackageSyncLog', syncLog)
-  VipConsole.log(syncLog.toString())
+  VipConsole.log(`getPackageSyncLog: ${syncLog.toString()}`)
 }
 
 /**

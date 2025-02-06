@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.19 (2025-02-06)
+
+### ✨ Features
+
+- `clean`命令增加`--git-hooks`参数，支持`.git/hooks`目录清理 &nbsp;-&nbsp; by **chufan** [<samp>(8c8cc)</samp>](https://github.com/142vip/core-x/commit/8c8ccb3)
+
+### 💅 Refactors
+
+- `sync`功能日志、代码优化 &nbsp;-&nbsp; by **chufan** [<samp>(100f6)</samp>](https://github.com/142vip/core-x/commit/100f615)
+
+**Release New Version v0.0.3-alpha.19 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.18 (2025-01-20)
 
 ### ✨ Features

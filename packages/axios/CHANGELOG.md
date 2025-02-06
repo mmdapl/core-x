@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## v0.0.1-alpha.6 (2025-02-06)
+
+### ✨ Features
+
+- 代码改造，强化类型支持，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(49e70)</samp>](https://github.com/142vip/core-x/commit/49e7028)
+
+**Release New Version v0.0.1-alpha.6 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/axios)**
+
 ## v0.0.1-alpha.5 (2025-01-20)
 
 **No Significant Changes**

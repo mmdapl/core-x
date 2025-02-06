@@ -5,7 +5,7 @@
   "baseBranches": ["next"],
   "schedule": ["before 3am on Friday"],
   "additionalBranchPrefix": "{{parentDir}}-",
-  "branchConcurrentLimit": 6,
+  "branchConcurrentLimit": 20,
   // 触发CI流水线
   "requiredStatusChecks": [
     "CI"

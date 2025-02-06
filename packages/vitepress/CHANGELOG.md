@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.14 (2025-02-06)
+
+### ✨ Features
+
+- 锁定依赖版本，完善文档 &nbsp;-&nbsp; by **chufan** [<samp>(23da7)</samp>](https://github.com/142vip/core-x/commit/23da7bd)
+
+### 🐛 Bug Fixes
+
+- Update dependency vitepress to v1.6.3 &nbsp;-&nbsp; by **chufan** [<samp>(44dde)</samp>](https://github.com/142vip/core-x/commit/44ddec9)
+
+**Release New Version v0.0.1-alpha.14 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.13 (2024-12-04)
 
 ### ✨ Features

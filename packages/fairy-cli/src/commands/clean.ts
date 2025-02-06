@@ -1,7 +1,7 @@
 import * as process from 'node:process'
 import { deleteAsync } from 'del'
 import type { VipCommander } from '@142vip/utils'
-import { VipConsole } from '@142vip/utils'
+import { VipInquirer } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -22,6 +22,7 @@ interface CleanUpOptions extends DelOptions {
   vite?: boolean
   deps?: boolean
   coverage?: boolean
+  gitHooks?: boolean
 }
 
 /**
@@ -29,7 +30,7 @@ interface CleanUpOptions extends DelOptions {
  * - 恢复项目初始状态
  */
 async function execCleanUp(args: CleanUpOptions): Promise<void> {
-  const dirPatterns = []
+  const dirPatterns: string[] = []
 
   // 删除node_modules
   if (args.deps) {
@@ -66,6 +67,11 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
     dirPatterns.push(...generateDirPatterns('coverage', args.all))
   }
 
+  // 删除.git/hooks目录
+  if (args.gitHooks) {
+    dirPatterns.push(...generateDirPatterns('.git/hooks', args.all))
+  }
+
   if (dirPatterns.length === 0) {
     console.log('删除规则为空，不做删除操作处理，请传入有效参数！！')
     process.exit(1)
@@ -82,7 +88,7 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
   }
 
   // 需要删除的目录
-  VipConsole.log('删除规则：', dirPatterns)
+  console.log('删除规则：', dirPatterns)
 
   // 删除
   const deletedDirs = await deleteAsync(dirPatterns, {
@@ -90,10 +96,10 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
     force: args.force,
     dot: true,
   })
-  VipConsole.log(deletedDirs)
+  console.log(deletedDirs)
 }
 
-function generateDirPatterns(dirName: string | string[], delAll?: boolean) {
+function generateDirPatterns(dirName: string | string[], delAll?: boolean): string[] {
   let delDirs: string[] = []
 
   if (typeof dirName === 'string') {
@@ -129,6 +135,7 @@ export async function cleanUpMain(program: VipCommander): Promise<void> {
     .option('--vite', '删除vite缓存目录', false)
     .option('--deps', '删除node_modules目录', false)
     .option('--coverage', '删除coverage目录', false)
+    .option('--git-hooks', '删除.git/hooks目录', false)
     .option('-f,--force', '强制删除，默认值：false', false)
     .option('--all', '深度删除所有', false)
     .option('--ignore-tips', '忽略提示，直接删除', false)

@@ -1,6 +1,6 @@
 {
   "name": "@142vip/nest-redis",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "private": false,
   "description": "Nest.js框架下，Redis使用最佳实践、封装",
   "author": "mmdapl <mmdapl@163.com>",

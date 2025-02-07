@@ -9,6 +9,9 @@ import type { ChangelogCliOptions } from './changelog.interface'
  * 处理changelog业务
  */
 async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> {
+  // 处理token
+  cliOptions.token = cliOptions.token || VipNodeJS.getProcessEnv('GITHUB_TOKEN') || VipNodeJS.getProcessEnv('TOKEN')
+
   const releaseUrl = ''
   try {
     VipConsole.log()
@@ -16,6 +19,7 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
 
     const changelogConfig = await mergeConfig(cliOptions)
 
+    console.log(111, changelogConfig)
     const { markdown, commits, releaseUrl } = await changelogGenerate(changelogConfig)
 
     VipConsole.log(`${VipColor.cyan(changelogConfig.from)} ${VipColor.dim(' -> ')} ${VipColor.blue(changelogConfig.to)} ${VipColor.dim(` (${commits.length} commits)`)}`)

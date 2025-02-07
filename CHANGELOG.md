@@ -2,6 +2,79 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.22 (2025-02-07)
+
+### ✨ Features
+
+- 调整`renovate`的`branch`限制为20 &nbsp;-&nbsp; by **chufan** [<samp>(0f381)</samp>](https://github.com/142vip/core-x/commit/0f38112)
+- 增加`check:esm`命令，检查是否支持`ESM`模块 &nbsp;-&nbsp; by **chufan** [<samp>(dfe12)</samp>](https://github.com/142vip/core-x/commit/dfe1242)
+- **@142vip/axios**:
+  - 代码改造，强化类型支持，锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(49e70)</samp>](https://github.com/142vip/core-x/commit/49e7028)
+- **@142vip/fairy-cli**:
+  - `clean`命令增加`--git-hooks`参数，支持`.git/hooks`目录清理 &nbsp;-&nbsp; by **chufan** [<samp>(8c8cc)</samp>](https://github.com/142vip/core-x/commit/8c8ccb3)
+- **@142vip/nest-redis**:
+  - 基础结构改造，引入`@142vip/utils`模块 &nbsp;-&nbsp; by **chufan** [<samp>(a0155)</samp>](https://github.com/142vip/core-x/commit/a01558e)
+- **@142vip/utils**:
+  - 增加`formatDateToYMD`日期封装 &nbsp;-&nbsp; by **chufan** [<samp>(29352)</samp>](https://github.com/142vip/core-x/commit/29352bf)
+  - 拓展`VipGit`，支持`git`相关操作功能 &nbsp;-&nbsp; by **chufan** [<samp>(7d360)</samp>](https://github.com/142vip/core-x/commit/7d36065)
+  - 引入`semver`模块，集成`VipSemver` API 功能 &nbsp;-&nbsp; by **chufan** [<samp>(527f6)</samp>](https://github.com/142vip/core-x/commit/527f64a)
+  - 增加错误码、`Release`类型枚举 &nbsp;-&nbsp; by **chufan** [<samp>(47079)</samp>](https://github.com/142vip/core-x/commit/470797e)
+- **@142vip/vitepress**:
+  - 锁定依赖版本，完善文档 &nbsp;-&nbsp; by **chufan** [<samp>(23da7)</samp>](https://github.com/142vip/core-x/commit/23da7bd)
+- **@142vip/vuepress**:
+  - 锁定依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(d314f)</samp>](https://github.com/142vip/core-x/commit/d314f58)
+
+### 🐛 Bug Fixes
+
+- **@142vip/utils**:
+  - Update dependency semver to v7.7.1 &nbsp;-&nbsp; by **chufan** [<samp>(5d979)</samp>](https://github.com/142vip/core-x/commit/5d9798e)
+- **@142vip/vitepress**:
+  - Update dependency vitepress to v1.6.3 &nbsp;-&nbsp; by **chufan** [<samp>(44dde)</samp>](https://github.com/142vip/core-x/commit/44ddec9)
+- **deps**:
+  - Update dependency axios to v1.7.9 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/323 [<samp>(9d9f9)</samp>](https://github.com/142vip/core-x/commit/9d9f909)
+  - Update dependency c12 to v2.0.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/324 [<samp>(84c17)</samp>](https://github.com/142vip/core-x/commit/84c1736)
+  - Update dependency turbo to v2.4.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/328 [<samp>(934a3)</samp>](https://github.com/142vip/core-x/commit/934a3ef)
+  - Update dependency egg to v3.30.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/331 [<samp>(f49a1)</samp>](https://github.com/142vip/core-x/commit/f49a128)
+  - Update dependency mysql2 to v3.12.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/333 [<samp>(ad2ed)</samp>](https://github.com/142vip/core-x/commit/ad2edd4)
+  - Update dependency element-plus to v2.9.3 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/332 [<samp>(533c0)</samp>](https://github.com/142vip/core-x/commit/533c081)
+  - Update dependency @grpc/grpc-js to v1.12.6 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/335 [<samp>(411e6)</samp>](https://github.com/142vip/core-x/commit/411e6eb)
+  - Update dependency egg to v3.30.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/339 [<samp>(8ccd7)</samp>](https://github.com/142vip/core-x/commit/8ccd777)
+  - Update dependency @nestjs/typeorm to v11 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/341 [<samp>(12da8)</samp>](https://github.com/142vip/core-x/commit/12da8a4)
+  - Update dependency semver to v7.7.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/340 [<samp>(6075c)</samp>](https://github.com/142vip/core-x/commit/6075c2c)
+  - Lock the version, use a fixed version number &nbsp;-&nbsp; by **chufan** [<samp>(fcb2b)</samp>](https://github.com/142vip/core-x/commit/fcb2bbb)
+  - Update dependency @grpc/grpc-js to v1.12.6 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/343 [<samp>(65801)</samp>](https://github.com/142vip/core-x/commit/6580192)
+  - Update dependency c12 to v2.0.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/344 [<samp>(01133)</samp>](https://github.com/142vip/core-x/commit/01133ae)
+
+### 💅 Refactors
+
+- **@142vip/changelog**:
+  - 优化`changelog`核心逻辑，简化`cli`处理流程，支持功能函数导出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/317 [<samp>(4c3c1)</samp>](https://github.com/142vip/core-x/commit/4c3c1b9)
+- **@142vip/fairy-cli**:
+  - `sync`功能日志、代码优化 &nbsp;-&nbsp; by **chufan** [<samp>(100f6)</samp>](https://github.com/142vip/core-x/commit/100f615)
+- **@142vip/utils**:
+  - 优化`execCommand`命令执行器，移除`execa`模块 &nbsp;-&nbsp; by **chufan** [<samp>(42b73)</samp>](https://github.com/142vip/core-x/commit/42b7370)
+  - 重构代码，丰富工具函数栈，支持`version`拓展 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/342 [<samp>(89163)</samp>](https://github.com/142vip/core-x/commit/8916371)
+
+### 😏 Release Packages
+
+- **@142vip/axios**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(88e73)</samp>](https://github.com/142vip/core-x/commit/88e7316)
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(9cc42)</samp>](https://github.com/142vip/core-x/commit/9cc42fa)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.19` &nbsp;-&nbsp; by **chufan** [<samp>(ac1e1)</samp>](https://github.com/142vip/core-x/commit/ac1e1cb)
+- **@142vip/nest-redis**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(e87db)</samp>](https://github.com/142vip/core-x/commit/e87db39)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.15` &nbsp;-&nbsp; by **chufan** [<samp>(087ca)</samp>](https://github.com/142vip/core-x/commit/087ca23)
+  - Publish `v0.0.1-alpha.16` &nbsp;-&nbsp; by **chufan** [<samp>(c48af)</samp>](https://github.com/142vip/core-x/commit/c48af63)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(542b2)</samp>](https://github.com/142vip/core-x/commit/542b228)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.10` &nbsp;-&nbsp; by **chufan** [<samp>(8abbe)</samp>](https://github.com/142vip/core-x/commit/8abbe94)
+
+**Release New Version v0.0.1-alpha.22 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.21...v0.0.1-alpha.22)**
+
 ## v0.0.1-alpha.21 (2025-01-20)
 
 ### ✨ Features

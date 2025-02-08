@@ -1,7 +1,9 @@
-import * as process from 'node:process'
-import { VipSymbols } from '../pkgs/color'
-import { commandStandardExecutor, execCommand } from './exec'
-import { VipLogger } from './logger'
+import {
+  VipExecutor,
+  VipLogger,
+  VipNodeJS,
+  VipSymbols,
+} from '@142vip/utils'
 
 const vipLog = new VipLogger()
 
@@ -24,15 +26,15 @@ interface BuildImageDockerOptions extends DockerOptions {
  */
 async function scriptExecutor(command: string) {
   try {
-    const errorCode = await commandStandardExecutor(command)
+    const errorCode = await VipExecutor.commandStandardExecutor(command)
     if (errorCode !== 0) {
       vipLog.error(`Error Code: ${errorCode}`, { startLabel: 'commandStandardExecutor' })
-      process.exit(1)
+      VipNodeJS.exitProcess(1)
     }
   }
   catch {
     // 构建镜像出错时，直接退出
-    process.exit(1)
+    VipNodeJS.exitProcess(1)
   }
 }
 
@@ -41,7 +43,7 @@ async function scriptExecutor(command: string) {
  */
 async function isExistImage(imageName: string) {
   const command = `docker images -q ${imageName}`
-  const { code, stdout } = await execCommand(command)
+  const { code, stdout } = await VipExecutor.execCommand(command)
   return code === 0 && stdout.trim() !== ''
 }
 
@@ -50,7 +52,7 @@ async function isExistImage(imageName: string) {
  */
 async function deleteImage(imageName: string) {
   const command = `docker rmi -f ${imageName}`
-  return await execCommand(command)
+  return await VipExecutor.execCommand(command)
 }
 
 /**
@@ -58,7 +60,7 @@ async function deleteImage(imageName: string) {
  */
 async function deletePruneImages() {
   const command = 'docker image prune -f'
-  return await execCommand(command)
+  return await VipExecutor.execCommand(command)
 }
 
 /**
@@ -66,7 +68,7 @@ async function deletePruneImages() {
  */
 async function isExistContainer(containerName: string) {
   const command = `docker ps -aq -f name=${containerName}`
-  const { code, stdout } = await execCommand(command)
+  const { code, stdout } = await VipExecutor.execCommand(command)
 
   return code === 0 && stdout.trim() !== ''
 }
@@ -76,7 +78,7 @@ async function isExistContainer(containerName: string) {
  */
 async function deleteContainer(containerName: string) {
   const command = `docker rm -f ${containerName}`
-  return await execCommand(command)
+  return await VipExecutor.execCommand(command)
 }
 
 /**
@@ -84,7 +86,7 @@ async function deleteContainer(containerName: string) {
  */
 async function isExistDocker(args?: DockerOptions) {
   const command = 'docker -v'
-  const { code, stdout, stderr } = await execCommand(command)
+  const { code, stdout, stderr } = await VipExecutor.execCommand(command)
 
   // 打印日志
   if (args?.logger) {
@@ -106,7 +108,7 @@ async function isExistDocker(args?: DockerOptions) {
  */
 async function isExistDockerCompose(args?: DockerOptions) {
   const command = 'docker-compose -v'
-  const { code, stdout, stderr } = await execCommand(command)
+  const { code, stdout, stderr } = await VipExecutor.execCommand(command)
 
   // 打印日志
   if (args?.logger) {
@@ -196,33 +198,19 @@ interface CreateContainerOptions extends DockerOptions {
 async function createContainer(args: CreateContainerOptions) {
   if (args.networkName && !args.ip) {
     console.log('只指定ip，没有指定容器局域网')
-    process.exit(1)
+    VipNodeJS.exitProcess(1)
   }
   // 支持自定义网络
   const networkParams = args.networkName && args.ip ? `--network ${args.networkName} --ip` : ''
 
   const command = `docker run -d --name ${args.containerName} --restart=unless-stopped ${networkParams} ${args.imageName}`
-  await commandStandardExecutor(command)
-}
-
-export interface IVipDocker {
-  isExistDocker: typeof isExistDocker
-  isExistDockerCompose: typeof isExistDockerCompose
-  isExistImage: typeof isExistImage
-  isExistContainer: typeof isExistContainer
-  deleteImage: typeof deleteImage
-  deletePruneImages: typeof deletePruneImages
-  deleteContainer: typeof deleteContainer
-  pushImage: typeof pushImage
-  buildImage: typeof buildImage
-  createContainer: typeof createContainer
-  scriptExecutor: typeof scriptExecutor
+  await VipExecutor.commandStandardExecutor(command)
 }
 
 /**
  * docker工具
  */
-export const VipDocker: IVipDocker = {
+export const VipDocker = {
   isExistDocker,
   isExistDockerCompose,
   isExistImage,

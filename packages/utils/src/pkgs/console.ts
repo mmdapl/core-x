@@ -42,16 +42,10 @@ function error(e: any): void {
   console.log(e)
 }
 
-export interface IVipConsole {
-  log: typeof log
-  trace: typeof trace
-  error: typeof error
-}
-
 /**
  * 日志
  */
-export const VipConsole: IVipConsole = {
+export const VipConsole = {
   log,
   trace,
   error,

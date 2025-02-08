@@ -19,12 +19,7 @@ function parse(str: string, options?: IParseOptions<BooleanOptional> & { decoder
   return qs.parse(str, options)
 }
 
-export interface IVipQS {
-  stringify: typeof stringify
-  parse: typeof parse
-}
-
-export const VipQs: IVipQS = {
+export const VipQs = {
   stringify,
   parse,
 }

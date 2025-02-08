@@ -1,7 +1,11 @@
-import type { VipSemverReleaseType } from '../pkgs'
-import { VipConsole, VipJSON, VipSemver } from '../pkgs'
-import { VipExecutor } from './exec'
-import { VipNodeJS } from './nodejs'
+import type { VipSemverReleaseType } from '@142vip/utils'
+import {
+  VipConsole,
+  VipExecutor,
+  VipJSON,
+  VipNodeJS,
+  VipSemver,
+} from '@142vip/utils'
 
 /**
  * 执行脚本
@@ -117,26 +121,10 @@ export interface PackageJsonMainFest {
   [key: string]: unknown
 }
 
-interface IVipPackageJSON {
-  // script
-  runScript: typeof runScript
-  hasScript: typeof hasScript
-
-  // version
-  getCurrentVersion: typeof getCurrentVersion
-  getReleaseVersion: typeof getReleaseVersion
-  promptChoiceReleaseVersion: typeof promptChoiceReleaseVersion
-
-  // package.json
-  isExistPackageJSON: typeof isExistPackageJSON
-  isPackageJSON: typeof isPackageJSON
-  replaceOrAddToJSON: typeof replaceOrAddToJSON
-}
-
 /**
  * package.json处理
  */
-export const VipPackageJSON: IVipPackageJSON = {
+export const VipPackageJSON = {
   runScript,
   hasScript,
   getCurrentVersion,

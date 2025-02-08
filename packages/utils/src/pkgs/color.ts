@@ -9,20 +9,10 @@ import ansiColors from 'ansi-colors'
  */
 export const VipColor: typeof ansiColors = ansiColors.create()
 
-export interface IVipSymbols {
-  success: string
-  error: string
-  warning: string
-  info: string
-  question: string
-  heart: string
-  mark: string
-}
-
 /**
  * 终端标记
  */
-export const VipSymbols: IVipSymbols = {
+export const VipSymbols = {
   success: VipColor.symbols.check,
   error: VipColor.symbols.cross,
   warning: VipColor.symbols.warning,

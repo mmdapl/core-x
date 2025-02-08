@@ -1,5 +1,4 @@
-import { VipSemver } from '../pkgs'
-import { VipExecutor } from './exec'
+import { VipExecutor, VipSemver } from '@142vip/utils'
 
 /**
  * Git提交信息
@@ -122,21 +121,7 @@ function execPush(args: string[]): void {
   VipExecutor.execCommandSync(`git push ${args.join(' ')}`)
 }
 
-export interface IVipGit {
-  getRecentCommit: typeof getRecentCommit
-  getFirstCommitHash: typeof getFirstCommitHash
-  getGitHubRepo: typeof getGitHubRepo
-  getCurrentBranch: typeof getCurrentBranch
-  isRepoShallow: typeof isRepoShallow
-  getTags: typeof getTags
-  getLastMatchingTag: typeof getLastMatchingTag
-  isPrerelease: typeof isPrerelease
-  execCommit: typeof execCommit
-  execTag: typeof execTag
-  execPush: typeof execPush
-}
-
-export const VipGit: IVipGit = {
+export const VipGit = {
   getRecentCommit,
   getFirstCommitHash,
   getGitHubRepo,

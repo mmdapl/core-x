@@ -1,7 +1,4 @@
-import type {
-  OptionsConfig,
-  TypedFlatConfigItem,
-} from '@antfu/eslint-config'
+import type { OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
 import { antfu } from '@antfu/eslint-config'
 
 /**
@@ -37,11 +34,10 @@ type EslintConfigOptions = OptionsConfig & TypedFlatConfigItem
 /**
  * 定义Eslint配置
  * 参考：https://github.com/antfu/eslint-config
- * @param options
  */
-export async function defineVipEslintConfig(
+export function defineVipEslintConfig(
   options: EslintConfigOptions = {},
-): Promise<any> {
+): any {
   return antfu(defaultEslintConfig, {
     ...options,
     rules: {

@@ -1,4 +1,4 @@
-import { VipColor } from '../pkgs/color'
+import { VipColor } from '@142vip/utils'
 
 export interface LoggerOptions {
   startLabel?: string
@@ -41,3 +41,5 @@ export class VipLogger {
     console.error(text)
   }
 }
+
+export const vipLogger = new VipLogger()

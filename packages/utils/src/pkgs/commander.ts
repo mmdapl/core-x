@@ -9,5 +9,8 @@ export class VipCommander extends Command {
     super(name)
     // 查看版本
     this.version(version, '-v --version', 'VipCommander Version By @142vip')
+
+    // 对命令增加help方法
+    this.helpCommand(true)
   }
 }

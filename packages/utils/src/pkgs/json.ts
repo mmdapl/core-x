@@ -39,7 +39,7 @@ export interface IVipJSON {
 /**
  * 处理JSON
  */
-export const VipJSON: IVipJSON = {
+export const VipJSON = {
   clone,
   stringify,
   parse,

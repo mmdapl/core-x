@@ -102,28 +102,7 @@ async function writeFileByUTF8(filePath: PathLike | FileHandle, data:
   return promises.writeFile(filePath, data, 'utf-8')
 }
 
-export interface IVipNodeJS {
-  // process
-  getProcessFirstArgv: typeof getProcessFirstArgv
-  getProcessArgv: typeof getProcessArgv
-  getCPUArch: typeof getCPUArch
-  setProcessEnv: typeof setProcessEnv
-  getProcessEnv: typeof getProcessEnv
-  getProcessPlatform: typeof getProcessPlatform
-  getProcessCwd: typeof getProcessCwd
-  getProcessVersions: typeof getProcessVersions
-  exitProcess: typeof exitProcess
-
-  // fs
-  exitPath: typeof exitPath
-  readFileToStrByUTF8: typeof readFileToStrByUTF8
-  writeFileByUTF8: typeof writeFileByUTF8
-
-  // path
-  pathJoin: typeof pathJoin
-}
-
-export const VipNodeJS: IVipNodeJS = {
+export const VipNodeJS = {
   getProcessFirstArgv,
   getProcessArgv,
   getCPUArch,

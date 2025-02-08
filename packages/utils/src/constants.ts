@@ -1,4 +1,5 @@
-import process from 'node:process'
+import { VipNodeJS } from './core'
+
 /**
  * 一些地址信息
  */
@@ -51,7 +52,7 @@ export const OPEN_SOURCE_AUTHOR = {
  * @param baseName
  */
 export function getDocSiteBase(baseName: string): '/' | `/${string}/` {
-  const needProxy = process.env.NEED_PROXY ?? false
+  const needProxy = VipNodeJS.getProcessEnv('NEED_PROXY') ?? false
 
   return needProxy ? `/${baseName}/` : '/'
 }

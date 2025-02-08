@@ -49,13 +49,7 @@ async function promptConfirm(message: string, defaultValue?: boolean): Promise<b
   })).app
 }
 
-export interface IVipInquirer {
-  promptList: typeof promptList
-  promptCheckBox: typeof promptCheckBox
-  promptConfirm: typeof promptConfirm
-}
-
-export const VipInquirer: IVipInquirer = {
+export const VipInquirer = {
   promptList,
   promptCheckBox,
   promptConfirm,

@@ -26,14 +26,7 @@ function formatDateToYMD(): string {
   return formatDateToStr(new Date(), 'YYYY-MM-DD')
 }
 
-export interface IVipDayjs {
-  getCurrentTimestamp: typeof getCurrentTimestamp
-  FormatTemplateStr: typeof FormatTemplateStr
-  formatDateToStr: typeof formatDateToStr
-  formatDateToYMD: typeof formatDateToYMD
-}
-
-export const VipDayjs: IVipDayjs = {
+export const VipDayjs = {
   getCurrentTimestamp,
   FormatTemplateStr,
   formatDateToStr,

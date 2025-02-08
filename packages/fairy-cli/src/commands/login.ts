@@ -1,6 +1,6 @@
 import process from 'node:process'
 import type { VipCommander } from '@142vip/utils'
-import { commandStandardExecutor } from '@142vip/utils'
+import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 enum LoginPlatformEnum {
@@ -58,7 +58,7 @@ async function loginDocker(args: DockerOptions): Promise<void> {
     ? `--username=${args.userName}`
     : ''} ${args.password != null ? `--password=${args.password}` : ''}${registryUrl}`
 
-  await commandStandardExecutor(command)
+  await VipExecutor.commandStandardExecutor(command)
 }
 
 /**
@@ -75,7 +75,7 @@ async function loginNpm(args: NpmOptions): Promise<void> {
   }
 
   // npm login --registry  https://registry.npmjs.org
-  await commandStandardExecutor(`npm login --registry ${registryUrl}`)
+  await VipExecutor.commandStandardExecutor(`npm login --registry ${registryUrl}`)
 }
 
 /**

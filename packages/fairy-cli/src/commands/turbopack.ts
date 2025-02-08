@@ -1,7 +1,7 @@
 import fsSync from 'node:fs'
 import * as process from 'node:process'
 import type { VipCommander } from '@142vip/utils'
-import { VipConsole, execShell } from '@142vip/utils'
+import { VipConsole, VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface TurboPackOptions {
@@ -18,12 +18,12 @@ async function execTurboPack(repoNames: string[], args: TurboPackOptions): Promi
 
   // npx turbo run dev
   if (args.dev) {
-    await execShell(`npx turbo run dev ${getFilterRepo(repoNames)} --color --only`)
+    await VipExecutor.execShell(`npx turbo run dev ${getFilterRepo(repoNames)} --color --only`)
   }
 
   // npx turbo run build
   if (args.build) {
-    await execShell(`npx turbo run build ${getFilterRepo(repoNames)} --color --only`)
+    await VipExecutor.execShell(`npx turbo run build ${getFilterRepo(repoNames)} --color --only`)
   }
 }
 

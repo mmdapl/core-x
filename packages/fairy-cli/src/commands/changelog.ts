@@ -1,5 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
-import { commandStandardExecutor } from '@142vip/utils'
+import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface ChangelogOptions {
@@ -7,7 +7,7 @@ interface ChangelogOptions {
 }
 
 async function generateChangelog(args: ChangelogOptions): Promise<void> {
-  await commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
+  await VipExecutor.commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
 }
 
 export async function changelogMain(program: VipCommander): Promise<void> {

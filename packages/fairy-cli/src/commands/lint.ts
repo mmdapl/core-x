@@ -1,5 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
-import { commandStandardExecutor } from '@142vip/utils'
+import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface LintOptions {
@@ -16,8 +16,8 @@ function execLink(args: LintOptions): void {
 /**
  * 代码格式化
  */
-function doCodeLint(args: { fix: boolean }): void {
-  commandStandardExecutor(`npx eslint . ${args.fix ? '--fix' : ''}`)
+async function doCodeLint(args: { fix: boolean }): void {
+  await VipExecutor.commandStandardExecutor(`npx eslint . ${args.fix ? '--fix' : ''}`)
 }
 
 /**
@@ -30,7 +30,7 @@ export async function lintMain(program: VipCommander): Promise<void> {
     .description('根据Eslint检查代码风格，支持代码格式化')
     .option('-c,--config', 'Eslint配置文件路径', false)
     .option('-f --fix', '是否需要基于Eslint规则自动修复', false)
-    .action((args: LintOptions) => {
-      execLink(args)
+    .action(async (args: LintOptions) => {
+      await execLink(args)
     })
 }

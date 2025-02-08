@@ -1,5 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
-import { execCommand } from '@142vip/utils'
+import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 export type PublishOptions = NpmOptions & DockerOptions
@@ -35,11 +35,11 @@ async function execPublish(args: PublishOptions): Promise<void> {
  */
 async function publishDocker(args: DockerOptions): Promise<void> {
   // docker push xxx
-  await execCommand(`docker push ${args.image}`)
+  await VipExecutor.execCommand(`docker push ${args.image}`)
 
   // 清理本地镜像，默认不清理
   if (args.clean) {
-    await execCommand(`docker rmi ${args.image}`)
+    await VipExecutor.execCommand(`docker rmi ${args.image}`)
   }
 }
 
@@ -53,7 +53,7 @@ async function publishNpm(args: NpmOptions): Promise<void> {
     args.registry = 'https://registry.npmjs.org'
   }
 
-  await execCommand(`npm publish --access public --registry=${args.registry}`)
+  await VipExecutor.execCommand(`npm publish --access public --registry=${args.registry}`)
 }
 
 /**

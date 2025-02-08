@@ -1,5 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
-import { commandStandardExecutor } from '@142vip/utils'
+import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface InstallOptions {
@@ -14,16 +14,16 @@ interface InstallOptions {
  * - npm
  * - pnpm
  */
-async function execInstall(args: InstallOptions): Promise<void> {
+async function execInstall(args: InstallOptions): void {
   // pnpm i --frozen-lockfile --registry https://registry.npmmirror.com
   // npm ci
   if (args.npm) {
     // 使用npm下载
-    await commandStandardExecutor(`npm ${args.update ? 'i' : 'ci'} --registry  ${args.registry}`)
+    await VipExecutor.commandStandardExecutor(`npm ${args.update ? 'i' : 'ci'} --registry  ${args.registry}`)
   }
   else {
     // pnpm下载
-    await commandStandardExecutor(`pnpm i ${args.update ? '' : '--frozen-lockfile'} --registry ${args.registry}`)
+    await VipExecutor.commandStandardExecutor(`pnpm i ${args.update ? '' : '--frozen-lockfile'} --registry ${args.registry}`)
   }
 }
 

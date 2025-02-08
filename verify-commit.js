@@ -1,5 +1,4 @@
-import process from 'node:process'
-import { VipColor } from '@142vip/utils'
+import { VipColor, VipNodeJS } from '@142vip/utils'
 import {
   getReleasePkgJSON,
   verifyCommit,
@@ -23,7 +22,7 @@ if (!isSuccess) {
     )}\n\n${
       VipColor.red(`  See .github/commit-convention.md for more details.\n`)}`,
   )
-  process.exit(1)
+  VipNodeJS.exitProcess(1)
 }
 
 const typeList = [
@@ -47,7 +46,7 @@ if (type == null || !typeList.includes(type)) {
       `invalid commit type , support ${typeList.join('|')}`,
     )}`,
   )
-  process.exit(1)
+  VipNodeJS.exitProcess(1)
 }
 
 // 获取packages目录下所有的模块名
@@ -66,7 +65,7 @@ if (scope != null && !scopeList.includes(scope)) {
       `invalid commit scope name , Examples:\n${scopeList.join('\n')}`,
     )}`,
   )
-  process.exit(1)
+  VipNodeJS.exitProcess(1)
 }
 
 // 判断message长度
@@ -76,7 +75,7 @@ if (message == null || message.length > 80) {
       `invalid commit message length , max length is 80`,
     )}`,
   )
-  process.exit(1)
+  VipNodeJS.exitProcess(1)
 }
 
 // 提交符合规范，打印相关信息

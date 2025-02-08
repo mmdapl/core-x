@@ -1,12 +1,4 @@
-import { execSync } from 'node:child_process'
-
-/**
- * todo 迁移到@142vip/utils模块中
- */
-
-export function execCommand(cmd: string, cwd?: string): string {
-  return execSync(cmd, { encoding: 'utf8', cwd }).trim()
-}
+import { VipExecutor } from '@142vip/utils'
 
 export interface GitCommitAuthor {
   name: string
@@ -59,7 +51,7 @@ export async function getGitDiff(params: {
   }
 
   // 获取commit记录
-  const commitStr = execCommand(`git --no-pager log "${params.from}${params.to}" --pretty="----%n%s|%h|%an|%ae%n%b" --name-status`)
+  const commitStr = VipExecutor.execCommandSync(`git --no-pager log "${params.from}${params.to}" --pretty="----%n%s|%h|%an|%ae%n%b" --name-status`)
 
   return commitStr
     .split('----\n')

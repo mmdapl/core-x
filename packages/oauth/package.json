@@ -37,7 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "dayjs": "1.11.11"
+    "@142vip/utils": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

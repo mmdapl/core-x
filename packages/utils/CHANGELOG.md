@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.18 (2025-02-10)
+
+### ✨ Features
+
+- 增加`getTagsInHead`方法获取当前提交头的所有标签 &nbsp;-&nbsp; by **chufan** [<samp>(73c64)</samp>](https://github.com/142vip/core-x/commit/73c64ca)
+
+### 💅 Refactors
+
+- 代码改造，简化类型声明，调整工具核心工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(4e227)</samp>](https://github.com/142vip/core-x/commit/4e227a4)
+
+**Release New Version v0.0.1-alpha.18 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.17 (2025-02-10)
 
 ### 💅 Refactors

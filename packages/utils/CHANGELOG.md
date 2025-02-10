@@ -4,41 +4,18 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## v0.0.1-alpha.17 (2025-02-10)
 
-### ✨ Features
-
-- 增加`formatDateToYMD`日期封装 &nbsp;-&nbsp; by **chufan** [<samp>(29352)</samp>](https://github.com/142vip/core-x/commit/29352bf)
-- 拓展`VipGit`，支持`git`相关操作功能 &nbsp;-&nbsp; by **chufan** [<samp>(7d360)</samp>](https://github.com/142vip/core-x/commit/7d36065)
-- 引入`semver`模块，集成`VipSemver` API 功能 &nbsp;-&nbsp; by **chufan** [<samp>(527f6)</samp>](https://github.com/142vip/core-x/commit/527f64a)
-- 增加错误码、`Release`类型枚举 &nbsp;-&nbsp; by **chufan** [<samp>(47079)</samp>](https://github.com/142vip/core-x/commit/470797e)
-
-### 🐛 Bug Fixes
-
-- Update dependency semver to v7.7.1 &nbsp;-&nbsp; by **chufan** [<samp>(5d979)</samp>](https://github.com/142vip/core-x/commit/5d9798e)
-
 ### 💅 Refactors
 
-- 优化`execCommand`命令执行器，移除`execa`模块 &nbsp;-&nbsp; by **chufan** [<samp>(42b73)</samp>](https://github.com/142vip/core-x/commit/42b7370)
-- 重构代码，丰富工具函数栈，支持`version`拓展 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/342 [<samp>(89163)</samp>](https://github.com/142vip/core-x/commit/8916371)
+- 代码改造，简化类型声明，调整工具核心工具方法 - by **chufan** [<samp>(4e227)</samp>](https://github.com/142vip/core-x/commit/4e227a4)
 
 **Release New Version v0.0.1-alpha.17 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
 
+
 ## v0.0.1-alpha.16 (2025-02-06)
-
-### ✨ Features
-
-- 增加`formatDateToYMD`日期封装 &nbsp;-&nbsp; by **chufan** [<samp>(29352)</samp>](https://github.com/142vip/core-x/commit/29352bf)
-- 拓展`VipGit`，支持`git`相关操作功能 &nbsp;-&nbsp; by **chufan** [<samp>(7d360)</samp>](https://github.com/142vip/core-x/commit/7d36065)
-- 引入`semver`模块，集成`VipSemver` API 功能 &nbsp;-&nbsp; by **chufan** [<samp>(527f6)</samp>](https://github.com/142vip/core-x/commit/527f64a)
-- 增加错误码、`Release`类型枚举 &nbsp;-&nbsp; by **chufan** [<samp>(47079)</samp>](https://github.com/142vip/core-x/commit/470797e)
 
 ### 🐛 Bug Fixes
 
 - Update dependency semver to v7.7.1 &nbsp;-&nbsp; by **chufan** [<samp>(5d979)</samp>](https://github.com/142vip/core-x/commit/5d9798e)
-
-### 💅 Refactors
-
-- 优化`execCommand`命令执行器，移除`execa`模块 &nbsp;-&nbsp; by **chufan** [<samp>(42b73)</samp>](https://github.com/142vip/core-x/commit/42b7370)
-- 重构代码，丰富工具函数栈，支持`version`拓展 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/342 [<samp>(89163)</samp>](https://github.com/142vip/core-x/commit/8916371)
 
 **Release New Version v0.0.1-alpha.16 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
 

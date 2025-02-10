@@ -48,7 +48,7 @@ export async function mergeConfig(cliOptions: ChangelogCliOptions): Promise<Chan
 
   // 发布的版本
   if (config.to == null) {
-    const tags = VipGit.getTags()
+    const tags = VipGit.getTagsInHead()
     // 标签 > 分支
     config.to = tags.length === 0 ? VipGit.getCurrentBranch() : tags[0]
   }

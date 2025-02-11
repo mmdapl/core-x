@@ -40,7 +40,6 @@ export async function changelogGenerate(config: ChangelogGenerateOptions): Promi
   // 添加贡献者
   if (config.contributors) {
     const token = VipNodeJS.getProcessEnv('GITHUB_TOKEN') || VipNodeJS.getProcessEnv('TOKEN')
-    console.log(444, VipNodeJS.getProcessEnv('GITHUB_TOKEN'), VipNodeJS.getProcessEnv('TOKEN'))
     await GithubAPI.resolveAuthors(commits, {
       token,
       baseUrlApi: config.baseUrlApi,

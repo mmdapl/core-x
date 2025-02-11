@@ -33,7 +33,7 @@ npx changelog --output CHANGELOG.md
 
 ```bash
 # 只本地生成创建版本的URL
-npx changelog --dry
+npx changelog --dry-run
 ```
 
 ### 配合Github Actions使用
@@ -142,22 +142,23 @@ jobs:
 # cli 参数帮助
 npx changelog -h
 
-@142vip/changelog/0.0.1-alpha.6
-
 Usage: @142vip/changelog [options]
 
 Options:
-  -v --version             Package Version
-  -t, --tokens <path>      GitHub Token
-  --from <ref>             From tag
-  --to <ref>               To tag
-  --github <path>          GitHub Repository, e.g. @142vip/core-x
+  -v --version             VipCommander Version By @142vip
+  --token <token>          GitHub Token
+  --from <from>            From tag
+  --to <to>                To tag
+  --github <github>        GitHub Repository, eg. @142vip/core-x
   --name <name>            Name of the release
-  --prerelease             Mark release as prerelease
-  --output <path>          Output to file instead of sending to GitHub
+  --output <output>        Output to file instead of sending to GitHub
   --scopeName <scopeName>  Package name in Monorepo，Match the scope in the git commit information
-  --dry                    Dry run (default: false)
+  --prerelease             Mark release as prerelease (default: true)
+  --dry-run                Dry run (default: false)
   -h, --help               display help for command
+
+Commands:
+  help [command]           display help for command
 ```
 
 ## 配置

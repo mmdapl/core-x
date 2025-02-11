@@ -5,9 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## v0.0.1-alpha.11 (2025-02-07)
 
-### 💅 Refactors
+### 🐛 Bug Fixes
 
-- 优化`changelog`核心逻辑，简化`cli`处理流程，支持功能函数导出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/317 [<samp>(4c3c1)</samp>](https://github.com/142vip/core-x/commit/4c3c1b9)
+- 修复changelog命令，参数解析异常 - by **chufan** [<samp>(5448b)</samp>](https://github.com/142vip/core-x/commit/5448b84)
 
 **Release New Version v0.0.1-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
 

@@ -1,3 +1,4 @@
+import process from 'node:process'
 import fetch from 'node-fetch'
 import type { VipCommander } from '@142vip/utils'
 import { HttpMethod, VipConsole, VipNodeJS } from '@142vip/utils'
@@ -48,7 +49,7 @@ async function requestSync(packageName: string): Promise<void> {
   const { ok, id: logId } = await response.json() as RequestSync
 
   if (!ok) {
-    VipConsole.log('requestSync--json', await response.json())
+    VipConsole.log(`requestSync--json : ${await response.json()}`)
     VipNodeJS.exitProcess(1)
   }
   setTimeout(async () => {
@@ -78,7 +79,7 @@ async function getPackageSyncState(packageName: string, logId: string): Promise<
     return stateRes.logUrl
   }
   console.log('getPackageSyncState-->err', stateRes)
-  VipNodeJS.exitProcess(1)
+  process.exit(1)
 }
 
 async function getPackageSyncLog(logUrl: string): Promise<void> {

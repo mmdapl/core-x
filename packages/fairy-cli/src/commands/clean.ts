@@ -1,7 +1,6 @@
-import * as process from 'node:process'
 import { deleteAsync } from 'del'
 import type { VipCommander } from '@142vip/utils'
-import { VipInquirer } from '@142vip/utils'
+import { VipInquirer, VipNodeJS } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 /**
@@ -74,7 +73,7 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
 
   if (dirPatterns.length === 0) {
     console.log('删除规则为空，不做删除操作处理，请传入有效参数！！')
-    process.exit(1)
+    return VipNodeJS.exitProcess(1)
   }
 
   // 删除前，对话框确认
@@ -83,7 +82,7 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
 
     if (!deleted) {
       // 不删除，非0退出
-      process.exit(1)
+      return VipNodeJS.exitProcess(1)
     }
   }
 

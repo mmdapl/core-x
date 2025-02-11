@@ -6,9 +6,9 @@ interface LintOptions {
   fix: boolean
 }
 
-function execLink(args: LintOptions): void {
+async function execLink(args: LintOptions): Promise<void> {
   // 执行eslint校验
-  doCodeLint({
+  await doCodeLint({
     fix: args.fix,
   })
 }
@@ -16,7 +16,7 @@ function execLink(args: LintOptions): void {
 /**
  * 代码格式化
  */
-async function doCodeLint(args: { fix: boolean }): void {
+async function doCodeLint(args: { fix: boolean }): Promise<void> {
   await VipExecutor.commandStandardExecutor(`npx eslint . ${args.fix ? '--fix' : ''}`)
 }
 

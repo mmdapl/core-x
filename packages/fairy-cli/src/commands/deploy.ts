@@ -3,16 +3,15 @@ import { VipConsole } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface DeployOptions {
-
+  githubPage: boolean
 }
 
 function execDeploy(args: DeployOptions): void {
-  VipConsole.log(args)
+  VipConsole.error(args)
 }
 
 /**
  * github page 静态页面部署
- * @constructor
  */
 function DeployGithubPage() {}
 

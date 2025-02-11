@@ -14,7 +14,7 @@ interface InstallOptions {
  * - npm
  * - pnpm
  */
-async function execInstall(args: InstallOptions): void {
+async function execInstall(args: InstallOptions): Promise<void> {
   // pnpm i --frozen-lockfile --registry https://registry.npmmirror.com
   // npm ci
   if (args.npm) {

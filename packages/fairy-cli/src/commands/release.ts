@@ -1,8 +1,7 @@
-import process from 'node:process'
 import type { VersionBumpOptions } from '@142vip/release-version'
 import { versionBump } from '@142vip/release-version'
 import type { VipCommander } from '@142vip/utils'
-import { VipColor, VipConsole, VipInquirer } from '@142vip/utils'
+import { VipColor, VipConsole, VipInquirer, VipNodeJS } from '@142vip/utils'
 import {
   CliCommandEnum,
   getBranchName,
@@ -80,7 +79,7 @@ function execVipRelease(args: VipReleaseExtraOptions): void {
   // 预先检查子模块
   if (args.checkRelease) {
     printPreCheckRelease(packageNames)
-    process.exit(0)
+    return VipNodeJS.exitProcess(0)
   }
 
   const choices = [
@@ -94,13 +93,13 @@ function execVipRelease(args: VipReleaseExtraOptions): void {
 
       if (!isRelease) {
         VipConsole.log(VipColor.yellow('用户取消发布操作！！'))
-        process.exit(0)
+        return VipNodeJS.exitProcess(0)
       }
 
       // 发布子模块
       if (packageName !== defaultRepoName) {
         await releaseMonorepoPackage(pkgJSON.find(pkg => pkg.name === packageName)!)
-        process.exit(0)
+        return VipNodeJS.exitProcess(0)
       }
 
       // 发布根模块
@@ -140,7 +139,7 @@ export async function releaseMain(program: VipCommander): Promise<void> {
         const branchName = getBranchName()
         if (branchName !== args.branch) {
           VipConsole.log(`当前分支是：${branchName} ，版本迭代允许在next分支操作，并推送到远程！！！`)
-          process.exit(0)
+          return VipNodeJS.exitProcess(0)
         }
       }
 

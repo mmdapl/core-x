@@ -1,6 +1,5 @@
-import process from 'node:process'
 import type { VipCommander } from '@142vip/utils'
-import { VipExecutor } from '@142vip/utils'
+import { VipExecutor, VipNodeJS } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 enum LoginPlatformEnum {
@@ -92,9 +91,11 @@ export async function loginMain(program: VipCommander): Promise<void> {
     .action(async (platform: LoginPlatformEnum, args: LoginOptions) => {
       if (![LoginPlatformEnum.NPM, LoginPlatformEnum.DOCKER].includes(platform)) {
         console.error('login命令只支持Docker和Npm平台，使用格式 login docker|npm')
-        process.exit(1)
+        VipNodeJS.exitProcess(1)
       }
-      await execLogin(platform, args)
+      else {
+        await execLogin(platform, args)
+      }
       JSON.stringify('aaa')
     })
 }

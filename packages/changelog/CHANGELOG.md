@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.12 (2025-02-11)
+
+### ✨ Features
+
+- 删除无用日志输出，调整文档 &nbsp;-&nbsp; by **chufan** [<samp>(5c18b)</samp>](https://github.com/142vip/core-x/commit/5c18b6c)
+
+### 🐛 Bug Fixes
+
+- 修复changelog命令，参数解析异常 &nbsp;-&nbsp; by **chufan** [<samp>(5448b)</samp>](https://github.com/142vip/core-x/commit/5448b84)
+- 修复`monorepo`下提交记录生成异常 &nbsp;-&nbsp; by **chufan** [<samp>(058e1)</samp>](https://github.com/142vip/core-x/commit/058e189)
+
+**Release New Version v0.0.1-alpha.12 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.11 (2025-02-07)
 
 ### 🐛 Bug Fixes

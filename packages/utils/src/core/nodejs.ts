@@ -79,7 +79,7 @@ function exitProcess(exitCode?: number): void {
 /**
  * 路径是否存在
  */
-async function exitPath(path: PathLike): Promise<boolean> {
+function exitPath(path: PathLike): boolean {
   return existsSync(path)
 }
 

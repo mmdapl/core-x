@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.13 (2025-02-13)
+
+### 🐛 Bug Fixes
+
+- 修复`gitDiff`比对异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/357 [<samp>(627c5)</samp>](https://github.com/142vip/core-x/commit/627c576)
+- 修复发布大版本前，`monorepo`子模块`commit`记录重复提交 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/358 [<samp>(c4dc5)</samp>](https://github.com/142vip/core-x/commit/c4dc59a)
+- 修复提交信息过滤异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/360 [<samp>(868c5)</samp>](https://github.com/142vip/core-x/commit/868c524)
+
+**Release New Version v0.0.1-alpha.13 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.12 (2025-02-11)
 
 ### ✨ Features

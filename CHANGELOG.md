@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.23 (2025-02-13)
+
+### ✨ Features
+
+- 修改`tsconfig`配置，增加`paths`字段管理模块的相对路径 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/349 [<samp>(140d1)</samp>](https://github.com/142vip/core-x/commit/140d1c6)
+- **@142vip/changelog**:
+  - 删除无用日志输出，调整文档 &nbsp;-&nbsp; by **chufan** [<samp>(5c18b)</samp>](https://github.com/142vip/core-x/commit/5c18b6c)
+- **@142vip/fairy-cli**:
+  - 调整`VipExecutor`方法导入 &nbsp;-&nbsp; by **chufan** [<samp>(3d2ce)</samp>](https://github.com/142vip/core-x/commit/3d2ce7e)
+  - 移除`getBranchName`方法，简化`release`命令参数定义 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/359 [<samp>(24a31)</samp>](https://github.com/142vip/core-x/commit/24a31e0)
+- **@142vip/oauth2.0**:
+  - 优化`deps`依赖，移除`dayjs`模块 &nbsp;-&nbsp; by **chufan** [<samp>(a3492)</samp>](https://github.com/142vip/core-x/commit/a34925c)
+- **@142vip/utils**:
+  - 增加`getTagsInHead`方法获取当前提交头的所有标签 &nbsp;-&nbsp; by **chufan** [<samp>(73c64)</samp>](https://github.com/142vip/core-x/commit/73c64ca)
+
+### 🐛 Bug Fixes
+
+- 修复`@142vip/utils`模块相互调用异常 &nbsp;-&nbsp; by **chufan** [<samp>(b7d62)</samp>](https://github.com/142vip/core-x/commit/b7d6238)
+- 修复`build`构建异常 &nbsp;-&nbsp; by **chufan** [<samp>(7ceac)</samp>](https://github.com/142vip/core-x/commit/7ceace8)
+- **@142vip/changelog**:
+  - 修复`monorepo`下提交记录生成异常 &nbsp;-&nbsp; by **chufan** [<samp>(058e1)</samp>](https://github.com/142vip/core-x/commit/058e189)
+  - 修复`gitDiff`比对异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/357 [<samp>(627c5)</samp>](https://github.com/142vip/core-x/commit/627c576)
+  - 修复发布大版本前，`monorepo`子模块`commit`记录重复提交 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/358 [<samp>(c4dc5)</samp>](https://github.com/142vip/core-x/commit/c4dc59a)
+  - 修复提交信息过滤异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/360 [<samp>(868c5)</samp>](https://github.com/142vip/core-x/commit/868c524)
+- **deps**:
+  - Update dependency mysql2 to v3.12.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/352 [<samp>(fa575)</samp>](https://github.com/142vip/core-x/commit/fa5758f)
+  - Update dependency reflect-metadata to v0.2.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/351 [<samp>(d42af)</samp>](https://github.com/142vip/core-x/commit/d42af35)
+  - Update dependency turbo to v2.4.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/353 [<samp>(4cb07)</samp>](https://github.com/142vip/core-x/commit/4cb0745)
+
+### 💅 Refactors
+
+- **@142vip/fairy-cli**:
+  - 优化基础命令逻辑，简化代码 &nbsp;-&nbsp; by **chufan** [<samp>(28db8)</samp>](https://github.com/142vip/core-x/commit/28db882)
+- **@142vip/utils**:
+  - 代码改造，简化类型声明，调整工具核心工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(4e227)</samp>](https://github.com/142vip/core-x/commit/4e227a4)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(4ca7a)</samp>](https://github.com/142vip/core-x/commit/4ca7ac9)
+  - Publish `v0.0.1-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(ade4c)</samp>](https://github.com/142vip/core-x/commit/ade4c89)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.20` &nbsp;-&nbsp; by **chufan** [<samp>(5f65a)</samp>](https://github.com/142vip/core-x/commit/5f65ab7)
+- **@142vip/oauth2.0**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(be215)</samp>](https://github.com/142vip/core-x/commit/be215ab)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.17` &nbsp;-&nbsp; by **chufan** [<samp>(ad744)</samp>](https://github.com/142vip/core-x/commit/ad74483)
+  - Publish `v0.0.1-alpha.18` &nbsp;-&nbsp; by **chufan** [<samp>(7b314)</samp>](https://github.com/142vip/core-x/commit/7b31482)
+  - Publish `v0.0.1-alpha.19` &nbsp;-&nbsp; by **chufan** [<samp>(92075)</samp>](https://github.com/142vip/core-x/commit/9207535)
+
+**Release New Version  [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.22...)**
+
 ## v0.0.1-alpha.22 (2025-02-07)
 
 ### ✨ Features

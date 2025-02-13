@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.20 (2025-02-13)
+
+### ✨ Features
+
+- 调整`VipExecutor`方法导入 &nbsp;-&nbsp; by **chufan** [<samp>(3d2ce)</samp>](https://github.com/142vip/core-x/commit/3d2ce7e)
+- 移除`getBranchName`方法，简化`release`命令参数定义 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/359 [<samp>(24a31)</samp>](https://github.com/142vip/core-x/commit/24a31e0)
+
+### 💅 Refactors
+
+- 优化基础命令逻辑，简化代码 &nbsp;-&nbsp; by **chufan** [<samp>(28db8)</samp>](https://github.com/142vip/core-x/commit/28db882)
+
+**Release New Version v0.0.3-alpha.20 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.19 (2025-02-06)
 
 ### ✨ Features

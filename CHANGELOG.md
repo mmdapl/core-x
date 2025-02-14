@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.24 (2025-02-14)
+
+### ✨ Features
+
+- 优化`authorInfo`信息和`bundle`命令的使用 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/356 [<samp>(e5730)</samp>](https://github.com/142vip/core-x/commit/e57308f)
+- `tsconfig.package.json`增加装饰器相关配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/369 [<samp>(61071)</samp>](https://github.com/142vip/core-x/commit/61071e8)
+- 优化`authorInfo`信息展示配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/370 [<samp>(98fc7)</samp>](https://github.com/142vip/core-x/commit/98fc768)
+- **@142vip/utils**:
+  - 增加`getPackageJSON`、`getProcessArgvByIndex`等工具方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/355 [<samp>(bd211)</samp>](https://github.com/142vip/core-x/commit/bd211a9)
+
+### 🐛 Bug Fixes
+
+- **@142vip/changelog**:
+  - 修复version字段错误、文档格式异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/363 [<samp>(20a5c)</samp>](https://github.com/142vip/core-x/commit/20a5c78)
+- **deps**:
+  - Update nest monorepo &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/362 [<samp>(df89f)</samp>](https://github.com/142vip/core-x/commit/df89f04)
+  - Update dependency qs to v6.14.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/371 [<samp>(75410)</samp>](https://github.com/142vip/core-x/commit/754106b)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(ad0dd)</samp>](https://github.com/142vip/core-x/commit/ad0dd30)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.20` &nbsp;-&nbsp; by **chufan** [<samp>(c0ec9)</samp>](https://github.com/142vip/core-x/commit/c0ec937)
+
+**Release New Version v0.0.1-alpha.24 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.23...v0.0.1-alpha.24)**
+
 ## v0.0.1-alpha.23 (2025-02-13)
 
 ### ✨ Features

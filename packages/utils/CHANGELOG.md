@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.20 (2025-02-14)
+
+### ✨ Features
+
+- 增加`getPackageJSON`、`getProcessArgvByIndex`等工具方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/355 [<samp>(bd211)</samp>](https://github.com/142vip/core-x/commit/bd211a9)
+
+**Release New Version v0.0.1-alpha.20 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.19 (2025-02-13)
 
 **No Significant Changes**

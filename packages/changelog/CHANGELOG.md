@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.14 (2025-02-14)
+
+### 🐛 Bug Fixes
+
+- 修复version字段错误、文档格式异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/363 [<samp>(20a5c)</samp>](https://github.com/142vip/core-x/commit/20a5c78)
+
+**Release New Version v0.0.1-alpha.14 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.13 (2025-02-13)
 
 ### 🐛 Bug Fixes

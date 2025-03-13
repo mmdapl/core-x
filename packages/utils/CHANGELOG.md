@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.21 (2025-03-13)
+
+### ✨ Features
+
+- 增加`isBuffer()`工具函数，优化依赖导入机制 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/384 [<samp>(f4a69)</samp>](https://github.com/142vip/core-x/commit/f4a697d)
+
+**Release New Version v0.0.1-alpha.21 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.20 (2025-02-14)
 
 ### ✨ Features

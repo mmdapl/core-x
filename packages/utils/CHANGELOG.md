@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.22 (2025-03-15)
+
+### ✨ Features
+
+- 移除`getFirstCommitHash`函数，优化`getRecentCommitHash`逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/387 [<samp>(a5a76)</samp>](https://github.com/142vip/core-x/commit/a5a76cd)
+
+**Release New Version v0.0.1-alpha.22 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.21 (2025-03-13)
 
 ### ✨ Features

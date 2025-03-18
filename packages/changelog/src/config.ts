@@ -58,7 +58,7 @@ export async function mergeConfig(cliOptions: ChangelogCliOptions): Promise<Chan
   }
 
   if (config.from == null) {
-    config.from = VipGit.getLastMatchingTag(config.to) || VipGit.getFirstCommitHash()
+    config.from = VipGit.getLastMatchingTag(config.to) || VipGit.getRecentCommitHash()
   }
 
   // 仓库地址 todo 地址

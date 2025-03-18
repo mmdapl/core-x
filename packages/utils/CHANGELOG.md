@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.25 (2025-03-18)
+
+### ✨ Features
+
+- `VipGit`增加`convertEmoji`方法，转换`git`记录中的表情 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/397 [<samp>(8352a)</samp>](https://github.com/142vip/core-x/commit/8352a4f)
+- 引入`c12`模块，增加`config`配置加载、监听功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/398 [<samp>(cf550)</samp>](https://github.com/142vip/core-x/commit/cf55047)
+
+**Release New Version v0.0.1-alpha.25 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.24 (2025-03-18)
 
 ### ✨ Features

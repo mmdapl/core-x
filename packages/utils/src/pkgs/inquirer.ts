@@ -73,16 +73,16 @@ async function promptPassword(message: string): Promise<string> {
  * 选择框
  * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/select
  */
-async function promptSelect<T>(message: string, choices: VipInquirerChoiceList<T>, options: VipInquirerOptions): Promise<T> {
-  return select({ message, choices, ...options })
+async function promptSelect<T>(message: string, choices: VipInquirerChoiceList<T> | string[], options?: VipInquirerOptions): Promise<T> {
+  return select({ message, choices, ...(options == null ? {} : options) })
 }
 
 /**
  * 终端交互选择，多选
  * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/checkbox
  */
-async function promptCheckBox<T extends string>(message: string, choices: VipInquirerChoiceList<T> | string[], options: VipInquirerOptions): Promise<T[]> {
-  return checkbox({ message, choices, ...options })
+async function promptCheckBox<T extends string>(message: string, choices: VipInquirerChoiceList<T> | string[], options?: VipInquirerOptions): Promise<T[]> {
+  return checkbox({ message, choices, ...(options == null ? {} : options) })
 }
 
 /**

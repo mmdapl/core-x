@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.26 (2025-03-20)
+
+### ✨ Features
+
+- 增加枚举，拓展Docker功能方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/401 [<samp>(2a2d8)</samp>](https://github.com/142vip/core-x/commit/2a2d8db)
+- 拓展`VipInquirer`工具方法，调整`prompt`交互 &nbsp;-&nbsp; by **chufan** [<samp>(e0ce9)</samp>](https://github.com/142vip/core-x/commit/e0ce963)
+
+### 🐛 Bug Fixes
+
+- 修复promptSelect异常，拓展参数类型 &nbsp;-&nbsp; by **chufan** [<samp>(3109f)</samp>](https://github.com/142vip/core-x/commit/3109f75)
+
+**Release New Version v0.0.1-alpha.26 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.25 (2025-03-18)
 
 ### ✨ Features

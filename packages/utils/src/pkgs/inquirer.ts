@@ -1,68 +1,120 @@
-import inquirer from 'inquirer'
+import {
+  checkbox,
+  confirm,
+  input,
+  number,
+  password,
+  rawlist,
+  search,
+  select,
+  Separator,
+} from '@inquirer/prompts'
 
 /**
- * 参考：https://www.npmjs.com/package/inquirer#answers
+ * 参考：
+ * - https://www.npmjs.com/package/inquirer#answers
+ * - https://github.com/SBoudrias/Inquirer.js
  * - inquirer@8 兼容commonjs
  */
+
+interface VipInquirerChoice<T> {
+  value: T
+  name?: string
+  description?: string
+  short?: string
+  checked?: boolean
+  disabled?: boolean | string
+}
+type VipInquirerChoiceList<T> = Array<VipInquirerChoice<T>>
+
+interface VipInquirerOptions {
+  default?: string
+  pageSize?: 10
+  loop?: false
+}
+
+/**
+ * 搜索源
+ */
+type SearchSource = <T>(input: T, opt: { signal: AbortSignal }) => Promise<ReadonlyArray<VipInquirerChoice<T> | Separator>>
+
+/**
+ * 输入框，只输入数字
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/number
+ */
+async function promptNumber(message: string, defaultValue?: number): Promise<number | undefined> {
+  return number({ message, default: defaultValue })
+}
 
 /**
  * 终端交互选择，单选
  */
-async function promptList(choiceList: string[], message?: string): Promise<string> {
-  return (await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'app',
-      message: message ?? '请选择模块...',
-      choices: choiceList,
-    },
-  ])
-  ).app
+async function promptList<T extends string>(message: string, choices: VipInquirerChoiceList<T>): Promise<T> {
+  return rawlist({ message, choices })
+}
+
+/**
+ * 终端交互输入，输入框
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/input
+ */
+async function promptInput(message: string, defaultValue?: string): Promise<string> {
+  return input({ message, default: defaultValue })
+}
+
+/**
+ * 输入框，隐藏输入
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/password
+ */
+async function promptPassword(message: string): Promise<string> {
+  return password({ message, mask: '*' })
+}
+
+/**
+ * 选择框
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/select
+ */
+async function promptSelect<T>(message: string, choices: VipInquirerChoiceList<T>, options: VipInquirerOptions): Promise<T> {
+  return select({ message, choices, ...options })
 }
 
 /**
  * 终端交互选择，多选
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/checkbox
  */
-async function promptCheckBox(choiceList: string[], message?: string): Promise<string[]> {
-  return (await inquirer.prompt([
-    {
-      type: 'checkbox',
-      name: 'app',
-      message: message ?? '请选择模块...',
-      choices: choiceList,
-      loop: false,
-    },
-  ])
-  ).app
+async function promptCheckBox<T extends string>(message: string, choices: VipInquirerChoiceList<T> | string[], options: VipInquirerOptions): Promise<T[]> {
+  return checkbox({ message, choices, ...options })
 }
 
 /**
  * 终端交互确认，确认框，可配置默认值
  */
 async function promptConfirm(message: string, defaultValue?: boolean): Promise<boolean> {
-  return (await inquirer.prompt({
-    type: 'confirm',
-    name: 'app',
-    message,
-    // 默认值
-    ...defaultValue != null ? { default: defaultValue } : {},
-  })).app
+  return confirm({ message, default: defaultValue })
 }
 
 /**
- * 终端交互输入，输入框
+ * 搜索框
+ * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/search
  */
-async function promptInput(message: string): Promise<string> {
-  return (await inquirer.prompt({
-    type: 'input',
-    name: 'app',
-    message,
-  })).app
+async function promptSearch(message: string, source: SearchSource, pageSize?: number) {
+  return search({ message, source, pageSize })
 }
 
+/**
+ * 终端交互
+ */
 export const VipInquirer = {
   promptList,
+  promptInput,
+  promptNumber,
+  promptPassword,
+  promptSelect,
   promptCheckBox,
   promptConfirm,
-  promptInput,
+  promptSearch,
 }
+
+/**
+ * 分隔符
+ */
+export class VipInquirerSeparator extends Separator {}

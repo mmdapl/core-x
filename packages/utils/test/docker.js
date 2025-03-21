@@ -1,4 +1,4 @@
-import { VipDocker } from '@142vip/utils';
+import { VipDocker } from '@142vip/utils'
 
 (async () => {
   await VipDocker.isExistDocker({ logger: true })
@@ -11,4 +11,11 @@ import { VipDocker } from '@142vip/utils';
       ['bb', 'go'],
     ],
   })
+
+  console.log(await VipDocker.listContainerNames())
+  console.log(await VipDocker.listRunningContainerNames())
+  console.log(await VipDocker.listNoRunningContainerNames())
+  console.log(await VipDocker.listContainerStatus())
+
+  console.log(await VipDocker.getImageAddress('gitlab'))
 })()

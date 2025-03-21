@@ -142,7 +142,7 @@ async function deleteForceContainer(containerName: string): Promise<boolean> {
 async function getImageAddress(containerName: string): Promise<string | null> {
   const command = `docker inspect ${containerName} --format "{{.Config.Image}}"`
   const { code, stdout } = await VipExecutor.execCommand(command)
-  if (code === 0) {
+  if (code !== 0) {
     return null
   }
   // 去掉 \n & 空格
@@ -209,7 +209,7 @@ async function pullImage(imageAddress: string): Promise<void> {
  * - 根据tag标记，推送到远程仓库
  * - 推送完成后，删除本地镜像
  */
-async function buildImage(args: BuildImageDockerOptions) {
+async function buildImage(args: BuildImageDockerOptions): Promise<void> {
   // 构建参数
   let buildArg = ''
   if (args.buildArgs != null) {
@@ -303,6 +303,54 @@ async function listRunningContainer(): Promise<void> {
 }
 
 /**
+ * 列出所有正在运行的容器名称
+ */
+async function listContainerNames(): Promise<string[]> {
+  const containers = await listContainerStatus()
+  return containers.map(container => container.name)
+}
+
+/**
+ * 列出所有正在运行的容器名称
+ */
+async function listRunningContainerNames(): Promise<string[]> {
+  const containers = await listContainerStatus()
+  return containers
+    .filter(c => c.running)
+    .map(container => container.name)
+}
+
+/**
+ * 列出所有未运行的容器名称
+ */
+async function listNoRunningContainerNames(): Promise<string[]> {
+  const containers = await listContainerStatus()
+  return containers
+    .filter(c => !c.running)
+    .map(container => container.name)
+}
+
+/**
+ * 列出所有容器名称、状态
+ */
+async function listContainerStatus(): Promise<{ name: string, running: boolean }[]> {
+  const command = `docker ps -a --format "{{.Names}} &&& {{.Status}}"`
+  const { code, stdout } = await VipExecutor.execCommand(command)
+  if (code !== 0) {
+    return []
+  }
+
+  return stdout.trim().split('\n').map((line) => {
+    const [name, ...statusParts] = line.split(' &&& ')
+    const status = statusParts.join(' ')
+    return {
+      name,
+      running: status.includes('Up'),
+    }
+  })
+}
+
+/**
  * docker工具
  */
 export const VipDocker = {
@@ -323,5 +371,9 @@ export const VipDocker = {
   listRunningContainer,
   deleteForceContainer,
   userLogin,
+  listContainerStatus,
+  listContainerNames,
+  listRunningContainerNames,
+  listNoRunningContainerNames,
   scriptExecutor,
 }

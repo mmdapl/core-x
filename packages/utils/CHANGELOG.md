@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.27 (2025-03-21)
+
+### ✨ Features
+
+- `VipLogger`中增加`println`输出空行 &nbsp;-&nbsp; by **chufan** [<samp>(9243e)</samp>](https://github.com/142vip/core-x/commit/9243ee3)
+- 拓展`VipDocker`工具，增加测试`listContainerStatus`等方法的测试用例 &nbsp;-&nbsp; by **chufan** [<samp>(b2b64)</samp>](https://github.com/142vip/core-x/commit/b2b64e2)
+- 拓展`VipDocker`工具，增加测试`listContainerStatus`等方法的测试用例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/408 [<samp>(3d527)</samp>](https://github.com/142vip/core-x/commit/3d527b8)
+- 提供`handleSimpleSearchSource`，支持搜索源简单处理 &nbsp;-&nbsp; by **chufan** [<samp>(37933)</samp>](https://github.com/142vip/core-x/commit/37933f7)
+
+**Release New Version v0.0.1-alpha.27 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.26 (2025-03-20)
 
 ### ✨ Features

@@ -39,6 +39,13 @@ export class VipLogger {
     const text = `${VipColor.red(opts?.startLabel ?? '')} ${VipColor.magenta(msg)} ${VipColor.yellow(opts?.endLabel ?? '')}`
     console.error(text)
   }
+
+  /**
+   * 打印空行
+   */
+  public println(): void {
+    this.log('')
+  }
 }
 
 export const vipLogger = new VipLogger()

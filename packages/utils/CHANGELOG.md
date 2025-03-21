@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.28 (2025-03-21)
+
+### ✨ Features
+
+- 拓展`VipDocker`工具，增加容器网络`network`相关功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/410 [<samp>(b7a25)</samp>](https://github.com/142vip/core-x/commit/b7a2506)
+
+**Release New Version v0.0.1-alpha.28 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.27 (2025-03-21)
 
 ### ✨ Features

@@ -101,6 +101,15 @@ async function promptSearch(message: string, source: SearchSource, pageSize?: nu
 }
 
 /**
+ * 搜索源简单处理
+ */
+export function handleSimpleSearchSource(sources: string[]) {
+  return function (input: string) {
+    return sources.filter(name => name.includes(input))
+  }
+}
+
+/**
  * 终端交互
  */
 export const VipInquirer = {
@@ -112,6 +121,7 @@ export const VipInquirer = {
   promptCheckBox,
   promptConfirm,
   promptSearch,
+  handleSimpleSearchSource,
 }
 
 /**

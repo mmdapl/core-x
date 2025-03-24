@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.15 (2025-03-24)
+
+### ✨ Features
+
+- 移除`c12`模块，替换为`convertEmoji`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/399 [<samp>(e9b91)</samp>](https://github.com/142vip/core-x/commit/e9b91e7)
+
+### 🐛 Bug Fixes
+
+- 修复使用`getRecentCommitHash`异常 &nbsp;-&nbsp; by **chufan** [<samp>(9e914)</samp>](https://github.com/142vip/core-x/commit/9e9147c)
+
+**Release New Version v0.0.1-alpha.15 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.14 (2025-02-14)
 
 ### 🐛 Bug Fixes

@@ -2,6 +2,58 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.25 (2025-03-24)
+
+### ✨ Features
+
+- **@142vip/changelog**:
+  - 移除`c12`模块，替换为`convertEmoji`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/399 [<samp>(e9b91)</samp>](https://github.com/142vip/core-x/commit/e9b91e7)
+- **@142vip/eslint-config**:
+  - `eslint`版本升级到`9.20.0` &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/374 [<samp>(b19c0)</samp>](https://github.com/142vip/core-x/commit/b19c06e)
+- **@142vip/utils**:
+  - 增加`isBuffer()`工具函数，优化依赖导入机制 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/384 [<samp>(f4a69)</samp>](https://github.com/142vip/core-x/commit/f4a697d)
+  - 移除`getFirstCommitHash`函数，优化`getRecentCommitHash`逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/387 [<samp>(a5a76)</samp>](https://github.com/142vip/core-x/commit/a5a76cd)
+  - 拓展`VipDocker`工具 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/388 [<samp>(215d3)</samp>](https://github.com/142vip/core-x/commit/215d39a)
+  - 拓展`VipInquirer`，增加`promptInput`输入框功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/392 [<samp>(2bf62)</samp>](https://github.com/142vip/core-x/commit/2bf6230)
+  - `VipGit`增加`convertEmoji`方法，转换`git`记录中的表情 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/397 [<samp>(8352a)</samp>](https://github.com/142vip/core-x/commit/8352a4f)
+  - 引入`c12`模块，增加`config`配置加载、监听功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/398 [<samp>(cf550)</samp>](https://github.com/142vip/core-x/commit/cf55047)
+  - 增加枚举，拓展Docker功能方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/401 [<samp>(2a2d8)</samp>](https://github.com/142vip/core-x/commit/2a2d8db)
+  - 拓展`VipInquirer`工具方法，调整`prompt`交互 &nbsp;-&nbsp; by **chufan** [<samp>(e0ce9)</samp>](https://github.com/142vip/core-x/commit/e0ce963)
+  - `VipLogger`中增加`println`输出空行 &nbsp;-&nbsp; by **chufan** [<samp>(9243e)</samp>](https://github.com/142vip/core-x/commit/9243ee3)
+  - 拓展`VipDocker`工具，增加测试`listContainerStatus`等方法的测试用例 &nbsp;-&nbsp; by **chufan** [<samp>(b2b64)</samp>](https://github.com/142vip/core-x/commit/b2b64e2)
+  - 拓展`VipDocker`工具，增加测试`listContainerStatus`等方法的测试用例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/408 [<samp>(3d527)</samp>](https://github.com/142vip/core-x/commit/3d527b8)
+  - 提供`handleSimpleSearchSource`，支持搜索源简单处理 &nbsp;-&nbsp; by **chufan** [<samp>(37933)</samp>](https://github.com/142vip/core-x/commit/37933f7)
+  - 拓展`VipDocker`工具，增加容器网络`network`相关功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/410 [<samp>(b7a25)</samp>](https://github.com/142vip/core-x/commit/b7a2506)
+
+### 🐛 Bug Fixes
+
+- **@142vip/changelog**:
+  - 修复使用`getRecentCommitHash`异常 &nbsp;-&nbsp; by **chufan** [<samp>(9e914)</samp>](https://github.com/142vip/core-x/commit/9e9147c)
+- **@142vip/fairy-cli**:
+  - 修复`release`命令交互框异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/404 [<samp>(bb0b1)</samp>](https://github.com/142vip/core-x/commit/bb0b171)
+- **@142vip/utils**:
+  - 修复promptSelect异常，拓展参数类型 &nbsp;-&nbsp; by **chufan** [<samp>(3109f)</samp>](https://github.com/142vip/core-x/commit/3109f75)
+- **deps**:
+  - Update dependency c12 to v2.0.4 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/385 [<samp>(58c40)</samp>](https://github.com/142vip/core-x/commit/58c4002)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.15` &nbsp;-&nbsp; by **chufan** [<samp>(9db7a)</samp>](https://github.com/142vip/core-x/commit/9db7add)
+- **@142vip/eslint-config**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(bcc00)</samp>](https://github.com/142vip/core-x/commit/bcc00bf)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.21` &nbsp;-&nbsp; by **chufan** [<samp>(7ae8b)</samp>](https://github.com/142vip/core-x/commit/7ae8bee)
+  - Publish `v0.0.1-alpha.22` &nbsp;-&nbsp; by **chufan** [<samp>(785a3)</samp>](https://github.com/142vip/core-x/commit/785a3f6)
+  - Publish `v0.0.1-alpha.23` &nbsp;-&nbsp; by **chufan** [<samp>(88059)</samp>](https://github.com/142vip/core-x/commit/88059bf)
+  - Publish `v0.0.1-alpha.24` &nbsp;-&nbsp; by **chufan** [<samp>(901e1)</samp>](https://github.com/142vip/core-x/commit/901e1d5)
+  - Publish `v0.0.1-alpha.25` &nbsp;-&nbsp; by **chufan** [<samp>(7b87a)</samp>](https://github.com/142vip/core-x/commit/7b87a2a)
+  - Publish `v0.0.1-alpha.26` &nbsp;-&nbsp; by **chufan** [<samp>(6a1f8)</samp>](https://github.com/142vip/core-x/commit/6a1f897)
+  - Publish `v0.0.1-alpha.27` &nbsp;-&nbsp; by **chufan** [<samp>(23a83)</samp>](https://github.com/142vip/core-x/commit/23a833c)
+  - Publish `v0.0.1-alpha.28` &nbsp;-&nbsp; by **chufan** [<samp>(2617a)</samp>](https://github.com/142vip/core-x/commit/2617ae7)
+
+**Release New Version v0.0.1-alpha.25 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.24...v0.0.1-alpha.25)**
+
 ## v0.0.1-alpha.24 (2025-02-14)
 
 ### ✨ Features

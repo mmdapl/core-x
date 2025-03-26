@@ -1,5 +1,5 @@
 import type { ChangelogCliOptions } from './changelog.interface'
-import { VipColor, VipCommander, VipConsole, VipGit, VipNodeJS } from '@142vip/utils'
+import { VipColor, VipCommander, VipConsole, VipGit, vipLogger, VipNodeJS } from '@142vip/utils'
 import { name as packageName, version as packageVersion } from '../package.json'
 import { changelogGenerate, changelogUpdate, sendGithubRelease } from './changelog'
 import { mergeConfig } from './config'
@@ -14,7 +14,7 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
 
   const releaseUrl = ''
   try {
-    VipConsole.log()
+    vipLogger.println()
     VipConsole.log(`${VipColor.dim(packageName)} ${VipColor.dim(`v${packageVersion}`)}`)
 
     const changelogConfig = await mergeConfig(cliOptions)
@@ -23,7 +23,7 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
     const { markdown, commits, releaseUrl } = await changelogGenerate(changelogConfig)
 
     VipConsole.log(`${VipColor.cyan(changelogConfig.from)} ${VipColor.dim(' -> ')} ${VipColor.blue(changelogConfig.to)} ${VipColor.dim(` (${commits.length} commits)`)}`)
-    VipConsole.log('\n')
+    vipLogger.println()
     VipConsole.log(VipColor.dim('--------------'))
     VipConsole.log(`\n${markdown.replace(/&nbsp;/g, '')}\n`)
     VipConsole.log(VipColor.dim('--------------'))

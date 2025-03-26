@@ -60,7 +60,7 @@ export async function changelogGenerate(config: ChangelogGenerateOptions): Promi
  */
 export async function changelogUpdate(outputPath: string, markdown: string, releaseVersionName: string, markdownHeader: string): Promise<void> {
   let changelogMD: string
-  const exit = VipNodeJS.exitPath(outputPath)
+  const exit = VipNodeJS.isExistFile(outputPath)
 
   if (exit) {
     VipConsole.log(`Updating ${outputPath}`)

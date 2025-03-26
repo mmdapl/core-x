@@ -1,12 +1,17 @@
 import type { VipCommander } from '@142vip/utils'
-import { VipExecutor } from '@142vip/utils'
+import { RegistryAddressEnum, VipInquirer, VipNpm } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface InstallOptions {
-  pnpm: boolean
-  npm: boolean
   registry?: string
-  update: boolean
+  force?: boolean
+}
+/**
+ * 支持的依赖管理器
+ */
+enum InstallTypeEnum {
+  NPM = 'npm',
+  PNPM = 'pnpm',
 }
 
 /**
@@ -14,33 +19,32 @@ interface InstallOptions {
  * - npm
  * - pnpm
  */
-async function execInstall(args: InstallOptions): Promise<void> {
-  // pnpm i --frozen-lockfile --registry https://registry.npmmirror.com
-  // npm ci
-  if (args.npm) {
-    // 使用npm下载
-    await VipExecutor.commandStandardExecutor(`npm ${args.update ? 'i' : 'ci'} --registry  ${args.registry}`)
+async function execInstall(installType: InstallTypeEnum, args: InstallOptions): Promise<void> {
+  if (installType === InstallTypeEnum.NPM) {
+    await VipNpm.installByNpm({ force: args.force, registry: args.registry })
   }
-  else {
-    // pnpm下载
-    await VipExecutor.commandStandardExecutor(`pnpm i ${args.update ? '' : '--frozen-lockfile'} --registry ${args.registry}`)
+  if (installType === InstallTypeEnum.PNPM) {
+    await VipNpm.installByPnpm({ force: args.force, registry: args.registry })
   }
 }
 
 /**
  * install 命令入口
- * @param program
  */
 export async function installMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.INSTALL)
     .aliases(['i', 'add'])
-    .description('pnpm ci dependencies')
-    .option('--pnpm', 'use pnpm ', true)
-    .option('--npm', 'use npm', false)
-    .option('--update', 'update lockfile，not use --frozen-lockfile', false)
-    .option('--registry', 'pnpm registry address，default ali cdn', 'https://registry.npmmirror.com')
-    .action((args: InstallOptions) => {
-      execInstall(args)
+    .description('下载、升级依赖版本')
+    .option('-f,--force', 'force the lock file to be updated', false)
+    .option('--registry', `pnpm registry address，default ali npm：${RegistryAddressEnum.VIP_NPM_ALIBABA}`, RegistryAddressEnum.VIP_NPM_ALIBABA)
+    .action(async (args: InstallOptions) => {
+      const installType = await VipInquirer.promptSelect<InstallTypeEnum>('选择下载方式', [
+        InstallTypeEnum.PNPM,
+        InstallTypeEnum.NPM,
+      ], {
+        default: InstallTypeEnum.PNPM,
+      })
+      await execInstall(installType, args)
     })
 }

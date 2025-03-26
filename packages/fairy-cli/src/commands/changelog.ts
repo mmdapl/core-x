@@ -10,6 +10,10 @@ async function generateChangelog(args: ChangelogOptions): Promise<void> {
   await VipExecutor.commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
 }
 
+/**
+ * changelog命令
+ * - 生成CHANGELOG文档
+ */
 export async function changelogMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CHANGELOG)

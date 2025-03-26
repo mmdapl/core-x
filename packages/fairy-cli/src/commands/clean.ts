@@ -1,5 +1,5 @@
 import type { VipCommander } from '@142vip/utils'
-import { VipInquirer, VipNodeJS } from '@142vip/utils'
+import { VipColor, VipConsole, VipInquirer, vipLogger, VipNodeJS } from '@142vip/utils'
 import { deleteAsync } from 'del'
 import { CliCommandEnum } from '../shared'
 
@@ -10,6 +10,7 @@ interface DelOptions {
   dryRun?: boolean
   force?: boolean
   all?: boolean
+  logger?: boolean
 }
 
 interface CleanUpOptions extends DelOptions {
@@ -22,6 +23,28 @@ interface CleanUpOptions extends DelOptions {
   deps?: boolean
   coverage?: boolean
   gitHooks?: boolean
+}
+
+function generateDirPatterns(dirName: string | string[], delAll?: boolean): string[] {
+  let delDirs: string[] = []
+
+  if (typeof dirName === 'string') {
+    delDirs.push(dirName)
+  }
+  else {
+    delDirs.push(...dirName)
+  }
+
+  if (delAll) {
+    // 删除程序上下文中所有的该目录，注意路径取反规则
+    delDirs = delDirs.map(dir => dir.startsWith('!') ? `!**/${dir.substring(1)}` : `**/${dir}`)
+  }
+  else {
+    // 只删除该目录
+    delDirs = delDirs.map(dir => `${dir}`)
+  }
+
+  return delDirs
 }
 
 /**
@@ -72,7 +95,7 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
   }
 
   if (dirPatterns.length === 0) {
-    console.log('删除规则为空，不做删除操作处理，请传入有效参数！！')
+    vipLogger.log(VipColor.red('删除规则为空，不做删除操作处理，请传入有效参数！！'))
     return VipNodeJS.exitProcess(1)
   }
 
@@ -80,14 +103,11 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
   if (!args.ignoreTips) {
     const deleted = await VipInquirer.promptConfirm('是否需要删除?', true)
 
+    // 不删除，非0退出
     if (!deleted) {
-      // 不删除，非0退出
       return VipNodeJS.exitProcess(1)
     }
   }
-
-  // 需要删除的目录
-  console.log('删除规则：', dirPatterns)
 
   // 删除
   const deletedDirs = await deleteAsync(dirPatterns, {
@@ -95,29 +115,14 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
     force: args.force,
     dot: true,
   })
-  console.log(deletedDirs)
-}
 
-function generateDirPatterns(dirName: string | string[], delAll?: boolean): string[] {
-  let delDirs: string[] = []
-
-  if (typeof dirName === 'string') {
-    delDirs.push(dirName)
+  // 日志追踪
+  if (args.logger) {
+    // 需要删除的目录
+    VipConsole.trace('删除规则：', dirPatterns)
+    vipLogger.println()
+    VipConsole.trace('删除的文件和目录：', deletedDirs)
   }
-  else {
-    delDirs.push(...dirName)
-  }
-
-  if (delAll) {
-    // 删除程序上下文中所有的该目录，注意路径取反规则
-    delDirs = delDirs.map(dir => dir.startsWith('!') ? `!**/${dir.substring(1)}` : `**/${dir}`)
-  }
-  else {
-    // 只删除该目录
-    delDirs = delDirs.map(dir => `${dir}`)
-  }
-
-  return delDirs
 }
 
 /**
@@ -126,18 +131,19 @@ function generateDirPatterns(dirName: string | string[], delAll?: boolean): stri
 export async function cleanUpMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CLEAN)
-    .description('清除开发、构建等环境下的无用目录')
+    .description('清除开发、构建环境下产生的无用文件')
     .option('-n,--nuxt', '删除nuxt构建目录，包括.nuxt、.output目录', false)
     .option('-d,--dist', '删除dist目录', false)
     .option('-m,--midway', '删除midway构建目录', false)
-    .option('--turbo', '删除turbo缓存目录', false)
+    .option('-t,--turbo', '删除turbo缓存目录', false)
     .option('--vite', '删除vite缓存目录', false)
     .option('--deps', '删除node_modules目录', false)
-    .option('--coverage', '删除coverage目录', false)
+    .option('-c,--coverage', '删除coverage目录', false)
     .option('--git-hooks', '删除.git/hooks目录', false)
     .option('-f,--force', '强制删除，默认值：false', false)
-    .option('--all', '深度删除所有', false)
+    .option('-a,--all', '深度删除所有', false)
     .option('--ignore-tips', '忽略提示，直接删除', false)
+    .option('--logger', '开启日志追踪模式', false)
     .option('--dry-run', '试运行，不做实际删除操作', false)
     .action(async (args: CleanUpOptions) => {
       await execCleanUp(args)

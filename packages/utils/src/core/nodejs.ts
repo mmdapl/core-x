@@ -5,6 +5,9 @@ import { Buffer } from 'node:buffer'
 import { existsSync, promises } from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+import { VipColor, VipConsole, VipSymbols } from '../pkgs'
+import { vipLogger } from './logger'
+import { VipNpm } from './npm'
 
 /**
  * 进程参数
@@ -25,7 +28,7 @@ function getProcessFirstArgv(): string {
  * node process-args.js one two=three four
  * Would generate the output:
  * 0: /usr/local/bin/node
- * 1: /Users/mjr/work/node/process-args.js
+ * 1: /Users/xxx/work/node/process-args.js
  * 2: one
  * 3: two=three
  * 4: fou
@@ -94,8 +97,13 @@ function exitProcess(exitCode?: number): void {
 /**
  * 路径是否存在
  */
-function exitPath(path: PathLike): boolean {
+function existPath(path: PathLike): boolean {
   return existsSync(path)
+}
+
+function isExistFile(name: string, cwd?: string): boolean {
+  const filePath = pathJoin(cwd ?? getProcessCwd(), name)
+  return existPath(filePath)
 }
 
 /**
@@ -121,6 +129,42 @@ function isBuffer(data: object): boolean {
   return Buffer.isBuffer(data)
 }
 
+/**
+ * 打印标准的Node开发环境信息
+ */
+async function printStandardNodeDevEnv(): Promise<void> {
+  const npm = await VipNpm.getNpmVersion()
+  const pnpm = await VipNpm.getPnpmVersion()
+  const node = await VipNpm.getNodeVersion()
+  console.log(npm, node, pnpm)
+
+  VipConsole.log(`Node.js开发环境，版本信息统计：`)
+  vipLogger.println()
+
+  if (npm != null) {
+    VipConsole.log(VipColor.green(`${VipSymbols.success} npm版本：${npm}`))
+  }
+  else {
+    VipConsole.error(VipColor.red(`${VipSymbols.error} 未安装npm环境`))
+  }
+
+  if (node != null) {
+    VipConsole.log(VipColor.green(`${VipSymbols.success} node版本：${node}`))
+  }
+  else {
+    VipConsole.error(VipColor.red(`${VipSymbols.error} 未安装node环境`))
+  }
+
+  if (pnpm != null) {
+    VipConsole.log(VipColor.green(`${VipSymbols.success} pnpm版本：${pnpm}`))
+  }
+  else {
+    VipConsole.error(VipColor.red(`${VipSymbols.error} 未安装pnpm环境，请全局安装pnpm命令。参考：npm i -g pnpm`))
+  }
+
+  vipLogger.println()
+}
+
 export const VipNodeJS = {
   getProcessFirstArgv,
   getProcessArgv,
@@ -132,9 +176,11 @@ export const VipNodeJS = {
   getProcessCwd,
   getProcessVersions,
   exitProcess,
-  exitPath,
+  existPath,
+  isExistFile,
   readFileToStrByUTF8,
   writeFileByUTF8,
   pathJoin,
   isBuffer,
+  printStandardNodeDevEnv,
 }

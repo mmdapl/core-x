@@ -29,10 +29,10 @@ function log(message?: string, level?: VipConsoleLogLevel): void {
 }
 
 /**
- * 追踪日志
+ * 追踪日志，按照标准日志输出
  */
-function trace(message: string): void {
-  console.log(message)
+function trace(...data: any): void {
+  console.log(data)
 }
 
 /**

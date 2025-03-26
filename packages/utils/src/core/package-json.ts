@@ -8,7 +8,7 @@ import { VipNodeJS } from './nodejs'
  * 执行脚本
  */
 async function runScript(scriptName: string, cwd?: string): Promise<void> {
-  const pkgPath = isExistPackageJSON(cwd)
+  const pkgPath = getPackagePath(cwd)
 
   const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
   const data = JSON.parse(pkgJSONStr)
@@ -38,7 +38,7 @@ function hasScript(packageJSON: PackageJsonMainFest, script: string) {
  * 读取package.json文件，获取version字段
  */
 async function getCurrentVersion(cwd?: string): Promise<string | null> {
-  const pkgPath = isExistPackageJSON(cwd)
+  const pkgPath = getPackagePath(cwd)
 
   const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
 
@@ -67,7 +67,7 @@ function promptChoiceReleaseVersion(): void {
  * - replace  替换某个key的值
  */
 async function replaceOrAddToJSON(json: Record<string, unknown>, cwd?: string) {
-  const pkgPath = isExistPackageJSON(cwd)
+  const pkgPath = getPackagePath(cwd)
 
   const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
 
@@ -83,27 +83,38 @@ async function replaceOrAddToJSON(json: Record<string, unknown>, cwd?: string) {
 }
 
 function getPackageJSON<T>(cwd?: string): T & PackageJsonMainFest {
-  const pkgPath = isExistPackageJSON(cwd)
+  const pkgPath = getPackagePath(cwd)
   const pkg = createRequire(import.meta.url)(pkgPath)
   return pkg as T & PackageJsonMainFest
 }
 
 /**
- * 判断package.json是否存在，存在则返回绝对路径
+ * 获取package.json的路径
  */
-function isExistPackageJSON(cwd?: string): string {
-  if (cwd == null) {
-    cwd = VipNodeJS.getProcessCwd()
-  }
-  const pkgPath = VipNodeJS.pathJoin(cwd, 'package.json')
-  const isExist = VipNodeJS.exitPath(pkgPath)
-
+function getPackagePath(cwd?: string): string {
+  const isExist = isExistPackageJSON(cwd)
   if (!isExist) {
     VipConsole.log('package.json not found')
     VipNodeJS.exitProcess(1)
   }
+  return VipNodeJS.pathJoin(cwd ?? VipNodeJS.getProcessCwd(), 'package.json')
+}
 
-  return pkgPath
+/**
+ * 判断package.json是否存在，存在则返回绝对路径
+ */
+function isExistPackageJSON(cwd?: string): boolean {
+  return VipNodeJS.isExistFile('package.json', cwd)
+}
+
+/**
+ * 判断package-lock.json是否存在
+ */
+function isExistPackageLock(cwd?: string): boolean {
+  return VipNodeJS.isExistFile('package--lock.json', cwd)
+}
+function isExistPnpmLock(cwd?: string): boolean {
+  return VipNodeJS.isExistFile('pnpm-lock.yaml', cwd)
 }
 
 /**
@@ -133,8 +144,11 @@ export const VipPackageJSON = {
   getCurrentVersion,
   getReleaseVersion,
   promptChoiceReleaseVersion,
+  getPackagePath,
   isExistPackageJSON,
   isPackageJSON,
+  isExistPackageLock,
+  isExistPnpmLock,
   replaceOrAddToJSON,
   getPackageJSON,
 }

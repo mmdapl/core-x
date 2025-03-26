@@ -160,6 +160,17 @@ async function execShell(commands: ShellCommand[] | string | ShellCommand): Prom
 }
 
 /**
+ * 获取命令执行的trim操作后的结果
+ */
+async function getCommandTrimResponse(command: string): Promise<string | null> {
+  const { code, stdout } = await execCommand(command)
+  if (code !== 0) {
+    return null
+  }
+  return stdout.trim()
+}
+
+/**
  * 执行器
  */
 export const VipExecutor = {
@@ -167,4 +178,5 @@ export const VipExecutor = {
   execCommand,
   execShell,
   commandStandardExecutor,
+  getCommandTrimResponse,
 }

@@ -7,7 +7,7 @@ import { VipLodash } from './lodash'
  * - 本地配置，形如：xxx.config.ts
  * - 包配置，package.json中的xxx字段
  */
-async function loadCliConfig<T>(configName: string, defaultValue: T, c12Options?: LoadConfigOptions): Promise<T> {
+async function loadCliConfig<T>(configName: string, defaultValue: any, c12Options?: LoadConfigOptions): Promise<T> {
   const { config } = await loadConfig({
     name: configName,
     packageJson: true,
@@ -23,8 +23,8 @@ async function loadCliConfig<T>(configName: string, defaultValue: T, c12Options?
  * @param cliConfig cli自定义配置
  * @param commanderConfig 用户在cli终端输入的配置
  */
-async function mergeCommanderConfig<K, U>(cliConfig: K, commanderConfig: U): Promise<K & U> {
-  return VipLodash.merge({}, cliConfig, commanderConfig)
+function mergeCommanderConfig<T>(cliConfig: Partial<T>, commanderConfig: Partial<T>): T {
+  return VipLodash.merge({}, cliConfig, commanderConfig) as T
 }
 
 /**

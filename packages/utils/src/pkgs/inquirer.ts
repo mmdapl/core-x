@@ -74,6 +74,13 @@ async function promptPassword(message: string): Promise<string> {
  * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/select
  */
 async function promptSelect<T extends string>(message: string, choices: VipInquirerChoiceList<T> | string[], options?: VipInquirerOptions): Promise<T> {
+  // 默认值为第一个属性
+  if (options != null && options.default == null && choices.length > 0) {
+    const choice = choices[0]
+    options.default = typeof choice === 'object'
+      ? choice.value
+      : choice
+  }
   return select({ message, choices, ...(options == null ? {} : options) })
 }
 

@@ -1,4 +1,5 @@
 import { RegistryAddressEnum } from '../enums'
+import { VipJSON } from '../pkgs'
 import { VipExecutor } from './exec'
 import { vipLogger } from './logger'
 import { VipNodeJS } from './nodejs'
@@ -41,6 +42,43 @@ async function isExistNpm(): Promise<boolean> {
 
 async function isExistPnpm(): Promise<boolean> {
   return !!await getPnpmVersion()
+}
+
+async function getTurboPackVersion(): Promise<string | null> {
+  return await VipExecutor.getCommandTrimResponse('echo "v$(turbo --version)"')
+}
+async function isExistTurboPack(): Promise<boolean> {
+  return !!await getTurboPackVersion()
+}
+
+interface TurboJSON {
+  packageManager: string
+  packages: {
+    count: number
+    items: {
+      name: string
+      path: string
+    }[]
+  }
+}
+
+/**
+ * 获取TurboPack匹配到的所有apps
+ */
+async function getTurboPackApps(): Promise<string[]> {
+  const command = 'npx turbo ls --output json'
+  const turboJsonStr = await VipExecutor.getCommandTrimResponse(command)
+
+  try {
+    if (turboJsonStr == null) {
+      return []
+    }
+    const turboJSON = VipJSON.parse(turboJsonStr, {}) as TurboJSON
+    return turboJSON.packages?.items.map(item => item.name)
+  }
+  catch {
+    return []
+  }
 }
 
 /**
@@ -97,14 +135,23 @@ async function installByPnpm(args: {
   await VipExecutor.commandStandardExecutor(commands.join(' '))
 }
 
+async function userLogin(args: { registry: string }): Promise<void> {
+  const command = `npm login --registry ${args.registry}`
+  await VipExecutor.commandStandardExecutor(command)
+}
+
 export const VipNpm = {
   formatVersionStr,
   getNpmVersion,
   getNodeVersion,
   getPnpmVersion,
+  getTurboPackVersion,
+  isExistTurboPack,
+  getTurboPackApps,
   isExistNodeJs,
   isExistNpm,
   isExistPnpm,
   installByNpm,
   installByPnpm,
+  userLogin,
 }

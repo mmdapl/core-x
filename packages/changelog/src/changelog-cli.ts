@@ -1,7 +1,22 @@
 import type { ChangelogCliOptions } from './changelog.interface'
-import { VipColor, VipCommander, VipConsole, VipGit, vipLogger, VipNodeJS } from '@142vip/utils'
-import { name as packageName, version as packageVersion } from '../package.json'
-import { changelogGenerate, changelogUpdate, sendGithubRelease } from './changelog'
+import {
+  VipColor,
+  VipCommander,
+  VipConsole,
+  VipGit,
+  vipLogger,
+  VipNodeJS,
+} from '@142vip/utils'
+import {
+  description as packageDescription,
+  name as packageName,
+  version as packageVersion,
+} from '../package.json'
+import {
+  changelogGenerate,
+  changelogUpdate,
+  sendGithubRelease,
+} from './changelog'
 import { mergeConfig } from './config'
 import { GithubAPI } from './utils'
 
@@ -89,24 +104,22 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
 
 /**
  * cli 入口
- * - changelogen: https://www.npmjs.com/package/changelogen
+ * - https://www.npmjs.com/package/changelogen
  */
 function changelogMain(): void {
-  const program = new VipCommander(packageName, packageVersion)
+  const program = new VipCommander(packageName, packageVersion, packageDescription)
 
-  // cli参数
   program
-    .option('--token <token>', 'GitHub Token')
-    .option('--from <from>', 'From tag')
-    .option('--to <to>', 'To tag')
-    .option('--github <github>', 'GitHub Repository, eg. @142vip/core-x')
-    .option('--name <name>', 'Name of the release')
-    .option('--output <output>', 'Output to file instead of sending to GitHub')
-    .option('--scopeName <scopeName>', 'Package name in Monorepo，Match the scope in the git commit information')
-    .option('--prerelease', 'Mark release as prerelease', true)
-    .option('--dry-run', 'Dry run', false)
+    .option('--token <token>', 'GitHub的Token')
+    .option('--from <from>', '开始的标签')
+    .option('--to <to>', '结尾的标签')
+    .option('--name <name>', '发布的名称')
+    .option('--github <github>', 'Github仓库地址，例如：@142vip/core-x')
+    .option('--output <output>', '输出的问题件名，例如：CHANGELOG.md')
+    .option('--scopeName <scopeName>', 'Monorepo模式下的应用包名称')
+    .option('--prerelease', '将当前发布的版本标记为预发布状态', true)
+    .option('--dry-run', '试运行，生成CHANGELOG记录', false)
     .action(async (options: ChangelogCliOptions) => {
-      console.log('cli-->', options)
       await changelogHandler(options)
     })
 

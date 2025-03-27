@@ -12,17 +12,17 @@ import { $fetch } from 'ofetch'
 import { getGitDiff, parseCommits } from './git'
 import { GithubAPI, MarkdownAPI } from './utils'
 
-interface ChangelogGenerate {
-  config: ChangelogGenerateOptions
-  commits: Commit[]
-  markdown: string
-  releaseUrl: string
-}
-
 /**
  * 处理git changelog记录生成
  */
-export async function changelogGenerate(config: ChangelogGenerateOptions): Promise<ChangelogGenerate> {
+export async function changelogGenerate(
+  config: ChangelogGenerateOptions,
+): Promise<{
+    config: ChangelogGenerateOptions
+    commits: Commit[]
+    markdown: string
+    releaseUrl: string
+  }> {
   const rawCommits = await getGitDiff({
     from: config.from,
     to: config.to,
@@ -58,7 +58,12 @@ export async function changelogGenerate(config: ChangelogGenerateOptions): Promi
 /**
  * 更新changelog
  */
-export async function changelogUpdate(outputPath: string, markdown: string, releaseVersionName: string, markdownHeader: string): Promise<void> {
+export async function changelogUpdate(
+  outputPath: string,
+  markdown: string,
+  releaseVersionName: string,
+  markdownHeader: string,
+): Promise<void> {
   let changelogMD: string
   const exit = VipNodeJS.existPath(outputPath)
 

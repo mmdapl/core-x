@@ -1,6 +1,10 @@
 import type { ChangelogGenerateOptions } from './changelog.interface'
 import { VipLodash } from '@142vip/utils/src'
-import { changelogGenerate, changelogUpdate, sendGithubRelease } from './changelog'
+import {
+  changelogGenerate,
+  changelogUpdate,
+  sendGithubRelease,
+} from './changelog'
 import { ChangelogDefaultConfig } from './config'
 
 export * from './changelog.interface'

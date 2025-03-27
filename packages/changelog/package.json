@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1-alpha.15",
   "private": false,
-  "description": "基于Git提交记录，生成漂亮的变更日志，输出Markdown格式的CHANGELOG.md文件，更加人性化",
+  "description": "基于Git提交信息，生成变更记录，输出Markdown格式的CHANGELOG.md文件",
   "author": "mmdapl <mmdapl@163.com>",
   "authorInfo": {
     "name": "微信公众号：储凡",

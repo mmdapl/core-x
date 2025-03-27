@@ -1,101 +1,65 @@
 import type { VipCommander } from '@142vip/utils'
-import { VipExecutor, VipNodeJS } from '@142vip/utils'
+import { VipColor, VipConsole, VipDocker, VipInquirer, vipLogger } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 enum LoginPlatformEnum {
-  DOCKER = 'docker',
-  NPM = 'npm',
+  DOCKER = 'DOCKER',
+  NPM = 'NPM',
 }
 
 enum RegistryURLEnum {
-  DOCKER = 'https://registry.cn-hangzhou.aliyuncs.com',
+  DOCKER = 'https://registry.docker.io',
   NPM = 'https://registry.npmjs.org',
-  VIP_DOCKER = 'registry.cn-hangzhou.aliyuncs.com',
+  VIP_DOCKER = 'https://registry.cn-hangzhou.aliyuncs.com',
   VIP_NPM = 'https://registry.142vip.com',
-}
-
-interface LoginOptions {
-  userName?: string
-  password?: string
-  registryUrl?: string
-  // 142vip的业务
-  vip?: string
-}
-
-interface DockerOptions extends LoginOptions {
-}
-
-interface NpmOptions extends Omit<LoginOptions, 'userName' | 'password'> {
-}
-
-async function execLogin(platform: LoginPlatformEnum, args: LoginOptions): Promise<void> {
-  if (LoginPlatformEnum.DOCKER === platform) {
-    await loginDocker(args)
-  }
-
-  if (LoginPlatformEnum.NPM === platform) {
-    await loginNpm(args)
-  }
 }
 
 /**
  * docker 登录
+ * - docker login --username=142vip --password="$password"  registry.cn-hangzhou.aliyuncs.com
  */
-async function loginDocker(args: DockerOptions): Promise<void> {
-  let registryUrl = RegistryURLEnum.DOCKER as string
-  if (args.registryUrl != null) {
-    registryUrl = args.registryUrl
-  }
-
-  if (args.vip) {
-    registryUrl = RegistryURLEnum.VIP_DOCKER
-    args.userName = '142vip'
-  }
-
-  //   docker login --username=142vip --password="$password"  registry.cn-hangzhou.aliyuncs.com
-  const command = `docker login ${args.userName != null
-    ? `--username=${args.userName}`
-    : ''} ${args.password != null ? `--password=${args.password}` : ''}${registryUrl}`
-
-  await VipExecutor.commandStandardExecutor(command)
+async function loginDocker(): Promise<void> {
+  const username = await VipInquirer.promptInput('请输入用户名（默认：142vip）：', '142vip')
+  const password = await VipInquirer.promptPassword('请输入密码：')
+  // 后续考虑用户自定义仓库地址
+  const registry = await VipInquirer.promptSelect('请选择仓库地址：', [
+    RegistryURLEnum.DOCKER,
+    RegistryURLEnum.VIP_DOCKER,
+  ])
+  vipLogger.println()
+  await VipDocker.userLogin({ username, password, registry })
 }
 
 /**
  * npm 登录
+ * - npm login --registry  https://registry.npmjs.org
  */
-async function loginNpm(args: NpmOptions): Promise<void> {
-  let registryUrl = RegistryURLEnum.NPM as string
-  if (args.registryUrl != null) {
-    registryUrl = args.registryUrl
-  }
-
-  if (args.vip) {
-    registryUrl = RegistryURLEnum.VIP_NPM
-  }
-
-  // npm login --registry  https://registry.npmjs.org
-  await VipExecutor.commandStandardExecutor(`npm login --registry ${registryUrl}`)
+async function loginNpm(): Promise<void> {
+  const registry = await VipInquirer.promptInput(`请输入NPM地址：`, RegistryURLEnum.NPM)
+  const command = `npm login --registry ${registry}`
+  vipLogger.println()
+  VipConsole.log(`${VipColor.red('请粘贴到终端执行，NPM登录命令：')} ${VipColor.green(command)}`)
+  vipLogger.println()
 }
 
 /**
  * login命令入口
+ * - fa login
+ * - npx fa login
  */
 export async function loginMain(program: VipCommander): Promise<void> {
   program
-    .command(`${CliCommandEnum.LOGIN} <platform>`)
-    .description('登录远程平台，支持Docker和Npm')
-    .option('-u,--username', '登录账号，docker登录时有效')
-    .option('-p,--password', '登录密码，docker登录时有效')
-    .option('--registry-url', 'registry address')
-    .option('--vip', '142vip专用业务账号', false)
-    .action(async (platform: LoginPlatformEnum, args: LoginOptions) => {
-      if (![LoginPlatformEnum.NPM, LoginPlatformEnum.DOCKER].includes(platform)) {
-        console.error('login命令只支持Docker和Npm平台，使用格式 login docker|npm')
-        VipNodeJS.exitProcess(1)
+    .command(CliCommandEnum.LOGIN)
+    .summary('登录平台')
+    .description('登录远程平台，支持DOCKER、NPM')
+    .action(async () => {
+      const loginType = await VipInquirer.promptSelect('选择需要登录的平台：', Object.values(LoginPlatformEnum))
+      if (loginType === LoginPlatformEnum.DOCKER) {
+        await loginDocker()
       }
-      else {
-        await execLogin(platform, args)
+
+      if (loginType === LoginPlatformEnum.NPM) {
+        await loginNpm()
       }
-      JSON.stringify('aaa')
     })
 }

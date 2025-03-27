@@ -131,6 +131,7 @@ async function execCleanUp(args: CleanUpOptions): Promise<void> {
 export async function cleanUpMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CLEAN)
+    .summary('快速清理项目')
     .description('清除开发、构建环境下产生的无用文件')
     .option('-n,--nuxt', '删除nuxt构建目录，包括.nuxt、.output目录', false)
     .option('-d,--dist', '删除dist目录', false)
@@ -145,7 +146,7 @@ export async function cleanUpMain(program: VipCommander): Promise<void> {
     .option('--ignore-tips', '忽略提示，直接删除', false)
     .option('--logger', '开启日志追踪模式', false)
     .option('--dry-run', '试运行，不做实际删除操作', false)
-    .action(async (args: CleanUpOptions) => {
+    .action(async (args: CleanUpOptions): Promise<void> => {
       await execCleanUp(args)
     })
 }

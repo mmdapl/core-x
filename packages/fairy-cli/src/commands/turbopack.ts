@@ -1,28 +1,35 @@
 import type { VipCommander } from '@142vip/utils'
-import { VipConsole, VipExecutor, VipNodeJS } from '@142vip/utils'
+import { VipColor, VipConsole, VipExecutor, VipInquirer, vipLogger, VipNodeJS, VipNpm } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface TurboPackOptions {
-  dev?: boolean
-  build?: boolean
+  mode?: string
+  logger?: string
 }
 
+/**
+ * 支持的模式
+ */
+enum TurboPackCommandModeEnum {
+  DEV = 'npx turbo dev',
+  BUILD = 'npx turbo build',
+}
+
+/**
+ * 执行turbo命令
+ */
 async function execTurboPack(repoNames: string[], args: TurboPackOptions): Promise<void> {
   // 判断当前目录下是否有turbo.json配置文件
-  if (!VipNodeJS.exitPath('turbo.json')) {
-    VipConsole.log('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>')
-    return VipNodeJS.exitProcess(1)
+  if (!VipNodeJS.isExistFile('turbo.json')) {
+    VipConsole.log(VipColor.red('项目根目录下缺少turbo.json配置文件，查看Turborepo官网：<https://turbo.build/repo/docs>'))
+    VipNodeJS.exitProcess(1)
   }
 
-  // npx turbo run dev
-  if (args.dev) {
-    await VipExecutor.execShell(`npx turbo run dev ${getFilterRepo(repoNames)} --color --only`)
+  const command = `${args.mode} ${getFilterRepo(repoNames)} --color --only`
+  if (args.logger) {
+    VipConsole.log(VipColor.yellow(`执行命令：${command}`))
   }
-
-  // npx turbo run build
-  if (args.build) {
-    await VipExecutor.execShell(`npx turbo run build ${getFilterRepo(repoNames)} --color --only`)
-  }
+  await VipExecutor.commandStandardExecutor(command)
 }
 
 /**
@@ -36,15 +43,34 @@ function getFilterRepo(repoNames: string[]): string {
 
 /**
  * turbo命令入口
+ * - npx fa turbo
+ * - npx fa turbo --dev
+ * - npx fa turbo --build
  */
 export async function turboPackMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.TURBO)
-    .description('TurboPack工具命令')
-    .argument('[repoName...]', '需要使用Turbo管理的项目名，支持多个')
-    .option('--dev', '执行dev命令', false)
-    .option('--build', '执行build命令', false)
-    .action(async (repoNames: string[], args: TurboPackOptions) => {
-      await execTurboPack(repoNames, args)
+    .aliases(['tu', 'tur'])
+    .summary('通用型TurboPack管理工具')
+    .description('通用型TurboPack命令工具，支持dev、build命令')
+    .argument('[filters...]', '过滤器规则，参考：<https://turbo.build/repo/docs/crafting-your-repository/running-tasks#using-filters>')
+    .option('-m,--mode', `命令的支持的模式`)
+    .action(async (filters: string[], args: TurboPackOptions) => {
+      const turboVersion = await VipNpm.getTurboPackVersion()
+      if (turboVersion == null) {
+        vipLogger.error('未检测到TurboPack环境，请全局安装turbo。命令：npm i -g turbo')
+        VipNodeJS.exitProcess(1)
+      }
+      if (filters.length === 0) {
+        const apps = await VipNpm.getTurboPackApps()
+        // 执行所有repo
+        filters = await VipInquirer.promptCheckBox('请选择模块名称：', apps)
+      }
+      // 自助选择模式
+      if (!args.mode) {
+        args.mode = await VipInquirer.promptSelect('请选择运行模式：', [TurboPackCommandModeEnum.DEV, TurboPackCommandModeEnum.BUILD])
+      }
+
+      await execTurboPack(filters, args)
     })
 }

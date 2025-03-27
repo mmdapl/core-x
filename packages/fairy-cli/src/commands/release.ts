@@ -104,18 +104,20 @@ async function execVipRelease(args: VipReleaseExtraOptions): Promise<void> {
 export async function releaseMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.RELEASE)
+    .alias('re')
+    .summary('发布NPM包')
     .description('发布NPM包，更新版本信息')
-    .option('--push', '推送到Git远程(默认: true)', true)
+    .option('--push', '推送到Git远程', true)
     .option('--preid <preid>', 'ID for prerelease')
-    .option('--commit <msg>', '提交信息(默认: false)', false)
-    .option('--tag <tag>', '标签名(默认: false)', false)
-    .option('--skip-confirm', `跳过确认框二次确认 (默认: false)`, false)
-    .option('-r, --recursive', `递归更新所有package.json中的version字段信息(默认: false)`, false)
+    .option('--commit <msg>', '提交信息', false)
+    .option('--tag <tag>', '标签名', false)
+    .option('--skip-confirm', `跳过确认框二次确认`, false)
+    .option('-r, --recursive', `递归更新所有package.json中的version字段信息`, false)
     .option('--execute <command>', '版本更新后需要执行的命令')
     .option('--package <package>', '指定需要发布的包')
-    .option('--branch <branch>', '指定分支进行发布(默认分支：next)', 'next')
-    .option('--check-release', '发布仓库主版本时，校验Monorepo中子模块版本(默认: false)', false)
-    .option('--vip', '@142vip组织专用功能(默认: false)', false)
+    .option('--branch <branch>', '指定分支进行发布', 'next')
+    .option('--check-release', '发布仓库主版本时，校验Monorepo中子模块版本', false)
+    .option('--vip', '@142vip组织专用功能', false)
     .option('-F, --filter <filter>', '模块的路径，例如："./package/*"', (value: string, previous: string[]) => {
       if (!value)
         return [value]

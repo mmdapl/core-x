@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.3-alpha.20",
   "private": false,
-  "description": "公众号搜：储凡、fairy-cli",
+  "description": "通用型Cli助手、一站式工具，支持多种命令操作",
   "author": {
     "name": "mmdapl",
     "email": "mmdapl@163.com"

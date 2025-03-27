@@ -6,18 +6,12 @@ interface LintOptions {
   fix: boolean
 }
 
-async function execLink(args: LintOptions): Promise<void> {
-  // 执行eslint校验
-  await doCodeLint({
-    fix: args.fix,
-  })
-}
-
 /**
- * 代码格式化
+ * 执行eslint校验，格式化代码
  */
-async function doCodeLint(args: { fix: boolean }): Promise<void> {
-  await VipExecutor.commandStandardExecutor(`npx eslint . ${args.fix ? '--fix' : ''}`)
+async function execLint(args: LintOptions): Promise<void> {
+  const command = `npx eslint . ${args.fix ? '--fix' : ''}`
+  await VipExecutor.commandStandardExecutor(command)
 }
 
 /**
@@ -27,10 +21,11 @@ async function doCodeLint(args: { fix: boolean }): Promise<void> {
 export async function lintMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.LINT)
-    .description('根据Eslint检查代码风格，支持代码格式化')
+    .summary('代码格式化')
+    .description('根据Eslint检查、格式化代码风格')
     .option('-c,--config', 'Eslint配置文件路径', false)
-    .option('-f --fix', '是否需要基于Eslint规则自动修复', false)
+    .option('-f,--fix', '是否需要基于Eslint规则自动修复', false)
     .action(async (args: LintOptions) => {
-      await execLink(args)
+      await execLint(args)
     })
 }

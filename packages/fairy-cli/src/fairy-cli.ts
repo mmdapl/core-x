@@ -1,6 +1,6 @@
 import * as process from 'node:process'
 import { VipCommander } from '@142vip/utils'
-import { name, version } from '../package.json'
+import { description, name, version } from '../package.json'
 import {
   changelogMain,
   cleanUpMain,
@@ -15,7 +15,7 @@ import {
 } from './commands'
 
 async function fairyCliMain(): Promise<void> {
-  const program = new VipCommander(name, version)
+  const program = new VipCommander(name, version, description)
 
   // fairy-cli create 创建 todo
 

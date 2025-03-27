@@ -3,11 +3,15 @@ import { VipExecutor } from '@142vip/utils'
 import { CliCommandEnum } from '../shared'
 
 interface ChangelogOptions {
-  dry?: boolean
+  dryRun?: boolean
 }
 
+/**
+ * 生成CHANGELOG文档
+ * - 参考 @142vip/changelog模块
+ */
 async function generateChangelog(args: ChangelogOptions): Promise<void> {
-  await VipExecutor.commandStandardExecutor(`npx changelog ${args.dry ? '--dry' : ''}`)
+  await VipExecutor.commandStandardExecutor(`npx changelog ${args.dryRun ? '--dry' : ''}`)
 }
 
 /**
@@ -17,10 +21,10 @@ async function generateChangelog(args: ChangelogOptions): Promise<void> {
 export async function changelogMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.CHANGELOG)
-    .description('快速使用@142vip/changelog模块')
-    .option('--dry', '试运行，生成`CHANGELOG`文档', false)
-    .action(async (args: ChangelogOptions) => {
-      // 参考 @142vip/changelog模块
+    .summary('生成CHANGELOG文档')
+    .description('快速使用@142vip/changelog模块，生成CHANGELOG文档')
+    .option('--dry-run', '试运行，生成`CHANGELOG`文档', false)
+    .action(async (args: ChangelogOptions): Promise<void> => {
       await generateChangelog(args)
     })
 }

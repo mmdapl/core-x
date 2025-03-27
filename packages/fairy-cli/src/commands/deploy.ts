@@ -21,6 +21,8 @@ function DeployGithubPage() {}
 export async function deployMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.DEPLOY)
+    .aliases(['de', 'dep'])
+    .summary('项目部署')
     .description('项目部署')
     .option('-gh,--github-page', '部署到Github Pages', false)
     .action((args: DeployOptions) => {

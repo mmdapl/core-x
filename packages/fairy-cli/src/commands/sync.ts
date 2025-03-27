@@ -138,6 +138,7 @@ async function searchNpmPkgOnline(input: string, options: { signal: AbortSignal 
 export async function syncMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.SYNC)
+    .summary('同步NPM包')
     .description('同步NPM仓库的模块包到CNPM仓库')
     .argument('[packageName]', '需要同步的模块包名称')
     .option('--vip', '142vip业务专用', false)

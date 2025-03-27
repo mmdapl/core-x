@@ -15,7 +15,7 @@ enum InstallTypeEnum {
 }
 
 /**
- * 依赖下载
+ * 依赖下载、下载
  * - npm
  * - pnpm
  */
@@ -35,16 +35,12 @@ export async function installMain(program: VipCommander): Promise<void> {
   program
     .command(CliCommandEnum.INSTALL)
     .aliases(['i', 'add'])
-    .description('下载、升级依赖版本')
-    .option('-f,--force', 'force the lock file to be updated', false)
-    .option('--registry', `pnpm registry address，default ali npm：${RegistryAddressEnum.VIP_NPM_ALIBABA}`, RegistryAddressEnum.VIP_NPM_ALIBABA)
-    .action(async (args: InstallOptions) => {
-      const installType = await VipInquirer.promptSelect<InstallTypeEnum>('选择下载方式', [
-        InstallTypeEnum.PNPM,
-        InstallTypeEnum.NPM,
-      ], {
-        default: InstallTypeEnum.PNPM,
-      })
+    .summary('依赖安装')
+    .description('Node.js依赖管理，下载、升级依赖版本')
+    .option('-f,--force', '强制lock文件更新', false)
+    .option('--registry', `NPM模块的源地址，默认：${RegistryAddressEnum.VIP_NPM_ALIBABA}`, RegistryAddressEnum.VIP_NPM_ALIBABA)
+    .action(async (args: InstallOptions): Promise<void> => {
+      const installType = await VipInquirer.promptSelect<InstallTypeEnum>('选择安装方式：', Object.values(InstallTypeEnum))
       await execInstall(installType, args)
     })
 }

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.30 (2025-03-28)
+
+### ✨ Features
+
+- 优化`VipCommander`命令，支持`description`描述信息 &nbsp;-&nbsp; by **chufan** [<samp>(74f04)</samp>](https://github.com/142vip/core-x/commit/74f04ea)
+- 优化VipConfig中配置加载等函数的类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(687c3)</samp>](https://github.com/142vip/core-x/commit/687c340)
+- 新增`createSemver`创建实例，支持`originImportSemVer`原生导入的`semver`对象 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/421 [<samp>(0cea4)</samp>](https://github.com/142vip/core-x/commit/0cea4bb)
+
+**Release New Version v0.0.1-alpha.30 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.29 (2025-03-26)
 
 ### ✨ Features

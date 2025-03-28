@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.11 (2025-03-29)
+
+### ✨ Features
+
+- 移除`c12`依赖，使用`loadCliConfig`加载配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/420 [<samp>(4e80d)</samp>](https://github.com/142vip/core-x/commit/4e80d01)
+- 移除`semver`依赖，改用`VipSemver`通用型依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/422 [<samp>(ddb67)</samp>](https://github.com/142vip/core-x/commit/ddb672c)
+- 移除`kolorist`依赖，替换为`VipColor`通用型依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/424 [<samp>(62ac9)</samp>](https://github.com/142vip/core-x/commit/62ac95a)
+
+**Release New Version v0.0.1-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/release-version)**
+
 ## v0.0.1-alpha.10 (2025-01-20)
 
 ### ✨ Features

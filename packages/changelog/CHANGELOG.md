@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.16 (2025-03-29)
+
+### ✨ Features
+
+- 一些代码改造，优化`cli`的参数说明 &nbsp;-&nbsp; by **chufan** [<samp>(2b3a2)</samp>](https://github.com/142vip/core-x/commit/2b3a2b6)
+- 使用`loadCliConfig`加载配置，脚手架增加`ch`命令入口 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/418 [<samp>(1f14e)</samp>](https://github.com/142vip/core-x/commit/1f14e3c)
+- 移除`c12`和`changelogen`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/419 [<samp>(80be0)</samp>](https://github.com/142vip/core-x/commit/80be0fd)
+
+**Release New Version v0.0.1-alpha.16 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.15 (2025-03-24)
 
 ### ✨ Features

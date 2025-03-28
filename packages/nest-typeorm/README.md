@@ -1,6 +1,13 @@
-# @142vip/nest-redis
+# @142vip/nest-typeorm
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/nest-typeorm?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/nest-typeorm)
+
+## 安装
+
+```shell
+# 安装
+pnpm i @142vip/nest-typeorm
+```
 
 ## 证书
 

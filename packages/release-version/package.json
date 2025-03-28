@@ -1,7 +1,7 @@
 {
   "name": "@142vip/release-version",
   "version": "0.0.1-alpha.11",
-  "description": "版本迭代更新，Git提交信息、打标记并推送到远程",
+  "description": "通用型版本迭代Cli工具，支持版本迭代更新，Git提交信息、打标记并推送到远程",
   "author": {
     "name": "James Messinger",
     "url": "https://jamesmessinger.com"

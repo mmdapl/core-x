@@ -2,6 +2,13 @@
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/nest?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/nest)
 
+## 安装
+
+```shell
+# 安装
+pnpm i @142vip/nest
+```
+
 ## 参考资料
 
 - 官方文档：<https://docs.nestjs.com/>

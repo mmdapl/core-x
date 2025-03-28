@@ -2,7 +2,7 @@
   "name": "@142vip/oauth2.0",
   "version": "0.0.1-alpha.2",
   "private": false,
-  "description": "公众号搜：储凡",
+  "description": "Oauth2.0授权认证，支持通用授权协议",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
   "homepage": "https://142vip.github.io/core-x/packages/oauth/",

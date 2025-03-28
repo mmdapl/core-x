@@ -20,6 +20,13 @@
 
 [👉 使用示例](https://github.com/142vip/core-x/releases)
 
+## 安装
+
+```shell
+# 安装
+pnpm i @142vip/changelog
+```
+
 ## 使用
 
 ### 生成CHANGELOG.md文档

@@ -2,7 +2,7 @@
   "name": "@142vip/vuepress",
   "version": "0.0.1-alpha.10",
   "private": false,
-  "description": "公众号搜：储凡",
+  "description": "VuePress使用的最佳实践，基于vuepress-theme-hope的封装",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
   "homepage": "https://142vip.github.io/core-x/packages/vuepress/",

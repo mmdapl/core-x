@@ -45,6 +45,7 @@ export const sidebarConfig: SidebarConfig = [
       { text: '@142vip/egg-redis', link: '/packages/egg-redis/index.md' },
       { text: '@142vip/egg-sequelize', link: '/packages/egg-sequelize/index.md' },
       { text: '@142vip/egg-swagger', link: '/packages/egg-swagger/index.md' },
+      { text: '@142vip/egg-validate', link: '/packages/egg-validate/index.md' },
     ],
   },
   {
@@ -65,6 +66,8 @@ export const sidebarConfig: SidebarConfig = [
   {
     text: `🎮 ${ProjectId.Demo}`,
     items: [
+      { text: 'egg-demo', link: '/apps/egg-demo/index.md' },
+      { text: 'nest-demo', link: '/apps/nest-demo/index.md' },
       { text: 'vitepress-demo', link: '/apps/vitepress-demo/index.md' },
       { text: 'vuepress-demo', link: '/apps/vuepress-demo/index.md' },
     ],

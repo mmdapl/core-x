@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.21 (2025-03-29)
+
+### ✨ Features
+
+- `sync`处理逻辑优化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/414 [<samp>(f9962)</samp>](https://github.com/142vip/core-x/commit/f996290)
+- 拓展`install`、`clean`、`changelog`等命令 &nbsp;-&nbsp; by **chufan** [<samp>(2d253)</samp>](https://github.com/142vip/core-x/commit/2d253e0)
+- 优化`fa`各子命令，简化`login`、`release`等逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(451d5)</samp>](https://github.com/142vip/core-x/commit/451d5c5)
+
+**Release New Version v0.0.3-alpha.21 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.20 (2025-02-13)
 
 ### ✨ Features

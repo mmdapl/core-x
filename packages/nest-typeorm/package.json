@@ -2,7 +2,7 @@
   "name": "@142vip/nest-typeorm",
   "version": "0.0.1-alpha.0",
   "private": false,
-  "description": "公众号搜：储凡",
+  "description": "Nest.js框架下Typeorm的最佳实践",
   "author": "mmdapl <mmdapl@163.com>",
   "license": "MIT",
   "homepage": "https://142vip.github.io/core-x/packages/nest-typeorm/",

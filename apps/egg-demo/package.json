@@ -2,6 +2,7 @@
   "name": "egg-demo",
   "version": "0.0.1-alpha.1",
   "private": true,
+  "description": "@142vip/egg相关包和插件的使用Demo",
   "scripts": {
     "dev": "egg-bin dev",
     "start": "egg-scripts start --daemon --title=egg-demo",

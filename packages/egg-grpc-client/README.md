@@ -2,6 +2,13 @@
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/egg-grpc-client?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/egg-grpc-client)
 
+## 安装
+
+```shell
+# 安装
+pnpm i @142vip/egg-grpc-client
+```
+
 ## 证书
 
 [MIT](https://opensource.org/license/MIT)

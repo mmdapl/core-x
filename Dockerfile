@@ -28,8 +28,9 @@ RUN apk add --no-cache git --repository https://mirrors.aliyun.com/alpine/v3.14/
 RUN npm install -g corepack@latest
 
 ## 基于容器自动构建
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store sh ./scripts/ci && pnpm build:packages && \
-  if [ "$NEED_PROXY" = "false" ];  \
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store sh ./scripts/ci --ignore-scripts && pnpm build:packages
+
+RUN if [ "$NEED_PROXY" = "false" ];  \
    then \
     pnpm build:docs; \
    else \

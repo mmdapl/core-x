@@ -37,6 +37,8 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
     console.log('changelogConfig:', changelogConfig)
     const { markdown, commits, releaseUrl } = await changelogGenerate(changelogConfig)
 
+    VipConsole.log(`release: <${VipColor.yellow(releaseUrl)}>`)
+
     VipConsole.log(`${VipColor.cyan(changelogConfig.from)} ${VipColor.dim(' -> ')} ${VipColor.blue(changelogConfig.to)} ${VipColor.dim(` (${commits.length} commits)`)}`)
     vipLogger.println()
     VipConsole.log(VipColor.dim('--------------'))
@@ -76,7 +78,6 @@ async function changelogHandler(cliOptions: ChangelogCliOptions): Promise<void> 
       VipConsole.error(VipColor.yellow('存储库似乎克隆得很浅，这使得更改日志无法生成。您可能希望在 CI 配置中指定 \'fetch-depth： 0\'。'))
       GithubAPI.printReleaseUrl(releaseUrl)
       VipNodeJS.exitProcess(1)
-      return
     }
 
     // 调用api 直接发布

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.11 (2025-03-30)
+
+### 🐛 Bug Fixes
+
+- 修复依赖`@vueuse/shared`缺失导致的构建异常 &nbsp;-&nbsp; by **chufan** [<samp>(b2886)</samp>](https://github.com/142vip/core-x/commit/b2886f0)
+
+**Release New Version v0.0.1-alpha.11 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.10 (2025-02-06)
 
 ### ✨ Features

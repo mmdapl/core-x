@@ -108,8 +108,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       axios:
-        specifier: 1.7.9
-        version: 1.7.9
+        specifier: 1.8.4
+        version: 1.8.4
 
   packages/changelog:
     dependencies:
@@ -150,8 +150,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       axios:
-        specifier: 1.7.9
-        version: 1.7.9
+        specifier: 1.8.4
+        version: 1.8.4
 
   packages/egg-grpc-client:
     dependencies:
@@ -437,7 +437,7 @@ importers:
         version: 2.9.7(vue@3.5.13(typescript@5.8.2))
       vitepress:
         specifier: 1.6.3
-        version: 1.6.3(@algolia/client-search@5.15.0)(@types/node@22.13.1)(async-validator@4.2.5)(axios@1.7.9)(postcss@8.4.49)(qrcode@1.5.4)(sass-embedded@1.86.0)(search-insights@2.17.2)(typescript@5.8.2)
+        version: 1.6.3(@algolia/client-search@5.15.0)(@types/node@22.13.1)(async-validator@4.2.5)(axios@1.8.4)(postcss@8.4.49)(qrcode@1.5.4)(sass-embedded@1.86.0)(search-insights@2.17.2)(typescript@5.8.2)
       vue:
         specifier: 3.5.13
         version: 3.5.13(typescript@5.8.2)
@@ -3465,8 +3465,8 @@ packages:
     resolution: {integrity: sha512-NZKeq9AfyQvEeNlN0zSYAaWrmBffJh3IELMZfRpJVWgrpEbtEpnjvzqBPf+mxoI287JohRDoa+/nsfqqiZmF6g==}
     engines: {node: '>= 6.0.0'}
 
-  axios@1.7.9:
-    resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==}
+  axios@1.8.4:
+    resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -12242,14 +12242,14 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/integrations@12.5.0(async-validator@4.2.5)(axios@1.7.9)(focus-trap@7.6.4)(qrcode@1.5.4)(typescript@5.8.2)':
+  '@vueuse/integrations@12.5.0(async-validator@4.2.5)(axios@1.8.4)(focus-trap@7.6.4)(qrcode@1.5.4)(typescript@5.8.2)':
     dependencies:
       '@vueuse/core': 12.5.0(typescript@5.8.2)
       '@vueuse/shared': 12.5.0(typescript@5.8.2)
       vue: 3.5.13(typescript@5.8.2)
     optionalDependencies:
       async-validator: 4.2.5
-      axios: 1.7.9
+      axios: 1.8.4
       focus-trap: 7.6.4
       qrcode: 1.5.4
     transitivePeerDependencies:
@@ -12442,7 +12442,7 @@ snapshots:
 
   aws-ssl-profiles@1.1.2: {}
 
-  axios@1.7.9:
+  axios@1.8.4:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.1
@@ -18941,7 +18941,7 @@ snapshots:
       tsx: 4.19.2
       yaml: 2.6.0
 
-  vitepress@1.6.3(@algolia/client-search@5.15.0)(@types/node@22.13.1)(async-validator@4.2.5)(axios@1.7.9)(postcss@8.4.49)(qrcode@1.5.4)(sass-embedded@1.86.0)(search-insights@2.17.2)(typescript@5.8.2):
+  vitepress@1.6.3(@algolia/client-search@5.15.0)(@types/node@22.13.1)(async-validator@4.2.5)(axios@1.8.4)(postcss@8.4.49)(qrcode@1.5.4)(sass-embedded@1.86.0)(search-insights@2.17.2)(typescript@5.8.2):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.15.0)(search-insights@2.17.2)
@@ -18954,7 +18954,7 @@ snapshots:
       '@vue/devtools-api': 7.7.1
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.5.0(typescript@5.8.2)
-      '@vueuse/integrations': 12.5.0(async-validator@4.2.5)(axios@1.7.9)(focus-trap@7.6.4)(qrcode@1.5.4)(typescript@5.8.2)
+      '@vueuse/integrations': 12.5.0(async-validator@4.2.5)(axios@1.8.4)(focus-trap@7.6.4)(qrcode@1.5.4)(typescript@5.8.2)
       focus-trap: 7.6.4
       mark.js: 8.11.1
       minisearch: 7.1.1

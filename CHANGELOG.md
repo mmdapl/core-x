@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.27 (2025-03-30)
+
+### ✨ Features
+
+- 更新文档，修改镜像构建逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/429 [<samp>(6a9d0)</samp>](https://github.com/142vip/core-x/commit/6a9d0ce)
+- 优化网站侧边栏，补充各模块README文档 &nbsp;-&nbsp; by **chufan** [<samp>(53156)</samp>](https://github.com/142vip/core-x/commit/5315698)
+- **@142vip/changelog**:
+  - 一些代码改造，优化`cli`的参数说明 &nbsp;-&nbsp; by **chufan** [<samp>(2b3a2)</samp>](https://github.com/142vip/core-x/commit/2b3a2b6)
+  - 使用`loadCliConfig`加载配置，脚手架增加`ch`命令入口 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/418 [<samp>(1f14e)</samp>](https://github.com/142vip/core-x/commit/1f14e3c)
+  - 移除`c12`和`changelogen`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/419 [<samp>(80be0)</samp>](https://github.com/142vip/core-x/commit/80be0fd)
+- **@142vip/fairy-cli**:
+  - `sync`处理逻辑优化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/414 [<samp>(f9962)</samp>](https://github.com/142vip/core-x/commit/f996290)
+  - 拓展`install`、`clean`、`changelog`等命令 &nbsp;-&nbsp; by **chufan** [<samp>(2d253)</samp>](https://github.com/142vip/core-x/commit/2d253e0)
+  - 优化`fa`各子命令，简化`login`、`release`等逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(451d5)</samp>](https://github.com/142vip/core-x/commit/451d5c5)
+- **@142vip/release-version**:
+  - 移除`c12`依赖，使用`loadCliConfig`加载配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/420 [<samp>(4e80d)</samp>](https://github.com/142vip/core-x/commit/4e80d01)
+  - 移除`semver`依赖，改用`VipSemver`通用型依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/422 [<samp>(ddb67)</samp>](https://github.com/142vip/core-x/commit/ddb672c)
+  - 移除`kolorist`依赖，替换为`VipColor`通用型依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/424 [<samp>(62ac9)</samp>](https://github.com/142vip/core-x/commit/62ac95a)
+- **@142vip/utils**:
+  - Docker容器创建支持基于系统架构自动配置`--platform`参数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/413 [<samp>(cd56a)</samp>](https://github.com/142vip/core-x/commit/cd56aaf)
+  - 拓展`nodejs`、`npm`、`package-json`等工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(13d97)</samp>](https://github.com/142vip/core-x/commit/13d97a3)
+  - 优化`VipCommander`命令，支持`description`描述信息 &nbsp;-&nbsp; by **chufan** [<samp>(74f04)</samp>](https://github.com/142vip/core-x/commit/74f04ea)
+  - 优化VipConfig中配置加载等函数的类型支持 &nbsp;-&nbsp; by **chufan** [<samp>(687c3)</samp>](https://github.com/142vip/core-x/commit/687c340)
+  - 新增`createSemver`创建实例，支持`originImportSemVer`原生导入的`semver`对象 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/421 [<samp>(0cea4)</samp>](https://github.com/142vip/core-x/commit/0cea4bb)
+
+### 🐛 Bug Fixes
+
+- **deps**:
+  - Update dependency turbo to v2.4.4 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/417 [<samp>(cf943)</samp>](https://github.com/142vip/core-x/commit/cf94325)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.16` &nbsp;-&nbsp; by **chufan** [<samp>(fcccb)</samp>](https://github.com/142vip/core-x/commit/fcccbcc)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.21` &nbsp;-&nbsp; by **chufan** [<samp>(d69cb)</samp>](https://github.com/142vip/core-x/commit/d69cb99)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.11` &nbsp;-&nbsp; by **chufan** [<samp>(6287f)</samp>](https://github.com/142vip/core-x/commit/6287fdd)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.29` &nbsp;-&nbsp; by **chufan** [<samp>(28081)</samp>](https://github.com/142vip/core-x/commit/28081b1)
+  - Publish `v0.0.1-alpha.30` &nbsp;-&nbsp; by **chufan** [<samp>(15d72)</samp>](https://github.com/142vip/core-x/commit/15d721f)
+
+**Release New Version v0.0.1-alpha.27 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.25...v0.0.1-alpha.27)**
+
 ## v0.0.1-alpha.26 (2025-03-29)
 
 ### ✨ Features

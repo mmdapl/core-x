@@ -41,7 +41,7 @@
   "dependencies": {
     "@142vip/egg": "workspace:*",
     "@142vip/utils": "workspace:*",
-    "sequelize": "6.37.5"
+    "sequelize": "6.37.7"
   },
   "publishConfig": {
     "access": "public",

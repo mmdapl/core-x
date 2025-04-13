@@ -1,7 +1,6 @@
 import { execSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
-import path from 'node:path'
 import process from 'node:process'
+import { VipConsole } from '@142vip/utils'
 
 /**
  * 获取仓库的最新tag
@@ -25,7 +24,7 @@ export function getLatestTagName(): string {
     return execSync('git describe --tags --abbrev=0').toString().trim()
   }
   catch (error) {
-    console.log(error)
+    VipConsole.error(error)
     process.exit(0)
   }
 }
@@ -39,59 +38,4 @@ export function getCommitLogs(latestTag: string, branch?: string): string[] {
 
   // 整理出git提交日志
   return commitLogs.split('\n')
-}
-
-export interface CommitValidate {
-  /**
-   * 提交信息是否符合Git规范
-   */
-  isSuccess: boolean
-
-  /**
-   * 提交类型
-   */
-  type?: string
-
-  /**
-   * 提交范围
-   */
-  scope?: string
-
-  /**
-   * 提交信息
-   */
-  message?: string
-
-  /**
-   * 提交内容
-   */
-  commit: string
-}
-
-/**
- * 校验、解析Git 提交信息
- * - 规范：
- */
-export function verifyCommit(commitRgx?: RegExp): CommitValidate {
-  // 正则匹配
-  const regExp = commitRgx ?? /^(?:revert: )?(?:feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(?:\(.+\))?: .{1,80}/
-
-  const msgPath = path.resolve('.git/COMMIT_EDITMSG')
-  const msg = readFileSync(msgPath, 'utf-8').trim()
-
-  const isSuccess = regExp.test(msg)
-
-  // 解析出type scope message等信息
-  // eslint-disable-next-line regexp/no-super-linear-backtracking
-  const regex = /^(?<type>\w+)(?:\((?<scope>[^()]*)\))?:\s*(?<message>.*)$/
-
-  const { groups } = msg.match(regex)!
-
-  return {
-    isSuccess,
-    type: groups?.type,
-    scope: groups?.scope,
-    message: groups?.message,
-    commit: msg,
-  }
 }

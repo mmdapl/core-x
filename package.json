@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@142vip/changelog": "workspace:*",
+    "@142vip/commit-linter": "workspace:*",
     "@142vip/eslint-config": "workspace:*",
     "@142vip/fairy-cli": "workspace:*",
     "@142vip/release-version": "workspace:*",
@@ -63,7 +64,6 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint:fix",
-    "prepare-commit-msg": "pnpm build",
     "commit-msg": "node verify-commit.js"
   }
 }

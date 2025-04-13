@@ -44,5 +44,12 @@ export function defineVipEslintConfig(
       ...baseEslintRules,
       ...(options.rules ?? {}),
     } as any,
+    settings: {
+      ...(options.settings ?? {}),
+      node: {
+        ...(options.settings?.node ?? {}),
+        exitFunctions: ['process.exit', 'VipNodeJS.exitProcess'],
+      },
+    },
   })
 }

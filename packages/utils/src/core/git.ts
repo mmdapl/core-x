@@ -1,13 +1,9 @@
+import type { GitCommit, GitInfo } from '../enums'
 import { convert } from 'convert-gitmoji'
 import { VipSemver } from '../pkgs'
 import { VipExecutor } from './exec'
-/**
- * Git提交信息
- */
-export interface GitInfo {
-  hash: string
-  message: string
-}
+import { VipNodeJS } from './nodejs'
+
 /**
  * 获取最近一次Git提交信息【包含merge信息】
  * - 短哈希值
@@ -111,6 +107,9 @@ export function getLastMatchingTag(inputTag: string): string | undefined {
   return tag
 }
 
+/**
+ * 是否预发布
+ */
 function isPrerelease(version: string): boolean {
   return !/^[^.]*(?:\.[\d.]*|\d)$/.test(version)
 }
@@ -146,6 +145,57 @@ function convertEmoji(content: string, withSpace?: boolean | 'leading' | 'traili
   return convert(content, withSpace)
 }
 
+/**
+ * 获取commit完整内容
+ */
+function getCommitContent(): string {
+  const msgPath = VipNodeJS.pathJoin('.git/COMMIT_EDITMSG')
+  return VipNodeJS.readFileToStrByUTF8(msgPath)
+}
+
+/**
+ * 获取commit信息
+ * - 去除空行
+ */
+function getCommitTrimMsg(): string {
+  const commitContent = getCommitContent()
+  return commitContent.trim()
+}
+
+/**
+ * 获取commit信息中的第一行内容
+ * - 去除空行
+ * - 去除换行符
+ */
+function getCommitFirstLineMsg(): string {
+  const commitContent = getCommitContent()
+  const firstLine = commitContent.split('\n').shift() ?? ''
+  // 去掉空行
+  return firstLine.trim()
+}
+
+/**
+ * 解析Git提交信息
+ */
+function parseCommitMsg(message: string): GitCommit | null {
+  // eslint-disable-next-line regexp/no-super-linear-backtracking
+  const PATTERN = /^(?<type>\w+)(?:\((?<scope>[^()]*)\))?:\s*(?<message>.*)$/
+
+  const matches = PATTERN.exec(message)
+
+  // 解析提交信息
+  return matches != null
+    ? {
+        type: matches[1],
+        scope: matches[2],
+        subject: matches[3],
+      }
+    : null
+}
+
+/**
+ * Git业务相关
+ */
 export const VipGit = {
   getRecentCommit,
   getRecentCommitHash,
@@ -161,4 +211,7 @@ export const VipGit = {
   execTag,
   execPush,
   convertEmoji,
+  getCommitTrimMsg,
+  getCommitFirstLineMsg,
+  parseCommitMsg,
 }

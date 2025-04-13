@@ -1,8 +1,6 @@
 import type { PathLike } from 'node:fs'
-import type { FileHandle } from 'node:fs/promises'
-import type { Stream } from 'node:stream'
 import { Buffer } from 'node:buffer'
-import { existsSync, promises } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import * as fs from 'node:fs'
 import * as nodePath from 'node:path'
 import process from 'node:process'
@@ -121,8 +119,8 @@ function isExistFile(name: string, cwd?: string): boolean {
 /**
  * 读文件
  */
-async function readFileToStrByUTF8(filePath: PathLike | FileHandle): Promise<string> {
-  return promises.readFile(filePath, 'utf-8')
+function readFileToStrByUTF8(filePath: PathLike): string {
+  return readFileSync(filePath, 'utf-8')
 }
 
 function readdirSync(path: PathLike, options?: {
@@ -132,17 +130,13 @@ function readdirSync(path: PathLike, options?: {
 } | BufferEncoding | null) {
   return fs.readdirSync(path, options)
 }
-
 /**
  * 写文件
  */
-async function writeFileByUTF8(filePath: PathLike | FileHandle, data:
+function writeFileByUTF8(filePath: PathLike, data:
   | string
-  | NodeJS.ArrayBufferView
-  | Iterable<string | NodeJS.ArrayBufferView>
-  | AsyncIterable<string | NodeJS.ArrayBufferView>
-  | Stream): Promise<void> {
-  return promises.writeFile(filePath, data, 'utf-8')
+  | NodeJS.ArrayBufferView): void {
+  return writeFileSync(filePath, data, 'utf-8')
 }
 
 function isBuffer(data: object): boolean {
@@ -185,6 +179,10 @@ async function printStandardNodeDevEnv(): Promise<void> {
   vipLogger.println()
 }
 
+function pathResolve(...pathSegments: string[]): string {
+  return nodePath.resolve(...pathSegments)
+}
+
 export const VipNodeJS = {
   getProcessFirstArgv,
   getProcessArgv,
@@ -202,6 +200,7 @@ export const VipNodeJS = {
   readFileToStrByUTF8,
   writeFileByUTF8,
   pathJoin,
+  pathResolve,
   pathDirname,
   pathExtname,
   isBuffer,

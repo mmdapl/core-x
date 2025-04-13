@@ -2,6 +2,7 @@ import type { VipSemverReleaseType } from '../pkgs'
 import { createRequire } from 'node:module'
 import { VipConsole, VipJSON, VipSemver } from '../pkgs'
 import { VipExecutor } from './exec'
+import { VipGit } from './git'
 import { VipNodeJS } from './nodejs'
 
 /**
@@ -10,7 +11,7 @@ import { VipNodeJS } from './nodejs'
 async function runScript(scriptName: string, cwd?: string): Promise<void> {
   const pkgPath = getPackagePath(cwd)
 
-  const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
+  const pkgJSONStr = VipNodeJS.readFileToStrByUTF8(pkgPath)
   const data = JSON.parse(pkgJSONStr)
 
   if (!hasScript(data, scriptName)) {
@@ -40,11 +41,28 @@ function hasScript(packageJSON: PackageJsonMainFest, script: string) {
 async function getCurrentVersion(cwd?: string): Promise<string | null> {
   const pkgPath = getPackagePath(cwd)
 
-  const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
+  const pkgJSONStr = VipNodeJS.readFileToStrByUTF8(pkgPath)
 
   const pkgJSON = VipJSON.parse(pkgJSONStr, {}) as PackageJsonMainFest
 
   return pkgJSON.version ?? null
+}
+
+/**
+ * 获取仓库Version对应的tag
+ * - 优先从package.json中获取version
+ * - version对应的tag不存在时，再从git记录中获取最新tag
+ */
+async function getVersionGitTag() {
+  // 读取 package.json 文件中的 version 值
+  const version = await getCurrentVersion()
+
+  const gitTags = VipGit.getTags()
+
+  // 判断package.json中的version是否有对应的tag，没有则用最新的tag
+  const filterTag = gitTags.find(tag => tag === `v${version}`)
+
+  return filterTag ?? gitTags.length > 0 ? gitTags[0] : null
 }
 
 /**
@@ -69,7 +87,7 @@ function promptChoiceReleaseVersion(): void {
 async function replaceOrAddToJSON(json: Record<string, unknown>, cwd?: string) {
   const pkgPath = getPackagePath(cwd)
 
-  const pkgJSONStr = await VipNodeJS.readFileToStrByUTF8(pkgPath)
+  const pkgJSONStr = VipNodeJS.readFileToStrByUTF8(pkgPath)
 
   const pkgJSON = VipJSON.parse(pkgJSONStr, {}) as PackageJsonMainFest
 
@@ -79,7 +97,7 @@ async function replaceOrAddToJSON(json: Record<string, unknown>, cwd?: string) {
   }
 
   // 写回
-  await VipNodeJS.writeFileByUTF8(pkgPath, VipJSON.stringify(pkgJSON))
+  VipNodeJS.writeFileByUTF8(pkgPath, VipJSON.stringify(pkgJSON))
 }
 
 function getPackageJSON<T>(cwd?: string): T & PackageJsonMainFest {
@@ -142,6 +160,7 @@ export const VipPackageJSON = {
   runScript,
   hasScript,
   getCurrentVersion,
+  getVersionGitTag,
   getReleaseVersion,
   promptChoiceReleaseVersion,
   getPackagePath,

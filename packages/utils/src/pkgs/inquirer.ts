@@ -36,7 +36,14 @@ interface VipInquirerOptions {
 /**
  * 搜索源
  */
-type SearchSource = <T>(input: T, opt?: { signal: AbortSignal }) => Promise<ReadonlyArray<VipInquirerChoice<T> | Separator>>
+type SearchSource<T> = (term: string | undefined, opt: {
+  signal: AbortSignal
+}) => (string | VipInquirerSeparator)[] | readonly (Separator | VipInquirerChoice<T>)[] | Promise<(string | VipInquirerSeparator)[]> | Promise<(VipInquirerSeparator | VipInquirerChoice<T>)[]>
+
+/**
+ * 简单搜索源
+ */
+type SimpleSearchSource<T> = (input: T) => T[]
 
 /**
  * 输入框，只输入数字
@@ -111,14 +118,14 @@ async function promptConfirm(message: string, defaultValue?: boolean): Promise<b
  * 搜索框
  * - https://github.com/SBoudrias/Inquirer.js/tree/main/packages/search
  */
-async function promptSearch(message: string, source: SearchSource, pageSize?: number): Promise<string | undefined> {
-  return search({ message, source, pageSize })!
+async function promptSearch<T extends string>(message: string, source: SearchSource<T>, pageSize?: number): Promise<T> {
+  return search({ message, source, pageSize })
 }
 
 /**
  * 搜索源简单处理
  */
-function handleSimpleSearchSource(sources: string[]): (input: string) => string[] {
+function handleSimpleSearchSource(sources: string[]): SimpleSearchSource<string> {
   return function (input: string) {
     return sources.filter((name: string) => name.includes(input))
   }

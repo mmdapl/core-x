@@ -75,3 +75,8 @@ export const VIP_DEPLOY_DOCKER_ENV = {
   // 网关
   NETWORK_GATEWAY: '172.30.0.1',
 }
+
+/**
+ * monorepo模式下，默认的发布根目录名称
+ */
+export const DEFAULT_RELEASE_ROOT_NAME = 'main'

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.32 (2025-04-14)
+
+### ✨ Features
+
+- 拓展`pathDirname`、`pathExtname`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/435 [<samp>(650f7)</samp>](https://github.com/142vip/core-x/commit/650f76a)
+- 增加`promptInputRequired`必选输入框 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/443 [<samp>(af445)</samp>](https://github.com/142vip/core-x/commit/af44528)
+- 拓展`VipGit`、`VipNodejs`方法，支持`commit`信息解析 &nbsp;-&nbsp; by **chufan** [<samp>(c1f7d)</samp>](https://github.com/142vip/core-x/commit/c1f7d48)
+- 增加`getCommitLogs`函数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/455 [<samp>(2bf3b)</samp>](https://github.com/142vip/core-x/commit/2bf3bad)
+- 增加`getVersionGitTag`函 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/456 [<samp>(1ade9)</samp>](https://github.com/142vip/core-x/commit/1ade998)
+- 增加`VipMonorepo`工具，支持`getPackageJSONPathList`函数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/458 [<samp>(ecb6f)</samp>](https://github.com/142vip/core-x/commit/ecb6fc2)
+- 集成`js-yaml`模块，支持`VipYaml`工具，增加`load`、`loadAll`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/459 [<samp>(3baf4)</samp>](https://github.com/142vip/core-x/commit/3baf42a)
+- 拓展`git`、`monorepo`、`nodejs`、`npm`、`package-json`等核心工具方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/462 [<samp>(17bbd)</samp>](https://github.com/142vip/core-x/commit/17bbda6)
+
+**Release New Version v0.0.1-alpha.32 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.31 (2025-03-30)
 
 ### ✨ Features

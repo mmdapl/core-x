@@ -3,9 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## v0.0.1-alpha.17 (2025-03-30)
+## v0.0.1-alpha.17 (2025-04-14)
 
-**No Significant Changes**
+### ✨ Features
+
+- 修复`changelog`命令执行异常 &nbsp;-&nbsp; by **chufan** [<samp>(38f92)</samp>](https://github.com/142vip/core-x/commit/38f925e)
+
+**Release New Version v0.0.1-alpha.17 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
 
 ## v0.0.1-alpha.16 (2025-03-29)
 

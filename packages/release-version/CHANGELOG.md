@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.12 (2025-04-15)
+
+### ✨ Features
+
+- 移除`js-yaml`依赖，使用`VipYaml`工具函数替换 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/461 [<samp>(4c9e1)</samp>](https://github.com/142vip/core-x/commit/4c9e1c0)
+- 移除`npm-check`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/473 [<samp>(8c4db)</samp>](https://github.com/142vip/core-x/commit/8c4db14)
+
+**Release New Version v0.0.1-alpha.12 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/release-version)**
+
 ## v0.0.1-alpha.11 (2025-03-29)
 
 ### ✨ Features

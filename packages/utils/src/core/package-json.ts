@@ -100,6 +100,9 @@ async function replaceOrAddToJSON(json: Record<string, unknown>, cwd?: string) {
   VipNodeJS.writeFileByUTF8(pkgPath, VipJSON.stringify(pkgJSON))
 }
 
+/**
+ * 获取package.json信息
+ */
 function getPackageJSON<T>(cwd?: string): T & PackageJSONMainFest {
   const pkgPath = getPackagePath(cwd)
   const pkg = createRequire(import.meta.url)(pkgPath)

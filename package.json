@@ -35,10 +35,10 @@
     "preview:docs-proxy": "pnpm build:docs-proxy && npx vitepress preview --port 8082 --base '/core-x'",
     "lint": "npx fa lint",
     "lint:fix": "npx fa lint --fix",
-    "publish:check": "pnpm publish -r --filter './packages/**' --dry-run --json --no-git-checks",
-    "release:check": "npx fa release --check-release --vip -F './apps/*' -F './packages/*' ",
-    "check": "pnpm release:check && pnpm publish:check",
+    "check:publish": "pnpm publish -r --filter './packages/**' --dry-run --json --no-git-checks",
+    "check:release": "npx fa release --check-release --vip -F './apps/*' -F './packages/*' ",
     "check:esm": "pnpx are-we-esm",
+    "check": "pnpm release:check && pnpm publish:check",
     "release": "pnpm clean:hooks && npx fa release --vip -F './apps/*' -F './packages/*' ",
     "test": "jest",
     "test:coverage": "jest --coverage"
@@ -64,6 +64,6 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint:fix",
-    "commit-msg": "node verify-commit.js"
+    "commit-msg": "node --experimental-strip-types scripts/verify-commit.ts"
   }
 }

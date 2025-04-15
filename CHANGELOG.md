@@ -2,6 +2,85 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.28 (2025-04-15)
+
+### ✨ Features
+
+- 基于`@142vip/commit-linter`创建`commit-msg`钩子，校验信息 &nbsp;-&nbsp; by **chufan** [<samp>(d7564)</samp>](https://github.com/142vip/core-x/commit/d75648d)
+- 脚本支持ts编写，优化check命令，简化commit-msg检验逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(6a25f)</samp>](https://github.com/142vip/core-x/commit/6a25fad)
+- **@142vip/changelog**:
+  - 修复`changelog`命令执行异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/465 [<samp>(32b83)</samp>](https://github.com/142vip/core-x/commit/32b8378)
+- **@142vip/commit-linter**:
+  - 支持`commitLiner`校验`commit`信息 &nbsp;-&nbsp; by **chufan** [<samp>(d410b)</samp>](https://github.com/142vip/core-x/commit/d410bad)
+  - 拓展`commitLiner`方法，支持自定义`cli`输入`commit`信息 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/463 [<samp>(562d4)</samp>](https://github.com/142vip/core-x/commit/562d4bd)
+  - 移除`cli-table3`一来，更新使用说明文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/472 [<samp>(072e6)</samp>](https://github.com/142vip/core-x/commit/072e6f1)
+- **@142vip/copyright**:
+  - 模块结构初始化，增加软著文档生成逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/441 [<samp>(7c30a)</samp>](https://github.com/142vip/core-x/commit/7c30a3a)
+  - 构造函数移除`pageCount`参数，生成的源代码指定30页 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/444 [<samp>(f28cb)</samp>](https://github.com/142vip/core-x/commit/f28cb64)
+  - 优化核心逻辑，增加说明文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/450 [<samp>(09f0a)</samp>](https://github.com/142vip/core-x/commit/09f0a34)
+- **@142vip/eslint-config**:
+  - 拓展config方法，增加`settings`配置，默认支持`VipNodeJS.exitProcess`退出功能 &nbsp;-&nbsp; by **chufan** [<samp>(999b2)</samp>](https://github.com/142vip/core-x/commit/999b211)
+- **@142vip/fairy-cli**:
+  - `fairy`助手增加`copyright`命令，支持著作权申请业务 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/445 [<samp>(8cdab)</samp>](https://github.com/142vip/core-x/commit/8cdab0a)
+  - 移除`verifyCommit`校验函数及类型 &nbsp;-&nbsp; by **chufan** [<samp>(77b0c)</samp>](https://github.com/142vip/core-x/commit/77b0c89)
+  - 移除`getLatestTagName`、`getCommitLogs`函数，功能逻辑简化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/457 [<samp>(4f645)</samp>](https://github.com/142vip/core-x/commit/4f64519)
+  - 移除`monorepo`方法，使用`VipMonorepo`工具替换 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/460 [<samp>(eb95f)</samp>](https://github.com/142vip/core-x/commit/eb95f58)
+  - 增加`commit`命令，拓展`cli`功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/464 [<samp>(bd3c9)</samp>](https://github.com/142vip/core-x/commit/bd3c9d5)
+  - 拓展`release`方法，支持`check`命令终端预览当前版本`commit`记录 &nbsp;-&nbsp; by **chufan** [<samp>(a7f86)</samp>](https://github.com/142vip/core-x/commit/a7f869e)
+- **@142vip/release-version**:
+  - 移除`js-yaml`依赖，使用`VipYaml`工具函数替换 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/461 [<samp>(4c9e1)</samp>](https://github.com/142vip/core-x/commit/4c9e1c0)
+  - 移除`npm-check`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/473 [<samp>(8c4db)</samp>](https://github.com/142vip/core-x/commit/8c4db14)
+- **@142vip/utils**:
+  - 拓展`pathDirname`、`pathExtname`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/435 [<samp>(650f7)</samp>](https://github.com/142vip/core-x/commit/650f76a)
+  - 增加`promptInputRequired`必选输入框 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/443 [<samp>(af445)</samp>](https://github.com/142vip/core-x/commit/af44528)
+  - 拓展`VipGit`、`VipNodejs`方法，支持`commit`信息解析 &nbsp;-&nbsp; by **chufan** [<samp>(c1f7d)</samp>](https://github.com/142vip/core-x/commit/c1f7d48)
+  - 增加`getCommitLogs`函数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/455 [<samp>(2bf3b)</samp>](https://github.com/142vip/core-x/commit/2bf3bad)
+  - 增加`getVersionGitTag`函 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/456 [<samp>(1ade9)</samp>](https://github.com/142vip/core-x/commit/1ade998)
+  - 增加`VipMonorepo`工具，支持`getPackageJSONPathList`函数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/458 [<samp>(ecb6f)</samp>](https://github.com/142vip/core-x/commit/ecb6fc2)
+  - 集成`js-yaml`模块，支持`VipYaml`工具，增加`load`、`loadAll`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/459 [<samp>(3baf4)</samp>](https://github.com/142vip/core-x/commit/3baf42a)
+  - 拓展`git`、`monorepo`、`nodejs`、`npm`、`package-json`等核心工具方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/462 [<samp>(17bbd)</samp>](https://github.com/142vip/core-x/commit/17bbda6)
+  - 优化`VipInquirer`工具方法类型，支持`DEFAULT_RELEASE_ROOT_NAME`变量 &nbsp;-&nbsp; by **chufan** [<samp>(ad577)</samp>](https://github.com/142vip/core-x/commit/ad577f6)
+  - 增加`logByBlank`、`getRecentCommitsByScope`等方法，优化语法 &nbsp;-&nbsp; by **chufan** [<samp>(0fe52)</samp>](https://github.com/142vip/core-x/commit/0fe5209)
+  - 增加`logByBlank`、`getRecentCommitsByScope`等方法，优化语法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/468 [<samp>(cecef)</samp>](https://github.com/142vip/core-x/commit/cecef6b)
+  - 增加`getPkgJSONPath`、`getPkgLabel`等方法，优化`PackageJSONWithPath`类型 &nbsp;-&nbsp; by **chufan** [<samp>(1a9aa)</samp>](https://github.com/142vip/core-x/commit/1a9aab2)
+- **@142vip/vuepress**:
+  - Update dependency @vuepress/plugin-xx to v2.0.0-rc.92 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/446 [<samp>(5b56b)</samp>](https://github.com/142vip/core-x/commit/5b56bda)
+
+### 🐛 Bug Fixes
+
+- **@142vip/eslint-config**:
+  - Update dependency @antfu/eslint-config、eslint &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/436 [<samp>(4e0d3)</samp>](https://github.com/142vip/core-x/commit/4e0d397)
+
+### 📖 Documentation
+
+- **@142vip/copyright**:
+  - 补充模块文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/447 [<samp>(48ca7)</samp>](https://github.com/142vip/core-x/commit/48ca70c)
+- **CHANGELOG**:
+  - Update `@142vip/changelog`、`@142vip/copyright` &nbsp;-&nbsp; by **chufan** [<samp>(ca7b6)</samp>](https://github.com/142vip/core-x/commit/ca7b6d0)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.18` &nbsp;-&nbsp; by **chufan** [<samp>(504a4)</samp>](https://github.com/142vip/core-x/commit/504a437)
+- **@142vip/commit-linter**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(6b308)</samp>](https://github.com/142vip/core-x/commit/6b3086f)
+- **@142vip/copyright**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(647ec)</samp>](https://github.com/142vip/core-x/commit/647ec03)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(bc738)</samp>](https://github.com/142vip/core-x/commit/bc73802)
+- **@142vip/eslint-config**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(74326)</samp>](https://github.com/142vip/core-x/commit/7432608)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.22` &nbsp;-&nbsp; by **chufan** [<samp>(199e7)</samp>](https://github.com/142vip/core-x/commit/199e7c0)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(62a48)</samp>](https://github.com/142vip/core-x/commit/62a4890)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.32` &nbsp;-&nbsp; by **chufan** [<samp>(fa3fe)</samp>](https://github.com/142vip/core-x/commit/fa3fe31)
+  - Publish `v0.0.1-alpha.33` &nbsp;-&nbsp; by **chufan** [<samp>(2dcf9)</samp>](https://github.com/142vip/core-x/commit/2dcf96b)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.12` &nbsp;-&nbsp; by **chufan** [<samp>(55bfd)</samp>](https://github.com/142vip/core-x/commit/55bfdb9)
+
+**Release New Version v0.0.1-alpha.28 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.27...v0.0.1-alpha.28)**
+
 ## v0.0.1-alpha.27 (2025-03-30)
 
 ### ✨ Features

@@ -1,8 +1,10 @@
 import type { GitCommit, GitInfo } from '../enums'
 import { convert } from 'convert-gitmoji'
-import { VipSemver } from '../pkgs'
+import { VipColor, VipSemver } from '../pkgs'
 import { VipExecutor } from './exec'
+import { vipLogger } from './logger'
 import { VipNodeJS } from './nodejs'
+import { VipPackageJSON } from './package-json'
 
 /**
  * 获取某个分支上的commit日志
@@ -13,6 +15,22 @@ function getCommitLogs(latestTag: string, branch?: string): string[] {
 
   // 整理出git提交日志
   return commitLogs.split('\n')
+}
+
+/**
+ * 获取分支最近的一次GitTag标记到Head标记之间的git commit信息
+ */
+function getRecentCommitsByScope(gitScope: string): string[] {
+  // 获取当前分支的最新标签
+  const latestTag = VipPackageJSON.getVersionGitTag()
+  if (latestTag == null) {
+    vipLogger.logByBlank(VipColor.red(`仓库没有tag标签，请先打tag标签或配置version字段！！！`))
+    VipNodeJS.exitProcess(1)
+  }
+  const commitLogs = getCommitLogs(latestTag!)
+
+  // 整理出git提交日志
+  return commitLogs.filter(commit => commit.includes(`(${gitScope})`))
 }
 
 /**
@@ -220,6 +238,7 @@ export const VipGit = {
   getRecentCommitHash,
   getRecentCommitShortHash,
   getCommitLogs,
+  getRecentCommitsByScope,
   getGitHubRepo,
   getCurrentBranch,
   isRepoShallow,

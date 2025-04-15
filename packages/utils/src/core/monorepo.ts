@@ -6,7 +6,7 @@ import { VipNpm } from './npm'
 /**
  * 获取monorepo下所有包的package.json，返回所有包的路径列表
  */
-async function getPackageJSONPathList(): Promise<string[]> {
+function getPackageJSONPathList(): string[] {
   const pnpmYamlFileName = 'pnpm-workspace.yaml'
   const pnpmWorkspace = VipNodeJS.existPath(pnpmYamlFileName)
   const packageJSONList: string[] = []
@@ -70,4 +70,5 @@ function getPkgNames(filter?: string | string[]): string[] {
 export const VipMonorepo = {
   getPackageJSONPathList,
   getPkgNames,
+  getReleasePkgJSON,
 }

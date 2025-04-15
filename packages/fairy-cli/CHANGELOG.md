@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.22 (2025-04-15)
+
+### ✨ Features
+
+- `fairy`助手增加`copyright`命令，支持著作权申请业务 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/445 [<samp>(8cdab)</samp>](https://github.com/142vip/core-x/commit/8cdab0a)
+- 移除`verifyCommit`校验函数及类型 &nbsp;-&nbsp; by **chufan** [<samp>(77b0c)</samp>](https://github.com/142vip/core-x/commit/77b0c89)
+- 移除`getLatestTagName`、`getCommitLogs`函数，功能逻辑简化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/457 [<samp>(4f645)</samp>](https://github.com/142vip/core-x/commit/4f64519)
+- 移除`monorepo`方法，使用`VipMonorepo`工具替换 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/460 [<samp>(eb95f)</samp>](https://github.com/142vip/core-x/commit/eb95f58)
+- 增加`commit`命令，拓展`cli`功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/464 [<samp>(bd3c9)</samp>](https://github.com/142vip/core-x/commit/bd3c9d5)
+- 拓展`release`方法，支持`check`命令终端预览当前版本`commit`记录 &nbsp;-&nbsp; by **chufan** [<samp>(a7f86)</samp>](https://github.com/142vip/core-x/commit/a7f869e)
+
+**Release New Version v0.0.3-alpha.22 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.21 (2025-03-29)
 
 ### ✨ Features

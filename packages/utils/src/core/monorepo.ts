@@ -1,4 +1,4 @@
-import type { PackageJSON } from './package-json'
+import type { PackageJSONWithPath } from './package-json'
 import { VipYaml } from '../pkgs'
 import { VipNodeJS } from './nodejs'
 import { VipNpm } from './npm'
@@ -38,7 +38,7 @@ function getPackageJSONPathList(): string[] {
  * - pnpm 命令： https://pnpm.io/cli/list
  * - filter参数： https://pnpm.io/filtering
  */
-function getReleasePkgJSON(filter?: string | string[]): PackageJSON[] {
+function getReleasePkgJSON(filter?: string | string[]): PackageJSONWithPath[] {
   // 格式： --filter ./packages/*
   let filterRgx = ''
   if (filter == null || filter.length === 0) {
@@ -59,6 +59,15 @@ function getReleasePkgJSON(filter?: string | string[]): PackageJSON[] {
 }
 
 /**
+ * 获取某个包的PkgJSON信息
+ */
+function getPkgJSONPath(pkgName: string, filter?: string | string[]): PackageJSONWithPath | undefined {
+  const pkgJSON = getReleasePkgJSON(filter)
+
+  return pkgJSON.find(pkg => pkg.name === pkgName)
+}
+
+/**
  * 获取所有包名
  * - 仅仅支持pnpm
  * 参考命令：`pnpm ls --json --only-projects ${filter} --depth -1`
@@ -71,4 +80,5 @@ export const VipMonorepo = {
   getPackageJSONPathList,
   getPkgNames,
   getReleasePkgJSON,
+  getPkgJSONPath,
 }

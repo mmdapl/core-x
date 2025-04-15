@@ -1,4 +1,4 @@
-import type { PackageJSON } from './package-json'
+import type { PackageJSONWithPath } from './package-json'
 import { RegistryAddressEnum } from '../enums'
 import { VipConsole, VipJSON } from '../pkgs'
 import { VipExecutor } from './exec'
@@ -88,10 +88,10 @@ async function getTurboPackApps(): Promise<string[]> {
  * - pnpm 命令： https://pnpm.io/cli/list
  * - filter参数： https://pnpm.io/filtering
  */
-function getPackageJSONByPnpm(pnpmLsCommand: string): Array<PackageJSON> {
+function getPackageJSONByPnpm(pnpmLsCommand: string): Array<PackageJSONWithPath> {
   try {
     const packageStr = VipExecutor.execCommandSync(pnpmLsCommand)
-    return JSON.parse(packageStr) as Array<PackageJSON>
+    return JSON.parse(packageStr) as Array<PackageJSONWithPath>
   }
   catch (error) {
     VipConsole.log('Failed to get the release package name, in function getPackageJSONByPnpm')

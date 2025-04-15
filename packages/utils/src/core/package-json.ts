@@ -1,6 +1,6 @@
 import type { VipSemverReleaseType } from '../pkgs'
 import { createRequire } from 'node:module'
-import { VipConsole, VipJSON, VipSemver } from '../pkgs'
+import { VipColor, VipConsole, VipJSON, VipSemver } from '../pkgs'
 import { VipExecutor } from './exec'
 import { VipGit } from './git'
 import { VipNodeJS } from './nodejs'
@@ -146,12 +146,22 @@ function isPackageJSON(packageJSON?: any): boolean {
     && packageJSON.description != null
 }
 
+function getPkgRedLabel(pkgName: string): string {
+  return VipColor.red(`【${pkgName}】`)
+}
+function getPkgGreenLabel(pkgName: string): string {
+  return VipColor.green(`【${pkgName}】`)
+}
+
 export interface PackageJSON {
   name: string
   version: string
   private: boolean
 }
 
+export interface PackageJSONWithPath extends PackageJSON {
+  path: string
+}
 export interface PackageJSONMainFest extends PackageJSON {
   [key: string]: unknown
 }
@@ -173,4 +183,6 @@ export const VipPackageJSON = {
   isExistPnpmLock,
   replaceOrAddToJSON,
   getPackageJSON,
+  getPkgRedLabel,
+  getPkgGreenLabel,
 }

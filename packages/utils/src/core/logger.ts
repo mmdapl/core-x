@@ -1,4 +1,4 @@
-import { VipColor } from '../pkgs'
+import { VipColor, VipConsole } from '../pkgs'
 
 export interface LoggerOptions {
   startLabel?: string
@@ -45,6 +45,15 @@ export class VipLogger {
    */
   public println(): void {
     this.log('')
+  }
+
+  /**
+   * 上下空行输出
+   */
+  public logByBlank(message: string) {
+    this.println()
+    VipConsole.log(message)
+    this.println()
   }
 }
 

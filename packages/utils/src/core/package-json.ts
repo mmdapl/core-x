@@ -38,7 +38,7 @@ function hasScript(packageJSON: PackageJSONMainFest, script: string) {
 /**
  * 读取package.json文件，获取version字段
  */
-async function getCurrentVersion(cwd?: string): Promise<string | null> {
+function getCurrentVersion(cwd?: string): string | null {
   const pkgPath = getPackagePath(cwd)
 
   const pkgJSONStr = VipNodeJS.readFileToStrByUTF8(pkgPath)
@@ -53,9 +53,9 @@ async function getCurrentVersion(cwd?: string): Promise<string | null> {
  * - 优先从package.json中获取version
  * - version对应的tag不存在时，再从git记录中获取最新tag
  */
-async function getVersionGitTag() {
+function getVersionGitTag(): string | null {
   // 读取 package.json 文件中的 version 值
-  const version = await getCurrentVersion()
+  const version = getCurrentVersion()
 
   const gitTags = VipGit.getTags()
 

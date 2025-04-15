@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.12 (2025-04-15)
+
+### ✨ Features
+
+- Update dependency @vuepress/plugin-xx to v2.0.0-rc.92 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/446 [<samp>(5b56b)</samp>](https://github.com/142vip/core-x/commit/5b56bda)
+
+**Release New Version v0.0.1-alpha.12 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.11 (2025-03-30)
 
 ### 🐛 Bug Fixes

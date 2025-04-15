@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.4 (2025-04-15)
+
+### ✨ Features
+
+- 拓展config方法，增加`settings`配置，默认支持`VipNodeJS.exitProcess`退出功能 &nbsp;-&nbsp; by **chufan** [<samp>(999b2)</samp>](https://github.com/142vip/core-x/commit/999b211)
+
+### 🐛 Bug Fixes
+
+- Update dependency @antfu/eslint-config、eslint &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/436 [<samp>(4e0d3)</samp>](https://github.com/142vip/core-x/commit/4e0d397)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/eslint-config)**
+
 ## v0.0.1-alpha.3 (2025-02-21)
 
 ### ✨ Features

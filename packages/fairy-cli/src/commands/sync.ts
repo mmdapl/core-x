@@ -5,10 +5,11 @@ import {
   VipConsole,
   VipInquirer,
   vipLogger,
+  VipMonorepo,
   VipNodeJS,
 } from '@142vip/utils'
 import fetch from 'node-fetch'
-import { CliCommandEnum, getReleasePkgJSON } from '../shared'
+import { CliCommandEnum } from '../shared'
 
 /**
  * cnpm 同步状态
@@ -145,7 +146,7 @@ export async function syncMain(program: VipCommander): Promise<void> {
     .action(async (packageName: string | undefined, options): Promise<void> => {
       // 142vip本地业务
       if (packageName == null && options.vip) {
-        const pkgJSON = getReleasePkgJSON('./packages/*')
+        const pkgJSON = VipMonorepo.getReleasePkgJSON('./packages/*')
         const packageNames = pkgJSON.map(pkg => pkg.name)
         packageName = await VipInquirer.promptSelect('请选择需要同步的模块包名称：', packageNames)
       }

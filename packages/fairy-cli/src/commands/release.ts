@@ -10,11 +10,11 @@ import {
   vipLogger,
   VipMonorepo,
   VipNodeJS,
+  VipPackageJSON,
 } from '@142vip/utils'
 import { name } from '../../package.json'
 import {
   CliCommandEnum,
-  getReleasePkgJSON,
   printPreCheckRelease,
   releaseMonorepoPkg,
   releaseRoot,
@@ -37,7 +37,7 @@ interface VipReleaseExtraOptions {
 async function execNormalRelease(args: ReleaseOptions): Promise<void> {
   // 指定包
   if (args.package != null) {
-    const packageJSONList = await VipMonorepo.getPackageJSONPathList()
+    const packageJSONList = VipMonorepo.getPackageJSONPathList()
     // const packageJSONList: string[] = []
     if (!packageJSONList.includes(`${args.package}/package.json`)) {
       // 抛错，提醒用户包在monorepo下找不到
@@ -69,14 +69,7 @@ async function execNormalRelease(args: ReleaseOptions): Promise<void> {
  */
 async function execVipRelease(args: VipReleaseExtraOptions): Promise<void> {
   // 获取pkg信息
-  const pkgJSON = getReleasePkgJSON(args.filter)
   const packageNames = VipMonorepo.getPkgNames(args.filter)
-
-  // 预先检查子模块
-  if (args.checkRelease) {
-    await printPreCheckRelease(packageNames)
-    VipNodeJS.exitProcess(0)
-  }
 
   try {
     const packageName = await VipInquirer.promptSearch(
@@ -84,19 +77,17 @@ async function execVipRelease(args: VipReleaseExtraOptions): Promise<void> {
       (inputName: string | undefined) => [DEFAULT_RELEASE_ROOT_NAME, ...packageNames].filter(name => inputName && name.includes(inputName)),
     )
 
-    // 确认框
     const isRelease = await VipInquirer.promptConfirm(`模块 ${VipColor.green(packageName)} 将发布新的版本，是否继续操作？`)
 
     if (!isRelease) {
-      vipLogger.println()
-      VipConsole.log(`${VipColor.red(`【${name}】`)} ${VipColor.yellow('用户取消发布操作！！')}`)
-      vipLogger.println()
+      vipLogger.logByBlank(`${VipColor.red(`【${name}】`)} ${VipColor.yellow('用户取消发布操作！！')}`)
       VipNodeJS.exitProcess(0)
     }
 
     // 发布子模块
     if (packageName !== DEFAULT_RELEASE_ROOT_NAME) {
-      await releaseMonorepoPkg(pkgJSON.find(pkg => pkg.name === packageName)!)
+      const pkgJSONPath = VipMonorepo.getPkgJSONPath(packageName, args.filter)!
+      await releaseMonorepoPkg(pkgJSONPath)
     }
     // 发布根模块
     else {
@@ -137,19 +128,52 @@ export async function releaseMain(program: VipCommander): Promise<void> {
       // 发布时校验分支，避免误操作
       if (VipGit.getCurrentBranch() !== args.branch) {
         VipConsole.log(VipColor.red(`当前分支是：${VipGit.getCurrentBranch()} ，版本迭代允许在${args.branch}分支操作，并推送到远程！！！`))
-        return VipNodeJS.exitProcess(0)
+        VipNodeJS.exitProcess(0)
       }
 
-      // @142vip 组织专用Release
-      if (args.vip) {
-        await execVipRelease({
-          checkRelease: args.checkRelease,
-          filter: args.filter,
-        })
+      // 检查包是否需要发布，弹出对话框，是否查看某个包信息
+      if (args.checkRelease) {
+        await printPkgCommitLogs(args.filter)
       }
-      // 普通release
+
+      if (args.vip) {
+        // @142vip 组织专用Release
+        await execVipRelease({ filter: args.filter })
+      }
       else {
+        // 普通release
         await execNormalRelease(args)
       }
     })
+}
+
+/**
+ * 打印某个包的Git Commit信息
+ */
+async function printPkgCommitLogs(pnpmFilter?: string | string[]): Promise<void> {
+  const isCheck = await VipInquirer.promptConfirm(`是否查看当前仓库的模块信息？`, false)
+  if (isCheck) {
+    const pkgName = await VipInquirer.promptSearch(
+      `请选择需要查看的模块：`,
+      (input: string | undefined) => VipMonorepo.getPkgNames(pnpmFilter).filter(name => input && name.includes(input)),
+    )
+    const commits = VipGit.getRecentCommitsByScope(pkgName)
+
+    if (commits.length === 0) {
+      vipLogger.logByBlank(`${VipPackageJSON.getPkgRedLabel(pkgName)} ${VipColor.red('模块没有任何版本迭代信息！！')}`)
+    }
+    else {
+      VipConsole.log(`${VipPackageJSON.getPkgRedLabel(pkgName)} ${VipColor.green('模块的版本迭代信息：')}`)
+      vipLogger.logByBlank(VipColor.green(commits.map(c => ` - ${c}`).join('\n')))
+    }
+  }
+
+  // 预先检查子模块
+  else {
+    const packageNames = VipMonorepo.getPkgNames(pnpmFilter)
+    await printPreCheckRelease(packageNames)
+  }
+
+  // 安全退出
+  VipNodeJS.exitProcess(0)
 }

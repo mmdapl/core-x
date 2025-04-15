@@ -1,58 +1,18 @@
-import { execSync } from 'node:child_process'
-import process from 'node:process'
+import type {
+  PackageJSONWithPath,
+} from '@142vip/utils'
 import { versionBump } from '@142vip/release-version'
 import {
   VipColor,
   VipConsole,
   VipGit,
-  VipNodeJS,
-  VipPackageJSON,
+  vipLogger,
   VipSymbols,
 } from '@142vip/utils'
-
-interface PackageJSON {
-  name: string
-  version: string
-  private: boolean
-  path: string
-}
 
 interface ValidatePkgJSON {
   name: string
   release: boolean
-}
-
-/**
- * 获取发布的包名
- * 参考：
- * - pnpm 命令： https://pnpm.io/cli/list
- * - filter参数： https://pnpm.io/filtering
- */
-export function getReleasePkgJSON(filter?: string | string[]): PackageJSON[] {
-  try {
-    // 格式： --filter ./packages/*
-    let filterRgx = ''
-    if (filter == null || filter.length === 0) {
-      return []
-    }
-    else {
-      if (Array.isArray(filter)) {
-        for (const f of filter) {
-          filterRgx += `--filter "${f}" `
-        }
-      }
-      else {
-        filterRgx = `--filter "${filter}"`
-      }
-    }
-    const command = `pnpm ls --json --only-projects ${filterRgx} --depth -1`
-    const packageStr = execSync(command).toString().trim()
-    return JSON.parse(packageStr) as Array<PackageJSON>
-  }
-  catch (error) {
-    console.error('Failed to get the release package name:', error)
-    process.exit(1)
-  }
 }
 
 /**
@@ -63,7 +23,7 @@ export async function printPreCheckRelease(packageNames: string[]): Promise<void
   let isRootRelease = true
   const packages: ValidatePkgJSON[] = []
   for (const packageName of packageNames) {
-    const isNeedRelease = await validatePackage(packageName)
+    const isNeedRelease = validatePackage(packageName)
     // 子模块没有进行版本更新
     if (isNeedRelease) {
       isRootRelease = false
@@ -71,21 +31,15 @@ export async function printPreCheckRelease(packageNames: string[]): Promise<void
     packages.push({ name: packageName, release: isNeedRelease })
   }
 
-  VipConsole.log('\n对仓库各模块进行版本变更校验，结果如下：\n')
+  vipLogger.logByBlank('对仓库各模块进行版本变更校验，结果如下：')
+
   for (const pkg of packages) {
-    if (pkg.release) {
-      VipConsole.log(VipColor.red(`${VipSymbols.error} ${pkg.name}`))
-    }
-    else {
-      VipConsole.log(VipColor.green(`${VipSymbols.success} ${pkg.name}`))
-    }
+    const msg = pkg.release ? VipColor.red(`${VipSymbols.error} ${pkg.name}`) : VipColor.green(`${VipSymbols.success} ${pkg.name}`)
+    VipConsole.log(msg)
   }
 
-  // 输出空行
-  VipConsole.log()
-
   if (!isRootRelease) {
-    VipConsole.log(`${VipColor.yellow(`${VipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
+    vipLogger.logByBlank(`${VipColor.yellow(`${VipSymbols.warning} 存在未发布的模块，请先进行模块的版本变更，再更新仓库版本！！！`)}`)
   }
 }
 
@@ -93,16 +47,9 @@ export async function printPreCheckRelease(packageNames: string[]): Promise<void
  * 提交git当前节点到上个tag的所有提交记录
  * 分析、判断是否有公共模块，提醒及时对公共模块发布新的版本号
  */
-async function validatePackage(packageNameInCommitScope: string, template?: string): Promise<boolean> {
-  const latestTag = await VipPackageJSON.getVersionGitTag()
-  if (latestTag == null) {
-    VipConsole.log(`仓库没有tag标签，请先打tag标签或配置version字段！！！`)
-    VipNodeJS.exitProcess(1)
-  }
-  const commitLogs = VipGit.getCommitLogs(latestTag!)
-
+function validatePackage(packageNameInCommitScope: string, template?: string): boolean {
   // 整理出git提交日志
-  const logsByPackage = commitLogs.filter(commit => commit.includes(`(${packageNameInCommitScope})`))
+  const logsByPackage = VipGit.getRecentCommitsByScope(packageNameInCommitScope)
 
   // 判断是否需要发布新的版本
   return logsByPackage.length > 0 && !logsByPackage[0].includes(template ?? `release(${packageNameInCommitScope})`)
@@ -112,7 +59,7 @@ async function validatePackage(packageNameInCommitScope: string, template?: stri
  * 更新公共包
  * 生成changelog文档，更新version
  */
-export async function releaseMonorepoPkg(pkg: PackageJSON): Promise<void> {
+export async function releaseMonorepoPkg(pkg: PackageJSONWithPath): Promise<void> {
   const commitInfo = `release(${pkg.name}): publish \`v%s\``
   const execute = 'git add CHANGELOG.md'
   const rpCommand = `bumpx --preid alpha --changelog --commit '${commitInfo}'  --execute '${execute}' --scopeName '${pkg.name}' --no-tag --all`

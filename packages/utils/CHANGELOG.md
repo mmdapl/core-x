@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.33 (2025-04-15)
+
+### ✨ Features
+
+- 优化`VipInquirer`工具方法类型，支持`DEFAULT_RELEASE_ROOT_NAME`变量 &nbsp;-&nbsp; by **chufan** [<samp>(ad577)</samp>](https://github.com/142vip/core-x/commit/ad577f6)
+- 增加`logByBlank`、`getRecentCommitsByScope`等方法，优化语法 &nbsp;-&nbsp; by **chufan** [<samp>(0fe52)</samp>](https://github.com/142vip/core-x/commit/0fe5209)
+- 增加`logByBlank`、`getRecentCommitsByScope`等方法，优化语法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/468 [<samp>(cecef)</samp>](https://github.com/142vip/core-x/commit/cecef6b)
+- 增加`getPkgJSONPath`、`getPkgLabel`等方法，优化`PackageJSONWithPath`类型 &nbsp;-&nbsp; by **chufan** [<samp>(1a9aa)</samp>](https://github.com/142vip/core-x/commit/1a9aab2)
+
+**Release New Version v0.0.1-alpha.33 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.32 (2025-04-14)
 
 ### ✨ Features

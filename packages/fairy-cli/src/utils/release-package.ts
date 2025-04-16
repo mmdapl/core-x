@@ -78,6 +78,8 @@ export async function releaseMonorepoPkg(pkg: PackageJSONWithPath): Promise<void
     commit: commitInfo,
     push: true,
     all: true,
+    // 忽略git钩子函数
+    noVerify: true,
   })
 }
 /**

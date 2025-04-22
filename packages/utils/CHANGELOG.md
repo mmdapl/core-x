@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.34 (2025-04-22)
+
+### ✨ Features
+
+- 优化`promptSearch`函数类型支持，优雅处理`VipInquirer`工具`ctrl+c`意外退出报错 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/475 [<samp>(4169d)</samp>](https://github.com/142vip/core-x/commit/4169dda)
+- 增加`CliCommandBaseOptions`类型 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/480 [<samp>(590e9)</samp>](https://github.com/142vip/core-x/commit/590e9e4)
+- 增加`promptReleaseVersion`等功能，支持`package-json`操作 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/488 [<samp>(29e81)</samp>](https://github.com/142vip/core-x/commit/29e81d4)
+- 工具增加`initCommand`封装，提供可配置命令初始化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/492 [<samp>(33037)</samp>](https://github.com/142vip/core-x/commit/330376c)
+- 优化`VipCommander`类主体结构，拓展类型 &nbsp;-&nbsp; by **chufan** [<samp>(331d9)</samp>](https://github.com/142vip/core-x/commit/331d9ad)
+- 增加`validateBranch`校验分支，拓展`promptConfirm`，支持安全退出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/495 [<samp>(99cc8)</samp>](https://github.com/142vip/core-x/commit/99cc8f9)
+
+**Release New Version v0.0.1-alpha.34 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.33 (2025-04-15)
 
 ### ✨ Features

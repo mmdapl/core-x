@@ -1,45 +1,41 @@
-import type { Operation } from './operation'
-import { VipExecutor } from '@142vip/utils'
-import { ProgressEvent } from '../types'
+import type { ReleaseOperation } from './version-operation'
+import { VipExecutor, VipNpm } from '@142vip/utils'
+import { VersionProgressEventEnum } from '../enums'
 
 /**
- * Commits the modififed files to Git, if the `commit` option is enabled.
+ * 如果启用了 'commit' 选项，则将修改后的文件提交到 Git
  */
-export async function gitCommit(operation: Operation): Promise<Operation> {
+export async function gitCommit(operation: ReleaseOperation): Promise<ReleaseOperation> {
   if (!operation.options.commit)
     return operation
 
-  const { all, noVerify, message } = operation.options.commit
-  const { updatedFiles, newVersion } = operation.state
-  let args = ['--allow-empty']
+  const commitOptions = operation.options.commit
+  const { newVersion } = operation.state
+  const args = ['--allow-empty']
 
-  if (all) {
-    // Commit ALL files, not just the ones that were bumped
+  // 提交所有本地所有变更
+  if (commitOptions.all) {
     args.push('--all')
   }
 
-  if (noVerify) {
-    // Bypass git commit hooks
+  // 跳过git commit的hooks函数
+  if (commitOptions.skipGitVerify) {
     args.push('--no-verify')
   }
 
-  // Create the commit message
-  const commitMessage = formatVersionString(message, newVersion)
+  // 格式化commit信息
+  const commitMessage = VipNpm.formatVersionStr(commitOptions.message, newVersion)
   args.push('--message', `'${commitMessage}'`)
-
-  // Append the file names last, as variadic arguments
-  if (!all)
-    args = args.concat(updatedFiles)
 
   await VipExecutor.execShell({ command: `git commit ${args.join(' ')}`, description: '提交git commit信息' })
 
-  return operation.update({ event: ProgressEvent.GitCommit, commitMessage })
+  return operation.update({ event: VersionProgressEventEnum.GitCommit, commitMessage })
 }
 
 /**
  * 标记 Git 提交（如果启用了tag选项）
  */
-export async function gitTag(operation: Operation): Promise<Operation> {
+export async function gitTag(operation: ReleaseOperation): Promise<ReleaseOperation> {
   if (!operation.options.tag)
     return operation
 
@@ -54,41 +50,32 @@ export async function gitTag(operation: Operation): Promise<Operation> {
     // Use the same commit message for the tag
     '--message',
     // 注意格式
-    `'${formatVersionString(commit!.message, newVersion)}'`,
+    `'${VipNpm.formatVersionStr(commit!.message, newVersion)}'`,
   ]
 
-  // Create the Tag name
-  const tagName = formatVersionString(tag.name, newVersion)
+  // 创建标签名称
+  const tagName = VipNpm.formatVersionStr(tag.name, newVersion)
   args.push(tagName)
 
   await VipExecutor.execShell({ command: `git tag ${args.join(' ')}`, description: '创建Tag标签' })
 
-  return operation.update({ event: ProgressEvent.GitTag, tagName })
+  return operation.update({ event: VersionProgressEventEnum.GitTag, tagName })
 }
 
 /**
- * Pushes the Git commit and tag, if the `push` option is enabled.
+ * 如果启用了 'push' 选项，则推送 Git 提交和标签
  */
-export async function gitPush(operation: Operation): Promise<Operation> {
+export async function gitPush(operation: ReleaseOperation): Promise<ReleaseOperation> {
   if (!operation.options.push)
     return operation
 
-  // Push the commit
+  // 推送commit信息
   await VipExecutor.execShell({ command: 'git push', description: '推送变更' })
 
+  // 推送标签
   if (operation.options.tag) {
-    // Push the tag
     await VipExecutor.execShell({ command: 'git push --tags', description: '推送所有标签' })
   }
 
-  return operation.update({ event: ProgressEvent.GitPush })
-}
-
-/**
- * 接受版本字符串模板（例如“release v”或“This is the %s release”）。
- * - 如果模板包含任何“%s”占位符，则它们将替换为版本号;
- * - 否则，版本号将追加到字符串
- */
-export function formatVersionString(template: string, newVersion: string): string {
-  return template.includes('%s') ? template.replace(/%s/g, newVersion) : `${template}${newVersion}`
+  return operation.update({ event: VersionProgressEventEnum.GitPush })
 }

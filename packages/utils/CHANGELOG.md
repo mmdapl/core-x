@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.35 (2025-04-23)
+
+### ✨ Features
+
+- 增加`isExistDir`、`isDirectory`等功能，拓展`GitGeneralBranch`枚举 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/496 [<samp>(49f01)</samp>](https://github.com/142vip/core-x/commit/49f0187)
+
+**Release New Version v0.0.1-alpha.35 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.34 (2025-04-22)
 
 ### ✨ Features

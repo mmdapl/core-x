@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.13 (2025-04-23)
+
+### ✨ Features
+
+- 优化`versionBump`的交互对话框 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/482 [<samp>(18b83)</samp>](https://github.com/142vip/core-x/commit/18b8352)
+
+### 🐛 Bug Fixes
+
+- 增加确认框二次验证配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/485 [<samp>(56605)</samp>](https://github.com/142vip/core-x/commit/5660574)
+
+### 💅 Refactors
+
+- 核心业务逻辑重构，业务流程更清晰 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/489 [<samp>(2ab87)</samp>](https://github.com/142vip/core-x/commit/2ab878b)
+
+**Release New Version v0.0.1-alpha.13 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/release-version)**
+
 ## v0.0.1-alpha.12 (2025-04-15)
 
 ### ✨ Features

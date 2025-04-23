@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.23 (2025-04-23)
+
+### ✨ Features
+
+- 优化`commit`命令交互框逻辑，支持`git`提交、推送 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/477 [<samp>(39ef7)</samp>](https://github.com/142vip/core-x/commit/39ef711)
+- 优化`release`命令交互体验 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/478 [<samp>(5c15f)</samp>](https://github.com/142vip/core-x/commit/5c15ff2)
+- 核心`cli`逻辑重构，优化模块整理结构，支持命令别名机制 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/479 [<samp>(23b82)</samp>](https://github.com/142vip/core-x/commit/23b824a)
+- `release`命令提交时，默认配置`noVerify`参数，忽略`git`钩子函数 &nbsp;-&nbsp; by **chufan** [<samp>(2f53c)</samp>](https://github.com/142vip/core-x/commit/2f53c0f)
+- Release命令增加`check-branch`参数，支持指定分支检测 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/497 [<samp>(15ecc)</samp>](https://github.com/142vip/core-x/commit/15ecc34)
+
+### 🐛 Bug Fixes
+
+- 修复`copyright`命令依赖异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/491 [<samp>(96158)</samp>](https://github.com/142vip/core-x/commit/961584f)
+
+### 💅 Refactors
+
+- 基于`VipCommander`的`initCommand`方法，重写`fairy`工具链 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/494 [<samp>(2ea95)</samp>](https://github.com/142vip/core-x/commit/2ea95c5)
+
+**Release New Version v0.0.3-alpha.23 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.22 (2025-04-15)
 
 ### ✨ Features

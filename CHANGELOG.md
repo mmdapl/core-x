@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.29 (2025-04-23)
+
+### ✨ Features
+
+- 优化`build`命令的搜索交互框输入 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/483 [<samp>(4b5d2)</samp>](https://github.com/142vip/core-x/commit/4b5d2a9)
+- 站点增加`egg-demo`、`nest-demo`演示入口 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/490 [<samp>(8ed85)</samp>](https://github.com/142vip/core-x/commit/8ed852b)
+- **@142vip/fairy-cli**:
+  - 优化`commit`命令交互框逻辑，支持`git`提交、推送 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/477 [<samp>(39ef7)</samp>](https://github.com/142vip/core-x/commit/39ef711)
+  - 优化`release`命令交互体验 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/478 [<samp>(5c15f)</samp>](https://github.com/142vip/core-x/commit/5c15ff2)
+  - 核心`cli`逻辑重构，优化模块整理结构，支持命令别名机制 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/479 [<samp>(23b82)</samp>](https://github.com/142vip/core-x/commit/23b824a)
+  - `release`命令提交时，默认配置`noVerify`参数，忽略`git`钩子函数 &nbsp;-&nbsp; by **chufan** [<samp>(2f53c)</samp>](https://github.com/142vip/core-x/commit/2f53c0f)
+  - Release命令增加`check-branch`参数，支持指定分支检测 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/497 [<samp>(15ecc)</samp>](https://github.com/142vip/core-x/commit/15ecc34)
+- **@142vip/release-version**:
+  - 优化`versionBump`的交互对话框 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/482 [<samp>(18b83)</samp>](https://github.com/142vip/core-x/commit/18b8352)
+- **@142vip/utils**:
+  - 优化`promptSearch`函数类型支持，优雅处理`VipInquirer`工具`ctrl+c`意外退出报错 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/475 [<samp>(4169d)</samp>](https://github.com/142vip/core-x/commit/4169dda)
+  - 增加`CliCommandBaseOptions`类型 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/480 [<samp>(590e9)</samp>](https://github.com/142vip/core-x/commit/590e9e4)
+  - 增加`promptReleaseVersion`等功能，支持`package-json`操作 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/488 [<samp>(29e81)</samp>](https://github.com/142vip/core-x/commit/29e81d4)
+  - 工具增加`initCommand`封装，提供可配置命令初始化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/492 [<samp>(33037)</samp>](https://github.com/142vip/core-x/commit/330376c)
+  - 优化`VipCommander`类主体结构，拓展类型 &nbsp;-&nbsp; by **chufan** [<samp>(331d9)</samp>](https://github.com/142vip/core-x/commit/331d9ad)
+  - 增加`validateBranch`校验分支，拓展`promptConfirm`，支持安全退出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/495 [<samp>(99cc8)</samp>](https://github.com/142vip/core-x/commit/99cc8f9)
+  - 增加`isExistDir`、`isDirectory`等功能，拓展`GitGeneralBranch`枚举 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/496 [<samp>(49f01)</samp>](https://github.com/142vip/core-x/commit/49f0187)
+
+### 🐛 Bug Fixes
+
+- **@142vip/fairy-cli**:
+  - 修复`copyright`命令依赖异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/491 [<samp>(96158)</samp>](https://github.com/142vip/core-x/commit/961584f)
+- **@142vip/release-version**:
+  - 增加确认框二次验证配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/485 [<samp>(56605)</samp>](https://github.com/142vip/core-x/commit/5660574)
+
+### 💅 Refactors
+
+- **@142vip/fairy-cli**:
+  - 基于`VipCommander`的`initCommand`方法，重写`fairy`工具链 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/494 [<samp>(2ea95)</samp>](https://github.com/142vip/core-x/commit/2ea95c5)
+- **@142vip/release-version**:
+  - 核心业务逻辑重构，业务流程更清晰 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/489 [<samp>(2ab87)</samp>](https://github.com/142vip/core-x/commit/2ab878b)
+
+### 📖 Documentation
+
+- **README**:
+  - Update description &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/474 [<samp>(2abe8)</samp>](https://github.com/142vip/core-x/commit/2abe83c)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.23` &nbsp;-&nbsp; by **chufan** [<samp>(6a7d8)</samp>](https://github.com/142vip/core-x/commit/6a7d820)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(e0102)</samp>](https://github.com/142vip/core-x/commit/e010249)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.34` &nbsp;-&nbsp; by **chufan** [<samp>(959f9)</samp>](https://github.com/142vip/core-x/commit/959f9de)
+  - Publish `v0.0.1-alpha.35` &nbsp;-&nbsp; by **chufan** [<samp>(86d11)</samp>](https://github.com/142vip/core-x/commit/86d11b0)
+
+**Release New Version v0.0.1-alpha.29 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.28...v0.0.1-alpha.29)**
+
 ## v0.0.1-alpha.28 (2025-04-15)
 
 ### ✨ Features

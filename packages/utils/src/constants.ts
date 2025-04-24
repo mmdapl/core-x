@@ -1,4 +1,5 @@
 import { VipNodeJS } from './core'
+import { GitGeneralBranch } from './enums'
 
 /**
  * 一些地址信息
@@ -82,4 +83,10 @@ export const VIP_DEPLOY_DOCKER_ENV = {
 /**
  * monorepo模式下，默认的发布根目录名称
  */
-export const DEFAULT_RELEASE_ROOT_NAME = 'main'
+export const DEFAULT_RELEASE_ROOT_NAME = GitGeneralBranch.MAIN
+
+export const DEFAULT_CHANGELOG_HEADER = `# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+`

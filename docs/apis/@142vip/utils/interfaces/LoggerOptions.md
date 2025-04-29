@@ -2,7 +2,7 @@
 
 # 接口: LoggerOptions
 
-定义于: [packages/utils/src/core/logger.ts:3](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/logger.ts#L3)
+定义于: [packages/utils/src/core/logger.ts:3](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/core/logger.ts#L3)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > `optional` **endLabel**: `string`
 
-定义于: [packages/utils/src/core/logger.ts:5](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/logger.ts#L5)
+定义于: [packages/utils/src/core/logger.ts:5](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/core/logger.ts#L5)
 
 ***
 
@@ -18,4 +18,4 @@
 
 > `optional` **startLabel**: `string`
 
-定义于: [packages/utils/src/core/logger.ts:4](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/logger.ts#L4)
+定义于: [packages/utils/src/core/logger.ts:4](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/core/logger.ts#L4)

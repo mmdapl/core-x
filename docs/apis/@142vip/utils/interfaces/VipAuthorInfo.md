@@ -2,7 +2,7 @@
 
 # 接口: VipAuthorInfo
 
-定义于: [packages/utils/src/constants.ts:36](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L36)
+定义于: [packages/utils/src/constants.ts:36](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L36)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **email**: `string`
 
-定义于: [packages/utils/src/constants.ts:38](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L38)
+定义于: [packages/utils/src/constants.ts:38](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L38)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > **gitee**: `string`
 
-定义于: [packages/utils/src/constants.ts:43](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L43)
+定义于: [packages/utils/src/constants.ts:43](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L43)
 
 ***
 
@@ -26,7 +26,7 @@
 
 > **github**: `string`
 
-定义于: [packages/utils/src/constants.ts:41](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L41)
+定义于: [packages/utils/src/constants.ts:41](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L41)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **githubVip**: `string`
 
-定义于: [packages/utils/src/constants.ts:42](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L42)
+定义于: [packages/utils/src/constants.ts:42](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L42)
 
 ***
 
@@ -42,7 +42,7 @@
 
 > **homePage**: `string`
 
-定义于: [packages/utils/src/constants.ts:40](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L40)
+定义于: [packages/utils/src/constants.ts:40](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L40)
 
 ***
 
@@ -50,7 +50,7 @@
 
 > **name**: `string`
 
-定义于: [packages/utils/src/constants.ts:37](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L37)
+定义于: [packages/utils/src/constants.ts:37](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L37)
 
 ***
 
@@ -58,4 +58,4 @@
 
 > **url**: `string`
 
-定义于: [packages/utils/src/constants.ts:39](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/constants.ts#L39)
+定义于: [packages/utils/src/constants.ts:39](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L39)

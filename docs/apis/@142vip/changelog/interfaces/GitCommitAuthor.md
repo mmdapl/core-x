@@ -2,7 +2,7 @@
 
 # 接口: GitCommitAuthor
 
-定义于: [changelog/src/enums/git-commit.interface.ts:1](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/changelog/src/enums/git-commit.interface.ts#L1)
+定义于: [changelog/src/enums/git-commit.interface.ts:1](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/changelog/src/enums/git-commit.interface.ts#L1)
 
 ## theme_extended_by
 
@@ -14,7 +14,7 @@
 
 > **email**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:3](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/changelog/src/enums/git-commit.interface.ts#L3)
+定义于: [changelog/src/enums/git-commit.interface.ts:3](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/changelog/src/enums/git-commit.interface.ts#L3)
 
 ***
 
@@ -22,4 +22,4 @@
 
 > **name**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:2](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/changelog/src/enums/git-commit.interface.ts#L2)
+定义于: [changelog/src/enums/git-commit.interface.ts:2](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/changelog/src/enums/git-commit.interface.ts#L2)

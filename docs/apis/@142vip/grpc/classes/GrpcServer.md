@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/grpc](../index.md) / GrpcServer
+[API 参考](../../../index.md) / [@142vip/grpc](../index.md) / GrpcServer
 
 # 类: GrpcServer
 
-定义于: [grpc-server.ts:5](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/grpc-server.ts#L5)
+定义于: [grpc-server.ts:5](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/grpc-server.ts#L5)
 
 ## theme_extends
 
@@ -14,7 +14,7 @@
 
 > **new GrpcServer**(): `GrpcServer`
 
-定义于: [grpc-server.ts:7](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/grpc-server.ts#L7)
+定义于: [grpc-server.ts:7](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/grpc-server.ts#L7)
 
 #### 返回
 
@@ -30,7 +30,7 @@
 
 > **addService**(`service`, `implementation`): `void`
 
-定义于: [grpc-server.ts:15](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/grpc-server.ts#L15)
+定义于: [grpc-server.ts:15](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/grpc-server.ts#L15)
 
 添加服务
 
@@ -54,7 +54,7 @@
 
 > **listen**(`connectUri`): `Promise`\<`number`\>
 
-定义于: [grpc-server.ts:31](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/grpc-server.ts#L31)
+定义于: [grpc-server.ts:31](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/grpc-server.ts#L31)
 
 监听端口，即启动
 
@@ -74,7 +74,7 @@
 
 > **removeService**(`service`): `void`
 
-定义于: [grpc-server.ts:23](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/grpc-server.ts#L23)
+定义于: [grpc-server.ts:23](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/grpc-server.ts#L23)
 
 移除服务
 
@@ -94,7 +94,7 @@
 
 > `static` **getInstance**\<`T`\>(`this`, ...`args`): `T`
 
-定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/grpc/src/singleton.ts#L13)
+定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/grpc/src/singleton.ts#L13)
 
 #### 类型参数
 

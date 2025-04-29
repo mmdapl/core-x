@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/commit-linter](../index.md) / commitLiner
+[API 参考](../../../index.md) / [@142vip/commit-linter](../index.md) / commitLiner
 
 # 函数: commitLiner()
 
 > **commitLiner**(`params?`, `commit?`): [`GitCommitLinter`](../interfaces/GitCommitLinter.md)
 
-定义于: [commit-linter/src/git-commit-linter.ts:14](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/commit-linter/src/git-commit-linter.ts#L14)
+定义于: [commit-linter/src/git-commit-linter.ts:14](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/commit-linter/src/git-commit-linter.ts#L14)
 
 Git Commit信息校验
 

@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / VipGit
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / VipGit
 
 # 变量: VipGit
 
 > `const` **VipGit**: `object`
 
-定义于: [packages/utils/src/core/git.ts:252](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/git.ts#L252)
+定义于: [packages/utils/src/core/git.ts:252](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/git.ts#L252)
 
 Git业务相关
 

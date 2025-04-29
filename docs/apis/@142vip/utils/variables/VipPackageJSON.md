@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / VipPackageJSON
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / VipPackageJSON
 
 # 变量: VipPackageJSON
 
 > `const` **VipPackageJSON**: `object`
 
-定义于: [packages/utils/src/core/package-json.ts:214](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L214)
+定义于: [packages/utils/src/core/package-json.ts:214](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L214)
 
 package.json处理
 

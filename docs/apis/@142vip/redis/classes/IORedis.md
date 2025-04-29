@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/redis](../index.md) / IORedis
+[API 参考](../../../index.md) / [@142vip/redis](../index.md) / IORedis
 
 # 类: IORedis
 
-定义于: [io-redis.ts:16](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L16)
+定义于: [io-redis.ts:16](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L16)
 
 ## 构造函数
 
@@ -20,7 +20,7 @@
 
 > **createClient**(`config`): `Redis`
 
-定义于: [io-redis.ts:20](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L20)
+定义于: [io-redis.ts:20](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L20)
 
 简单&哨兵模式
 
@@ -40,7 +40,7 @@
 
 > **createCluster**(`nodes`, `options?`): `Cluster`
 
-定义于: [io-redis.ts:27](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L27)
+定义于: [io-redis.ts:27](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L27)
 
 集群模式
 

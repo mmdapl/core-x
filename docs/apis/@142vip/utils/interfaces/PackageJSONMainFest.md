@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / PackageJSONMainFest
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / PackageJSONMainFest
 
 # 接口: PackageJSONMainFest
 
-定义于: [packages/utils/src/core/package-json.ts:207](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L207)
+定义于: [packages/utils/src/core/package-json.ts:207](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L207)
 
 ## theme_extends
 
@@ -18,7 +18,7 @@
 
 > **name**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L198)
+定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L198)
 
 #### 继承自
 
@@ -30,7 +30,7 @@
 
 > **private**: `boolean`
 
-定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L200)
+定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L200)
 
 #### 继承自
 
@@ -42,7 +42,7 @@
 
 > **version**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L199)
+定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L199)
 
 #### 继承自
 

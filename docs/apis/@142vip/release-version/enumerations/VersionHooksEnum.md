@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/release-version](../index.md) / VersionHooksEnum
+[API 参考](../../../index.md) / [@142vip/release-version](../index.md) / VersionHooksEnum
 
 # 枚举: VersionHooksEnum
 
-定义于: [enums/version-hooks.enum.ts:4](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/release-version/src/enums/version-hooks.enum.ts#L4)
+定义于: [enums/version-hooks.enum.ts:4](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/release-version/src/enums/version-hooks.enum.ts#L4)
 
 release version的钩子类型
 
@@ -12,7 +12,7 @@ release version的钩子类型
 
 > **PostVersion**: `"postversion"`
 
-定义于: [enums/version-hooks.enum.ts:7](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/release-version/src/enums/version-hooks.enum.ts#L7)
+定义于: [enums/version-hooks.enum.ts:7](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/release-version/src/enums/version-hooks.enum.ts#L7)
 
 ***
 
@@ -20,7 +20,7 @@ release version的钩子类型
 
 > **PreVersion**: `"preversion"`
 
-定义于: [enums/version-hooks.enum.ts:5](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/release-version/src/enums/version-hooks.enum.ts#L5)
+定义于: [enums/version-hooks.enum.ts:5](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/release-version/src/enums/version-hooks.enum.ts#L5)
 
 ***
 
@@ -28,4 +28,4 @@ release version的钩子类型
 
 > **Version**: `"version"`
 
-定义于: [enums/version-hooks.enum.ts:6](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/release-version/src/enums/version-hooks.enum.ts#L6)
+定义于: [enums/version-hooks.enum.ts:6](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/release-version/src/enums/version-hooks.enum.ts#L6)

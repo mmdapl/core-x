@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/changelog](../index.md) / GithubAPI
+[API 参考](../../../index.md) / [@142vip/changelog](../index.md) / GithubAPI
 
 # 变量: GithubAPI
 
 > `const` **GithubAPI**: `object`
 
-定义于: [changelog/src/core/github.api.ts:219](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/changelog/src/core/github.api.ts#L219)
+定义于: [changelog/src/core/github.api.ts:219](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/changelog/src/core/github.api.ts#L219)
 
 ## 类型声明
 

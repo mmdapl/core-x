@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/fairy-cli
+[API 参考](../../index.md) / @142vip/fairy-cli
 
 # @142vip/fairy-cli
 

@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/typeorm
+[API 参考](../../index.md) / @142vip/typeorm
 
 # @142vip/typeorm
 

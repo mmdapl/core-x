@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/changelog](../index.md) / ChangelogAPI
+[API 参考](../../../index.md) / [@142vip/changelog](../index.md) / ChangelogAPI
 
 # 变量: ChangelogAPI
 
 > `const` **ChangelogAPI**: `object`
 
-定义于: [changelog/src/core/changelog.api.ts:163](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/changelog/src/core/changelog.api.ts#L163)
+定义于: [changelog/src/core/changelog.api.ts:163](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/changelog/src/core/changelog.api.ts#L163)
 
 changelog相关API
 

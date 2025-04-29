@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/oauth2.0
+[API 参考](../../index.md) / @142vip/oauth2.0
 
 # @142vip/oauth2.0
 

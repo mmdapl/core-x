@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/commit-linter
+[API 参考](../../index.md) / @142vip/commit-linter
 
 # @142vip/commit-linter
 

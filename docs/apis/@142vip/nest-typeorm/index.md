@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/nest-typeorm
+[API 参考](../../index.md) / @142vip/nest-typeorm
 
 # @142vip/nest-typeorm
 

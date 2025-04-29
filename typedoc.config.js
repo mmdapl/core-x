@@ -45,10 +45,10 @@ export default {
   readme: 'none', // 不生成 README 页面
   lang: 'zh',
   navigation: {
-    includeFolders: false,
-    includeCategories: true,
+    includeFolders: true,
+    includeCategories: false,
     includeGroups: false,
-    compactFolders: true,
+    compactFolders: false,
     excludeReferences: false,
   },
   sluggerConfiguration: {
@@ -69,5 +69,5 @@ export default {
       theme_packages: '模块包',
     },
   },
-  logLevel: 'Verbose',
+  // logLevel: 'Verbose',
 }

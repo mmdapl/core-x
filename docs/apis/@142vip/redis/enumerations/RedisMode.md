@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/redis](../index.md) / RedisMode
+[API 参考](../../../index.md) / [@142vip/redis](../index.md) / RedisMode
 
 # 枚举: RedisMode
 
-定义于: [io-redis.ts:10](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L10)
+定义于: [io-redis.ts:10](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L10)
 
 io-redis支持的连接模式
 
@@ -12,7 +12,7 @@ io-redis支持的连接模式
 
 > **CLUSTER**: `"cluster"`
 
-定义于: [io-redis.ts:12](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L12)
+定义于: [io-redis.ts:12](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L12)
 
 ***
 
@@ -20,7 +20,7 @@ io-redis支持的连接模式
 
 > **SENTINEL**: `"sentinel"`
 
-定义于: [io-redis.ts:13](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L13)
+定义于: [io-redis.ts:13](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L13)
 
 ***
 
@@ -28,4 +28,4 @@ io-redis支持的连接模式
 
 > **STANDARD**: `"standard"`
 
-定义于: [io-redis.ts:11](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/redis/src/io-redis.ts#L11)
+定义于: [io-redis.ts:11](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/redis/src/io-redis.ts#L11)

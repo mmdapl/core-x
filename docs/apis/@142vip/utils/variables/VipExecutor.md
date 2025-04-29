@@ -1,10 +1,10 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / VipExecutor
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / VipExecutor
 
 # 变量: VipExecutor
 
 > `const` **VipExecutor**: `object`
 
-定义于: [packages/utils/src/core/exec.ts:176](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L176)
+定义于: [packages/utils/src/core/exec.ts:176](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L176)
 
 执行器
 

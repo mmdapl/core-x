@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / PackageJSONWithPath
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / PackageJSONWithPath
 
 # 接口: PackageJSONWithPath
 
-定义于: [packages/utils/src/core/package-json.ts:203](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L203)
+定义于: [packages/utils/src/core/package-json.ts:203](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L203)
 
 ## theme_extends
 
@@ -14,7 +14,7 @@
 
 > **name**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L198)
+定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L198)
 
 #### 继承自
 
@@ -26,7 +26,7 @@
 
 > **path**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:204](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L204)
+定义于: [packages/utils/src/core/package-json.ts:204](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L204)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **private**: `boolean`
 
-定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L200)
+定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L200)
 
 #### 继承自
 
@@ -46,7 +46,7 @@
 
 > **version**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/package-json.ts#L199)
+定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/package-json.ts#L199)
 
 #### 继承自
 

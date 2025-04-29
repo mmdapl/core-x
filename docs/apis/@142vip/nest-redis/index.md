@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/nest-redis
+[API 参考](../../index.md) / @142vip/nest-redis
 
 # @142vip/nest-redis
 

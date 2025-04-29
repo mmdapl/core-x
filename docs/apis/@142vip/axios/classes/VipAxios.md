@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/axios](../index.md) / VipAxios
+[API 参考](../../../index.md) / [@142vip/axios](../index.md) / VipAxios
 
 # 类: VipAxios
 
-定义于: [vip-axios.ts:9](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L9)
+定义于: [vip-axios.ts:9](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L9)
 
 axios
 - 参考：https://www.npmjs.com/package/axios#features
@@ -13,7 +13,7 @@ axios
 
 > **new VipAxios**(`config`): `VipAxios`
 
-定义于: [vip-axios.ts:14](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L14)
+定义于: [vip-axios.ts:14](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L14)
 
 #### 参数
 
@@ -31,7 +31,7 @@ axios
 
 > `static` **vipAxios**: `VipAxios`
 
-定义于: [vip-axios.ts:10](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L10)
+定义于: [vip-axios.ts:10](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L10)
 
 ## 方法
 
@@ -39,7 +39,7 @@ axios
 
 > **clearInterceptor**(`type`): `void`
 
-定义于: [vip-axios.ts:46](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L46)
+定义于: [vip-axios.ts:46](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L46)
 
 清除拦截器
 
@@ -59,7 +59,7 @@ axios
 
 > **getAxios**(): `AxiosInstance`
 
-定义于: [vip-axios.ts:32](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L32)
+定义于: [vip-axios.ts:32](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L32)
 
 获取axios实例
 
@@ -73,7 +73,7 @@ axios
 
 > **getAxiosConfig**(): `CreateAxiosDefaults`
 
-定义于: [vip-axios.ts:39](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L39)
+定义于: [vip-axios.ts:39](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L39)
 
 获取配置
 
@@ -87,7 +87,7 @@ axios
 
 > `static` **getInstance**(`config`): `VipAxios`
 
-定义于: [vip-axios.ts:22](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/axios/src/vip-axios.ts#L22)
+定义于: [vip-axios.ts:22](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/axios/src/vip-axios.ts#L22)
 
 创建单例
 

@@ -42,6 +42,7 @@ export default {
     entryPoints: ['src/index.ts'],
     readme: 'none', // 不生成 README 页面
   },
+  readme: 'none', // 不生成 README 页面
   lang: 'zh',
   navigation: {
     includeFolders: false,

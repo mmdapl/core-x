@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / VipCommanderDetailOptions
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / VipCommanderDetailOptions
 
 # 接口: VipCommanderDetailOptions
 
-定义于: [packages/utils/src/pkgs/commander.ts:3](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/pkgs/commander.ts#L3)
+定义于: [packages/utils/src/pkgs/commander.ts:3](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/pkgs/commander.ts#L3)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **aliases**: `string`[]
 
-定义于: [packages/utils/src/pkgs/commander.ts:5](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/pkgs/commander.ts#L5)
+定义于: [packages/utils/src/pkgs/commander.ts:5](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/pkgs/commander.ts#L5)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > **command**: `string`
 
-定义于: [packages/utils/src/pkgs/commander.ts:4](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/pkgs/commander.ts#L4)
+定义于: [packages/utils/src/pkgs/commander.ts:4](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/pkgs/commander.ts#L4)
 
 ***
 
@@ -26,7 +26,7 @@
 
 > **description**: `string`
 
-定义于: [packages/utils/src/pkgs/commander.ts:7](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/pkgs/commander.ts#L7)
+定义于: [packages/utils/src/pkgs/commander.ts:7](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/pkgs/commander.ts#L7)
 
 ***
 
@@ -34,4 +34,4 @@
 
 > **summary**: `string`
 
-定义于: [packages/utils/src/pkgs/commander.ts:6](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/pkgs/commander.ts#L6)
+定义于: [packages/utils/src/pkgs/commander.ts:6](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/pkgs/commander.ts#L6)

@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/copyright](../index.md) / CopyrightOptions
+[API 参考](../../../index.md) / [@142vip/copyright](../index.md) / CopyrightOptions
 
 # 接口: CopyrightOptions
 
-定义于: [copyright.interface.ts:44](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/copyright/src/copyright.interface.ts#L44)
+定义于: [copyright.interface.ts:44](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/copyright/src/copyright.interface.ts#L44)
 
 版权对象实例化参数
 - 可选
@@ -13,7 +13,7 @@
 
 > `optional` **logger**: `boolean`
 
-定义于: [copyright.interface.ts:56](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/copyright/src/copyright.interface.ts#L56)
+定义于: [copyright.interface.ts:56](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/copyright/src/copyright.interface.ts#L56)
 
 是否开启控制台日志
 
@@ -23,7 +23,7 @@
 
 > `optional` **maxLineCountInPage**: `number`
 
-定义于: [copyright.interface.ts:48](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/copyright/src/copyright.interface.ts#L48)
+定义于: [copyright.interface.ts:48](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/copyright/src/copyright.interface.ts#L48)
 
 每页最大行数
 
@@ -33,6 +33,6 @@
 
 > `optional` **maxScanSourceLineCount**: `number`
 
-定义于: [copyright.interface.ts:52](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/copyright/src/copyright.interface.ts#L52)
+定义于: [copyright.interface.ts:52](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/copyright/src/copyright.interface.ts#L52)
 
 扫描的最大代码行数

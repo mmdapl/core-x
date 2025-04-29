@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / CmdResult
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / CmdResult
 
 # 接口: CmdResult
 
-定义于: [packages/utils/src/core/exec.ts:11](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L11)
+定义于: [packages/utils/src/core/exec.ts:11](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L11)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **cmd**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L16)
+定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L16)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > `optional` **code**: `null` \| `number`
 
-定义于: [packages/utils/src/core/exec.ts:12](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L12)
+定义于: [packages/utils/src/core/exec.ts:12](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L12)
 
 ***
 
@@ -26,7 +26,7 @@
 
 > `optional` **error**: `Error`
 
-定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L15)
+定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L15)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **stderr**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:14](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L14)
+定义于: [packages/utils/src/core/exec.ts:14](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L14)
 
 ***
 
@@ -42,4 +42,4 @@
 
 > **stdout**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:13](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/core/exec.ts#L13)
+定义于: [packages/utils/src/core/exec.ts:13](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/core/exec.ts#L13)

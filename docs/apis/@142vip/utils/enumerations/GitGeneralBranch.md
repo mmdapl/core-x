@@ -1,8 +1,8 @@
-[API 参考](../../../packages.md) / [@142vip/utils](../index.md) / GitGeneralBranch
+[API 参考](../../../index.md) / [@142vip/utils](../index.md) / GitGeneralBranch
 
 # 枚举: GitGeneralBranch
 
-定义于: [packages/utils/src/enums/git.interface.ts:35](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/enums/git.interface.ts#L35)
+定义于: [packages/utils/src/enums/git.interface.ts:35](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/enums/git.interface.ts#L35)
 
 常用分支
 
@@ -12,7 +12,7 @@
 
 > **MAIN**: `"main"`
 
-定义于: [packages/utils/src/enums/git.interface.ts:36](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/enums/git.interface.ts#L36)
+定义于: [packages/utils/src/enums/git.interface.ts:36](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/enums/git.interface.ts#L36)
 
 ***
 
@@ -20,7 +20,7 @@
 
 > **MASTER**: `"master"`
 
-定义于: [packages/utils/src/enums/git.interface.ts:38](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/enums/git.interface.ts#L38)
+定义于: [packages/utils/src/enums/git.interface.ts:38](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/enums/git.interface.ts#L38)
 
 ***
 
@@ -28,4 +28,4 @@
 
 > **NEXT**: `"next"`
 
-定义于: [packages/utils/src/enums/git.interface.ts:37](https://github.com/142vip/core-x/blob/293ce1057e8ca17514533d1e98d7acd05ef45b34/packages/utils/src/enums/git.interface.ts#L37)
+定义于: [packages/utils/src/enums/git.interface.ts:37](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/utils/src/enums/git.interface.ts#L37)

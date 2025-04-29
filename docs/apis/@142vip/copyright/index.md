@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/copyright
+[API 参考](../../index.md) / @142vip/copyright
 
 # @142vip/copyright
 

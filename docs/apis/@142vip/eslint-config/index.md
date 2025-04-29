@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/eslint-config
+[API 参考](../../index.md) / @142vip/eslint-config
 
 # @142vip/eslint-config
 

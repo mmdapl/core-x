@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/changelog
+[API 参考](../../index.md) / @142vip/changelog
 
 # @142vip/changelog
 

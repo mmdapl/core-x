@@ -1,4 +1,4 @@
-[API 参考](../../packages.md) / @142vip/redis
+[API 参考](../../index.md) / @142vip/redis
 
 # @142vip/redis
 

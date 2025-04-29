@@ -4,7 +4,7 @@
 
 > **releasePackage**(`pkg?`): `Promise`\<`void`\>
 
-定义于: [fairy-cli/src/utils/release-package.ts:63](https://github.com/142vip/core-x/blob/67692efe75f30bef8a4893bf3d01dbe094be97e2/packages/fairy-cli/src/utils/release-package.ts#L63)
+定义于: [fairy-cli/src/utils/release-package.ts:63](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/fairy-cli/src/utils/release-package.ts#L63)
 
 更新公共包、发布项目
 生成changelog文档，更新version 【支持monorepo】

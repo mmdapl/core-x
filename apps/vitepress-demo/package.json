@@ -7,7 +7,7 @@
   "description": "@142vip/vitepress包的使用Demo演示",
   "scripts": {
     "dev": "npx vitepress dev --port 3080 --host --force --strictPort --open",
-    "build": "npx vitepress build --minify && pnpm build:proxy",
+    "build": "npx vitepress build --minify",
     "build:proxy": "NEED_PROXY=true vitepress build --minify"
   },
   "authorInfo": {

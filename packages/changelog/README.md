@@ -137,7 +137,7 @@ npx changelog -h
 
 Usage: @142vip/changelog [options]
 
-基于Git提交信息，生成变更记录，输出Markdown格式的CHANGELOG.md文件
+基于Git提交信息，生成变更记录，输出Markdown格式的日志文件
 
 Options:
   -v,--version             VipCommander Version By @142vip

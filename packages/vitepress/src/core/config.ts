@@ -123,6 +123,7 @@ export const defaultVipThemeConfig = {
 
 /**
  * 获取主题配置
+ * todo 优化类型
  * - https://vitepress.dev/zh/reference/default-theme-config
  */
 export function getVipThemeConfig(themeConfig: any) {
@@ -132,7 +133,7 @@ export function getVipThemeConfig(themeConfig: any) {
 
     // 最近更新
     lastUpdated: {
-      text: '最近更新',
+      text: '最后更新于',
     },
     notFound: {
       title: '页面找不到啦',

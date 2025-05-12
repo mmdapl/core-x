@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [commit
 
 <!-- #region recent-alpha -->
 
+## v0.0.1-alpha.4 (2025-05-12)
+
+### ✨ Features
+
+- 优化导航栏、侧边栏配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/538 [<samp>(6ecdb)</samp>](https://github.com/142vip/core-x/commit/6ecdb51)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/vitepress-demo)**
+
 ## v0.0.1-alpha.3 (2025-05-06)
 
 ### 🐛 Bug Fixes

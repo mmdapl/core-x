@@ -4,7 +4,7 @@
 
 > `const` **VIP\_DEPLOY\_DOCKER\_ENV**: `object`
 
-定义于: [packages/utils/src/constants.ts:74](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/constants.ts#L74)
+定义于: [packages/utils/src/constants.ts:91](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/constants.ts#L91)
 
 Docker部署自定义网络
 

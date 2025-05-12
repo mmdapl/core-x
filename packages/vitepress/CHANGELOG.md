@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.16 (2025-05-10)
+
+### ✨ Features
+
+- 支持导航栏、侧边栏配置函数式定义 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/537 [<samp>(cbd92)</samp>](https://github.com/142vip/core-x/commit/cbd928a)
+
+**Release New Version v0.0.1-alpha.16 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
+## v0.0.1-alpha.15 (2025-05-06)
+
+### ✨ Features
+
+- 增加`typedoc`配置定义函数，优化配置和依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/512 [<samp>(9acb9)</samp>](https://github.com/142vip/core-x/commit/9acb9a0)
+- 增加`defineVipVitepressConfig`配置函数，优化类型支持 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/513 [<samp>(3662c)</samp>](https://github.com/142vip/core-x/commit/3662c1c)
+- 优化表格组件，拓展类型支持 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/514 [<samp>(50ef3)</samp>](https://github.com/142vip/core-x/commit/50ef3bc)
+- `themeConfig`入口优化，变量重命名 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/518 [<samp>(7f414)</samp>](https://github.com/142vip/core-x/commit/7f414e6)
+
+### 🐛 Bug Fixes
+
+- 修复`vue-sfc-transformer`导致的编译告警 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/519 [<samp>(c87d9)</samp>](https://github.com/142vip/core-x/commit/c87d9ab)
+
+**Release New Version v0.0.1-alpha.15 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vitepress)**
+
 ## v0.0.1-alpha.14 (2025-02-06)
 
 ### ✨ Features

@@ -4,6 +4,7 @@ import { defineVipVitepressConfig, getVipFooter, getVipThemeConfig, zhSearch } f
 import typedocSidebar from '../docs/apis/typedoc-sidebar.json'
 import { name as pkgName, version as pkgVersion } from '../package.json'
 import { getChangelogsSidebar, sidebarConfig } from './sidebar'
+
 /**
  * 导航栏
  */
@@ -43,33 +44,36 @@ const navbarConfig: NavbarConfig = [
   },
 ]
 
+// 站点的base路径
+const siteBase = getDocSiteBase('core-x')
+
 /**
  * 所有配置
  */
 export default defineVipVitepressConfig({
-  base: getDocSiteBase('core-x'),
+  base: siteBase,
   lang: 'zh-CN',
   title: '@142vip工程化',
   titleTemplate: ':title - 等等我呀，还在努力',
   description: 'X一切都有可能',
   srcDir: './',
   // 排除部分
-  srcExclude: [],
+  srcExclude: ['node_modules', 'scripts'],
   // 编译输出目录
   outDir: './dist',
   // dev 模式下的缓存目录，默认cache
   cacheDir: './.vitepress/.vite',
-  assetsDir: './.vitepress/assets',
+  assetsDir: 'static',
   metaChunk: true,
   head: [
-    ['meta', { name: 'theme-color', content: '#3c8772' }],
+    // ['meta', { name: 'theme-color', content: '#3c8772' }],
     ['meta', { property: 'og:url', content: 'https://github.com/142vip/core-x' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '@142vip/core-x' }],
     ['meta', { property: 'og:description', content: `${pkgName} - 一切都有可能` }],
-    ['link', { rel: 'icon', href: '.vitepress/assets/favicon.ico' }],
+    // 注意：这里处理下路径
+    ['link', { rel: 'icon', href: `${siteBase}favicon.ico` }],
   ],
-  // markdown
   markdown: {
     theme: {
       dark: 'dracula-soft',
@@ -85,7 +89,7 @@ export default defineVipVitepressConfig({
   themeConfig: getVipThemeConfig({
     // 导航栏
     nav: navbarConfig,
-    logo: '/.vitepress/assets/logo.png',
+    logo: '/logo.png',
     sidebar: {
       '/': sidebarConfig,
       '/docs/apis/': {
@@ -106,13 +110,16 @@ export default defineVipVitepressConfig({
         ],
       },
     },
+    returnToTopLabel: '返回顶部',
+    sidebarMenuLabel: '左侧菜单',
+    darkModeSwitchLabel: '切换主题',
     // 页脚
     footer: getVipFooter({
-      license: OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X,
+      license: OPEN_SOURCE_ADDRESS.LICENCE_CORE_X,
       pkgName,
       pkgVersion,
-      orgLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_VIP,
-      ownerLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_MMDAPL,
+      orgLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITHUB_VIP,
+      ownerLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITHUB_MMDAPL,
     }),
 
     // 搜索
@@ -131,7 +138,11 @@ export default defineVipVitepressConfig({
     // 一些链接
     socialLinks: [
       { icon: 'github', link: OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X },
-      { icon: 'npm', link: 'https://www.npmjs.com/~mmdapl' },
+      { icon: 'gitee', link: OPEN_SOURCE_ADDRESS.GITEE_REPO_CORE_X },
+      { icon: 'npm', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_NPM_MMDAPL },
+      { icon: 'csdn', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_CSDN },
+      { icon: 'bilibili', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_BILIBILI },
+      { icon: 'juejin', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_JUE_JIN },
     ],
     // 编辑链接
     editLink: {
@@ -156,6 +167,9 @@ export default defineVipVitepressConfig({
         '@apps': VipNodeJS.pathResolve(__dirname, '../apps'),
       },
     },
+    // 配置静态资源目录
+    // 参考：https://cn.vitejs.dev/config/shared-options.html#publicdir
+    publicDir: VipNodeJS.pathResolve(__dirname, '../.vitepress/assets'),
     plugins: [
       // element-plus 自动导入，参考：https://element-plus.org/zh-CN/guide/quickstart.html
       // ElementPlus(),

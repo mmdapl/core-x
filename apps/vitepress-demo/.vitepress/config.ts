@@ -1,12 +1,19 @@
-import type { NavbarConfig, SidebarConfig } from '@142vip/vitepress'
-import { getDocSiteBase, OPEN_SOURCE_ADDRESS, VipNodeJS } from '@142vip/utils'
-import { defineVipVitepressConfig, getVipFooter, getVipThemeConfig, zhSearch } from '@142vip/vitepress'
-import { name as pkgName, version as pkgVersion } from '../package.json'
+import { getDocSiteBase, OPEN_SOURCE_ADDRESS, VipNodeJS, VipPackageJSON } from '@142vip/utils'
+import {
+  defineVipNavbarConfig,
+  defineVipSidebarConfig,
+  defineVipVitepressConfig,
+  getVipFooter,
+  getVipThemeConfig,
+  zhSearch,
+} from '@142vip/vitepress'
+
+const pkg = VipPackageJSON.getPackageJSON<{ description: string }>()
 
 /**
  * 导航栏
  */
-const navbarConfig: NavbarConfig = [
+const navbarConfig = defineVipNavbarConfig([
   { text: '🔥 首页', link: '/docs/index.md' },
   {
     text: '💻 示例文档',
@@ -17,7 +24,7 @@ const navbarConfig: NavbarConfig = [
     ],
   },
   {
-    text: `⚡ ${pkgVersion}`,
+    text: `⚡ ${pkg.version}`,
     items: [
       { text: '🎉 历史版本', link: `${OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X}/releases` },
       { text: '📄 更新日志', link: `${OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X}/blob/main/CHANGELOG.md` },
@@ -30,12 +37,12 @@ const navbarConfig: NavbarConfig = [
       },
     ],
   },
-]
+])
 
 /**
  * 侧边栏
  */
-const sidebarConfig: SidebarConfig = [
+const sidebarConfig = defineVipSidebarConfig([
   {
     text: '示例文档',
     collapsed: false,
@@ -45,7 +52,7 @@ const sidebarConfig: SidebarConfig = [
       { text: '示例文档-3', link: '/docs/example/test-3.md' },
     ],
   },
-]
+])
 
 /**
  * 所有配置
@@ -54,7 +61,7 @@ export default defineVipVitepressConfig({
   base: getDocSiteBase('core-x'),
   lang: 'zh-CN',
   title: '@142vip/vitepress-demo',
-  titleTemplate: ':title - @142vip/core-x',
+  titleTemplate: ':title - 等等我呀，还在努力',
   description: '@142vip/vitepress模块包的使用Demo演示',
   srcDir: './',
   // 排除部分
@@ -71,7 +78,7 @@ export default defineVipVitepressConfig({
     ['meta', { property: 'og:url', content: 'https://github.com/142vip/core-x' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: '@142vip/core-x' }],
-    ['meta', { property: 'og:description', content: `${pkgName} - @142vip/vitepress-demo演示项目` }],
+    ['meta', { property: 'og:description', content: `${pkg.name} - @142vip/vitepress-demo演示项目` }],
   ],
   // markdown
   markdown: {
@@ -94,10 +101,10 @@ export default defineVipVitepressConfig({
     // 页脚
     footer: getVipFooter({
       license: OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X,
-      pkgName,
-      pkgVersion,
-      orgLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_VIP,
-      ownerLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_MMDAPL,
+      pkgName: pkg.name,
+      pkgVersion: pkg.version,
+      orgLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITHUB_VIP,
+      ownerLink: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITHUB_MMDAPL,
     }),
 
     // 搜索
@@ -115,8 +122,9 @@ export default defineVipVitepressConfig({
     },
     // 一些链接
     socialLinks: [
-      { icon: 'github', link: OPEN_SOURCE_ADDRESS.GITHUB_REPO_CORE_X },
-      { icon: 'npm', link: 'https://www.npmjs.com/~mmdapl' },
+      { icon: 'github', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITHUB_VIP },
+      { icon: 'gitee', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_GITEE_VIP },
+      { icon: 'npm', link: OPEN_SOURCE_ADDRESS.HOME_PAGE_NPM_MMDAPL },
     ],
     // 编辑链接
     editLink: {

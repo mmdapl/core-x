@@ -4,7 +4,7 @@
 
 > `const` **baseEslintRules**: `object`
 
-定义于: [eslint.config.ts:24](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/eslint-config/src/eslint.config.ts#L24)
+定义于: [eslint.config.ts:24](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/eslint-config/src/eslint.config.ts#L24)
 
 基础的Eslint校验规则
 

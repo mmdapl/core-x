@@ -4,7 +4,7 @@
 
 > `const` **VipNodeJS**: `object`
 
-定义于: [packages/utils/src/core/nodejs.ts:240](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/utils/src/core/nodejs.ts#L240)
+定义于: [packages/utils/src/core/nodejs.ts:250](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/nodejs.ts#L250)
 
 ## 类型声明
 
@@ -305,6 +305,34 @@ Would generate the output:
 #### 返回
 
 `string`
+
+### pick()
+
+> **pick**: \<`T`, `K`\>(`obj`, `keys`) => `Pick`\<`T`, `K`\>
+
+#### 类型参数
+
+##### T
+
+`T`
+
+##### K
+
+`K` *extends* `string` \| `number` \| `symbol`
+
+#### 参数
+
+##### obj
+
+`T`
+
+##### keys
+
+`K`[]
+
+#### 返回
+
+`Pick`\<`T`, `K`\>
 
 ### printStandardNodeDevEnv()
 

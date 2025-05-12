@@ -4,7 +4,7 @@
 
 > **loadChangelogConfig**(): `Promise`\<[`ChangelogGenerateOptions`](../interfaces/ChangelogGenerateOptions.md)\>
 
-定义于: [changelog/src/shared/config.ts:46](https://github.com/142vip/core-x/blob/366c03709f86a3eb43798cad6f972465bd93322a/packages/changelog/src/shared/config.ts#L46)
+定义于: [changelog/src/shared/config.ts:46](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/changelog/src/shared/config.ts#L46)
 
 加载配置，读取配置文件
 

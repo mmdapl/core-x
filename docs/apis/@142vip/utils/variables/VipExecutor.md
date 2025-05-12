@@ -4,7 +4,7 @@
 
 > `const` **VipExecutor**: `object`
 
-定义于: [packages/utils/src/core/exec.ts:176](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/exec.ts#L176)
+定义于: [packages/utils/src/core/exec.ts:176](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L176)
 
 执行器
 

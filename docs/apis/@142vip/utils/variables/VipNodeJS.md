@@ -4,7 +4,7 @@
 
 > `const` **VipNodeJS**: `object`
 
-定义于: [packages/utils/src/core/nodejs.ts:250](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/nodejs.ts#L250)
+定义于: [packages/utils/src/core/nodejs.ts:268](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/nodejs.ts#L268)
 
 ## 类型声明
 
@@ -179,15 +179,21 @@ Would generate the output:
 
 > **isBuffer**: (`data`) => `boolean`
 
+判断是否为Buffer类型
+
 #### 参数
 
 ##### data
 
 `object`
 
+输入数据
+
 #### 返回
 
 `boolean`
+
+boolean
 
 ### isDirectory()
 
@@ -244,6 +250,24 @@ Would generate the output:
 #### 返回
 
 `boolean`
+
+### mkdirSync()
+
+> **mkdirSync**: (`path`) => `void`
+
+创建目录
+
+#### 参数
+
+##### path
+
+`PathLike`
+
+目录路径
+
+#### 返回
+
+`void`
 
 ### pathDirname()
 
@@ -384,15 +408,21 @@ Would generate the output:
 
 > **setProcessEnv**: (`key`, `value`) => `void`
 
+设置当前京城环境变量
+
 #### 参数
 
 ##### key
 
 `string`
 
+键
+
 ##### value
 
 `string`
+
+值
 
 #### 返回
 

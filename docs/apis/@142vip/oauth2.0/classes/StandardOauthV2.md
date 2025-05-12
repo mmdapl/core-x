@@ -2,7 +2,7 @@
 
 # 类: StandardOauthV2
 
-定义于: [oauth2.0.ts:4](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/oauth/src/oauth2.0.ts#L4)
+定义于: [oauth2.0.ts:4](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/oauth/src/oauth2.0.ts#L4)
 
 标准 Oauth2.0
 
@@ -22,7 +22,7 @@
 
 > **authenticate**(): `Promise`\<`void`\>
 
-定义于: [oauth2.0.ts:22](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/oauth/src/oauth2.0.ts#L22)
+定义于: [oauth2.0.ts:22](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/oauth/src/oauth2.0.ts#L22)
 
 认证
 
@@ -36,7 +36,7 @@
 
 > **authorize**(): `Promise`\<`void`\>
 
-定义于: [oauth2.0.ts:8](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/oauth/src/oauth2.0.ts#L8)
+定义于: [oauth2.0.ts:8](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/oauth/src/oauth2.0.ts#L8)
 
 登录授权
 
@@ -50,7 +50,7 @@
 
 > **getToken**(): `Promise`\<`void`\>
 
-定义于: [oauth2.0.ts:15](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/oauth/src/oauth2.0.ts#L15)
+定义于: [oauth2.0.ts:15](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/oauth/src/oauth2.0.ts#L15)
 
 获取令牌
 
@@ -64,7 +64,7 @@
 
 > **refreshToken**(): `Promise`\<`void`\>
 
-定义于: [oauth2.0.ts:29](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/oauth/src/oauth2.0.ts#L29)
+定义于: [oauth2.0.ts:29](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/oauth/src/oauth2.0.ts#L29)
 
 刷新令牌
 

@@ -4,4 +4,4 @@
 
 > `const` **test**: `1` = `1`
 
-定义于: [index.ts:1](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/nest-redis/src/index.ts#L1)
+定义于: [index.ts:1](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/nest-redis/src/index.ts#L1)

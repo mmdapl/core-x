@@ -2,7 +2,7 @@
 
 # 接口: VipLoggerOptions
 
-定义于: [packages/utils/src/core/logger.ts:11](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/logger.ts#L11)
+定义于: [packages/utils/src/core/logger.ts:11](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/logger.ts#L11)
 
 日志对象构造参数
 
@@ -12,7 +12,7 @@
 
 > `optional` **errorColor**: `string`
 
-定义于: [packages/utils/src/core/logger.ts:14](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/logger.ts#L14)
+定义于: [packages/utils/src/core/logger.ts:14](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/logger.ts#L14)
 
 ***
 
@@ -20,7 +20,7 @@
 
 > `optional` **infoColor**: `string`
 
-定义于: [packages/utils/src/core/logger.ts:12](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/logger.ts#L12)
+定义于: [packages/utils/src/core/logger.ts:12](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/logger.ts#L12)
 
 ***
 
@@ -28,4 +28,4 @@
 
 > `optional` **logColor**: `string`
 
-定义于: [packages/utils/src/core/logger.ts:13](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/logger.ts#L13)
+定义于: [packages/utils/src/core/logger.ts:13](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/logger.ts#L13)

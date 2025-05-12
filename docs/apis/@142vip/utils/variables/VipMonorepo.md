@@ -4,7 +4,7 @@
 
 > `const` **VipMonorepo**: `object`
 
-定义于: [packages/utils/src/core/monorepo.ts:79](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/core/monorepo.ts#L79)
+定义于: [packages/utils/src/core/monorepo.ts:79](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/monorepo.ts#L79)
 
 ## 类型声明
 

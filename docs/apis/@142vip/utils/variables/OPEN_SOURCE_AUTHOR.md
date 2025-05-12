@@ -4,6 +4,6 @@
 
 > `const` **OPEN\_SOURCE\_AUTHOR**: [`VipAuthorInfo`](../interfaces/VipAuthorInfo.md)
 
-定义于: [packages/utils/src/constants.ts:66](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/constants.ts#L66)
+定义于: [packages/utils/src/constants.ts:68](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/constants.ts#L68)
 
 开源作者

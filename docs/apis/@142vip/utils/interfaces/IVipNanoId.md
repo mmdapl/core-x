@@ -2,7 +2,7 @@
 
 # 接口: IVipNanoId
 
-定义于: [packages/utils/src/pkgs/nanoid.ts:32](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/pkgs/nanoid.ts#L32)
+定义于: [packages/utils/src/pkgs/nanoid.ts:32](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/pkgs/nanoid.ts#L32)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **getNanoId**: (`alphabet?`) => (`size?`) => `string`
 
-定义于: [packages/utils/src/pkgs/nanoid.ts:34](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/pkgs/nanoid.ts#L34)
+定义于: [packages/utils/src/pkgs/nanoid.ts:34](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/pkgs/nanoid.ts#L34)
 
 获取NanoId对象
 
@@ -40,7 +40,7 @@
 
 > **getRandomId**: (`size?`) => `string`
 
-定义于: [packages/utils/src/pkgs/nanoid.ts:33](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/pkgs/nanoid.ts#L33)
+定义于: [packages/utils/src/pkgs/nanoid.ts:33](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/pkgs/nanoid.ts#L33)
 
 获取随机字符串
 - 按照制定规则生成默认字符串

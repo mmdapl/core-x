@@ -4,6 +4,6 @@
 
 > `const` **VipLodash**: `Pick`\<`LoDashStatic`, `"merge"` \| `"keys"` \| `"keyBy"` \| `"omit"` \| `"pick"` \| `"pickBy"` \| `"groupBy"`\>
 
-定义于: [packages/utils/src/pkgs/lodash.ts:6](https://github.com/142vip/core-x/blob/1eb80b292cacf818428b26e34edc36554f5c80fb/packages/utils/src/pkgs/lodash.ts#L6)
+定义于: [packages/utils/src/pkgs/lodash.ts:6](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/pkgs/lodash.ts#L6)
 
 lodash的一些方法

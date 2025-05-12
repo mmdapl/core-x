@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.15 (2025-05-12)
+
+### ✨ Features
+
+- 依赖升级，支持新版`vuepress-theme-hope` &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/543 [<samp>(48226)</samp>](https://github.com/142vip/core-x/commit/48226d4)
+- 增加`@vuepress/plugin-watermark`依赖，站点支持水印功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/544 [<samp>(a0b14)</samp>](https://github.com/142vip/core-x/commit/a0b148e)
+
+**Release New Version v0.0.1-alpha.15 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.14 (2025-05-10)
 
 ### 🐛 Bug Fixes

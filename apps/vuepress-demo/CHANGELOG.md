@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [commit
 
 <!-- #region recent-alpha -->
 
+## v0.0.1-alpha.5 (2025-05-12)
+
+**No Significant Changes**
+
 ## v0.0.1-alpha.4 (2025-05-09)
 
 ### ✨ Features

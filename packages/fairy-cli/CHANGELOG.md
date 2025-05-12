@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.25 (2025-05-12)
+
+### ✨ Features
+
+- `sync`命令同步`142vip`组织包，支持`sync:pkg`脚本快速调用 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/541 [<samp>(b6d34)</samp>](https://github.com/142vip/core-x/commit/b6d345b)
+- 优化子命令核心逻辑，补充枚举、文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/546 [<samp>(9d007)</samp>](https://github.com/142vip/core-x/commit/9d00738)
+
+**Release New Version v0.0.3-alpha.25 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.24 (2025-05-06)
 
 ### ✨ Features

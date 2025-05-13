@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.31 (2025-05-13)
+
+### ✨ Features
+
+- **@142vip/fairy-cli**:
+  - `sync`命令同步`142vip`组织包，支持`sync:pkg`脚本快速调用 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/541 [<samp>(b6d34)</samp>](https://github.com/142vip/core-x/commit/b6d345b)
+  - 优化子命令核心逻辑，补充枚举、文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/546 [<samp>(9d007)</samp>](https://github.com/142vip/core-x/commit/9d00738)
+- **@142vip/utils**:
+  - 拓展`mkdirSync`等方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/542 [<samp>(49db7)</samp>](https://github.com/142vip/core-x/commit/49db785)
+- **@142vip/vitepress**:
+  - 支持导航栏、侧边栏配置函数式定义 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/537 [<samp>(573b1)</samp>](https://github.com/142vip/core-x/commit/573b1c4)
+- **@142vip/vuepress**:
+  - 升级模块依赖，重构配置、主题等功能 &nbsp;-&nbsp; by **chufan** [<samp>(2f6a6)</samp>](https://github.com/142vip/core-x/commit/2f6a6ae)
+  - 依赖升级，支持新版`vuepress-theme-hope` &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/543 [<samp>(48226)</samp>](https://github.com/142vip/core-x/commit/48226d4)
+  - 增加`@vuepress/plugin-watermark`依赖，站点支持水印功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/544 [<samp>(a0b14)</samp>](https://github.com/142vip/core-x/commit/a0b148e)
+- **vitepress-demo**:
+  - 优化导航栏、侧边栏配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/538 [<samp>(6ecdb)</samp>](https://github.com/142vip/core-x/commit/6ecdb51)
+- **vuepress-demo**:
+  - 优化依赖，简化demo站点配置 &nbsp;-&nbsp; by **chufan** [<samp>(05bcb)</samp>](https://github.com/142vip/core-x/commit/05bcbce)
+
+### 🐛 Bug Fixes
+
+- 修复`favicon.ico`图标路径异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/540 [<samp>(f2543)</samp>](https://github.com/142vip/core-x/commit/f25436d)
+- **@142vip/vuepress**:
+  - 修复importCode配置替换文件路径异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/539 [<samp>(1f071)</samp>](https://github.com/142vip/core-x/commit/1f071d2)
+
+### 💅 Refactors
+
+- **@142vip/commit-linter**:
+  - 结构调整，优化核心逻辑和文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/545 [<samp>(928b7)</samp>](https://github.com/142vip/core-x/commit/928b764)
+
+### 📖 Documentation
+
+- Update &nbsp;-&nbsp; by **chufan** [<samp>(eea31)</samp>](https://github.com/142vip/core-x/commit/eea319e)
+- Update &nbsp;-&nbsp; by **chufan** [<samp>(dc276)</samp>](https://github.com/142vip/core-x/commit/dc27696)
+
+### 😏 Release Packages
+
+- **@142vip/commit-linter**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(63a68)</samp>](https://github.com/142vip/core-x/commit/63a68c5)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.25` &nbsp;-&nbsp; by **chufan** [<samp>(39b8e)</samp>](https://github.com/142vip/core-x/commit/39b8e29)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.16` &nbsp;-&nbsp; by **chufan** [<samp>(f19d7)</samp>](https://github.com/142vip/core-x/commit/f19d7b8)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.13` &nbsp;-&nbsp; by **chufan** [<samp>(b94e6)</samp>](https://github.com/142vip/core-x/commit/b94e65b)
+  - Publish `v0.0.1-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(5b23a)</samp>](https://github.com/142vip/core-x/commit/5b23a5e)
+  - Publish `v0.0.1-alpha.15` &nbsp;-&nbsp; by **chufan** [<samp>(3b15a)</samp>](https://github.com/142vip/core-x/commit/3b15aac)
+- **vitepress-demo**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(4c858)</samp>](https://github.com/142vip/core-x/commit/4c8588f)
+- **vuepress-demo**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(8bb12)</samp>](https://github.com/142vip/core-x/commit/8bb12ad)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(bdff6)</samp>](https://github.com/142vip/core-x/commit/bdff676)
+
+**Release New Version v0.0.1-alpha.31 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.30...v0.0.1-alpha.31)**
+
 ## v0.0.1-alpha.30 (2025-05-06)
 
 ### ✨ Features

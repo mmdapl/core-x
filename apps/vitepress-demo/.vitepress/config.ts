@@ -1,4 +1,5 @@
-import { getDocSiteBase, OPEN_SOURCE_ADDRESS, VipNodeJS, VipPackageJSON } from '@142vip/utils'
+import { OPEN_SOURCE_ADDRESS } from '@142vip/open-source'
+import { vipDocSite, VipNodeJS, VipPackageJSON } from '@142vip/utils'
 import {
   defineVipNavbarConfig,
   defineVipSidebarConfig,
@@ -58,7 +59,7 @@ const sidebarConfig = defineVipSidebarConfig([
  * 所有配置
  */
 export default defineVipVitepressConfig({
-  base: getDocSiteBase('core-x'),
+  base: vipDocSite.getBase('core-x'),
   lang: 'zh-CN',
   title: '@142vip/vitepress-demo',
   titleTemplate: ':title - 等等我呀，还在努力',

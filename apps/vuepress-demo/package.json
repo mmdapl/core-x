@@ -16,6 +16,7 @@
     "build": "npx vuepress build docs"
   },
   "devDependencies": {
+    "@142vip/open-source": "workspace:*",
     "@142vip/utils": "workspace:*",
     "@142vip/vuepress": "workspace:*"
   }

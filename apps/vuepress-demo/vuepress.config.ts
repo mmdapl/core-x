@@ -1,4 +1,5 @@
-import { getDocSiteBase, GitGeneralBranch, OPEN_SOURCE_AUTHOR, VipPackageJSON } from '@142vip/utils'
+import { OPEN_SOURCE_AUTHOR } from '@142vip/open-source'
+import { GitGeneralBranch, vipDocSite, VipPackageJSON } from '@142vip/utils'
 import {
   defineVipNavbarConfig,
   defineVipSidebarConfig,
@@ -74,7 +75,7 @@ export default defineVipVuepressConfig({
       lang: 'zh-CN',
     },
   },
-  base: getDocSiteBase(''),
+  base: vipDocSite.getBase(''),
   title: pkg.name,
   description: pkg.description,
   port: 5200,

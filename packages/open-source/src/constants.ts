@@ -1,7 +1,7 @@
 import type { VipAuthorInfo } from './author.interface'
 
 /**
- * 一些地址信息
+ * 开源相关的地址
  */
 export enum OPEN_SOURCE_ADDRESS {
   // 作者

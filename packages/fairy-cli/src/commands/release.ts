@@ -7,7 +7,7 @@ import {
 } from '@142vip/fairy-cli'
 import { versionBump } from '@142vip/release-version'
 import {
-  DEFAULT_RELEASE_ROOT_NAME,
+  GitGeneralBranch,
   VipColor,
   VipConsole,
   VipGit,
@@ -83,7 +83,7 @@ async function execVipRelease(pnpmFilter?: string | string[]): Promise<void> {
   try {
     const packageName = await VipInquirer.promptSearch(
       `选择需要使用 ${VipColor.red(CommandEnum.RELEASE)} 命令发布的模块名称：`,
-      VipInquirer.handleSimpleSearchSource([DEFAULT_RELEASE_ROOT_NAME, ...packageNames]),
+      VipInquirer.handleSimpleSearchSource([GitGeneralBranch.MAIN, ...packageNames]),
     )
 
     await VipInquirer.promptConfirmWithSuccessExit(`模块 ${VipColor.green(packageName)} 将发布新的版本，是否继续操作？`, {
@@ -91,7 +91,7 @@ async function execVipRelease(pnpmFilter?: string | string[]): Promise<void> {
       defaultValue: false,
     })
 
-    const pkg = packageName !== DEFAULT_RELEASE_ROOT_NAME
+    const pkg = packageName !== GitGeneralBranch.MAIN
       ? VipMonorepo.getPkgJSONPath(packageName, pnpmFilter)
       : undefined
 

@@ -1,5 +1,5 @@
 import type { CmdResult } from './exec'
-import { VIP_DEPLOY_DOCKER_ENV } from '../constants'
+import { OPEN_SOURCE_ADDRESS } from '@142vip/open-source'
 import { RegistryAddressEnum } from '../enums'
 import { VipSymbols } from '../pkgs'
 import { VipExecutor } from './exec'
@@ -386,8 +386,8 @@ async function listNetworkNames(): Promise<string[]> {
 async function createNetwork(options: CreateNetworkOptions): Promise<boolean> {
   // 默认的网关和子网掩码
   if (options.gateway == null && options.subnet == null) {
-    options.gateway = VIP_DEPLOY_DOCKER_ENV.NETWORK_GATEWAY
-    options.subnet = VIP_DEPLOY_DOCKER_ENV.NETWORK_SUBNET
+    options.gateway = OPEN_SOURCE_ADDRESS.DOCKER_NETWORK_GATEWAY
+    options.subnet = OPEN_SOURCE_ADDRESS.DOCKER_NETWORK_SUBNET
   }
   const command = `docker network create --subnet="${options.subnet}" --gateway="${options.gateway}" ${options.networkName}`
   const { code } = await VipExecutor.execCommand(command)

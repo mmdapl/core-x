@@ -1,3 +1,4 @@
+export * from './doc-site'
 export * from './docker'
 export * from './exec'
 export * from './git'

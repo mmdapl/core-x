@@ -1,15 +1,26 @@
 import type { ChangelogCliOptions, ChangelogGenerateOptions } from '../enums'
 import { VipConfig, VipGit } from '@142vip/utils'
 
-export const CONFIG_DEFAULT_NAME: string = 'changelog'
+/**
+ * changelog默认的名称配置
+ */
+export const CONFIG_DEFAULT_NAME = 'changelog' as string
+
+/**
+ * changelog默认的header配置
+ */
+export const CONFIG_DEFAULT_HEADER = `# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+` as string
 
 /**
  * 默认配置
  */
 export const ChangelogDefaultConfig = {
   scopeMap: {},
-  header: '# Changelog\n\nAll notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.\n',
-  // header: DEFAULT_CHANGELOG_HEADER,
+  header: CONFIG_DEFAULT_HEADER,
   types: {
     feat: { title: '✨ Features', semver: 'minor' },
     perf: { title: '🔥 Performance', semver: 'patch' },

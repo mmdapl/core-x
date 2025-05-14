@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.2 (2025-05-14)
+
+### ✨ Features
+
+- 优化`OPEN_SOURCE_ADDRESS`常量导出 &nbsp;-&nbsp; by **chufan** [<samp>(e43a3)</samp>](https://github.com/142vip/core-x/commit/e43a320)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/open-source)**
+
 ## v0.0.1-alpha.1 (2025-05-14)
 
 ### ✨ Features

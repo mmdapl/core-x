@@ -1,4 +1,5 @@
-import { getDocSiteBase, OPEN_SOURCE_ADDRESS, VipNodeJS, VipPackageJSON } from '@142vip/utils'
+import { OPEN_SOURCE_ADDRESS } from '@142vip/open-source'
+import { vipDocSite, VipNodeJS, VipPackageJSON } from '@142vip/utils'
 import {
   defineVipNavbarConfig,
   defineVipVitepressConfig,
@@ -13,7 +14,7 @@ import { getChangelogsSidebar, sidebarConfig } from './sidebar'
 const pkg = VipPackageJSON.getPackageJSON<{ description: string }>()
 
 // 站点的base路径
-const siteBase = getDocSiteBase('core-x')
+const siteBase = vipDocSite.getBase('core-x')
 
 /**
  * 导航栏

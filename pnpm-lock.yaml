@@ -20,6 +20,9 @@ importers:
       '@142vip/fairy-cli':
         specifier: workspace:*
         version: link:packages/fairy-cli
+      '@142vip/open-source':
+        specifier: workspace:*
+        version: link:packages/open-source
       '@142vip/release-version':
         specifier: workspace:*
         version: link:packages/release-version
@@ -74,6 +77,9 @@ importers:
 
   apps/vitepress-demo:
     devDependencies:
+      '@142vip/open-source':
+        specifier: workspace:*
+        version: link:../../packages/open-source
       '@142vip/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -83,6 +89,9 @@ importers:
 
   apps/vuepress-demo:
     devDependencies:
+      '@142vip/open-source':
+        specifier: workspace:*
+        version: link:../../packages/open-source
       '@142vip/utils':
         specifier: workspace:*
         version: link:../../packages/utils
@@ -384,8 +393,11 @@ importers:
 
   packages/utils:
     dependencies:
+      '@142vip/open-source':
+        specifier: workspace:*
+        version: link:../open-source
       '@inquirer/prompts':
-        specifier: ^7.4.0
+        specifier: 7.4.0
         version: 7.4.0(@types/node@22.13.1)
       ansi-colors:
         specifier: 4.1.3

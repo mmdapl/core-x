@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.37 (2025-05-15)
+
+### ✨ Features
+
+- 增加`VipDocSite`类，支持博客站点 &nbsp;-&nbsp; by **chufan** [<samp>(4c914)</samp>](https://github.com/142vip/core-x/commit/4c91457)
+- 优化`http`枚举，简化`constants`常量导出 &nbsp;-&nbsp; by **chufan** [<samp>(4ba27)</samp>](https://github.com/142vip/core-x/commit/4ba2779)
+
+**Release New Version v0.0.1-alpha.37 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.36 (2025-05-06)
 
 ### ✨ Features

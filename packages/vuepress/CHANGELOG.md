@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.16 (2025-05-15)
+
+### ✨ Features
+
+- 废弃`i18n`方案，优化主题和插件配置项 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/547 [<samp>(4436c)</samp>](https://github.com/142vip/core-x/commit/4436c8d)
+
+**Release New Version v0.0.1-alpha.16 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.15 (2025-05-12)
 
 ### ✨ Features

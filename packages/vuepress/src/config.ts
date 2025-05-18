@@ -1,7 +1,7 @@
 import type { UserConfig } from '@vuepress/cli'
 import type { NavbarOptions, SidebarOptions } from 'vuepress-theme-hope'
 import { navbar, sidebar } from 'vuepress-theme-hope'
-import { getVuepressDefaultViteBundler } from './core/plugin-vite-bundler'
+import { getVuepressDefaultViteBundler } from './plugins/plugin-vite-bundler'
 
 /**
  * 用户配置

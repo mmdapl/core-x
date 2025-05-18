@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [commit
 
 <!-- #region recent-alpha -->
 
+## v0.0.1-alpha.6 (2025-05-18)
+
+### ✨ Features
+
+- 优化导航栏，修改配置，支持`changelog`组件展示 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/548 [<samp>(1bef0)</samp>](https://github.com/142vip/core-x/commit/1bef0db)
+- 支持`@142vip/open-source`模块，优化配置 &nbsp;-&nbsp; by **chufan** [<samp>(b6aae)</samp>](https://github.com/142vip/core-x/commit/b6aae30)
+- 优化站点配置，基于`@142vip/open-source`模块简化`footer`、`copyright`等配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/558 [<samp>(e9478)</samp>](https://github.com/142vip/core-x/commit/e947826)
+
+**Release New Version v0.0.1-alpha.6 [👉 View New Package On NPM](https://www.npmjs.com/package/vuepress-demo)**
+
 ## v0.0.1-alpha.5 (2025-05-12)
 
 **No Significant Changes**

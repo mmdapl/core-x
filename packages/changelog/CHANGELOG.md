@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.20 (2025-05-18)
+
+### ✨ Features
+
+- 增加`CONFIG_DEFAULT_HEADER`等默认值常量 &nbsp;-&nbsp; by **chufan** [<samp>(f11c3)</samp>](https://github.com/142vip/core-x/commit/f11c32b)
+
+**Release New Version v0.0.1-alpha.20 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.19 (2025-05-06)
 
 ### 💅 Refactors

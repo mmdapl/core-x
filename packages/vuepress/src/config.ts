@@ -63,3 +63,9 @@ export function defineVipNavbarConfig(options: NavbarOptions): NavbarOptions {
 export function defineVipSidebarConfig(options: SidebarOptions): SidebarOptions {
   return sidebar(options)
 }
+
+/**
+ * 默认的文档目录
+ * - docs
+ */
+export const VUEPRESS_DEFAULT_DOCS_DIR: string = 'docs'

@@ -145,7 +145,7 @@ const baseThemeOptions: ThemeOptions = {
   // 主题布局选项
   // docsRepo: RepoAddress,
   // repo: '142vip/JavaScriptCollection',
-  // repoLabel: 'GitHub',
+  repoLabel: 'GitHub',
   // 是否在导航栏内显示仓库链接，默认为 `true`
   repoDisplay: true,
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.17 (2025-05-18)
+
+### ✨ Features
+
+- 修改模块主体结构，简化`config`、`theme`的导出逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/556 [<samp>(d7d01)</samp>](https://github.com/142vip/core-x/commit/d7d0116)
+- 移除constants导出，删除`footer`、`copyright`的模式函数形式 &nbsp;-&nbsp; by **chufan** [<samp>(fb0a5)</samp>](https://github.com/142vip/core-x/commit/fb0a5eb)
+- 移除headers导出，强化点配置自定义 &nbsp;-&nbsp; by **chufan** [<samp>(5412c)</samp>](https://github.com/142vip/core-x/commit/5412c22)
+- 增加`VUEPRESS_DEFAULT_DOCS_DIR`，定义默认文档目录 &nbsp;-&nbsp; by **chufan** [<samp>(7a1e2)</samp>](https://github.com/142vip/core-x/commit/7a1e225)
+- 支持`repoLabel`配置默认为`Github` &nbsp;-&nbsp; by **chufan** [<samp>(3a7c0)</samp>](https://github.com/142vip/core-x/commit/3a7c0d3)
+
+**Release New Version v0.0.1-alpha.17 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/vuepress)**
+
 ## v0.0.1-alpha.16 (2025-05-15)
 
 ### ✨ Features

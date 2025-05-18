@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 
+## v0.0.3-alpha.26 (2025-05-18)
+
+### ✨ Features
+
+- 移除`DEFAULT_RELEASE_ROOT_NAME`的使用 &nbsp;-&nbsp; by **chufan** [<samp>(02738)</samp>](https://github.com/142vip/core-x/commit/0273849)
+- 子模块小版本迭代时，按版本分割提交记录，绿色&灰色区分打印 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/552 [<samp>(c855e)</samp>](https://github.com/142vip/core-x/commit/c855eac)
+- 优化`sync`命令日志输出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/559 [<samp>(36149)</samp>](https://github.com/142vip/core-x/commit/36149de)
+
+**Release New Version v0.0.3-alpha.26 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.25 (2025-05-12)
 
 ### ✨ Features

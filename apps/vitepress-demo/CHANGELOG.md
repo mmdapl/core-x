@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [commit
 
 <!-- #region recent-alpha -->
 
+## v0.0.1-alpha.5 (2025-05-19)
+
+### ✨ Features
+
+- 使用`vipDocSite.getBase`，优化配置 &nbsp;-&nbsp; by **chufan** [<samp>(14da3)</samp>](https://github.com/142vip/core-x/commit/14da378)
+
+**Release New Version v0.0.1-alpha.5 [👉 View New Package On NPM](https://www.npmjs.com/package/vitepress-demo)**
+
 ## v0.0.1-alpha.4 (2025-05-12)
 
 ### ✨ Features

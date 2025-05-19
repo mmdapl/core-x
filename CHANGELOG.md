@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## v0.0.1-alpha.32 (2025-05-19)
+
+### ✨ Features
+
+- 优化站点配置，升级核心脚本逻辑，支持`@142vip/open-source`模块 &nbsp;-&nbsp; by **chufan** [<samp>(a11dd)</samp>](https://github.com/142vip/core-x/commit/a11dda7)
+- **@142vip/changelog**:
+  - 增加`CONFIG_DEFAULT_HEADER`等默认值常量 &nbsp;-&nbsp; by **chufan** [<samp>(f11c3)</samp>](https://github.com/142vip/core-x/commit/f11c32b)
+- **@142vip/fairy-cli**:
+  - 移除`DEFAULT_RELEASE_ROOT_NAME`的使用 &nbsp;-&nbsp; by **chufan** [<samp>(02738)</samp>](https://github.com/142vip/core-x/commit/0273849)
+  - 子模块小版本迭代时，按版本分割提交记录，绿色&灰色区分打印 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/552 [<samp>(c855e)</samp>](https://github.com/142vip/core-x/commit/c855eac)
+  - 优化`sync`命令日志输出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/559 [<samp>(36149)</samp>](https://github.com/142vip/core-x/commit/36149de)
+- **@142vip/open-source**:
+  - 模块初始化，拆分出常量、枚举 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/550 [<samp>(a148b)</samp>](https://github.com/142vip/core-x/commit/a148ba4)
+  - 优化`OPEN_SOURCE_ADDRESS`常量导出 &nbsp;-&nbsp; by **chufan** [<samp>(e43a3)</samp>](https://github.com/142vip/core-x/commit/e43a320)
+  - 拓展`OPEN_SOURCE_ADDRESS`枚举，支持站点地址变量 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/557 [<samp>(4a237)</samp>](https://github.com/142vip/core-x/commit/4a2378e)
+- **@142vip/utils**:
+  - 增加`VipDocSite`类，支持博客站点 &nbsp;-&nbsp; by **chufan** [<samp>(4c914)</samp>](https://github.com/142vip/core-x/commit/4c91457)
+  - 优化`http`枚举，简化`constants`常量导出 &nbsp;-&nbsp; by **chufan** [<samp>(4ba27)</samp>](https://github.com/142vip/core-x/commit/4ba2779)
+- **@142vip/vuepress**:
+  - 废弃`i18n`方案，优化主题和插件配置项 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/547 [<samp>(4436c)</samp>](https://github.com/142vip/core-x/commit/4436c8d)
+  - 修改模块主体结构，简化`config`、`theme`的导出逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/556 [<samp>(d7d01)</samp>](https://github.com/142vip/core-x/commit/d7d0116)
+  - 移除constants导出，删除`footer`、`copyright`的模式函数形式 &nbsp;-&nbsp; by **chufan** [<samp>(fb0a5)</samp>](https://github.com/142vip/core-x/commit/fb0a5eb)
+  - 移除headers导出，强化点配置自定义 &nbsp;-&nbsp; by **chufan** [<samp>(5412c)</samp>](https://github.com/142vip/core-x/commit/5412c22)
+  - 增加`VUEPRESS_DEFAULT_DOCS_DIR`，定义默认文档目录 &nbsp;-&nbsp; by **chufan** [<samp>(7a1e2)</samp>](https://github.com/142vip/core-x/commit/7a1e225)
+  - 支持`repoLabel`配置默认为`Github` &nbsp;-&nbsp; by **chufan** [<samp>(3a7c0)</samp>](https://github.com/142vip/core-x/commit/3a7c0d3)
+- **vitepress-demo**:
+  - 使用`vipDocSite.getBase`，优化配置 &nbsp;-&nbsp; by **chufan** [<samp>(14da3)</samp>](https://github.com/142vip/core-x/commit/14da378)
+- **vuepress-demo**:
+  - 优化导航栏，修改配置，支持`changelog`组件展示 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/548 [<samp>(1bef0)</samp>](https://github.com/142vip/core-x/commit/1bef0db)
+  - 支持`@142vip/open-source`模块，优化配置 &nbsp;-&nbsp; by **chufan** [<samp>(b6aae)</samp>](https://github.com/142vip/core-x/commit/b6aae30)
+  - 优化站点配置，基于`@142vip/open-source`模块简化`footer`、`copyright`等配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/558 [<samp>(e9478)</samp>](https://github.com/142vip/core-x/commit/e947826)
+
+### 🐛 Bug Fixes
+
+- 修复`vitepress`站点导航栏异常，简化配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/551 [<samp>(32d15)</samp>](https://github.com/142vip/core-x/commit/32d15b7)
+
+### 📖 Documentation
+
+- 更新文档，补充`@142vip/open-source`模块相关说明 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/553 [<samp>(0eebc)</samp>](https://github.com/142vip/core-x/commit/0eebcab)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.20` &nbsp;-&nbsp; by **chufan** [<samp>(e0f42)</samp>](https://github.com/142vip/core-x/commit/e0f42a2)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.26` &nbsp;-&nbsp; by **chufan** [<samp>(152af)</samp>](https://github.com/142vip/core-x/commit/152afd5)
+- **@142vip/open-source**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(c6624)</samp>](https://github.com/142vip/core-x/commit/c66242f)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(afc02)</samp>](https://github.com/142vip/core-x/commit/afc0202)
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(ea5ef)</samp>](https://github.com/142vip/core-x/commit/ea5ef5f)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.37` &nbsp;-&nbsp; by **chufan** [<samp>(68220)</samp>](https://github.com/142vip/core-x/commit/682201d)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.16` &nbsp;-&nbsp; by **chufan** [<samp>(2a492)</samp>](https://github.com/142vip/core-x/commit/2a492af)
+  - Publish `v0.0.1-alpha.17` &nbsp;-&nbsp; by **chufan** [<samp>(294f1)</samp>](https://github.com/142vip/core-x/commit/294f129)
+- **vitepress-demo**:
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(d7c32)</samp>](https://github.com/142vip/core-x/commit/d7c32a4)
+- **vuepress-demo**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(1bf86)</samp>](https://github.com/142vip/core-x/commit/1bf864a)
+
+**Release New Version v0.0.1-alpha.32 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.31...v0.0.1-alpha.32)**
+
 ## v0.0.1-alpha.31 (2025-05-13)
 
 ### ✨ Features

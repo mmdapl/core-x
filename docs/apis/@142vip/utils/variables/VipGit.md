@@ -4,7 +4,7 @@
 
 > `const` **VipGit**: `object`
 
-定义于: [packages/utils/src/core/git.ts:252](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/git.ts#L252)
+定义于: [packages/utils/src/core/git.ts:252](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/git.ts#L252)
 
 Git业务相关
 

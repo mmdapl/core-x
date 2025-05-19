@@ -2,7 +2,7 @@
 
 # 接口: GitCommitRaw
 
-定义于: [changelog/src/enums/git-commit.interface.ts:6](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/enums/git-commit.interface.ts#L6)
+定义于: [changelog/src/enums/git-commit.interface.ts:6](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L6)
 
 ## theme_extended_by
 
@@ -14,7 +14,7 @@
 
 > **author**: [`GitCommitAuthor`](GitCommitAuthor.md)
 
-定义于: [changelog/src/enums/git-commit.interface.ts:10](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/enums/git-commit.interface.ts#L10)
+定义于: [changelog/src/enums/git-commit.interface.ts:10](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L10)
 
 ***
 
@@ -22,7 +22,7 @@
 
 > **body**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:8](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/enums/git-commit.interface.ts#L8)
+定义于: [changelog/src/enums/git-commit.interface.ts:8](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L8)
 
 ***
 
@@ -30,7 +30,7 @@
 
 > **message**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:7](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/enums/git-commit.interface.ts#L7)
+定义于: [changelog/src/enums/git-commit.interface.ts:7](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L7)
 
 ***
 
@@ -38,4 +38,4 @@
 
 > **shortHash**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:9](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/enums/git-commit.interface.ts#L9)
+定义于: [changelog/src/enums/git-commit.interface.ts:9](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L9)

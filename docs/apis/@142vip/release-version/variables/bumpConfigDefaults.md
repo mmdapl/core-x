@@ -4,4 +4,4 @@
 
 > `const` **bumpConfigDefaults**: [`VersionBumpOptions`](../interfaces/VersionBumpOptions.md)
 
-定义于: [utils/config.ts:3](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/release-version/src/utils/config.ts#L3)
+定义于: [utils/config.ts:3](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/release-version/src/utils/config.ts#L3)

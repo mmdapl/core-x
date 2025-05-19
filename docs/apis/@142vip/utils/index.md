@@ -9,7 +9,6 @@
 - [GitGeneralBranch](enumerations/GitGeneralBranch.md)
 - [HttpMethod](enumerations/HttpMethod.md)
 - [HttpStatus](enumerations/HttpStatus.md)
-- [OPEN\_SOURCE\_ADDRESS](enumerations/OPEN_SOURCE_ADDRESS.md)
 - [ProcessExitCodeEnum](enumerations/ProcessExitCodeEnum.md)
 - [RegistryAddressEnum](enumerations/RegistryAddressEnum.md)
 - [ReleaseVersionTypeEnum](enumerations/ReleaseVersionTypeEnum.md)
@@ -18,6 +17,7 @@
 ## 类
 
 - [VipCommander](classes/VipCommander.md)
+- [VipDocSite](classes/VipDocSite.md)
 - [VipInquirerSeparator](classes/VipInquirerSeparator.md)
 - [VipLogger](classes/VipLogger.md)
 
@@ -34,7 +34,6 @@
 - [PackageJSONMainFest](interfaces/PackageJSONMainFest.md)
 - [PackageJSONWithPath](interfaces/PackageJSONWithPath.md)
 - [ShellCommand](interfaces/ShellCommand.md)
-- [VipAuthorInfo](interfaces/VipAuthorInfo.md)
 - [VipCommanderDetailOptions](interfaces/VipCommanderDetailOptions.md)
 - [VipCommanderOptions](interfaces/VipCommanderOptions.md)
 - [VipLoggerOptions](interfaces/VipLoggerOptions.md)
@@ -47,17 +46,14 @@
 
 ## 变量
 
-- [DEFAULT\_CHANGELOG\_HEADER](variables/DEFAULT_CHANGELOG_HEADER.md)
-- [DEFAULT\_RELEASE\_ROOT\_NAME](variables/DEFAULT_RELEASE_ROOT_NAME.md)
-- [OPEN\_SOURCE\_AUTHOR](variables/OPEN_SOURCE_AUTHOR.md)
 - [prereleaseTypes](variables/prereleaseTypes.md)
 - [releaseTypes](variables/releaseTypes.md)
-- [VIP\_DEPLOY\_DOCKER\_ENV](variables/VIP_DEPLOY_DOCKER_ENV.md)
 - [VipColor](variables/VipColor.md)
 - [VipConfig](variables/VipConfig.md)
 - [VipConsole](variables/VipConsole.md)
 - [VipDayjs](variables/VipDayjs.md)
 - [VipDocker](variables/VipDocker.md)
+- [vipDocSite](variables/vipDocSite.md)
 - [VipExecutor](variables/VipExecutor.md)
 - [VipGit](variables/VipGit.md)
 - [VipInquirer](variables/VipInquirer.md)
@@ -76,6 +72,5 @@
 
 ## 函数
 
-- [getDocSiteBase](functions/getDocSiteBase.md)
 - [getLastMatchingTag](functions/getLastMatchingTag.md)
 - [VipInquirerDefaultArrayParser](functions/VipInquirerDefaultArrayParser.md)

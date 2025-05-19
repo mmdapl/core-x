@@ -2,7 +2,7 @@
 
 # 枚举: HttpMethod
 
-定义于: [packages/utils/src/http.ts:59](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L59)
+定义于: [packages/utils/src/enums/http.enum.ts:59](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L59)
 
 路由类型枚举
 - 请求方法
@@ -13,7 +13,7 @@
 
 > **ALL**: `"ALL"`
 
-定义于: [packages/utils/src/http.ts:67](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L67)
+定义于: [packages/utils/src/enums/http.enum.ts:67](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L67)
 
 ***
 
@@ -21,7 +21,7 @@
 
 > **DELETE**: `"DELETE"`
 
-定义于: [packages/utils/src/http.ts:63](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L63)
+定义于: [packages/utils/src/enums/http.enum.ts:63](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L63)
 
 ***
 
@@ -29,7 +29,7 @@
 
 > **GET**: `"GET"`
 
-定义于: [packages/utils/src/http.ts:60](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L60)
+定义于: [packages/utils/src/enums/http.enum.ts:60](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L60)
 
 ***
 
@@ -37,7 +37,7 @@
 
 > **HEAD**: `"HEAD"`
 
-定义于: [packages/utils/src/http.ts:66](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L66)
+定义于: [packages/utils/src/enums/http.enum.ts:66](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L66)
 
 ***
 
@@ -45,7 +45,7 @@
 
 > **OPTIONS**: `"OPTIONS"`
 
-定义于: [packages/utils/src/http.ts:65](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L65)
+定义于: [packages/utils/src/enums/http.enum.ts:65](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L65)
 
 ***
 
@@ -53,7 +53,7 @@
 
 > **PATCH**: `"PATCH"`
 
-定义于: [packages/utils/src/http.ts:64](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L64)
+定义于: [packages/utils/src/enums/http.enum.ts:64](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L64)
 
 ***
 
@@ -61,7 +61,7 @@
 
 > **POST**: `"POST"`
 
-定义于: [packages/utils/src/http.ts:61](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L61)
+定义于: [packages/utils/src/enums/http.enum.ts:61](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L61)
 
 ***
 
@@ -69,4 +69,4 @@
 
 > **PUT**: `"PUT"`
 
-定义于: [packages/utils/src/http.ts:62](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/http.ts#L62)
+定义于: [packages/utils/src/enums/http.enum.ts:62](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/enums/http.enum.ts#L62)

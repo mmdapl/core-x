@@ -4,7 +4,7 @@
 
 > `const` **GitCommitAPI**: `object`
 
-定义于: [changelog/src/core/git-commit.api.ts:225](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/core/git-commit.api.ts#L225)
+定义于: [changelog/src/core/git-commit.api.ts:225](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/core/git-commit.api.ts#L225)
 
 ## 类型声明
 

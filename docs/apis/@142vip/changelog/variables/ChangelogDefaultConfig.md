@@ -4,7 +4,7 @@
 
 > `const` **ChangelogDefaultConfig**: `object`
 
-定义于: [changelog/src/shared/config.ts:9](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/changelog/src/shared/config.ts#L9)
+定义于: [changelog/src/shared/config.ts:21](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/shared/config.ts#L21)
 
 默认配置
 
@@ -36,7 +36,7 @@
 
 ### header
 
-> **header**: `string` = `'# Changelog\n\nAll notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.\n'`
+> **header**: `string` = `CONFIG_DEFAULT_HEADER`
 
 ### prerelease
 

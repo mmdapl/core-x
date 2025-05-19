@@ -4,7 +4,7 @@
 
 > **commitLiner**(`params?`, `commit?`): [`GitCommitLinter`](../interfaces/GitCommitLinter.md)
 
-定义于: [commit-linter/src/core/git-commit-linter.ts:14](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/commit-linter/src/core/git-commit-linter.ts#L14)
+定义于: [commit-linter/src/core/git-commit-linter.ts:14](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/commit-linter/src/core/git-commit-linter.ts#L14)
 
 Git Commit信息校验
 

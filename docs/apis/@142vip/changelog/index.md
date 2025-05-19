@@ -23,6 +23,7 @@
 
 - [ChangelogAPI](variables/ChangelogAPI.md)
 - [ChangelogDefaultConfig](variables/ChangelogDefaultConfig.md)
+- [CONFIG\_DEFAULT\_HEADER](variables/CONFIG_DEFAULT_HEADER.md)
 - [CONFIG\_DEFAULT\_NAME](variables/CONFIG_DEFAULT_NAME.md)
 - [GitCommitAPI](variables/GitCommitAPI.md)
 - [GithubAPI](variables/GithubAPI.md)

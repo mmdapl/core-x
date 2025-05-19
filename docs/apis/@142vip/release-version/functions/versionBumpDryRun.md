@@ -4,7 +4,7 @@
 
 > **versionBumpDryRun**(`options`): `Promise`\<`ReleaseOperation`\>
 
-定义于: [core/version-bump.ts:46](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/release-version/src/core/version-bump.ts#L46)
+定义于: [core/version-bump.ts:46](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/release-version/src/core/version-bump.ts#L46)
 
 试运行
 

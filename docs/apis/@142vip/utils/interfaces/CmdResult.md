@@ -2,7 +2,7 @@
 
 # 接口: CmdResult
 
-定义于: [packages/utils/src/core/exec.ts:11](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L11)
+定义于: [packages/utils/src/core/exec.ts:11](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L11)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **cmd**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L16)
+定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L16)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > `optional` **code**: `null` \| `number`
 
-定义于: [packages/utils/src/core/exec.ts:12](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L12)
+定义于: [packages/utils/src/core/exec.ts:12](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L12)
 
 ***
 
@@ -26,7 +26,7 @@
 
 > `optional` **error**: `Error`
 
-定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L15)
+定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L15)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **stderr**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:14](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L14)
+定义于: [packages/utils/src/core/exec.ts:14](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L14)
 
 ***
 
@@ -42,4 +42,4 @@
 
 > **stdout**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:13](https://github.com/142vip/core-x/blob/bdff6769b69266ddfe7392709afaa643b39c00f4/packages/utils/src/core/exec.ts#L13)
+定义于: [packages/utils/src/core/exec.ts:13](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L13)

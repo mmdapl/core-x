@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.38 (2025-07-16)
+
+### ✨ Features
+
+- 优化`exec`标准执行器，新增`getProcess`等方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/585 [<samp>(08099)</samp>](https://github.com/142vip/core-x/commit/0809904)
+
+### 🐛 Bug Fixes
+
+- 修复`getProcessArgvByIndex`获取参数异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/575 [<samp>(f8956)</samp>](https://github.com/142vip/core-x/commit/f89565d)
+- `buildImage`构建镜像增加`platform`参数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/576 [<samp>(f1eb4)</samp>](https://github.com/142vip/core-x/commit/f1eb445)
+
+**Release New Version v0.0.1-alpha.38 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.37 (2025-05-15)
 
 ### ✨ Features

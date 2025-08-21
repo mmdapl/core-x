@@ -2,7 +2,7 @@
 
 # 接口: PackageJSONWithPath
 
-定义于: [packages/utils/src/core/package-json.ts:203](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/package-json.ts#L203)
+定义于: [packages/utils/src/core/package-json.ts:203](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/package-json.ts#L203)
 
 ## theme_extends
 
@@ -14,7 +14,7 @@
 
 > **name**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/package-json.ts#L198)
+定义于: [packages/utils/src/core/package-json.ts:198](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/package-json.ts#L198)
 
 #### 继承自
 
@@ -26,7 +26,7 @@
 
 > **path**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:204](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/package-json.ts#L204)
+定义于: [packages/utils/src/core/package-json.ts:204](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/package-json.ts#L204)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **private**: `boolean`
 
-定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/package-json.ts#L200)
+定义于: [packages/utils/src/core/package-json.ts:200](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/package-json.ts#L200)
 
 #### 继承自
 
@@ -46,7 +46,7 @@
 
 > **version**: `string`
 
-定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/package-json.ts#L199)
+定义于: [packages/utils/src/core/package-json.ts:199](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/package-json.ts#L199)
 
 #### 继承自
 

@@ -4,6 +4,6 @@
 
 > `const` **CONFIG\_DEFAULT\_HEADER**: `string`
 
-定义于: [changelog/src/shared/config.ts:12](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/shared/config.ts#L12)
+定义于: [changelog/src/shared/config.ts:12](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/shared/config.ts#L12)
 
 changelog默认的header配置

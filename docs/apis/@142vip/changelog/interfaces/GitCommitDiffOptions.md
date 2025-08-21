@@ -2,7 +2,7 @@
 
 # 接口: GitCommitDiffOptions
 
-定义于: [changelog/src/enums/git-commit.interface.ts:33](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L33)
+定义于: [changelog/src/enums/git-commit.interface.ts:33](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L33)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > `optional` **from**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:34](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L34)
+定义于: [changelog/src/enums/git-commit.interface.ts:34](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L34)
 
 ***
 
@@ -18,4 +18,4 @@
 
 > `optional` **to**: `string`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:35](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/changelog/src/enums/git-commit.interface.ts#L35)
+定义于: [changelog/src/enums/git-commit.interface.ts:35](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L35)

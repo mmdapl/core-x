@@ -2,7 +2,7 @@
 
 # 接口: ShellCommand
 
-定义于: [packages/utils/src/core/exec.ts:118](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L118)
+定义于: [packages/utils/src/core/exec.ts:163](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L163)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **command**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:119](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L119)
+定义于: [packages/utils/src/core/exec.ts:164](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L164)
 
 ***
 
@@ -18,4 +18,4 @@
 
 > `optional` **description**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:120](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L120)
+定义于: [packages/utils/src/core/exec.ts:165](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L165)

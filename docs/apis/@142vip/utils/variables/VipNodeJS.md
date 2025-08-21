@@ -4,7 +4,7 @@
 
 > `const` **VipNodeJS**: `object`
 
-定义于: [packages/utils/src/core/nodejs.ts:268](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/nodejs.ts#L268)
+定义于: [packages/utils/src/core/nodejs.ts:284](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/nodejs.ts#L284)
 
 ## 类型声明
 
@@ -70,6 +70,24 @@ CPU 架构
 
 `Architecture`
 
+### getEnv()
+
+> **getEnv**: () => `ProcessEnv`
+
+获取环境变量
+
+#### 返回
+
+`ProcessEnv`
+
+### getProcess()
+
+> **getProcess**: () => `Process`
+
+#### 返回
+
+`Process`
+
 ### getProcessArgv()
 
 > **getProcessArgv**: () => `string`[]
@@ -82,7 +100,7 @@ CPU 架构
 
 ### getProcessArgvByIndex()
 
-> **getProcessArgvByIndex**: (`index`) => `string`
+> **getProcessArgvByIndex**: (`index`) => `null` \| `string`
 
 根据索引获取进程参数
 node process-args.js one two=three four
@@ -101,7 +119,7 @@ Would generate the output:
 
 #### 返回
 
-`string`
+`null` \| `string`
 
 ### getProcessCwd()
 

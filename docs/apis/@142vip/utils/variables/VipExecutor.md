@@ -4,7 +4,7 @@
 
 > `const` **VipExecutor**: `object`
 
-定义于: [packages/utils/src/core/exec.ts:176](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/exec.ts#L176)
+定义于: [packages/utils/src/core/exec.ts:221](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L221)
 
 执行器
 
@@ -12,7 +12,7 @@
 
 ### commandStandardExecutor()
 
-> **commandStandardExecutor**: (`cmd`) => `Promise`\<`unknown`\>
+> **commandStandardExecutor**: (`cmd`) => `Promise`\<[`StandardExecutorResponse`](../interfaces/StandardExecutorResponse.md)\>
 
 标准Linux命令执行器
 - 支持打印结果
@@ -22,23 +22,23 @@
 
 ##### cmd
 
-`Command`
+[`Command`](../type-aliases/Command.md)
 
 #### 返回
 
-`Promise`\<`unknown`\>
+`Promise`\<[`StandardExecutorResponse`](../interfaces/StandardExecutorResponse.md)\>
 
 ### execCommand()
 
-> **execCommand**: (`cmd`, `opts?`) => `Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+> **execCommand**: (`cmd`, `opts?`) => `Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
-同步执行命令，并返回结果
+异步执行命令，并返回结果
 
 #### 参数
 
 ##### cmd
 
-`Command`
+[`Command`](../type-aliases/Command.md)
 
 ##### opts?
 
@@ -46,7 +46,7 @@
 
 #### 返回
 
-`Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+`Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
 ### execCommandSync()
 

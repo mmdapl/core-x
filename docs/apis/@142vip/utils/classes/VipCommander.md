@@ -2,7 +2,7 @@
 
 # 类: VipCommander
 
-定义于: [packages/utils/src/pkgs/commander.ts:38](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/pkgs/commander.ts#L38)
+定义于: [packages/utils/src/pkgs/commander.ts:38](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/pkgs/commander.ts#L38)
 
 终端交互
 参考：https://www.npmjs.com/package/commander
@@ -17,7 +17,7 @@
 
 > **new VipCommander**(`name`, `version`, `description?`): `VipCommander`
 
-定义于: [packages/utils/src/pkgs/commander.ts:39](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/pkgs/commander.ts#L39)
+定义于: [packages/utils/src/pkgs/commander.ts:39](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/pkgs/commander.ts#L39)
 
 #### 参数
 
@@ -827,7 +827,7 @@ or with a subclass of Help by overriding createHelp().
 
 ###### configuration
 
-`Partial`
+`HelpConfiguration`
 
 ##### 返回
 
@@ -839,7 +839,7 @@ or with a subclass of Help by overriding createHelp().
 
 #### 调用签名
 
-> **configureHelp**(): `Partial`
+> **configureHelp**(): `HelpConfiguration`
 
 定义于: node\_modules/.pnpm/commander@12.1.0/node\_modules/commander/typings/index.d.ts:493
 
@@ -847,7 +847,7 @@ Get configuration
 
 ##### 返回
 
-`Partial`
+`HelpConfiguration`
 
 ##### 继承自
 
@@ -1529,7 +1529,7 @@ Add hook for life cycle event.
 
 > **init**(`options`, `args`): `Command`
 
-定义于: [packages/utils/src/pkgs/commander.ts:53](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/pkgs/commander.ts#L53)
+定义于: [packages/utils/src/pkgs/commander.ts:53](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/pkgs/commander.ts#L53)
 
 初始化，不包括命令
 
@@ -1553,7 +1553,7 @@ Add hook for life cycle event.
 
 > **initCommand**(`options`, `args`): `Command`
 
-定义于: [packages/utils/src/pkgs/commander.ts:63](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/pkgs/commander.ts#L63)
+定义于: [packages/utils/src/pkgs/commander.ts:63](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/pkgs/commander.ts#L63)
 
 对命令初始化，增加aliases，summary，description等信息
 - 增加默认的一些参数

@@ -2,7 +2,7 @@
 
 # 类: GrpcClient
 
-定义于: [grpc-client.ts:8](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L8)
+定义于: [grpc-client.ts:8](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L8)
 
 ## theme_extends
 
@@ -14,7 +14,7 @@
 
 > **new GrpcClient**(): `GrpcClient`
 
-定义于: [grpc-client.ts:10](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L10)
+定义于: [grpc-client.ts:10](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L10)
 
 #### 返回
 
@@ -30,7 +30,7 @@
 
 > **close**(): `void`
 
-定义于: [grpc-client.ts:47](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L47)
+定义于: [grpc-client.ts:47](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L47)
 
 关闭gRPC连接
 
@@ -44,7 +44,7 @@
 
 > **connect**(`connectUri`, `serviceClaDefinitions`): `void`
 
-定义于: [grpc-client.ts:18](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L18)
+定义于: [grpc-client.ts:18](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L18)
 
 建立连接
 
@@ -68,7 +68,7 @@
 
 > **getConnectSize**(): `number`
 
-定义于: [grpc-client.ts:40](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L40)
+定义于: [grpc-client.ts:40](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L40)
 
 获取连接数
 
@@ -82,7 +82,7 @@
 
 > **getService**\<`T`\>(`serviceName`): `T`
 
-定义于: [grpc-client.ts:29](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc-client.ts#L29)
+定义于: [grpc-client.ts:29](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc-client.ts#L29)
 
 获取连接Service
 
@@ -108,7 +108,7 @@
 
 > `static` **getInstance**\<`T`\>(`this`, ...`args`): `T`
 
-定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/singleton.ts#L13)
+定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/singleton.ts#L13)
 
 #### 类型参数
 

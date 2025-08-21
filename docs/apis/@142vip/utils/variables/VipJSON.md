@@ -4,7 +4,7 @@
 
 > `const` **VipJSON**: `object`
 
-定义于: [packages/utils/src/pkgs/json.ts:68](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/pkgs/json.ts#L68)
+定义于: [packages/utils/src/pkgs/json.ts:68](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/pkgs/json.ts#L68)
 
 处理JSON
 

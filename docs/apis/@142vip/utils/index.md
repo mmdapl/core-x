@@ -24,7 +24,7 @@
 ## 接口
 
 - [CliCommandBaseOptions](interfaces/CliCommandBaseOptions.md)
-- [CmdResult](interfaces/CmdResult.md)
+- [CommandResponse](interfaces/CommandResponse.md)
 - [GitCommit](interfaces/GitCommit.md)
 - [GitInfo](interfaces/GitInfo.md)
 - [IVipNanoId](interfaces/IVipNanoId.md)
@@ -34,12 +34,14 @@
 - [PackageJSONMainFest](interfaces/PackageJSONMainFest.md)
 - [PackageJSONWithPath](interfaces/PackageJSONWithPath.md)
 - [ShellCommand](interfaces/ShellCommand.md)
+- [StandardExecutorResponse](interfaces/StandardExecutorResponse.md)
 - [VipCommanderDetailOptions](interfaces/VipCommanderDetailOptions.md)
 - [VipCommanderOptions](interfaces/VipCommanderOptions.md)
 - [VipLoggerOptions](interfaces/VipLoggerOptions.md)
 
 ## 类型别名
 
+- [Command](type-aliases/Command.md)
 - [VipCommanderDetailRecord](type-aliases/VipCommanderDetailRecord.md)
 - [VipReleaseType](type-aliases/VipReleaseType.md)
 - [VipSemverReleaseType](type-aliases/VipSemverReleaseType.md)

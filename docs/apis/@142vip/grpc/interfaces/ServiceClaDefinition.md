@@ -2,7 +2,7 @@
 
 # 接口: ServiceClaDefinition
 
-定义于: [grpc.interface.ts:1](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc.interface.ts#L1)
+定义于: [grpc.interface.ts:1](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc.interface.ts#L1)
 
 ## 属性
 
@@ -10,7 +10,7 @@
 
 > **packageName**: `string`
 
-定义于: [grpc.interface.ts:5](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc.interface.ts#L5)
+定义于: [grpc.interface.ts:5](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc.interface.ts#L5)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > **ServiceClass**: `any`
 
-定义于: [grpc.interface.ts:3](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc.interface.ts#L3)
+定义于: [grpc.interface.ts:3](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc.interface.ts#L3)
 
 ***
 
@@ -26,4 +26,4 @@
 
 > **serviceName**: `string`
 
-定义于: [grpc.interface.ts:4](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/grpc/src/grpc.interface.ts#L4)
+定义于: [grpc.interface.ts:4](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/grpc/src/grpc.interface.ts#L4)

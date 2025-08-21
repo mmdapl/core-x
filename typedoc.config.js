@@ -7,6 +7,7 @@ export default defineVipTypedocConfig({
     'packages/changelog',
     'packages/commit-linter',
     'packages/copyright',
+    'packages/data-source',
     'packages/eslint-config',
     'packages/fairy-cli',
     'packages/grpc',

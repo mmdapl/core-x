@@ -4,7 +4,7 @@
 
 > `const` **VipDocker**: `object`
 
-定义于: [packages/utils/src/core/docker.ts:400](https://github.com/142vip/core-x/blob/d7c32a4c72e7e50fa8291351a2283aaafcc1d8c3/packages/utils/src/core/docker.ts#L400)
+定义于: [packages/utils/src/core/docker.ts:402](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/docker.ts#L402)
 
 docker工具
 
@@ -94,7 +94,7 @@ docker工具
 
 ### deleteImage()
 
-> **deleteImage**: (`imageName`) => `Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+> **deleteImage**: (`imageName`) => `Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
 删除Docker镜像
 
@@ -106,17 +106,17 @@ docker工具
 
 #### 返回
 
-`Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+`Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
 ### deletePruneImages()
 
-> **deletePruneImages**: () => `Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+> **deletePruneImages**: () => `Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
 删除虚悬镜像
 
 #### 返回
 
-`Promise`\<[`CmdResult`](../interfaces/CmdResult.md)\>
+`Promise`\<[`CommandResponse`](../interfaces/CommandResponse.md)\>
 
 ### getImageAddress()
 

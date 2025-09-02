@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.2 (2025-09-02)
+
+### ✨ Features
+
+- 补充单元测试和文档，优化数据源核心代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/604 [<samp>(2f70c)</samp>](https://github.com/142vip/core-x/commit/2f70c82)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/data-source)**
+
 ## v0.0.1-alpha.1 (2025-08-21)
 
 ### ✨ Features

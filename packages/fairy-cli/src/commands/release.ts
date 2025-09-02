@@ -173,7 +173,7 @@ async function printPkgCommitLogs(pnpmFilter?: string | string[]): Promise<void>
       vipLogger.logByBlank(`${VipPackageJSON.getPkgRedLabel(pkgName)} ${VipColor.red('模块没有任何版本迭代信息！！')}`)
     }
     else {
-      vipLogger.logByBlank(`${VipPackageJSON.getPkgRedLabel(pkgName)} ${VipColor.green('模块的版本迭代信息（待发布版本：绿色，已发布版本：灰色）：')}`)
+      vipLogger.logByBlank(`${VipPackageJSON.getPkgRedLabel(pkgName)} ${VipColor.green(`模块的版本迭代信息（待发布版本：绿色，${VipColor.gray('已发布版本：灰色')}）：`)}`)
       printSplitPkgCommitLogs(pkgName, commits)
     }
   }

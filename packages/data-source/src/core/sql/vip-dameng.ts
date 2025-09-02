@@ -1,21 +1,14 @@
-import type { DataSourceParseResponse } from '../../data-source.interface'
+import type { DataSourceConnector } from '../../data-source.connector'
+import type { DataSourceConnectionOptions, DataSourceParseResponse } from '../../data-source.interface'
 import { mapValues } from 'lodash'
-import { DataSourceManager } from '../../data-source.manager'
 import { handlerDataSourceConnectError } from '../../data-source.utils'
 
-interface DamengOptions {
-  host: string
-  port: number
-  username: string
-  password: string
-  database: string
-  querySql: string
-}
+export interface DamengOptions extends DataSourceConnectionOptions {}
 
 /**
  * 达梦数据库
  */
-export class VipDameng extends DataSourceManager {
+export class VipDameng implements DataSourceConnector<DamengOptions> {
   /**
    * 获取连接数据
    */
@@ -26,6 +19,10 @@ export class VipDameng extends DataSourceManager {
     let connection
     let dmPool
     try {
+      // 全局设置，指定结果集中dmdb.CLOB, dmdb.BUFFER数据类型以String显示
+      dmdb.fetchAsString = [dmdb.CLOB, dmdb.BUFFER]
+      // 全局设置，指定结果集中dmdb.BLOB数据类型以Buffer显示
+      dmdb.fetchAsBuffer = [dmdb.BLOB]
       dmPool = await dmdb.createPool({
         connectString: `dm://${options.username}:${options.password}@${options.host}:${options.port}`,
         poolMax: 10,

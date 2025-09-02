@@ -1,5 +1,6 @@
 {
   "name": "@142vip/data-source",
+  "type": "module",
   "version": "0.0.1-alpha.1",
   "private": false,
   "description": "通用型数据源，支持多种数据库、API、CSV等形式的数据源管理",
@@ -16,7 +17,15 @@
     "142vip",
     "@142vip",
     "@142vip/data-source",
-    ""
+    "数据源",
+    "数据库",
+    "API",
+    "CSV",
+    "MySQL",
+    "PostgreSQL",
+    "SQL Server",
+    "Oracle",
+    "IBM_DB"
   ],
   "sideEffects": false,
   "exports": {
@@ -52,12 +61,11 @@
     "iconv-lite": "0.6.3",
     "jschardet": "3.0.0",
     "lodash": "4.17.21",
-    "mssql": "10.0.0",
+    "mssql": "11.0.1",
     "oracledb": "6.1.0",
     "pg": "8.11.3"
   },
   "dependencies": {
-    "@142vip/utils": "0.0.1-alpha.38"
   },
   "devDependencies": {
     "@types/mssql": "9.1.7",

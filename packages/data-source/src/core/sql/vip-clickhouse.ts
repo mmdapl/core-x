@@ -1,26 +1,21 @@
-import type { DataSourceParseResponse } from '../../data-source.interface'
+import type { DataSourceConnector } from '../../data-source.connector'
 
+import type { DataSourceConnectionOptions, DataSourceParseResponse } from '../../data-source.interface'
 import { ClickHouse } from 'clickhouse'
-import { DataSourceManager } from '../../data-source.manager'
 import { handlerDataSourceConnectError } from '../../data-source.utils'
 
-interface ClickHouseOptions {
-  host: string
-  port: number
-  username: string
-  password: string
+export interface ClickHouseOptions extends DataSourceConnectionOptions {
   database: string
-  querySql: string
 }
 
 /**
  * ClickHouse数据库
  */
-export class VipClickhouse extends DataSourceManager {
+export class VipClickhouse implements DataSourceConnector<ClickHouseOptions> {
   /**
    * 获取连接数据
    */
-  public override async getConnectionData(options: ClickHouseOptions): Promise<DataSourceParseResponse> {
+  public async getConnectionData(options: ClickHouseOptions): Promise<DataSourceParseResponse> {
     try {
       const ch = new ClickHouse({
         url: options.host,

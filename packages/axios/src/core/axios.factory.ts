@@ -43,29 +43,29 @@ export class AxiosFactory {
   }
 
   /**
-   * 清除拦截器
+   * 清除拦截器，支持同时清理请求拦截器和响应拦截器
    */
-  public clearInterceptor(type: InterceptorType): void {
+  public clearInterceptor(type?: InterceptorType): void {
     // 移除请求拦截器
-    if (type === InterceptorType.REQUEST) {
+    if (type == null || type === InterceptorType.REQUEST) {
       this.axiosInstance.interceptors.request.clear()
     }
     // 移除响应拦截器
-    if (type === InterceptorType.RESPONSE) {
+    if (type == null || type === InterceptorType.RESPONSE) {
       this.axiosInstance.interceptors.response.clear()
     }
   }
 }
 
 /**
- * 按照配置创建VipAxios的实例
+ * 按照配置创建vipAxios的实例
  */
 export function createVipAxios(config?: CreateAxiosDefaults): VipAxiosInstance {
   return new AxiosFactory(config).createAxiosInstance()
 }
 
 /**
- * 按照默认配置创建VipAxios的实例
+ * 按照默认配置创建vipAxios的实例
  * - axios模块默认的实例对象
  */
 export const vipAxios = new AxiosFactory().createAxiosInstance()

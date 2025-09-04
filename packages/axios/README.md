@@ -22,7 +22,7 @@ pnpm i @142vip/axios
 
 ### 默认的axios实例
 
-`@142vip/axios`模块，提供一个基于默认配置的axios实例 - `vipAxios`，可以直接使用
+`@142vip/axios`模块，提供一个基于默认配置的`axios`实例 - `vipAxios`，可以直接使用
 
 ```ts
 import { vipAxios } from '@142vip/axios'

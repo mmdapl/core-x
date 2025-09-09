@@ -1,5 +1,6 @@
 import type { KingBaseOptions } from '@142vip/data-source'
 import { VipKingBase } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-kingbase', () => {
   const options: KingBaseOptions = {

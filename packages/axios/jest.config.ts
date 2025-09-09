@@ -10,6 +10,6 @@ export default {
   },
   testMatch: [
     // "**/__tests__/**/*.[jt]s?(x)",
-    '**/test/?(*.)+(spec|test).[tj]s?(x)',
+    '**/test/**/?(*.)+(spec|test).[tj]s?(x)',
   ],
 }

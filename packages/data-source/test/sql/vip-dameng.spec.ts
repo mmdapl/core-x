@@ -1,5 +1,6 @@
 import type { DamengOptions } from '@142vip/data-source'
 import { VipDameng } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 process.env.NODE_OPTIONS = '--openssl-legacy-provider'
 

@@ -1,6 +1,6 @@
 import type { HttpApiOptions } from '@142vip/data-source'
 import { VipHttpApi } from '@142vip/data-source'
-import { expect } from '@jest/globals'
+import { describe, expect, it } from '@jest/globals'
 
 /**
  * 测试用例

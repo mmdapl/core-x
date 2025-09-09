@@ -1,5 +1,6 @@
 import type { ClickHouseOptions } from '@142vip/data-source'
 import { VipClickhouse } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-clickhouse', () => {
   const options: ClickHouseOptions = {

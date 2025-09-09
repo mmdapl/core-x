@@ -1,5 +1,6 @@
 import type { SqlServerOptions } from '@142vip/data-source'
 import { VipSqlServer } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-sql-server', () => {
   const options: SqlServerOptions = {

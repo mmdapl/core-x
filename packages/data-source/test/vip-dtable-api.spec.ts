@@ -1,6 +1,6 @@
 import type { DTableApiOptions } from '@142vip/data-source'
 import { VipDTableApi } from '@142vip/data-source'
-import { expect } from '@jest/globals'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-dtable-api', () => {
   const options: DTableApiOptions = {

@@ -1,6 +1,6 @@
 import type { DTStackAPIOptions } from '@142vip/data-source'
 import { VipDtStackApi } from '@142vip/data-source'
-import { expect } from '@jest/globals'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-dtstack-api', () => {
   const vipDtStackApi = new VipDtStackApi()

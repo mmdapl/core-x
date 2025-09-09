@@ -1,5 +1,6 @@
 import type { PostgreSqlOptions } from '@142vip/data-source'
 import { VipPostgreSql } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 /**
  * 测试pgsql的连接

@@ -39,6 +39,8 @@
     "homePage": "https://142vip.cn"
   },
   "scripts": {
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage",
     "build": "unbuild",
     "typecheck": "tsc --noEmit"
   },

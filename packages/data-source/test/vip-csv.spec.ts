@@ -1,6 +1,6 @@
 import type { CSVOptions } from '@142vip/data-source'
 import { VipCsv } from '@142vip/data-source'
-import { expect } from '@jest/globals'
+import { describe, expect, it } from '@jest/globals'
 
 /**
  * 测试CSV

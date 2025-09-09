@@ -1,6 +1,6 @@
 import type { AliGatewayApiOptions } from '@142vip/data-source'
 import { VipAliGatewayApi } from '@142vip/data-source'
-import { expect } from '@jest/globals'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-ali-gateway-api', () => {
   const vipAliGatewayApi = new VipAliGatewayApi()

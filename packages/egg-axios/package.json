@@ -38,10 +38,6 @@
     "core",
     "dist"
   ],
-  "scripts": {
-    "test": "npx jest",
-    "test:coverage": "npx jest --coverage"
-  },
   "dependencies": {
     "@142vip/axios": "workspace:*",
     "@142vip/egg": "workspace:*"

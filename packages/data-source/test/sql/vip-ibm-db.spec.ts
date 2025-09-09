@@ -1,5 +1,6 @@
 import type { IbmDBOptions } from '@142vip/data-source'
 import { VipIbmDB } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-ibm-db', () => {
   const options: IbmDBOptions = {

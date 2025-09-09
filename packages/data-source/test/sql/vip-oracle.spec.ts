@@ -1,5 +1,6 @@
 import type { OracleOptions } from '@142vip/data-source'
 import { VipOracle } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-oracle', () => {
   const options: OracleOptions = {

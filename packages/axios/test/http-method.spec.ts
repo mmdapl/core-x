@@ -1,4 +1,5 @@
 import { HttpMethod, HttpMethodLower } from '@142vip/axios'
+import { describe, expect, it } from '@jest/globals'
 
 describe('测试HttpMethod枚举', () => {
   it('测试HttpMethod枚举 - 枚举值', () => {

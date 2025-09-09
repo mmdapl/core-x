@@ -1,5 +1,6 @@
 import type { MysqlOptions } from '@142vip/data-source'
 import { VipMysql } from '@142vip/data-source'
+import { describe, expect, it } from '@jest/globals'
 
 describe('vip-mysql', () => {
   const options: MysqlOptions = {

@@ -9,8 +9,6 @@ module.exports = {
       responseInterceptorsHandler: defaultResponseInterceptor,
       timeout: 5 * 1000,
     },
-    client: {
-
-    },
+    client: {},
   }),
 }

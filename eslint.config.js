@@ -13,4 +13,19 @@ export default defineVipEslintConfig({
       exitFunctions: ['process.exit', 'VipNodeJS.exitProcess'],
     },
   },
+  languageOptions: {
+    globals: {
+      // 配置Jest全局变量
+      describe: 'readonly',
+      it: 'readonly',
+      test: 'readonly',
+      expect: 'readonly',
+      beforeEach: 'readonly',
+      afterEach: 'readonly',
+      beforeAll: 'readonly',
+      afterAll: 'readonly',
+      app: 'readonly',
+      // 其他Jest全局变量
+    },
+  },
 })

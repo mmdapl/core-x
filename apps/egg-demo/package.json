@@ -7,7 +7,8 @@
     "dev": "egg-bin dev",
     "start": "egg-scripts start --daemon --title=egg-demo",
     "stop": "egg-scripts stop --title=egg-server-go",
-    "test": "npx jest"
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage"
   },
   "egg": {
     "declarations": true
@@ -21,9 +22,7 @@
   "dependencies": {
     "@142vip/egg": "workspace:*",
     "@142vip/egg-axios": "workspace:*",
-    "@142vip/egg-mysql": "workspace:*",
-    "egg-bin": "6.13.0",
-    "egg-scripts": "3"
+    "@142vip/egg-mysql": "workspace:*"
   },
   "devDependencies": {
     "egg-mock": "5"

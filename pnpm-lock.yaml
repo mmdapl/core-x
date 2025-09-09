@@ -71,12 +71,6 @@ importers:
       '@142vip/egg-mysql':
         specifier: workspace:*
         version: link:../../packages/egg-mysql
-      egg-bin:
-        specifier: 6.13.0
-        version: 6.13.0(@types/node@22.13.1)(egg-mock@5.15.1(egg@3.30.1)(mocha@10.8.2)(urllib@4.6.11))(typescript@5.9.2)
-      egg-scripts:
-        specifier: '3'
-        version: 3.1.0
     devDependencies:
       egg-mock:
         specifier: '5'
@@ -192,15 +186,19 @@ importers:
       egg:
         specifier: 3.30.1
         version: 3.30.1
-      egg-scripts:
-        specifier: '3'
-        version: 3.1.0
       ioredis:
         specifier: 5.6.0
         version: 5.6.0
       sequelize:
         specifier: 6.37.7
         version: 6.37.7
+    devDependencies:
+      egg-bin:
+        specifier: 6.13.0
+        version: 6.13.0(@types/node@22.13.1)(egg-mock@5.15.1(egg@3.30.1))(typescript@5.9.2)
+      egg-scripts:
+        specifier: '3'
+        version: 3.1.0
 
   packages/egg-axios:
     dependencies:
@@ -15422,7 +15420,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  egg-bin@6.13.0(@types/node@22.13.1)(egg-mock@5.15.1(egg@3.30.1)(mocha@10.8.2)(urllib@4.6.11))(typescript@5.9.2):
+  egg-bin@6.13.0(@types/node@22.13.1)(egg-mock@5.15.1(egg@3.30.1))(typescript@5.9.2):
     dependencies:
       '@artus-cli/artus-cli': 0.2.10
       '@artus-cli/plugin-autocomplete': 0.1.1(@types/node@22.13.1)

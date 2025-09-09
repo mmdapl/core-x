@@ -1,7 +1,6 @@
 const { join } = require('node:path')
 
 module.exports = {
-
   mysql: {
     enable: false,
     package: '@142vip/egg-mysql',

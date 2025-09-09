@@ -1,4 +1,4 @@
-import type { CreatePluginInstance, EggApp } from '../egg.interface'
+import type { EggApp, PluginCreateInstance } from '../egg.interface'
 import type { RegisterEggPluginName } from './plugin.interface'
 import { mergeConfig } from '../config'
 import { PluginLoader } from './plugin.interface'
@@ -9,7 +9,7 @@ import { PluginLoader } from './plugin.interface'
  * @param app
  * @param createInstance
  */
-export function registerPlugin(name: RegisterEggPluginName, app: EggApp, createInstance: CreatePluginInstance): void {
+export function registerPlugin(name: RegisterEggPluginName, app: EggApp, createInstance: PluginCreateInstance): void {
   // 配置 agent 或者 app 才加载单例
   if (app.config[name] != null) {
     app.addSingleton(name, createInstance)

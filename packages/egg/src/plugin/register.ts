@@ -1,4 +1,4 @@
-import type { CreatePluginInstance, EggApp, EggPluginInstance } from '../egg.interface'
+import type { EggApp, EggPluginInstance, PluginCreateInstance } from '../egg.interface'
 import type { RegisterEggPluginName } from './plugin.interface'
 import { PluginLoader } from './plugin.interface'
 
@@ -9,11 +9,11 @@ import { PluginLoader } from './plugin.interface'
 export class EggPluginBoot<T> {
   private readonly pluginName: RegisterEggPluginName
   private readonly appOrAgent: EggApp
-  private readonly createEggPluginInstance: CreatePluginInstance
+  private readonly createEggPluginInstance: PluginCreateInstance
   constructor(eggPlugin: {
     pluginName: RegisterEggPluginName
     appOrAgent: EggApp
-    createEggPluginInstance: CreatePluginInstance
+    createEggPluginInstance: PluginCreateInstance
   }) {
     this.pluginName = eggPlugin.pluginName
     this.appOrAgent = eggPlugin.appOrAgent

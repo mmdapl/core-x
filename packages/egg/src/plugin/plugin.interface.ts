@@ -1,3 +1,5 @@
+import type { EggConfig } from '../egg.interface'
+
 /**
  * 注册的Egg插件key
  */
@@ -46,10 +48,13 @@ export enum PluginLoader {
 /**
  * 插件配置
  */
-export interface PluginConfig {
-  // 默认配置插件名 例如：@142vip/egg-mysql
+export interface PluginConfig extends EggConfig {
+  /**
+   * 默认配置插件名
+   * - 例如：@142vip/egg-mysql
+   */
   pkgName: string
 
-  // 其他属性
+  // // 其他属性
   [propName: string]: unknown
 }

@@ -32,11 +32,11 @@
   },
   "include": [
     "apps",
-    "packages"
+    "packages",
+    "**/test/**/*.ts"
   ],
   "exclude": [
     "dist",
-    "node_modules",
-    "test"
+    "node_modules"
   ]
 }

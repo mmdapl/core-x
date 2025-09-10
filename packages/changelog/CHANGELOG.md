@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.21 (2025-09-10)
+
+### ✨ Features
+
+- 修复`CONFIG_DEFAULT_HEADER`默认值对应的跳转链接 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/586 [<samp>(b769b)</samp>](https://github.com/142vip/core-x/commit/b769bf2)
+
+**Release New Version v0.0.1-alpha.21 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.20 (2025-05-18)
 
 ### ✨ Features

@@ -1,11 +1,14 @@
 # @142vip/vuepress
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/vuepress?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/vuepress)
+`VuePress`使用的最佳实践，基于`vuepress-theme-hope`插件封装
 
 ## 使用
 
 ```shell
-# 安装
+# npm
+npm install @142vip/vuepress -D
+# pnpm
 pnpm i @142vip/vuepress -D
 ```
 

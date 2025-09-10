@@ -2,7 +2,16 @@
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/eslint-config?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/eslint-config)
 
-## 介绍
+## 安装
+
+```bash
+# npm
+npm install @142vip/eslint-config -D
+# pnpm
+pnpm i @142vip/eslint-config -D
+```
+
+## 快速配置
 
 本模块是在`@antfu/eslint-config`模块基础上封装的，可以自定义配置`忽略文件`和`校验规则`，例如：
 
@@ -21,13 +30,6 @@ export default defineVipEslintConfig({
 ```
 
 同时，使用`eslint:8.55.0`版本，支持IDEA上配置使用
-
-## 安装
-
-```bash
-# 下载模块
-pnpm i @142vip/eslint-config -D
-```
 
 ## 使用
 

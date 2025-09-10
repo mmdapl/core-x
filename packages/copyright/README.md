@@ -6,8 +6,10 @@
 
 ## 安装
 
-```shell
-# 安装
+```bash
+# npm
+npm install @142vip/copyright
+# pnpm
 pnpm i @142vip/copyright
 ```
 

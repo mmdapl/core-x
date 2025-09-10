@@ -1,13 +1,20 @@
 # @142vip/vitepress
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/vitepress?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/vitepress)
+基于`VitePress`框架搭建静态站点的常用工具包，提供`ElementPlus`相关组件和主题
 
 ## 使用
 
 ```shell
-# 安装
+# npm
+npm install @142vip/vitepress -D
+# pnpm
 pnpm i @142vip/vitepress -D
+```
 
+如果遇到`vuepress`相关告警提醒，可以通过安装`vitepress`模块解决
+
+```bash
 # 安装vitepress
 pnpm i vitepress -D
 ```

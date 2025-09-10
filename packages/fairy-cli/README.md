@@ -4,12 +4,17 @@
 
 `@142vip/fairy-cli`是一个工程化项目`CLI`工具，在终端中可以使用别名`fa`执行命令。
 
-## 快速使用
+## 快速安装
 
 ```shell
-# 安装
+# npm
+npm install @142vip/fairy-cli
+# pnpm
 pnpm i @142vip/fairy-cli
+```
+## 使用
 
+```shell
 # 查看帮助
 npx fa -h
 

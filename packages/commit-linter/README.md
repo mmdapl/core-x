@@ -6,8 +6,10 @@ Git Commit信息校验工具，统一团队提交规范
 
 ## 安装
 
-```shell
-# 安装
+```bash
+# npm
+npm install @142vip/commit-linter -D
+# pnpm
 pnpm i @142vip/commit-linter -D
 ```
 

@@ -7,7 +7,9 @@
 ## 安装
 
 ```shell
-# 安装
+# npm
+npm install @142vip/open-source
+# pnpm
 pnpm i @142vip/open-source
 ```
 

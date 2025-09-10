@@ -2,10 +2,14 @@
 
 [![NPM version](https://img.shields.io/npm/v/@142vip/utils?labelColor=0b3d52&color=1da469&label=version)](https://www.npmjs.com/package/@142vip/utils)
 
+通用型基础工具集合，对常用模块的二次集成
+
 ## 安装
 
 ```shell
-# 安装
+# npm
+npm install @142vip/utils -D
+# pnpm
 pnpm i @142vip/utils
 ```
 

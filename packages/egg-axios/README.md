@@ -231,8 +231,8 @@ class EggAxiosController extends Controller {
 - [默认配置测试](../../apps/egg-demo/test/egg-axios/config.spec.ts)
 - [单实例配置测试](../../apps/egg-demo/test/egg-axios/simple-instance.spec.ts)
 - [多实例配置测试](../../apps/egg-demo/test/egg-axios/multiple-instance.spec.ts)
-- [测试单实例](../../apps/egg-demo/test/egg-axios/simple-instance.spec.ts)
-- [测试多实例](../../apps/egg-demo/test/egg-axios/multiple-instance.spec.ts)
+- [单实例挂载测试](../../apps/egg-demo/test/egg-axios/simple-instance.spec.ts)
+- [多实例挂载](../../apps/egg-demo/test/egg-axios/multiple-instance.spec.ts)
 
 ## 参考
 

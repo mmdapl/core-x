@@ -10,7 +10,6 @@ export type VipVuepressUserConfig = UserConfig
 
 /**
  * 定义 vuepress 配置
- * @param config 配置
  */
 export function defineVipVuepressConfig(config: VipVuepressUserConfig): VipVuepressUserConfig {
   // 支持汉语，单语言：https://theme-hope.vuejs.press/zh/config/i18n.html
@@ -50,7 +49,6 @@ export function defineVipVuepressConfig(config: VipVuepressUserConfig): VipVuepr
 
 /**
  * 导航栏
- * @param options 配置
  */
 export function defineVipNavbarConfig(options: NavbarOptions): NavbarOptions {
   return navbar(options)
@@ -58,7 +56,6 @@ export function defineVipNavbarConfig(options: NavbarOptions): NavbarOptions {
 
 /**
  * 侧边栏
- * @param options 配置
  */
 export function defineVipSidebarConfig(options: SidebarOptions): SidebarOptions {
   return sidebar(options)

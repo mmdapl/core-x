@@ -5,7 +5,9 @@
 ## 安装
 
 ```shell
-# 安装
+# npm
+npm install @142vip/oauth2.0
+# pnpm
 pnpm i @142vip/oauth2.0
 ```
 

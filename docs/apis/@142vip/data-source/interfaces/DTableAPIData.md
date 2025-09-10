@@ -2,7 +2,9 @@
 
 # 接口: DTableAPIData
 
-定义于: [core/apis/vip-dtable-api.ts:7](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-dtable-api.ts#L7)
+定义于: [packages/data-source/src/core/apis/vip-dtable-api.ts:22](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-dtable-api.ts#L22)
+
+表记录，分页后的格式
 
 ## 属性
 
@@ -10,7 +12,7 @@
 
 > `optional` **page**: `number`
 
-定义于: [core/apis/vip-dtable-api.ts:8](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-dtable-api.ts#L8)
+定义于: [packages/data-source/src/core/apis/vip-dtable-api.ts:23](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-dtable-api.ts#L23)
 
 ***
 
@@ -18,7 +20,7 @@
 
 > `optional` **records**: `any`
 
-定义于: [core/apis/vip-dtable-api.ts:11](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-dtable-api.ts#L11)
+定义于: [packages/data-source/src/core/apis/vip-dtable-api.ts:26](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-dtable-api.ts#L26)
 
 ***
 
@@ -26,7 +28,7 @@
 
 > `optional` **size**: `number`
 
-定义于: [core/apis/vip-dtable-api.ts:9](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-dtable-api.ts#L9)
+定义于: [packages/data-source/src/core/apis/vip-dtable-api.ts:24](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-dtable-api.ts#L24)
 
 ***
 
@@ -34,4 +36,4 @@
 
 > `optional` **total**: `number`
 
-定义于: [core/apis/vip-dtable-api.ts:10](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-dtable-api.ts#L10)
+定义于: [packages/data-source/src/core/apis/vip-dtable-api.ts:25](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-dtable-api.ts#L25)

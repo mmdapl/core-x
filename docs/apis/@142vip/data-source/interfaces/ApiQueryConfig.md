@@ -2,7 +2,7 @@
 
 # 接口: ApiQueryConfig
 
-定义于: [data-source.interface.ts:44](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L44)
+定义于: [packages/data-source/src/data-source.interface.ts:46](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L46)
 
 API Query 配置
 
@@ -12,7 +12,7 @@ API Query 配置
 
 > **body**: `string`
 
-定义于: [data-source.interface.ts:47](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L47)
+定义于: [packages/data-source/src/data-source.interface.ts:49](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L49)
 
 ***
 
@@ -20,7 +20,7 @@ API Query 配置
 
 > **headers**: `string`
 
-定义于: [data-source.interface.ts:48](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L48)
+定义于: [packages/data-source/src/data-source.interface.ts:50](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L50)
 
 ***
 
@@ -28,7 +28,7 @@ API Query 配置
 
 > **params**: `string`
 
-定义于: [data-source.interface.ts:46](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L46)
+定义于: [packages/data-source/src/data-source.interface.ts:48](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L48)
 
 ***
 
@@ -36,4 +36,4 @@ API Query 配置
 
 > **path**: `string`
 
-定义于: [data-source.interface.ts:45](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L45)
+定义于: [packages/data-source/src/data-source.interface.ts:47](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L47)

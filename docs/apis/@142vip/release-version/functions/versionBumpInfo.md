@@ -4,7 +4,7 @@
 
 > **versionBumpInfo**(`arg`): `Promise`\<`ReleaseOperation`\>
 
-定义于: [core/version-bump.ts:75](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/core/version-bump.ts#L75)
+定义于: [core/version-bump.ts:81](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/core/version-bump.ts#L81)
 
 升级版本号，获取操作的基本信息
 

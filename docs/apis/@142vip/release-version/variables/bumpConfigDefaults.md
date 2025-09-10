@@ -4,4 +4,6 @@
 
 > `const` **bumpConfigDefaults**: [`VersionBumpOptions`](../interfaces/VersionBumpOptions.md)
 
-定义于: [utils/config.ts:3](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/utils/config.ts#L3)
+定义于: [utils/config.ts:6](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/utils/config.ts#L6)
+
+bump工具，默认配置

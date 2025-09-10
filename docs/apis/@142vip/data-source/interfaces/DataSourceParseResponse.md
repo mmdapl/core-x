@@ -2,9 +2,13 @@
 
 # 接口: DataSourceParseResponse\<T\>
 
-定义于: [data-source.interface.ts:8](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L8)
+定义于: [packages/data-source/src/data-source.interface.ts:11](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L11)
 
 数据源解析返回
+
+## theme_extends
+
+- [`DataSourceResponseError`](DataSourceResponseError.md)
 
 ## 类型参数
 
@@ -18,7 +22,7 @@
 
 > `optional` **data**: `T`
 
-定义于: [data-source.interface.ts:11](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L11)
+定义于: [packages/data-source/src/data-source.interface.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L13)
 
 ***
 
@@ -26,7 +30,11 @@
 
 > `optional` **message**: `string`
 
-定义于: [data-source.interface.ts:10](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L10)
+定义于: [packages/data-source/src/data-source.interface.ts:5](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L5)
+
+#### 继承自
+
+[`DataSourceResponseError`](DataSourceResponseError.md).[`message`](DataSourceResponseError.md#message)
 
 ***
 
@@ -34,4 +42,4 @@
 
 > **success**: `boolean`
 
-定义于: [data-source.interface.ts:9](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.interface.ts#L9)
+定义于: [packages/data-source/src/data-source.interface.ts:12](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L12)

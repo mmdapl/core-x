@@ -4,7 +4,7 @@
 
 > `const` **GithubAPI**: `object`
 
-定义于: [changelog/src/core/github.api.ts:219](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/core/github.api.ts#L219)
+定义于: [changelog/src/core/github.api.ts:219](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/core/github.api.ts#L219)
 
 ## 类型声明
 

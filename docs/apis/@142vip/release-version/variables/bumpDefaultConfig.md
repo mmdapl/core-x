@@ -2,40 +2,8 @@
 
 # 变量: bumpDefaultConfig
 
-> `const` **bumpDefaultConfig**: `object`
+> `const` **bumpDefaultConfig**: [`VersionBumpOptions`](../interfaces/VersionBumpOptions.md) = `bumpConfigDefaults`
 
-定义于: [utils/config.ts:15](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/utils/config.ts#L15)
+定义于: [utils/config.ts:24](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/utils/config.ts#L24)
 
-## 类型声明
-
-### all
-
-> **all**: `boolean` = `false`
-
-### commit
-
-> **commit**: `boolean` = `true`
-
-### confirm
-
-> **confirm**: `boolean` = `true`
-
-### ignoreScripts
-
-> **ignoreScripts**: `boolean` = `false`
-
-### push
-
-> **push**: `boolean` = `true`
-
-### recursive
-
-> **recursive**: `boolean` = `false`
-
-### skipGitVerify
-
-> **skipGitVerify**: `boolean` = `false`
-
-### tag
-
-> **tag**: `boolean` = `true`
+bump工具，默认配置

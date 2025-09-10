@@ -4,7 +4,7 @@
 
 > **printPreCheckRelease**(`packageNames`): `Promise`\<`void`\>
 
-定义于: [fairy-cli/src/utils/release-package.ts:19](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/fairy-cli/src/utils/release-package.ts#L19)
+定义于: [fairy-cli/src/utils/release-package.ts:19](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/fairy-cli/src/utils/release-package.ts#L19)
 
 打印模块预检信息
 

@@ -4,7 +4,7 @@
 
 > **defaultResponseInterceptor**(`response`): `AxiosResponse`
 
-定义于: [interceptors.ts:36](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/axios/src/interceptors.ts#L36)
+定义于: [packages/axios/src/core/interceptors.ts:36](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/interceptors.ts#L36)
 
 默认响应拦截器
 

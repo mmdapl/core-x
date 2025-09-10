@@ -4,7 +4,6 @@
 
 ## 类
 
-- [DataSourceManager](classes/DataSourceManager.md)
 - [VipAliGatewayApi](classes/VipAliGatewayApi.md)
 - [VipClickhouse](classes/VipClickhouse.md)
 - [VipCsv](classes/VipCsv.md)
@@ -21,14 +20,28 @@
 
 ## 接口
 
+- [AliGatewayApiOptions](interfaces/AliGatewayApiOptions.md)
 - [ApiQueryConfig](interfaces/ApiQueryConfig.md)
+- [ClickHouseOptions](interfaces/ClickHouseOptions.md)
 - [ColumnComment](interfaces/ColumnComment.md)
+- [CSVOptions](interfaces/CSVOptions.md)
+- [DamengOptions](interfaces/DamengOptions.md)
 - [DataSourceColumn](interfaces/DataSourceColumn.md)
 - [DataSourceConnectionOptions](interfaces/DataSourceConnectionOptions.md)
+- [DataSourceManager](interfaces/DataSourceManager.md)
 - [DataSourceParseResponse](interfaces/DataSourceParseResponse.md)
 - [DataSourceResponseError](interfaces/DataSourceResponseError.md)
 - [DataSourceTable](interfaces/DataSourceTable.md)
 - [DTableAPIData](interfaces/DTableAPIData.md)
+- [DTableApiOptions](interfaces/DTableApiOptions.md)
+- [DTStackAPIOptions](interfaces/DTStackAPIOptions.md)
+- [HttpApiOptions](interfaces/HttpApiOptions.md)
+- [IbmDBOptions](interfaces/IbmDBOptions.md)
+- [KingBaseOptions](interfaces/KingBaseOptions.md)
+- [MysqlOptions](interfaces/MysqlOptions.md)
+- [OracleOptions](interfaces/OracleOptions.md)
+- [PostgreSqlOptions](interfaces/PostgreSqlOptions.md)
+- [SqlServerOptions](interfaces/SqlServerOptions.md)
 
 ## 函数
 

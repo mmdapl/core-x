@@ -2,7 +2,7 @@
 
 # 枚举: GitCommitMessageType
 
-定义于: [changelog/src/enums/git-commit.interface.ts:13](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L13)
+定义于: [changelog/src/enums/git-commit.interface.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/enums/git-commit.interface.ts#L13)
 
 ## 枚举成员
 
@@ -10,7 +10,7 @@
 
 > **HASH**: `"hash"`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:16](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L16)
+定义于: [changelog/src/enums/git-commit.interface.ts:16](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/enums/git-commit.interface.ts#L16)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > **ISSUE**: `"issue"`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:15](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L15)
+定义于: [changelog/src/enums/git-commit.interface.ts:15](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/enums/git-commit.interface.ts#L15)
 
 ***
 
@@ -26,4 +26,4 @@
 
 > **PULL\_REQUEST**: `"pull-request"`
 
-定义于: [changelog/src/enums/git-commit.interface.ts:14](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/enums/git-commit.interface.ts#L14)
+定义于: [changelog/src/enums/git-commit.interface.ts:14](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/enums/git-commit.interface.ts#L14)

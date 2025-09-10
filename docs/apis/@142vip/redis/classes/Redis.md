@@ -2,7 +2,7 @@
 
 # 类: Redis
 
-定义于: [redis.ts:3](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/redis/src/redis.ts#L3)
+定义于: [redis.ts:3](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/redis/src/redis.ts#L3)
 
 ## 构造函数
 
@@ -10,7 +10,7 @@
 
 > **new Redis**(`redisClient`): `Redis`
 
-定义于: [redis.ts:6](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/redis/src/redis.ts#L6)
+定义于: [redis.ts:6](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/redis/src/redis.ts#L6)
 
 #### 参数
 
@@ -28,7 +28,7 @@
 
 > **delete**(`key`): `Promise`\<`void`\>
 
-定义于: [redis.ts:13](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/redis/src/redis.ts#L13)
+定义于: [redis.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/redis/src/redis.ts#L13)
 
 延迟双删
 

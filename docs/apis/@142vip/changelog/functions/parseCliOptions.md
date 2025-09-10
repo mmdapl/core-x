@@ -4,7 +4,7 @@
 
 > **parseCliOptions**(`cliOptions`): `Promise`\<[`ChangelogGenerateOptions`](../interfaces/ChangelogGenerateOptions.md)\>
 
-定义于: [changelog/src/shared/config.ts:67](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/changelog/src/shared/config.ts#L67)
+定义于: [changelog/src/shared/config.ts:67](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/shared/config.ts#L67)
 
 加载配置
 将用户自定义配置和默认配置合并

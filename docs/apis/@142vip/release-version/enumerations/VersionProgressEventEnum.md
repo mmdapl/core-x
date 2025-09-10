@@ -2,9 +2,9 @@
 
 # 枚举: VersionProgressEventEnum
 
-定义于: [enums/version-process-event.enum.ts:4](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/enums/version-process-event.enum.ts#L4)
+定义于: [enums/version-process-event.enum.ts:4](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/enums/version-process-event.enum.ts#L4)
 
-指示 'versionBump（）' 函数进度的进度事件
+指示 `versionBump()` 函数进度的进度事件
 
 ## 枚举成员
 
@@ -12,7 +12,7 @@
 
 > **GitCommit**: `"git commit"`
 
-定义于: [enums/version-process-event.enum.ts:5](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/enums/version-process-event.enum.ts#L5)
+定义于: [enums/version-process-event.enum.ts:5](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/enums/version-process-event.enum.ts#L5)
 
 ***
 
@@ -20,7 +20,7 @@
 
 > **GitPush**: `"git push"`
 
-定义于: [enums/version-process-event.enum.ts:7](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/enums/version-process-event.enum.ts#L7)
+定义于: [enums/version-process-event.enum.ts:7](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/enums/version-process-event.enum.ts#L7)
 
 ***
 
@@ -28,7 +28,7 @@
 
 > **GitTag**: `"git tag"`
 
-定义于: [enums/version-process-event.enum.ts:6](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/enums/version-process-event.enum.ts#L6)
+定义于: [enums/version-process-event.enum.ts:6](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/enums/version-process-event.enum.ts#L6)
 
 ***
 
@@ -36,4 +36,4 @@
 
 > **NpmScript**: `"npm script"`
 
-定义于: [enums/version-process-event.enum.ts:8](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/enums/version-process-event.enum.ts#L8)
+定义于: [enums/version-process-event.enum.ts:8](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/enums/version-process-event.enum.ts#L8)

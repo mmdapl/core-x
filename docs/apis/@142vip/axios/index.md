@@ -4,15 +4,26 @@
 
 ## 枚举
 
+- [HttpMethod](enumerations/HttpMethod.md)
+- [HttpMethodLower](enumerations/HttpMethodLower.md)
+- [HttpStatus](enumerations/HttpStatus.md)
 - [InterceptorType](enumerations/InterceptorType.md)
 
 ## 类
 
-- [VipAxios](classes/VipAxios.md)
+- [AxiosFactory](classes/AxiosFactory.md)
+
+## 接口
+
+- [VipAxiosInstance](interfaces/VipAxiosInstance.md)
+
+## 变量
+
+- [vipAxios](variables/vipAxios.md)
 
 ## 函数
 
-- [createAxiosInstance](functions/createAxiosInstance.md)
+- [createVipAxios](functions/createVipAxios.md)
 - [defaultRequestInterceptor](functions/defaultRequestInterceptor.md)
 - [defaultResponseInterceptor](functions/defaultResponseInterceptor.md)
 - [defaultVipRequestInterceptor](functions/defaultVipRequestInterceptor.md)

@@ -4,4 +4,6 @@
 
 > `const` **CONFIG\_DEFAULT\_NAME**: `"bump"` = `'bump'`
 
-定义于: [utils/config.ts:14](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/release-version/src/utils/config.ts#L14)
+定义于: [utils/config.ts:19](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/utils/config.ts#L19)
+
+配置文件，默认文件名

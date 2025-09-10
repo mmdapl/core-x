@@ -2,14 +2,14 @@
 
 # 类: VipHttpApi
 
-定义于: [core/apis/vip-http-api.ts:14](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-http-api.ts#L14)
+定义于: [packages/data-source/src/core/apis/vip-http-api.ts:12](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-http-api.ts#L12)
 
 发送Http，请求API
 - 标准的axios请求
 
-## theme_extends
+## 实现
 
-- [`DataSourceManager`](DataSourceManager.md)
+- `DataSourceConnector`\<[`HttpApiOptions`](../interfaces/HttpApiOptions.md)\>
 
 ## 构造函数
 
@@ -21,122 +21,32 @@
 
 `VipHttpApi`
 
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`constructor`](DataSourceManager.md#constructor)
-
 ## 方法
 
 ### getConnectionData()
 
-> **getConnectionData**(`options`): `Promise`\<\{ `data`: `any`; `success`: `boolean`; \} \| \{ `data?`: `undefined`; `success`: `boolean`; \}\>
+> **getConnectionData**\<`T`\>(`options`): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`T`\>\>
 
-定义于: [core/apis/vip-http-api.ts:15](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/core/apis/vip-http-api.ts#L15)
+定义于: [packages/data-source/src/core/apis/vip-http-api.ts:16](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/apis/vip-http-api.ts#L16)
+
+获取连接数据
+
+#### 类型参数
+
+##### T
+
+`T`
 
 #### 参数
 
 ##### options
 
-`HttpApiOptions`
+[`HttpApiOptions`](../interfaces/HttpApiOptions.md)
 
 #### 返回
 
-`Promise`\<\{ `data`: `any`; `success`: `boolean`; \} \| \{ `data?`: `undefined`; `success`: `boolean`; \}\>
+`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`T`\>\>
 
-#### 重写了
+#### 实现了
 
-[`DataSourceManager`](DataSourceManager.md).[`getConnectionData`](DataSourceManager.md#getconnectiondata)
-
-***
-
-### getDataBaseNameList()
-
-> **getDataBaseNameList**(): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`string`[]\>\>
-
-定义于: [data-source.manager.ts:15](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.manager.ts#L15)
-
-#### 返回
-
-`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`string`[]\>\>
-
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`getDataBaseNameList`](DataSourceManager.md#getdatabasenamelist)
-
-***
-
-### getTableColumns()
-
-> **getTableColumns**(`_tableName`, `_schema?`): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<[`DataSourceColumn`](../interfaces/DataSourceColumn.md)[]\>\>
-
-定义于: [data-source.manager.ts:29](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.manager.ts#L29)
-
-获取表字段列表
-
-#### 参数
-
-##### \_tableName
-
-`string`
-
-##### \_schema?
-
-`string`
-
-#### 返回
-
-`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<[`DataSourceColumn`](../interfaces/DataSourceColumn.md)[]\>\>
-
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`getTableColumns`](DataSourceManager.md#gettablecolumns)
-
-***
-
-### getTableNames()
-
-> **getTableNames**(): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<[`DataSourceTable`](../interfaces/DataSourceTable.md)[]\>\>
-
-定义于: [data-source.manager.ts:22](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.manager.ts#L22)
-
-获取表名列表
-
-#### 返回
-
-`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<[`DataSourceTable`](../interfaces/DataSourceTable.md)[]\>\>
-
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`getTableNames`](DataSourceManager.md#gettablenames)
-
-***
-
-### parseData()
-
-> **parseData**(): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
-
-定义于: [data-source.manager.ts:7](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.manager.ts#L7)
-
-#### 返回
-
-`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
-
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`parseData`](DataSourceManager.md#parsedata)
-
-***
-
-### testConnect()
-
-> **testConnect**(): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
-
-定义于: [data-source.manager.ts:11](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/data-source/src/data-source.manager.ts#L11)
-
-#### 返回
-
-`Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
-
-#### 继承自
-
-[`DataSourceManager`](DataSourceManager.md).[`testConnect`](DataSourceManager.md#testconnect)
+`DataSourceConnector.getConnectionData`

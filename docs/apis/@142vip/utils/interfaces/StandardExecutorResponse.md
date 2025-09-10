@@ -2,7 +2,7 @@
 
 # 接口: StandardExecutorResponse
 
-定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L15)
+定义于: [packages/utils/src/core/exec.ts:15](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/core/exec.ts#L15)
 
 标准执行器响应结果
 
@@ -16,7 +16,7 @@
 
 > **code**: `null` \| `number`
 
-定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L16)
+定义于: [packages/utils/src/core/exec.ts:16](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/core/exec.ts#L16)
 
 ***
 
@@ -24,7 +24,7 @@
 
 > **stderr**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:18](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L18)
+定义于: [packages/utils/src/core/exec.ts:18](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/core/exec.ts#L18)
 
 ***
 
@@ -32,4 +32,4 @@
 
 > **stdout**: `string`
 
-定义于: [packages/utils/src/core/exec.ts:17](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/utils/src/core/exec.ts#L17)
+定义于: [packages/utils/src/core/exec.ts:17](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/core/exec.ts#L17)

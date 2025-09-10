@@ -4,7 +4,7 @@
 
 > **printStandardCommitMessage**(`message?`): `void`
 
-定义于: [commit-linter/src/core/commit-template.ts:9](https://github.com/142vip/core-x/blob/d59cdcda9f62fc93dcb0efb54c66772997c75711/packages/commit-linter/src/core/commit-template.ts#L9)
+定义于: [commit-linter/src/core/commit-template.ts:9](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/commit-linter/src/core/commit-template.ts#L9)
 
 打印错误信息
 打印标准的Git Commit信息模板

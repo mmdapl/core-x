@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2025-09-10)
+
+### ✨ Features
+
+- 集成egg-axios插件，提供单实例、多实例、配置对应的单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/615 [<samp>(27e4f)</samp>](https://github.com/142vip/core-x/commit/27e4ff0)
+- 补充文档，简化deps依赖，支持jest单元测试 &nbsp;-&nbsp; by **chufan** [<samp>(f3855)</samp>](https://github.com/142vip/core-x/commit/f3855bd)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/egg-demo)**
+
 ## v0.0.1-alpha.2 (2025-04-16)
 
 **No Significant Changes**

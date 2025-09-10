@@ -2,6 +2,86 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.33 (2025-09-10)
+
+### ✨ Features
+
+- 优化jest配置和命令 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/605 [<samp>(3e364)</samp>](https://github.com/142vip/core-x/commit/3e364ca)
+- 增加`languageOptions`配置，`ESLint`规则支持`Jest`模块的全局变量 &nbsp;-&nbsp; by **chufan** [<samp>(83e75)</samp>](https://github.com/142vip/core-x/commit/83e75f2)
+- 优化ts和jest配置，支持扫描test目录下的单元测试 &nbsp;-&nbsp; by **chufan** [<samp>(22f73)</samp>](https://github.com/142vip/core-x/commit/22f73d1)
+- 补充`clean`命令，支持`deps`依赖清理 &nbsp;-&nbsp; by **chufan** [<samp>(c3954)</samp>](https://github.com/142vip/core-x/commit/c3954f8)
+- **@142vip/axios**:
+  - 优化`vipAxios`实例核心逻辑，补充单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/607 [<samp>(a1979)</samp>](https://github.com/142vip/core-x/commit/a197933)
+- **@142vip/changelog**:
+  - 修复`CONFIG_DEFAULT_HEADER`默认值对应的跳转链接 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/586 [<samp>(b769b)</samp>](https://github.com/142vip/core-x/commit/b769bf2)
+- **@142vip/data-source**:
+  - 模块初始化 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/598 [<samp>(839e7)</samp>](https://github.com/142vip/core-x/commit/839e7af)
+  - 补充单元测试和文档，优化数据源核心代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/604 [<samp>(2f70c)</samp>](https://github.com/142vip/core-x/commit/2f70c82)
+  - 更新数据源对应的单元测试文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/616 [<samp>(fb633)</samp>](https://github.com/142vip/core-x/commit/fb633da)
+- **@142vip/egg**:
+  - 新增`mergeConfig`函数，合并配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/609 [<samp>(1eb13)</samp>](https://github.com/142vip/core-x/commit/1eb135d)
+  - 拓展`plugin`插件，优化插件启动实例挂载逻辑，支持多实例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/614 [<samp>(280ae)</samp>](https://github.com/142vip/core-x/commit/280aeaa)
+  - 优化接口类型，补充插件注册等功能的使用文档 &nbsp;-&nbsp; by **chufan** [<samp>(fcef3)</samp>](https://github.com/142vip/core-x/commit/fcef385)
+- **@142vip/egg-axios**:
+  - 集成`@142vip/axios`模块，基于`vipAxios`实例请求 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/610 [<samp>(9db5f)</samp>](https://github.com/142vip/core-x/commit/9db5f74)
+  - 增加jest配置，补充test单元测试命令 &nbsp;-&nbsp; by **chufan** [<samp>(1e71a)</samp>](https://github.com/142vip/core-x/commit/1e71a61)
+  - 简化插件默认配置，补充插件使用文档 &nbsp;-&nbsp; by **chufan** [<samp>(cce41)</samp>](https://github.com/142vip/core-x/commit/cce4156)
+- **@142vip/release-version**:
+  - 移除`detect-indent`和`detect-newline`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/606 [<samp>(d6460)</samp>](https://github.com/142vip/core-x/commit/d646058)
+  - 优化工具核心逻辑，补充文档和单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/621 [<samp>(2c7c5)</samp>](https://github.com/142vip/core-x/commit/2c7c57b)
+- **@142vip/utils**:
+  - 优化`exec`标准执行器，新增`getProcess`等方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/585 [<samp>(08099)</samp>](https://github.com/142vip/core-x/commit/0809904)
+  - 基于`createRequire`解决`c12`等模块在cjs语法下的冲突 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/613 [<samp>(5f92f)</samp>](https://github.com/142vip/core-x/commit/5f92f4c)
+  - 基于`createRequire`解决`c12`等模块在cjs语法下的冲突 " &nbsp;-&nbsp; by **chufan** in https://github.com/142vip/core-x/issues/613 [<samp>(7a238)</samp>](https://github.com/142vip/core-x/commit/7a2385d)
+- **egg-demo**:
+  - 集成egg-axios插件，提供单实例、多实例、配置对应的单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/615 [<samp>(27e4f)</samp>](https://github.com/142vip/core-x/commit/27e4ff0)
+  - 补充文档，简化deps依赖，支持jest单元测试 &nbsp;-&nbsp; by **chufan** [<samp>(f3855)</samp>](https://github.com/142vip/core-x/commit/f3855bd)
+
+### 🐛 Bug Fixes
+
+- 基于jest模块，修复各模块单元测试全局参数导入报错 &nbsp;-&nbsp; by **chufan** [<samp>(6fe45)</samp>](https://github.com/142vip/core-x/commit/6fe45a7)
+- **@142vip/axios**:
+  - 修复文档显示异常，补充类型 &nbsp;-&nbsp; by **chufan** [<samp>(71a10)</samp>](https://github.com/142vip/core-x/commit/71a102e)
+  - 移除对`@142vip/utils`的依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/608 [<samp>(7109b)</samp>](https://github.com/142vip/core-x/commit/7109bb7)
+- **@142vip/utils**:
+  - 修复`getProcessArgvByIndex`获取参数异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/575 [<samp>(f8956)</samp>](https://github.com/142vip/core-x/commit/f89565d)
+  - `buildImage`构建镜像增加`platform`参数 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/576 [<samp>(f1eb4)</samp>](https://github.com/142vip/core-x/commit/f1eb445)
+- **deps**:
+  - Update dependency semver to v7.7.2 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/597 [<samp>(ef76e)</samp>](https://github.com/142vip/core-x/commit/ef76ecd)
+  - 锁定jest等依赖版本 &nbsp;-&nbsp; by **chufan** [<samp>(29118)</samp>](https://github.com/142vip/core-x/commit/29118c9)
+
+### 📖 Documentation
+
+- 更新多个模块的`CHANGELOG`文档，格式统一 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/587 [<samp>(34248)</samp>](https://github.com/142vip/core-x/commit/3424889)
+- 更新文档的`Copyright`部分 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/603 [<samp>(deefe)</samp>](https://github.com/142vip/core-x/commit/deefe18)
+- 更新各模块的README文档 &nbsp;-&nbsp; by **chufan** [<samp>(d4a5b)</samp>](https://github.com/142vip/core-x/commit/d4a5b2e)
+
+### 😏 Release Packages
+
+- **@142vip/axios**:
+  - Publish `v0.0.1-alpha.7` &nbsp;-&nbsp; by **chufan** [<samp>(0f0f4)</samp>](https://github.com/142vip/core-x/commit/0f0f439)
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.21` &nbsp;-&nbsp; by **chufan** [<samp>(f2ee2)</samp>](https://github.com/142vip/core-x/commit/f2ee275)
+- **@142vip/data-source**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(e752f)</samp>](https://github.com/142vip/core-x/commit/e752f9f)
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(37b63)</samp>](https://github.com/142vip/core-x/commit/37b6334)
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(3a7d7)</samp>](https://github.com/142vip/core-x/commit/3a7d75f)
+- **@142vip/egg**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(584bc)</samp>](https://github.com/142vip/core-x/commit/584bce6)
+- **@142vip/egg-axios**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(44113)</samp>](https://github.com/142vip/core-x/commit/441131c)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.27` &nbsp;-&nbsp; by **chufan** [<samp>(f3b17)</samp>](https://github.com/142vip/core-x/commit/f3b17d2)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.14` &nbsp;-&nbsp; by **chufan** [<samp>(778e0)</samp>](https://github.com/142vip/core-x/commit/778e0b3)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.38` &nbsp;-&nbsp; by **chufan** [<samp>(22621)</samp>](https://github.com/142vip/core-x/commit/22621e9)
+  - Publish `v0.0.1-alpha.39` &nbsp;-&nbsp; by **chufan** [<samp>(ef582)</samp>](https://github.com/142vip/core-x/commit/ef5829b)
+- **egg-demo**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(cacf0)</samp>](https://github.com/142vip/core-x/commit/cacf05e)
+
+**Release New Version v0.0.1-alpha.33 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.32...v0.0.1-alpha.33)**
+
 ## v0.0.1-alpha.32 (2025-05-19)
 
 ### ✨ Features

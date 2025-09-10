@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.39 (2025-09-10)
+
+### ✨ Features
+
+- 基于`createRequire`解决`c12`等模块在cjs语法下的冲突 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/613 [<samp>(5f92f)</samp>](https://github.com/142vip/core-x/commit/5f92f4c)
+- 基于`createRequire`解决`c12`等模块在cjs语法下的冲突 " &nbsp;-&nbsp; by **chufan** in https://github.com/142vip/core-x/issues/613 [<samp>(7a238)</samp>](https://github.com/142vip/core-x/commit/7a2385d)
+
+**Release New Version v0.0.1-alpha.39 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.38 (2025-07-16)
 
 ### ✨ Features

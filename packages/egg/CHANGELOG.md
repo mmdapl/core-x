@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2025-09-10)
+
+### ✨ Features
+
+- 新增`mergeConfig`函数，合并配置 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/609 [<samp>(1eb13)</samp>](https://github.com/142vip/core-x/commit/1eb135d)
+- 拓展`plugin`插件，优化插件启动实例挂载逻辑，支持多实例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/614 [<samp>(280ae)</samp>](https://github.com/142vip/core-x/commit/280aeaa)
+- 优化接口类型，补充插件注册等功能的使用文档 &nbsp;-&nbsp; by **chufan** [<samp>(fcef3)</samp>](https://github.com/142vip/core-x/commit/fcef385)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg)**
+
 ## v0.0.1-alpha.2 (2025-01-20)
 
 ### ✨ Features

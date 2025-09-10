@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## v0.0.1-alpha.7 (2025-09-10)
+
+### ✨ Features
+
+- 优化`vipAxios`实例核心逻辑，补充单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/607 [<samp>(a1979)</samp>](https://github.com/142vip/core-x/commit/a197933)
+
+### 🐛 Bug Fixes
+
+- 修复文档显示异常，补充类型 &nbsp;-&nbsp; by **chufan** [<samp>(71a10)</samp>](https://github.com/142vip/core-x/commit/71a102e)
+- 移除对`@142vip/utils`的依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/608 [<samp>(7109b)</samp>](https://github.com/142vip/core-x/commit/7109bb7)
+
+**Release New Version v0.0.1-alpha.7 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/axios)**
+
 ## v0.0.1-alpha.6 (2025-02-06)
 
 ### ✨ Features

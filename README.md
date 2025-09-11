@@ -12,10 +12,10 @@
 
 ### 示例项目
 
-- [`egg-demo`](apps/egg-demo/README.md)
-- [`nest-demo`](apps/nest-demo/README.md)
-- [`vitepress-demo`](apps/vitepress-demo/README.md)
-- [`vuepress-demo`](apps/vuepress-demo/README.md)
+- [`egg-demo`](apps/egg-demo)
+- [`nest-demo`](apps/nest-demo)
+- [`vitepress-demo`](apps/vitepress-demo)
+- [`vuepress-demo`](apps/vuepress-demo)
 
 ### 开源模块
 

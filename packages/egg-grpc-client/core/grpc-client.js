@@ -11,26 +11,24 @@ function createEggGrpcClientInstance(pluginConfig, app) {
 
   const { connectUri, protoPaths, loaderOptions } = pluginConfig
 
-  const grpcClient = GrpcClient.getInstance()
+  const grpcClient = new GrpcClient(connectUri)
+  const protoLoader = new ProtoLoader(protoPaths, loaderOptions)
+  const servicePaths = protoLoader.getServicePaths()
   // 加载proto
-  for (const protoPath of protoPaths) {
-    const protoLoader = ProtoLoader.getInstance(protoPath, loaderOptions)
-    const serviceClassDefinition = protoLoader.getServiceClassDefinition()
-
-    // 建立连接
-    grpcClient.connect(connectUri, serviceClassDefinition)
+  for (const servicePath of servicePaths) {
+    const serviceClientConstructor = protoLoader.getClientServiceConstructor(servicePath)
+    grpcClient.registerService(servicePath, serviceClientConstructor)
   }
 
-  grpcClient.connect()
-
-  if (grpcClient.getConnectSize() === 0) {
+  // 打印连接
+  if (grpcClient.getServiceSize() === 0) {
     pluginLogger.error('grpc client connect size is 0')
   }
 
-  const clientService = grpcClient.getService()
   pluginLogger.log('plugin init')
 
-  return clientService
+  // grpc客户端实例
+  return grpcClient
 }
 
 module.exports = {

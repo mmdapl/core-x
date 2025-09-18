@@ -40,8 +40,7 @@
   },
   "dependencies": {
     "@142vip/egg": "workspace:*",
-    "@142vip/grpc": "workspace:*",
-    "@142vip/utils": "workspace:*"
+    "@142vip/grpc": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

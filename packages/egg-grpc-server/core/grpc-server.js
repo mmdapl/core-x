@@ -4,21 +4,23 @@ const { GrpcServer, ProtoLoader } = require('@142vip/grpc')
 async function createEggGrpcServerInstance(pluginConfig, app) {
   const pluginLogger = VipEggPluginLogger.getInstance(pluginConfig, app)
 
-  const grpcServer = GrpcServer.getInstance()
+  const grpcServer = new GrpcServer()
   const { connectUri, protoPaths, loaderOptions } = pluginConfig
   try {
     pluginLogger.log(`GrpcServer create success , the name is ${pluginConfig.name}`)
 
-    for (const protoPath of protoPaths) {
-      const protoLoader = ProtoLoader.getInstance(protoPath, loaderOptions)
-      const serviceClassDefinition = protoLoader.getServiceClassDefinition()
+    const protoLoader = new ProtoLoader(protoPaths, loaderOptions)
+    const servicePaths = protoLoader.getServicePaths()
 
-      // todo
-      grpcServer.addService(serviceClassDefinition, pluginConfig.implementation)
+    for (const servicePath of servicePaths) {
+      const serviceDef = protoLoader.getServerServiceDefinition(servicePath)
+      // TODO 对应实现方法
+      grpcServer.registerService(serviceDef, {})
     }
-
     // 服务监听
-    await grpcServer.listen(connectUri)
+    const port = await grpcServer.listen(connectUri)
+
+    console.log('GrpcServer create success , the port is ', port)
 
     return grpcServer
   }

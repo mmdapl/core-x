@@ -1,27 +1,12 @@
 const { defaultPluginConfig } = require('@142vip/egg')
+const { exampleProto, GrpcConnectURI } = require('@142vip/grpc')
 const { name: pkgName } = require('../package.json')
 
 module.exports = {
   grpcClient: defaultPluginConfig(pkgName, {
-    default: {
-      loaderOptions: {
-        keepCase: true,
-        longs: String,
-        enums: String,
-        defaults: true,
-        oneofs: true,
-      },
-    },
     client: {
-      connectUri: '127.0.0.1:50051',
-      protoPaths: ['./proto/helloworld.proto'],
-      loaderOptions: {
-        keepCase: true,
-        longs: String,
-        enums: String,
-        defaults: true,
-        oneofs: true,
-      },
+      connectUri: GrpcConnectURI.PORT_50001,
+      protoPaths: [exampleProto],
     },
   }),
 }

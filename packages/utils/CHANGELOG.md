@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.41 (2025-09-23)
+
+### ✨ Features
+
+- 新增`vipDetect`，支持`port`、`newline`等检测 &nbsp;-&nbsp; by **chufan** [<samp>(b81ed)</samp>](https://github.com/142vip/core-x/commit/b81ed15)
+
+**Release New Version v0.0.1-alpha.41 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.40 (2025-09-19)
 
 ### ✨ Features

@@ -53,6 +53,7 @@
     "dayjs": "1.11.13",
     "detect-indent": "7.0.1",
     "detect-newline": "4.0.1",
+    "detect-port": "^2.1.0",
     "js-yaml": "4.1.0",
     "klona": "2.0.6",
     "lodash": "4.17.21",

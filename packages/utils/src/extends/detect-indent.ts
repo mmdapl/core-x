@@ -4,7 +4,7 @@ const INDENT_REGEX = /^(?:( )+|\t+)/
 const INDENT_TYPE_SPACE = 'space'
 const INDENT_TYPE_TAB = 'tab'
 
-interface DetectIndent {
+export interface DetectIndent {
   type?: string
   amount: number
   indent: string

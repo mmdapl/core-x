@@ -1,9 +1,14 @@
 import type { PluginConfig } from './plugin'
 
+export interface EggContext {
+
+}
+
 export interface EggApp {
   config: EggConfig
   addSingleton: <T>(pluginName: string, createPluginInstance: PluginCreateInstance) => T
   coreLogger: EggCoreLogger
+  createAnonymousContext: () => EggContext
   [pluginName: string]: unknown | EggPluginInstance<unknown>
 }
 

@@ -1,4 +1,4 @@
-import type { UntypedMethodImplementation } from '@142vip/grpc'
+import type { GrpcConnectInfo, UntypedMethodImplementation } from '@142vip/grpc'
 import type { sendUnaryData, ServiceDefinition, UntypedServiceImplementation } from '@grpc/grpc-js'
 import type {
   GrpcHealthCheckOrWatchRequest,
@@ -27,7 +27,7 @@ import { healthProto, healthProtoServicePath } from '../utils/proto.util'
  * Grpc 服务端
  */
 export class GrpcServer {
-  private urls: Set<string> = new Set()
+  private connectInfoMap: Map<string, number> = new Map()
   /**
    * 健康检查
    * @private
@@ -59,7 +59,7 @@ export class GrpcServer {
         }
 
         // 启动成功
-        this.urls.add(connectUri)
+        this.connectInfoMap.set(connectUri, port)
         // 服务正常
         this.setHealthStatus(GRPC_SERVER_METHOD_NAME, GrpcHealthStatus.SERVING)
         resolve(port)
@@ -94,8 +94,12 @@ export class GrpcServer {
   /**
    * 获取连接地址
    */
-  public getConnectUri(): string[] {
-    return Array.from(this.urls)
+  public getConnectUris(): string[] {
+    return Array.from(this.connectInfoMap.keys())
+  }
+
+  public getConnectInfo(): GrpcConnectInfo[] {
+    return Array.from(this.connectInfoMap).map(([connectUri, port]) => ({ connectUri, port }))
   }
 
   /**
@@ -106,7 +110,7 @@ export class GrpcServer {
   }
 
   private init() {
-    this.urls = new Set()
+    this.connectInfoMap = new Map()
     this.healthStatusMap = new Map()
     this.watchers = new Map()
   }

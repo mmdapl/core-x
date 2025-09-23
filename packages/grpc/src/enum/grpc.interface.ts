@@ -3,6 +3,20 @@ import type { ServiceClientConstructor } from '@grpc/grpc-js'
 export type ServiceClientDefinitionMap = Map<string, ServiceClientConstructor>
 
 /**
+ * Grpc 连接信息
+ */
+export interface GrpcConnectInfo {
+  /**
+   * 连接地址
+   */
+  connectUri: string
+  /**
+   * 连接端口
+   */
+  port: number
+}
+
+/**
  * Grpc 连接地址
  */
 export enum GrpcConnectURI {

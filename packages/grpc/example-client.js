@@ -8,14 +8,6 @@ function exampleClientMain() {
 
   const grpcClient = new GrpcClient(GrpcConnectURI.PORT_50001, exampleProtoLoader)
 
-  // 全部加载
-  // const servicePaths = exampleProtoLoader.getServicePaths()
-  // for (const servicePath of servicePaths) {
-  //   console.log('servicePath', servicePath)
-  //   const serviceClientConstructor = exampleProtoLoader.getClientServiceConstructor(servicePath)
-  //   grpcClient.registerService(servicePath, serviceClientConstructor)
-  // }
-
   // 指定servicePath加载
   const serviceClientConstructor = exampleProtoLoader.getClientServiceConstructor(exampleProtoServicePath)
   grpcClient.registerService(exampleProtoServicePath, serviceClientConstructor)

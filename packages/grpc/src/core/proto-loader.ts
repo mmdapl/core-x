@@ -1,6 +1,6 @@
 import type { GrpcObject, ProtobufTypeDefinition, ServiceClientConstructor, ServiceDefinition } from '@grpc/grpc-js'
 import type { ServiceClientDefinitionMap } from '../enum/grpc.interface'
-import type { ParsedGrpcObject, VipProtoLoaderOptions } from '../enum/proto.interface'
+import type { GrpcServiceDetail, GrpcServicePath, ParsedGrpcObject, VipProtoLoaderOptions } from '../enum/proto.interface'
 import { existsSync } from 'node:fs'
 import { loadPackageDefinition } from '@grpc/grpc-js'
 import { loadSync } from '@grpc/proto-loader'
@@ -42,6 +42,13 @@ export class ProtoLoader {
   }
 
   /**
+   * 获取grpc对应的service名称
+   */
+  public getServiceName(servicePath: string): string {
+    return this.parsePackagePath(servicePath).serviceName
+  }
+
+  /**
    * 获取proto loader options
    */
   public getLoaderOptions(): VipProtoLoaderOptions {
@@ -53,6 +60,38 @@ export class ProtoLoader {
    */
   public getServicePaths(): string[] {
     return Array.from(this.servicePathSet.keys())
+  }
+
+  public getServiceDetail(): GrpcServicePath[] {
+    const servicePaths = this.getServicePaths()
+
+    return servicePaths.map(servicePath => ({
+      servicePath,
+      ...this.parsePackagePath(servicePath),
+    }))
+  }
+
+  /**
+   * 获取grpc service详细信息
+   */
+  public getGrpcServiceDetail(): Array<GrpcServiceDetail> {
+    const servicePaths = this.getServicePaths()
+
+    return servicePaths.map((servicePath) => {
+      const ServiceClientConstructor = this.getClientServiceConstructor(servicePath)
+      const { service: serviceDef, serviceName } = ServiceClientConstructor
+      const packageName = servicePath.split(serviceName)[0]
+      const methodNames = Object.keys(serviceDef)
+      return {
+        servicePath,
+        packageName,
+        serviceName,
+        ServiceClientConstructor,
+        methodNames,
+        // methodLowerNames: methodNames.map(name => vipLodash.lowerFirst(name)),
+        // methodUpperNames: methodNames.map(name => vipLodash.upperFirst(name)),
+      }
+    })
   }
 
   /**

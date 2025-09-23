@@ -29,7 +29,8 @@ export function grpcSimpleHandler(methodFunc: ServiceMethodFuncImpl) {
 
       callback(null, { data: responseData })
     }
-    catch {
+    catch (eee) {
+      console.log(3334, eee)
       callback(null, { error: { message: 'handleUnaryCall', traceId: '123' } })
     }
   }

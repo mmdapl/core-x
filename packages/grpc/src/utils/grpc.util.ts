@@ -3,11 +3,20 @@ import { ServiceMethodType } from '@142vip/grpc'
 
 /**
  * TODO，替换为优雅写法
+ * 首字母转换为大写
  * @param str
  */
 function upperFirst(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+/**
+ * 首字母转换为小写
+ * @param str
+ */
+// function lowerFirst(str: string): string {
+//   return str.charAt(0).toLowerCase() + str.slice(1)
+// }
 
 /**
  * 将rpc对应的方法名转换为首字母大写

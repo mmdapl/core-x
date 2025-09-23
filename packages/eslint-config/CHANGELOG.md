@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.5 (2025-09-23)
+
+### 🐛 Bug Fixes
+
+- Update dependency eslint to v9.35.0 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/647 [<samp>(6c874)</samp>](https://github.com/142vip/core-x/commit/6c87411)
+
+**Release New Version v0.0.1-alpha.5 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/eslint-config)**
+
 ## v0.0.1-alpha.4 (2025-04-15)
 
 ### ✨ Features

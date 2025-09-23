@@ -35,12 +35,12 @@ export class EggPluginBoot<T> {
    */
   public async didLoad(): Promise<void> {
     // app.加载
-    if (this.loaderPlugin(PluginLoader.APP)) {
+    if (this.loaderPlugin(PluginLoader.APP) && this.appOrAgent.controller != null) {
       this.registerPlugin()
     }
 
-    // agent.js加载
-    if (this.loaderPlugin(PluginLoader.AGENT)) {
+    // agent.js加载。controller还没注入
+    if (this.loaderPlugin(PluginLoader.AGENT) && this.appOrAgent.controller == null) {
       this.registerPlugin()
     }
   }
@@ -73,6 +73,7 @@ export class EggPluginBoot<T> {
   private loaderPlugin(loader: PluginLoader = PluginLoader.APP) {
     // 获取加载配置，默认app.js
     const { loaders = [] } = this.appOrAgent.config[this.pluginName]
+
     return loaders.includes(loader)
   }
 
@@ -85,13 +86,13 @@ export class EggPluginBoot<T> {
       return
     }
 
-    console.log('插件注册', this.appOrAgent.config.env, this.appOrAgent.config[this.pluginName])
+    console.log('插件注册', `env:${this.appOrAgent.config.env}`, this.appOrAgent.config[this.pluginName])
 
-    const { clients } = this.appOrAgent.config[this.pluginName]
+    const { clients, default: defaultConfig } = this.appOrAgent.config[this.pluginName]
 
     // 配置 agent 或者 app 才加载单例
     if (clients == null) {
-      // 单实例挂载
+      // 单实例挂载，这里的配置，单例函数自己覆盖
       this.appOrAgent.addSingleton(this.pluginName, this.createEggPluginInstance)
       const instance = this.appOrAgent[this.pluginName] as T
       console.log('单实例挂载', this.pluginName)
@@ -114,8 +115,16 @@ export class EggPluginBoot<T> {
       const instances = {} as Record<string, any>
       const instanceNames = Object.keys(clients)
       console.log('多实例挂载', instanceNames)
+
       instanceNames.forEach((name) => {
-        instances[name] = this.createEggPluginInstance(clients[name], this.appOrAgent)
+        // 覆盖默认值
+        const instanceConfig = {
+          // 多实例加载时，补一个实例名，用于配置、实例获取
+          instanceName: name,
+          ...defaultConfig,
+          ...clients[name],
+        }
+        instances[name] = this.createEggPluginInstance(instanceConfig, this.appOrAgent)
       })
 
       // 挂载实例管理器，但使用不同的方法名来避免冲突

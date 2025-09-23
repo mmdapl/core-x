@@ -23,23 +23,21 @@ export const axiosSimpleConfig = {
 
 export const axiosMultipleConfig = {
   clients: {
-    axios1: {
+    example1: {
       headers: {
         common: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       },
       timeout: 7000,
-      instanceName: 'axios1',
     },
-    axios2: {
+    example2: {
       headers: {
         common: {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       },
       timeout: 8000,
-      instanceName: 'axios2',
     },
   },
 }

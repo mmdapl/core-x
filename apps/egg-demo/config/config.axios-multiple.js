@@ -1,26 +1,24 @@
 /**
- * 插件的多实例配置，覆盖单实例
+ * 加载@142vip/egg-axios 多实例
  */
 module.exports = {
   axios: {
     clients: {
-      axios1: {
+      example1: {
         headers: {
           common: {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         },
         timeout: 7000,
-        instanceName: 'axios1',
       },
-      axios2: {
+      example2: {
         headers: {
           common: {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         },
         timeout: 8000,
-        instanceName: 'axios2',
       },
     },
   },

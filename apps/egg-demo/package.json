@@ -5,6 +5,14 @@
   "description": "@142vip/egg相关包和插件的使用Demo",
   "scripts": {
     "dev": "egg-bin dev",
+    "dev:axios": "EGG_SERVER_ENV=axios egg-bin dev",
+    "dev:axios-multiple": "EGG_SERVER_ENV=axios-multiple egg-bin dev",
+    "dev:mysql": "EGG_SERVER_ENV=mysql egg-bin dev",
+    "dev:mysql-multiple": "EGG_SERVER_ENV=mysql-multiple egg-bin dev",
+    "dev:grpc-client": "EGG_SERVER_ENV=grpc-client egg-bin dev",
+    "dev:grpc-client-multiple": "EGG_SERVER_ENV=grpc-client-multiple egg-bin dev",
+    "dev:grpc-server": "EGG_SERVER_ENV=grpc-server egg-bin dev",
+    "dev:grpc-server-multiple": "EGG_SERVER_ENV=grpc-server-multiple egg-bin dev",
     "start": "egg-scripts start --daemon --title=egg-demo",
     "stop": "egg-scripts stop --title=egg-server-go",
     "test": "npx jest",
@@ -22,6 +30,8 @@
   "dependencies": {
     "@142vip/egg": "workspace:*",
     "@142vip/egg-axios": "workspace:*",
+    "@142vip/egg-grpc-client": "workspace:*",
+    "@142vip/egg-grpc-server": "workspace:*",
     "@142vip/egg-mysql": "workspace:*"
   },
   "devDependencies": {

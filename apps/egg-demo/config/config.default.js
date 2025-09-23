@@ -10,7 +10,6 @@ module.exports = () => {
   // add your user config here
   const userConfig = {
   }
-
   return {
     ...config,
     ...userConfig,

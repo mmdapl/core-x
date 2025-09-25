@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2025-09-25)
+
+### ✨ Features
+
+- 基于`@142vip/grpc`模块实例化客户端 &nbsp;-&nbsp; by **chufan** [<samp>(93284)</samp>](https://github.com/142vip/core-x/commit/9328469)
+- 简化插件的默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(3ae42)</samp>](https://github.com/142vip/core-x/commit/3ae422c)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg-grpc-client)**
+
 ## v0.0.1-alpha.2 (2025-01-20)
 
 ### ✨ Features

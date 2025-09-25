@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.15 (2025-09-25)
+
+### ✨ Features
+
+- 使用`vipConfig`读取配置，补充单元测试 &nbsp;-&nbsp; by **chufan** [<samp>(e1f80)</samp>](https://github.com/142vip/core-x/commit/e1f8041)
+
+**Release New Version v0.0.1-alpha.15 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/release-version)**
+
 ## v0.0.1-alpha.14 (2025-09-10)
 
 ### ✨ Features

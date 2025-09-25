@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.4 (2025-09-25)
+
+### 🐛 Bug Fixes
+
+- 修复插件多实例加载时，注册逻辑异常 &nbsp;-&nbsp; by **chufan** [<samp>(2e2c5)</samp>](https://github.com/142vip/core-x/commit/2e2c564)
+- 增加grpc上层父类，补充example演示函数 &nbsp;-&nbsp; by **chufan** [<samp>(55f09)</samp>](https://github.com/142vip/core-x/commit/55f095b)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg)**
+
 ## v0.0.1-alpha.3 (2025-09-10)
 
 ### ✨ Features

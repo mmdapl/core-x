@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.4 (2025-09-25)
+
+### ✨ Features
+
+- 增加插件单元测试，验证grpc等插件的多实例挂载 &nbsp;-&nbsp; by **chufan** [<samp>(4a39d)</samp>](https://github.com/142vip/core-x/commit/4a39d92)
+
+### 🐛 Bug Fixes
+
+- 修复单元测试异常，简化`egg-axios`插件加载流程 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/654 [<samp>(df91a)</samp>](https://github.com/142vip/core-x/commit/df91aca)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/egg-demo)**
+
 ## v0.0.1-alpha.3 (2025-09-10)
 
 ### ✨ Features

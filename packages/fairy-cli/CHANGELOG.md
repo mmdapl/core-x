@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## v0.0.3-alpha.28 (2025-09-27)
+
+### ✨ Features
+
+- 补充单元测试配置和用例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/662 [<samp>(9210b)</samp>](https://github.com/142vip/core-x/commit/9210b04)
+- 使用`vipAxios`替换`node-fetch`模块发送http请求 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/661 [<samp>(5c0c8)</samp>](https://github.com/142vip/core-x/commit/5c0c810)
+
+**Release New Version v0.0.3-alpha.28 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.27 (2025-09-10)
 
 **No Significant Changes**

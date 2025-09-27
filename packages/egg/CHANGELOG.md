@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.5 (2025-09-27)
+
+### ✨ Features
+
+- 集成`mysql2`模块，封装`VipMySQLPool`连接池父类 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/664 [<samp>(78ebe)</samp>](https://github.com/142vip/core-x/commit/78ebe62)
+
+**Release New Version v0.0.1-alpha.5 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg)**
+
 ## v0.0.1-alpha.4 (2025-09-25)
 
 ### 🐛 Bug Fixes

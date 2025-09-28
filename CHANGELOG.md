@@ -2,6 +2,112 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.34 (2025-09-28)
+
+### ✨ Features
+
+- 优化更新记录页面的左侧导航配置，对demo、npm包进行区分 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/668 [<samp>(7cfc2)</samp>](https://github.com/142vip/core-x/commit/7cfc2fa)
+- **@142vip/changelog**:
+  - 使用`vipConfig`方法，同步读取配置， &nbsp;-&nbsp; by **chufan** [<samp>(5228b)</samp>](https://github.com/142vip/core-x/commit/5228b58)
+- **@142vip/data-source**:
+  - 支持MongoDB数据源，补充单元测试和文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/633 [<samp>(cc834)</samp>](https://github.com/142vip/core-x/commit/cc8345a)
+- **@142vip/egg**:
+  - 集成`mysql2`模块，封装`VipMySQLPool`连接池父类 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/664 [<samp>(78ebe)</samp>](https://github.com/142vip/core-x/commit/78ebe62)
+- **@142vip/egg-grpc-client**:
+  - 基于`@142vip/grpc`模块实例化客户端 &nbsp;-&nbsp; by **chufan** [<samp>(93284)</samp>](https://github.com/142vip/core-x/commit/9328469)
+  - 简化插件的默认配置 &nbsp;-&nbsp; by **chufan** [<samp>(3ae42)</samp>](https://github.com/142vip/core-x/commit/3ae422c)
+- **@142vip/egg-grpc-server**:
+  - 优化实例初始化逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(3d227)</samp>](https://github.com/142vip/core-x/commit/3d227e5)
+  - 支持`egg`框架下，`grpc`服务端的注册、使用 &nbsp;-&nbsp; by **chufan** [<samp>(492e6)</samp>](https://github.com/142vip/core-x/commit/492e65b)
+  - 优化服务端加载逻辑，rpc实现类挂载到`ctx`对象上 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/659 [<samp>(ab3f1)</samp>](https://github.com/142vip/core-x/commit/ab3f166)
+  - 限制插件只在`agent.js`上挂载`grpcServer`对象 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/663 [<samp>(a995b)</samp>](https://github.com/142vip/core-x/commit/a995b3a)
+- **@142vip/egg-mysql**:
+  - 基于`VipMyQLPool`类初始化插件，建立连接 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/665 [<samp>(e3266)</samp>](https://github.com/142vip/core-x/commit/e3266f1)
+- **@142vip/fairy-cli**:
+  - 补充单元测试配置和用例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/662 [<samp>(9210b)</samp>](https://github.com/142vip/core-x/commit/9210b04)
+  - 使用`vipAxios`替换`node-fetch`模块发送http请求 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/661 [<samp>(5c0c8)</samp>](https://github.com/142vip/core-x/commit/5c0c810)
+- **@142vip/grpc**:
+  - 客户端、服务端声明式注册，支持健康检查等功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/642 [<samp>(6330c)</samp>](https://github.com/142vip/core-x/commit/6330cca)
+  - 重写`grpc`核心逻辑，支持`example`演示代码 &nbsp;-&nbsp; by **chufan** [<samp>(d6e29)</samp>](https://github.com/142vip/core-x/commit/d6e29c7)
+- **@142vip/release-version**:
+  - 使用`vipConfig`读取配置，补充单元测试 &nbsp;-&nbsp; by **chufan** [<samp>(e1f80)</samp>](https://github.com/142vip/core-x/commit/e1f8041)
+- **@142vip/utils**:
+  - 增加`lodash`的`upperFirst`方法 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/643 [<samp>(6bdb1)</samp>](https://github.com/142vip/core-x/commit/6bdb135)
+  - 重写方法，彻底解决`detect-*`等模块在cjs语法下的冲突 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/644 [<samp>(65f6d)</samp>](https://github.com/142vip/core-x/commit/65f6d8a)
+  - 重写VipConfig，使用`cosmiconfig`替换`c12`模块，处理`c12`模块对cjs语法不支持 &nbsp;-&nbsp; by **chufan** [<samp>(dcece)</samp>](https://github.com/142vip/core-x/commit/dcece3d)
+  - 拓展`vipLodash`工具导出，支持更多方法，简化配置合并逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/648 [<samp>(4ac27)</samp>](https://github.com/142vip/core-x/commit/4ac27f9)
+  - 新增`vipDetect`，支持`port`、`newline`等检测 &nbsp;-&nbsp; by **chufan** [<samp>(b81ed)</samp>](https://github.com/142vip/core-x/commit/b81ed15)
+- **@142vip/vitepress**:
+  - 默认支持`ignoreDeadLinks`配置不校验本地死链接 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/639 [<samp>(b4e53)</samp>](https://github.com/142vip/core-x/commit/b4e53fd)
+- **egg-demo**:
+  - 增加插件单元测试，验证grpc等插件的多实例挂载 &nbsp;-&nbsp; by **chufan** [<samp>(4a39d)</samp>](https://github.com/142vip/core-x/commit/4a39d92)
+  - 调整grpc实现类目录结构，基于Service父类实现 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/658 [<samp>(67498)</samp>](https://github.com/142vip/core-x/commit/6749870)
+  - 补充grpc相关测试代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/666 [<samp>(17eb2)</samp>](https://github.com/142vip/core-x/commit/17eb21b)
+  - 补充@142vip/egg-mysql插件单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/667 [<samp>(138a9)</samp>](https://github.com/142vip/core-x/commit/138a9a5)
+
+### 🐛 Bug Fixes
+
+- 修复本地文档死链接导致构建异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/638 [<samp>(93d28)</samp>](https://github.com/142vip/core-x/commit/93d28be)
+- **@142vip/egg**:
+  - 修复插件多实例加载时，注册逻辑异常 &nbsp;-&nbsp; by **chufan** [<samp>(2e2c5)</samp>](https://github.com/142vip/core-x/commit/2e2c564)
+  - 增加grpc上层父类，补充example演示函数 &nbsp;-&nbsp; by **chufan** [<samp>(55f09)</samp>](https://github.com/142vip/core-x/commit/55f095b)
+- **@142vip/eslint-config**:
+  - Update dependency eslint to v9.35.0 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/647 [<samp>(6c874)</samp>](https://github.com/142vip/core-x/commit/6c87411)
+- **@142vip/grpc**:
+  - 修复单元测试异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/655 [<samp>(22694)</samp>](https://github.com/142vip/core-x/commit/22694a8)
+- **deps**:
+  - Update dependency turbo to v2.5.6 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/628 [<samp>(9fb0e)</samp>](https://github.com/142vip/core-x/commit/9fb0ea2)
+  - Update dependency egg to v3.31.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/627 [<samp>(b5024)</samp>](https://github.com/142vip/core-x/commit/b502468)
+  - Update dependency axios to v1.11.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/626 [<samp>(ea814)</samp>](https://github.com/142vip/core-x/commit/ea8145d)
+  - Update dependency @antfu/eslint-config to v4.19.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/640 [<samp>(e98d7)</samp>](https://github.com/142vip/core-x/commit/e98d724)
+  - Update dependency @grpc/proto-loader to v0.8.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/650 [<samp>(1f812)</samp>](https://github.com/142vip/core-x/commit/1f81252)
+  - Update dependency docx to v9.5.1 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/651 [<samp>(d9e91)</samp>](https://github.com/142vip/core-x/commit/d9e91d7)
+  - Update dependency @grpc/grpc-js to v1.14.0 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/649 [<samp>(d61fa)</samp>](https://github.com/142vip/core-x/commit/d61fad4)
+- **egg-demo**:
+  - 修复单元测试异常，简化`egg-axios`插件加载流程 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/654 [<samp>(df91a)</samp>](https://github.com/142vip/core-x/commit/df91aca)
+
+### 📖 Documentation
+
+- Update README &nbsp;-&nbsp; by **chufan** [<samp>(f55aa)</samp>](https://github.com/142vip/core-x/commit/f55aa6f)
+- **@142vip/egg-grpc-server**:
+  - 更新文档，补充插件最佳实践代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/660 [<samp>(5f35f)</samp>](https://github.com/142vip/core-x/commit/5f35f20)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.22` &nbsp;-&nbsp; by **chufan** [<samp>(75334)</samp>](https://github.com/142vip/core-x/commit/7533447)
+- **@142vip/data-source**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(714a6)</samp>](https://github.com/142vip/core-x/commit/714a633)
+- **@142vip/egg**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(cdef6)</samp>](https://github.com/142vip/core-x/commit/cdef66f)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(cddcc)</samp>](https://github.com/142vip/core-x/commit/cddccf8)
+- **@142vip/egg-grpc-client**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(569ff)</samp>](https://github.com/142vip/core-x/commit/569ff66)
+- **@142vip/egg-grpc-server**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(bdd04)</samp>](https://github.com/142vip/core-x/commit/bdd04fa)
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(155c5)</samp>](https://github.com/142vip/core-x/commit/155c5cf)
+- **@142vip/egg-mysql**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(6eee6)</samp>](https://github.com/142vip/core-x/commit/6eee6e1)
+- **@142vip/eslint-config**:
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(8feab)</samp>](https://github.com/142vip/core-x/commit/8feab70)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.28` &nbsp;-&nbsp; by **chufan** [<samp>(c3823)</samp>](https://github.com/142vip/core-x/commit/c38237b)
+- **@142vip/grpc**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(dc778)</samp>](https://github.com/142vip/core-x/commit/dc778ec)
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(17fc5)</samp>](https://github.com/142vip/core-x/commit/17fc5ac)
+- **@142vip/release-version**:
+  - Publish `v0.0.1-alpha.15` &nbsp;-&nbsp; by **chufan** [<samp>(28a82)</samp>](https://github.com/142vip/core-x/commit/28a8232)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.40` &nbsp;-&nbsp; by **chufan** [<samp>(8de32)</samp>](https://github.com/142vip/core-x/commit/8de3231)
+  - Publish `v0.0.1-alpha.41` &nbsp;-&nbsp; by **chufan** [<samp>(35b1f)</samp>](https://github.com/142vip/core-x/commit/35b1f11)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.17` &nbsp;-&nbsp; by **chufan** [<samp>(d3a90)</samp>](https://github.com/142vip/core-x/commit/d3a90a9)
+- **egg-demo**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(78e23)</samp>](https://github.com/142vip/core-x/commit/78e23fd)
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(6fd3b)</samp>](https://github.com/142vip/core-x/commit/6fd3ba0)
+
+**Release New Version v0.0.1-alpha.34 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.33...v0.0.1-alpha.34)**
+
 ## v0.0.1-alpha.33 (2025-09-10)
 
 ### ✨ Features

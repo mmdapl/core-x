@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.5 (2025-09-28)
+
+### ✨ Features
+
+- 调整grpc实现类目录结构，基于Service父类实现 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/658 [<samp>(67498)</samp>](https://github.com/142vip/core-x/commit/6749870)
+- 补充grpc相关测试代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/666 [<samp>(17eb2)</samp>](https://github.com/142vip/core-x/commit/17eb21b)
+- 补充@142vip/egg-mysql插件单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/667 [<samp>(138a9)</samp>](https://github.com/142vip/core-x/commit/138a9a5)
+
+**Release New Version v0.0.1-alpha.5 [👉 View New Package On NPM](https://www.npmjs.com/package/egg-demo)**
+
 ## v0.0.1-alpha.4 (2025-09-25)
 
 ### ✨ Features

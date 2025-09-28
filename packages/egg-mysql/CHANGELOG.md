@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.2 (2025-09-28)
+
+### ✨ Features
+
+- 基于`VipMyQLPool`类初始化插件，建立连接 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/665 [<samp>(e3266)</samp>](https://github.com/142vip/core-x/commit/e3266f1)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/egg-mysql)**
+
 ## v0.0.1-alpha.1 (2025-01-06)
 
 ### ✨ Features

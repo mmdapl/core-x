@@ -2,7 +2,7 @@
 
 # 类: VipMysql
 
-定义于: [packages/data-source/src/core/sql/vip-mysql.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/sql/vip-mysql.ts#L13)
+定义于: [packages/data-source/src/core/sql/vip-mysql.ts:13](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/data-source/src/core/sql/vip-mysql.ts#L13)
 
 MySQL 数据源
 
@@ -26,7 +26,7 @@ MySQL 数据源
 
 > **getConnectionData**(`options`): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
 
-定义于: [packages/data-source/src/core/sql/vip-mysql.ts:17](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/core/sql/vip-mysql.ts#L17)
+定义于: [packages/data-source/src/core/sql/vip-mysql.ts:17](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/data-source/src/core/sql/vip-mysql.ts#L17)
 
 获取连接数据
 

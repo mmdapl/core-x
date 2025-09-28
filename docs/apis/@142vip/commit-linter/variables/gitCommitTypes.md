@@ -4,7 +4,7 @@
 
 > `const` **gitCommitTypes**: `object`
 
-定义于: [commit-linter/src/core/git-commit-type.ts:4](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/commit-linter/src/core/git-commit-type.ts#L4)
+定义于: [commit-linter/src/core/git-commit-type.ts:4](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/commit-linter/src/core/git-commit-type.ts#L4)
 
 git commit type
 
@@ -16,15 +16,15 @@ git commit type
 
 #### build.description
 
-> **build.description**: `string` = `'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)'`
+> **description**: `string` = `'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)'`
 
 #### build.emoji
 
-> **build.emoji**: `string` = `'🛠'`
+> **emoji**: `string` = `'🛠'`
 
 #### build.title
 
-> **build.title**: `string` = `'Builds'`
+> **title**: `string` = `'Builds'`
 
 ### chore
 
@@ -32,15 +32,15 @@ git commit type
 
 #### chore.description
 
-> **chore.description**: `string` = `'Other changes that don\'t modify src or test files'`
+> **description**: `string` = `'Other changes that don\'t modify src or test files'`
 
 #### chore.emoji
 
-> **chore.emoji**: `string` = `'♻️'`
+> **emoji**: `string` = `'♻️'`
 
 #### chore.title
 
-> **chore.title**: `string` = `'Chores'`
+> **title**: `string` = `'Chores'`
 
 ### ci
 
@@ -48,15 +48,15 @@ git commit type
 
 #### ci.description
 
-> **ci.description**: `string` = `'Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)'`
+> **description**: `string` = `'Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)'`
 
 #### ci.emoji
 
-> **ci.emoji**: `string` = `'⚙️'`
+> **emoji**: `string` = `'⚙️'`
 
 #### ci.title
 
-> **ci.title**: `string` = `'Continuous Integrations'`
+> **title**: `string` = `'Continuous Integrations'`
 
 ### docs
 
@@ -64,15 +64,15 @@ git commit type
 
 #### docs.description
 
-> **docs.description**: `string` = `'Documentation only changes'`
+> **description**: `string` = `'Documentation only changes'`
 
 #### docs.emoji
 
-> **docs.emoji**: `string` = `'📚'`
+> **emoji**: `string` = `'📚'`
 
 #### docs.title
 
-> **docs.title**: `string` = `'Documentation'`
+> **title**: `string` = `'Documentation'`
 
 ### feat
 
@@ -80,15 +80,15 @@ git commit type
 
 #### feat.description
 
-> **feat.description**: `string` = `'A new feature'`
+> **description**: `string` = `'A new feature'`
 
 #### feat.emoji
 
-> **feat.emoji**: `string` = `'✨'`
+> **emoji**: `string` = `'✨'`
 
 #### feat.title
 
-> **feat.title**: `string` = `'Features'`
+> **title**: `string` = `'Features'`
 
 ### fix
 
@@ -96,15 +96,15 @@ git commit type
 
 #### fix.description
 
-> **fix.description**: `string` = `'A bug fix,A bug fix A bug fix'`
+> **description**: `string` = `'A bug fix,A bug fix A bug fix'`
 
 #### fix.emoji
 
-> **fix.emoji**: `string` = `'🐛'`
+> **emoji**: `string` = `'🐛'`
 
 #### fix.title
 
-> **fix.title**: `string` = `'Bug Fixes'`
+> **title**: `string` = `'Bug Fixes'`
 
 ### hotfix
 
@@ -112,15 +112,15 @@ git commit type
 
 #### hotfix.description
 
-> **hotfix.description**: `string` = `'Hotfix'`
+> **description**: `string` = `'Hotfix'`
 
 #### hotfix.emoji
 
-> **hotfix.emoji**: `string` = `'🔥'`
+> **emoji**: `string` = `'🔥'`
 
 #### hotfix.title
 
-> **hotfix.title**: `string` = `'Hotfix'`
+> **title**: `string` = `'Hotfix'`
 
 ### perf
 
@@ -128,15 +128,15 @@ git commit type
 
 #### perf.description
 
-> **perf.description**: `string` = `'A code change that improves performance'`
+> **description**: `string` = `'A code change that improves performance'`
 
 #### perf.emoji
 
-> **perf.emoji**: `string` = `'🚀'`
+> **emoji**: `string` = `'🚀'`
 
 #### perf.title
 
-> **perf.title**: `string` = `'Performance Improvements'`
+> **title**: `string` = `'Performance Improvements'`
 
 ### refactor
 
@@ -144,15 +144,15 @@ git commit type
 
 #### refactor.description
 
-> **refactor.description**: `string` = `'A code change that neither fixes a bug nor adds a feature'`
+> **description**: `string` = `'A code change that neither fixes a bug nor adds a feature'`
 
 #### refactor.emoji
 
-> **refactor.emoji**: `string` = `'📦'`
+> **emoji**: `string` = `'📦'`
 
 #### refactor.title
 
-> **refactor.title**: `string` = `'Code Refactoring'`
+> **title**: `string` = `'Code Refactoring'`
 
 ### release
 
@@ -160,15 +160,15 @@ git commit type
 
 #### release.description
 
-> **release.description**: `string` = `'Release a new version'`
+> **description**: `string` = `'Release a new version'`
 
 #### release.emoji
 
-> **release.emoji**: `string` = `'🎉'`
+> **emoji**: `string` = `'🎉'`
 
 #### release.title
 
-> **release.title**: `string` = `'Releases'`
+> **title**: `string` = `'Releases'`
 
 ### revert
 
@@ -176,15 +176,15 @@ git commit type
 
 #### revert.description
 
-> **revert.description**: `string` = `'Reverts a previous commit'`
+> **description**: `string` = `'Reverts a previous commit'`
 
 #### revert.emoji
 
-> **revert.emoji**: `string` = `'🗑'`
+> **emoji**: `string` = `'🗑'`
 
 #### revert.title
 
-> **revert.title**: `string` = `'Reverts'`
+> **title**: `string` = `'Reverts'`
 
 ### style
 
@@ -192,15 +192,15 @@ git commit type
 
 #### style.description
 
-> **style.description**: `string` = `'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'`
+> **description**: `string` = `'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'`
 
 #### style.emoji
 
-> **style.emoji**: `string` = `'💎'`
+> **emoji**: `string` = `'💎'`
 
 #### style.title
 
-> **style.title**: `string` = `'Styles'`
+> **title**: `string` = `'Styles'`
 
 ### test
 
@@ -208,12 +208,12 @@ git commit type
 
 #### test.description
 
-> **test.description**: `string` = `'Adding missing tests or correcting existing tests'`
+> **description**: `string` = `'Adding missing tests or correcting existing tests'`
 
 #### test.emoji
 
-> **test.emoji**: `string` = `'🚨'`
+> **emoji**: `string` = `'🚨'`
 
 #### test.title
 
-> **test.title**: `string` = `'Tests'`
+> **title**: `string` = `'Tests'`

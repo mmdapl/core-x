@@ -4,7 +4,7 @@
 
 > **createVipAxios**(`config?`): [`VipAxiosInstance`](../interfaces/VipAxiosInstance.md)
 
-定义于: [packages/axios/src/core/axios.factory.ts:63](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L63)
+定义于: [packages/axios/src/core/axios.factory.ts:63](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L63)
 
 按照配置创建vipAxios的实例
 

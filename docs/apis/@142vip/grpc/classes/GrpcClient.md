@@ -2,51 +2,17 @@
 
 # 类: GrpcClient
 
-定义于: [grpc-client.ts:8](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L8)
+定义于: [core/grpc-client.ts:11](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L11)
 
-## theme_extends
-
-- `Singleton`\<`GrpcClient`\>
+Grpc 客户端
 
 ## 构造函数
 
 ### 构造函数
 
-> **new GrpcClient**(): `GrpcClient`
+> **new GrpcClient**(`connectUri`): `GrpcClient`
 
-定义于: [grpc-client.ts:10](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L10)
-
-#### 返回
-
-`GrpcClient`
-
-#### 重写了
-
-`Singleton<GrpcClient>.constructor`
-
-## 方法
-
-### close()
-
-> **close**(): `void`
-
-定义于: [grpc-client.ts:47](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L47)
-
-关闭gRPC连接
-
-#### 返回
-
-`void`
-
-***
-
-### connect()
-
-> **connect**(`connectUri`, `serviceClaDefinitions`): `void`
-
-定义于: [grpc-client.ts:18](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L18)
-
-建立连接
+定义于: [core/grpc-client.ts:15](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L15)
 
 #### 参数
 
@@ -54,35 +20,31 @@
 
 `string`
 
-##### serviceClaDefinitions
+#### 返回
 
-[`ServiceClaDefinition`](../interfaces/ServiceClaDefinition.md)[]
+`GrpcClient`
+
+## 方法
+
+### getConnectUri()
+
+> **getConnectUri**(): `string`
+
+定义于: [core/grpc-client.ts:58](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L58)
+
+获取连接地址
 
 #### 返回
 
-`void`
-
-***
-
-### getConnectSize()
-
-> **getConnectSize**(): `number`
-
-定义于: [grpc-client.ts:40](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L40)
-
-获取连接数
-
-#### 返回
-
-`number`
+`string`
 
 ***
 
 ### getService()
 
-> **getService**\<`T`\>(`serviceName`): `T`
+> **getService**\<`T`\>(`servicePath`): `T`
 
-定义于: [grpc-client.ts:29](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-client.ts#L29)
+定义于: [core/grpc-client.ts:36](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L36)
 
 获取连接Service
 
@@ -94,7 +56,7 @@
 
 #### 参数
 
-##### serviceName
+##### servicePath
 
 `string`
 
@@ -104,32 +66,73 @@
 
 ***
 
-### getInstance()
+### getServicePaths()
 
-> `static` **getInstance**\<`T`\>(`this`, ...`args`): `T`
+> **getServicePaths**(): `string`[]
 
-定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/singleton.ts#L13)
+定义于: [core/grpc-client.ts:65](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L65)
 
-#### 类型参数
-
-##### T
-
-`T`
-
-#### 参数
-
-##### this
-
-(...`args`) => `T`
-
-##### args
-
-...`any`[]
+获取所有的服务路径
 
 #### 返回
 
-`T`
+`string`[]
 
-#### 继承自
+***
 
-`Singleton.getInstance`
+### getServiceSize()
+
+> **getServiceSize**(): `number`
+
+定义于: [core/grpc-client.ts:72](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L72)
+
+获取连接数
+
+#### 返回
+
+`number`
+
+***
+
+### registerService()
+
+> **registerService**(`servicePath`, `IServiceClientConstructor`): `void`
+
+定义于: [core/grpc-client.ts:24](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L24)
+
+建立连接
+
+#### 参数
+
+##### servicePath
+
+`string`
+
+##### IServiceClientConstructor
+
+`ServiceClientConstructor`
+
+#### 返回
+
+`void`
+
+***
+
+### removeService()
+
+> **removeService**(`servicePath?`): `void`
+
+定义于: [core/grpc-client.ts:80](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-client.ts#L80)
+
+关闭gRPC连接
+- 异步关闭
+
+#### 参数
+
+##### servicePath?
+
+`string`
+
+#### 返回
+
+`void`

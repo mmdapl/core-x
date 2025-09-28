@@ -4,7 +4,7 @@
 
 > `const` **ChangelogDefaultConfig**: `object`
 
-定义于: [changelog/src/shared/config.ts:21](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/shared/config.ts#L21)
+定义于: [changelog/src/shared/config.ts:21](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/changelog/src/shared/config.ts#L21)
 
 默认配置
 
@@ -52,7 +52,7 @@
 
 #### titles.breakingChanges
 
-> **titles.breakingChanges**: `string` = `'🚨 Breaking Changes'`
+> **breakingChanges**: `string` = `'🚨 Breaking Changes'`
 
 ### types
 
@@ -60,96 +60,96 @@
 
 #### types.build
 
-> **types.build**: `object`
+> **build**: `object`
 
 #### types.build.semver
 
-> **types.build.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.build.title
 
-> **types.build.title**: `string` = `'📦 Build'`
+> **title**: `string` = `'📦 Build'`
 
 #### types.docs
 
-> **types.docs**: `object`
+> **docs**: `object`
 
 #### types.docs.semver
 
-> **types.docs.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.docs.title
 
-> **types.docs.title**: `string` = `'📖 Documentation'`
+> **title**: `string` = `'📖 Documentation'`
 
 #### types.feat
 
-> **types.feat**: `object`
+> **feat**: `object`
 
 #### types.feat.semver
 
-> **types.feat.semver**: `string` = `'minor'`
+> **semver**: `string` = `'minor'`
 
 #### types.feat.title
 
-> **types.feat.title**: `string` = `'✨ Features'`
+> **title**: `string` = `'✨ Features'`
 
 #### types.fix
 
-> **types.fix**: `object`
+> **fix**: `object`
 
 #### types.fix.semver
 
-> **types.fix.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.fix.title
 
-> **types.fix.title**: `string` = `'🐛 Bug Fixes'`
+> **title**: `string` = `'🐛 Bug Fixes'`
 
 #### types.perf
 
-> **types.perf**: `object`
+> **perf**: `object`
 
 #### types.perf.semver
 
-> **types.perf.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.perf.title
 
-> **types.perf.title**: `string` = `'🔥 Performance'`
+> **title**: `string` = `'🔥 Performance'`
 
 #### types.refactor
 
-> **types.refactor**: `object`
+> **refactor**: `object`
 
 #### types.refactor.semver
 
-> **types.refactor.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.refactor.title
 
-> **types.refactor.title**: `string` = `'💅 Refactors'`
+> **title**: `string` = `'💅 Refactors'`
 
 #### types.release
 
-> **types.release**: `object`
+> **release**: `object`
 
 #### types.release.semver
 
-> **types.release.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.release.title
 
-> **types.release.title**: `string` = `'😏 Release Packages'`
+> **title**: `string` = `'😏 Release Packages'`
 
 #### types.types
 
-> **types.types**: `object`
+> **types**: `object`
 
 #### types.types.semver
 
-> **types.types.semver**: `string` = `'patch'`
+> **semver**: `string` = `'patch'`
 
 #### types.types.title
 
-> **types.types.title**: `string` = `'🌊 Types'`
+> **title**: `string` = `'🌊 Types'`

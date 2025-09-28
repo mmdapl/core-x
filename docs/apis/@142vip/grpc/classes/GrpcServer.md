@@ -2,11 +2,9 @@
 
 # 类: GrpcServer
 
-定义于: [grpc-server.ts:5](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-server.ts#L5)
+定义于: [core/grpc-server.ts:29](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L29)
 
-## theme_extends
-
-- `Singleton`\<`GrpcServer`\>
+Grpc 服务端
 
 ## 构造函数
 
@@ -14,35 +12,21 @@
 
 > **new GrpcServer**(): `GrpcServer`
 
-定义于: [grpc-server.ts:7](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-server.ts#L7)
+定义于: [core/grpc-server.ts:44](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L44)
 
 #### 返回
 
 `GrpcServer`
 
-#### 重写了
-
-`Singleton<GrpcServer>.constructor`
-
 ## 方法
 
-### addService()
+### forceShutdown()
 
-> **addService**(`service`, `implementation`): `void`
+> **forceShutdown**(): `void`
 
-定义于: [grpc-server.ts:15](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-server.ts#L15)
+定义于: [core/grpc-server.ts:108](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L108)
 
-添加服务
-
-#### 参数
-
-##### service
-
-`ServiceDefinition`
-
-##### implementation
-
-`UntypedServiceImplementation`
+强制关闭连接
 
 #### 返回
 
@@ -50,11 +34,37 @@
 
 ***
 
+### getConnectInfo()
+
+> **getConnectInfo**(): [`GrpcConnectInfo`](../interfaces/GrpcConnectInfo.md)[]
+
+定义于: [core/grpc-server.ts:101](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L101)
+
+#### 返回
+
+[`GrpcConnectInfo`](../interfaces/GrpcConnectInfo.md)[]
+
+***
+
+### getConnectUris()
+
+> **getConnectUris**(): `string`[]
+
+定义于: [core/grpc-server.ts:97](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L97)
+
+获取连接地址
+
+#### 返回
+
+`string`[]
+
+***
+
 ### listen()
 
 > **listen**(`connectUri`): `Promise`\<`number`\>
 
-定义于: [grpc-server.ts:31](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-server.ts#L31)
+定义于: [core/grpc-server.ts:52](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L52)
 
 监听端口，即启动
 
@@ -70,19 +80,23 @@
 
 ***
 
-### removeService()
+### registerService()
 
-> **removeService**(`service`): `void`
+> **registerService**(`serviceDef`, `methodHandlers`): `void`
 
-定义于: [grpc-server.ts:23](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/grpc-server.ts#L23)
+定义于: [core/grpc-server.ts:88](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L88)
 
-移除服务
+添加服务
 
 #### 参数
 
-##### service
+##### serviceDef
 
 `ServiceDefinition`
+
+##### methodHandlers
+
+[`UntypedMethodImplementation`](../interfaces/UntypedMethodImplementation.md)
 
 #### 返回
 
@@ -90,32 +104,24 @@
 
 ***
 
-### getInstance()
+### setHealthStatus()
 
-> `static` **getInstance**\<`T`\>(`this`, ...`args`): `T`
+> **setHealthStatus**(`methodName`, `status`): `void`
 
-定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/singleton.ts#L13)
+定义于: [core/grpc-server.ts:75](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/grpc-server.ts#L75)
 
-#### 类型参数
-
-##### T
-
-`T`
+设置某个方法的健康状况
 
 #### 参数
 
-##### this
+##### methodName
 
-(...`args`) => `T`
+`string`
 
-##### args
+##### status
 
-...`any`[]
+`GrpcHealthStatus`
 
 #### 返回
 
-`T`
-
-#### 继承自
-
-`Singleton.getInstance`
+`void`

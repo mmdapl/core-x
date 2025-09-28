@@ -4,7 +4,7 @@
 
 > `const` **VipExecutor**: `object`
 
-定义于: [packages/utils/src/core/exec.ts:221](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/core/exec.ts#L221)
+定义于: [packages/utils/src/core/exec.ts:221](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/utils/src/core/exec.ts#L221)
 
 执行器
 
@@ -42,7 +42,7 @@
 
 ##### opts?
 
-`Omit`\<`SpawnOptionsWithoutStdio`, `"cwd"` \| `"stdio"`\>
+`Omit`\<`SpawnOptionsWithoutStdio`, `"stdio"` \| `"cwd"`\>
 
 #### 返回
 

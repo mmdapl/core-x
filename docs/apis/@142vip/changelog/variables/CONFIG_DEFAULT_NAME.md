@@ -4,6 +4,6 @@
 
 > `const` **CONFIG\_DEFAULT\_NAME**: `string`
 
-定义于: [changelog/src/shared/config.ts:7](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/changelog/src/shared/config.ts#L7)
+定义于: [changelog/src/shared/config.ts:7](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/changelog/src/shared/config.ts#L7)
 
 changelog默认的名称配置

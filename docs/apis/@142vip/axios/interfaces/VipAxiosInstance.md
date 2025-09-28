@@ -2,7 +2,7 @@
 
 # 接口: VipAxiosInstance()
 
-定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L11)
+定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L11)
 
 VipAxios实例类型
 - 继承自AxiosInstance，添加了自定义方法
@@ -17,7 +17,7 @@ VipAxios实例类型
 
 > **VipAxiosInstance**\<`T`, `R`, `D`\>(`config`): `Promise`\<`R`\>
 
-定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L11)
+定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L11)
 
 VipAxios实例类型
 - 继承自AxiosInstance，添加了自定义方法
@@ -52,7 +52,7 @@ VipAxios实例类型
 
 > **VipAxiosInstance**\<`T`, `R`, `D`\>(`url`, `config?`): `Promise`\<`R`\>
 
-定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L11)
+定义于: [packages/axios/src/core/axios.factory.ts:11](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L11)
 
 VipAxios实例类型
 - 继承自AxiosInstance，添加了自定义方法
@@ -93,7 +93,7 @@ VipAxios实例类型
 
 > **clearInterceptor**: (`type`) => `void`
 
-定义于: [packages/axios/src/core/axios.factory.ts:12](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L12)
+定义于: [packages/axios/src/core/axios.factory.ts:12](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L12)
 
 #### 参数
 
@@ -111,7 +111,7 @@ VipAxios实例类型
 
 > **defaults**: `Omit`\<`AxiosDefaults`\<`any`\>, `"headers"`\> & `object`
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:515
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:518
 
 #### 类型声明
 
@@ -129,7 +129,7 @@ VipAxios实例类型
 
 > **getConfig**: () => `undefined` \| `CreateAxiosDefaults`\<`any`\>
 
-定义于: [packages/axios/src/core/axios.factory.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/axios/src/core/axios.factory.ts#L13)
+定义于: [packages/axios/src/core/axios.factory.ts:13](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/axios/src/core/axios.factory.ts#L13)
 
 #### 返回
 
@@ -141,7 +141,7 @@ VipAxios实例类型
 
 > **interceptors**: `object`
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:493
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:495
 
 #### request
 
@@ -157,11 +157,33 @@ VipAxios实例类型
 
 ## 方法
 
+### create()
+
+> **create**(`config?`): `AxiosInstance`
+
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:517
+
+#### 参数
+
+##### config?
+
+`CreateAxiosDefaults`\<`any`\>
+
+#### 返回
+
+`AxiosInstance`
+
+#### 继承自
+
+`AxiosInstance.create`
+
+***
+
 ### delete()
 
 > **delete**\<`T`, `R`, `D`\>(`url`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:500
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:502
 
 #### 类型参数
 
@@ -201,7 +223,7 @@ VipAxios实例类型
 
 > **get**\<`T`, `R`, `D`\>(`url`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:499
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:501
 
 #### 类型参数
 
@@ -241,7 +263,7 @@ VipAxios实例类型
 
 > **getUri**(`config?`): `string`
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:497
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:499
 
 #### 参数
 
@@ -263,7 +285,7 @@ VipAxios实例类型
 
 > **head**\<`T`, `R`, `D`\>(`url`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:501
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:503
 
 #### 类型参数
 
@@ -303,7 +325,7 @@ VipAxios实例类型
 
 > **options**\<`T`, `R`, `D`\>(`url`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:502
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:504
 
 #### 类型参数
 
@@ -343,7 +365,7 @@ VipAxios实例类型
 
 > **patch**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:505
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:507
 
 #### 类型参数
 
@@ -387,7 +409,7 @@ VipAxios实例类型
 
 > **patchForm**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:508
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:510
 
 #### 类型参数
 
@@ -431,7 +453,7 @@ VipAxios实例类型
 
 > **post**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:503
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:505
 
 #### 类型参数
 
@@ -475,7 +497,7 @@ VipAxios实例类型
 
 > **postForm**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:506
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:508
 
 #### 类型参数
 
@@ -519,7 +541,7 @@ VipAxios实例类型
 
 > **put**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:504
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:506
 
 #### 类型参数
 
@@ -563,7 +585,7 @@ VipAxios实例类型
 
 > **putForm**\<`T`, `R`, `D`\>(`url`, `data?`, `config?`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:507
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:509
 
 #### 类型参数
 
@@ -607,7 +629,7 @@ VipAxios实例类型
 
 > **request**\<`T`, `R`, `D`\>(`config`): `Promise`\<`R`\>
 
-定义于: node\_modules/.pnpm/axios@1.8.4/node\_modules/axios/index.d.ts:498
+定义于: node\_modules/.pnpm/axios@1.11.0/node\_modules/axios/index.d.ts:500
 
 #### 类型参数
 

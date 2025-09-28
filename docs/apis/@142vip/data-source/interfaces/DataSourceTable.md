@@ -2,7 +2,7 @@
 
 # 接口: DataSourceTable
 
-定义于: [packages/data-source/src/data-source.interface.ts:19](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L19)
+定义于: [packages/data-source/src/data-source.interface.ts:19](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/data-source/src/data-source.interface.ts#L19)
 
 表列表
 
@@ -12,7 +12,7 @@
 
 > **name**: `string`
 
-定义于: [packages/data-source/src/data-source.interface.ts:20](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L20)
+定义于: [packages/data-source/src/data-source.interface.ts:20](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/data-source/src/data-source.interface.ts#L20)
 
 ***
 
@@ -20,4 +20,4 @@
 
 > **schema**: `string`
 
-定义于: [packages/data-source/src/data-source.interface.ts:21](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/data-source/src/data-source.interface.ts#L21)
+定义于: [packages/data-source/src/data-source.interface.ts:21](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/data-source/src/data-source.interface.ts#L21)

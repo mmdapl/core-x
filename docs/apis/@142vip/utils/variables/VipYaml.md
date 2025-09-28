@@ -4,7 +4,7 @@
 
 > `const` **VipYaml**: `object`
 
-定义于: [packages/utils/src/pkgs/yaml.ts:3](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/utils/src/pkgs/yaml.ts#L3)
+定义于: [packages/utils/src/pkgs/yaml.ts:3](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/utils/src/pkgs/yaml.ts#L3)
 
 ## 类型声明
 

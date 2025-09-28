@@ -2,47 +2,139 @@
 
 # 类: ProtoLoader
 
-定义于: [proto-loader.ts:11](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/proto-loader.ts#L11)
+定义于: [core/proto-loader.ts:22](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L22)
 
 proto文件加载器
-
-## theme_extends
-
-- `Singleton`\<`ProtoLoader`\>
 
 ## 构造函数
 
 ### 构造函数
 
-> **new ProtoLoader**(`protoPath`, `loaderOptions`): `ProtoLoader`
+> **new ProtoLoader**(`protoPath`, `loaderOptions?`): `ProtoLoader`
 
-定义于: [proto-loader.ts:17](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/proto-loader.ts#L17)
+定义于: [core/proto-loader.ts:32](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L32)
 
 #### 参数
 
 ##### protoPath
 
-`string`
+`string` | `string`[]
 
-##### loaderOptions
+##### loaderOptions?
 
-`Options`
+`VipProtoLoaderOptions`
 
 #### 返回
 
 `ProtoLoader`
 
-#### 重写了
-
-`Singleton<ProtoLoader>.constructor`
-
 ## 方法
 
-### getPackageName()
+### getClientServiceConstructor()
 
-> **getPackageName**(): `string`
+> **getClientServiceConstructor**(`servicePath`): `ServiceClientConstructor`
 
-定义于: [proto-loader.ts:25](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/proto-loader.ts#L25)
+定义于: [core/proto-loader.ts:112](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L112)
+
+获取client Service类定义，用于客户端
+
+#### 参数
+
+##### servicePath
+
+`string`
+
+#### 返回
+
+`ServiceClientConstructor`
+
+***
+
+### getGrpcServiceDetail()
+
+> **getGrpcServiceDetail**(): `GrpcServiceDetail`[]
+
+定义于: [core/proto-loader.ts:77](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L77)
+
+获取grpc service详细信息
+
+#### 返回
+
+`GrpcServiceDetail`[]
+
+***
+
+### getLoaderOptions()
+
+> **getLoaderOptions**(): `VipProtoLoaderOptions`
+
+定义于: [core/proto-loader.ts:54](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L54)
+
+获取proto loader options
+
+#### 返回
+
+`VipProtoLoaderOptions`
+
+***
+
+### getPackageNames()
+
+> **getPackageNames**(): `string`[]
+
+定义于: [core/proto-loader.ts:40](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L40)
+
+#### 返回
+
+`string`[]
+
+***
+
+### getServerServiceDefinition()
+
+> **getServerServiceDefinition**(`servicePath`): `ServiceDefinition`
+
+定义于: [core/proto-loader.ts:100](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L100)
+
+获取rpc Service类定义
+
+#### 参数
+
+##### servicePath
+
+`string`
+
+#### 返回
+
+`ServiceDefinition`
+
+***
+
+### getServiceDetail()
+
+> **getServiceDetail**(): `GrpcServicePath`[]
+
+定义于: [core/proto-loader.ts:65](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L65)
+
+#### 返回
+
+`GrpcServicePath`[]
+
+***
+
+### getServiceName()
+
+> **getServiceName**(`servicePath`): `string`
+
+定义于: [core/proto-loader.ts:47](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L47)
+
+获取grpc对应的service名称
+
+#### 参数
+
+##### servicePath
+
+`string`
 
 #### 返回
 
@@ -50,46 +142,34 @@ proto文件加载器
 
 ***
 
-### getServiceClassDefinition()
+### getServicePaths()
 
-> **getServiceClassDefinition**(): [`ServiceClaDefinition`](../interfaces/ServiceClaDefinition.md)[]
+> **getServicePaths**(): `string`[]
 
-定义于: [proto-loader.ts:32](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/proto-loader.ts#L32)
+定义于: [core/proto-loader.ts:61](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L61)
 
-获取rpc Service类定义
+获取所有的路径定义
 
 #### 返回
 
-[`ServiceClaDefinition`](../interfaces/ServiceClaDefinition.md)[]
+`string`[]
 
 ***
 
-### getInstance()
+### isProtobufTypeDefinition()
 
-> `static` **getInstance**\<`T`\>(`this`, ...`args`): `T`
+> **isProtobufTypeDefinition**(`obj`): `obj is ProtobufTypeDefinition`
 
-定义于: [singleton.ts:13](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/grpc/src/singleton.ts#L13)
+定义于: [core/proto-loader.ts:123](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/grpc/src/core/proto-loader.ts#L123)
 
-#### 类型参数
-
-##### T
-
-`T`
+判断是否是ProtobufTypeDefinition
 
 #### 参数
 
-##### this
+##### obj
 
-(...`args`) => `T`
-
-##### args
-
-...`any`[]
+`ServiceClientConstructor` | `GrpcObject` | `ProtobufTypeDefinition`
 
 #### 返回
 
-`T`
-
-#### 继承自
-
-`Singleton.getInstance`
+`obj is ProtobufTypeDefinition`

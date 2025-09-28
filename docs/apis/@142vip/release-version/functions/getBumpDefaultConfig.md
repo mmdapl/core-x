@@ -4,7 +4,7 @@
 
 > **getBumpDefaultConfig**(): [`VersionBumpOptions`](../interfaces/VersionBumpOptions.md)
 
-定义于: [utils/config.ts:29](https://github.com/142vip/core-x/blob/d4a5b2e7c860b49a40d6ff85745b241507ccf1fd/packages/release-version/src/utils/config.ts#L29)
+定义于: [utils/config.ts:29](https://github.com/142vip/core-x/blob/7cfc2fa6b24172631d6526590fc6ea4be89357c6/packages/release-version/src/utils/config.ts#L29)
 
 加载bump默认配置
 

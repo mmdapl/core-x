@@ -11,9 +11,10 @@
 ## 类
 
 - [GrpcClient](classes/GrpcClient.md)
+- [GrpcExampleServerManager](classes/GrpcExampleServerManager.md)
 - [GrpcExampleService](classes/GrpcExampleService.md)
+- [GrpcProtoLoader](classes/GrpcProtoLoader.md)
 - [GrpcServer](classes/GrpcServer.md)
-- [ProtoLoader](classes/ProtoLoader.md)
 
 ## 接口
 
@@ -64,3 +65,4 @@
 - [grpcSimpleHandler](functions/grpcSimpleHandler.md)
 - [grpcStreamHandler](functions/grpcStreamHandler.md)
 - [methodNameToUpperFirst](functions/methodNameToUpperFirst.md)
+- [sendGrpcRequest](functions/sendGrpcRequest.md)

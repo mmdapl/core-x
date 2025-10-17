@@ -4,7 +4,7 @@
 
 > `const` **VipSemver**: `object`
 
-定义于: [packages/utils/src/pkgs/semver.ts:101](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/utils/src/pkgs/semver.ts#L101)
+定义于: [packages/utils/src/pkgs/semver.ts:101](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/utils/src/pkgs/semver.ts#L101)
 
 参考：https://www.npmjs.com/package/semver
 

@@ -4,7 +4,7 @@
 
 > **methodNameToUpperFirst**(`methodName`): `string`
 
-定义于: [utils/grpc.util.ts:25](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/grpc/src/utils/grpc.util.ts#L25)
+定义于: [utils/grpc.util.ts:27](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/utils/grpc.util.ts#L27)
 
 将rpc对应的方法名转换为首字母大写
 

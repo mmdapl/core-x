@@ -1,0 +1,100 @@
+[API 参考](../../../index.md) / [@142vip/grpc](../index.md) / GrpcExampleServerManager
+
+# 类: GrpcExampleServerManager
+
+定义于: [example.manager.ts:18](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L18)
+
+基于exampleProto的GRPC服务管理器
+
+## 构造函数
+
+### 构造函数
+
+> **new GrpcExampleServerManager**(): `GrpcExampleServerManager`
+
+定义于: [example.manager.ts:22](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L22)
+
+#### 返回
+
+`GrpcExampleServerManager`
+
+## 方法
+
+### getGrpcServer()
+
+> **getGrpcServer**(): [`GrpcServer`](GrpcServer.md)
+
+定义于: [example.manager.ts:48](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L48)
+
+获取原生的grpcServer服务
+
+#### 返回
+
+[`GrpcServer`](GrpcServer.md)
+
+***
+
+### getServiceClient()
+
+> **getServiceClient**(`connectUri`): `ServiceClient`
+
+定义于: [example.manager.ts:56](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L56)
+
+获取客户端
+
+#### 参数
+
+##### connectUri
+
+[`GrpcConnectURI`](../enumerations/GrpcConnectURI.md)
+
+#### 返回
+
+`ServiceClient`
+
+***
+
+### listen()
+
+> **listen**(`connectUri`): `Promise`\<`void`\>
+
+定义于: [example.manager.ts:40](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L40)
+
+启动GRPC服务，监听端口
+
+#### 参数
+
+##### connectUri
+
+[`GrpcConnectURI`](../enumerations/GrpcConnectURI.md)
+
+#### 返回
+
+`Promise`\<`void`\>
+
+***
+
+### registerService()
+
+> **registerService**(): `void`
+
+定义于: [example.manager.ts:26](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L26)
+
+#### 返回
+
+`void`
+
+***
+
+### shutdown()
+
+> **shutdown**(): `void`
+
+定义于: [example.manager.ts:70](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/example.manager.ts#L70)
+
+关闭GRPC服务
+- 服务端
+
+#### 返回
+
+`void`

@@ -4,7 +4,7 @@
 
 > **grpcStreamHandler**(`methodType`, `methodFunc`): \<`RequestType`, `ResponseType`\>(`call`, `callback`) => `void` \| \<`RequestType`, `ResponseType`\>(`call`) => `Promise`\<`void`\> \| \<`RequestType`, `ResponseType`\>(`call`) => `void`
 
-定义于: [core/grpc.handler.ts:44](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/grpc/src/core/grpc.handler.ts#L44)
+定义于: [core/grpc.handler.ts:45](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/core/grpc.handler.ts#L45)
 
 处理GRPC流式调用，返回流对象
 
@@ -28,7 +28,7 @@
 
 ### RequestType
 
-`RequestType`
+`RequestType` *extends* [`GrpcRequest`](../interfaces/GrpcRequest.md)
 
 ### ResponseType
 
@@ -56,7 +56,7 @@
 
 ### RequestType
 
-`RequestType`
+`RequestType` *extends* [`GrpcRequest`](../interfaces/GrpcRequest.md)
 
 ### ResponseType
 
@@ -80,7 +80,7 @@
 
 ### RequestType
 
-`RequestType`
+`RequestType` *extends* [`GrpcRequest`](../interfaces/GrpcRequest.md)
 
 ### ResponseType
 

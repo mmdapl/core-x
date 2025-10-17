@@ -2,7 +2,7 @@
 
 # 枚举: GrpcConnectURI
 
-定义于: [enum/grpc.interface.ts:22](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/grpc/src/enum/grpc.interface.ts#L22)
+定义于: [enum/grpc.interface.ts:22](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/enum/grpc.interface.ts#L22)
 
 Grpc 连接地址
 
@@ -12,7 +12,7 @@ Grpc 连接地址
 
 > **PORT\_50001**: `"127.0.0.1:50001"`
 
-定义于: [enum/grpc.interface.ts:23](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/grpc/src/enum/grpc.interface.ts#L23)
+定义于: [enum/grpc.interface.ts:23](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/enum/grpc.interface.ts#L23)
 
 ***
 
@@ -20,4 +20,12 @@ Grpc 连接地址
 
 > **PORT\_50002**: `"127.0.0.1:50002"`
 
-定义于: [enum/grpc.interface.ts:24](https://github.com/142vip/core-x/blob/b6807ccf6c96718daee70c368eee9968a0b34d48/packages/grpc/src/enum/grpc.interface.ts#L24)
+定义于: [enum/grpc.interface.ts:24](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/enum/grpc.interface.ts#L24)
+
+***
+
+### PORT\_50003
+
+> **PORT\_50003**: `"127.0.0.1:50003"`
+
+定义于: [enum/grpc.interface.ts:25](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/enum/grpc.interface.ts#L25)

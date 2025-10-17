@@ -2,6 +2,71 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.35 (2025-10-17)
+
+### ✨ Features
+
+- 修改`clean`命令，区分清除逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(ead6b)</samp>](https://github.com/142vip/core-x/commit/ead6b39)
+- 移除`apis`目录 &nbsp;-&nbsp; by **chufan** [<samp>(4fbc8)</samp>](https://github.com/142vip/core-x/commit/4fbc825)
+- 重新生成`apis`目录 &nbsp;-&nbsp; by **chufan** [<samp>(ddfa7)</samp>](https://github.com/142vip/core-x/commit/ddfa706)
+- 补充爬虫相关代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/670 [<samp>(0a0ea)</samp>](https://github.com/142vip/core-x/commit/0a0ea9c)
+- 优化`typedoc`命令，分类管理生成`md`、`wiki`等形式的API文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/700 [<samp>(22163)</samp>](https://github.com/142vip/core-x/commit/22163e5)
+- 优化`CD`流水线，增加`typedoc:api`构建步骤 &nbsp;-&nbsp; by **chufan** [<samp>(fc6cc)</samp>](https://github.com/142vip/core-x/commit/fc6cc59)
+- 优化`build:docs`相关命令，支持`apis`构建 &nbsp;-&nbsp; by **chufan** [<samp>(7b952)</samp>](https://github.com/142vip/core-x/commit/7b952ca)
+- **@142vip/egg**:
+  - 基于`app.type`区分`app`和`agent`加载模式 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/685 [<samp>(4cf16)</samp>](https://github.com/142vip/core-x/commit/4cf1651)
+  - 重写`pluginManager`管理器核心逻辑，约束插件使用 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/688 [<samp>(13296)</samp>](https://github.com/142vip/core-x/commit/1329652)
+- **@142vip/egg-grpc-server**:
+  - 优化插件加载逻辑，避免多实例重复加载 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/684 [<samp>(4c177)</samp>](https://github.com/142vip/core-x/commit/4c1771e)
+- **@142vip/fairy-cli**:
+  - 移除`turbo`命令，清理相关逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/673 [<samp>(b8245)</samp>](https://github.com/142vip/core-x/commit/b82454e)
+- **@142vip/grpc**:
+  - 优化`handler`处理核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/681 [<samp>(faa01)</samp>](https://github.com/142vip/core-x/commit/faa01b9)
+  - 新增`exampleManager`管理器，优化单元测试逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/689 [<samp>(d1157)</samp>](https://github.com/142vip/core-x/commit/d1157d1)
+  - 增加`grpc-exception`异常类，优化`grpc`相关示例代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/692 [<samp>(cb5a2)</samp>](https://github.com/142vip/core-x/commit/cb5a2f5)
+  - `ProtoLoader`重命名为`GrpcProtoLoader`，优化代码 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/695 [<samp>(77437)</samp>](https://github.com/142vip/core-x/commit/77437ce)
+- **@142vip/utils**:
+  - 移除`detect-indent`和`detect-newline`依赖 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/679 [<samp>(4454c)</samp>](https://github.com/142vip/core-x/commit/4454c2a)
+- **@142vip/vitepress**:
+  - 统一管理`typedoc`的插件依赖，固定版本 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/702 [<samp>(679cd)</samp>](https://github.com/142vip/core-x/commit/679cd24)
+- **egg-demo**:
+  - 跑通客户端调用逻辑，补充单元测试 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/680 [<samp>(860a8)</samp>](https://github.com/142vip/core-x/commit/860a87c)
+  - 补充单元测试用例，优化插件加载模式，避免端口冲突 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/691 [<samp>(78b2e)</samp>](https://github.com/142vip/core-x/commit/78b2e0b)
+  - 基于`sendGrpcRequest`工具函数，简化客户端单元测试逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/694 [<samp>(8b728)</samp>](https://github.com/142vip/core-x/commit/8b72820)
+
+### 🐛 Bug Fixes
+
+- **@142vip/egg-grpc-server**:
+  - 修复`rpc`服务端方法绑定异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/690 [<samp>(2a317)</samp>](https://github.com/142vip/core-x/commit/2a3178e)
+- **@142vip/grpc**:
+  - 修复`MethodDefinition`等类型引入错误，导致API文档编译异常 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/698 [<samp>(71a96)</samp>](https://github.com/142vip/core-x/commit/71a960c)
+
+### 📖 Documentation
+
+- **@142vip/egg-grpc-client**:
+  - 补充使用说明文档，增加调用示例 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/693 [<samp>(c3c43)</samp>](https://github.com/142vip/core-x/commit/c3c43c9)
+
+### 😏 Release Packages
+
+- **@142vip/egg**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(132fd)</samp>](https://github.com/142vip/core-x/commit/132fdef)
+- **@142vip/egg-grpc-client**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(10a9b)</samp>](https://github.com/142vip/core-x/commit/10a9b6a)
+- **@142vip/egg-grpc-server**:
+  - Publish `v0.0.1-alpha.5` &nbsp;-&nbsp; by **chufan** [<samp>(5cc12)</samp>](https://github.com/142vip/core-x/commit/5cc12ca)
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.29` &nbsp;-&nbsp; by **chufan** [<samp>(cda37)</samp>](https://github.com/142vip/core-x/commit/cda37ec)
+- **@142vip/grpc**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(ed115)</samp>](https://github.com/142vip/core-x/commit/ed115ce)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.42` &nbsp;-&nbsp; by **chufan** [<samp>(9a838)</samp>](https://github.com/142vip/core-x/commit/9a83834)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.18` &nbsp;-&nbsp; by **chufan** [<samp>(58a4a)</samp>](https://github.com/142vip/core-x/commit/58a4aca)
+- **egg-demo**:
+  - Publish `v0.0.1-alpha.6` &nbsp;-&nbsp; by **chufan** [<samp>(38133)</samp>](https://github.com/142vip/core-x/commit/381336d)
+
+**Release New Version v0.0.1-alpha.35 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.34...v0.0.1-alpha.35)**
+
 ## v0.0.1-alpha.34 (2025-09-28)
 
 ### ✨ Features

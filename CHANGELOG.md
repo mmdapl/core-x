@@ -2,6 +2,69 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.36 (2025-11-04)
+
+### ✨ Features
+
+- 修改`Eslint`配置，关闭`ts/consistent-type-imports`规则 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/708 [<samp>(8d9d1)</samp>](https://github.com/142vip/core-x/commit/8d9d1aa0)
+- 基于`VipOpenSource`组件，优化文档首页 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/713 [<samp>(dd44b)</samp>](https://github.com/142vip/core-x/commit/dd44bdee)
+- **@142vip/nest**:
+  - 锁定依赖版本，搭建基础Nest项目通用基座 &nbsp;-&nbsp; by **chufan** [<samp>(73f26)</samp>](https://github.com/142vip/core-x/commit/73f26536)
+- **@142vip/nest-logger**:
+  - 拓展Nest框架层日志，支持Adapter适配器自定义日志 &nbsp;-&nbsp; by **chufan** [<samp>(a0794)</samp>](https://github.com/142vip/core-x/commit/a07948d2)
+- **@142vip/nest-redis**:
+  - 新增`RedisModule`全局模块，支持注入即使用，补充单元测试、文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/719 [<samp>(9fb55)</samp>](https://github.com/142vip/core-x/commit/9fb55215)
+  - 模块重命名为`NestRedisModule` &nbsp;-&nbsp; by **chufan** [<samp>(fd712)</samp>](https://github.com/142vip/core-x/commit/fd712870)
+- **@142vip/nest-starter**:
+  - 优化启动流程，定义通用型`Nest`框架启动器 &nbsp;-&nbsp; by **chufan** [<samp>(62950)</samp>](https://github.com/142vip/core-x/commit/629508d2)
+- **@142vip/nest-typeorm**:
+  - 集成`@nestjs/typeorm`等模块，简化使用 &nbsp;-&nbsp; by **chufan** [<samp>(56d37)</samp>](https://github.com/142vip/core-x/commit/56d37fd9)
+- **@142vip/redis**:
+  - 新增`RedisFactory`工厂类，优化`Redis`实例创建的核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/718 [<samp>(39d04)</samp>](https://github.com/142vip/core-x/commit/39d04710)
+- **@142vip/vitepress**:
+  - 新增`VipOpenSource`组件，支持自定义开源仓库 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/712 [<samp>(0eec7)</samp>](https://github.com/142vip/core-x/commit/0eec7ade)
+- **@142vip/vuepress**:
+  - 升级底层依赖，修复类型错误 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/707 [<samp>(47ce0)</samp>](https://github.com/142vip/core-x/commit/47ce0468)
+- **nest-demo**:
+  - 基于`Nest.js`框架，搭建基础项目结构 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/709 [<samp>(0cd72)</samp>](https://github.com/142vip/core-x/commit/0cd7283c)
+  - 引入`@142vip/nest-redis`模块，增加`RedisModule`模块最佳实践 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/720 [<samp>(b7651)</samp>](https://github.com/142vip/core-x/commit/b7651e87)
+  - 基于`@142vip/nest`周边模块，补充`Demo`最佳实践代码 &nbsp;-&nbsp; by **chufan** [<samp>(a5bc5)</samp>](https://github.com/142vip/core-x/commit/a5bc5dc3)
+
+### 🐛 Bug Fixes
+
+- 修复模块间依赖的版本，升级依赖 &nbsp;-&nbsp; by **chufan** [<samp>(135ba)</samp>](https://github.com/142vip/core-x/commit/135baac9)
+- 修复单元测试，补充文档，优化依赖版本 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/721 [<samp>(3342e)</samp>](https://github.com/142vip/core-x/commit/3342ef0a)
+- **@142vip/fairy-cli**:
+  - 修复`release`命令未选中异常，终止后续流程执行 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/726 [<samp>(dd191)</samp>](https://github.com/142vip/core-x/commit/dd19179f)
+- **deps**:
+  - Update dependency vue to v3.5.22 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/706 [<samp>(eab10)</samp>](https://github.com/142vip/core-x/commit/eab10799)
+  - Update dependency vitepress to v1.6.4 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/705 [<samp>(7c800)</samp>](https://github.com/142vip/core-x/commit/7c80076f)
+
+### 😏 Release Packages
+
+- **@142vip/fairy-cli**:
+  - Publish `v0.0.3-alpha.30` &nbsp;-&nbsp; by **chufan** [<samp>(66f81)</samp>](https://github.com/142vip/core-x/commit/66f8101a)
+- **@142vip/nest**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(e2411)</samp>](https://github.com/142vip/core-x/commit/e241115d)
+- **@142vip/nest-logger**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(1480e)</samp>](https://github.com/142vip/core-x/commit/1480e0cb)
+- **@142vip/nest-redis**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(429d8)</samp>](https://github.com/142vip/core-x/commit/429d8327)
+- **@142vip/nest-starter**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(28806)</samp>](https://github.com/142vip/core-x/commit/28806575)
+- **@142vip/nest-typeorm**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(b4241)</samp>](https://github.com/142vip/core-x/commit/b4241426)
+- **@142vip/redis**:
+  - Publish `v0.0.1-alpha.4` &nbsp;-&nbsp; by **chufan** [<samp>(efb04)</samp>](https://github.com/142vip/core-x/commit/efb0404a)
+- **@142vip/vitepress**:
+  - Publish `v0.0.1-alpha.19` &nbsp;-&nbsp; by **chufan** [<samp>(3df6a)</samp>](https://github.com/142vip/core-x/commit/3df6a073)
+- **@142vip/vuepress**:
+  - Publish `v0.0.1-alpha.18` &nbsp;-&nbsp; by **chufan** [<samp>(bb50f)</samp>](https://github.com/142vip/core-x/commit/bb50ff34)
+- **nest-demo**:
+  - Publish `v0.0.1-alpha.1` &nbsp;-&nbsp; by **chufan** [<samp>(b519a)</samp>](https://github.com/142vip/core-x/commit/b519a08d)
+
+**Release New Version v0.0.1-alpha.36 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.35...v0.0.1-alpha.36)**
+
 ## v0.0.1-alpha.35 (2025-10-17)
 
 ### ✨ Features

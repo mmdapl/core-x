@@ -45,10 +45,11 @@
     "test": "npx jest",
     "test:coverage": "npx jest --coverage"
   },
+  "peerDependencies": {
+    "@142vip/nest": "workspace:*"
+  },
   "dependencies": {
-    "@142vip/redis": "workspace:*",
-    "@nestjs/common": "11.1.7",
-    "@nestjs/core": "11.1.7"
+    "@142vip/redis": "workspace:*"
   },
   "publishConfig": {
     "access": "public",

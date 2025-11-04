@@ -2,7 +2,7 @@
 
 # 类: VipMongo
 
-定义于: [packages/data-source/src/core/sql/vip-mongo.ts:21](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/data-source/src/core/sql/vip-mongo.ts#L21)
+定义于: [packages/data-source/src/core/sql/vip-mongo.ts:21](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/data-source/src/core/sql/vip-mongo.ts#L21)
 
 MongoDB数据源
 
@@ -26,7 +26,7 @@ MongoDB数据源
 
 > **getConnectionData**(`options`): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`WithId`\<`Document`\>[]\>\>
 
-定义于: [packages/data-source/src/core/sql/vip-mongo.ts:25](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/data-source/src/core/sql/vip-mongo.ts#L25)
+定义于: [packages/data-source/src/core/sql/vip-mongo.ts:25](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/data-source/src/core/sql/vip-mongo.ts#L25)
 
 获取连接数据
 

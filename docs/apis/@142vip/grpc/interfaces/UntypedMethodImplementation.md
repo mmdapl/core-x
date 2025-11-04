@@ -2,7 +2,7 @@
 
 # 接口: UntypedMethodImplementation
 
-定义于: [enum/grpc.interface.ts:47](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/grpc/src/enum/grpc.interface.ts#L47)
+定义于: [enum/grpc.interface.ts:47](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/grpc/src/enum/grpc.interface.ts#L47)
 
 GRPC实现方法对应的对象
 

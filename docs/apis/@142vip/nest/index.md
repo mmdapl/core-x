@@ -2,6 +2,6 @@
 
 # @142vip/nest
 
-## 变量
+## 类型别名
 
-- [test](variables/test.md)
+- [NestModule](type-aliases/NestModule.md)

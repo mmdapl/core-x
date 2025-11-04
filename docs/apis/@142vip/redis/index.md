@@ -8,5 +8,14 @@
 
 ## 类
 
-- [IORedis](classes/IORedis.md)
-- [Redis](classes/Redis.md)
+- [RedisFactory](classes/RedisFactory.md)
+
+## 接口
+
+- [RedisClientConfig](interfaces/RedisClientConfig.md)
+- [RedisClusterConfig](interfaces/RedisClusterConfig.md)
+- [RedisConfig](interfaces/RedisConfig.md)
+
+## 类型别名
+
+- [RedisClient](type-aliases/RedisClient.md)

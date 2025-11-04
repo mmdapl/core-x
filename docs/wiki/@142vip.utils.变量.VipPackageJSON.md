@@ -4,7 +4,7 @@
 
 > `const` **VipPackageJSON**: `object`
 
-定义于: [packages/utils/src/core/package-json.ts:214](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/utils/src/core/package-json.ts#L214)
+定义于: [packages/utils/src/core/package-json.ts:214](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/utils/src/core/package-json.ts#L214)
 
 package.json处理
 

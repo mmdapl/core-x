@@ -2,7 +2,7 @@
 
 # 类: VipOracle
 
-定义于: [packages/data-source/src/core/sql/vip-oracle.ts:14](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/data-source/src/core/sql/vip-oracle.ts#L14)
+定义于: [packages/data-source/src/core/sql/vip-oracle.ts:14](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/data-source/src/core/sql/vip-oracle.ts#L14)
 
 Oracle 数据源
 
@@ -26,7 +26,7 @@ Oracle 数据源
 
 > **getConnectionData**(`options`): `Promise`\<[`DataSourceParseResponse`](../interfaces/DataSourceParseResponse.md)\<`unknown`\>\>
 
-定义于: [packages/data-source/src/core/sql/vip-oracle.ts:18](https://github.com/142vip/core-x/blob/58a4aca72f73ebc92491a458c9b83754486dc296/packages/data-source/src/core/sql/vip-oracle.ts#L18)
+定义于: [packages/data-source/src/core/sql/vip-oracle.ts:18](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/data-source/src/core/sql/vip-oracle.ts#L18)
 
 获取连接数据
 

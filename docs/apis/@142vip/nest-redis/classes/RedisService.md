@@ -1,0 +1,119 @@
+[API 参考](../../../index.md) / [@142vip/nest-redis](../index.md) / RedisService
+
+# 类: RedisService
+
+定义于: [redis.service.ts:6](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L6)
+
+## 构造函数
+
+### 构造函数
+
+> **new RedisService**(`config`): `RedisService`
+
+定义于: [redis.service.ts:10](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L10)
+
+#### 参数
+
+##### config
+
+`RedisConfig`
+
+#### 返回
+
+`RedisService`
+
+## 方法
+
+### del()
+
+> **del**(`key`): `Promise`\<`void`\>
+
+定义于: [redis.service.ts:55](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L55)
+
+删除
+- 支持延迟双删
+
+#### 参数
+
+##### key
+
+`string`
+
+#### 返回
+
+`Promise`\<`void`\>
+
+***
+
+### getClient()
+
+> **getClient**(): `RedisClient`
+
+定义于: [redis.service.ts:18](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L18)
+
+获取客户端
+
+#### 返回
+
+`RedisClient`
+
+***
+
+### getEx()
+
+> **getEx**\<`T`\>(`key`): `Promise`\<`null` \| `T`\>
+
+定义于: [redis.service.ts:37](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L37)
+
+获取
+
+#### 类型参数
+
+##### T
+
+`T`
+
+#### 参数
+
+##### key
+
+`string`
+
+#### 返回
+
+`Promise`\<`null` \| `T`\>
+
+***
+
+### setEx()
+
+> **setEx**\<`T`\>(`key`, `data`, `expiredTime`): `Promise`\<`void`\>
+
+定义于: [redis.service.ts:29](https://github.com/142vip/core-x/blob/b519a08d775a32700dcbfb276480e991263ed9a6/packages/nest-redis/src/core/redis.service.ts#L29)
+
+存储
+- 单位：分钟
+
+#### 类型参数
+
+##### T
+
+`T`
+
+#### 参数
+
+##### key
+
+`string`
+
+##### data
+
+`T`
+
+##### expiredTime
+
+`number`
+
+#### 返回
+
+`Promise`\<`void`\>

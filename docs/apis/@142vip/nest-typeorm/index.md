@@ -4,9 +4,4 @@
 
 ## 类
 
-- [BaseDBService](classes/BaseDBService.md)
-- [TypeormModule](classes/TypeormModule.md)
-
-## 函数
-
-- [CustomRepository](functions/CustomRepository.md)
+- [NestTypeOrmModule](classes/NestTypeOrmModule.md)

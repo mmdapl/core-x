@@ -1,0 +1,61 @@
+{
+  "name": "@142vip/nest-logger",
+  "version": "0.0.1-alpha.1",
+  "private": false,
+  "description": "Nest.js框架日志模块，集成终端、文件等形式日志",
+  "author": "mmdapl <mmdapl@163.com>",
+  "license": "MIT",
+  "homepage": "https://142vip.github.io/core-x/packages/nest-logger/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/142vip/core-x.git",
+    "directory": "packages/nest-logger"
+  },
+  "keywords": [
+    "公众号搜：储凡",
+    "142vip",
+    "@142vip",
+    "@142vip/nest-logger",
+    "nest",
+    "logger"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "authorInfo": {
+    "name": "微信公众号：储凡",
+    "email": "fairy_vip@2925.com",
+    "url": "https://github.com/142vip",
+    "homePage": "https://142vip.cn"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npx nest build",
+    "typecheck": "tsc --noEmit",
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage"
+  },
+  "peerDependencies": {
+    "@142vip/nest": "workspace:*"
+  },
+  "dependencies": {
+    "nestjs-pino": "4.4.1",
+    "pino": "9.4.0",
+    "pino-http": "11.0.0",
+    "pino-pretty": "11.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

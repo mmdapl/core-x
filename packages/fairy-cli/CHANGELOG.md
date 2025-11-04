@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+## v0.0.3-alpha.30 (2025-11-04)
+
+### 🐛 Bug Fixes
+
+- 修复`release`命令未选中异常，终止后续流程执行 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/726 [<samp>(dd191)</samp>](https://github.com/142vip/core-x/commit/dd19179)
+
+**Release New Version v0.0.3-alpha.30 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/fairy-cli)**
+
 ## v0.0.3-alpha.29 (2025-09-30)
 
 ### ✨ Features

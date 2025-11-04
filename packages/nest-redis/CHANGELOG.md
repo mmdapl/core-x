@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.2 (2025-11-04)
+
+### ✨ Features
+
+- 新增`RedisModule`全局模块，支持注入即使用，补充单元测试、文档 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/719 [<samp>(9fb55)</samp>](https://github.com/142vip/core-x/commit/9fb5521)
+- 模块重命名为`NestRedisModule` &nbsp;-&nbsp; by **chufan** [<samp>(fd712)</samp>](https://github.com/142vip/core-x/commit/fd71287)
+
+**Release New Version v0.0.1-alpha.2 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/nest-redis)**
+
 ## v0.0.1-alpha.1 (2025-02-06)
 
 ### ✨ Features

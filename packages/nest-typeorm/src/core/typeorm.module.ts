@@ -1,75 +1,44 @@
-import type { DynamicModule, Provider } from '@nestjs/common'
-import type {
-  TypeOrmModuleOptions,
-} from '@nestjs/typeorm'
-import type {
-  TypeOrmModuleAsyncOptions,
-} from '@nestjs/typeorm/dist/interfaces/typeorm-options.interface'
-import type { DataSource } from 'typeorm'
-import {
-  getDataSourceToken,
-  getRepositoryToken,
-  TypeOrmModule,
-} from '@nestjs/typeorm'
-import { TYPEORM_CUSTOM_REPOSITORY } from './typeorm.constant'
+import { DynamicModule } from '@nestjs/common'
+import { TypeOrmModule, TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from '@nestjs/typeorm'
+import { EntityClassOrSchema } from '@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type'
 
-type EntitiesOrRepositories = (new (...args: any) => any)[]
+/**
+ * 参考：https://docs.nestjs.cn/techniques/sql
+ */
+export class NestTypeOrmModule {
+  /**
+   * 同步注册数据库连接，全局模块
+   */
+  public static register(config: TypeOrmModuleOptions): DynamicModule {
+    return this.forRoot(config)
+  }
 
-// types.setTypeParser(types.builtins.INT8, val => Number.parseInt(val, 10))
-// types.setTypeParser(types.builtins.NUMERIC, val => Number.parseFloat(val))
-
-export class TypeormModule {
-  public static forFeature(entitiesOrRepositories: EntitiesOrRepositories, token?: string): DynamicModule {
-    const providers: Provider[] = []
-
-    const entities = entitiesOrRepositories.map((Repository) => {
-      const entity = Reflect.getMetadata(TYPEORM_CUSTOM_REPOSITORY, Repository)
-      if (entity) {
-        providers.push({
-          provide: getRepositoryToken(Repository, token),
-          useFactory: (dataSource: DataSource) => {
-            const baseRepo = dataSource.getRepository(entity)
-            return new Repository(
-              baseRepo.target,
-              baseRepo.manager,
-              baseRepo.queryRunner,
-            )
-          },
-          inject: [getDataSourceToken(token)],
-        })
-        return entity
-      }
-      return Repository
-    })
-
-    const forFeature = TypeOrmModule.forFeature(entities, token)
-
+  /**
+   * 同步注册数据库连接
+   */
+  public static forRoot(options: TypeOrmModuleOptions, dataSourceName?: string): DynamicModule {
     return {
-      module: TypeormModule,
-      providers,
-      imports: [forFeature],
-      exports: [...providers, forFeature],
+      module: NestTypeOrmModule,
+      imports: [TypeOrmModule.forRoot({ ...options, name: dataSourceName })],
       global: true,
     }
   }
 
-  public static forRoot(options: TypeOrmModuleOptions): DynamicModule {
+  /**
+   * 异步注册数据库连接
+   */
+  public static forRootAsync(options: TypeOrmModuleAsyncOptions, dataSourceName?: string): DynamicModule {
     return {
-      module: TypeormModule,
-      providers: [],
-      exports: [],
-      imports: [TypeOrmModule.forRoot(options)],
+      module: NestTypeOrmModule,
+      imports: [TypeOrmModule.forRootAsync({ ...options, name: dataSourceName })],
       global: true,
     }
   }
 
-  public static forRootAsync(options: TypeOrmModuleAsyncOptions): DynamicModule {
-    return {
-      module: TypeormModule,
-      providers: [],
-      exports: [],
-      imports: [TypeOrmModule.forRootAsync(options)],
-      global: true,
-    }
+  /**
+   * 注册实体
+   */
+  public static forFeature(entities?: EntityClassOrSchema[], dataSourceName?: string): DynamicModule {
+    return TypeOrmModule.forFeature(entities, dataSourceName)
   }
 }

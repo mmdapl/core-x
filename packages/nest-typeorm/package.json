@@ -23,30 +23,33 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "authorInfo": {
     "name": "微信公众号：储凡",
     "email": "fairy_vip@2925.com",
     "url": "https://github.com/142vip",
     "homePage": "https://142vip.cn"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build-test": "unbuild",
-    "typecheck": "tsc --noEmit"
+    "build": "npx nest build",
+    "typecheck": "tsc --noEmit",
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage"
+  },
+  "peerDependencies": {
+    "@142vip/nest": "workspace:*"
   },
   "dependencies": {
-    "@142vip/nest": "workspace:*",
     "@nestjs/typeorm": "11.0.0",
-    "mysql2": "3.12.0",
     "typeorm": "0.3.21"
   },
   "publishConfig": {

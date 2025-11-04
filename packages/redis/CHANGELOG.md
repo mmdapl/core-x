@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.4 (2025-11-04)
+
+### ✨ Features
+
+- 新增`RedisFactory`工厂类，优化`Redis`实例创建的核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/718 [<samp>(39d04)</samp>](https://github.com/142vip/core-x/commit/39d0471)
+
+**Release New Version v0.0.1-alpha.4 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/redis)**
+
 ## v0.0.1-alpha.3 (2025-01-20)
 
 ### ✨ Features

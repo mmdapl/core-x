@@ -1,0 +1,67 @@
+{
+  "name": "@142vip/nest-starter",
+  "version": "0.0.1-alpha.1",
+  "private": false,
+  "description": "Nest.js框架下Redis使用最佳实践",
+  "author": "mmdapl <mmdapl@163.com>",
+  "license": "MIT",
+  "homepage": "https://142vip.github.io/core-x/packages/nest-starter/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/142vip/core-x.git",
+    "directory": "packages/nest-starter"
+  },
+  "keywords": [
+    "公众号搜：储凡",
+    "142vip",
+    "@142vip",
+    "@142vip/nest-starter",
+    "nest",
+    "starter"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "authorInfo": {
+    "name": "微信公众号：储凡",
+    "email": "fairy_vip@2925.com",
+    "url": "https://github.com/142vip",
+    "homePage": "https://142vip.cn"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npx nest build",
+    "typecheck": "tsc --noEmit",
+    "test": "npx jest",
+    "test:coverage": "npx jest --coverage"
+  },
+  "peerDependencies": {
+    "@142vip/nest": "workspace:*"
+  },
+  "dependencies": {
+    "@142vip/nest-logger": "workspace:*",
+    "@142vip/nest-redis": "workspace:*",
+    "@142vip/nest-typeorm": "workspace:*",
+    "@142vip/utils": "workspace:*",
+    "@nestjs/swagger": "11.2.1",
+    "nestjs-pino": "4.4.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "11.0.10",
+    "@nestjs/testing": "11.1.7"
+  }
+}

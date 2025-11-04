@@ -13,25 +13,11 @@ pnpm i @142vip/nest-starter
 
 ## 配置
 
-```ts
-import { NestAppConfig } from '@142vip/nest-starter'
-import { IsNumber } from 'class-validator'
-
-export class Config extends NestAppConfig {
-  @IsNumber()
-  test!: number
-}
-```
-
 ## 使用
 
-```ts
-import { NestStarter } from '@142vip/nest-starter'
-import { AppModule } from './app.module'
+### 模块注入
 
-// 统一启动类
-void NestStarter.getInstance().start(AppModule)
-```
+### 使用服务
 
 ## 参考
 

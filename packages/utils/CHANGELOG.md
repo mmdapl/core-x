@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.43 (2025-11-06)
+
+### 💅 Refactors
+
+- 优化`VipDayjs`类核心逻辑，支持`vipDayjs`对象导出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/732 [<samp>(b7c12)</samp>](https://github.com/142vip/core-x/commit/b7c12ee8)
+- 优化`VipNanoId`类核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/733 [<samp>(caa65)</samp>](https://github.com/142vip/core-x/commit/caa6536b)
+
+**Release New Version v0.0.1-alpha.43 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.42 (2025-10-16)
 
 ### ✨ Features

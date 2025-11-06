@@ -1,6 +1,6 @@
 import type { ChangelogCliOptions, ChangelogGenerateOptions, GenerateChangelogResult } from '../enums'
 import { parseCliOptions } from '@142vip/changelog'
-import { VipColor, VipConsole, VipDayjs, VipGit, vipLogger, VipNodeJS } from '@142vip/utils'
+import { VipColor, VipConsole, vipDayjs, VipGit, vipLogger, VipNodeJS } from '@142vip/utils'
 import { GitCommitAPI } from './git-commit.api'
 import { GithubAPI } from './github.api'
 
@@ -58,7 +58,7 @@ async function upsertChangelogDoc(
   }
 
   // 添加版本头部
-  const newMd = `## ${releaseVersionName} (${VipDayjs.formatDateToYMD()})\n\n${markdown}`
+  const newMd = `## ${releaseVersionName} (${vipDayjs.formatDateToYMD()})\n\n${markdown}`
 
   const lastEntry = changelogMD.match(/^##\s+(?:\S.*)?$/m)
 

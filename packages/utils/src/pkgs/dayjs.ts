@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs, { ConfigType } from 'dayjs'
 
 export class VipDayjs {
   /**
@@ -24,7 +24,7 @@ export class VipDayjs {
    * 是否在当前时间之前
    * @param date
    */
-  public isBeforeNow(date: Date): boolean {
+  public isBeforeNow(date?: ConfigType): boolean {
     return dayjs().isBefore(dayjs(date))
   }
 
@@ -32,14 +32,14 @@ export class VipDayjs {
    * 是否在当前时间之后
    * @param date
    */
-  public isAfterNow(date: Date): boolean {
+  public isAfterNow(date?: ConfigType): boolean {
     return dayjs().isAfter(dayjs(date))
   }
 
   /**
    * 时间格式化，默认： 年-月-日 时:分:秒
    */
-  public formatDateToStr(date: Date, template?: string): string {
+  public formatDateToStr(date: ConfigType, template?: string): string {
     return dayjs(date).format(template ?? this.FORMAT_TEMPLATE_STR)
   }
 

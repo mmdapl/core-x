@@ -5,6 +5,16 @@ export class VipDayjs {
    * 时间格式：年-月-日 时:分:秒
    */
   private readonly FORMAT_TEMPLATE_STR = 'YYYY-MM-DD HH:mm:ss'
+
+  /**
+   * 时间戳格式：年月日时分秒毫秒
+   */
+  private readonly FORMAT_TEMPLATE_STR_TIMESTAMP = 'YYYYMMDDHHmmSSS'
+
+  /**
+   * 日期格式：年-月-日
+   */
+  private readonly FORMAT_TEMPLATE_STR_DATE = 'YYYY-MM-DD'
   /**
    * 获取当前时间戳。单位：毫秒
    */
@@ -47,8 +57,23 @@ export class VipDayjs {
    * 年月日格式化当前时间
    * - 格式： 2024-08-09
    */
-  public formatDateToYMD(): string {
-    return this.formatDateToStr(new Date(), 'YYYY-MM-DD')
+  public formatCurrentDateToYMD(): string {
+    return this.formatDateToStr(new Date(), this.FORMAT_TEMPLATE_STR_DATE)
+  }
+
+  /**
+   * 时间戳格式化当前时间
+   * - 格式： 20240809152030123
+   */
+  public formatCurrentDateToTimestamp(): string {
+    return this.formatDateToStr(new Date(), this.FORMAT_TEMPLATE_STR_TIMESTAMP)
+  }
+
+  /**
+   * 时间格式化当前时间，默认： 年-月-日 时:分:秒
+   */
+  public formatCurrentDateToStr(): string {
+    return this.formatDateToStr(new Date(), this.FORMAT_TEMPLATE_STR)
   }
 }
 

@@ -10,6 +10,8 @@ import { customAlphabet, nanoid } from 'nanoid'
 export enum Alphabet {
   DEFAULT = '0123456789abcdefghijklmnopqrstuvwxyz',
   ONLY_NUMBER = '0123456789',
+  ONLY_LOWER_CHAR = 'abcdefghijklmnopqrstuvwxyz',
+  ONLY_UPPER_CHAR = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   ONLY_CHAR = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
   COMPLEX = '-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
 }
@@ -45,6 +47,22 @@ export class VipNanoId {
    */
   public getRandomCharId(size?: number): string {
     return this.getNanoId(Alphabet.ONLY_CHAR)(size)
+  }
+
+  /**
+   * 获取纯小写字母的随机字符串
+   * @param size
+   */
+  public getRandomLowerCharId(size?: number): string {
+    return this.getNanoId(Alphabet.ONLY_LOWER_CHAR)(size)
+  }
+
+  /**
+   * 获取纯大写字母的随机字符串
+   * @param size
+   */
+  public getRandomUpperCharId(size?: number): string {
+    return this.getNanoId(Alphabet.ONLY_UPPER_CHAR)(size)
   }
 
   /**

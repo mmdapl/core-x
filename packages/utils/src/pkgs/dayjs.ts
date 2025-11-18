@@ -75,6 +75,14 @@ export class VipDayjs {
   public formatCurrentDateToStr(): string {
     return this.formatDateToStr(new Date(), this.FORMAT_TEMPLATE_STR)
   }
+
+  /**
+   * 格式化时间为ISO字符串
+   * @param date
+   */
+  public formatToISOStr(date?: dayjs.ConfigType): string {
+    return dayjs(date).toISOString()
+  }
 }
 
 // 导出

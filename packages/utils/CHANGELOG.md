@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.44 (2025-11-18)
+
+### ✨ Features
+
+- 基于原生`ConfigType`优化`VipDayjs`类函数的类型 &nbsp;-&nbsp; by **chufan** [<samp>(c450f)</samp>](https://github.com/142vip/core-x/commit/c450f004)
+- 拓展`VipDayjs`类，增加`formatCurrentDateToStr`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(1eea0)</samp>](https://github.com/142vip/core-x/commit/1eea051d)
+- 拓展`VipNanoId`类，增加`getRandomUpperCharId`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(53ecf)</samp>](https://github.com/142vip/core-x/commit/53ecf0f8)
+
+**Release New Version v0.0.1-alpha.44 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.43 (2025-11-06)
 
 ### 💅 Refactors

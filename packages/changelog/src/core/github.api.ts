@@ -1,5 +1,5 @@
 import type { Commit, GitAuthorInfo } from '@142vip/changelog'
-import { HttpMethod, VipColor, VipConsole, vipLogger, VipQs } from '@142vip/utils'
+import { HttpMethod, VipColor, VipConsole, vipLogger, vipQs } from '@142vip/utils'
 import { $fetch } from 'ofetch'
 
 function getHeaders(token: string) {
@@ -132,7 +132,7 @@ function generateReleaseUrl(markdown: string, config: {
   prerelease: boolean
 }): string {
   const baseUrl = `https://${config.baseUrl}/${config.repo}/releases/new`
-  const queryParams = VipQs.stringify({
+  const queryParams = vipQs.stringify({
     title: config.name || config.to,
     body: markdown,
     tag: config.to,

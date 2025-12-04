@@ -1,48 +1,52 @@
-import { Type } from 'class-transformer'
-import { IsNumber, IsOptional, ValidateNested } from 'class-validator'
+import { Expose, Type } from 'class-transformer'
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { LoggerConfig } from './plugin/logger.config'
 import { RedisConfig } from './plugin/redis.config'
 import { SequelizeConfig } from './plugin/sequelize.config'
 import { SwaggerConfig } from './plugin/swagger.config'
 import { TypeOrmConfig } from './plugin/typeorm.config'
 
-import 'reflect-metadata'
-
 export class StarterConfig {
   @IsNumber()
-  port!: number
+  @IsNotEmpty()
+  public readonly port!: number
 
   @IsOptional()
+  @IsString()
   globalPrefix?: string
 
+  @Expose()
   @IsOptional()
   @ValidateNested()
   @Type(() => RedisConfig)
-  redis?: RedisConfig
+  public readonly redis?: RedisConfig
 
-  @IsOptional()
   @ValidateNested()
   @Type(() => TypeOrmConfig)
+  @IsOptional()
   typeorm?: TypeOrmConfig
 
   @IsOptional()
   @ValidateNested()
   @Type(() => SequelizeConfig)
+  @IsOptional()
   sequelize?: SequelizeConfig
 
+  @IsBoolean()
   @IsOptional()
   enableSwagger?: boolean
 
-  @IsOptional()
   @ValidateNested()
   @Type(() => SwaggerConfig)
-  swagger?: SwaggerConfig
+  @IsOptional()
+  public readonly swagger?: SwaggerConfig
 
+  @IsBoolean()
   @IsOptional()
   enableLogger?: boolean
 
-  @IsOptional()
   @ValidateNested()
   @Type(() => LoggerConfig)
-  logger?: LoggerConfig
+  @IsOptional()
+  public readonly logger?: LoggerConfig
 }

@@ -12,7 +12,6 @@ import {
 } from '@nestjs/common'
 import { APP_INTERCEPTOR, NestFactory } from '@nestjs/core'
 import { StarterConfig } from './config'
-import { NestConfigModule, nestStaterConfig } from './config.module'
 import { NestRootModule } from './nest-root.module'
 import { NestUtil } from './nest-util'
 import { SwaggerManager } from './swagger/swagger.manager'
@@ -21,32 +20,40 @@ import { SwaggerManager } from './swagger/swagger.manager'
  * Nest框架启动器
  */
 export class NestStarter {
-  private static instance: NestStarter | null
+  private static instance: NestStarter
   /**
    * 启动配置
-   * @private
    */
-  private readonly starterConfig: StarterConfig = nestStaterConfig
+  // private readonly starterConfig: StarterConfig
+
   /**
+   *
+   * @param starterConfig
    * @param nestApplicationOptions
+   * @protected
    */
   protected constructor(
+    protected readonly starterConfig: StarterConfig,
     protected readonly nestApplicationOptions?: NestApplicationOptions,
-  ) { }
+  ) {
+    this.starterConfig = starterConfig
+  }
 
   /**
    * 单例
+   * @param starterConfig
    * @param nestApplicationOptions 应用启动选项
    */
   public static getInstance(
+    starterConfig: StarterConfig,
     nestApplicationOptions?: NestApplicationOptions,
   ): NestStarter {
     // 开启日志
-    if (nestStaterConfig?.enableLogger)
-      vipLogger.logByBlank(JSON.stringify(nestStaterConfig, null, 2))
+    if (starterConfig?.enableLogger)
+      vipLogger.logByBlank(JSON.stringify(starterConfig, null, 2))
 
     if (this.instance == null)
-      this.instance = new this(nestApplicationOptions)
+      this.instance = new this(starterConfig, nestApplicationOptions)
 
     return this.instance
   }
@@ -114,7 +121,7 @@ export class NestStarter {
     const imports: NestModule[] = []
 
     // 默认为用户注册配置
-    imports.push(NestConfigModule)
+    // imports.push(NestConfigModule)
 
     if (this.starterConfig.enableLogger) {
       imports.push(NestLoggerModule.register({ consoleLogger: { level: LoggerLevelEnum.trace } }))

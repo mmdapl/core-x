@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer'
+import { Type } from 'class-transformer'
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator'
 import { LoggerConfig } from './plugin/logger.config'
 import { RedisConfig } from './plugin/redis.config'
@@ -15,18 +15,16 @@ export class StarterConfig {
   @IsString()
   globalPrefix?: string
 
-  @Expose()
   @IsOptional()
   @ValidateNested()
   @Type(() => RedisConfig)
-  public readonly redis?: RedisConfig
+  redis?: RedisConfig
 
   @ValidateNested()
   @Type(() => TypeOrmConfig)
   @IsOptional()
   typeorm?: TypeOrmConfig
 
-  @IsOptional()
   @ValidateNested()
   @Type(() => SequelizeConfig)
   @IsOptional()
@@ -39,7 +37,7 @@ export class StarterConfig {
   @ValidateNested()
   @Type(() => SwaggerConfig)
   @IsOptional()
-  public readonly swagger?: SwaggerConfig
+  swagger?: SwaggerConfig
 
   @IsBoolean()
   @IsOptional()

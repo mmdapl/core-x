@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.3 (2025-12-05)
+
+### ✨ Features
+
+- 增加`RedisKeyManager`类，补充缓存`key`方案 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/740 [<samp>(9c5f5)</samp>](https://github.com/142vip/core-x/commit/9c5f580c)
+
+### 🐛 Bug Fixes
+
+- 修复引用异常，调整依赖 &nbsp;-&nbsp; by **chufan** [<samp>(e640b)</samp>](https://github.com/142vip/core-x/commit/e640b7fd)
+
+**Release New Version v0.0.1-alpha.3 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/nest-redis)**
+
 ## v0.0.1-alpha.2 (2025-11-04)
 
 ### ✨ Features

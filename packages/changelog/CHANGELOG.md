@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.23 (2025-12-05)
+
+### ✨ Features
+
+- 调整`vipDayjs`类使用 &nbsp;-&nbsp; by **chufan** [<samp>(c68c3)</samp>](https://github.com/142vip/core-x/commit/c68c3e0f)
+
+### 🐛 Bug Fixes
+
+- 修复`formatDateToYMD`方法调用异常 &nbsp;-&nbsp; by **chufan** [<samp>(aa5a3)</samp>](https://github.com/142vip/core-x/commit/aa5a3b14)
+- 修复`vipQs`类方法引用异常 &nbsp;-&nbsp; by **chufan** [<samp>(a70f1)</samp>](https://github.com/142vip/core-x/commit/a70f1588)
+
+**Release New Version v0.0.1-alpha.23 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/changelog)**
+
 ## v0.0.1-alpha.22 (2025-09-24)
 
 ### ✨ Features

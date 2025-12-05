@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.7 (2025-12-05)
+
+### ✨ Features
+
+- 优化启动逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(8ee1e)</samp>](https://github.com/142vip/core-x/commit/8ee1e80c)
+
+**Release New Version v0.0.1-alpha.7 [👉 View New Package On NPM](https://www.npmjs.com/package/egg-demo)**
+
 ## v0.0.1-alpha.6 (2025-10-16)
 
 ### ✨ Features

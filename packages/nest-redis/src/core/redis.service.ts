@@ -4,7 +4,15 @@ import { Injectable } from '@nestjs/common'
 
 @Injectable()
 export class RedisService {
+  /**
+   * 配置
+   */
   private readonly config: RedisConfig
+
+  /**
+   * 客户端
+   * @private
+   */
   private readonly client: RedisClient
 
   constructor(config: RedisConfig) {

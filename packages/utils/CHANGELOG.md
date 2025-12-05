@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.45 (2025-12-05)
+
+### 🐛 Bug Fixes
+
+- 拓展`VipDayjs`类，增加`formatToISOStr`方法 &nbsp;-&nbsp; by **chufan** [<samp>(c96c1)</samp>](https://github.com/142vip/core-x/commit/c96c1b00)
+- 增加`VipDataTransform`类 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/738 [<samp>(dc147)</samp>](https://github.com/142vip/core-x/commit/dc1473ef)
+- 增加`VipQs`类和工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(862b2)</samp>](https://github.com/142vip/core-x/commit/862b2faf)
+
+**Release New Version v0.0.1-alpha.45 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
+## v0.0.1-alpha.44 (2025-11-18)
+
+### ✨ Features
+
+- 基于原生`ConfigType`优化`VipDayjs`类函数的类型 &nbsp;-&nbsp; by **chufan** [<samp>(c450f)</samp>](https://github.com/142vip/core-x/commit/c450f004)
+- 拓展`VipDayjs`类，增加`formatCurrentDateToStr`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(1eea0)</samp>](https://github.com/142vip/core-x/commit/1eea051d)
+- 拓展`VipNanoId`类，增加`getRandomUpperCharId`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(53ecf)</samp>](https://github.com/142vip/core-x/commit/53ecf0f8)
+
+**Release New Version v0.0.1-alpha.44 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
+## v0.0.1-alpha.43 (2025-11-06)
+
+### 💅 Refactors
+
+- 优化`VipDayjs`类核心逻辑，支持`vipDayjs`对象导出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/732 [<samp>(b7c12)</samp>](https://github.com/142vip/core-x/commit/b7c12ee8)
+- 优化`VipNanoId`类核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/733 [<samp>(caa65)</samp>](https://github.com/142vip/core-x/commit/caa6536b)
+
+**Release New Version v0.0.1-alpha.43 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.42 (2025-10-16)
 
 ### ✨ Features

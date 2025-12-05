@@ -2,6 +2,67 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.37 (2025-12-05)
+
+### ✨ Features
+
+- 文档站点侧边栏配置补充`nest`相关模块 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/729 [<samp>(48cf5)</samp>](https://github.com/142vip/core-x/commit/48cf52d9)
+- **@142vip/changelog**:
+  - 调整`vipDayjs`类使用 &nbsp;-&nbsp; by **chufan** [<samp>(c68c3)</samp>](https://github.com/142vip/core-x/commit/c68c3e0f)
+- **@142vip/nest**:
+  - 增加通用`dto`、`decorator`工具，支持分页等功能 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/731 [<samp>(2593e)</samp>](https://github.com/142vip/core-x/commit/2593eeb4)
+- **@142vip/nest-redis**:
+  - 增加`RedisKeyManager`类，补充缓存`key`方案 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/740 [<samp>(9c5f5)</samp>](https://github.com/142vip/core-x/commit/9c5f580c)
+- **@142vip/nest-starter**:
+  - 增加配置解决方案 &nbsp;-&nbsp; by **chufan** [<samp>(b454e)</samp>](https://github.com/142vip/core-x/commit/b454e95d)
+  - 重写starter启动逻辑，增加全局配置注入 &nbsp;-&nbsp; by **chufan** [<samp>(8fd43)</samp>](https://github.com/142vip/core-x/commit/8fd43ce4)
+- **@142vip/utils**:
+  - 基于原生`ConfigType`优化`VipDayjs`类函数的类型 &nbsp;-&nbsp; by **chufan** [<samp>(c450f)</samp>](https://github.com/142vip/core-x/commit/c450f004)
+  - 拓展`VipDayjs`类，增加`formatCurrentDateToStr`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(1eea0)</samp>](https://github.com/142vip/core-x/commit/1eea051d)
+  - 拓展`VipNanoId`类，增加`getRandomUpperCharId`等方法 &nbsp;-&nbsp; by **chufan** [<samp>(53ecf)</samp>](https://github.com/142vip/core-x/commit/53ecf0f8)
+- **egg-demo**:
+  - 优化启动逻辑 &nbsp;-&nbsp; by **chufan** [<samp>(8ee1e)</samp>](https://github.com/142vip/core-x/commit/8ee1e80c)
+
+### 🐛 Bug Fixes
+
+- **@142vip/changelog**:
+  - 修复`formatDateToYMD`方法调用异常 &nbsp;-&nbsp; by **chufan** [<samp>(aa5a3)</samp>](https://github.com/142vip/core-x/commit/aa5a3b14)
+  - 修复`vipQs`类方法引用异常 &nbsp;-&nbsp; by **chufan** [<samp>(a70f1)</samp>](https://github.com/142vip/core-x/commit/a70f1588)
+- **@142vip/nest-redis**:
+  - 修复引用异常，调整依赖 &nbsp;-&nbsp; by **chufan** [<samp>(e640b)</samp>](https://github.com/142vip/core-x/commit/e640b7fd)
+- **@142vip/utils**:
+  - 拓展`VipDayjs`类，增加`formatToISOStr`方法 &nbsp;-&nbsp; by **chufan** [<samp>(c96c1)</samp>](https://github.com/142vip/core-x/commit/c96c1b00)
+  - 增加`VipDataTransform`类 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/738 [<samp>(dc147)</samp>](https://github.com/142vip/core-x/commit/dc1473ef)
+  - 增加`VipQs`类和工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(862b2)</samp>](https://github.com/142vip/core-x/commit/862b2faf)
+- **deps**:
+  - Update dependency pino to v10 &nbsp;-&nbsp; by **renovate[bot]** in https://github.com/142vip/core-x/issues/730 [<samp>(588e9)</samp>](https://github.com/142vip/core-x/commit/588e97b9)
+
+### 💅 Refactors
+
+- **@142vip/utils**:
+  - 优化`VipDayjs`类核心逻辑，支持`vipDayjs`对象导出 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/732 [<samp>(b7c12)</samp>](https://github.com/142vip/core-x/commit/b7c12ee8)
+  - 优化`VipNanoId`类核心逻辑 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/733 [<samp>(caa65)</samp>](https://github.com/142vip/core-x/commit/caa6536b)
+
+### 😏 Release Packages
+
+- **@142vip/changelog**:
+  - Publish `v0.0.1-alpha.23` &nbsp;-&nbsp; by **chufan** [<samp>(aa5ab)</samp>](https://github.com/142vip/core-x/commit/aa5aba96)
+- **@142vip/nest**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(30c4a)</samp>](https://github.com/142vip/core-x/commit/30c4ad54)
+- **@142vip/nest-redis**:
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(a4f91)</samp>](https://github.com/142vip/core-x/commit/a4f916ab)
+- **@142vip/nest-starter**:
+  - Publish `v0.0.1-alpha.2` &nbsp;-&nbsp; by **chufan** [<samp>(bfe64)</samp>](https://github.com/142vip/core-x/commit/bfe64a2d)
+  - Publish `v0.0.1-alpha.3` &nbsp;-&nbsp; by **chufan** [<samp>(6206c)</samp>](https://github.com/142vip/core-x/commit/6206cf46)
+- **@142vip/utils**:
+  - Publish `v0.0.1-alpha.43` &nbsp;-&nbsp; by **chufan** [<samp>(d59f8)</samp>](https://github.com/142vip/core-x/commit/d59f8068)
+  - Publish `v0.0.1-alpha.44` &nbsp;-&nbsp; by **chufan** [<samp>(e7da6)</samp>](https://github.com/142vip/core-x/commit/e7da6c08)
+  - Publish `v0.0.1-alpha.45` &nbsp;-&nbsp; by **chufan** [<samp>(13838)</samp>](https://github.com/142vip/core-x/commit/13838306)
+- **egg-demo**:
+  - Publish `v0.0.1-alpha.7` &nbsp;-&nbsp; by **chufan** [<samp>(5d0d3)</samp>](https://github.com/142vip/core-x/commit/5d0d35d3)
+
+**Release New Version v0.0.1-alpha.37 [👉 View Changes On GitHub](https://github.com/142vip/core-x/compare/v0.0.1-alpha.36...v0.0.1-alpha.37)**
+
 ## v0.0.1-alpha.36 (2025-11-04)
 
 ### ✨ Features

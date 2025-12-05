@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## v0.0.1-alpha.45 (2025-12-05)
+
+### 🐛 Bug Fixes
+
+- 拓展`VipDayjs`类，增加`formatToISOStr`方法 &nbsp;-&nbsp; by **chufan** [<samp>(c96c1)</samp>](https://github.com/142vip/core-x/commit/c96c1b00)
+- 增加`VipDataTransform`类 &nbsp;-&nbsp; by **142vip.cn** in https://github.com/142vip/core-x/issues/738 [<samp>(dc147)</samp>](https://github.com/142vip/core-x/commit/dc1473ef)
+- 增加`VipQs`类和工具方法 &nbsp;-&nbsp; by **chufan** [<samp>(862b2)</samp>](https://github.com/142vip/core-x/commit/862b2faf)
+
+**Release New Version v0.0.1-alpha.45 [👉 View New Package On NPM](https://www.npmjs.com/package/@142vip/utils)**
+
 ## v0.0.1-alpha.44 (2025-11-18)
 
 ### ✨ Features

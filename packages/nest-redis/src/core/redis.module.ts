@@ -1,8 +1,9 @@
 import { RedisConfig } from '@142vip/redis'
-import { DynamicModule } from '@nestjs/common'
+import { DynamicModule, Module } from '@nestjs/common'
 import { REDIS_CLIENT_TOKEN } from './redis.constants'
 import { RedisService } from './redis.service'
 
+@Module({})
 export class NestRedisModule {
   public static register(config: RedisConfig): DynamicModule {
     const redisService = new RedisService(config)

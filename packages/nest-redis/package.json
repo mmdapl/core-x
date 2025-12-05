@@ -46,9 +46,7 @@
     "test:coverage": "npx jest --coverage"
   },
   "peerDependencies": {
-    "@142vip/nest": "workspace:*"
-  },
-  "dependencies": {
+    "@142vip/nest": "workspace:*",
     "@142vip/redis": "workspace:*"
   },
   "publishConfig": {
